@@ -1,0 +1,64 @@
+---
+title: "Práctica 1"
+author: "Álgebra lineal"
+output: pdf_document
+---
+
+# Práctica 1
+
+1. Encontrar $\vec{u}\boldsymbol{\cdot}\vec{v}$
+
+ \[
+a)  \begin{array}{cc}
+      \vec{u}= \begin{pmatrix} -1\\ 2 \end{pmatrix} & 
+      \vec{v}= \begin{pmatrix} 3 \\ 1 \end{pmatrix} 
+   \end{array}\,\,
+   \]
+  \[
+b)
+  \begin{array}{cc}
+      \vec{u}= \begin{pmatrix} -1\\ 2 \end{pmatrix} & 
+      \vec{v}= \begin{pmatrix} 3 \\ 1 \end{pmatrix}
+   \end{array}
+   \]
+   \[
+c) \begin{array}{cc}
+      \vec{u}= \begin{pmatrix} 3.2 \\ -0.6 \\ -1.4 \end{pmatrix} & 
+      \vec{v}= \begin{pmatrix} 1.5 \\ 4.1  \\ -0.2 \end{pmatrix}
+    \end{array}
+    \]
+1. En los siguientes ejercicios, calcular $\|\vec{u}\|$
+Para a) - c) del ejercicio anterior.
+
+1. Calcular el ángulo entre $\vec{u}$ y $\vec{v}$ si los vectores están dados por
+\[
+\begin{array}{cc}
+      \vec{u}= \begin{pmatrix} 2 \\ -1 \\ 1 \end{pmatrix}  & 
+      \vec{v}= \begin{pmatrix} 1 \\ -2  \\ -1 \end{pmatrix}
+\end{array}
+\]
+
+\[
+  \begin{array}{cc}
+      \vec{u}= \begin{pmatrix} 4 \\ 3 \\ -1 \end{pmatrix} & 
+      \vec{v}= \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}
+    \end{array}
+\]
+    
+\[
+  \begin{array}{cc}
+    \vec{u}= \begin{pmatrix} 3 \\ -2  \end{pmatrix} & 
+    \vec{v}= \begin{pmatrix} 4 \\  6  \end{pmatrix}
+  \end{array}
+\]
+
+
+1. Un paralelogramo tiene diagonales determinadas por los vectores 
+\[
+  \vec{u}= \begin{pmatrix} 4 \\ 3 \\ -1 \end{pmatrix}, \quad\quad 
+  \vec{v}= \begin{pmatrix} 1 \\-1 \\ 3  \end{pmatrix}
+\]
+
+Demostrar que el paralelogramo es un rombo (todos los lados tienen la misma longitud) y determinar la longitud del lado
+
+1. El rectángulo $ABCD$ tiene vértices en $A=(1,2,3)$, $B=(3,6,-2)$ y $C=(0,5,-4)$. Determinar las coordenadas del vértice $D$

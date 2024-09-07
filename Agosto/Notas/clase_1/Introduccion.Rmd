@@ -1,6 +1,7 @@
 ---
 title: "Álgebra Lineal"
 subtitle: "Introducción al curso y evaluación"
+author: "José Rodríguez Villarreal"
 output: 
   slidy_presentation:
     css: 'styles.css'
@@ -40,7 +41,7 @@ Los objetivos _formativos_ en esta materia:
 
 # Objetivos temáticos
 
-- Evidencia de comprensión de conceptos y procedimientos en examen escrito de conocimientos.
+- Conocer los conceptos básicos del álgebra lineal y entender como se aplican en diversos contextos.
 
 - Evidencia de uso del álgebra lineal en aplicaciones geométricas, físicas y en otras áreas.
 
@@ -48,68 +49,79 @@ Los objetivos _formativos_ en esta materia:
 
 - Capacidad de uso y manejo de MATLAB para resolver problemas solucionables aplicando álgebra lineal
 
-- Validación de los programas y proyectos solicitados
-
 
 # Evaluación 
 
 Se evaluará el curso de la siguiente forma:
 
-- 3 exámenes parciales: 75%
+1. En el primer parcial
 
-- Desarrollo de proyecto: 10%
+  - Examen parcial: 80%
+  
+  - Tareas y prácticas: 20%
 
-- Tareas y prácticas: 15%
-
+2. En el segundo y tercer parcial parcial
+  
+  - Examen parcial: 75%
+  
+  - Tarea: 10% 
+  
+  - Prácticas en MATLAB 15% (tipo proyecto)
+  
 ## Interacción y material para estudio
 
-Las notas se subirán en un google classroom, se recomienda darse de alta.
+Las notas y asignación de tareas se subirán en un google classroom, se recomienda darse de alta.
 
-### Classroom:
-Página: https://classroom.google.com/u/0/c/NDg4ODI5NDQwNjIy code: egqus3f
+### Classroom: https://classroom.google.com/c/NzA4NzQ3NjkwOTE1 code: upzqrxf
 
-### Foro de Slack:
+Página: 
 
-Darse de alta en slack y buscar grupo "algebralineal2bv2."
-Se mandará la invitación por correo.
 
 # Bibliografía
 
 Las principales referencias del curso son los siguientes libros
 
-* <h4> Poole, D. Álgebra lineal. Una introducción moderna. </h3>
+* <h4> Poole, D. Álgebra lineal. Una introducción moderna. </h4>
 
-* <h4> Strang G. Álgebra lineal y sus aplicaciones. </h4>
+* <h4> Maltsev, I. Fundamentos de Álgebra lineal. </h4>
+
 
 Algunos otros libros de referencia y apoyo son los siguientes:
 
-* Kolman, B. Álgebra lineal: Fundamentos y aplicaciones
+* Lipschutz, S. Álgebra lineal.
 
-* Larsson R. Fundamentos de Álgebra lineal.
+* Kolman, B. Álgebra lineal: Fundamentos y aplicaciones
 
 * Anton H. Introducción al álgebra lineal.
 
-* Kurosh. Curso de Álgebra Superior.
+* Grossman. Álgebra lineal y aplicaiones
+
 
 ## Tareas y Prácticas
+
 Consisten en :
   
 * Ejercicios de reforzamiento en clase.
 
-* Listas de ejercicios 
+* Problemas, demostraciones de teoremas o aplicaciones 
 
-No habrá tolerancia ni modificación en fecha de entrega de ejercicios.
 
-Son guía para el examen escrito,
+**No** habrá tolerancia ni modificación en fecha de entrega de ejercicios.
+
+Son guía para el examen escrito.
 
 # Horarios
 
-Grupo 2BV2 
+Grupo 2CV5 
 
-Horario: lunes, miércoles y jueves: 20:00 a 21:30 hrs. Salón 4009.
+Horario: lunes, miércoles y jueves: 20:00 a 21:30 hrs. Salón 2006.
+
+Grupo 2BV1
+
+Horario: martes, miércoles y viernes: 18:30 a 20:00 hrs. Salón 4008.
 
 
-## Aplicaciones
+# Aplicaciones
 
 El álgebra lineal tiene una enorme importancia en otras ciencias. Algunos ejemplos en donde se aplica de manera indirecta son los siguientes:
 
@@ -122,8 +134,9 @@ knitr::include_graphics('estructuras.png')
 
 Aplicaciones en la física
 
-## Aplicaciones II
-### Física.
+# Aplicaciones II
+
+## Física.
 
 En física varias transformaciones se expresan sucintamente por medio de transformaciones lineales.
 ```{r echo=FALSE, fig.align='center', out.width='50%'}
@@ -131,7 +144,10 @@ knitr::include_graphics('rotacion.png')
 ```
 
 
-## Aplicaciones III
+# Aplicaciones III
+
+## En teoría de circuitos
+
 Las leyes de Kichoff tienen una enunciación en términos de sistemas de ecuaciones
 ```{r echo=FALSE, fig.align='center', out.width='40%'}
 knitr::include_graphics('Ley-de-kirchoff.png')
@@ -141,13 +157,19 @@ La teoría de redes y grafos usa de manera natural a las matrices
 knitr::include_graphics('grafos.png')
 ```
 
-## Aplicaciones IV
-En otras áreas de las matemáticas, los problemas de aproximación numérica que involucran una discretización también se expresan en términos de sistemas de ecuaciones.
-```{r echo=FALSE, fig.align='center', out.width='50%'}
-knitr::include_graphics('ecs_parciales.png')
+En problemas de control automático, los modelos de control *LQG*
+```{r echo=FALSE, fig.align='center', out.width='40%'}
+knitr::include_graphics('LQG_control.png')
 ```
 
-## Aplicaciones V
+El problema de obtener el "mejor" control se llama un problema de _control_ _óptimo_, que se puede calcular analiticamente bajo ciertas condiciones
+
+```{r echo=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics('riccati.png')
+```
+
+
+# Aplicaciones IV
 
 Muchos objetos en otras áreas se expresan concretamente con ayuda de las mátrices y transformaciones lineales.
 
@@ -179,13 +201,13 @@ corrplot(mat_corr)
 
 La estructura de la correlación de varias variables es una matriz, la cual es llamada **la** **matriz** **de** **correlaciones**.
 
-## Cadenas de Markov y evoluciones aleatorias
+# Cadenas de Markov y evoluciones aleatorias
 
 Cuando tenemos un proceso estocástico cuyas distribuciones cumplen la llamada __propiedad__ __de__ **Markov**, la evolución probabilistica y la distribución se puede entender por medio de la matriz de transición de la cadena $P$.
 
 Ver https://setosa.io/ev/markov-chains/
 
-## Programas lineales
+# Programas lineales
 
 Muchos problemas en investigación de operaciones se pueden usar gracias a las técnicas de programación lineal
 
