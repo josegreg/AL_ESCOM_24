@@ -1,0 +1,313 @@
+---
+title: "Vectores I"
+author: "Jose Rodriguez Villarreal"
+date: "2/16/2022"
+output: 
+  slidy_presentation:
+    footer: "Álgebra lineal, ESCOM 2BV1"
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+\section{Vectores}
+
+Desde un punto de vista intuitivo, un <strong>vector</strong>  es un objeto con magnitud, dirección y sentido bien definidos. En ese sentido, los vectores en la figura representan a un mismo vector. 
+
+![Figura 1.1](semana02-vector.png "Vector"){ width=50% }
+
+
+
+Desde el punto de vista algébraico, un vector es un elemento de un **espacio** **vectorial**. Esta definición se verá más adelante a detalle, pero podemos dar una definición simplificada en este momento: desde el punto de vista algebraico un vector en el espacio puede ser pensado como una terna ordenada de números reales.
+
+# El conjunto $\mathbb{R}^{n}$
+
+## 1. Definición
+
+Sea $n$ un número entero positivo. Denotamos por $\mathbb{R}^n$ al conjunto de todas las $n-$tuplas de números reales. En estas secciones nos centraremos en las definiciones para $\mathbb{R}^{3}$
+
+### Nota 
+Para vectores se puede usar de manera indistinta otras notaciones:
+
+\begin{equation*}
+\begin{pmatrix} a_1, a_2, a_3     \end{pmatrix}\quad \quad 
+\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\quad \quad
+\begin{bmatrix} a_1, a_2, a_3     \end{bmatrix}\quad \quad
+\begin{bmatrix} a_1 \\ a_2 \\a_3  \end{bmatrix}
+\end{equation*}
+
+## 2. Definición de igualdad
+Dos vectores son iguales si todas sus componentes correspondientes son iguales
+
+
+$$
+\begin{array}{ccc}
+\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} 
+& \Longleftrightarrow &
+a_1 = b_1, \,\, a_2 = b_2, \,\, a_3 = b_3
+\end{array}
+$$
+
+# Operaciones algebraicas en $\mathbb{R}^{3}$
+
+## 3. Definición de la suma de vectores
+
+La _adición_ de dos vectores se define como el vector resultante de sumar _componente_ _por_ _componente_ a los vectores.
+Es decir
+$$
+\vec{a} = \begin{pmatrix} a_1\\ a_2\\ a_3\end{pmatrix} \quad \mbox{y} \quad
+\vec{b} = \begin{pmatrix} b_1\\ b_2\\ b_3\end{pmatrix} \quad \vec{a+b} = \begin{pmatrix} a_1+b_1\\ a_2+b_2\\ a_3+b_3\end{pmatrix} 
+$$
+
+Una forma concisa de escribir a las entradas del vector es por medio de los índices
+$$
+\mbox{ Para }k\in \{1,2,3\}\quad (a+b)_k=a_k + b_k
+$$
+
+## 4. Definición de la multiplicación de un escalar y un vector
+
+La multiplicación de un _número_ $c\in\mathbb{R}$ o $c\in\mathbb{C}$ por un vector $\vec{v}\in\mathbb{R}^{3}$ se denota como
+$$
+c\cdot \vec{v} = c\cdot \begin{pmatrix}a_1 \\ a_2 \\a_3 \end{pmatrix} =  \begin{pmatrix}ca_1 \\ ca_2 \\ca_3 \end{pmatrix}
+$$
+
+## Propiedades de la suma de vectores
+
+### Propiedad conmutativa
+
+$$
+\mbox{Para todo }\vec{v}_1,\vec{v}_2  \in\mathbb{R}^{3} \quad\quad \vec{v}_1+\vec{v}_2 = \vec{v}_2+\vec{v}_1
+$$
+
+### Propiedad asociativa
+
+$$
+\mbox{Para todo }\vec{v}_1,\vec{v}_2,\vec{v}_3  \in\mathbb{R}^{3} \quad\quad \vec{v}_1+(\vec{v}_2+\vec{v}_3) = (\vec{v}_1+\vec{v}_2)+\vec{v}_3
+$$
+
+### Definición del elemento neutro. Definimos al $\vec{0}\in\mathbb{R}^{3}$ como el vector $\vec{0}=(0,0,0)$
+
+## Existencia del elemento neutro en la suma
+
+$$
+\mbox{Para todo }\vec{v}_1  \in\mathbb{R}^{3} \quad\quad \vec{v}_1+\vec{0} = \vec{0}+\vec{v}_1 = \vec{v}_1
+$$
+## Existencia del elemento inverso en la suma
+
+$$
+\mbox{Para todo }\vec{v}_1  \in\mathbb{R}^{3} \mbox{ existe } -\vec{v}_1 \mbox{ tal que } \quad\quad \vec{v}_1+ -\vec{v}_1 = \vec{v}_1 + (-\vec{v}_1) = \vec{0}
+$$
+
+
+## Propiedades de la multiplicación
+
+### Leyes distributivas
+
+Las leyes distributivas combinan a la suma de vectores y a la multiplicación por escalar. En pocas palabras, la multiplicación de un vector por una suma de escalares "se reparte" en cada escalar
+
+$$
+\mbox{Para todo  }\vec{v}  \in\mathbb{R}^{3}\,\, \mbox{ y }\,\, \alpha,\beta \in\mathbb{R} \quad\quad (\alpha+\beta)\cdot \vec{v}_1 = \alpha\cdot\vec{v}_1+\beta\cdot\vec{v}_1
+$$
+E igualmente, la multiplicación de un escalar por la suma de vectores "se reparte" en cada vector.
+$$
+\mbox{Para todo  }\vec{v},\vec{u}  \in\mathbb{R}^{3}\,\, \mbox{ y }\,\, \alpha \in\mathbb{R} \quad\quad \alpha\cdot (\vec{v}+\vec{u}) = \alpha\cdot\vec{v}+\alpha\cdot\vec{u´}
+$$
+
+### Existencia del elemento neutro en la multiplicación escalar.
+
+En $\mathbb{R}$ el elemento neutro en la multiplicación es el número $1$. Analogamente, en $\mathbb{C}$ el elemento neutro es el número complejo $1+i 0$. La siguiente propiedad simplemente se refiere a que el mismo elemento es neutro en la multiplicación por un vector
+
+$$
+\mbox{Para todo }\vec{v}_1 \in\mathbb{R}^{3} \quad\quad 1\cdot\vec{v}_1 = \vec{v}_1
+$$
+
+### Asociatividad de la multiplicación
+
+La última propiedad de la multiplicación significa que la multiplicación es asociativa, en caso de tener dos escalares.
+
+$$
+\mbox{Para todo }\vec{v} \in\mathbb{R}^{3} \,\,\mbox{y}\,\,  \lambda,\mu\in\mathbb{R}, \quad \,\,\lambda\cdot(\mu\cdot\vec{v}) = (\lambda\mu)\cdot\vec{v}
+$$
+
+## Combinaciones lineales
+
+\section{Combinaciones lineales de vectores}
+
+Una <strong>combinación lineal</strong> de vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$ es el vector resultante de "combinar" los vectores por medio de la siguiente operación:
+\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_k \vec{v}_k = \sum_{i=1}^k c_i \vec{v}_i,
+\end{equation} 
+donde $c_1, c_2, \dots, c_k$ son números reales (llamados coeficientes de la combinación lineal). En otras palabras, una combinación lineal es una suma de múltiplos de los vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$.
+
+![Figura 1.2](linear_comb.png "Vector"){ width=50% }
+
+
+### Ejemplo 
+
+Para los vectores
+	
+\begin{equation}
+	\vec{v}_1 = \left(
+	\begin{array}{c}
+	1 \\
+	-1
+\end{array}	\right) \quad 
+\text{y} \quad
+	\vec{v}_2 = \left(
+	\begin{array}{c}
+	1 \\
+	3
+	\end{array}
+	\right),
+\end{equation} 
+	
+obtener las combinaciones lineales:
+	
+* $\vec{v}_1 + \vec{v}_2 =$
+
+* $4 \vec{v}_1 = 4 \vec{v}_1 + 0 \vec{v}_2 =$
+* $\vec{v}_2 = 0\vec{v}_1 + 1\vec{v}_2 =$
+* $\frac{1}{2}\vec{v}_1  -1 \vec{v}_2 =$
+
+Geometricamente, _cualquier_ vector del plano puede ser representado como combinación lineal de vectores que no son colineales.
+
+![Figura 1.3](semana02-comblinear1.png "Combinación lineal"){ width=40% }	
+![Figura 1.4](semana02-comblinear3.png "Combinación lineal"){ width=40% }		
+	
+	Por ejemplo, para representar el vector $\vec{v}$ como combinación lineal de $\vec{v}_1$ y $\vec{v}_2$, podemos trazar rectas paralelas a los vetores, pasando por el origen y por el extremo del vector $\vec{v}$ como en la figura.
+	
+	
+De forma mas general, decimos que un vector $\vec{v} \in \mathbb{R}^n$ es combinación lineal de los $k$ vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k  \in \mathbb{R}^n$ cuando existen coeficientes $c_1, c_2, \dots, c_k$ tales que
+
+\begin{equation}
+c_1 \vec{v}_1 + c_2 \vec{v}_2 + \dots + c_k \vec{v}_k = \vec{v}.
+\end{equation} 
+
+Nos vamos a referir a este tipo de equación por **ecuación** **vectorial**.
+Para decidir si un vector es combinación lineal de otros, debemos determinar si existen  números $c_1, c_2, \dots, c_k$. 
+En coordenadas:
+\begin{equation}
+\vec{v}_1 =
+\left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right), \
+\vec{v}_2 =
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right), \
+\vec{v}_3 =
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right), \ \cdots, \
+\vec{v}_k =
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right), \
+\vec{v} =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} vemos que encontrar los coeficientes de la combinación lineal, en caso de que estos existan, equivale a resolver una ecuación
+\begin{equation}
+x_1 \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right) + x_2
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right) + x_3
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right) + \cdots + x_k
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} que, a su vez, es equivalente a
+\begin{equation}
+\left(
+\begin{array}{c}
+v_{11} x_1 + v_{12} x_2 + v_{13} x_3 + \cdots + v_{1k} x_k  \\
+v_{21} x_1 + v_{22} x_2 + v_{23} x_3 + \cdots + v_{2k} x_k  \\
+v_{31} x_1 + v_{32} x_2 + v_{33} x_3 + \cdots + v_{3k} x_k  \\
+\vdots  \\
+v_{m1} x_1 + v_{m2} x_2 + v_{m3} x_3 + \cdots + v_{mk} x_k
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right).
+\end{equation}
+
+
+

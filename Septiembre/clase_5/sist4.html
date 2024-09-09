@@ -5,9 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="José Rodríguez Villarreal" />
-  <meta name="copyright" content="Álgebra lineal, ESCOM 2BV1, 2BV2" />
-  <title>Rectas y Planos</title>
+  <meta name="author" content="Jose Rodriguez Villarreal" />
+  <meta name="copyright" content="Álgebra lineal, ESCOM 2BV1, José Rodríguez Villarreal" />
+  <title>Sistemas de ecuaciones, eliminación gaussiana II</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,134 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
   <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -391,1548 +519,702 @@ list-style-type: none;
   });
 })()
 </script>
-  <style type="text/css">.pagedtable {
-overflow: auto;
-padding-left: 8px;
-padding-right: 8px;
-}
-.pagedtable-wrapper {
-border: 1px solid #ccc;
-border-radius: 4px;
-margin-bottom: 10px;
-}
-.pagedtable table {
-width: 100%;
-max-width: 100%;
-margin: 0;
-}
-.pagedtable th {
-padding: 0 5px 0 5px;
-border: none;
-border-bottom: 2px solid #dddddd;
-min-width: 45px;
-}
-.pagedtable-empty th {
-display: none;
-}
-.pagedtable td {
-padding: 0 4px 0 4px;
-}
-.pagedtable .even {
-background-color: rgba(140, 140, 140, 0.1);
-}
-.pagedtable-padding-col {
-display: none;
-}
-.pagedtable a {
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
-.pagedtable-index-nav {
-cursor: pointer;
-padding: 0 5px 0 5px;
-float: right;
-border: 0;
-}
-.pagedtable-index-nav-disabled {
-cursor: default;
-text-decoration: none;
-color: #999;
-}
-a.pagedtable-index-nav-disabled:hover {
-text-decoration: none;
-color: #999;
-}
-.pagedtable-indexes {
-cursor: pointer;
-float: right;
-border: 0;
-}
-.pagedtable-index-current {
-cursor: default;
-text-decoration: none;
-font-weight: bold;
-color: #333;
-border: 0;
-}
-a.pagedtable-index-current:hover {
-text-decoration: none;
-font-weight: bold;
-color: #333;
-}
-.pagedtable-index {
-width: 30px;
-display: inline-block;
-text-align: center;
-border: 0;
-}
-.pagedtable-index-separator-left {
-display: inline-block;
-color: #333;
-font-size: 9px;
-padding: 0 0 0 0;
-cursor: default;
-}
-.pagedtable-index-separator-right {
-display: inline-block;
-color: #333;
-font-size: 9px;
-padding: 0 4px 0 0;
-cursor: default;
-}
-.pagedtable-footer {
-padding-top: 4px;
-padding-bottom: 5px;
-}
-.pagedtable-not-empty .pagedtable-footer {
-border-top: 2px solid #dddddd;
-}
-.pagedtable-info {
-overflow: hidden;
-color: #999;
-white-space: nowrap;
-text-overflow: ellipsis;
-}
-.pagedtable-header-name {
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.pagedtable-header-type {
-color: #999;
-font-weight: 400;
-}
-.pagedtable-na-cell {
-font-style: italic;
-opacity: 0.3;
-}
-</style>
-  <script>// Production steps of ECMA-262, Edition 5, 15.4.4.18
-// Reference: http://es5.github.io/#x15.4.4.18
-if (!Array.prototype.forEach) {
-
-  Array.prototype.forEach = function(callback, thisArg) {
-
-    var T, k;
-
-    if (this === null) {
-      throw new TypeError(' this is null or not defined');
-    }
-
-    // 1. Let O be the result of calling toObject() passing the
-    // |this| value as the argument.
-    var O = Object(this);
-
-    // 2. Let lenValue be the result of calling the Get() internal
-    // method of O with the argument "length".
-    // 3. Let len be toUint32(lenValue).
-    var len = O.length >>> 0;
-
-    // 4. If isCallable(callback) is false, throw a TypeError exception.
-    // See: http://es5.github.com/#x9.11
-    if (typeof callback !== "function") {
-      throw new TypeError(callback + ' is not a function');
-    }
-
-    // 5. If thisArg was supplied, let T be thisArg; else let
-    // T be undefined.
-    if (arguments.length > 1) {
-      T = thisArg;
-    }
-
-    // 6. Let k be 0
-    k = 0;
-
-    // 7. Repeat, while k < len
-    while (k < len) {
-
-      var kValue;
-
-      // a. Let Pk be ToString(k).
-      //    This is implicit for LHS operands of the in operator
-      // b. Let kPresent be the result of calling the HasProperty
-      //    internal method of O with argument Pk.
-      //    This step can be combined with c
-      // c. If kPresent is true, then
-      if (k in O) {
-
-        // i. Let kValue be the result of calling the Get internal
-        // method of O with argument Pk.
-        kValue = O[k];
-
-        // ii. Call the Call internal method of callback with T as
-        // the this value and argument list containing kValue, k, and O.
-        callback.call(T, kValue, k, O);
-      }
-      // d. Increase k by 1.
-      k++;
-    }
-    // 8. return undefined
-  };
-}
-
-// Production steps of ECMA-262, Edition 5, 15.4.4.19
-// Reference: http://es5.github.io/#x15.4.4.19
-if (!Array.prototype.map) {
-
-  Array.prototype.map = function(callback, thisArg) {
-
-    var T, A, k;
-
-    if (this == null) {
-      throw new TypeError(' this is null or not defined');
-    }
-
-    // 1. Let O be the result of calling ToObject passing the |this|
-    //    value as the argument.
-    var O = Object(this);
-
-    // 2. Let lenValue be the result of calling the Get internal
-    //    method of O with the argument "length".
-    // 3. Let len be ToUint32(lenValue).
-    var len = O.length >>> 0;
-
-    // 4. If IsCallable(callback) is false, throw a TypeError exception.
-    // See: http://es5.github.com/#x9.11
-    if (typeof callback !== 'function') {
-      throw new TypeError(callback + ' is not a function');
-    }
-
-    // 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
-    if (arguments.length > 1) {
-      T = thisArg;
-    }
-
-    // 6. Let A be a new array created as if by the expression new Array(len)
-    //    where Array is the standard built-in constructor with that name and
-    //    len is the value of len.
-    A = new Array(len);
-
-    // 7. Let k be 0
-    k = 0;
-
-    // 8. Repeat, while k < len
-    while (k < len) {
-
-      var kValue, mappedValue;
-
-      // a. Let Pk be ToString(k).
-      //   This is implicit for LHS operands of the in operator
-      // b. Let kPresent be the result of calling the HasProperty internal
-      //    method of O with argument Pk.
-      //   This step can be combined with c
-      // c. If kPresent is true, then
-      if (k in O) {
-
-        // i. Let kValue be the result of calling the Get internal
-        //    method of O with argument Pk.
-        kValue = O[k];
-
-        // ii. Let mappedValue be the result of calling the Call internal
-        //     method of callback with T as the this value and argument
-        //     list containing kValue, k, and O.
-        mappedValue = callback.call(T, kValue, k, O);
-
-        // iii. Call the DefineOwnProperty internal method of A with arguments
-        // Pk, Property Descriptor
-        // { Value: mappedValue,
-        //   Writable: true,
-        //   Enumerable: true,
-        //   Configurable: true },
-        // and false.
-
-        // In browsers that support Object.defineProperty, use the following:
-        // Object.defineProperty(A, k, {
-        //   value: mappedValue,
-        //   writable: true,
-        //   enumerable: true,
-        //   configurable: true
-        // });
-
-        // For best browser support, use the following:
-        A[k] = mappedValue;
-      }
-      // d. Increase k by 1.
-      k++;
-    }
-
-    // 9. return A
-    return A;
-  };
-}
-
-var PagedTable = function (pagedTable) {
-  var me = this;
-
-  var source = function(pagedTable) {
-    var sourceElems = [].slice.call(pagedTable.children).filter(function(e) {
-      return e.hasAttribute("data-pagedtable-source");
-    });
-
-    if (sourceElems === null || sourceElems.length !== 1) {
-      throw("A single data-pagedtable-source was not found");
-    }
-
-    return JSON.parse(sourceElems[0].innerHTML);
-  }(pagedTable);
-
-  var options = function(source) {
-    var options = typeof(source.options) !== "undefined" &&
-      source.options !== null ? source.options : {};
-
-    var columns = typeof(options.columns) !== "undefined" ? options.columns : {};
-    var rows = typeof(options.rows) !== "undefined" ? options.rows : {};
-
-    var positiveIntOrNull = function(value) {
-      return parseInt(value) >= 0 ? parseInt(value) : null;
-    };
-
-    return {
-      pages: positiveIntOrNull(options.pages),
-      rows: {
-        min: positiveIntOrNull(rows.min),
-        max: positiveIntOrNull(rows.max),
-        total: positiveIntOrNull(rows.total)
-      },
-      columns: {
-        min: positiveIntOrNull(columns.min),
-        max: positiveIntOrNull(columns.max),
-        total: positiveIntOrNull(columns.total)
-      }
-    };
-  }(source);
-
-  var Measurer = function() {
-
-    // set some default initial values that will get adjusted in runtime
-    me.measures = {
-      padding: 12,
-      character: 8,
-      height: 15,
-      defaults: true
-    };
-
-    me.calculate = function(measuresCell) {
-      if (!me.measures.defaults)
-        return;
-
-      var measuresCellStyle = window.getComputedStyle(measuresCell, null);
-
-      var newPadding = parsePadding(measuresCellStyle.paddingLeft) +
-            parsePadding(measuresCellStyle.paddingRight);
-
-      var sampleString = "ABCDEFGHIJ0123456789";
-      var newCharacter = Math.ceil(measuresCell.clientWidth / sampleString.length);
-
-      if (newPadding <= 0 || newCharacter <= 0)
-        return;
-
-      me.measures.padding = newPadding;
-      me.measures.character = newCharacter;
-      me.measures.height = measuresCell.clientHeight;
-      me.measures.defaults = false;
-    };
-
-    return me;
-  };
-
-  var Page = function(data, options) {
-    var me = this;
-
-    var defaults = {
-      max: 7,
-      rows: 10
-    };
-
-    var totalPages = function() {
-      return Math.ceil(data.length / me.rows);
-    };
-
-    me.number = 0;
-    me.max = options.pages !== null ? options.pages : defaults.max;
-    me.visible = me.max;
-    me.rows = options.rows.min !== null ? options.rows.min : defaults.rows;
-    me.total = totalPages();
-
-    me.setRows = function(newRows) {
-      me.rows = newRows;
-      me.total = totalPages();
-    };
-
-    me.setPageNumber = function(newPageNumber) {
-      if (newPageNumber < 0) newPageNumber = 0;
-      if (newPageNumber >= me.total) newPageNumber = me.total - 1;
-
-      me.number = newPageNumber;
-    };
-
-    me.setVisiblePages = function(visiblePages) {
-      me.visible = Math.min(me.max, visiblePages);
-      me.setPageNumber(me.number);
-    };
-
-    me.getVisiblePageRange = function() {
-      var start = me.number - Math.max(Math.floor((me.visible - 1) / 2), 0);
-      var end = me.number + Math.floor(me.visible / 2) + 1;
-      var pageCount = me.total;
-
-      if (start < 0) {
-        var diffToStart = 0 - start;
-        start += diffToStart;
-        end += diffToStart;
-      }
-
-      if (end > pageCount) {
-        var diffToEnd = end - pageCount;
-        start -= diffToEnd;
-        end -= diffToEnd;
-      }
-
-      start = start < 0 ? 0 : start;
-      end = end >= pageCount ? pageCount : end;
-
-      var first = false;
-      var last = false;
-
-      if (start > 0 && me.visible > 1) {
-        start = start + 1;
-        first = true;
-      }
-
-      if (end < pageCount && me.visible > 2) {
-        end = end - 1;
-        last = true;
-      }
-
-      return {
-        first: first,
-        start: start,
-        end: end,
-        last: last
-      };
-    };
-
-    me.getRowStart = function() {
-      var rowStart = page.number * page.rows;
-      if (rowStart < 0)
-        rowStart = 0;
-
-      return rowStart;
-    };
-
-    me.getRowEnd = function() {
-      var rowStart = me.getRowStart();
-      return Math.min(rowStart + me.rows, data.length);
-    };
-
-    me.getPaddingRows = function() {
-      var rowStart = me.getRowStart();
-      var rowEnd = me.getRowEnd();
-      return data.length > me.rows ? me.rows - (rowEnd - rowStart) : 0;
-    };
-  };
-
-  var Columns = function(data, columns, options) {
-    var me = this;
-
-    me.defaults = {
-      min: 5
-    };
-
-    me.number = 0;
-    me.visible = 0;
-    me.total = columns.length;
-    me.subset = [];
-    me.padding = 0;
-    me.min = options.columns.min !== null ? options.columns.min : me.defaults.min;
-    me.max = options.columns.max !== null ? options.columns.max : null;
-    me.widths = {};
-
-    var widthsLookAhead = Math.max(100, options.rows.min);
-    var paddingColChars = 10;
-
-    me.emptyNames = function() {
-      columns.forEach(function(column) {
-        if (columns.label !== null && columns.label !== "")
-          return false;
-      });
-
-      return true;
-    };
-
-    var parsePadding = function(value) {
-      return parseInt(value) >= 0 ? parseInt(value) : 0;
-    };
-
-    me.calculateWidths = function(measures) {
-      columns.forEach(function(column) {
-        var maxChars = Math.max(
-          column.label.toString().length,
-          column.type.toString().length
-        );
-
-        for (var idxRow = 0; idxRow < Math.min(widthsLookAhead, data.length); idxRow++) {
-          maxChars = Math.max(maxChars, data[idxRow][column.name.toString()].length);
-        }
-
-        me.widths[column.name] = {
-          // width in characters
-          chars: maxChars,
-          // width for the inner html columns
-          inner: maxChars * measures.character,
-          // width adding outer styles like padding
-          outer: maxChars * measures.character + measures.padding
-        };
-      });
-    };
-
-    me.getWidth = function() {
-      var widthOuter = 0;
-      for (var idxCol = 0; idxCol < me.subset.length; idxCol++) {
-        var columnName = me.subset[idxCol].name;
-        widthOuter = widthOuter + me.widths[columnName].outer;
-      }
-
-      widthOuter = widthOuter + me.padding * paddingColChars * measurer.measures.character;
-
-      if (me.hasMoreLeftColumns()) {
-        widthOuter = widthOuter + columnNavigationWidthPX + measurer.measures.padding;
-      }
-
-      if (me.hasMoreRightColumns()) {
-        widthOuter = widthOuter + columnNavigationWidthPX + measurer.measures.padding;
-      }
-
-      return widthOuter;
-    };
-
-    me.updateSlice = function() {
-      if (me.number + me.visible >= me.total)
-        me.number = me.total - me.visible;
-
-      if (me.number < 0) me.number = 0;
-
-      me.subset = columns.slice(me.number, Math.min(me.number + me.visible, me.total));
-
-      me.subset = me.subset.map(function(column) {
-        Object.keys(column).forEach(function(colKey) {
-          column[colKey] = column[colKey] === null ? "" : column[colKey].toString();
-        });
-
-        column.width = null;
-        return column;
-      });
-    };
-
-    me.setVisibleColumns = function(columnNumber, newVisibleColumns, paddingCount) {
-      me.number = columnNumber;
-      me.visible = newVisibleColumns;
-      me.padding = paddingCount;
-
-      me.updateSlice();
-    };
-
-    me.incColumnNumber = function(increment) {
-      me.number = me.number + increment;
-    };
-
-    me.setColumnNumber = function(newNumber) {
-      me.number = newNumber;
-    };
-
-    me.setPaddingCount = function(newPadding) {
-      me.padding = newPadding;
-    };
-
-    me.getPaddingCount = function() {
-      return me.padding;
-    };
-
-    me.hasMoreLeftColumns = function() {
-      return me.number > 0;
-    };
-
-    me.hasMoreRightColumns = function() {
-      return me.number + me.visible < me.total;
-    };
-
-    me.updateSlice(0);
-    return me;
-  };
-
-  var data = source.data;
-  var page = new Page(data, options);
-  var measurer = new Measurer(data, options);
-  var columns = new Columns(data, source.columns, options);
-
-  var table = null;
-  var tableDiv = null;
-  var header = null;
-  var footer = null;
-  var tbody = null;
-
-  // Caches pagedTable.clientWidth, specially for webkit
-  var cachedPagedTableClientWidth = null;
-
-  var onChangeCallbacks = [];
-
-  var clearSelection = function() {
-    if(document.selection && document.selection.empty) {
-      document.selection.empty();
-    } else if(window.getSelection) {
-      var sel = window.getSelection();
-      sel.removeAllRanges();
-    }
-  };
-
-  var columnNavigationWidthPX = 5;
-
-  var renderColumnNavigation = function(increment, backwards) {
-    var arrow = document.createElement("div");
-    arrow.setAttribute("style",
-      "border-top: " + columnNavigationWidthPX + "px solid transparent;" +
-      "border-bottom: " + columnNavigationWidthPX + "px solid transparent;" +
-      "border-" + (backwards ? "right" : "left") + ": " + columnNavigationWidthPX + "px solid;");
-
-    var header = document.createElement("th");
-    header.appendChild(arrow);
-    header.setAttribute("style",
-      "cursor: pointer;" +
-      "vertical-align: middle;" +
-      "min-width: " + columnNavigationWidthPX + "px;" +
-      "width: " + columnNavigationWidthPX + "px;");
-
-    header.onclick = function() {
-      columns.incColumnNumber(backwards ? -1 : increment);
-
-      me.animateColumns(backwards);
-      renderFooter();
-
-      clearSelection();
-      triggerOnChange();
-    };
-
-    return header;
-  };
-
-  var maxColumnWidth = function(width) {
-    var padding = 80;
-    var columnMax = Math.max(cachedPagedTableClientWidth - padding, 0);
-
-    return parseInt(width) > 0 ?
-      Math.min(columnMax, parseInt(width)) + "px" :
-      columnMax + "px";
-  };
-
-  var clearHeader = function() {
-    var thead = pagedTable.querySelectorAll("thead")[0];
-    thead.innerHTML = "";
-  };
-
-  var renderHeader = function(clear) {
-    cachedPagedTableClientWidth = pagedTable.clientWidth;
-
-    var fragment = document.createDocumentFragment();
-
-    header = document.createElement("tr");
-    fragment.appendChild(header);
-
-    if (columns.number > 0)
-      header.appendChild(renderColumnNavigation(-columns.visible, true));
-
-    columns.subset = columns.subset.map(function(columnData) {
-      var column = document.createElement("th");
-      column.setAttribute("align", columnData.align);
-      column.style.textAlign = columnData.align;
-
-      column.style.maxWidth = maxColumnWidth(null);
-      if (columnData.width) {
-        column.style.minWidth =
-          column.style.maxWidth = maxColumnWidth(columnData.width);
-      }
-
-      var columnName = document.createElement("div");
-      columnName.setAttribute("class", "pagedtable-header-name");
-      if (columnData.label === "") {
-        columnName.innerHTML = "&nbsp;";
-      }
-      else {
-        columnName.appendChild(document.createTextNode(columnData.label));
-      }
-      column.appendChild(columnName);
-
-      var columnType = document.createElement("div");
-      columnType.setAttribute("class", "pagedtable-header-type");
-      if (columnData.type === "") {
-        columnType.innerHTML = "&nbsp;";
-      }
-      else {
-        columnType.appendChild(document.createTextNode("<" + columnData.type + ">"));
-      }
-      column.appendChild(columnType);
-
-      header.appendChild(column);
-
-      columnData.element = column;
-
-      return columnData;
-    });
-
-    for (var idx = 0; idx < columns.getPaddingCount(); idx++) {
-      var paddingCol = document.createElement("th");
-      paddingCol.setAttribute("class", "pagedtable-padding-col");
-      header.appendChild(paddingCol);
-    }
-
-    if (columns.number + columns.visible < columns.total)
-      header.appendChild(renderColumnNavigation(columns.visible, false));
-
-    if (typeof(clear) == "undefined" || clear) clearHeader();
-    var thead = pagedTable.querySelectorAll("thead")[0];
-    thead.appendChild(fragment);
-  };
-
-  me.animateColumns = function(backwards) {
-    var thead = pagedTable.querySelectorAll("thead")[0];
-
-    var headerOld = thead.querySelectorAll("tr")[0];
-    var tbodyOld = table.querySelectorAll("tbody")[0];
-
-    me.fitColumns(backwards);
-
-    renderHeader(false);
-
-    header.style.opacity = "0";
-    header.style.transform = backwards ? "translateX(-30px)" : "translateX(30px)";
-    header.style.transition = "transform 200ms linear, opacity 200ms";
-    header.style.transitionDelay = "0";
-
-    renderBody(false);
-
-    if (headerOld) {
-      headerOld.style.position = "absolute";
-      headerOld.style.transform = "translateX(0px)";
-      headerOld.style.opacity = "1";
-      headerOld.style.transition = "transform 100ms linear, opacity 100ms";
-      headerOld.setAttribute("class", "pagedtable-remove-head");
-      if (headerOld.style.transitionEnd) {
-        headerOld.addEventListener("transitionend", function() {
-          var headerOldByClass = thead.querySelector(".pagedtable-remove-head");
-          if (headerOldByClass) thead.removeChild(headerOldByClass);
-        });
-      }
-      else {
-        thead.removeChild(headerOld);
-      }
-    }
-
-    if (tbodyOld) table.removeChild(tbodyOld);
-
-    tbody.style.opacity = "0";
-    tbody.style.transition = "transform 200ms linear, opacity 200ms";
-    tbody.style.transitionDelay = "0ms";
-
-    // force relayout
-    window.getComputedStyle(header).opacity;
-    window.getComputedStyle(tbody).opacity;
-
-    if (headerOld) {
-      headerOld.style.transform = backwards ? "translateX(20px)" : "translateX(-30px)";
-      headerOld.style.opacity = "0";
-    }
-
-    header.style.transform = "translateX(0px)";
-    header.style.opacity = "1";
-
-    tbody.style.opacity = "1";
-  }
-
-  me.onChange = function(callback) {
-    onChangeCallbacks.push(callback);
-  };
-
-  var triggerOnChange = function() {
-    onChangeCallbacks.forEach(function(onChange) {
-      onChange();
-    });
-  };
-
-  var clearBody = function() {
-    if (tbody) {
-      table.removeChild(tbody);
-      tbody = null;
-    }
-  };
-
-  var renderBody = function(clear) {
-    cachedPagedTableClientWidth = pagedTable.clientWidth
-
-    var fragment = document.createDocumentFragment();
-
-    var pageData = data.slice(page.getRowStart(), page.getRowEnd());
-
-    pageData.forEach(function(dataRow, idxRow) {
-      var htmlRow = document.createElement("tr");
-      htmlRow.setAttribute("class", (idxRow % 2 !==0) ? "even" : "odd");
-
-      if (columns.hasMoreLeftColumns())
-        htmlRow.appendChild(document.createElement("td"));
-
-      columns.subset.forEach(function(columnData) {
-        var cellName = columnData.name;
-        var dataCell = dataRow[cellName];
-        var htmlCell = document.createElement("td");
-
-        if (dataCell === "NA") htmlCell.setAttribute("class", "pagedtable-na-cell");
-        if (dataCell === "__NA__") dataCell = "NA";
-
-        var cellText = document.createTextNode(dataCell);
-        htmlCell.appendChild(cellText);
-        if (dataCell.length > 50) {
-          htmlCell.setAttribute("title", dataCell);
-        }
-        htmlCell.setAttribute("align", columnData.align);
-        htmlCell.style.textAlign = columnData.align;
-        htmlCell.style.maxWidth = maxColumnWidth(null);
-        if (columnData.width) {
-          htmlCell.style.minWidth = htmlCell.style.maxWidth = maxColumnWidth(columnData.width);
-        }
-        htmlRow.appendChild(htmlCell);
-      });
-
-      for (var idx = 0; idx < columns.getPaddingCount(); idx++) {
-        var paddingCol = document.createElement("td");
-        paddingCol.setAttribute("class", "pagedtable-padding-col");
-        htmlRow.appendChild(paddingCol);
-      }
-
-      if (columns.hasMoreRightColumns())
-        htmlRow.appendChild(document.createElement("td"));
-
-      fragment.appendChild(htmlRow);
-    });
-
-    for (var idxPadding = 0; idxPadding < page.getPaddingRows(); idxPadding++) {
-      var paddingRow = document.createElement("tr");
-
-      var paddingCellRow = document.createElement("td");
-      paddingCellRow.innerHTML = "&nbsp;";
-      paddingCellRow.setAttribute("colspan", "100%");
-      paddingRow.appendChild(paddingCellRow);
-
-      fragment.appendChild(paddingRow);
-    }
-
-    if (typeof(clear) == "undefined" || clear) clearBody();
-    tbody = document.createElement("tbody");
-    tbody.appendChild(fragment);
-
-    table.appendChild(tbody);
-  };
-
-  var getLabelInfo = function() {
-    var pageStart = page.getRowStart();
-    var pageEnd = page.getRowEnd();
-    var totalRows = data.length;
-
-    var totalRowsLabel = options.rows.total ? options.rows.total : totalRows;
-    var totalRowsLabelFormat = totalRowsLabel.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-
-    var infoText = (pageStart + 1) + "-" + pageEnd + " of " + totalRowsLabelFormat + " rows";
-    if (totalRows < page.rows) {
-      infoText = totalRowsLabel + " row" + (totalRows != 1 ? "s" : "");
-    }
-    if (columns.total > columns.visible) {
-      var totalColumnsLabel = options.columns.total ? options.columns.total : columns.total;
-
-      infoText = infoText + " | " + (columns.number + 1) + "-" +
-        (Math.min(columns.number + columns.visible, columns.total)) +
-        " of " + totalColumnsLabel + " columns";
-    }
-
-    return infoText;
-  };
-
-  var clearFooter = function() {
-    footer = pagedTable.querySelectorAll("div.pagedtable-footer")[0];
-    footer.innerHTML = "";
-
-    return footer;
-  };
-
-  var createPageLink = function(idxPage) {
-    var pageLink = document.createElement("a");
-    pageLinkClass = idxPage === page.number ? "pagedtable-index pagedtable-index-current" : "pagedtable-index";
-    pageLink.setAttribute("class", pageLinkClass);
-    pageLink.setAttribute("data-page-index", idxPage);
-    pageLink.onclick = function() {
-      page.setPageNumber(parseInt(this.getAttribute("data-page-index")));
-      renderBody();
-      renderFooter();
-
-      triggerOnChange();
-    };
-
-    pageLink.appendChild(document.createTextNode(idxPage + 1));
-
-    return pageLink;
-  }
-
-  var renderFooter = function() {
-    footer = clearFooter();
-
-    var next = document.createElement("a");
-    next.appendChild(document.createTextNode("Next"));
-    next.onclick = function() {
-      page.setPageNumber(page.number + 1);
-      renderBody();
-      renderFooter();
-
-      triggerOnChange();
-    };
-    if (data.length > page.rows) footer.appendChild(next);
-
-    var pageNumbers = document.createElement("div");
-    pageNumbers.setAttribute("class", "pagedtable-indexes");
-
-    var pageRange = page.getVisiblePageRange();
-
-    if (pageRange.first) {
-      var pageLink = createPageLink(0);
-      pageNumbers.appendChild(pageLink);
-
-      var pageSeparator = document.createElement("div");
-      pageSeparator.setAttribute("class", "pagedtable-index-separator-left");
-      pageSeparator.appendChild(document.createTextNode("..."))
-      pageNumbers.appendChild(pageSeparator);
-    }
-
-    for (var idxPage = pageRange.start; idxPage < pageRange.end; idxPage++) {
-      var pageLink = createPageLink(idxPage);
-
-      pageNumbers.appendChild(pageLink);
-    }
-
-    if (pageRange.last) {
-      var pageSeparator = document.createElement("div");
-      pageSeparator.setAttribute("class", "pagedtable-index-separator-right");
-      pageSeparator.appendChild(document.createTextNode("..."))
-      pageNumbers.appendChild(pageSeparator);
-
-      var pageLink = createPageLink(page.total - 1);
-      pageNumbers.appendChild(pageLink);
-    }
-
-    if (data.length > page.rows) footer.appendChild(pageNumbers);
-
-    var previous = document.createElement("a");
-    previous.appendChild(document.createTextNode("Previous"));
-    previous.onclick = function() {
-      page.setPageNumber(page.number - 1);
-      renderBody();
-      renderFooter();
-
-      triggerOnChange();
-    };
-    if (data.length > page.rows) footer.appendChild(previous);
-
-    var infoLabel = document.createElement("div");
-    infoLabel.setAttribute("class", "pagedtable-info");
-    infoLabel.setAttribute("title", getLabelInfo());
-    infoLabel.appendChild(document.createTextNode(getLabelInfo()));
-    footer.appendChild(infoLabel);
-
-    var enabledClass = "pagedtable-index-nav";
-    var disabledClass = "pagedtable-index-nav pagedtable-index-nav-disabled";
-    previous.setAttribute("class", page.number <= 0 ? disabledClass : enabledClass);
-    next.setAttribute("class", (page.number + 1) * page.rows >= data.length ? disabledClass : enabledClass);
-  };
-
-  var measuresCell = null;
-
-  var renderMeasures = function() {
-    var measuresTable = document.createElement("table");
-    measuresTable.style.visibility = "hidden";
-    measuresTable.style.position = "absolute";
-    measuresTable.style.whiteSpace = "nowrap";
-    measuresTable.style.height = "auto";
-    measuresTable.style.width = "auto";
-
-    var measuresRow = document.createElement("tr");
-    measuresTable.appendChild(measuresRow);
-
-    measuresCell = document.createElement("td");
-    var sampleString = "ABCDEFGHIJ0123456789";
-    measuresCell.appendChild(document.createTextNode(sampleString));
-
-    measuresRow.appendChild(measuresCell);
-
-    tableDiv.appendChild(measuresTable);
-  }
-
-  me.init = function() {
-    tableDiv = document.createElement("div");
-    pagedTable.appendChild(tableDiv);
-    var pagedTableClass = data.length > 0 ?
-      "pagedtable pagedtable-not-empty" :
-      "pagedtable pagedtable-empty";
-
-    if (columns.total == 0 || (columns.emptyNames() && data.length == 0)) {
-      pagedTableClass = pagedTableClass + " pagedtable-empty-columns";
-    }
-
-    tableDiv.setAttribute("class", pagedTableClass);
-
-    renderMeasures();
-    measurer.calculate(measuresCell);
-    columns.calculateWidths(measurer.measures);
-
-    table = document.createElement("table");
-    table.setAttribute("cellspacing", "0");
-    table.setAttribute("class", "table table-condensed");
-    tableDiv.appendChild(table);
-
-    table.appendChild(document.createElement("thead"));
-
-    var footerDiv = document.createElement("div");
-    footerDiv.setAttribute("class", "pagedtable-footer");
-    tableDiv.appendChild(footerDiv);
-
-    // if the host has not yet provided horizontal space, render hidden
-    if (tableDiv.clientWidth <= 0) {
-      tableDiv.style.opacity = "0";
-    }
-
-    me.render();
-
-    // retry seizing columns later if the host has not provided space
-    function retryFit() {
-      if (tableDiv.clientWidth <= 0) {
-        setTimeout(retryFit, 100);
-      } else {
-        me.render();
-        triggerOnChange();
-      }
-    }
-    if (tableDiv.clientWidth <= 0) {
-      retryFit();
-    }
-  };
-
-  var registerWidths = function() {
-    columns.subset = columns.subset.map(function(column) {
-      column.width = columns.widths[column.name].inner;
-      return column;
-    });
-  };
-
-  var parsePadding = function(value) {
-    return parseInt(value) >= 0 ? parseInt(value) : 0;
-  };
-
-  me.fixedHeight = function() {
-    return options.rows.max != null;
-  }
-
-  me.fitRows = function() {
-    if (me.fixedHeight())
-      return;
-
-    measurer.calculate(measuresCell);
-
-    var rows = options.rows.min !== null ? options.rows.min : 0;
-    var headerHeight = header !== null && header.offsetHeight > 0 ? header.offsetHeight : 0;
-    var footerHeight = footer !== null && footer.offsetHeight > 0 ? footer.offsetHeight : 0;
-
-    if (pagedTable.offsetHeight > 0) {
-      var availableHeight = pagedTable.offsetHeight - headerHeight - footerHeight;
-      rows = Math.floor((availableHeight) / measurer.measures.height);
-    }
-
-    rows = options.rows.min !== null ? Math.max(options.rows.min, rows) : rows;
-
-    page.setRows(rows);
-  }
-
-  // The goal of this function is to add as many columns as possible
-  // starting from left-to-right, when the right most limit is reached
-  // it tries to add columns from the left as well.
-  //
-  // When startBackwards is true columns are added from right-to-left
-  me.fitColumns = function(startBackwards) {
-    measurer.calculate(measuresCell);
-    columns.calculateWidths(measurer.measures);
-
-    if (tableDiv.clientWidth > 0) {
-      tableDiv.style.opacity = 1;
-    }
-
-    var visibleColumns = tableDiv.clientWidth <= 0 ? Math.max(columns.min, 1) : 1;
-    var columnNumber = columns.number;
-    var paddingCount = 0;
-
-    // track a list of added columns as we build the visible ones to allow us
-    // to remove columns when they don't fit anymore.
-    var columnHistory = [];
-
-    var lastTableHeight = 0;
-    var backwards = startBackwards;
-
-    var tableDivStyle = window.getComputedStyle(tableDiv, null);
-    var tableDivPadding = parsePadding(tableDivStyle.paddingLeft) +
-      parsePadding(tableDivStyle.paddingRight);
-
-    var addPaddingCol = false;
-    var currentWidth = 0;
-
-    while (true) {
-      columns.setVisibleColumns(columnNumber, visibleColumns, paddingCount);
-      currentWidth = columns.getWidth();
-
-      if (tableDiv.clientWidth - tableDivPadding < currentWidth) {
-        break;
-      }
-
-      columnHistory.push({
-        columnNumber: columnNumber,
-        visibleColumns: visibleColumns,
-        paddingCount: paddingCount
-      });
-
-      if (columnHistory.length > 100) {
-        console.error("More than 100 tries to fit columns, aborting");
-        break;
-      }
-
-      if (columns.max !== null &&
-        columns.visible + columns.getPaddingCount() >= columns.max) {
-        break;
-      }
-
-      // if we run out of right-columns
-      if (!backwards && columnNumber + columns.visible >= columns.total) {
-        // if we started adding right-columns, try adding left-columns
-        if (!startBackwards && columnNumber > 0) {
-          backwards = true;
-        }
-        else if (columns.min === null || visibleColumns + columns.getPaddingCount() >= columns.min) {
-          break;
-        }
-        else {
-          paddingCount = paddingCount + 1;
-        }
-      }
-
-      // if we run out of left-columns
-      if (backwards && columnNumber == 0) {
-        // if we started adding left-columns, try adding right-columns
-        if (startBackwards && columnNumber + columns.visible < columns.total) {
-          backwards = false;
-        }
-        else if (columns.min === null || visibleColumns + columns.getPaddingCount() >= columns.min) {
-          break;
-        }
-        else {
-          paddingCount = paddingCount + 1;
-        }
-      }
-
-      // when moving backwards try fitting left columns first
-      if (backwards && columnNumber > 0) {
-        columnNumber = columnNumber - 1;
-      }
-
-      if (columnNumber + visibleColumns < columns.total) {
-        visibleColumns = visibleColumns + 1;
-      }
-    }
-
-    var lastRenderableColumn = {
-        columnNumber: columnNumber,
-        visibleColumns: visibleColumns,
-        paddingCount: paddingCount
-    };
-
-    if (columnHistory.length > 0) {
-      lastRenderableColumn = columnHistory[columnHistory.length - 1];
-    }
-
-    columns.setVisibleColumns(
-      lastRenderableColumn.columnNumber,
-      lastRenderableColumn.visibleColumns,
-      lastRenderableColumn.paddingCount);
-
-    if (pagedTable.offsetWidth > 0) {
-      page.setVisiblePages(Math.max(Math.ceil(1.0 * (pagedTable.offsetWidth - 250) / 40), 2));
-    }
-
-    registerWidths();
-  };
-
-  me.fit = function(startBackwards) {
-    me.fitRows();
-    me.fitColumns(startBackwards);
-  }
-
-  me.render = function() {
-    me.fitColumns(false);
-
-    // render header/footer to measure height accurately
-    renderHeader();
-    renderFooter();
-
-    me.fitRows();
-    renderBody();
-
-    // re-render footer to match new rows
-    renderFooter();
-  }
-
-  var resizeLastWidth = -1;
-  var resizeLastHeight = -1;
-  var resizeNewWidth = -1;
-  var resizeNewHeight = -1;
-  var resizePending = false;
-
-  me.resize = function(newWidth, newHeight) {
-
-    function resizeDelayed() {
-      resizePending = false;
-
-      if (
-        (resizeNewWidth !== resizeLastWidth) ||
-        (!me.fixedHeight() && resizeNewHeight !== resizeLastHeight)
-      ) {
-        resizeLastWidth = resizeNewWidth;
-        resizeLastHeight = resizeNewHeight;
-
-        setTimeout(resizeDelayed, 200);
-        resizePending = true;
-      } else {
-        me.render();
-        triggerOnChange();
-
-        resizeLastWidth = -1;
-        resizeLastHeight = -1;
-      }
-    }
-
-    resizeNewWidth = newWidth;
-    resizeNewHeight = newHeight;
-
-    if (!resizePending) resizeDelayed();
-  };
-};
-
-var PagedTableDoc;
-(function (PagedTableDoc) {
-  var allPagedTables = [];
-
-  PagedTableDoc.initAll = function() {
-    allPagedTables = [];
-
-    var pagedTables = [].slice.call(document.querySelectorAll('[data-pagedtable="false"],[data-pagedtable=""]'));
-    pagedTables.forEach(function(pagedTable, idx) {
-      pagedTable.setAttribute("data-pagedtable", "true");
-      pagedTable.setAttribute("pagedtable-page", 0);
-      pagedTable.setAttribute("class", "pagedtable-wrapper");
-
-      var pagedTableInstance = new PagedTable(pagedTable);
-      pagedTableInstance.init();
-
-      allPagedTables.push(pagedTableInstance);
-    });
-  };
-
-  PagedTableDoc.resizeAll = function() {
-    allPagedTables.forEach(function(pagedTable) {
-      pagedTable.render();
-    });
-  };
-
-  window.addEventListener("resize", PagedTableDoc.resizeAll);
-
-  return PagedTableDoc;
-})(PagedTableDoc || (PagedTableDoc = {}));
-
-window.onload = function() {
-  PagedTableDoc.initAll();
-};
-</script>
-  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="style.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="styles.css" />
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Rectas y Planos</h1>
+  <h1 class="title">Sistemas de ecuaciones, eliminación gaussiana
+II</h1>
   <p class="author">
-José Rodríguez Villarreal
+Jose Rodriguez Villarreal
   </p>
 </div>
-<div id="recta-en-mathbbr2-mathbbr3" class="slide section level1">
-<h1>Recta en <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="math inline">\(\mathbb{R}^3\)</span></h1>
-<p>Las expresiones algebraicas que cumplen todos los puntos <span class="math inline">\(P=(x,y)\)</span> que pertenecen a una recta <span class="math inline">\(l\)</span>, se les llama <em>ecuaciones</em>
-<em>de</em> <em>la</em> <em>recta</em>. La ecuación de la recta no tiene
-una única expresión. Pues las ecuaciones están determinadas por los
-puntos elegidos y por el tipo de ecuación, sin embargo son
-equivalentes.</p>
-<p>En <span class="math inline">\(\mathbb{R}^2\)</span> la ecuación de
-la recta tiene diversas formas</p>
-<span class="math display">\[\begin{array}{cc}
-  Ax+By+C\,=\, 0, &amp; \quad\quad y=mx+b, &amp; \quad\quad
-\frac{x}{a}+\frac{y}{b}=1\\
-\end{array}\]</span>
-<h2 id="vectores-equipotentes">Vectores equipotentes</h2>
-<p>Dos vectores son equipotentes si tienen la misma dirección, sentido y
-magnitud, pero no necesariamente un mismo punto de partida.</p>
-<h2 id="ecuación-vectorial">Ecuación vectorial</h2>
-<p>Suponga que <span class="math inline">\(\vec{p}=\overrightarrow{OP}\)</span> es el vector
-del origen al punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\vec{d}\)</span> un vector adicional.</p>
-<p>Todos los puntos que pertenecen a una recta <span class="math inline">\(\vec{v}=(x,y)=\overrightarrow{OQ}\)</span> están
-dados por</p>
-<div class="def">
+<div class="slide section level1">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<h2 id="sistemas-de-ecuaciones">Sistemas de ecuaciones</h2>
+<p>En <span class="math inline">\(\mathbb{R}^2\)</span>, un sistema de
+ecuaciones lineales consiste en encontrar un <em>vector</em> <span class="math inline">\(\vec{x}=(x_1,x_2)\)</span>, tal que</p>
 <p><span class="math display">\[\begin{equation}
-  \vec{v}=\vec{p} + t \vec{d}
-\end{equation}\]</span></p>
-</div>
-<p>a dicha ecuación se le suele llamar la forma vectorial de la ecuación
-de la recta. Con <span class="math inline">\(\vec{p}\)</span> es un
-punto conocido que pasa por la recta y el vector <span class="math inline">\(\vec{d}\)</span> es un vector que tiene una
-<em>dirección</em> de la recta. Otra forma de escribir la forma
-vectorial</p>
-<p><span class="math display">\[\begin{equation}
-  \overrightarrow{OQ} = \overrightarrow{OP} + t \overrightarrow{PQ}
-\end{equation}\]</span></p>
-<p>si ahora se conocen dos puntos sobre la recta <span class="math inline">\(l\)</span>. En dicho caso una dirección de la
-recta está dada por <span class="math inline">\(\vec{d}=\overrightarrow{PQ}\)</span>.</p>
-<h2 id="ecuación-paramétrica">Ecuación paramétrica</h2>
-<p>Las ecuaciones paramétricas, expresan explicitamente la dependencia
-de los puntos de la recta con un parámetro.</p>
-<h2 id="ecuación-canónica-o-continuas">Ecuación canónica o
-continuas</h2>
-<p>La ecuación resultante de igualar el parámetro entre sus coordenadas
-Si <span class="math inline">\(\vec{v}=(x,y,z)\)</span> <span class="math display">\[
-\begin{pmatrix} x \\ y\\ z \end{pmatrix} = \vec{v} = \vec{p} + t\vec{d}
-\]</span></p>
-<p>Igualando los vectores, se obtiene la ecuación en su forma
-paramétrica.</p>
-<h3 id="ejemplos">Ejemplos</h3>
-<ol style="list-style-type: decimal">
-<li><p>Determinar la ecuación vectorial y la ecuación paramétrica de la
-recta que pasa por <span class="math inline">\(P=(1,2)\)</span> y <span class="math inline">\(Q=(3,-2)\)</span>.</p></li>
-<li><p>Determinar la ec. vectorial y ec. paramétrica de la recta con
-vector dirección <span class="math inline">\(\vec{d}=(-3,-4)\)</span> y
-que pasa por el punto <span class="math inline">\(\vec{p} =
-(2,2)\)</span>.</p></li>
-<li><p>Determinar el vértice <span class="math inline">\(D\)</span> del
-paralelogramo <span class="math inline">\(ABCD\)</span> tal que <span class="math inline">\(A=(2,3,1)\)</span>, <span class="math inline">\(B=(1,5,3)\)</span> y <span class="math inline">\(C=(3,4,0)\)</span>.</p></li>
-</ol>
-<h3 id="ejemplos-1">Ejemplos</h3>
-<p>Encontrar la recta en <span class="math inline">\(\mathbb{R}^3\)</span> que contiene los puntos
-<span class="math inline">\(\vec{p}=(3,-1,4)\)</span> y <span class="math inline">\(\vec{q}=(1,3,-1)\)</span> encontrar una ecuación
-de la recta en su forma vectorial</p>
-<p>En este caso el vector director o la dirección de la recta es igual a
-<span class="math inline">\(\vec{qp} = \vec{p} - \vec{q} =
-(2,-4,5)\)</span> entonces <span class="math display">\[
-\vec{r}(t) = \begin{pmatrix} 1 \\ 3\\ -1  \end{pmatrix} =
-\begin{pmatrix} 1 \\ 3\\-1 \end{pmatrix} + t  \begin{pmatrix} 2 \\ -4\\
-5 \end{pmatrix}
-\]</span></p>
-<p>La ecuación paramétrica está dada por <span class="math display">\[
-\begin{array}{cc}
-x(t)  &amp; = 1 + 2t \\
-y(t)  &amp; = 3-4t   \\
-z(t)  &amp; = -1 + 5t
+\begin{array}{rl}
+a_{11}x_1 + a_{12}x_2 =&amp; b_1 \\
+a_{21}x_1 + a_{22}x_2 =&amp; b_2
 \end{array}
-\]</span></p>
-<p>La ecuación canónica se obtiene despejando el parámetro <span class="math inline">\(t\)</span>, por tanto está dado por <span class="math display">\[
-\frac{x-1}{2} = \frac{y-3}{-4} = \frac{z+1}{5}
-\]</span></p>
-<h4 id="ejemplo">Ejemplo</h4>
-<ol style="list-style-type: decimal">
-<li><p>Encontrar una ecuación vectorial para la línea que pasa por <span class="math inline">\(P(-5,2,10)\)</span> y <span class="math inline">\(Q=(3,-4,-4)\)</span>.</p></li>
-<li><p>Encuentra la ecuación de la línea en su forma paramétrica y
-simétrica, si pasa por <span class="math inline">\((1,4,-2)\)</span> y
-<span class="math inline">\((-3,5,0)\)</span>.</p></li>
-<li><p>Encontrar las ecuaciones vectorial y canónica de las siguientes
-rectas. <span class="math display">\[
-x=1+t, \quad\quad y=3+t\quad\quad z= 5 + 4t\quad t\in \mathbb{R}
-\]</span></p></li>
-</ol>
-<h2 id="ecuación-del-plano-en-mathbbr3-o-mathbbrn">Ecuación del plano
-(en <span class="math inline">\(\mathbb{R}^3\)</span> o <span class="math inline">\(\mathbb{R}^n\)</span>)</h2>
-<p>Suponga que <span class="math inline">\(\Pi\)</span> es el conjunto
-de puntos <span class="math inline">\(Q=(x,y,z)\)</span> tales que, para
-un punto <span class="math inline">\(P=(x_0,y_0,z_0)\)</span> el
-segmento <span class="math inline">\(\overrightarrow{PQ}\)</span> es
-perpendicular a un vector <em>normal</em> <span class="math inline">\(\vec{n}\)</span>.</p>
-<div class="float">
-<img role="img" aria-label="Figura 2.1" src="data:image/png;base64,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" title="Plano" style="width:40.0%" alt="Figura 2.1" />
-<div class="figcaption">Figura 2.1</div>
+\end{equation}\]</span></p>
+<p>Ver <a href="https://www.geogebra.org/m/e7hzJEGf">Ejemplo</a></p>
 </div>
-<p>entonces <span class="math display">\[
-(\vec{Q} - \vec{P}) \boldsymbol{\cdot} \vec{n} = 0
+<div id="sistemas-de-ecuaciones-1" class="slide section level1">
+<h1>Sistemas de ecuaciones</h1>
+<h2 id="sistemas-de-ecuaciones-2x2">Sistemas de ecuaciones 2x2</h2>
+<p>En <span class="math inline">\(\mathbb{R}^2\)</span>, es decir, en el
+plano cartesiano un sistema de ecuaciones consiste en</p>
+</div>
+<div id="sistemas-de-ecuaciones-2" class="slide section level1">
+<h1>Sistemas de ecuaciones</h1>
+<p>Un sistema de ecuaciones lineales <span class="math inline">\(3\times
+3\)</span> es de la siguiente forma: <span class="math display">\[
+\begin{matrix}
+a_{11}x_1+a_{12}x_2 + a_{13}x_3 = &amp; b_1\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3  = &amp; b_2\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; b_3
+\end{matrix}
 \]</span></p>
-<p>o bien <span class="math inline">\(\vec{Q}\boldsymbol{\cdot} \vec{n}
-= \vec{P}\boldsymbol{\cdot} \vec{n}\)</span>. Si <span class="math inline">\(\vec{Q}\)</span> es un punto arbitrario sobre el
-plano <span class="math inline">\(\Pi\)</span>, <span class="math inline">\(\vec{n}=(A,B,C)\)</span> y <span class="math inline">\(\vec{P}=(x_0,y_0,z_0)\)</span> es un punto
-conocido sobre el plano, entonces tenemos que <span class="math display">\[
-A(x-x_0) + B(y-y_0) + C(z-z_0) = 0
-\]</span></p>
-<p>El vector que es perpendicular a todo vector <em>contenido</em> en el
-pñlano se le llama el <strong>vector</strong>
-<strong>normal</strong></p>
-<p>Si conocemos 3 puntos en el plano <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>
-y <span class="math inline">\(R\)</span> entonces, los vectores
-contenidos en el plano serán <span class="math inline">\(\vec{u}
-=\overrightarrow{QP}\)</span> y <span class="math inline">\(\vec{v}
-=\overrightarrow{QR}\)</span> entonces <span class="math display">\[
-\vec{n}= \vec{u} \times \vec{v}
-\]</span> es un vector normal al plano. (¿Por que basta con que sea
-perpendicular a 2 vectores no colineales?)</p>
-<h2 id="ecuación-general-del-plano">Ecuación general del plano</h2>
-<p>Si <span class="math inline">\(\vec{n}=(A,B,C)\)</span> es un vector
-normal al plano, <span class="math inline">\(Q=(x,y,z)\)</span> es un
-vector sobre el plano y <span class="math inline">\(\vec{P}=(x_0,y_0,z_0)\)</span> entonces</p>
+<p>donde <span class="math inline">\(a_{ij},b_i\in\mathbb{R},\
+i=1,2\)</span> y <span class="math inline">\(j=1,2\)</span> suelen ser
+constantes conocidas.</p>
+<p>Al sistema de ecuaciones lineales de la forma</p>
+<p><span class="math display">\[\begin{equation}
+\begin{matrix}
+a_{11}x_1+a_{12}x_2 + a_{13}x_3 = &amp; 0\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3  = &amp; 0\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; 0
+\end{matrix}
+\end{equation}\]</span></p>
+<p>Se dice ser un sistema <em>homogéneo</em>. En caso contrario, es
+<em>no</em> <em>homogéneo</em>.</p>
+<p>Una ecuación del tipo <span class="math inline">\(a_{11} x_1 + a_{12}
+x_2 + a_{13} x_3 =  b_1\)</span> se dice que es una ecuación lineal en
+las incógnitas <span class="math inline">\(x_1,\,x_2\,x_3\)</span>.</p>
+<p>Una solución de sistema de ecuaciones lineales es un vector <span class="math inline">\(\vec{x}=(s_1,s_2,s_3)\)</span> tal que la igualdad
+se cumple <em>de</em> <em>manera</em> <em>simultánea</em> cuando se hace
+la sustitución <span class="math inline">\(x_1=s_1,\,x_2=s_2,\,x_3=s_3\)</span>. El conjunto
+de todas las soluciones de la ecuación es su <strong>conjunto</strong>
+<strong>solución</strong> <span class="math inline">\(\mathcal{X}\)</span>.</p>
+</div>
+<div id="sistemas-de-ecuaciones-ii" class="slide section level1">
+<h1>Sistemas de ecuaciones II</h1>
+<p>Cada ecuación en el sistema de ecuaciones <span class="math inline">\(3\times 3\)</span> representa a un plano en <span class="math inline">\(\mathbb{R}^{3}\)</span></p>
 <p><span class="math display">\[
-  Ax + By+Cz = Ax_0+ By_0+Cz_0
+\begin{matrix}
+a_{11}x_1+a_{12}x_2 + a_{13}x_3 = &amp; b_1\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3  = &amp; b_2\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; b_3
+\end{matrix}
 \]</span></p>
-<p>si <span class="math inline">\(D=-(Ax_0+By_0+Cz_0)\)</span> entonces
-la ecuación general del plano es igual a <span class="math display">\[
-Ax + By+Cz +D = 0
+<p>El conjunto solución <span class="math inline">\(\mathcal{X}\)</span>
+consiste en todos los puntos que tienen en común los 3 planos
+<em>simultaneamente</em>.</p>
+<h2 id="ejemplo-1">Ejemplo 1</h2>
+<p>Resolver el sistema <span class="math display">\[
+\begin{matrix}
+x_1 &amp; - 2 x_2 &amp; + 3 x_3     &amp; = 9\\
+-x_1&amp; + 3x_2  &amp;             &amp; = -4\\
+2x_1&amp;-5x_2    &amp; + 5x_3      &amp; = 17
+\end{matrix}
 \]</span></p>
-<h3 id="ejemplo-1">Ejemplo</h3>
-<p>Calcular la ecuación del plano <span class="math inline">\(xy\)</span>. En este caso, el origen pasa por
-<span class="math inline">\(\vec{P}=(0,0,0)\)</span> y el vector normal
-<span class="math inline">\(\vec{n}=(0,0,1)\)</span>, si <span class="math inline">\(\vec{Q}=(x,y,z)\)</span> entonces la ecuación
-vectorial del plano esta dada por</p>
+</div>
+<div id="eliminación-gaussiana" class="slide section level1">
+<h1>Eliminación gaussiana</h1>
+<p>Analizamos a fondo el método de eliminación gaussiana. Considere el
+sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation}
-  \begin{array}{cc}
-  (\vec{Q}-\vec{P}) \boldsymbol{\cdot} \vec{n} = 0
-  \end{array}
+  \begin{matrix}
+     a_{11} x_1 &amp; +a_{12} x_2 + &amp; \cdots   &amp; +a_{1n}
+x_n  &amp;= b_1  \\
+     a_{21} x_1 &amp; +a_{22} x_2 + &amp; \cdots   &amp; +a_{2n}
+x_n  &amp;= b_2\\
+    \vdots    &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+     a_{n1} x_1 &amp; +a_{n2} x_2 + &amp; \cdots   &amp; +a_{nn}
+x_n  &amp; =b_n
+  \end{matrix}
 \end{equation}\]</span></p>
-<p>Sustituyendo <span class="math inline">\(\vec{Q}=\begin{pmatrix} x \\
-y \\ z \end{pmatrix}\)</span> y <span class="math inline">\(\vec{P}=\begin{pmatrix} 0 \\ 0 \\ 0
-\end{pmatrix}\)</span> y <span class="math inline">\(\vec{n} =
-\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\)</span> <span class="math display">\[
+<p>Suponga que <span class="math inline">\(a_{11}\ne 0\)</span> entonces
+podemos eliminar <span class="math inline">\(x_1\)</span> de las
+ecuaciones <span class="math inline">\(i=2,\ldots,n\)</span>, para la
+<span class="math inline">\(i-\)</span>ésima ecuación, multiplicando la
+primer ecuación por</p>
+<p><span class="math display">\[\begin{equation*}
+m_{i1}=\frac{a_{i1}}{a_{11}}, \mbox{para }i=2,\ldots,n
+\end{equation*}\]</span> y sumarla a la ecuación <span class="math inline">\(i\)</span>.</p>
+<p>Obtenemos el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 &amp; +a_{12} x_2      + &amp; \cdots   &amp; +a_{1n}
+x_n  &amp;= b_1  \\
+                &amp; a^{(2)}_{22} x_2 + &amp; \cdots   &amp;
++a^{(2)}_{2n} x_n  &amp;= b^{(2)}_2\\
+               &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+               &amp; +a^{(2)}_{n2} x_2 + &amp; \cdots   &amp;
++a^{(2)}_{nn} x_n  &amp; =b^{(2)}_n
+  \end{matrix}
+\end{equation}\]</span></p>
+<p>Con <span class="math inline">\(a^{(2)}_{ij} = a_{ij}-
+m_{i1}a_{1j}\)</span> y <span class="math inline">\(b^{(2)}_i=b_i-m_{i1}b_1\)</span> los nuevos
+coeficientes del bloque de ecuaciones inferior de tamaño <span class="math inline">\((n-1)\times(n-1)\)</span>. En este paso hemos
+reducido la primer columna del sistema (salvo el pivote) a <span class="math inline">\(0\)</span>.</p>
+<p>Ahora aplicamos el mismo proceso al sistema de ecuaciones <span class="math inline">\((n-1)x(n-1)\)</span>,</p>
+<p>Si <span class="math inline">\(a^{(2)}_{22}\ne 0\)</span> entonces
+podemos eliminar <span class="math inline">\(x_2\)</span> de las
+ecuaciones <span class="math inline">\(i=3,\ldots,n\)</span>
+multiplicando la segunda ecuación por</p>
+<p><span class="math display">\[\begin{equation*}
+m_{i2}=\frac{a^{(2)}_{i2}}{a^{(2)}_{22}}, \mbox{para }i=3,\ldots,n
+\end{equation*}\]</span></p>
+<p>y restarla a la ecuación <span class="math inline">\(i\)</span>.</p>
+<p>Obtenemos el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 &amp; +a_{12} x_2      + &amp; a_{13}x_3 +      &amp;
+\cdots   &amp; +a_{1n} x_n  &amp;= b_1  \\
+                &amp; a^{(2)}_{22} x_2 + &amp; a^{(2)}_{23}x_3 +&amp;
+\cdots   &amp; +a^{(2)}_{2n} x_n  &amp;= b^{(2)}_2\\
+                &amp;   0               +&amp; a^{(3)}_{33}x_3 +&amp;
+\cdots   &amp; +a^{(3)}_{2n} x_n  &amp;= b^{(3)}_3\\
+                &amp; \vdots             &amp;
+\vdots&amp;          &amp; \vdots   &amp;    \vdots          &amp;
+\vdots\\
+                &amp;    0              +&amp; a^{(3)}_{n3}x_3 +&amp;
+\cdots   &amp; +a^{(3)}_{nn} x_n  &amp; =b^{(3)}_n
+  \end{matrix}
+\end{equation}\]</span></p>
+<p>Procedemos, si es posible, de la misma forma.</p>
+<p>Después de <span class="math inline">\(k-1\)</span> pasos si <span class="math inline">\(a^{(k-1)}_{kk}\ne 0\)</span> entonces podemos
+eliminar <span class="math inline">\(x_k\)</span> de las ecuaciones
+<span class="math inline">\(i=k+1,\ldots,n\)</span> multiplicando la
+segunda ecuación por</p>
+<p><span class="math display">\[\begin{equation*}
+m_{ik}=\frac{a^{(k-1)}_{ik}}{a^{(k-1)}_{kk}}, \mbox{para }i=k+1,\ldots,n
+\end{equation*}\]</span> y sumarla a la ecuación <span class="math inline">\(i\)</span>.</p>
+<p>Procedemos así hasta obtener el sistema triangular</p>
+<p><span class="math display">\[\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 &amp; +a_{12} x_2      + &amp; a_{13}x_3 +      &amp;
+\cdots   &amp; +a_{1n} x_n        &amp;= b_1  \\
+                &amp; a^{(2)}_{22} x_2 + &amp; a^{(2)}_{23}x_3 +&amp;
+\cdots   &amp; +a^{(2)}_{2n} x_n  &amp;= b^{(2)}_2\\
+                &amp;   0               +&amp; a^{(3)}_{33}x_3 +&amp;
+\cdots   &amp; +a^{(3)}_{2n} x_n  &amp;= b^{(3)}_3\\
+                &amp; \vdots             &amp; \vdots           &amp;
+\vdots   &amp;    \vdots          &amp; \vdots\\
+                &amp;                    &amp;  0                &amp;
+\cdots   &amp; +a^{(n-1)}_{n-1n} x_n  &amp; =b^{(n-1)}_{n-1}\\
+                &amp;                    &amp; 0                 &amp;
+\cdots   &amp; +a^{(n-1)}_{nn} x_n  &amp; =b^{(n-1)}_n
+  \end{matrix}
+\end{equation}\]</span></p>
+<h2 id="sustitución-hacia-atrás">Sustitución hacia atrás</h2>
+<p>Para <span class="math inline">\(k =n\)</span> <span class="math display">\[
+x_n = \frac{b^{(n-1)}_n}{a^{(n-1)}_{nn}}
+\]</span></p>
+<p>Para <span class="math inline">\(k=n-1\)</span></p>
+<p><span class="math display">\[
+x_{n-1} = \frac{b^{(n-1)}_{n-1} -
+a^{(n-1)}_{n-1,n}x_n}{a^{(n-1)}_{n-1,n-1}}
+\]</span></p>
+<p>Y <span class="math display">\[
+x_{n-2} = \frac{b^{(n-2)}_{n-2}- a^{(n-2)}_{n-2,n-1}x_{n-1} -
+a^{(n-2)}_{n-2,n}x_n}{a^{(n-2)}_{n-2,n-2}}
+\]</span></p>
+<p>Y en general</p>
+<p><span class="math display">\[x_{k}=\frac{b^{(k)}_k-\sum_{i=k+1}^{n}a^{(k)}_{kj}x_j}{a^{(k)}_{kk}}\]</span></p>
+<h2 id="algoritmo-de-eliminación-gaussiana">Algoritmo de eliminación
+gaussiana</h2>
+<p>El algoritmo en pseudocódigo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>for k= 1, ..., n-1:{</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  If A(k,k)=0:  </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    proc: &quot;intercambiar renglones&quot;</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    # A(k,k,) es el pivote</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    for i=k+1,...,n:{</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>      m(i,k) = A(i,k)/A(k,k)            #Calculamos el multiplicador del rengĺón pivotal</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>      for j=k+1,...,n:{                 #Modifcamos a las columnas del renglón i</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>        A(i,j)  = A(i,j)-m(i,k)*A(k,j)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>        b(i)    = b(i)-m(i,k)b(k)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>      }</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    }</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>}</span></code></pre></div>
+<p>Si es posible obtener un sistema triangular entonces, realizamos la
+sustitución hacia atrás</p>
+<h3 id="algoritmo-de-sustitución-hacia-atrás">Algoritmo de sustitución
+hacia atrás</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>If a(n,n)=0:</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    no existe solución única</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>Else:</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  for k=n-1,n-1,...,1</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    suma = b(k)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    for j=k+1,...,n</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>      suma = suma - a(k,j)*x(j)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    x(k) = suma/a(k,k)</span></code></pre></div>
+<h2 id="ejemplo">Ejemplo</h2>
+<p>Aplicar el algoritmo al sistema</p>
+<p><span class="math display">\[\begin{equation*}
 \begin{array}{ccc}
-\vec{Q}\cdot \vec{n}= \vec{P} \cdot \vec{n} \\
-\begin{pmatrix} x\\ y \\ z \end{pmatrix} \boldsymbol{\cdot}
-\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} =0 \rightarrow z = 0
+  \begin{matrix}
+           4x  &amp; -9 y  &amp; +2z &amp; = 2  \\
+           2x &amp; -4 y  &amp; +4z  &amp; = 3  \\
+           -x &amp; +2 y  &amp; +2z  &amp; = 1´
+  \end{matrix}
+&amp;  
+\xrightarrow{E_1\leftrightarrow E_2}
+&amp;
+\begin{matrix}
+           -x &amp; +2 y  &amp; +2z  &amp; = 1  \\
+           2x &amp; -4 y  &amp; +4z  &amp; = 3  \\
+           4x  &amp; -9 y  &amp; +2z &amp; = 2  
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           -x &amp; +2 y  &amp; +2z  &amp; = 1  \\
+              &amp;       &amp; +8z  &amp; = 5  \\
+           4x &amp; -9 y  &amp; +2z  &amp; = 2  
+  \end{matrix}
+&amp;  
+\xrightarrow{4E_1 + E_3\rightarrow E_3}
+&amp;
+\begin{matrix}
+           -x &amp; +2 y  &amp; +2z  &amp; = 1  \\
+              &amp;       &amp; +8z  &amp; = 5  \\
+              &amp; -y    &amp; +10z &amp; =6  
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+
+\xrightarrow{E_2 \leftrightarrow E_3}
+&amp;  
+\begin{matrix}
+           -x &amp; +2 y  &amp; +2z  &amp; = 1  \\
+              &amp; -y    &amp; +10z &amp; = 6   \\
+              &amp;       &amp; +8z  &amp; = 5  
+\end{matrix}
+&amp;
+\begin{matrix}
+            x &amp;   &amp;      &amp; = 3/4        \\
+              &amp; y &amp;      &amp; = 10(5/8) -6=1/4   \\
+              &amp;   &amp;   z  &amp; = 5/8  
+\end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>La solución es única y es igual a <span class="math inline">\(x=\frac{3}{4}\)</span>, <span class="math inline">\(y=\frac{1}{4}\)</span>, <span class="math inline">\(z=\frac{5}{8}\)</span>, o bien <span class="math inline">\(\mathcal{X}=\begin{Bmatrix}\,(\frac{3}{4},\frac{1}{4},\frac{5}{8})\,\,\end{Bmatrix}\)</span>.</p>
+</div>
+<div id="uso-de-matrices" class="slide section level1">
+<h1>Uso de matrices</h1>
+<p>Como el procedimiento de eliminación gaussiana sólo involucra a los
+coeficientes, una forma de simplificar los cálculos es por medio de un
+arreglo que llamaremos <strong>Matriz</strong>. La matriz asociada al
+sistema de ecuaciones:</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        w   &amp; - x  &amp; - y  &amp; +2z &amp; = 1  \\
+     2 w    &amp; - 2x &amp; - y  &amp; +3z &amp; = 3   \\
+      -w    &amp; + x  &amp;  -y  &amp;     &amp;=-3
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p>Es igual a</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+        1   &amp; - 1 &amp; - 1  &amp; 2   \\
+        2   &amp; - 2 &amp; - 1  &amp; 3    \\
+      - 1   &amp;   1 &amp;  -1  &amp; 0    
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Existe otra matriz asociada, la <strong>matriz</strong>
+<strong>extendida</strong></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+  [\mathbf{A}| \mathbf{b}] &amp; = \begin{bmatrix}
+                                  1   &amp; - 1 &amp; - 1  &amp; 2
+&amp;\biggm| &amp; 1  \\
+                                  2   &amp; - 2 &amp; - 1  &amp; 3
+&amp;\biggm| &amp; 3   \\
+                                 -1   &amp;   1 &amp;  -1  &amp; 0
+&amp;\biggm| &amp;-3
+                                \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<h2 id="matrices">Matrices</h2>
+<p>A los arreglos rectangulares con las listas de coeficientes <span class="math inline">\(a_{ij}\)</span> de cada ecuación, se les llama
+<strong>matrices</strong>. Formalmente, una matriz es una asignación de
+coeficientes a cada “variable-ecuación” del sistema de ecuaciones.</p>
+<p><span class="math display">\[\begin{equation*}
+\mathbf{A} =  \begin{pmatrix}
+                a_{11}  &amp; a_{12}  &amp; \cdots   &amp; a_{1n} \\
+                a_{21}  &amp; a_{22}  &amp; \cdots   &amp; a_{2n} \\
+                \vdots   &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+                a_{m1}  &amp; a_{m2}  &amp; \cdots   &amp; a_{mn}
+              \end{pmatrix}
+\end{equation*}\]</span></p>
+<p>De manera alternativa una matriz se puede simbolizar de la forma
+<span class="math inline">\(\mathbf{A} = (a_{ij})_{i\leq m,j\leq
+n}\)</span>. Para referirnos al número en la ecuación <span class="math inline">\(i\)</span>, variable <span class="math inline">\(j\)</span> es <span class="math inline">\(a_{ij}\)</span>. En el contexto de matrices, nos
+referimos a los coeficientes de la ecuación <span class="math inline">\(i\)</span> como <em>fila</em> <span class="math inline">\(i\)</span> y los coeficientes de la variable <span class="math inline">\(x_j\)</span> como columna <span class="math inline">\(j\)</span>.</p>
+<h2 id="forma-escalonada.">Forma escalonada.</h2>
+<h3 id="definicion">Definicion</h3>
+<p>Una matriz se dice que tiene la forma escalonada si las siguientes
+condiciones se cumplen</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Todas las filas con ceros estan abajo de las filas no
+nulas.</p></li>
+<li><p>En cada renglón no nulo, la primer entrada no nula está a la
+izquierda de la primer entrada no nula del siguiente renglón.</p></li>
+</ol>
+<h2 id="ejemplo-2">Ejemplo</h2>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+a) \begin{bmatrix}
+      1   &amp;  2  &amp;   3     \\
+      0   &amp;   1 &amp;   0  
+\end{bmatrix}
+&amp;
+b) \begin{bmatrix}
+      1   &amp;  2  &amp;   3     \\
+      0   &amp;   0 &amp;   4     \\
+      0   &amp;   1 &amp;   -2     
+\end{bmatrix}
+&amp;
+c) \begin{bmatrix}
+      2   &amp;   0 &amp;  -1  &amp;  5  \\
+      0   &amp;   0 &amp;   3  &amp;  2  \\
+      0   &amp;   0 &amp;   0  &amp;  0  
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Las matrices <span class="math inline">\(a)\)</span> y <span class="math inline">\(c)\)</span> tienen la forma escalonada, la matriz
+<span class="math inline">\(b)\)</span> no están en su forma
+escalonada.</p>
+<h2 id="ejemplo-3">Ejemplo</h2>
+<p>Considere el sistema de ecuaciones</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+           x  &amp; +2 y  &amp; +3z &amp; = 1  \\
+           3x &amp; +5 y  &amp; -2z &amp; = 2   \\
+           4x &amp; +7 y  &amp; +z  &amp; = 3
+  \end{matrix}
+\end{equation*}\]</span> Aplicar eliminación gaussiana para obtener un
+sistema triangular o escalonado</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+  E_2 \rightarrow -3E_1 + E_2 &amp; &amp; \\
+  x + 2y +3z  &amp; = &amp;  1 \\
+  0x  -y -11z &amp; = &amp; -1 \\
+  4x +7y +z  &amp; = &amp; 3
 \end{array}
 \]</span></p>
-<h3 id="ejemplo-2">Ejemplo</h3>
-<p>Calcular la ecuación del plano <span class="math inline">\(xz\)</span>, en este caso <span class="math inline">\(\vec{P} = \begin{pmatrix} 0 \\ 0 \\ 0
-\end{pmatrix}\)</span> y <span class="math inline">\(\vec{n}=\begin{pmatrix} 0 \\ 1
-\\0  \end{pmatrix}\)</span>, por tanto, la ecuación <span class="math display">\[
+<p><span class="math display">\[
 \begin{array}{ccc}
-\vec{Q}\cdot \vec{n}= \vec{P} \cdot \vec{n} \\
-\begin{pmatrix} x\\ y \\ z \end{pmatrix} \boldsymbol{\cdot}
-\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} =0 \rightarrow y = 0
+  E_3 \rightarrow -4E_1 + E_3 &amp; &amp; \\
+  x + 2y +3z  &amp; = &amp;  1 \\
+  0x  -y -11z &amp; = &amp; -1 \\
+  0x -7y -11z &amp; = &amp; -1
 \end{array}
 \]</span></p>
-<p>Si consideramos que existen 3 puntos sobre el plano y se busca
-calcular la ecuación del plano, <span class="math inline">\(\vec{Q},\vec{P}\)</span> y <span class="math inline">\(\vec{R}\)</span>, en este caso <span class="math inline">\(\vec{u}=\overrightarrow{QP}\)</span> y <span class="math inline">\(\vec{v} = \overrightarrow{QR}\)</span> entonces un
-vector normal se puede calcular como <span class="math inline">\(\vec{n}
-= \vec{u} \times \vec{v}\)</span>.</p>
-<h4 id="ejemplo.">Ejemplo.</h4>
-<p>Encontrar el plano que pasa por <span class="math inline">\(\vec{P}=\begin{pmatrix} 2 \\ 1 \\ 3
-\end{pmatrix}\)</span>, <span class="math inline">\(\vec{Q}=\begin{pmatrix} 1 \\ 3 \\ 2
-\end{pmatrix}\)</span> y <span class="math inline">\(\vec{R} =
-\begin{pmatrix} -1 \\ 2 \\ 4 \end{pmatrix}\)</span>.</p>
-<p>En este caso <span class="math inline">\(\overrightarrow{PQ} =
-\vec{Q}-\vec{P} = \begin{pmatrix} -1 \\ 2 \\ -1 \end{pmatrix}\)</span>
-<span class="math inline">\(\overrightarrow{PR} = \vec{R}-\vec{P} =
-\begin{pmatrix} -3 \\ 1 \\ 1 \end{pmatrix}\)</span>. El vector normal
-del plano se calcula como</p>
+<p>Ahora sumamos <span class="math inline">\(-2E_1\)</span> a la segunda
+ecuación</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+  E_1 \rightarrow -2E_2 + E_1 &amp; &amp; \\
+  x + 0y -19z  &amp; = &amp;  -1 \\
+  0x + y +11z  &amp; = &amp;  1 \\
+  0x -7y +11z &amp; = &amp; -1
+\end{array}
+\]</span></p>
+<p>Ahora sumamos <span class="math inline">\(7E_2+E_3 \rightarrow
+E_3\)</span> a la segunda ecuación</p>
 <p><span class="math display">\[\begin{equation}
-\vec{n} = \begin{vmatrix}
-            \hat{i} &amp; \hat{j} &amp; \hat{k} \\
-            -1      &amp;     2   &amp; -1      \\
-            -3      &amp;    1    &amp; 1
-          \end{vmatrix} = \hat{i}(2+1) - \hat{j}(-1-3) + \hat{k}(-1+6) =
-\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}
+\begin{array}{ccc}
+  E_1 \rightarrow -2E_2 + E_1 &amp; &amp; \\
+  x + 0y  -19z  &amp; = &amp;  -1 \\
+  0x + y  +11z  &amp; = &amp;  1 \\
+  0x + 0y +88z  &amp; = &amp; -6
+\end{array}
 \end{equation}\]</span></p>
-<p>Si <span class="math inline">\(\vec{X}=\begin{pmatrix} x \\ y \\ z
-\end{pmatrix}\)</span> entonces <span class="math inline">\(\vec{X}
-\cdot \vec{n} = \vec{p}\cdot \vec{n}\)</span> entonces la ecuación del
-plano está dada por <span class="math inline">\(3x+4y+5z=25\)</span>.</p>
-<h4 id="ejemplo-3">Ejemplo</h4>
-<p>Encontrar una ecuación del plano que pasa por <span class="math inline">\(P_1\)</span> y paralelo a <span class="math inline">\(\Pi_1\)</span>.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Si <span class="math inline">\(\Pi_1\)</span> tiene como ecuación
-<span class="math inline">\(3x+2y-z+4=0\)</span>y <span class="math inline">\(P_1=(1,-2,-1)\)</span>.</p></li>
-<li><p>Si <span class="math inline">\(\Pi_2\)</span> tiene como ecuación
-<span class="math inline">\(x+2y+1 = 0\)</span> y <span class="math inline">\(P_1=(3, 0, 2)\)</span>.</p></li>
-</ol>
-<p><strong>Solución</strong></p>
-<ol style="list-style-type: lower-alpha">
-<li>El plano que se busca, tiene como vector normal al mismo vector
-normal del plano <span class="math inline">\(3x+2y-z+4=0\)</span> es
-decir <span class="math inline">\(\vec{n}=(3,2,-1)\)</span>. Aplicando
-la ecuación del plano</li>
-</ol>
-<p><span class="math display">\[\begin{equation}
-  \begin{pmatrix} x \\ y \\ z \end{pmatrix} \boldsymbol{\cdot}
-\begin{pmatrix} 3 \\ 2 \\ -1\end{pmatrix} = \begin{pmatrix} 1 \\ -2 \\
--1\end{pmatrix} \boldsymbol{\cdot} \begin{pmatrix} 3 \\ 2 \\
--1\end{pmatrix}
-\end{equation}\]</span></p>
-<p>Entonces <span class="math inline">\(3x+2y-z=0\)</span>.</p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>En este caso <span class="math inline">\(\vec{n}=(1,2,1)\)</span> y
-pasa por <span class="math inline">\(P_1=(3,0,2)\)</span> aplicando la
-forma vectorial del plano, tenemos</li>
-</ol>
-<p><span class="math display">\[\begin{equation}
-  \begin{pmatrix} x \\ y \\ z \end{pmatrix} \boldsymbol{\cdot}
-\begin{pmatrix} 1 \\ 2 \\ 1\end{pmatrix} = \begin{pmatrix} 3 \\ 0 \\
-2\end{pmatrix} \boldsymbol{\cdot} \begin{pmatrix} 1 \\ 2 \\
-1\end{pmatrix}
-\end{equation}\]</span></p>
-<p>La ecuación está dada por <span class="math inline">\(x+2y+z=
-5\)</span></p>
-<h4 id="ejemplo-4">Ejemplo</h4>
-Encontrar la ecuación del plano <span class="math inline">\(\Pi\)</span>
-que contiene <span class="math inline">\(l_1\)</span> y <span class="math inline">\(l_2\)</span> dada por [
-<span class="math display">\[\begin{array}{cc}
-L_1: &amp; \frac{x-1}{3} = \frac{y+2}{2} = \frac{z-2}{2}
-\end{array}\]</span>
-<span class="math display">\[\begin{array}{cc}
-L_2: &amp; \frac{x-1}{1} = \frac{y+2}{1} = \frac{z-2}{0}
-\end{array}\]</span>
-<h4 id="ejemplo-5">Ejemplo</h4>
-<p>Mostrar que el plano <span class="math inline">\(2x-3y + z -2 =
-0\)</span> es paralelo a la recta <span class="math inline">\(L:
-\frac{x-2}{1}=\frac{y+2}{1} = \frac{z+1}{1}\)</span>.</p>
-<p>Mostrar que el plano, contiene a la recta <span class="math display">\[
-\vec{r}(t) = \begin{pmatrix} 1 \\ -1 \\ 2\end{pmatrix} + t
-\begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}
+<p>Entonces una forma escalonada <em>equivalente</em> al sistema inicial
+es</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+        1   &amp;   0 &amp; - 19  &amp;| &amp; -1   \\
+        0   &amp;   1 &amp;  11   &amp;| &amp;1    \\
+        0   &amp;   0 &amp;  88   &amp;| &amp;-6    
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<h2 id="ejemplo-4">Ejemplo</h2>
+<p>Resolver el sistema <em>homogéneo</em> usando la matriz aumentada del
+sistema</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{matrix}
+-x_1 &amp; + 3 x_2  &amp; + 3 x_3 &amp;  + 2 x_4   &amp; = 0\\
+2x_1 &amp;          &amp; + 6 x_3 &amp;  + x_4     &amp; = 0\\
+-2x_1&amp; +4x_2    &amp; + 2 x_3 &amp;  + 4 x_4   &amp; = 0
+\end{matrix}
+\end{equation*}\]</span></p>
+<p>La matriz aumentada del sistema es igual a</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+      - 1   &amp; 3   &amp;   3  &amp; 2  &amp; \bigm| &amp; 0   \\
+        2   &amp; 0   &amp;   6  &amp; 1  &amp; \bigm| &amp; 0    \\
+      - 2   &amp; 4   &amp;   2  &amp; 4  &amp; \bigm| &amp; 0  
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Aplicando la operacion elemental <span class="math inline">\(2E_1+E_2\rightarrow E_2\)</span> y <span class="math inline">\(-2E_1+E_3 \rightarrow E_3\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{bmatrix}
+           -1  &amp;  3  &amp; 3  &amp; 2  &amp; \bigm| &amp; 0  \\
+            0  &amp;  6  &amp; 12 &amp; 5  &amp; \bigm| &amp; 0  \\
+            0  &amp;  -2 &amp; -4 &amp; 0  &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp;  
+\xrightarrow{2/6E_2 + E_3\rightarrow E_3}
+&amp;
+\begin{bmatrix}
+           -1  &amp;  3  &amp; 3  &amp; 2           &amp; \bigm| &amp;
+0  \\
+            0  &amp;  6  &amp; 12 &amp; 5           &amp; \bigm| &amp;
+0  \\
+            0  &amp;  0  &amp; 0  &amp; \frac{5}{3} &amp; \bigm| &amp; 0
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1 \rightarrow E_1]{1/6E_2 \rightarrow E_2}
+&amp;
+\begin{bmatrix}
+            1  &amp;  -3 &amp; -3 &amp; -2          &amp; \bigm| &amp;
+0  \\
+            0  &amp;  1  &amp;  2 &amp; 5/6         &amp; \bigm| &amp;
+0  \\
+            0  &amp;  0  &amp;  0 &amp; \frac{5}{3} &amp; \bigm| &amp; 0
+\end{bmatrix}
+
+&amp;
+\rightarrow \begin{bmatrix}
+            1  &amp; -3  &amp; -3 &amp; -2  &amp; \bigm| &amp; 0  \\
+            0  &amp;  1  &amp; 2  &amp; 5/6 &amp; \bigm| &amp; 0  \\
+            0  &amp;  0  &amp; 0  &amp; 1   &amp; \bigm| &amp; 0
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  x_4                         &amp; = &amp; 0 \\
+  x_2 + 2x_3 + \frac{5}{6}(0) &amp; = &amp; 0 \\
+  x_1 - 3x_2 - 3x_3 -2(0)     &amp; = &amp; 0
+\end{array}
+\end{equation*}\]</span></p>
+<p>Entonces <span class="math inline">\(x_4= 0\)</span>, <span class="math inline">\(x_2 + 2x_3 = 0\)</span> entonces <span class="math inline">\(x_2 = -2x_3\)</span>, <span class="math inline">\(x_1 = 3x_2 + 3x_3= 3(-2x_3) + 3 x_3 = -
+3x_3\)</span>. Por tanto, si el vector</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3\\ x_4
+\end{pmatrix}  =
+\begin{pmatrix}
+-3 x_3 \\ -2 x_3 \\ x_3\\ 0
+\end{pmatrix}   = x_3 \cdot
+\begin{pmatrix}
+-3 \\ -2  \\ 1 \\ 0
+\end{pmatrix}
+\end{equation*}\]</span></p>
+<p>Por tanto el conjunto solución <span class="math display">\[
+\mathcal{X}= \begin{Bmatrix}
+\begin{pmatrix}
+x_1 \\ x_2  \\ x_3 \\ x_4
+\end{pmatrix} \in \mathbb{R}^{4} \,:\,\, \begin{pmatrix}
+x_1 \\ x_2  \\ x_3 \\ x_4
+\end{pmatrix} = t \cdot \begin{pmatrix}
+-3 \\ -2  \\ 1 \\ 0
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
 \]</span></p>
-<h3 id="representación-paramétrica-del-plano">Representación paramétrica
-del plano</h3>
-<p>Considere la ecuación del plano <span class="math inline">\(Ax+By+Cz=D\)</span> entonces podemos expresar a
-una de las coordenadas de los puntos en el plano en función de las otras
-coordenadas.</p>
-<p>Por ejemplo, en la ecuación del plano <span class="math inline">\(\Pi\)</span> del primer ejemplo <span class="math display">\[
-   3x+4y+5z=25, \quad\quad\Rightarrow z=5-\frac{3}{5}x-\frac{4}{5}y
+<h2 id="ejemplo-5">Ejemplo</h2>
+<p>Considere el sistema de ecuaciones</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+           -x  &amp; +3 y  &amp; -2z &amp; = 4  \\
+           -x  &amp; +4 y  &amp; -3z &amp; = 5   \\
+           -x  &amp; +5 y  &amp; -4z  &amp; = 6
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p>La matriz extendida del sistema es</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+      - 1   &amp; 3   &amp; -2  &amp; \bigm| &amp; 4   \\
+      - 1   &amp; 4   &amp; -3  &amp; \bigm| &amp; 5    \\
+      - 1   &amp; 5   &amp; -4  &amp; \bigm| &amp; 6  
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Aplicamos eliminación gaussiana a la matriz extendida</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1 + E_2 \rightarrow E_1]{ -E_1 + E_3 \rightarrow E_3}
+&amp;
+\begin{bmatrix}
+            -1 &amp;  3  &amp; -2  &amp; \bigm| &amp; 4  \\
+            0  &amp;  1  &amp; -1  &amp; \bigm| &amp; 1  \\
+            0  &amp;  2  &amp; -2  &amp; \bigm| &amp; 2
+\end{bmatrix}
+
+&amp;
+\rightarrow \begin{bmatrix}
+            -1  &amp;  3  &amp; -2  &amp;  \bigm| &amp; 4  \\
+            0   &amp;  1  &amp; -1  &amp;   \bigm| &amp; 1  \\
+            0   &amp;  0  &amp; 0   &amp;   \bigm| &amp; 0
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>El último renglón se ha anulado</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+-x_1 + 3x_2 -2x_3 &amp; = &amp; 4 \\
+      x_2 - 3x_3   &amp; = &amp; 1
+\end{array}
+\end{equation*}\]</span> Entonces <span class="math inline">\(x_2 = 1 +
+3x_3\)</span>, <span class="math inline">\(x_1  = -4
++3x_2-2x_3=-4+3(1+3x_3)-2x_3=-1+7x_3\)</span></p>
+<p><span class="math display">\[
+\mathcal{X}= \begin{Bmatrix}
+\begin{pmatrix}
+x_1 \\ x_2  \\ x_3 \\  
+\end{pmatrix} \in \mathbb{R}^{3} \,:\,\, \begin{pmatrix}
+x_1 \\ x_2  \\ x_3
+\end{pmatrix} = \begin{pmatrix}
+-1 \\ 1  \\ 0  
+\end{pmatrix} + x_3 \cdot \begin{pmatrix}
+7 \\ 3  \\ 1  
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
 \]</span></p>
-<p>Es decir <span class="math display">\[
-\left\{ \begin{pmatrix} x \\ y \\z \end{pmatrix} \in \mathbb{R}^3\, :\,
-3x + 4y + 5z = 25\right\} =  \left\{ \begin{pmatrix} x \\ y \\z
-\end{pmatrix} \in \mathbb{R}^3\, :\, z = 5 -\frac{3}{5}x-\frac{4}{5}y
-\right\}
-\]</span></p>
-<p>Es decir, todo punto en el plano <span class="math inline">\(\Pi\)</span>, <span class="math inline">\(Q=\begin{pmatrix} x \\ y \\ z \end{pmatrix}\in
-\Pi\)</span> tiene que cumplir con<br />
-<span class="math display">\[Q=\begin{pmatrix} x \\ y \\
-5-\frac{3}{5}x-\frac{4}{5}y \end{pmatrix}=
-     \begin{pmatrix} 0 \\ 0 \\ 5 \end{pmatrix} + \begin{pmatrix} 1 \\ 0
-\\ -\frac{3}{5} \end{pmatrix} x + \begin{pmatrix} 0 \\ 1 \\ -\frac{4}{5}
-\end{pmatrix} y  
-\]</span></p>
+<p>Para el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+     -2 x_1 &amp; -4 x_2 &amp; +2 x_3 &amp;-6x_4     &amp; = 0  \\
+      3 x_1 &amp;  6 x_2  &amp; -2 x_3&amp; +13 x_4  &amp;= 6\\
+     2 x_1 &amp;  + 4x_2  &amp;      &amp;  +14 x_4  &amp;=12\\
+     4 x_1 &amp; + 8x_2  &amp;-7x_3 &amp;            &amp;= -10
+  \end{matrix}
+\end{equation*}\]</span></p>
+<h2 id="ejemplo-6">Ejemplo</h2>
+<p>Obtener la matriz extendida del sistema, identificar el sistema
+triangular o escalonado.</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+      3 x_1 &amp; +2 x_2 &amp; +3 x_3 &amp;-2x_4     &amp; = 1  \\
+        x_1 &amp; +  x_2 &amp; +x_3   &amp;          &amp; = 3   \\
+        x_1 &amp; + 2x_2 &amp; +x_3   &amp; -x_4     &amp; = 2
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p>La matriz extendida asociada al sistema es</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+      3   &amp; 2   &amp; 3 &amp; -2  &amp; \bigm| &amp; 1   \\
+      1   &amp; 1   &amp; 1 &amp;  0  &amp; \bigm| &amp; 3    \\
+      1   &amp; 2   &amp; 1 &amp; -1  &amp; \bigm| &amp; 2  
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Aplicando operaciones elementales, primero intercambiamos la ecuación
+3 con la ecuación 1</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1+E_2 \rightarrow E_2]{E_1  \rightarrow E_3}
+&amp;
+\begin{bmatrix}
+            1  &amp;  2  &amp;  1  &amp; -1  &amp; \bigm| &amp; 2  \\
+            0  &amp;  -1 &amp;  0  &amp; 1   &amp; \bigm| &amp; 3  \\
+            3  &amp;  2  &amp;  3  &amp;-2   &amp; \bigm| &amp; 1
+\end{bmatrix}
+
+&amp;
+\xrightarrow{-3E_1 + E_3  \rightarrow E_3} \begin{bmatrix}
+            1  &amp;  2  &amp; 1   &amp;  -1  &amp;   \bigm| &amp; 2  \\
+            0  &amp; -1  &amp; 0   &amp;   1  &amp;   \bigm| &amp; 1  \\
+            0  &amp; -4  &amp; 0   &amp;   1  &amp;   \bigm| &amp; -5
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-4E_2+E_3 \rightarrow E_3]{}
+&amp;
+\begin{bmatrix}
+           1   &amp;  2  &amp; 1   &amp;  -1  &amp;   \bigm| &amp; 2  \\
+            0  &amp; -1  &amp; 0   &amp;   1  &amp;   \bigm| &amp; 1  \\
+            0  &amp;  0  &amp; 0   &amp;  -3  &amp;   \bigm| &amp; -9
+\end{bmatrix}
+&amp;
+\xrightarrow{-E_2 -&gt;E_2, -\frac{1}{3}E_3 -&gt; E_3} \begin{bmatrix}
+            1  &amp;  2  &amp; 1   &amp;  -1  &amp;    \bigm| &amp;
+2  \\
+            0  &amp;  1  &amp; 0   &amp;   -1  &amp;   \bigm| &amp;
+-1  \\
+            0  &amp;  0  &amp; 0   &amp;   1  &amp;    \bigm| &amp; 3
+\end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Eliminación gaussiana concluye aquí, la matriz resultante no es
+triangular, pero tiene una forma escalonada.</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+U = &amp;  \begin{bmatrix}
+          1   &amp; 2   &amp; 1 &amp; -1  &amp; \bigm| &amp; 2   \\
+          0   &amp; 1   &amp; 0 &amp; -1  &amp; \bigm| &amp; -1    \\
+          0   &amp; 0   &amp; 0 &amp;  1  &amp; \bigm| &amp; 3  
+      \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Esta matriz es la matriz extendida del sistema <span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+&amp;  \begin{matrix}
+          1x_1&amp; +2x_2  &amp; +1x_3 &amp; -1x_4  &amp;  = &amp;
+2   \\
+              &amp; x_2    &amp;       &amp; -1x_4  &amp;  = &amp;
+-1    \\
+              &amp;        &amp;       &amp;  x_4   &amp;  = &amp; 3  
+      \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Aplicando sustitución hacia atrás <span class="math inline">\(x_4 =
+3\)</span>, <span class="math inline">\(x_2=2\)</span>, <span class="math inline">\(x_1 + x_3 = 1\)</span> o <span class="math inline">\(x_1=1-x_3\)</span>. Por tanto, para que un vector
+<span class="math inline">\(\vec{v}=\begin{pmatrix}  x_1 \\ x_2 \\ x_3\\
+x_4 \end{pmatrix}\)</span> sea solución al sistema, se tiene que
+cumplir</p>
+<p><span class="math display">\[
+\mathcal{X}= \begin{Bmatrix}
+\begin{pmatrix}
+x_1 \\ x_2  \\ x_3 \\  x_4
+\end{pmatrix} \in \mathbb{R}^{4} \,:\,\, \begin{pmatrix}
+x_1 \\ x_2  \\ x_3 \\ x_4
+\end{pmatrix} = \begin{pmatrix}
+  1 \\ 2  \\ 0  \\ 3
+\end{pmatrix} + t \cdot \begin{pmatrix}
+-1\\ 0  \\ 1 \\ 0
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
+\]</span> Es decir, las soluciones están sobre una recta.</p>
+</div>
+<div id="ejercicios" class="slide section level1">
+<h1>Ejercicios</h1>
+<p>Obtener la expresión matricial de los sistemas de ecuaciones lineales
+en los ejemplos de la clase.</p>
+<p>Para el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+      x_1   &amp; -2 x_2  &amp; +2 x_3  &amp; = 0  \\
+      2 x_1 &amp;  - x_2  &amp; +5 x_3  &amp; = 0 \\
+      x_1   &amp;  + x_2  &amp; +4 x_3  &amp; = 0
+  \end{matrix}
+\end{equation*}\]</span> La matriz del sistema y la matriz extendida
+asociada <span class="math inline">\([\mathbf{A}|\mathbf{b}]\)</span> al
+sistema es <span class="math inline">\(\mathbf{A}= ?\)</span> y <span class="math inline">\([\mathbf{A}|b]\)</span> <span class="math display">\[\begin{equation*}
+  \begin{matrix}
+            &amp;  2 x_2 &amp;+ 3 x_3  &amp; = 8  \\
+     2 x_1  &amp; + 3x_2 &amp; +  x_3  &amp; = 5   \\
+      x_1   &amp;  -x_2  &amp;  -2 x_3  &amp; =-5
+  \end{matrix}
+\end{equation*}\]</span> <span class="math inline">\([\mathbf{A} |
+\mathbf{b}] =?\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        w   &amp; - x  &amp; - y  &amp; +2z &amp; = 1  \\
+     2 w    &amp; - 2x &amp; - y  &amp; +3z &amp; = 3   \\
+      -w    &amp; + x  &amp;  -y  &amp;     &amp;=-3
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p><span class="math inline">\([\mathbf{A} | \mathbf{b}] =?\)</span></p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

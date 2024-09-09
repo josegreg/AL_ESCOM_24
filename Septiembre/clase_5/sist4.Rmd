@@ -1,0 +1,786 @@
+---
+title: "Sistemas de ecuaciones, eliminación gaussiana II"
+author: "Jose Rodriguez Villarreal"
+header-includes:
+  -\usepackage[latin1]{inputenc}
+  -\usepackage{mathtools}
+output:
+  slidy_presentation:
+    css: 'styles.css'
+    footer: "Álgebra lineal, ESCOM 2BV1, José Rodríguez Villarreal"
+---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
+
+
+## Sistemas de ecuaciones
+
+En $\mathbb{R}^2$, un sistema de ecuaciones lineales consiste en encontrar un *vector* $\vec{x}=(x_1,x_2)$, tal que
+
+\begin{equation}
+\begin{array}{rl}
+ a_{11}x_1 + a_{12}x_2 =& b_1 \\
+ a_{21}x_1 + a_{22}x_2 =& b_2 
+\end{array} 
+\end{equation}
+
+Ver <a href="https://www.geogebra.org/m/e7hzJEGf">Ejemplo</a>
+
+Como se puede ver, la existencia de una solución corresponde a la existencia de un cruce entre las rectas que representan cada ecuación. 
+En otros casos no existe una solución, es decir, no existe un cruce
+
+
+
+# Sistemas de ecuaciones
+
+
+## Sistemas de ecuaciones 2x2
+
+En $\mathbb{R}^2$, es decir, en el plano cartesiano un sistema de ecuaciones consiste en 
+
+\begin{itemize}
+  \item Un conjunto de números, llamados _coeficientes_ $a_{11},a_{12},a_{21},a_{22}$.
+  \item Un vector $(b_1,b_2)$ llamado _término_ _independiente_.
+  \item Un vector $S=(x_1,x_2)$ llamado el _vector_ _solución_ ó _solución_
+\end{itemize}
+
+
+
+# Sistemas de ecuaciones
+
+Un sistema de ecuaciones lineales $3\times 3$ es de la siguiente forma:
+$$
+\begin{matrix}
+a_{11}x_1+a_{12}x_2 + a_{13}x_3 = & b_1\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3  = & b_2\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3  = & b_3
+\end{matrix}
+$$
+ 
+donde $a_{ij},b_i\in\mathbb{R},\ i=1,2$ y $j=1,2$ suelen ser constantes conocidas.
+
+Al sistema de ecuaciones lineales de la forma 
+
+\begin{equation}
+\begin{matrix}
+ a_{11}x_1+a_{12}x_2 + a_{13}x_3 = & 0\\
+ a_{21}x_1+a_{22}x_2+ a_{23}x_3  = & 0\\
+ a_{31}x_1+a_{32}x_2+ a_{33}x_3  = & 0
+\end{matrix}
+\end{equation}
+
+Se dice ser un sistema _homogéneo_. En caso contrario, es _no_ _homogéneo_.
+
+
+Una ecuación del tipo $a_{11} x_1 + a_{12} x_2 + a_{13} x_3 =  b_1$ se dice que es una ecuación lineal en las incógnitas $x_1,\,x_2\,x_3$.
+
+Una solución de sistema de ecuaciones lineales es un vector $\vec{x}=(s_1,s_2,s_3)$ tal que la igualdad se cumple _de_ _manera_ _simultánea_ cuando se hace la sustitución $x_1=s_1,\,x_2=s_2,\,x_3=s_3$. El conjunto de todas las soluciones de la ecuación es su **conjunto** **solución** $\mathcal{X}$.
+
+
+
+# Sistemas de ecuaciones II
+
+Cada ecuación en el sistema de ecuaciones $3\times 3$ representa a un plano en $\mathbb{R}^{3}$
+
+$$
+\begin{matrix}
+a_{11}x_1+a_{12}x_2 + a_{13}x_3 = & b_1\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3  = & b_2\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3  = & b_3
+\end{matrix}
+$$
+
+El conjunto solución $\mathcal{X}$ consiste en todos los puntos que tienen en común los 3 planos _simultaneamente_.
+
+
+## Ejemplo 1
+
+Resolver el sistema
+$$
+\begin{matrix}
+x_1 & - 2 x_2 & + 3 x_3     & = 9\\
+-x_1& + 3x_2  &             & = -4\\
+2x_1&-5x_2    & + 5x_3      & = 17
+\end{matrix}
+$$
+
+
+
+# Eliminación gaussiana 
+\small
+Analizamos a fondo el método de eliminación gaussiana.
+Considere el sistema de ecuaciones
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2 + & \cdots   & +a_{1n} x_n  &= b_1  \\
+     a_{21} x_1 & +a_{22} x_2 + & \cdots   & +a_{2n} x_n  &= b_2\\
+    \vdots    & \vdots  & \vdots   & \vdots \\
+     a_{n1} x_1 & +a_{n2} x_2 + & \cdots   & +a_{nn} x_n  & =b_n
+  \end{matrix}
+\end{equation}
+
+Suponga que $a_{11}\ne 0$ entonces podemos eliminar $x_1$ de las ecuaciones $i=2,\ldots,n$, para la $i-$ésima ecuación, multiplicando la primer ecuación por
+
+\begin{equation*}
+m_{i1}=\frac{a_{i1}}{a_{11}}, \mbox{para }i=2,\ldots,n
+\end{equation*}
+y sumarla a la ecuación $i$.
+
+Obtenemos el siguiente sistema
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & \cdots   & +a_{1n} x_n  &= b_1  \\
+                & a^{(2)}_{22} x_2 + & \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+               & \vdots  & \vdots   & \vdots \\
+               & +a^{(2)}_{n2} x_2 + & \cdots   & +a^{(2)}_{nn} x_n  & =b^{(2)}_n
+  \end{matrix}
+\end{equation}
+ 
+Con $a^{(2)}_{ij} = a_{ij}- m_{i1}a_{1j}$ y $b^{(2)}_i=b_i-m_{i1}b_1$ los nuevos coeficientes del bloque de ecuaciones inferior de tamaño $(n-1)\times(n-1)$.
+En este paso hemos reducido la primer columna del sistema (salvo el pivote) a $0$.
+
+Ahora aplicamos el mismo proceso al sistema de ecuaciones  $(n-1)x(n-1)$, 
+
+Si $a^{(2)}_{22}\ne 0$ entonces podemos eliminar $x_2$ de las ecuaciones $i=3,\ldots,n$ multiplicando la segunda ecuación por
+
+\begin{equation*}
+m_{i2}=\frac{a^{(2)}_{i2}}{a^{(2)}_{22}}, \mbox{para }i=3,\ldots,n
+\end{equation*}
+
+y restarla a la ecuación $i$.
+
+
+Obtenemos el siguiente sistema
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & a_{13}x_3 +      & \cdots   & +a_{1n} x_n  &= b_1  \\
+                & a^{(2)}_{22} x_2 + & a^{(2)}_{23}x_3 +& \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+                &   0               +& a^{(3)}_{33}x_3 +& \cdots   & +a^{(3)}_{2n} x_n  &= b^{(3)}_3\\
+                & \vdots             & \vdots&          & \vdots   &    \vdots          & \vdots\\
+                &    0              +& a^{(3)}_{n3}x_3 +& \cdots   & +a^{(3)}_{nn} x_n  & =b^{(3)}_n
+  \end{matrix}
+\end{equation}
+
+
+Procedemos, si es posible, de la misma forma.
+
+Después de $k-1$ pasos  si $a^{(k-1)}_{kk}\ne 0$ entonces podemos eliminar $x_k$ de las ecuaciones $i=k+1,\ldots,n$ multiplicando la segunda ecuación por
+
+\begin{equation*}
+m_{ik}=\frac{a^{(k-1)}_{ik}}{a^{(k-1)}_{kk}}, \mbox{para }i=k+1,\ldots,n
+\end{equation*}
+y sumarla a la ecuación $i$.
+
+
+
+Procedemos así hasta obtener el sistema triangular
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & a_{13}x_3 +      & \cdots   & +a_{1n} x_n        &= b_1  \\
+                & a^{(2)}_{22} x_2 + & a^{(2)}_{23}x_3 +& \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+                &   0               +& a^{(3)}_{33}x_3 +& \cdots   & +a^{(3)}_{2n} x_n  &= b^{(3)}_3\\
+                & \vdots             & \vdots           & \vdots   &    \vdots          & \vdots\\
+                &                    &  0                & \cdots   & +a^{(n-1)}_{n-1n} x_n  & =b^{(n-1)}_{n-1}\\
+                &                    & 0                 & \cdots   & +a^{(n-1)}_{nn} x_n  & =b^{(n-1)}_n
+  \end{matrix}
+\end{equation}
+
+## Sustitución hacia atrás
+
+Para $k =n$
+$$
+x_n = \frac{b^{(n-1)}_n}{a^{(n-1)}_{nn}}
+$$
+
+Para $k=n-1$
+
+$$
+x_{n-1} = \frac{b^{(n-1)}_{n-1} - a^{(n-1)}_{n-1,n}x_n}{a^{(n-1)}_{n-1,n-1}}
+$$
+
+Y
+$$
+x_{n-2} = \frac{b^{(n-2)}_{n-2}- a^{(n-2)}_{n-2,n-1}x_{n-1} - a^{(n-2)}_{n-2,n}x_n}{a^{(n-2)}_{n-2,n-2}}
+$$
+
+Y en general
+
+$$x_{k}=\frac{b^{(k)}_k-\sum_{i=k+1}^{n}a^{(k)}_{kj}x_j}{a^{(k)}_{kk}}$$
+
+
+## Algoritmo de eliminación gaussiana
+
+El algoritmo en pseudocódigo:
+
+```{verbatim}
+for k= 1, ..., n-1:{
+
+  If A(k,k)=0:  
+    proc: "intercambiar renglones"
+    # A(k,k,) es el pivote
+    for i=k+1,...,n:{
+      m(i,k) = A(i,k)/A(k,k)            #Calculamos el multiplicador del rengĺón pivotal
+      for j=k+1,...,n:{                 #Modifcamos a las columnas del renglón i
+        A(i,j)  = A(i,j)-m(i,k)*A(k,j)
+        b(i)    = b(i)-m(i,k)b(k)
+      }
+    }
+}
+```
+
+Si es posible obtener un sistema triangular entonces, realizamos la sustitución hacia atrás
+
+### Algoritmo de sustitución hacia atrás
+
+```{verbatim}
+If a(n,n)=0:
+    no existe solución única
+Else:
+  for k=n-1,n-1,...,1
+    suma = b(k)
+    for j=k+1,...,n
+      suma = suma - a(k,j)*x(j)
+    x(k) = suma/a(k,k)
+```
+
+## Ejemplo
+
+Aplicar el algoritmo al sistema
+
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           4x  & -9 y  & +2z & = 2  \\
+           2x & -4 y  & +4z  & = 3  \\
+           -x & +2 y  & +2z  & = 1´
+  \end{matrix}
+&  
+\xrightarrow{E_1\leftrightarrow E_2}
+&
+\begin{matrix}
+           -x & +2 y  & +2z  & = 1  \\
+           2x & -4 y  & +4z  & = 3  \\
+           4x  & -9 y  & +2z & = 2  
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           -x & +2 y  & +2z  & = 1  \\
+              &       & +8z  & = 5  \\
+           4x & -9 y  & +2z  & = 2  
+  \end{matrix}
+&  
+\xrightarrow{4E_1 + E_3\rightarrow E_3}
+&
+\begin{matrix}
+           -x & +2 y  & +2z  & = 1  \\
+              &       & +8z  & = 5  \\
+              & -y    & +10z & =6  
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccc}
+
+\xrightarrow{E_2 \leftrightarrow E_3}
+&  
+\begin{matrix}
+           -x & +2 y  & +2z  & = 1  \\
+              & -y    & +10z & = 6   \\
+              &       & +8z  & = 5  
+\end{matrix}
+&
+\begin{matrix}
+            x &   &      & = 3/4        \\
+              & y &      & = 10(5/8) -6=1/4   \\
+              &   &   z  & = 5/8  
+\end{matrix}
+\end{array}
+\end{equation*}
+
+La solución es única y es igual a $x=\frac{3}{4}$, $y=\frac{1}{4}$, $z=\frac{5}{8}$, o bien $\mathcal{X}=\begin{Bmatrix}\,(\frac{3}{4},\frac{1}{4},\frac{5}{8})\,\,\end{Bmatrix}$.
+
+
+# Uso de matrices
+
+\small
+Como el procedimiento de eliminación gaussiana sólo involucra a los coeficientes, una forma de simplificar los cálculos es por medio de un arreglo que llamaremos **Matriz**.
+La matriz asociada al sistema de ecuaciones:
+
+\begin{equation*}
+  \begin{matrix}
+        w   & - x  & - y  & +2z & = 1  \\
+     2 w    & - 2x & - y  & +3z & = 3   \\
+      -w    & + x  &  -y  &     &=-3
+  \end{matrix}
+\end{equation*}
+
+Es igual a
+
+\begin{equation*}
+  \begin{bmatrix}
+        1   & - 1 & - 1  & 2   \\
+        2   & - 2 & - 1  & 3    \\
+      - 1   &   1 &  -1  & 0    
+  \end{bmatrix}
+\end{equation*}
+
+Existe otra matriz asociada, la **matriz** **extendida**
+
+
+\begin{equation*}
+ \begin{array}{cc}
+  [\mathbf{A}| \mathbf{b}] & = \begin{bmatrix}
+                                  1   & - 1 & - 1  & 2 &\biggm| & 1  \\
+                                  2   & - 2 & - 1  & 3 &\biggm| & 3   \\
+                                 -1   &   1 &  -1  & 0 &\biggm| &-3
+                                \end{bmatrix}
+ \end{array}
+\end{equation*} 
+
+
+## Matrices
+
+A los arreglos rectangulares con las listas de coeficientes $a_{ij}$ de cada ecuación, se les llama **matrices**. Formalmente, una matriz es una asignación de coeficientes a cada "variable-ecuación" del sistema de ecuaciones.
+
+\begin{equation*}
+\mathbf{A} =  \begin{pmatrix}
+                a_{11}  & a_{12}  & \cdots   & a_{1n} \\
+                a_{21}  & a_{22}  & \cdots   & a_{2n} \\
+                \vdots   & \vdots  & \vdots   & \vdots \\
+                a_{m1}  & a_{m2}  & \cdots   & a_{mn} 
+              \end{pmatrix}
+\end{equation*}
+
+De manera alternativa una matriz se puede simbolizar de la forma $\mathbf{A} = (a_{ij})_{i\leq m,j\leq n}$. Para referirnos al número en la ecuación $i$, variable $j$ es $a_{ij}$. En el contexto de matrices, nos referimos a los coeficientes de la ecuación $i$ como _fila_ $i$ y los coeficientes de la variable $x_j$ como columna $j$.
+
+
+## Forma escalonada.
+
+### Definicion
+
+Una matriz se dice que tiene la forma escalonada si las siguientes condiciones se cumplen
+
+  a) Todas las filas con ceros estan abajo de las filas no nulas.
+
+  b) En cada renglón no nulo, la primer entrada no nula está a la izquierda de la primer entrada no nula del siguiente renglón.
+
+## Ejemplo
+
+\begin{equation*}
+\begin{array}{ccc}
+a) \begin{bmatrix}
+      1   &  2  &   3     \\
+      0   &   1 &   0  
+\end{bmatrix}
+&
+b) \begin{bmatrix}
+      1   &  2  &   3     \\
+      0   &   0 &   4     \\
+      0   &   1 &   -2     
+\end{bmatrix}
+&
+c) \begin{bmatrix}
+      2   &   0 &  -1  &  5  \\
+      0   &   0 &   3  &  2  \\
+      0   &   0 &   0  &  0  
+\end{bmatrix}
+\end{array}
+\end{equation*} 
+
+Las matrices $a)$ y $c)$ tienen la forma escalonada, la matriz $b)$ no están en su forma escalonada. 
+
+## Ejemplo 
+
+Considere el  sistema de ecuaciones
+
+\begin{equation*}
+  \begin{matrix}
+           x  & +2 y  & +3z & = 1  \\
+           3x & +5 y  & -2z & = 2   \\
+           4x & +7 y  & +z  & = 3
+  \end{matrix}
+\end{equation*}
+ Aplicar eliminación gaussiana para obtener un sistema triangular o escalonado
+
+$$
+\begin{array}{ccc}
+  E_2 \rightarrow -3E_1 + E_2 & & \\
+  x + 2y +3z  & = &  1 \\
+  0x  -y -11z & = & -1 \\
+  4x +7y +z  & = & 3
+\end{array}
+$$
+
+$$
+\begin{array}{ccc}
+  E_3 \rightarrow -4E_1 + E_3 & & \\
+  x + 2y +3z  & = &  1 \\
+  0x  -y -11z & = & -1 \\
+  0x -7y -11z & = & -1
+\end{array}
+$$
+
+Ahora sumamos $-2E_1$ a la segunda ecuación 
+
+$$
+\begin{array}{ccc}
+  E_1 \rightarrow -2E_2 + E_1 & & \\
+  x + 0y -19z  & = &  -1 \\
+  0x + y +11z  & = &  1 \\
+  0x -7y +11z & = & -1
+\end{array}
+$$
+
+
+Ahora sumamos $7E_2+E_3 \rightarrow E_3$ a la segunda ecuación 
+
+\begin{equation}
+\begin{array}{ccc}
+  E_1 \rightarrow -2E_2 + E_1 & & \\
+  x + 0y  -19z  & = &  -1 \\
+  0x + y  +11z  & = &  1 \\
+  0x + 0y +88z  & = & -6
+\end{array}
+\end{equation}
+
+
+Entonces una forma escalonada _equivalente_ al sistema inicial es 
+
+\begin{equation*}
+  \begin{bmatrix}
+        1   &   0 & - 19  &| & -1   \\
+        0   &   1 &  11   &| &1    \\
+        0   &   0 &  88   &| &-6    
+  \end{bmatrix}
+\end{equation*}
+
+## Ejemplo
+
+Resolver el sistema _homogéneo_ usando la matriz aumentada del sistema
+
+\begin{equation*}
+\begin{matrix}
+-x_1 & + 3 x_2  & + 3 x_3 &  + 2 x_4   & = 0\\
+2x_1 &          & + 6 x_3 &  + x_4     & = 0\\
+-2x_1& +4x_2    & + 2 x_3 &  + 4 x_4   & = 0
+\end{matrix}
+\end{equation*}
+
+La matriz aumentada del sistema es igual a
+
+\begin{equation*}
+  \begin{bmatrix}
+      - 1   & 3   &   3  & 2  & \bigm| & 0   \\
+        2   & 0   &   6  & 1  & \bigm| & 0    \\
+      - 2   & 4   &   2  & 4  & \bigm| & 0  
+  \end{bmatrix}
+\end{equation*}
+
+Aplicando la operacion elemental  $2E_1+E_2\rightarrow E_2$ y $-2E_1+E_3 \rightarrow E_3$
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{bmatrix}
+           -1  &  3  & 3  & 2  & \bigm| & 0  \\
+            0  &  6  & 12 & 5  & \bigm| & 0  \\
+            0  &  -2 & -4 & 0  & \bigm| & 0
+  \end{bmatrix}
+&  
+\xrightarrow{2/6E_2 + E_3\rightarrow E_3}
+&
+\begin{bmatrix}
+           -1  &  3  & 3  & 2           & \bigm| & 0  \\
+            0  &  6  & 12 & 5           & \bigm| & 0  \\
+            0  &  0  & 0  & \frac{5}{3} & \bigm| & 0
+\end{bmatrix}
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1 \rightarrow E_1]{1/6E_2 \rightarrow E_2}
+& 
+\begin{bmatrix}
+            1  &  -3 & -3 & -2          & \bigm| & 0  \\
+            0  &  1  &  2 & 5/6         & \bigm| & 0  \\
+            0  &  0  &  0 & \frac{5}{3} & \bigm| & 0
+\end{bmatrix}
+
+&
+\rightarrow \begin{bmatrix}
+            1  & -3  & -3 & -2  & \bigm| & 0  \\
+            0  &  1  & 2  & 5/6 & \bigm| & 0  \\
+            0  &  0  & 0  & 1   & \bigm| & 0
+\end{bmatrix}
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccc}
+  x_4                         & = & 0 \\
+  x_2 + 2x_3 + \frac{5}{6}(0) & = & 0 \\
+  x_1 - 3x_2 - 3x_3 -2(0)     & = & 0
+\end{array}
+\end{equation*}
+
+Entonces $x_4= 0$, $x_2 + 2x_3 = 0$ entonces $x_2 = -2x_3$, $x_1 = 3x_2 + 3x_3= 3(-2x_3) + 3 x_3 = - 3x_3$. Por tanto, si el vector 
+
+\begin{equation*}
+\begin{pmatrix}
+ x_1 \\ x_2 \\ x_3\\ x_4 
+\end{pmatrix}  =
+\begin{pmatrix}
+ -3 x_3 \\ -2 x_3 \\ x_3\\ 0 
+\end{pmatrix}   = x_3 \cdot 
+\begin{pmatrix}
+ -3 \\ -2  \\ 1 \\ 0 
+\end{pmatrix} 
+\end{equation*}
+
+Por tanto el conjunto solución 
+\[
+\mathcal{X}= \begin{Bmatrix} 
+\begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 \\ x_4 
+\end{pmatrix} \in \mathbb{R}^{4} \,:\,\, \begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 \\ x_4 
+\end{pmatrix} = t \cdot \begin{pmatrix}
+ -3 \\ -2  \\ 1 \\ 0 
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
+\]
+
+## Ejemplo
+
+Considere el  sistema de ecuaciones
+
+\begin{equation*}
+  \begin{matrix}
+           -x  & +3 y  & -2z & = 4  \\
+           -x  & +4 y  & -3z & = 5   \\
+           -x  & +5 y  & -4z  & = 6
+  \end{matrix}
+\end{equation*}
+
+La matriz extendida del sistema es
+
+\begin{equation*}
+  \begin{bmatrix}
+      - 1   & 3   & -2  & \bigm| & 4   \\
+      - 1   & 4   & -3  & \bigm| & 5    \\
+      - 1   & 5   & -4  & \bigm| & 6  
+  \end{bmatrix}
+\end{equation*}
+
+Aplicamos eliminación gaussiana a la matriz extendida
+
+\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1 + E_2 \rightarrow E_1]{ -E_1 + E_3 \rightarrow E_3}
+& 
+\begin{bmatrix}
+            -1 &  3  & -2  & \bigm| & 4  \\
+            0  &  1  & -1  & \bigm| & 1  \\
+            0  &  2  & -2  & \bigm| & 2
+\end{bmatrix}
+
+&
+\rightarrow \begin{bmatrix}
+            -1  &  3  & -2  &  \bigm| & 4  \\
+            0   &  1  & -1  &   \bigm| & 1  \\
+            0   &  0  & 0   &   \bigm| & 0
+\end{bmatrix}
+\end{array}
+\end{equation*}
+
+El último renglón se ha anulado
+
+\begin{equation*}
+\begin{array}{ccc}
+ -x_1 + 3x_2 -2x_3 & = & 4 \\
+      x_2 - 3x_3   & = & 1
+\end{array}
+\end{equation*}
+ Entonces $x_2 = 1 + 3x_3$, $x_1  = -4 +3x_2-2x_3=-4+3(1+3x_3)-2x_3=-1+7x_3$
+
+
+\[
+\mathcal{X}= \begin{Bmatrix} 
+\begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 \\  
+\end{pmatrix} \in \mathbb{R}^{3} \,:\,\, \begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 
+\end{pmatrix} = \begin{pmatrix}
+ -1 \\ 1  \\ 0  
+\end{pmatrix} + x_3 \cdot \begin{pmatrix}
+ 7 \\ 3  \\ 1  
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
+\]
+
+
+Para el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+     -2 x_1 & -4 x_2 & +2 x_3 &-6x_4     & = 0  \\
+      3 x_1 &  6 x_2  & -2 x_3& +13 x_4  &= 6\\
+     2 x_1 &  + 4x_2  &      &  +14 x_4  &=12\\
+     4 x_1 & + 8x_2  &-7x_3 &            &= -10
+  \end{matrix}
+\end{equation*}
+
+## Ejemplo
+
+Obtener la matriz extendida del sistema, identificar el sistema triangular o escalonado.
+
+\begin{equation*}
+  \begin{matrix}
+      3 x_1 & +2 x_2 & +3 x_3 &-2x_4     & = 1  \\
+        x_1 & +  x_2 & +x_3   &          & = 3   \\
+        x_1 & + 2x_2 & +x_3   & -x_4     & = 2
+  \end{matrix}
+\end{equation*}
+
+
+La matriz extendida asociada al sistema es
+
+
+\begin{equation*}
+  \begin{bmatrix}
+      3   & 2   & 3 & -2  & \bigm| & 1   \\
+      1   & 1   & 1 &  0  & \bigm| & 3    \\
+      1   & 2   & 1 & -1  & \bigm| & 2  
+  \end{bmatrix}
+\end{equation*}
+
+Aplicando operaciones elementales, primero intercambiamos la ecuación 3 con la ecuación 1
+
+\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-E_1+E_2 \rightarrow E_2]{E_1  \rightarrow E_3}
+& 
+\begin{bmatrix}
+            1  &  2  &  1  & -1  & \bigm| & 2  \\
+            0  &  -1 &  0  & 1   & \bigm| & 3  \\
+            3  &  2  &  3  &-2   & \bigm| & 1
+\end{bmatrix}
+
+&
+\xrightarrow{-3E_1 + E_3  \rightarrow E_3} \begin{bmatrix}
+            1  &  2  & 1   &  -1  &   \bigm| & 2  \\
+            0  & -1  & 0   &   1  &   \bigm| & 1  \\
+            0  & -4  & 0   &   1  &   \bigm| & -5
+\end{bmatrix}
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccc}
+\xrightarrow[-4E_2+E_3 \rightarrow E_3]{}
+& 
+\begin{bmatrix}
+           1   &  2  & 1   &  -1  &   \bigm| & 2  \\
+            0  & -1  & 0   &   1  &   \bigm| & 1  \\
+            0  &  0  & 0   &  -3  &   \bigm| & -9
+\end{bmatrix}
+&
+\xrightarrow{-E_2 ->E_2, -\frac{1}{3}E_3 -> E_3} \begin{bmatrix}
+            1  &  2  & 1   &  -1  &    \bigm| & 2  \\
+            0  &  1  & 0   &   -1  &   \bigm| & -1  \\
+            0  &  0  & 0   &   1  &    \bigm| & 3
+\end{bmatrix}
+\end{array}
+\end{equation*}
+
+Eliminación gaussiana concluye aquí, la matriz resultante no es triangular, pero tiene una forma escalonada.
+
+
+\begin{equation*}
+\begin{array}{cc}
+ U = &  \begin{bmatrix}
+          1   & 2   & 1 & -1  & \bigm| & 2   \\
+          0   & 1   & 0 & -1  & \bigm| & -1    \\
+          0   & 0   & 0 &  1  & \bigm| & 3  
+      \end{bmatrix}
+\end{array}
+\end{equation*}
+
+Esta matriz es la matriz extendida del sistema
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{matrix}
+          1x_1& +2x_2  & +1x_3 & -1x_4  &  = & 2   \\
+              & x_2    &       & -1x_4  &  = & -1    \\
+              &        &       &  x_4   &  = & 3  
+      \end{matrix}
+\end{array}
+\end{equation*}
+
+Aplicando sustitución hacia atrás $x_4 = 3$, $x_2=2$, $x_1 + x_3 = 1$ o $x_1=1-x_3$. 
+Por tanto, para que un vector $\vec{v}=\begin{pmatrix}  x_1 \\ x_2 \\ x_3\\ x_4 \end{pmatrix}$ sea solución al sistema, se tiene que cumplir
+
+\[
+\mathcal{X}= \begin{Bmatrix} 
+\begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 \\  x_4
+\end{pmatrix} \in \mathbb{R}^{4} \,:\,\, \begin{pmatrix}
+ x_1 \\ x_2  \\ x_3 \\ x_4
+\end{pmatrix} = \begin{pmatrix}
+  1 \\ 2  \\ 0  \\ 3
+\end{pmatrix} + t \cdot \begin{pmatrix}
+ -1\\ 0  \\ 1 \\ 0 
+\end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
+\]
+Es decir, las soluciones están sobre una recta.
+
+# Ejercicios
+\small
+Obtener la expresión matricial de los sistemas de ecuaciones lineales en los ejemplos de la clase.
+
+Para el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+      x_1   & -2 x_2  & +2 x_3  & = 0  \\
+      2 x_1 &  - x_2  & +5 x_3  & = 0 \\
+      x_1   &  + x_2  & +4 x_3  & = 0 
+  \end{matrix}
+\end{equation*}
+La matriz del sistema y la matriz extendida asociada $[\mathbf{A}|\mathbf{b}]$ al sistema es 
+$\mathbf{A}= ?$ y $[\mathbf{A}|b]$
+\begin{equation*}
+  \begin{matrix}
+            &  2 x_2 &+ 3 x_3  & = 8  \\
+     2 x_1  & + 3x_2 & +  x_3  & = 5   \\
+      x_1   &  -x_2  &  -2 x_3  & =-5
+  \end{matrix}
+\end{equation*}
+$[\mathbf{A} | \mathbf{b}] =?$
+
+
+\begin{equation*}
+  \begin{matrix}
+        w   & - x  & - y  & +2z & = 1  \\
+     2 w    & - 2x & - y  & +3z & = 3   \\
+      -w    & + x  &  -y  &     &=-3
+  \end{matrix}
+\end{equation*}
+
+$[\mathbf{A} | \mathbf{b}] =?$
+
