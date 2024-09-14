@@ -1,5 +1,5 @@
 ---
-title: "Sistemas de ecuaciones, eliminación gaussiana II"
+title: "Sistemas de ecuaciones, eliminación gaussiana"
 author: "Jose Rodriguez Villarreal"
 header-includes:
   -\usepackage[latin1]{inputenc}
@@ -15,40 +15,82 @@ MathJax.Hub.Config({
 });
 </script>
 
+# Sistemas de ecuaciones
 
 
-
-## Sistemas de ecuaciones
+## Introducción
 
 En $\mathbb{R}^2$, un sistema de ecuaciones lineales consiste en encontrar un *vector* $\vec{x}=(x_1,x_2)$, tal que
 
 \begin{equation}
 \begin{array}{rl}
- a_{11}x_1 + a_{12}x_2 =& b_1 \\
- a_{21}x_1 + a_{22}x_2 =& b_2 
+ a_{11}x + a_{12}y =& b_1 \\
+ a_{21}x + a_{22}y =& b_2 
 \end{array} 
 \end{equation}
 
 Ver <a href="https://www.geogebra.org/m/e7hzJEGf">Ejemplo</a>
 
 Como se puede ver, la existencia de una solución corresponde a la existencia de un cruce entre las rectas que representan cada ecuación. 
-En otros casos no existe una solución, es decir, no existe un cruce
+En otros casos no existe una solución, es decir, no existe un cruce.
+
+**Observación** Esto depende de los coeficientes de las rectas, así como del  vector independiente.
 
 
-
-# Sistemas de ecuaciones
 
 
 ## Sistemas de ecuaciones 2x2
 
 En $\mathbb{R}^2$, es decir, en el plano cartesiano un sistema de ecuaciones consiste en 
 
-\begin{itemize}
-  \item Un conjunto de números, llamados _coeficientes_ $a_{11},a_{12},a_{21},a_{22}$.
-  \item Un vector $(b_1,b_2)$ llamado _término_ _independiente_.
-  \item Un vector $S=(x_1,x_2)$ llamado el _vector_ _solución_ ó _solución_
-\end{itemize}
 
+  I.   Un conjunto de números, llamados _coeficientes_ $a_{11},a_{12},a_{21},a_{22}$.
+  II.  Un vector $\vec{\mathbf{b}}=(b_1,b_2)$ llamado _término_ _independiente_.
+  III. Un vector $\vec{S}=(x_1,x_2)$ llamado el _vector_ _solución_ ó _solución_
+
+### Preguntas
+
+¿Bajo que condiciones se tiene que el sistema tiene solución única?
+¿Bajo que condiciones se tiene que el sistema **no** tiene solución única?
+
+<div class="def">
+  * Si las ecuaciones representan líneas paralelas entonces el sistema no tiene solución
+  * Si las ecuaciones representa a la misma línea entonces las soluciones son todos los puntos de la recta.
+  * Si las ecuaciones representan líneas no paralelas entonces el sistema tiene una única solución
+</div>
+
+Suponga que se tiene un sistema de ecuaciones, ningua de las rectas en el sistema es vertical,
+
+$$
+\begin{array}{cc}
+ax + by = & e \\
+cx + dy = & f
+\end{array}
+$$
+
+Si $l_1$ es la recta con ecuación $ax+by=e$ y $l_2$ es la recta con ecuación $cx+dy=f$ entonces las rectas  serán paralelas si sus pendientes son iguales, es decir $m_1 = m_2$, o bien
+\[
+\frac{a}{b}  =  \frac{c}{d}
+\]
+
+Dicho de otra forma
+
+<div class="def">
+Considere un sistema de ecuaciones en $\mathbb{R}^2$, 
+
+\[
+\begin{array}{cc}
+  ax + by = & e \\
+  cx + dy = & f
+\end{array}
+\]
+
+de tal forma que $b\ne 0$ o $d\ne 0$ entonces, las rectas son paralelas si
+\[
+\Delta=ad-bc = 0
+\]
+</div>
+ 
 
 
 # Sistemas de ecuaciones
@@ -318,9 +360,70 @@ La solución es única y es igual a $x=\frac{3}{4}$, $y=\frac{1}{4}$, $z=\frac{5
 
 # Uso de matrices
 
+
 \small
 Como el procedimiento de eliminación gaussiana sólo involucra a los coeficientes, una forma de simplificar los cálculos es por medio de un arreglo que llamaremos **Matriz**.
 La matriz asociada al sistema de ecuaciones:
+
+
+
+### Ejemplo 2
+
+
+Resolver el siguiente sistema de ecuaciones, aplicando eliminación Gaussiana.
+
+
+\begin{equation*}
+  \begin{matrix}
+            &   v  & - w   & = 3  \\
+     -2 u   & + 4v & - w   & = 1   \\
+     -2 u   & + 5v &  -4w  & =-2
+  \end{matrix}
+\end{equation*}
+
+
+\begin{equation*}
+  \begin{bmatrix}
+              0   &   1 & - 1  &\biggm| & 3  \\
+             -2   &   4 & - 1  &\biggm| & 1   \\
+             -2   &   5 &  -4  &\biggm| &-2
+  \end{bmatrix}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+             -2   &   4 & - 1  &\biggm| & 1   \\
+              0   &   1 & -1   &\biggm| & 3
+  \end{bmatrix}
+\end{equation*} 
+
+\begin{equation*}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+              0   & -1  &   3  &\biggm| & 3   \\
+              0   &   1 & -1   &\biggm| & 3
+  \end{bmatrix} \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+              0   & -1  &   3  &\biggm| & 3   \\
+              0   &  0  &   2   &\biggm| & 6
+  \end{bmatrix} 
+\end{equation*}
+
+Regresamos al sistema asociado a esta matriz extendida
+
+\begin{equation*}
+\begin{matrix}
+      -2u   &  +5v  & -4 w   & = -2  \\
+            &  -v   &  +3w   & = 3   \\
+            &       &  2w    & =6
+  \end{matrix}
+\end{equation*}
+
+y se obtiene la solucion $\vec{x}=(10,6,3)$
+
+### Ejemplo 3
+
 
 \begin{equation*}
   \begin{matrix}

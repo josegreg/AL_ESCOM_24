@@ -7,7 +7,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Jose Rodriguez Villarreal" />
   <meta name="copyright" content="Álgebra lineal, ESCOM 2BV1, José Rodríguez Villarreal" />
-  <title>Sistemas de ecuaciones, eliminación gaussiana II</title>
+  <title>Sistemas de ecuaciones, eliminación gaussiana</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -16,7 +16,7 @@ div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -27,7 +27,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -81,7 +81,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 </style>
   <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -92,7 +92,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -523,8 +523,7 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Sistemas de ecuaciones, eliminación gaussiana
-II</h1>
+  <h1 class="title">Sistemas de ecuaciones, eliminación gaussiana</h1>
   <p class="author">
 Jose Rodriguez Villarreal
   </p>
@@ -536,24 +535,77 @@ MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
-<h2 id="sistemas-de-ecuaciones">Sistemas de ecuaciones</h2>
+</div>
+<div id="sistemas-de-ecuaciones" class="slide section level1">
+<h1>Sistemas de ecuaciones</h1>
+<h2 id="introducción">Introducción</h2>
 <p>En <span class="math inline">\(\mathbb{R}^2\)</span>, un sistema de
 ecuaciones lineales consiste en encontrar un <em>vector</em> <span class="math inline">\(\vec{x}=(x_1,x_2)\)</span>, tal que</p>
 <p><span class="math display">\[\begin{equation}
 \begin{array}{rl}
-a_{11}x_1 + a_{12}x_2 =&amp; b_1 \\
-a_{21}x_1 + a_{22}x_2 =&amp; b_2
+a_{11}x + a_{12}y =&amp; b_1 \\
+a_{21}x + a_{22}y =&amp; b_2
 \end{array}
 \end{equation}\]</span></p>
 <p>Ver <a href="https://www.geogebra.org/m/e7hzJEGf">Ejemplo</a></p>
-</div>
-<div id="sistemas-de-ecuaciones-1" class="slide section level1">
-<h1>Sistemas de ecuaciones</h1>
+<p>Como se puede ver, la existencia de una solución corresponde a la
+existencia de un cruce entre las rectas que representan cada ecuación.
+En otros casos no existe una solución, es decir, no existe un cruce.</p>
+<p><strong>Observación</strong> Esto depende de los coeficientes de las
+rectas, así como del vector independiente.</p>
 <h2 id="sistemas-de-ecuaciones-2x2">Sistemas de ecuaciones 2x2</h2>
 <p>En <span class="math inline">\(\mathbb{R}^2\)</span>, es decir, en el
 plano cartesiano un sistema de ecuaciones consiste en</p>
+<ol style="list-style-type: upper-roman">
+<li>Un conjunto de números, llamados <em>coeficientes</em> <span class="math inline">\(a_{11},a_{12},a_{21},a_{22}\)</span>.</li>
+<li>Un vector <span class="math inline">\(\vec{\mathbf{b}}=(b_1,b_2)\)</span> llamado
+<em>término</em> <em>independiente</em>.</li>
+<li>Un vector <span class="math inline">\(\vec{S}=(x_1,x_2)\)</span>
+llamado el <em>vector</em> <em>solución</em> ó <em>solución</em></li>
+</ol>
+<h3 id="preguntas">Preguntas</h3>
+<p>¿Bajo que condiciones se tiene que el sistema tiene solución única?
+¿Bajo que condiciones se tiene que el sistema <strong>no</strong> tiene
+solución única?</p>
+<div class="def">
+<ul>
+<li>Si las ecuaciones representan líneas paralelas entonces el sistema
+no tiene solución</li>
+<li>Si las ecuaciones representa a la misma línea entonces las
+soluciones son todos los puntos de la recta.</li>
+<li>Si las ecuaciones representan líneas no paralelas entonces el
+sistema tiene una única solución</li>
+</ul>
 </div>
-<div id="sistemas-de-ecuaciones-2" class="slide section level1">
+<p>Suponga que se tiene un sistema de ecuaciones, ningua de las rectas
+en el sistema es vertical,</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+ax + by = &amp; e \\
+cx + dy = &amp; f
+\end{array}
+\]</span></p>
+<p>Si <span class="math inline">\(l_1\)</span> es la recta con ecuación
+<span class="math inline">\(ax+by=e\)</span> y <span class="math inline">\(l_2\)</span> es la recta con ecuación <span class="math inline">\(cx+dy=f\)</span> entonces las rectas serán
+paralelas si sus pendientes son iguales, es decir <span class="math inline">\(m_1 = m_2\)</span>, o bien <span class="math display">\[
+\frac{a}{b}  =  \frac{c}{d}
+\]</span></p>
+<p>Dicho de otra forma</p>
+<div class="def">
+<p>Considere un sistema de ecuaciones en <span class="math inline">\(\mathbb{R}^2\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+  ax + by = &amp; e \\
+  cx + dy = &amp; f
+\end{array}
+\]</span></p>
+<p>de tal forma que <span class="math inline">\(b\ne 0\)</span> o <span class="math inline">\(d\ne 0\)</span> entonces, las rectas son paralelas
+si <span class="math display">\[
+\Delta=ad-bc = 0
+\]</span></p>
+</div>
+</div>
+<div id="sistemas-de-ecuaciones-1" class="slide section level1">
 <h1>Sistemas de ecuaciones</h1>
 <p>Un sistema de ecuaciones lineales <span class="math inline">\(3\times
 3\)</span> es de la siguiente forma: <span class="math display">\[
@@ -577,7 +629,7 @@ a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; 0
 <p>Se dice ser un sistema <em>homogéneo</em>. En caso contrario, es
 <em>no</em> <em>homogéneo</em>.</p>
 <p>Una ecuación del tipo <span class="math inline">\(a_{11} x_1 + a_{12}
-x_2 + a_{13} x_3 =  b_1\)</span> se dice que es una ecuación lineal en
+x_2 + a_{13} x_3 = b_1\)</span> se dice que es una ecuación lineal en
 las incógnitas <span class="math inline">\(x_1,\,x_2\,x_3\)</span>.</p>
 <p>Una solución de sistema de ecuaciones lineales es un vector <span class="math inline">\(\vec{x}=(s_1,s_2,s_3)\)</span> tal que la igualdad
 se cumple <em>de</em> <em>manera</em> <em>simultánea</em> cuando se hace
@@ -801,6 +853,52 @@ hacia atrás</h3>
 coeficientes, una forma de simplificar los cálculos es por medio de un
 arreglo que llamaremos <strong>Matriz</strong>. La matriz asociada al
 sistema de ecuaciones:</p>
+<h3 id="ejemplo-2">Ejemplo 2</h3>
+<p>Resolver el siguiente sistema de ecuaciones, aplicando eliminación
+Gaussiana.</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+            &amp;   v  &amp; - w   &amp; = 3  \\
+     -2 u   &amp; + 4v &amp; - w   &amp; = 1   \\
+     -2 u   &amp; + 5v &amp;  -4w  &amp; =-2
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+              0   &amp;   1 &amp; - 1  &amp;\biggm| &amp; 3  \\
+             -2   &amp;   4 &amp; - 1  &amp;\biggm| &amp; 1   \\
+             -2   &amp;   5 &amp;  -4  &amp;\biggm| &amp;-2
+  \end{bmatrix}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &amp;   5 &amp; - 4  &amp;\biggm| &amp;-2   \\
+             -2   &amp;   4 &amp; - 1  &amp;\biggm| &amp; 1   \\
+              0   &amp;   1 &amp; -1   &amp;\biggm| &amp; 3
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &amp;   5 &amp; - 4  &amp;\biggm| &amp;-2   \\
+              0   &amp; -1  &amp;   3  &amp;\biggm| &amp; 3   \\
+              0   &amp;   1 &amp; -1   &amp;\biggm| &amp; 3
+  \end{bmatrix} \rightarrow
+    \begin{bmatrix}
+              -2  &amp;   5 &amp; - 4  &amp;\biggm| &amp;-2   \\
+              0   &amp; -1  &amp;   3  &amp;\biggm| &amp; 3   \\
+              0   &amp;  0  &amp;   2   &amp;\biggm| &amp; 6
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Regresamos al sistema asociado a esta matriz extendida</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{matrix}
+      -2u   &amp;  +5v  &amp; -4 w   &amp; = -2  \\
+            &amp;  -v   &amp;  +3w   &amp; = 3   \\
+            &amp;       &amp;  2w    &amp; =6
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p>y se obtiene la solucion <span class="math inline">\(\vec{x}=(10,6,3)\)</span></p>
+<h3 id="ejemplo-3">Ejemplo 3</h3>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
         w   &amp; - x  &amp; - y  &amp; +2z &amp; = 1  \\
@@ -856,7 +954,7 @@ nulas.</p></li>
 <li><p>En cada renglón no nulo, la primer entrada no nula está a la
 izquierda de la primer entrada no nula del siguiente renglón.</p></li>
 </ol>
-<h2 id="ejemplo-2">Ejemplo</h2>
+<h2 id="ejemplo-4">Ejemplo</h2>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{ccc}
 a) \begin{bmatrix}
@@ -880,7 +978,7 @@ c) \begin{bmatrix}
 <p>Las matrices <span class="math inline">\(a)\)</span> y <span class="math inline">\(c)\)</span> tienen la forma escalonada, la matriz
 <span class="math inline">\(b)\)</span> no están en su forma
 escalonada.</p>
-<h2 id="ejemplo-3">Ejemplo</h2>
+<h2 id="ejemplo-5">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -935,7 +1033,7 @@ es</p>
         0   &amp;   0 &amp;  88   &amp;| &amp;-6    
   \end{bmatrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-4">Ejemplo</h2>
+<h2 id="ejemplo-6">Ejemplo</h2>
 <p>Resolver el sistema <em>homogéneo</em> usando la matriz aumentada del
 sistema</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1023,7 +1121,7 @@ x_1 \\ x_2  \\ x_3 \\ x_4
 -3 \\ -2  \\ 1 \\ 0
 \end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
 \]</span></p>
-<h2 id="ejemplo-5">Ejemplo</h2>
+<h2 id="ejemplo-7">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -1066,7 +1164,7 @@ x_1 \\ x_2  \\ x_3 \\ x_4
       x_2 - 3x_3   &amp; = &amp; 1
 \end{array}
 \end{equation*}\]</span> Entonces <span class="math inline">\(x_2 = 1 +
-3x_3\)</span>, <span class="math inline">\(x_1  = -4
+3x_3\)</span>, <span class="math inline">\(x_1 = -4
 +3x_2-2x_3=-4+3(1+3x_3)-2x_3=-1+7x_3\)</span></p>
 <p><span class="math display">\[
 \mathcal{X}= \begin{Bmatrix}
@@ -1089,7 +1187,7 @@ x_1 \\ x_2  \\ x_3
      4 x_1 &amp; + 8x_2  &amp;-7x_3 &amp;            &amp;= -10
   \end{matrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-6">Ejemplo</h2>
+<h2 id="ejemplo-8">Ejemplo</h2>
 <p>Obtener la matriz extendida del sistema, identificar el sistema
 triangular o escalonado.</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1170,7 +1268,7 @@ U = &amp;  \begin{bmatrix}
 \end{equation*}\]</span></p>
 <p>Aplicando sustitución hacia atrás <span class="math inline">\(x_4 =
 3\)</span>, <span class="math inline">\(x_2=2\)</span>, <span class="math inline">\(x_1 + x_3 = 1\)</span> o <span class="math inline">\(x_1=1-x_3\)</span>. Por tanto, para que un vector
-<span class="math inline">\(\vec{v}=\begin{pmatrix}  x_1 \\ x_2 \\ x_3\\
+<span class="math inline">\(\vec{v}=\begin{pmatrix} x_1 \\ x_2 \\ x_3\\
 x_4 \end{pmatrix}\)</span> sea solución al sistema, se tiene que
 cumplir</p>
 <p><span class="math display">\[
