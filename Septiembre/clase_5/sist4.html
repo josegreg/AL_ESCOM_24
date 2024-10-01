@@ -604,9 +604,7 @@ si <span class="math display">\[
 \Delta=ad-bc = 0
 \]</span></p>
 </div>
-</div>
-<div id="sistemas-de-ecuaciones-1" class="slide section level1">
-<h1>Sistemas de ecuaciones</h1>
+<h2 id="sistemas-de-ecuaciones-3times-3">Sistemas de ecuaciones <span class="math inline">\(3\times 3\)</span></h2>
 <p>Un sistema de ecuaciones lineales <span class="math inline">\(3\times
 3\)</span> es de la siguiente forma: <span class="math display">\[
 \begin{matrix}
@@ -618,6 +616,15 @@ a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; b_3
 <p>donde <span class="math inline">\(a_{ij},b_i\in\mathbb{R},\
 i=1,2\)</span> y <span class="math inline">\(j=1,2\)</span> suelen ser
 constantes conocidas.</p>
+<ul>
+<li><p>A los números <span class="math inline">\(a_{11},\,a_{12},\,a_{13}, a_{21},\,
+a_{22},\,a_{23},a_{31},\,a_{32},\, a_{33}\)</span> se les llama
+<em>coeficientes</em> del sistema</p></li>
+<li><p>A los escalares <span class="math inline">\(b_1,\,b_2,\,\ldots,b_n\)</span> es el término
+independiente.</p></li>
+<li><p>Al vector <span class="math inline">\(\vec{\mathbf{x}}=(x_1,x_2,\ldots,x_n)\)</span> es
+el vector incógnita.</p></li>
+</ul>
 <p>Al sistema de ecuaciones lineales de la forma</p>
 <p><span class="math display">\[\begin{equation}
 \begin{matrix}
@@ -628,6 +635,12 @@ a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; 0
 \end{equation}\]</span></p>
 <p>Se dice ser un sistema <em>homogéneo</em>. En caso contrario, es
 <em>no</em> <em>homogéneo</em>.</p>
+<h2 id="operaciones-elementales">Operaciones elementales</h2>
+<ol style="list-style-type: decimal">
+<li><p>Intercambiar una ecuación con otra ecuación</p></li>
+<li><p>Multiplicar una ecuación por un escalar</p></li>
+<li><p>Sumar a una ecuación un múltiplo de otra ecuación</p></li>
+</ol>
 <p>Una ecuación del tipo <span class="math inline">\(a_{11} x_1 + a_{12}
 x_2 + a_{13} x_3 = b_1\)</span> se dice que es una ecuación lineal en
 las incógnitas <span class="math inline">\(x_1,\,x_2\,x_3\)</span>.</p>
@@ -847,6 +860,16 @@ hacia atrás</h3>
 \end{equation*}\]</span></p>
 <p>La solución es única y es igual a <span class="math inline">\(x=\frac{3}{4}\)</span>, <span class="math inline">\(y=\frac{1}{4}\)</span>, <span class="math inline">\(z=\frac{5}{8}\)</span>, o bien <span class="math inline">\(\mathcal{X}=\begin{Bmatrix}\,(\frac{3}{4},\frac{1}{4},\frac{5}{8})\,\,\end{Bmatrix}\)</span>.</p>
 </div>
+<div id="sistemas-consistentes-e-inconsistentes" class="slide section level1">
+<h1>Sistemas consistentes e inconsistentes</h1>
+<h2 id="definición">Definición</h2>
+<p>Un sistema de ecuaciones es <strong>consistente</strong> si tiene al
+menos una solución. Si no es consistente entonces se dice ser
+<strong>inconsistente</strong>.</p>
+<p>Dos sistemas son <strong>equivalentes</strong> si tienen exactamente
+al mismo conjunto solución. Un sistema de ecuaciones puede ser
+consistente sin tener una única solución.</p>
+</div>
 <div id="uso-de-matrices" class="slide section level1">
 <h1>Uso de matrices</h1>
 <p>Como el procedimiento de eliminación gaussiana sólo involucra a los
@@ -928,6 +951,27 @@ Gaussiana.</p>
                                 \end{bmatrix}
 \end{array}
 \end{equation*}\]</span></p>
+<h3 id="ejemplo-4">Ejemplo</h3>
+<p>Encontrar el valor de <span class="math inline">\(m\)</span> tal que
+el siguiente sistema tenga una solución única</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        m x  &amp; -5 y  &amp; +2z &amp; = 0  \\
+           x &amp; - y  &amp; +3z &amp; = 0   \\
+      3 x    &amp;  -7y &amp; -5z &amp;=0
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p>El método de eliminación gaussiana, también nos permite determinar si
+un sistema es <strong>inconsistente</strong>.</p>
+<h3 id="ejemplo-5">Ejemplo</h3>
+<p>Encontrar el conjunto solución</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+         &amp;  y  &amp; -4z &amp;  = 8  \\
+       2x &amp; - 3y   &amp; +2z &amp; = 1   \\
+       4x &amp;  -8y   &amp; +12z &amp; =1
+  \end{matrix}
+\end{equation*}\]</span></p>
 <h2 id="matrices">Matrices</h2>
 <p>A los arreglos rectangulares con las listas de coeficientes <span class="math inline">\(a_{ij}\)</span> de cada ecuación, se les llama
 <strong>matrices</strong>. Formalmente, una matriz es una asignación de
@@ -954,7 +998,7 @@ nulas.</p></li>
 <li><p>En cada renglón no nulo, la primer entrada no nula está a la
 izquierda de la primer entrada no nula del siguiente renglón.</p></li>
 </ol>
-<h2 id="ejemplo-4">Ejemplo</h2>
+<h2 id="ejemplo-6">Ejemplo</h2>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{ccc}
 a) \begin{bmatrix}
@@ -978,7 +1022,7 @@ c) \begin{bmatrix}
 <p>Las matrices <span class="math inline">\(a)\)</span> y <span class="math inline">\(c)\)</span> tienen la forma escalonada, la matriz
 <span class="math inline">\(b)\)</span> no están en su forma
 escalonada.</p>
-<h2 id="ejemplo-5">Ejemplo</h2>
+<h2 id="ejemplo-7">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -1033,7 +1077,7 @@ es</p>
         0   &amp;   0 &amp;  88   &amp;| &amp;-6    
   \end{bmatrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-6">Ejemplo</h2>
+<h2 id="ejemplo-8">Ejemplo</h2>
 <p>Resolver el sistema <em>homogéneo</em> usando la matriz aumentada del
 sistema</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1121,7 +1165,7 @@ x_1 \\ x_2  \\ x_3 \\ x_4
 -3 \\ -2  \\ 1 \\ 0
 \end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
 \]</span></p>
-<h2 id="ejemplo-7">Ejemplo</h2>
+<h2 id="ejemplo-9">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -1187,7 +1231,7 @@ x_1 \\ x_2  \\ x_3
      4 x_1 &amp; + 8x_2  &amp;-7x_3 &amp;            &amp;= -10
   \end{matrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-8">Ejemplo</h2>
+<h2 id="ejemplo-10">Ejemplo</h2>
 <p>Obtener la matriz extendida del sistema, identificar el sistema
 triangular o escalonado.</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1313,6 +1357,272 @@ sistema es <span class="math inline">\(\mathbf{A}= ?\)</span> y <span class="mat
   \end{matrix}
 \end{equation*}\]</span></p>
 <p><span class="math inline">\([\mathbf{A} | \mathbf{b}] =?\)</span></p>
+</div>
+<div id="matrices-y-vectores" class="slide section level1">
+<h1><strong>Matrices</strong> <strong>y</strong>
+<strong>vectores</strong></h1>
+<p>Una matriz de <em>orden</em> <span class="math inline">\(m\times
+n\)</span> es una función <span class="math inline">\(\mathbf{A}:\{1,2,\ldots,m\}\times\{1,2,\ldots,n\}
+\rightarrow\mathbb{R}\)</span>. Que se escribe como un arreglo
+rectangular</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&amp;  \begin{bmatrix}
+        a_{11}  &amp; a_{12}  &amp; \cdots   &amp; a_{1n}   \\
+        a_{21}  &amp; a_{22}  &amp; \cdots   &amp; a_{2n} \\
+        \vdots   &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+        a_{m1}  &amp; a_{m2}  &amp; \cdots   &amp; a_{mn}
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span> </p>
+<ul>
+<li><p>Decimos que la matriz <span class="math inline">\(\mathbf{A}\)</span> es de tamaño <span class="math inline">\(m\times n\)</span> si el arreglo tiene <span class="math inline">\(m\)</span> filas y <span class="math inline">\(n\)</span> columnas. Al número de la fila <span class="math inline">\(i\)</span> y columna <span class="math inline">\(j\)</span> es el número <span class="math inline">\(a_{ij}\)</span> se le llama elemento <span class="math inline">\({(i,j)}\)</span> de la matriz. </p></li>
+<li><p>Una matriz es <em>cuadrada</em> si <span class="math inline">\(m=n\)</span>, es decir si el número de renglones
+es igual al número de columnas. </p></li>
+<li><p>Si una matriz no es cuadrada, entonces se dice que es
+<em>rectangular</em>.</p></li>
+</ul>
+</div>
+<div id="matrices-1" class="slide section level1">
+<h1><strong>Matrices</strong></h1>
+<ul>
+<li>Una matriz <em>diagonal</em> es una matriz cuadrada cuyos elementos
+que no están en la diagonal principal son iguales a cero. Podemos
+referirnos a la matriz diagonal como <span class="math inline">\(\mbox{diag}(d_1,d_2,\ldots, d_n)\)</span>. </li>
+<li>La matriz <em>identidad</em> es la matriz <em>diagonal</em> cuya
+diagonal principal es <span class="math inline">\(\{1,\ldots,1\}\)</span> y sus otras entradas son
+<span class="math inline">\(0\)</span>. <span class="math display">\[\begin{equation}
+\begin{array}{cc}
+\mathbf{Id}  =&amp;  \begin{bmatrix}
+      1  &amp; 0  &amp; \ldots   &amp; 0   \\
+      0  &amp; 1  &amp; \ldots   &amp; 0 \\
+      \vdots  &amp; \vdots   &amp; \ddots   &amp; \vdots \\
+      0  &amp; 0  &amp; \ldots   &amp; 1
+\end{bmatrix}
+\end{array}
+\end{equation}\]</span></li>
+</ul>
+</div>
+<div id="matrices-ii" class="slide section level1">
+<h1><strong>Matrices</strong> II</h1>
+<h2 id="operaciones-con-matrices">Operaciones con matrices</h2>
+<ul>
+<li>La matriz <em>cero</em> <span class="math inline">\(\big[0\big]_{mn}\)</span> es la matriz con <span class="math inline">\(a_{ij}=0\)</span>. </li>
+</ul>
+<p>La <strong>suma</strong> de matrices del mismo orden <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+\mathbf{A} + \mathbf{B}   = &amp;
+      \begin{bmatrix}
+              a_{11}+b_{11}  &amp; a_{12}+b_{12}  &amp; \cdots   &amp;
+a_{1n}+b_{1n}   \\
+              a_{21}+b_{21}  &amp; a_{22}+b_{22}  &amp; \cdots   &amp;
+a_{2n}+b_{2n} \\
+              \vdots   &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+              a_{m1}+b_{m1}  &amp; a_{m2}+b_{m2}  &amp; \cdots   &amp;
+a_{mn}+b_{mn}
+        \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>La <strong>multiplicación</strong> <strong>por</strong>
+<strong>escalar</strong> <span class="math inline">\(\lambda
+\in\mathbb{R}\)</span>.</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+\lambda \mathbf{A}    = &amp;
+      \begin{bmatrix}
+              \lambda a_{11}  &amp; \lambda a_{12}  &amp; \cdots   &amp;
+\lambda a_{1n}   \\
+              \lambda a_{21}  &amp; \lambda a_{22}  &amp; \cdots   &amp;
+\lambda a_{2n} \\
+              \vdots  &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+              \lambda a_{m1}  &amp; \lambda a_{m2}  &amp; \cdots   &amp;
+\lambda a_{mn}
+        \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+</div>
+<div id="multiplicación-de-matrices" class="slide section level1">
+<h1><strong>Multiplicación</strong> <strong>de</strong>
+<strong>Matrices</strong></h1>
+<h2 id="operaciones-con-matrices-1">Operaciones con matrices</h2>
+<p>Para que la multiplicación de dos matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> esté definida, <em>el</em>
+<em>número</em> <em>de</em> <em>columnas</em> <em>de</em> <span class="math inline">\(A\)</span> <em>debe</em> <em>ser</em>
+<em>igual</em> <em>al</em> <em>número</em> <em>de</em>
+<em>renglones</em> <em>de</em> <span class="math inline">\(B\)</span>.
+Supongamos que el orden de <span class="math inline">\(A\)</span> es
+<span class="math inline">\(n\times m\)</span> y <span class="math inline">\(B\)</span> tiene el orden <span class="math inline">\(m\times p\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+\mathbf{A} \cdot \mathbf{B}   = &amp;
+      \begin{bmatrix}
+              \sum_{k=1}^{m}a_{1k}b_{k1}  &amp;
+\sum_{k=1}^{m}a_{1k}b_{k2}  &amp; \cdots   &amp;
+\sum_{k=1}^{m}a_{1k}b_{kn}   \\
+              \sum_{k=1}^{m}a_{2k}b_{k1} &amp;
+\sum_{k=1}^{m}a_{2k}b_{k2}  &amp; \cdots   &amp;
+\sum_{k=1}^{m}a_{2k}b_{kn} \\
+              \vdots   &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+              \sum_{k=1}^{m}a_{mk}b_{k1}  &amp;
+\sum_{k=1}^{m}a_{mk}b_{k2}  &amp; \cdots   &amp;
+\sum_{k=1}^{m}a_{mk}b_{kn}
+        \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Dicho de otra forma, las entradas de <span class="math inline">\(\big( A\cdot B\big)_{ij} =
+\sum_{k=1}^{m}a_{ik}b_{kj}\)</span> con <span class="math inline">\(i=1,\,2,\,\ldots,n\)</span> y <span class="math inline">\(j=1,2,\ldots,p\)</span>. El producto de matrices
+tendrá <span class="math inline">\(n-\)</span> filas y <span class="math inline">\(p-\)</span> columnas.</p>
+</div>
+<div id="matrices-2" class="slide section level1">
+<h1>Matrices</h1>
+<h2 id="propiedades-de-las-operaciones-on-matrices">Propiedades de las
+operaciones on Matrices</h2>
+<p>1.- Para toda matriz <span class="math inline">\(A\)</span> y <span class="math inline">\(\alpha,\beta\in \mathbb{R}\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(1 \cdot \textbf{A} = \textbf{A} \cdot
+1 = \textbf{A}\)</span>.</p></li>
+<li><p><span class="math inline">\(0\cdot \mathbf{A} = \mathbf{A}\cdot 0
+= \mathbf{0}\)</span>.</p></li>
+<li><p><span class="math inline">\(\alpha \cdot (\beta\cdot A) = (\alpha
+\beta)\mathbf{A}\)</span>.</p></li>
+</ul>
+<p>2.- Si <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> tienen el mismo orden.</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{A} + (\mathbf{B} +
+\mathbf{C}) = (\mathbf{A} + \mathbf{B}) + \mathbf{C}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{A} + \mathbf{B} = \mathbf{B}
++ \mathbf{A}\)</span>.</p></li>
+<li><p><span class="math inline">\((\alpha+\beta)\cdot A = \alpha\cdot
+\mathbf{A} + \beta \cdot \mathbf{B}\)</span>.</p></li>
+<li><p><span class="math inline">\(\alpha \cdot (\mathbf{A}+ \mathbf{B})
+= \alpha\cdot \mathbf{A} + \alpha \cdot \mathbf{B}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{A}+\mathbf{0} =
+\mathbf{0}+\mathbf{A}=\mathbf{A}\)</span></p></li>
+<li><p><span class="math inline">\(-A + A= \mathbf{0}\)</span></p></li>
+</ul>
+</div>
+<div id="multiplicacion-de-matrices" class="slide section level1">
+<h1>Multiplicacion de Matrices</h1>
+<p>3.- Si <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> tienen el orden adecuado.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\((A+B)C = AC + BC\)</span>.</li>
+<li><span class="math inline">\(C(A+B) = CA + CB\)</span>.</li>
+<li><span class="math inline">\(A(BC) = (AB)C\)</span>.</li>
+</ol>
+<p>Para ver la <em>asociatividad</em>, sea <span class="math inline">\(M=AB\)</span> y <span class="math inline">\(N=BC\)</span> queremos verificar que <span class="math inline">\(AN = MC\)</span>. Por definición de la
+multiplicación de matrices <span class="math display">\[
+\begin{array}{cc}
+m_{ij} = &amp; \sum_{k=1}^{n}a_{ik}b_{kj}. \\
+n_{ij} = &amp; \sum_{r=1}^{p}b_{ir}b_{rj}.
+\end{array}
+\]</span> Entonces <span class="math display">\[
+\big( MC \big)_{ij}=\sum_{l=1}^{p}m_{il}c_{lj} = \sum_{l=1}^{p}
+\sum_{k=1}^n a_{ik}b_{kl}c_{lj} =  \sum_{k=1}^n a_{ik}
+\sum_{l=1}^{p}  b_{kj}c_{lj}
+\]</span> <span class="math display">\[
+=\sum_{k=1}^na_{ik}n_{kj}=(AN)_{ij}
+\]</span></p>
+<p>De la fórmula se deduce que el producto de varias matrices dispuestas
+en un orden determinado no dependen de qué producto se hace primero.</p>
+</div>
+<div id="multiplicacion-de-matrices-1" class="slide section level1">
+<h1>Multiplicacion de Matrices</h1>
+<p>Por ejemplo, por asociatividad <span class="math display">\[
+((AB)C)D = (A(BC))D = A((BC)D)
+\]</span> ## Potencias de matrices Sea <span class="math inline">\(M\)</span> una matriz <strong>cuadrada</strong> de
+orden <span class="math inline">\(n\)</span>, por definición</p>
+<p><span class="math display">\[\begin{equation*}
+M^{0}=Id(n)\,\,M^{1} = M\,\,  M^{2} = MM\,\, M^{3} = MMM.
+\end{equation*}\]</span></p>
+<p>En general <span class="math display">\[
+\begin{array}{cc}
+M^{p}M^{q}= M^{p+q}\\
+(M^{p})^{q} = M^{pq}
+\end{array}
+\]</span></p>
+<p><em>Observación</em> : Las propiedades de productos notables no se
+conserven.</p>
+<p><span class="math display">\[
+\begin{array}{cccc}
+(A+B)^{2} &amp; = &amp; (A+B)(A+B) &amp;= A^2 + AB + BA + B^2 \\
+(A+B)(A-B) &amp;= &amp;A(A-B) + B(A-B)&amp; = A^2 -AB + BA -B^2
+\end{array}
+\]</span></p>
+</div>
+<div id="matriz-transpuesta" class="slide section level1">
+<h1>Matriz transpuesta</h1>
+<p>Sea <span class="math inline">\(A=(a_{ij})\)</span> una matriz de
+orden <span class="math inline">\(m\times n\)</span>, la matriz
+transpuesta de <span class="math inline">\(A\)</span>, <span class="math inline">\(A^{T}\)</span> es la matriz de orden <span class="math inline">\(n\times m\)</span> tal que <span class="math inline">\((A^T)_{ij}=A_{ji}\)</span>. <span class="math display">\[\begin{equation*}
+\begin{array}{ccccc}
+A = &amp; \begin{pmatrix} 3 &amp; -2  \\ -4 &amp; 3 \end{pmatrix}
+&amp;\,\,\,\, &amp; A^{T} = &amp; \begin{pmatrix} 3 &amp; -4  \\ -2
+&amp; 3 \end{pmatrix}  \\
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccccc}
+A = &amp; \begin{pmatrix} 3 &amp; -1 &amp; 0 \\ -2 &amp; 1 &amp; 1 \\ 2
+&amp; -1 &amp; 4 \end{pmatrix} &amp;\,\,\,\, &amp; A^{T} = &amp;
+\begin{pmatrix}  3 &amp; -2 &amp; 2 \\ -1 &amp; 1 &amp; -1 \\ 0 &amp; 1
+&amp; 4  \end{pmatrix}  \\
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccccc}
+A = &amp; \begin{pmatrix} -1 &amp; 3 &amp; 0 \\ -2 &amp; 1 &amp; 1 \\ 3
+&amp; 0 &amp; -2 \\ 4 &amp; 1 &amp; 2 \end{pmatrix} &amp;\,\,\,\, &amp;
+A^{T} = &amp; \begin{pmatrix}  -1 &amp; -2 &amp; 3 &amp; 4 \\ 3 &amp; 1
+&amp; 0 &amp;  1 \\ 0 &amp; 1 &amp; -2 &amp; 2  \end{pmatrix}  \\
+\end{array}
+\end{equation*}\]</span></p>
+</div>
+<div id="propiedades-de-la-matriz-transpuesta" class="slide section level1">
+<h1>Propiedades de la matriz transpuesta</h1>
+<p>La segunda propiedad</p>
+<p><span class="math display">\[\begin{equation*}
+  [(AB)^T]_{ij} = \sum_{k=1}^m a_{jk}b_{ki} = \sum_{k=1}^m b^T_{ik}
+a^T_{kj} = [B^TA^T]_{ij}
+\end{equation*}\]</span></p>
+<p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz
+cuadrada de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(\mathbf{A}=\mathbf{A}^{T}\)</span> decimos que
+<span class="math inline">\(\mathbf{A}\)</span> es una matriz
+<strong>simétrica</strong>. Si <span class="math inline">\(\mathbf{A}=-\mathbf{A}^{T}\)</span> decimos que es
+<strong>antisimétrica</strong>.</p>
+</div>
+<div id="matriz-conjugada-y-adjunta" class="slide section level1">
+<h1>Matriz conjugada y adjunta</h1>
+<p>Sea <span class="math inline">\(A=(a_{ij})\)</span> una matriz de
+orden <span class="math inline">\(m\times n\)</span> de números
+complejos, la matriz <strong>conjugada</strong> de <span class="math inline">\(A\)</span>, <span class="math inline">\(\bar{A}\)</span> es la matriz de orden <span class="math inline">\(m\times n\)</span> tal que <span class="math inline">\((\bar{A})_{ij}=\bar{A}_{ij}\)</span>.</p>
+<p>Sea <span class="math inline">\(A=(a_{ij})\)</span> una matriz de
+orden <span class="math inline">\(m\times n\)</span> de números
+complejos, la matriz <strong>adjunta</strong> de <span class="math inline">\(A\)</span>, <span class="math inline">\(A^{*}\)</span> es la matriz de orden <span class="math inline">\(n\times m\)</span> tal que <span class="math inline">\((A)_{ij}=(\bar{A})_{jj}\)</span>. Es decir, la
+adjunta de <span class="math inline">\(A\)</span> se obtiene al
+<em>conjugar</em> y <em>transponer</em> <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccccc}
+A = &amp; \begin{pmatrix} -i &amp; 2 + 3i  \\ -4i &amp; 5+2i
+\end{pmatrix} &amp;\,\,\,\, &amp; A^{*} = &amp; \begin{pmatrix} i &amp;
+4i  \\ 2-3i &amp; 5-2i \end{pmatrix}  \\
+\end{array}
+\end{equation*}\]</span></p>
+<p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz
+cuadrada y <span class="math inline">\(A\)</span> es igual a su adjunta,
+entonces se dice que <span class="math inline">\(\mathbf{A}\)</span> es
+una matriz <strong>hermitiana</strong> o <strong>simétrica</strong>
+<strong>según</strong> <strong>Hermite</strong>.</p>
+</div>
+<div id="matriz-inversa" class="slide section level1">
+<h1>Matriz Inversa</h1>
+<p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz
+cuadrada de orden <span class="math inline">\(n\)</span>, se dice que
+<span class="math inline">\(X\)</span> es la matriz
+<strong>inversa</strong> de <span class="math inline">\(A\)</span> si
+<span class="math display">\[
+A\cdot X = X\cdot A = \mathbf{Id}
+\]</span></p>
+<p>Si dicha matriz existe decimos que <span class="math inline">\(A\)</span> es <strong>invertible</strong>.</p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

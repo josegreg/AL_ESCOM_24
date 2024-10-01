@@ -1,0 +1,50 @@
+---
+title: "Práctica 2"
+author: "Álgebra lineal"
+header-includes:
+   - \usepackage{amsmath}
+   - \usepackage{mathtools}
+   - \usepackage{multicol}
+geometry: "left=1cm,right=3cm,top=0.5cm,bottom=1cm"   
+output: pdf_document
+keep_tex: no
+---
+
+# Práctica 2
+
+1. Determinar si los siguientes sistemas tienen una solución, una infinidad o son inconsistentes y encontrar su conjunto solución $\mathcal{X}$
+\[
+\begin{matrix}
+  & x    & + z & + & w & =  &  -5\\
+  & x    & - z & + & w & =  & -1\\
+x & +y   & +z  & + & w & =  & -3 \\
+  & 2x   & +2z &  &   & =  & -2
+\end{matrix}
+\]
+
+1. Para que valores de $k$ el sistema tiene _al_ _menos_ _una_ solución
+
+\[ 
+\begin{array}{rlrr}
+a) & 
+\begin{matrix}
+      x  &  -3y & + z      &  =  &  6\\
+      x  &      & - z      &  =  & -3\\
+      2x & +ky  & +(3-k) z &  =  & 1 
+\end{matrix},\,\, & 
+b) & 
+\begin{matrix}
+x  &  +y  & + kz &  =  &  1\\
+x  &  +ky & + z  &  =  &  1\\
+kx &  +y  & + z  &  =  & -2 
+\end{matrix}
+\end{array}
+\]
+3. Encontrar el conjunto solución del siguiente sistema
+\[
+\begin{matrix}
+-x_1  & +3x_2 & -2x_3 & + 4x_4 & =  & 0\\
+2x_1  & -6x_2 &  +x_3 & -2 x_4 & =  & -3\\
+x_1   & -3x_2 & +4x_3 & -8x_4  & =  & 2 
+\end{matrix}
+\]

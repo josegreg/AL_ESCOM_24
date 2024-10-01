@@ -1,0 +1,250 @@
+---
+title: "Matrices"
+author: "Jose Rodriguez Villarreal"
+date: "2/28/2022"
+output: beamer_presentation
+---
+
+# **Matrices** **y** **vectores**
+\small
+\small
+Una matriz de _orden_ $m\times n$ es una función $\mathbf{A}:\{1,2,\ldots,m\}\times\{1,2,\ldots,n\} \rightarrow\mathbb{R}$. Que se escribe como un arreglo rectangular
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix}
+        a_{11}  & a_{12}  & \cdots   & a_{1n}   \\
+        a_{21}  & a_{22}  & \cdots   & a_{2n} \\
+        \vdots   & \vdots  & \vdots   & \vdots \\
+        a_{m1}  & a_{m2}  & \cdots   & a_{mn} 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+\pause
+
+- Decimos que la matriz $\mathbf{A}$ es de tamaño $m\times n$. Al número de la fila $i$ y columna $j$ es el número $a_{ij}$ se le llama elemento ${(i,j)}$ de la matriz.
+\pause
+
+- Una matriz es _cuadrada_ si $m=n$, es decir si el número de renglones es igual al número de columnas.
+\pause
+
+- Si una matriz no es cuadrada, entonces se dice que es _rectangular_.
+
+# **Matrices**
+\small
+- Una matriz _diagonal_ es una matriz cuadrada cuyos elementos que no están en la diagonal principal son iguales a cero. Podemos referirnos a la matriz diagonal como $\mbox{\textbf{diag}}(d_1,d_2,\ldots, d_n)$.
+\pause
+- La matriz _identidad_ es la matriz _diagonal_ cuya diagonal principal es $\{1,\ldots,1\}$ y sus otras entradas son $0$.
+\pause
+\begin{equation}
+\begin{array}{cc}
+\mathbf{Id}  =&  \begin{bmatrix}
+        1  & 0  & \ldots   & 0   \\
+        0  & 1  & \ldots   & 0 \\
+        \vdots  & \vdots   & \ddots   & \vdots \\
+        0  & 0  & \ldots   & 1 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+
+# **Matrices** II
+\small
+## Operaciones con matrices
+- La matriz _cero_ $\big[0\big]_{mn}$ es la matriz con $a_{ij}=0$. \pause
+
+La **suma** de matrices del mismo orden $A$ y $B$
+
+\begin{equation*}
+\begin{array}{cc}
+\mathbf{A} + \mathbf{B}   = & 
+      \begin{bmatrix}
+              a_{11}+b_{11}  & a_{12}+b_{12}  & \cdots   & a_{1n}+b_{1n}   \\
+              a_{21}+b_{21}  & a_{22}+b_{22}  & \cdots   & a_{2n}+b_{2n} \\
+              \vdots   & \vdots  & \vdots   & \vdots \\
+              a_{m1}+b_{m1}  & a_{m2}+b_{m2}  & \cdots   & a_{mn}+b_{mn} 
+        \end{bmatrix}
+\end{array}
+\end{equation*}
+
+La **multiplicación** **por** **escalar** $\lambda \in\mathbb{R}$.
+
+\begin{equation*}
+\begin{array}{cc}
+\lambda \mathbf{A}    = & 
+      \begin{bmatrix}
+              \lambda a_{11}  & \lambda a_{12}  & \cdots   & \lambda a_{1n}   \\
+              \lambda a_{21}  & \lambda a_{22}  & \cdots   & \lambda a_{2n} \\
+              \vdots  & \vdots  & \vdots   & \vdots \\
+              \lambda a_{m1}  & \lambda a_{m2}  & \cdots   & \lambda a_{mn} 
+        \end{bmatrix}
+\end{array}
+\end{equation*}
+
+
+# **Multiplicación** **de** **Matrices** 
+\small
+## Operaciones con matrices
+
+Para que la multiplicación de dos matrices $A$ y $B$ esté definida, _el_ _número_ _de_ _columnas_ _de_ $A$ _debe_ _ser_ _igual_ _al_ _número_ _de_ _renglones_ _de_ $B$. Supongamos que  el orden de $A$ es $n\times m$ y $B$ tiene el orden $m\times p$.
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A} \cdot \mathbf{B}   = & 
+      \begin{bmatrix}
+              \sum_{k=1}^{m}a_{1k}b_{k1}  & \sum_{k=1}^{m}a_{1k}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{1k}b_{kn}   \\
+              \sum_{k=1}^{m}a_{2k}b_{k1} & \sum_{k=1}^{m}a_{2k}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{2k}b_{kn} \\
+              \vdots   & \vdots  & \vdots   & \vdots \\
+              \sum_{k=1}^{m}a_{mk}b_{k1}  & \sum_{k=1}^{m}a_{mk}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{mk}b_{kn} 
+        \end{bmatrix}
+\end{array}
+\end{equation}
+
+Dicho de otra forma, las entradas de $\big( A\cdot B\big)_{ij} = \sum_{k=1}^{m}a_{ik}b_{kj}$ con $i=1,\,2,\,\ldots,n$ y $j=1,2,\ldots,p$. El producto de matrices tendrá $n-$ filas y $p-$ columnas.
+
+# Matrices
+## Propiedades de las operaciones on Matrices
+\small
+1.- Para toda matriz $A$ y $\alpha,\beta\in \mathbb{R}$.
+
+\begin{itemize}
+\item $1 \cdot \textbf{A}$ = $\textbf{A} \cdot 1 $ =  $\textbf{A}$.
+ 
+\item $0\cdot  \mathbf{A}$ =$  \mathbf{A}\cdot 0$ =  $\mathbf{0}$.
+ 
+ \item $\alpha \cdot (\beta\cdot A) = (\alpha \beta)\mathbf{A}$.
+
+\end{itemize}
+
+2.- Si $A$, $B$ y $C$ tienen el mismo orden.
+\begin{itemize}
+  \item $\mathbf{A} + (\mathbf{B} + \mathbf{C}) = (\mathbf{A} + \mathbf{B}) + \mathbf{C} $.
+ \item $\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}$.
+ \item $(\alpha+\beta)\cdot A = \alpha\cdot \mathbf{A} + \beta \cdot \mathbf{B}$.
+ \item $\alpha \cdot (\mathbf{A}+ \mathbf{B}) = \alpha\cdot \mathbf{A} + \alpha \cdot \mathbf{B}$.
+ \item $\mathbf{A}+\mathbf{0} = \mathbf{0}+\mathbf{A}=\mathbf{A}$
+\end{itemize}
+
+
+# Multiplicacion de Matrices
+\small
+
+3.- Si $A$, $B$ y $C$ tienen el orden adecuado.
+
+\begin{description}
+  \item a) $(A+B)C = AC + BC$.
+  \item b) $C(A+B) = CA + CB$.
+  \item c) $A(BC) = (AB)C$.
+\end{description}
+
+Para ver la _asociatividad_, sea $M=AB$ y $N=BC$ queremos verificar que $AN = MC$.
+Por definición de la multiplicación de matrices 
+$$
+\begin{array}{cc}
+m_{ij} = & \sum_{k=1}^{n}a_{ik}b_{kj}. \\
+n_{ij} = & \sum_{r=1}^{p}b_{ir}b_{rj}.
+\end{array}
+$$
+Entonces 
+$$
+\big( MC \big)_{ij}=\sum_{l=1}^{p}m_{il}c_{lj} = \sum_{l=1}^{p} \sum_{k=1}^n a_{ik}b_{kl}c_{lj} =  \sum_{k=1}^n a_{ik} \sum_{l=1}^{p}  b_{kj}c_{lj}
+$$
+$$
+=\sum_{k=1}^na_{ik}n_{kj}=(AN)_{ij}
+$$
+
+De la fórmula se deduce que el producto de varias matrices dispuestas en un orden determinado no dependen de qué producto se hace primero.
+
+# Multiplicacion de Matrices
+\small
+
+Por ejemplo, por asociatividad
+$$
+((AB)C)D = (A(BC))D = A((BC)D)
+$$
+## Potencias de matrices
+Sea $M$ una matriz **cuadrada** de orden $n$, por definición
+
+\begin{equation*}
+M^{0}=Id(n)\,\,M^{1} = M\,\,  M^{2} = MM\,\, M^{3} = MMM.
+\end{equation*}
+
+En general
+$$
+\begin{array}{cc}
+M^{p}M^{q}= M^{p+q}\\
+(M^{p})^{q} = M^{pq}
+\end{array}
+$$
+
+_Observación_ : Las propiedades de productos notables no se conserven.
+
+$$
+\begin{array}{cccc}
+(A+B)^{2} & = & (A+B)(A+B) &= A^2 + AB + BA + B^2 \\
+(A+B)(A-B) &= &A(A-B) + B(A-B)& = A^2 -AB + BA -B^2
+\end{array}
+$$
+
+# Matriz transpuesta
+
+\small 
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$, la matriz transpuesta de $A$, $A^{T}$ es la matriz de orden $n\times m$ tal que $(A^T)_{ij}=A_{ji}$.
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} 3 & -2  \\ -4 & 3 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix} 3 & -4  \\ -2 & 3 \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} 3 & -1 & 0 \\ -2 & 1 & 1 \\ 2 & -1 & 4 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix}  3 & -2 & 2 \\ -1 & 1 & -1 \\ 0 & 1 & 4  \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} -1 & 3 & 0 \\ -2 & 1 & 1 \\ 3 & 0 & -2 \\ 4 & 1 & 2 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix}  -1 & -2 & 3 & 4 \\ 3 & 1 & 0 &  1 \\ 0 & 1 & -2 & 2  \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+# Propiedades de la matriz transpuesta
+
+\begin{description}
+  \item 1) $(\alpha A + \beta B)^{T} = \alpha A^{T} + \beta B^{T}$.
+  \item 2) $(AB)^{T} = B^{T}A^{T}$.
+\end{description}
+
+La segunda propiedad 
+
+\begin{equation*}
+  [(AB)^T]_{ij} = \sum_{k=1}^m a_{jk}b_{ki} = \sum_{k=1}^m b^T_{ik} a^T_{kj} = [B^TA^T]_{ij}
+\end{equation*}
+
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$ y $\mathbf{A}=\mathbf{A}^{T}$ decimos que $\mathbf{A}$ es una matriz **simétrica**.
+Si $\mathbf{A}=-\mathbf{A}^{T}$ decimos que es **antisimétrica**.
+
+# Matriz conjugada y adjunta
+\small
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$ de números complejos, la matriz **conjugada** de $A$, $\bar{A}$ es la matriz de orden $m\times n$ tal que $(\bar{A})_{ij}=\bar{A}_{ij}$.
+
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$ de números complejos, la matriz **adjunta** de $A$, $A^{*}$ es la matriz de orden $n\times m$ tal que $(A)_{ij}=(\bar{A})_{jj}$. Es decir, la adjunta de $A$ se obtiene al _conjugar_ y _transponer_ $A$.
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} -i & 2 + 3i  \\ -4i & 5+2i \end{pmatrix} &\,\,\,\, & A^{*} = & \begin{pmatrix} i & 4i  \\ 2-3i & 5-2i \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+Si $\mathbf{A}$ es una matriz cuadrada y $A$ es igual a su adjunta, entonces se dice que $\mathbf{A}$ es una matriz **hermitiana** o **simétrica** **según** **Hermite**.
+
+# Matriz Inversa
+\small 
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$, se dice que $X$ es la matriz **inversa** de $A$ si 
+$$
+A\cdot X = X\cdot A = \mathbf{Id}
+$$
+
+Si dicha matriz existe decimos que $A$ es **invertible**.
+
