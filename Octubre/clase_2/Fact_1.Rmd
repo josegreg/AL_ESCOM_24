@@ -1,12 +1,14 @@
 ---
-title: "Sistemas de ecuaciones, eliminación gaussiana II"
-author: "Álgebra Lineal 2024 JGRV"
+title: "Sistemas de ecuaciones, matrices elementales "
+header-includes:
+   - \usepackage{amsmath}
+author: "Álgebra lineal"
 slidy_presentation:
     css: styles.css
     footer: "Álgebra lineal, ESCOM 2CV5, José Rodríguez Villarreal"
     pandoc_argd: ["--title-prefix","Bar"]
+date: "6/10/2024"
 ---
-
 
 # Sistemas de ecuaciones. Eliminación gaussiana 
 
@@ -949,6 +951,7 @@ Sin embargo, es útil para solucionar una _familia_ _de_ _sistemas_ _de_ _ecuaci
 
 
 1. Calcular la matriz inversa de 
+
 \begin{equation*}
  \begin{bmatrix} 3 & -5 & 1   \\  
                  0 & 1  & -1  \\ 
@@ -1389,94 +1392,253 @@ Ahora, suponga que el sistema tiene una única solución y sea $R$ la matriz esc
 o bien el sistema tiene solución única ($\vec{x}=\vec{\mathbf{0}}$) o bien tiene una infinidad de soluciones.
 <div>
 
+
 # Matrices elementales
 
 \small
-### Matriz elemental.
- Una **matriz** se dice ser **elemental** de orden $n$ es una matriz que se puede obtener de la matriz identidad $n$ por medio de una sóla operacion elemental de filas.        
+## Definición de las matrices elemental.
+
+Una **matriz** se dice ser **elemental** de orden $n$ es una matriz que se puede obtener de la matriz identidad $\mathbf{I}_n$ por medio de una sóla operacion elemental en sus filas.        
+A la operación elemental de intercambio de renglones se le asociará las siguientes matrices
  
- A la operación elemental de intercambio de renglones se le asociará las siguientes matrices
-Intercambio de renglones:
+### Intercambio de renglones:
+
+Considere a la matriz $\mathbf{I}_n$, si le aplicamos la operación elemental de intercambio de renglones $i\leftrightarrow j$ obtenemos la matriz que tiene como entrada $a_{ii}=0,\,\, a_{ij}=1,\,\, a_{jj}=0,\,\, a_{ji}=1$
 
 \begin{equation*}
-\begin{array}{cc}
-P_{ij} = &  \begin{bmatrix} 
-     1     & 0      & 0     & \cdots & 0  & 0      \\ 
-     0     & 1      & 0     & \cdots & 0  & 0      \\
-     0     &  0     & 0     & \cdots & 1  & 0      \\
-    \vdots & \vdots & \vdots& \vdots & \vdots  & \vdots \\
-     0     &  0     & 1     & \cdots & 0   &0      \\
-     0     &  0     & 0    & \cdots  & 0     &1
+\begin{array}{ccccc}
+\mathbf{I}_n = &  \begin{bmatrix} 
+                   1      & 0     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\ 
+                   0      & 1     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 1     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots& \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 0     & \cdots& 1      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\   
+                  0       &  0    & \ldots  & 0     & \ldots& \ldots & 0      & 1
+  \end{bmatrix}
+ & \xrightarrow{ E_i\leftrightarrow E_j}
+ &  \begin{bmatrix} 
+     1      & 0     & \ldots  & 0     & \cdots  & 0      & 0       & 0      \\ 
+     0      & 1     & \ldots  & 0     & \cdots  & 0      & 0       & 0      \\
+  \vdots    & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & \vdots \\
+     0      &  0    & \ldots  & 0     & \cdots  & 1      & 0       & 0      \\
+    \vdots  & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & 0      \\
+     0      &  0    & \ldots  & 1     & \cdots  & 0      & 0       & 0      \\
+     \vdots & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & \vdots \\
+     0      &  0    & \ldots  & 0     & \cdots  & 0      & 0       & 1
   \end{bmatrix}
 \end{array}
 \end{equation*}
+El primer tipo de matrices elementales son las matrices $P_{ij}$
 
-
-## Matrices elementales ii
+\begin{equation*}
+\begin{array}{cr}
+P_{ij} = &  \begin{bmatrix} 
+               1      & 0     & \ldots  & 0     & \cdots  & 0      & 0       & 0      \\ 
+               0      & 1     & \ldots  & 0     & \cdots  & 0      & 0       & 0      \\
+            \vdots    & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & \vdots \\
+               0      &  0    & \ldots  & 0     & \cdots  & 1      & 0       & 0      \\
+             \vdots   & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & 0      \\
+              0       &  0    & \ldots  & 1     & \cdots  & 0      & 0       & 0      \\
+               \vdots & \vdots& \vdots  & \vdots& \vdots  & \vdots & \vdots  & \vdots \\
+              0       &  0    & \ldots  & 0     & \cdots  & 0      & 0       & 1
+  \end{bmatrix}
+\end{array}
+\end{equation*}
 
 ### Multiplicación por escalar
 
+Considere a la matriz $\mathbf{I}_n$, si le aplicamos la operación elemental de multiplicación de un renglón $i$ por un escalar $c$
+
+                                                            
+La segunda clase de matrices elementales se denota como $D_{i}(c)$
+
 \begin{equation*}
 \begin{array}{cc}
-D_{i}(\lambda) = &  \begin{bmatrix} 
-     1     & 0      & 0     & \cdots   & 0  & 0      \\ 
-     0     & 1      & 0     & \cdots   & 0  & 0      \\
-     0     &  0     & \lambda & \cdots & 0  & 0      \\
-    \vdots & \vdots & \vdots& \vdots & \vdots  & \vdots \\
-     0     &  0     & 0     & \cdots & 1   &0      \\
-     0     &  0     & 0    & \cdots  & 0   &1
+D_{i}(c) = &  \begin{bmatrix} 
+     1     & 0      & 0     & \cdots   & 0       & 0      & 0       & 0      \\ 
+     0     & 1      & 0     & \cdots   & 0       & 0      & 0       & 0      \\
+ \vdots    & \vdots &\vdots & \ddots   & \vdots  & \vdots & \vdots  & \vdots \\
+     0     &  0     & 0     & \cdots   & c       & \ldots & 0       & 0      \\
+    \vdots & \vdots & \vdots& \cdots   & \vdots  & \ddots & \vdots  & \vdots \\
+     0     &  0     & 0     & \cdots   &  \vdots & \ldots &  1      & 0 \\
+     0     &  0     & 0    & \cdots    & 0       &  0     &  0      & 1
   \end{bmatrix}
 \end{array}
 \end{equation*}
 
-## Matrices elementales iii
+### Multiplicación de escalar de un renglón más otro renglón
 
-### Multiplicación de escalar de un renglón más otro renglón.
-
-La  operación que consiste en multiplicar el renglón $A_{j\boldsymbol{\cdot}}$ por un escalar $r$ y sumarlo al renglón $i$.
-
-\small
+La tercera clase de matrices elementales de denota como $S_{ij}(c)$
 
 \begin{equation*}
-\begin{array}{cc}
-S_{ij}(r) = &  \begin{bmatrix} 
-     1     & 0      & 0     & \cdots   & 0       & 0      \\ 
-     0     & 1      & 0     & \cdots   & 0       & 0      \\
-     0     &  0     & 1     & \cdots   & 0       & 0      \\
-    \vdots & \vdots & \vdots& \vdots   & \vdots  & \vdots \\
-     0     &  0     & r     & \cdots  & 1       &0      \\
-     0     &  0     & 0    & \cdots    & 0       &1
+\begin{array}{ccccc}
+\mathbf{I}_n = &  \begin{bmatrix} 
+                   1      & 0     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\ 
+                   0      & 1     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 1     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \ddots& \vdots& \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 0     & \cdots& 1      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\   
+                  0       &  0    & \ldots  & 0     & \ldots& \ldots & 0      & 1
+  \end{bmatrix}
+ & \xrightarrow{ cE_i+E_j\leftrightarrow E_j}
+ &  \begin{bmatrix} 
+                   1      & 0     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\ 
+                   0      & 1     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \ddots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 1     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \ddots& \vdots& \vdots  & \vdots \\
+                   0      &  0    & \ldots  & c     & \cdots& 1      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\   
+                  0       &  0    & \ldots  & 0     & \ldots& \ldots & 0      & 1
   \end{bmatrix}
 \end{array}
 \end{equation*}
 
-Se puede verificar que $(S_{ij}(\lambda)\big)^{-1} = (S_{ij}(-\lambda)\big)$.
+
+entonces la tercera clase de matrices elementales se define como 
+\begin{equation*}
+\begin{array}{cc}
+S_{ij}(c) = &  \begin{bmatrix} 
+                   1      & 0     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\ 
+                   0      & 1     & \ldots  & 0     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \ddots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\
+                   0      &  0    & \ldots  & 1     & \cdots& 0      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \ddots& \vdots& \vdots  & \vdots \\
+                   0      &  0    & \ldots  & c     & \cdots& 1      & 0       & 0      \\
+                \vdots    & \vdots& \vdots  & \vdots& \vdots& \vdots & \vdots  & \vdots \\   
+                  0       &  0    & \ldots  & 0     & \ldots& \ldots & 0      & 1
+              \end{bmatrix}
+\end{array}
+\end{equation*}
+
+
+#### Ejemplos
+
+Sea $A$ la matriz 
+\[
+A=\begin{pmatrix}
+      2 & 3 & 1 & 4 \\
+     -4 & 5 & 6 & 9 \\
+      0 & 7 & 8 & 2 
+  \end{pmatrix}
+\]
+
+* Calcular $P_{13}\cdot A$
+
+* Calcular $D_2(2)\cdot A$
+
+* Calcular$S_{23}(1/3)\cdot A$
+
+### Ejemplo
+
+Encuentre las inversas de las matrices, en $n=3$, $3\times 3$ de $P_{13}$, $D_2(k), k\ne 0$ y $S_{23}(k)$
+La inversa de $P_{13}$
+\[
+\begin{bmatrix}
+      0 & 0 & 1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 0
+  \end{bmatrix}
+\begin{bmatrix}
+      0 & 0 & 1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 0
+  \end{bmatrix} = 
+\begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+  \end{bmatrix}
+\]
+
+\[
+D_2(k)=\begin{bmatrix}
+              1 & 0 & 0 \\
+              0 & k & 0 \\
+              0 & 0 & 1
+        \end{bmatrix},\quad\quad, D_2(k)^{-1}\cdot \begin{bmatrix}
+              1 & 0 & 0 \\
+              0 & k & 0 \\
+              0 & 0 & 1
+        \end{bmatrix} =
+        \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+      \end{bmatrix}
+\]
+
+\[
+D_2(k)^{-1}=\begin{bmatrix}
+              1 & 0 & 0 \\
+              0 & \frac{1}{k} & 0 \\
+              0 & 0 & 1
+        \end{bmatrix}
+\]
+Para la otra matriz $S_{23}(k)$
+\[
+S_{23}(k)^{-1} \cdot  \begin{bmatrix}
+                            1 & 0 & 0 \\
+                            0 & 1 & 0 \\
+                            0 & k & 1
+                      \end{bmatrix} = 
+                      \begin{bmatrix}
+                            1 & 0 & 0 \\
+                            0 & 1 & 0 \\
+                            0 & 0 & 1
+                      \end{bmatrix}
+\]
+\[
+  S_{23}(K)^{-1}=\begin{bmatrix}
+                        1 & 0 & 0 \\
+                        0 & 1 & 0 \\
+                        0 & -k & 1
+                  \end{bmatrix}
+\]
+
+### Proposición
+
+Cada matriz elemental de orden $n$ tiene una inversa y es elemental del mismo tipo
 
 Si aplicamos las matrices elementales al proceso de eliminación gaussiana
 
-Tenemos el siguiente resultado 
+### Ejemplos
 
+Describir el proceso de eliminación gaussiana  con las matrices elementales
 
-# Ejemplos
+\begin{equation*}
+  \begin{matrix}
+      2x_1  & + x_2 &  x_3  & = 1  \\
+      4x_1  & + x_2 &       & =-2   \\
+     -2x_1  & +2x_2 & +x_3  & =7
+  \end{matrix}
+\end{equation*}
 
-Expresar a la matriz escalonada como producto de $A$ y matrices elementales
+Entonces 
 
 \[
-A_1 = \begin{bmatrix} 1 & 4 & 0 \\
-                    0 & 1 & 0 \\
-                    0 & 3 & 1
-        \end{bmatrix}
+E_1=E_{21}=\begin{pmatrix} 1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0& 1 \end{pmatrix}
+\]
+\[
+E_2=S_{13}(1)=\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0& 1 \end{pmatrix}
+\]
+\[
+E_3=S_{23}(3)=\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 3& 1 \end{pmatrix}
+\]
+
+Luego
+\[
+E_3\cdot E_2 \cdot E_1 \cdot A = U
 \]
 
 
-\[
-A_2=\begin{bmatrix} 1 & 1 & 1 \\
-                    -1 & -2 & -2 \\
-                     1 &  2 & 1
-\end{bmatrix}\]
 
 ## Ejemplo 1
-
+  
 
 Si $\mathbf{A}$ es de orden 3 
 \begin{equation*}
@@ -1516,6 +1678,159 @@ Descomponer a $A$ como producto de matrices elementales y una triangular superio
   \end{matrix}
 \end{equation*}
 
+@. Comprobar que
+
+\begin{equation}
+L =\begin{bmatrix} 1 &  0 & 0 \\
+                   2 & 1 & 0 \\
+                   3 & 4 & 1
+                 \end{bmatrix}\quad \mbox{ y } \quad
+U =\begin{bmatrix} 2 &  2 & 2 \\
+                   0 & 3 & 3 \\
+                   0 & 0 & 4
+                 \end{bmatrix}
+\end{equation}
+factorizan a 
+\[
+A =\begin{bmatrix} 2 &  2 & 2 \\
+                   4 & 7 & 7 \\
+                   6 & 18 & 22
+                 \end{bmatrix}
+\]
+
+Usar eso para resolver el sistema
+\begin{equation*}
+  \begin{matrix}
+      2x_1 &+2 x_2 & +2 x_3  & = 12  \\
+      4x_1  &  +7x_2 & +  7x_3  & =24   \\
+      6x_1   & + 18x_2      &  +22 x_3  & =12
+  \end{matrix}
+\end{equation*}
+
+
+## Factorización $LU$
+
+Si una matriz $A$ es tal que un pivote nulo nunca es encontrado durante eliminación Gaussiana, _aplicando_ _operaciones_ _del_ _tipo_ III (es decir, sumar al renglón $j$ un múltiplo del renglón $i$) entonces 
+\[
+A\mbox{ tiene una factorización }LU
+\]
+
+es decir $A=LU$ con $L$ triangular inferior y $U$ triangular superior.
+
+#### Definición 
+
+Sea $A$ una matriz 
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix}
+        a_{11}  & a_{12}  & \cdots   & a_{1n}   \\
+        a_{21}  & a_{22}  & \cdots   & a_{2n} \\
+        \vdots   & \vdots  & \vdots   & \vdots \\
+        a_{m1}  & a_{m2}  & \cdots   & a_{mn} 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+las submatrices principales de $A$ son las matrices de tamaño $1$, $2,\ldots,n$ que incluyen a los elementos de la  diagonal principal. 
+
+Es decir 
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}_k  =&  \begin{bmatrix}
+                    a_{11}  & a_{12}  & \cdots   & a_{1k}   \\
+                    a_{21}  & a_{22}  & \cdots   & a_{2k} \\
+                    \vdots   & \vdots  & \vdots   & \vdots \\
+                    a_{k1}  & a_{k2}  & \cdots   & a_{kk} 
+                  \end{bmatrix}
+\end{array}
+\end{equation}
+
+### Teorema
+
+* Si cada submatriz principal $A_k$ es no singular entonces $A$ tiene una factorización $LU$
+
+* Si $A$ es invertible, entonces existe una matriz de permutación $P$ tal que
+
+\[
+PA = LU
+\]
+
+
+## El método de Dolittle
+
+Se puede obtener de manera recursiva los términos de la factorización $LU$.
+
+Se asume que la matriz $L$ tiene diagonal unitaria, es decir $L_{ii}= 1$. Es decir
+
+\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix} 
+       1        &    0    & \cdots & 0   \\
+       m_{21}   &    1    & \cdots & 0   \\
+     \vdots     & \vdots  & \vdots & \vdots \\
+     m_{n-1,1}     & m_{n-1,2} & \cdots & 0 \\
+     m_{n1}     & m_{n,2} & \cdots & 1  
+  \end{bmatrix} & 
+  \begin{bmatrix} 
+      u_{11}  &    u_{12}  & \cdots & u_{1n}   \\
+       0      &    u_{22}  & \cdots & u_{2n}   \\
+     \vdots   & \vdots     & \vdots & \vdots \\
+       0      &  0         & \cdots & u_{n.1,n} \\
+       0      &  0         & \cdots & u_{nn}  
+  \end{bmatrix} &
+  = 
+  &
+  \begin{bmatrix} 
+     a_{11} & a_{12}      & a_{13}     & \cdots & a_{1n}       \\ 
+     a_{21} & a_{22}      & a_{23}     & \cdots & a_{2n}       \\
+     a_{31} & a_{32}      & a_{33}     & \cdots & a_{3n}       \\
+    \vdots  & \vdots      & \vdots     & \vdots & \vdots       \\
+     a_{n-1,1}& a_{n-1,2} & a{n-1,3}   & \cdots & a_{n-1,n}    \\
+     a_{n1} & a_{n,2}     & a_{n,3}    & \cdots & a_{n,n}     \\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+El método de Dolittle consiste en "resolver" las incógintas $u_{11},\,u_{12},\ldots,u_{n1},\ldots,u_{nn}$, $l_{21},\,l_{31},\ldots,l_{n1},l_{n,n-1}$ en un orden particular, aprovechando la estructura de las matrices $U$ y $L$.
+Notar que 
+
+\begin{equation}
+\begin{array}{ccc}
+l_{ij} &  = &\begin{cases}
+              1,        & \text{si $j=i$}\\
+              0,        & \text{si $j>i$}\\
+              m_{ij}    & \text{si $j \leq i$}
+            \end{cases}
+\end{array}
+\end{equation}
+
+Si se realiza la multiplicación, y $j\geq i$ obtenemos una fórmula recursiva
+\begin{equation}
+  a_{ij} = \sum_{p=1}^{i} l_{ip}u_{pj} = \sum_{p=1}^{i-1}m_{ip}u_{pj} + u_{ij},\,\,\,\,\, 
+  \mbox{ para } j=i,i+1,\ldots,n
+\end{equation}
+
+Notar que la segunda sumatoria incluye términos de las _filas_ _anteriores_ de $U$, para poder calcular $u_{ij}$. 
+
+Entonces para $j\geq i$ 
+\begin{equation}
+u_{ij} = a_{ij} - \sum_{p=1}^{i-1} m_{ip}u_{pj}
+\end{equation}
+
+Para $j<i$ la matriz $U$ cancela los términos mas allá de $p=j$
+
+Continuando con la noción de matriz elemental, podemos escribir a una matriz invertible como producto de matrices elementales.
+
+### Teorema
+
+Las siguientes propiedades son equivalentes
+
+* La matriz $A$ es  _invertible_
+
+* La matriz $A$ se puede factorizar como producto de matrices elementales.
+
 
 @. Calcular la inversa de la siguiente matriz, mediante Gauss-Jordan.
 \begin{equation*}
@@ -1526,6 +1841,9 @@ Descomponer a $A$ como producto de matrices elementales y una triangular superio
                  \end{bmatrix}
 \end{array}
 \end{equation*}
+
+Escribir la factorización de $A$ como producto de matrices elementales
+
 
 
 # Regla de Cramer
@@ -1615,7 +1933,7 @@ D_{i}(b) = &  \begin{vmatrix}
                   a_{21}     & a_{22}    & \cdots   & b_{2}      & a_{2,i+1}  &\cdots    & a_{2,n}      \\
                   \vdots     & \vdots    & \vdots   &  \vdots    & \vdots     &\vdots    &  \vdots      \\
                   a_{n-1,1}  & a_{n-1,2} & \cdots   & b_{n-1}    & a_{n-1,i+1}&\cdots    & a_{n-1,n}    \\
-                  a_{n,1}    &  a_{n-1,2}& \cdots   & a_{n,i}    & a_{n,i+1}  &\cdots    & a_{n,n}
+                  a_{n,1}    &  a_{n-1,2}& \cdots   & b_{n}      & a_{n,i+1}  &\cdots    & a_{n,n}
   \end{vmatrix} 
 \end{array}
 \end{equation}

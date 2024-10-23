@@ -1,0 +1,331 @@
+---
+title: "Apunte Factorizacion LU"
+author: "Jose Rodriguez Villarreal"
+header-includes:
+   - \usepackage{blindtext}
+   - \usepackage{multicol}
+   - \usepackage[T1]{fontenc}
+   - \usepackage[utf8]{inputenc}
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Factorización $LU$
+
+La factorización $LU$ permitirá dividir la solución de cualquier sistema de ecuaciones $Ax=b$ en dos etapas, siempre que $A$ sea invertible.
+
+Si resolvemos el sistema de ecuaciones por medio de eliminación gaussiana, pero sin _intercambio_ _de_ _renglones_. Como sabemos, el método de eliminación gaussiana reduce la matriz $A$ a una matriz triangular en $n-1$ pasos. 
+
+En el primer paso ciertos múltiplos del primer renglón son sumados (algebraicamente hablando) a las otras filas  para obtener 0s en las entradas $(2,1),\,(3,1),\,\ldots,(n,1)$. Para que sea esto posible, se debe tener $a_{11} \ne 0$. En el primer paso, el multiplicador apropiado es 
+\begin{equation}
+m_{i1} = a_{i1}/a_{11}\,\,\,\,\,i=2,3,\ldots,n
+\end{equation}
+
+Por tanto, al final de este paso, obtenemos una nueva matriz $A^{(1)}$, con 
+
+\begin{equation}
+\begin{array}{ccccc}
+a^{(1)}_{ij} & = a_{ij} - m_{i1}a_{1j}& & j=2,3,\ldots,n\,\,& i=2,\ldots,n\\
+b^{(1)}_{i}  & = b_{i}  - m_{i1}b_{1} & & \,\               & i=2,\ldots,n
+\end{array}
+\end{equation}
+
+Por lo que obtenemos la siguiente matriz
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| & b_1      \\ 
+     0      & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| & b_2^{(1)}\\
+     0      & a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm| & b_3^{(1)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots & \\
+     0      & a^{(1)}_{n-1,2}   & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm|& b_{n-1}^{(1)}\\
+     0      & a^{(1)}_{n,2}     & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n}& \bigm| & b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+
+En una implementación computacional, no es necesario guardar a los $0$'s de la matriz explicitamente. En vez de guardar los $0$'s se pueden guardar los mulitplicadores del renglón 1.
+Entonces, después del primer paso, la memoria que inicialmente contenía $\mathbf{A}|b$ tendrá 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| &b_1      \\ 
+     m_{21} & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| &b_2^{(1)}\\
+     m_{31} & a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm| &b_3^{(1)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots &\\
+ m_{n-1,1}  & a^{(1)}_{n-1,2}   & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm| & b_{n-1}^{(1)}\\
+     m_{nn} & a^{(1)}_{n,2}     & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n}& \bigm| &b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+En  el segundo paso, aplicamos eliminación gaussiana nuevamente operando sobre las filas $2,3,\ldots,n$. En el 2do paso de la eliminación gaussiana se ignora la primera fila y la primera columna. Múltiplos del renglón 2 son sumados a las filas $3,4,\ldots n$ para obtener un $0$ en las entradas $(3,2),\,(4,2),\ldots,(n,2)$ por lo que el paso 2 es idéntico al paso 1 pero operado sobre la matriz 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+      a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm|  &b_2^{(1)}\\
+      a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm|  &b_3^{(1)}\\
+     \vdots             & \vdots           & \vdots & \vdots        & \vdots  &\\
+    a^{(1)}_{n-1,2}     & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm| & b_{n-1}^{(1)}\\
+     a^{(1)}_{n,2}      & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n} & \bigm|  &b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+Si $a_{22}^{(1)} \ne 0$ entonces es posible realizar la reducción usando al segundo renglón, por tanto los factores multiplicadores son
+\begin{equation}
+m_{i2} = a^{(1)}_{i2}/a^{(1)}_{22}\,\,\,\,\,i=3,\ldots,n
+\end{equation}
+
+Al aplicar eliminación de las entradas en la columna $2$, obtenemos una nueva matriz $[A^{(2)}|b^{(2)}]$, con 
+
+\begin{equation}
+\begin{array}{ccccc}
+a^{(2)}_{ij} & = a^{(1)}_{ij} - m_{i2}a^{(1)}_{2j}& & j=3,\ldots,n\,\,& i=3,\ldots,n\\
+b^{(2)}_{i}  & = b^{(1)}_{i}  - m_{i1}b_{(1)}^{(1)} & & \,\               & i=2,\ldots,n
+\end{array}
+\end{equation}
+
+Como $A$ es invertible, $A^{(2)}$ es invertible. Esto implica que $a_{22}^{(1)} \ne 0$. Después de este paso, obtenemos la siguiente matriz
+
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| & b_1      \\ 
+     0      & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| & b_2^{(1)}\\
+     0      & 0                 & a^{(2)}_{33}     & \cdots & a^{(2)}_{3n}  & \bigm| & b_3^{(2)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots & \\
+     0      & 0                 & a^{(2)}_{n-1,3}  & \cdots & a^{(2)}_{n-1,n}& \bigm|& b_{n-1}^{(2)}\\
+     0      & 0                 & a^{(2)}_{n,3}    & \cdots & a^{(2)}_{n,n}& \bigm| & b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+Sin embargo, en la memoria inicial que registra a $A$ guardamos los multiplicadores $m_{2j}$, es decir, en memoria tendremos:
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| &b_1      \\ 
+     m_{21} & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| &b_2^{(1)}\\
+     m_{31} & m_{32}            & a^{(2)}_{33}     & \cdots & a^{(2)}_{3n}  & \bigm| &b_3^{(2)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots &\\
+ m_{n-1,1}  & m_{n-1,2}         & a^{(2)}_{n-1,3}  & \cdots & a^{(2)}_{n-1,n}& \bigm| & b_{n-1}^{(2)}\\
+     m_{nn} & m_{n,2}          & a^{(2)}_{n,3}    & \cdots & a^{(2)}_{n,n}& \bigm| &b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+El tercer paso es idéntico al paso 2, sólo que operando con la matriz 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+       a^{(2)}_{23}     & \cdots & a^{(2)}_{2n}   & \bigm|  &b_2^{(2)}\\
+       a^{(2)}_{33}     & \cdots & a^{(2}_{3n}   & \bigm|  &b_3^{(2)}\\
+     \vdots             & \vdots & \vdots         & \vdots  &\\
+     a^{(2)}_{n-1,3}    & \cdots & a^{(2)}_{n-1,n}& \bigm| & b_{n-1}^{(2)}\\
+     a^{(2)}_{n,3}      & \cdots & a^{(2)}_{n,n}  & \bigm|  &b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+Para poder proseguir con la eliminación gaussiana, en el tercer paso (y sin intercambio de renglones) se necesita que $a^{(2)}_{33} \ne 0$. 
+...
+Después de $n-1$ si $a_{nn}^{(n-1)}\ne 0$ entonces obtenemos una matriz triangular superior $\big[\mathbf{U}|y\big]$. Cada paso $k$ es posible si $A^{(k)}$ es invertible.
+
+Por otro lado las operaciones realizadas al vector "independiente" están dadas por la siguientes fórmulas
+
+\begin{equation}\label{bs}
+\begin{array}{ccccc}
+b^{(1)}_{i}  & = b_{i}  - m_{i1}b_{1}             & & \,\,               & i=2,\ldots,n \\
+b^{(2)}_{i}  & = b^{(1)}_{i}  - m_{i2}b^{(1)}_{2} & & \,\,               & i=3,\ldots,n \\
+\vdots       &                                    & &                   & \\
+b^{(j)}_{i}  & = b^{(j-1)}_{i}  - m_{i,j}b^{(j-1)}_{j} & & \,\,          & i=j+1,\ldots,n \\
+\vdots       &                                    & &                   & \\
+b^{(n-1)}_{i}  & = b^{(n-2)}_{i}  - m_{i,n-1}b^{(n-2)}_{n-1} & & \,\,   & i= n \\
+\end{array}
+\end{equation}
+
+Si escribimos 
+\begin{equation*}
+\begin{array}{ccc}
+   \begin{bmatrix} 
+       b_1          \\  
+       b_2^{(1)}    \\
+       b_3^{(2)}    \\
+     \vdots         \\
+     b_{n-1}^{(n-2)}\\
+     b_{n}^{(n-1)}
+  \end{bmatrix}   &= & 
+  \begin{bmatrix} 
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+y la ecuación (\ref{bs}) se puede expresar de la siguiente fórmula recursiva.
+
+\begin{equation}\label{bs2}
+\begin{array}{ccccc}
+y_{i}  & = b_{i}  - \sum_{j=1}^{i-1} m_{i,j}y_j & & \,\,   & i= n \\
+\end{array}
+\end{equation}
+
+O bien 
+$$
+\sum_{j=1}^{i-1} m_{i,j}y_j + y_i = b_i
+$$
+Matricialmente, las relaciones recursivas se pueden expresar de forma matricial como
+
+\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix} 
+       1        &    0    & \cdots & 0   \\
+       m_{21}   &    1    & \cdots & 0   \\
+     \vdots     & \vdots  & \vdots & \vdots \\
+     m_{n-1,1}     & m_{n-1,2} & \cdots & 0 \\
+     m_{n1}     & m_{n,2} & \cdots & 1  
+  \end{bmatrix} & 
+  \begin{bmatrix} 
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix} &
+  = 
+  &
+  \begin{bmatrix} 
+       b_1        \\  
+       b_2        \\
+       b_3        \\
+     \vdots       \\
+     b_{n-1}      \\
+     b_{n}
+  \end{bmatrix} 
+\end{array}
+\end{equation}
+
+Entonces el sistema de ecuaciones $\mathbf{A}x=b$
+Se ha reducido al sistema 
+$$
+\mathbf{U}x = y
+$$
+y 
+$$
+\mathbf{L}y = b
+$$
+
+**Teorema** **Descomposición** **LU**
+Sea $\mathbf{A}$ una matriz de $n\times n$ cuyas matrices $A^{(k)}$ son invertibles, entonces $A$ se puede factorizar como
+
+\begin{equation}
+ \mathbf{A} = \mathbf{L}\mathbf{U}
+\end{equation}
+En donde $L$ es una matriz triangular inferior y $U$ es una matriz triangular superior
+
+**Demostración**
+Para las matrices de orden 1 $a_{11}=1\cdot u_{11}$ se cumple.
+Supongamos que se cumple para las matrices de orden $n-1$. Para $n= k$, partimos la matriz en bloques 
+\begin{equation*}
+\begin{array}{cc}
+  A = & \begin{bmatrix} 
+          \mathbf{A}_{n-1} & \mathbf{a}_n \\
+          \mathbf{c}^{T}   &  a_{nn}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccccc}
+  L = & \begin{bmatrix} 
+          \mathbf{L}_{n-1} & \mathbf{0} \\
+          \mathbf{m}^{T}   &  1
+  \end{bmatrix} & \,\,\,\,\, & 
+  U =& \begin{bmatrix} 
+          \mathbf{U}_{n-1} & \mathbf{u} \\
+          \mathbf{0}      &  u_{nn}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+Para que la factorización se cumpla 
+$$
+L_{n-1} \mathbf{u} = \mathbf{a}_n,\,\,\,\, \mathbf{m}^{T}\mathbf{U}_{k-1} = \mathbf{c}^{T}
+$$
+Se pueden resolver, para $\mathbf{u}$ y para $\mathbf{m}$.
+Finalmente, la última relación $\mathbf{m}^{T}\mathbf{u} + u_{kk} = a_{kk}$ esta completamente determinado por $\mathbf{m}$, $\mathbf{u}$ y $a_{kk}$.
+
+## El método de Dolittle
+
+Se puede obtener de manera recursiva los términos de la factorización $LU$.
+
+Se asume que la matriz $L$ tiene diagonal unitaria, es decir $L_{ii}= 1$. Es decir
+
+\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix} 
+       1        &    0    & \cdots & 0   \\
+       m_{21}   &    1    & \cdots & 0   \\
+     \vdots     & \vdots  & \vdots & \vdots \\
+     m_{n-1,1}     & m_{n-1,2} & \cdots & 0 \\
+     m_{n1}     & m_{n,2} & \cdots & 1  
+  \end{bmatrix} & 
+  \begin{bmatrix} 
+      u_{11}  &    u_{12}  & \cdots & u_{1n}   \\
+       0      &    u_{22}  & \cdots & u_{2n}   \\
+     \vdots   & \vdots     & \vdots & \vdots \\
+       0      &  0         & \cdots & u_{n.1,n} \\
+       0      &  0         & \cdots & u_{nn}  
+  \end{bmatrix} &
+  = 
+  &
+  \begin{bmatrix} 
+     a_{11} & a_{12}      & a_{13}     & \cdots & a_{1n}       \\ 
+     a_{21} & a_{22}      & a_{23}     & \cdots & a_{2n}       \\
+     a_{31} & a_{32}      & a_{33}     & \cdots & a_{3n}       \\
+    \vdots  & \vdots      & \vdots     & \vdots & \vdots       \\
+     a_{n-1,1}& a_{n-1,2} & a{n-1,3}   & \cdots & a_{n-1,n}    \\
+     a_{n1} & a_{n,2}     & a_{n,3}    & \cdots & a_{n,n}     \\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+El método de Dolittle consiste en "resolver" las incógintas $u_{11},\,u_{12},\ldots,u_{n1},\ldots,u_{nn}$, $l_{21},\,l_{31},\ldots,l_{n1},l_{n,n-1}$ en un orden particular, aprovechando la estructura de las matrices $U$ y $L$.
+Notar que 
+
+\begin{equation}
+\begin{array}{ccc}
+l_{ij} &  = &\begin{cases}
+              1,        & \text{si $j=i$}\\
+              0,        & \text{si $j>i$}\\
+              m_{ij}    & \text{si $j \leq i$}
+            \end{cases}
+\end{array}
+\end{equation}
+
+Si se realiza la multiplicación, y $j\geq i$ obtenemos una fórmula recursiva
+\begin{equation}
+  a_{ij} = \sum_{p=1}^{i} l_{ip}u_{pj} = \sum_{p=1}^{i-1}m_{ip}u_{pj} + u_{ij},\,\,\,\,\, 
+  \mbox{ para } j=i,i+1,\ldots,n
+\end{equation}
+
+Notar que la segunda sumatoria incluye términos de las _filas_ _anteriores_ de $U$, para poder calcular $u_{ij}$. 
+
+Entonces para $j\geq i$ 
+\begin{equation}
+u_{ij} = a_{ij} - \sum_{p=1}^{i-1} m_{ip}u_{pj}
+\end{equation}
+
+Para $j<i$ la matriz $U$ cancela los términos mas allá de $p=j$

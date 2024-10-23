@@ -1,0 +1,446 @@
+---
+title: "Tarea 2"
+header-includes:
+   - \usepackage{blindtext}
+   - \usepackage{amsmath}
+   - \usepackage{mathtools}
+   - \usepackage{multicol}
+geometry: "left=2cm,right=1cm,top=1cm,bottom=1.5cm"
+author: "Álgebra lineal"
+output:
+  pdf_document
+
+---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+@.  Determinar si los siguientes sistemas de ecuaciones son compatibles o incompatibles. En caso de que sea compatible, resolverlo
+\begin{equation*}
+\begin{array}{rcl}
+  \begin{array}{cccc}
+      x   & + 2y  & + 2z  & = -2  \\
+     3x   & +  y  & + 3z  & =  6  \\
+     2x   & +  y  & - 2z  & = -1  \\
+     2x   & +  y  & +  z  & = 2  \\
+  \end{array}
+& \quad \quad  &
+  \begin{array}{cccc}
+      x_1  & - 2x_2  & +x_3   & = 5  \\
+     2x_1  & -  x_2  & -2x_3  & =-1   \\
+      x_1  & + 3x_2  & + x_3  & = 0
+  \end{array}
+\end{array}
+\end{equation*}
+
+@. Hallar los valores de $\alpha$ que hacen que los siguientes sistemas sean compatibles. Para dichos casos, dar la solución en función de $\alpha$
+\begin{equation*}
+\begin{array}{rcl}
+  \begin{array}{cccc}
+      x   & + 3y  & + z  & =   0  \\
+     2x   & +  y  & - 3z  & =  5  \\
+     -x   & + 7y  & + 9z  & = \alpha  
+  \end{array}
+& \quad \quad  &
+  \begin{array}{cccc}
+      x  & +y  & +z   & = 1  \\
+     2x  & -y  & +3z  & = 5   \\
+     3x  & +4y & -2z  & = 2   \\
+     x   & +3y & -2z  & = \alpha
+  \end{array}
+\end{array}
+\end{equation*}
+
+@. Discutir, en función del parámetro $\alpha$, el siguiente sistema de ecuaciones y obtener la norma de la solución o soluciones
+\begin{equation*}
+  \begin{array}{cccc}
+      x   & +  y        & - z         & =  1  \\
+     3x   & + \alpha y  & + \alpha z  & =  5  \\
+     4x   & + \alpha y  &             & =  5
+  \end{array}
+\end{equation*}
+
+@. Encontrar los valores de $\alpha$ para que el sistema a) tenga solución **única**. b) sea compatible.
+\begin{equation*}
+  \begin{array}{cccc}
+     \alpha x   & +  y        & + z         & =  1  \\
+            x   & + \alpha y  & + z         & =  \alpha  \\
+            x   & +  y        & +\alpha z   & =  \alpha^2
+  \end{array}
+\end{equation*}
+
+
+
+## Matrices
+
+@. Sean $A$ y $S$ dos matrices cuadradas, $S$ es simétrica. Analizar si se verifica que
+
+  a) $A^tA$ es simétrica.
+  
+  b) $A^{t}SA$ es simétrica.
+  
+  c) Si $A$ es antisimétrica entonces $A^2$ es simétrica.
+  
+  d) $A$ es invertible $(A^{-1})^n=(A^n)^{-1}$.
+  
+@. Encontrar los valores de $a$ tal que $M(a)$ sea invertible.
+\[
+M(a)= \begin{bmatrix}
+    a & 1 & 1 \\
+    1 & a & 1 \\
+    1 & 1 & a
+    \end{bmatrix}
+\]
+En dichos casos, encontrar la inversa, como función de $a$.
+
+@. Sea $A$ una matriz cuadrada tal que $A^3=\mathbf{O}$. Considere al siguiente subconjunto de matrices.
+\[
+\mathcal{M}(A)=\bigg\{ M \in \mathcal{M}^{n}\,\, :\,\,M= M(\lambda) = \mathbf{I}_n +\lambda A + \frac{\lambda^2}{2}A^2, \mbox{ para algún }\lambda\in \mathbb{R}  \bigg\}
+\]
+
+  a) El conjunto $(M(\lambda),\cdot)$ con la multiplicación es cerrado (es decir si $M,N\in \mathcal{M}(A)$ entonces $MN\in  \mathcal{M}(A)$)
+
+
+@. Sea $A$ y $B$ dos matrices cuadradas de tamaño $n\times n$, se dice que $A$ es **semejante** con $B$ y se escribe $A \sim B$ si existe una matriz invertible $P$ tal que $B=P^{-1}AP$. Demostrar que 
+
+ a) Si $A\sim B$ entonces $A^n \sim B^n$
+ 
+ b) $\sim$ es una relación de equivalencia. Es decir, es una relación reflexiva, simétrica y transitiva.
+ 
+@. Explicar por qué si $A$ es un producto de $N$ matrices elementales y es invertible, entonces $A^{-1}$ también es un producto de $N$ matrices elementales.
+
+@. Expresar a $A$ como un producto de matrices elementales
+\begin{equation*}
+\begin{array}{cccccccc}
+A= &  
+  \begin{bmatrix} 
+    2  & 1 & 2 \\ 
+    4  & 3 & 2 \\
+    1  & 1 & 1
+  \end{bmatrix}   & \,\,\,\,\,\, & 
+B = &  \begin{bmatrix} 
+    1  & -3 & 2 \\ 
+    4  &-2  & 1 \\
+    1  &4   & 1  
+  \end{bmatrix}  & \quad\quad &
+C = &  
+  \begin{bmatrix} 
+    1  &  2 & 0 \\ 
+    0  &  1 & 3 \\
+    3  &  8 & 7
+  \end{bmatrix}  
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccc}
+D = &  \begin{bmatrix} 
+              2  & 6  \\ 
+              4  & -7 
+      \end{bmatrix} 
+   &
+\end{array}
+\end{equation*}
+
+@. Hallar los valores de $p$ tal que la matriz  $A = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 0 & 1 \\ 2 & 3 & p \end{bmatrix}$ sea invertible
+
+@. Hallar la inversa de 
+$A= \begin{bmatrix} 2 & 1 & 3\\ 1 & -1 & 1 \\ 1 & 4 & 2 \end{bmatrix}$, 
+b) Identificando las operaciones elementales, expresar a $A$ como producto de matrices elementales.
+
+@. Calcular la inversa de la matriz
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{bmatrix} 
+    2  & 2 & 3 \\ 
+    1  & -1 & 0 \\
+    -1& 2  & 1
+  \end{bmatrix} &     &  
+  \begin{pmatrix} 
+    1  & 1 & 1 & 1 \\ 
+    1  & 1 & -1 & -1 \\
+    1  & -1& 1  & -1 \\
+    1  & -1&-1  &1
+  \end{pmatrix} 
+\end{array}
+\end{equation*}
+
+@. Resolver las siguientes ecuaciones matriciales
+\[
+X\cdot \begin{pmatrix} 5 & 3 & -1 \\ 1 & -3 & -2 \\ -5 & 2 & 1 \end{pmatrix} = \begin{pmatrix} -8 & 3 & 0 \\ -5 & 9 & 0 \\ -2 & 15 & 0 \end{pmatrix}, \quad \quad
+\begin{pmatrix} 3 &-1 & 2 \\ 4 & -3 & 3 \\ 1 & 3 & 0 \end{pmatrix} \cdot X = \begin{pmatrix} 3 & 9 & 7 \\ 1 & 11 & 7 \\ 7 & 5 & 7 \end{pmatrix} \quad \quad
+\]
+
+@. ¿Para que valores de $x\in\mathbb{R}$ la matriz tiene inversa?
+\[
+A=\begin{pmatrix} 1 & x & 1 \\ 0 & 1 & x \\1 & 0 & 1 \end{pmatrix}
+\]
+
+# Factorización LU
+
+@. Obtener la factorización $LU$ de las siguientes matrices.
+
+\begin{equation*}
+\begin{array}{ccccc}
+ &  
+  \begin{bmatrix} 
+    1  & 3 \\ 
+    2  & 7 
+  \end{bmatrix}   & \,\,\,\,\,\, & 
+ &  \begin{bmatrix} 
+    1  & 1 & 0 \\ 
+    0  & 1 & 1 \\
+    1  & 1 & 1  
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+
+@. Encontrar la factorización $LU$ de cada una de las siguientes matrices
+
+\begin{equation*}
+\begin{array}{ccccccccccc}
+a) &  
+  \begin{bmatrix} 
+    1  & -1& -1 \\ 
+    3  & 4 & -2 \\
+    2  &-3 & -2
+  \end{bmatrix}   & \,\,\,\,\,\, & 
+b) &  \begin{bmatrix} 
+    1  & 3 & -1 \\ 
+    2  & 5 & 1 \\
+    3  & 4 & 2  
+  \end{bmatrix}  & \,\,\,\,\,\, &
+c) &  \begin{bmatrix} 
+    2  & 3 & 6 \\ 
+    4  & 7 & 9 \\
+    3  & 5 & 4  
+  \end{bmatrix} & \,\,\,\,\,\, &
+d) &  \begin{bmatrix} 
+    1  & 2 & 3 \\ 
+    2  & 4 & 7 \\
+    3  & 7 & 10  
+  \end{bmatrix} \\
+\end{array}
+\end{equation*}
+
+
+@. Sea $A$ la matriz de a) del problema anterior. Encontrar $X_1,X_2,X_3,X_4$ en donde
+\begin{description}
+\item{a)} $X_1$ es la solución de $AX_1 = b_1$ con $b_1=(1,1,1)^{T}$.
+\item{b)} Para $k=2,3,4$, $X_k$ es la solución de $AX_{k}=b_k$ con $b_k=b_{k-1} + X_{k-1}$ 
+\end{description}
+
+@. En los siguientes ejercicios encuentre una matriz de permutación $P$ y una factorización $LU$ de $PA$.
+
+\begin{equation*}
+\begin{matrix}
+1) & 
+  \begin{pmatrix} 
+    0   & 3   \\ 
+    -5  & 4 
+  \end{pmatrix}
+   &\quad\quad
+2) & \begin{pmatrix} 
+    0  & 1 & 1   \\ 
+    -1 & 2 & -4   \\
+    2  &-5 & 1 
+  \end{pmatrix}
+   &\quad\quad
+3) & \begin{pmatrix} 
+    -1  & 2  & 1   \\ 
+     4  &-5  &-5   \\
+    -7   & 5  & 5   
+  \end{pmatrix}
+\end{matrix}
+\end{equation*}
+
+@. Demuestre que el prodcuto de dos matrices triangulares ingerior es una matriz triangular inferior. _proceda_
+_por_ _inducción_
+
+@. Utilice la factorización $LU$ de los ejercicios anteriores para resolver los siguientes sistemas de ecuaciones.
+
+\begin{equation*}
+\begin{matrix}
+1) & 
+  \begin{pmatrix} 
+    0   & 3   \\ 
+    -5  & 4 
+  \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} -3 \\ -1 \end{pmatrix}
+   &\quad\quad
+2) & \begin{pmatrix} 
+    0  & 1 & 1   \\ 
+    -1 & 2 & -4   \\
+    2  &-5 & 1 
+  \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\x_3 \end{pmatrix} = \begin{pmatrix} 2 \\ 4\\ -8 \end{pmatrix}
+   &\quad\quad
+3) & \begin{pmatrix} 
+     0  & 3  & -1   \\ 
+     0  & 0  &  1   \\
+     2  &-6  &  1 
+  \end{pmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{pmatrix} 1 \\ 2\\ -10 \end{pmatrix}
+\end{matrix}
+\end{equation*}
+
+
+## Determinantes
+
+@. Calcular el determinante de la matriz $M(a)$ de la sección anterior.
+
+@. Calcular los determinantes
+
+\begin{equation*}
+\begin{matrix}
+1) & 
+  \begin{vmatrix} 
+    1  & 1 & 1 & 1  \\ 
+    1  &-1 & 1 & 1  \\
+    1  & 1 &-1 & 1  \\
+    1  & 1 & 1 &-1
+  \end{vmatrix}
+   &\quad\quad
+2) & \begin{vmatrix} 
+    0  & 1 & 1 & 1  \\ 
+    1  & 0 & 1 & 1  \\
+    1  & 1 & 0 & 1  \\
+    1  & 1 & 1 &0
+  \end{vmatrix}
+   &\quad\quad
+3) & \begin{vmatrix} 
+    2  & -5 & 1 & 2  \\ 
+    -3 & 7  &-1 & 4  \\
+    5  &-9  & 2 & 7  \\
+    4  &-6  & 1 & 2
+  \end{vmatrix}
+\end{matrix}
+\end{equation*}
+
+\begin{equation*}
+\begin{matrix}
+4) & 
+  \begin{vmatrix} 
+    3  & 1 &-1 & 2  \\ 
+   -5  & 1 & 3 &-4  \\
+    2  & 0 & 1 &-1  \\
+    1  &-5 & 3 &-3
+  \end{vmatrix}
+   &\quad\quad
+5) & \begin{vmatrix} 
+    2  & 1 &-5 & 1  \\ 
+    1  &-3 & 0 &-6  \\
+    0  & 2 &-1 & 2  \\
+    1  & 4 &-7 & 6
+  \end{vmatrix}
+   &\quad\quad
+6) & \begin{vmatrix} 
+    3  & 2 & -4   \\ 
+    4  & 1 &-2   \\
+    5  & 2 & -3 
+  \end{vmatrix}
+\end{matrix}
+\end{equation*}
+
+\begin{equation*}
+\begin{matrix}
+7) & 
+  \begin{vmatrix} 
+    3  & 1 &-1 & 2  \\ 
+   -5  & 1 & 3 &-4  \\
+    2  & 0 & 1 &-1  \\
+    1  &-5 & 3 &-3
+  \end{vmatrix}
+   &\quad\quad
+8) & \begin{vmatrix} 
+    2  & 1 &-5 & 1  \\ 
+    1  &-3 & 0 &-6  \\
+    0  & 2 &-1 & 2  \\
+    1  & 4 &-7 & 6
+  \end{vmatrix}
+   &\quad\quad
+9) & \begin{vmatrix} 
+    3  & 2 & -4   \\ 
+    4  & 1 &-2   \\
+    5  & 2 & -3 
+  \end{vmatrix}
+\end{matrix}
+\end{equation*}
+
+@. Aplicando las propiedades de los determinantes, calcular
+
+
+\begin{equation*}
+\begin{matrix} 
+ 1)&  \begin{vmatrix} 
+    \alpha     & 2      & 0     & 3      \\ 
+    1          & 2      & 3     & 3      \\
+    1          & 0      & 1     & 1      \\
+    1          & 1      & 1     & 3
+  \end{vmatrix} & \,\,\,\,\, &
+2) &
+  \begin{vmatrix} 
+    \alpha     & 1      & 1           \\ 
+    1          & \alpha & 1           \\
+    1          & 1      & \alpha           
+  \end{vmatrix} & \,\,\,\,\, &
+3) &
+  \begin{vmatrix} 
+    0          & \alpha    & \alpha           \\ 
+    1          & 0         & \alpha           \\
+    1          & 1         & 0
+  \end{vmatrix}
+\end{matrix}
+\end{equation*}
+
+@. Encuentra las soluciones a la ecuación $\det(AB)=0$ con
+\[
+\begin{matrix} 
+A= & 
+    \begin{pmatrix} x & 1 \\ 2 & 0  \end{pmatrix}
+   & \mbox{ y }
+   &
+B= &
+    \begin{pmatrix} -1 & x \\ x+1 & -1  \end{pmatrix}
+\end{matrix}
+\]
+
+@. Dadas las matrices $A=\begin{pmatrix} 1 & 4 & 0 \\ 1 & -1 & 1 \\ 3 & 1 & 0 \end{pmatrix}$ y 
+$B=\begin{pmatrix} 2 & 3 & 0 \\ -1 & 1 & 4 \\ 0 & 3 & -1 \end{pmatrix}$.
+Calcular el determinante de 
+
+a) $\det(A) \quad$ b) $\det(B) \quad$ c) $\det(2A) \quad$ d) $\det(AB^2)$ 
+
+e) $\det(A^{-1}B)$ \quad f) $\det(A^tB^{-1})$
+
+@. Demostrar que 
+
+\begin{equation*}
+\begin{matrix}
+a) & 
+  det\begin{pmatrix} 
+      1 & a & a^2 \\
+      1 & b & b^2 \\
+      1 & c & c^2
+      \end{pmatrix}
+   &\quad\quad
+b) & det\begin{pmatrix} 
+          1    & 1  & 1  \\ 
+          a    & b  & c  \\
+          a^3  &b^3 & c^3   
+        \end{pmatrix}
+   &\quad\quad
+c) & det\begin{pmatrix} 
+          1  & 1   &  1 & 1   \\ 
+          x  & y   &  z & w   \\
+          x^2& y^2 & z^2& w^2 \\
+          x^3& y^3 & z^3& w^3
+      \end{pmatrix}
+\end{matrix}
+\end{equation*}
+
+

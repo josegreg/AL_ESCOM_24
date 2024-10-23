@@ -1,0 +1,53 @@
+---
+title: "Práctica 3"
+author: "Matrices elementales"
+date: "10/10/2024"
+output: pdf_document
+---
+
+
+## Resolver los siguientes problemas
+
+@. Obtener la factorización $PA=LU$ de $A$
+\[
+\begin{bmatrix}
+        2 & 2 & -1 \\
+        4 & 0 & 4  \\
+        3 & 4 & 4
+\end{bmatrix}
+\]
+
+
+@. Resolver el siguiente sistema de ecuaciones
+\[
+\begin{matrix}
+      & x_2   & -x_3& = 1 \\
+  2x_1& +3x_2 & +2x_3& = 1 \\
+  1x_1& +x_2  & -x_3 &=5
+\end{matrix}
+\]
+Si se sabe que 
+\[
+\begin{bmatrix}
+        0 & 1 & 0 \\
+        1 & 0 & 0  \\
+        0 & 0 & 1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+        2 & 2 & -1 \\
+        4 & 0 & 4  \\
+        3 & 4 & 4
+\end{bmatrix} =
+\begin{bmatrix}
+        1           & 0            & 0 \\
+        0           & 1            & 0  \\
+        \frac{1}{2} & -\frac{1}{2} & 1 
+\end{bmatrix}\cdot
+\begin{bmatrix}
+        2     & 3 & 2 \\
+        0    & 1  & -1  \\
+        0    &  0 & -5/2 
+\end{bmatrix}
+\]
+
+@. Expresar a $A$ como producto de matrices elementales.
