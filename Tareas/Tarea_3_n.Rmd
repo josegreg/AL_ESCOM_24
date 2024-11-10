@@ -1,0 +1,78 @@
+---
+title: "Tarea 3"
+author: "Álgebra lineal"
+output: pdf_document
+---
+
+@. Sea $V = \mathbb{R}^{+}$ y $\mathbb{K}=\mathbb{R}$, es decir, el campo de escalares son los números reales. Se define sobre $V$ las siguientes operaciones:
+
+  - Definimos la suma $$ x \oplus y = xy $$ para todo $x$, $y \in V$.
+
+  - Y la multiplicación por escalar como $\alpha \odot x = x^{\alpha}$ para todo $\alpha \in \mathbb{R}, x\in V$.
+
+Averiguar si con estas operaciones, $(V,\oplus,\odot)$  es un espacio vectorial. En su defecto indicar que axioma no se cumple con un ejemplo.
+
+
+@. Explicar por que el plano cartesiano $\mathbb{R}^{2}$ con la suma usual de vectores y el producto escalar definido como sigue
+
+* $x \oplus  y = x + y\,\quad(\mbox{ suma usual en } \mathbb{R}^n)$, $\alpha \cdot (x,y) :=  (\alpha y, \alpha x)$
+
+* $x \oplus  y = x + y\,\quad(\mbox{ suma usual en } \mathbb{R}^n)$, $\alpha\cdot (x,y) := (x^{\alpha}, y)$
+
+Es un espacio vectorial o no lo es. 
+
+
+@. Sea $V=\mathbb{R}^2$ y definimos las siguientes operaciones en $V$:
+
+  a) suma: $(a_1,a_2)\oplus (b_1,b_2) = (a_1+b_1,a_2+b_2)$ (suma usual en $\mathbb{R}^2$)
+  
+  b) producto escalar: $\alpha\odot (a_1,a_2) = (\alpha a_1,a_2)$ para todo $\alpha\in\mathbb{R}$.
+  
+¿Es $V$ con estás operaciones un espacio vectorial real?
+
+@. Verificar que $\mathbb{R}[X]=\{p : p(x)=a_4x^4 + a_3x^2 + a_2x^2 + a_1 x + a_0,\quad a_i\in \mathbb{R}\}$ el conjunto de polinomios de grado $\leq $3. Con las operaciones 
+
+* $(p + q)(x) = p(x) + q(x)$ para todo $x\in \mathbb{R}$.
+
+* $c \cdot p(x) = ca_3 x^3 + ca_2 x^2 + ca_1 x + ca_0$
+
+forma  un espacio vectorial.
+
+
+## Subespacios vectoriales
+
+@. ¿Cuál de los siguientes subconjuntos de $\mathbb{R}^3$ son realmente subespacios, verificar las 3 propiedades o bien, dar un contraejemplo:
+
+  a) El plano de los vectores $\mathbf{v}=(x_1,x_2,x_3)$ con $x_1=0$.
+  
+  b) Los vectores $\mathbf{v}$ con $\mathbf{v}_1\mathbf{v}_2=0$.
+  
+  c) El plano en $\mathbb{R}^{3}$ dado por la ecuación $x+2y+z=6$. 
+  
+  d)
+
+@. Sea $V$ el espacio vectorial de funciones continuas, $V=C([0,1];\mathbb{R})$ ¿Qué conjuntos son un subespacio de $V$.
+
+  a) $U_1=\{f\in V:\,f(0)=f(1)\}$
+  
+  b) $U_2=\big\{f\in V:\,f(3)=1 + f(-5)\big\}$
+  
+  c) $U_3=\big\{f\in V:\,f(-1)=0 \big\}$$
+  
+  d) $I=\{f\in V:\, f \mbox{ es par}\}$.
+  
+@. Sea $W$   el espacio de vectores $(x_1,x_2,x_3,x_4)\in\mathbb{R}^5$ el cual cumple. Explica por que es un subespacio
+\begin{matrix}
+  2x_1 &- x_2 &+\frac{4}{3}x_3 &-x_4  &     &= 0\\
+  x_1  &      &+\frac{2}{3}x_3 &      &-x_5 &=0 \\  
+  9x_1 &-3x_2 &+6x_3           &-3x_4 & -3x_5& = 0
+\end{matrix}
+
+@. Sea $V=\mathcal{M}^{n,n}(\mathbb{R})$ el espacio vectorial de todas las matrices con entradas reales. 
+
+  a) Sea $B$ una matriz fija, $B\in\mathcal{M}^{n,n}(\mathbb{R})$, considera a $W=\{A\in V\,:\,AB=BA\}$
+  
+  b) $W=\{A\in V\,:\,A^2 = A\}$.
+
+@. Explica por que si $W_1$ y $W_2$ son dos subespacios de $V$ tal que $V$ es **suma** **directa** de $W_1$ y $W_2$, entonces todo vector $\alpha \in V$ se puede expresar de manera única como $\alpha = w_1 + w_2$ con $w_1 \in W_1$ y $w_2 \in W_2$.
+  

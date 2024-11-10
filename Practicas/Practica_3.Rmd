@@ -34,9 +34,9 @@ Si se sabe que
         0 & 0 & 1
 \end{bmatrix} \cdot
 \begin{bmatrix}
-        2 & 2 & -1 \\
-        4 & 0 & 4  \\
-        3 & 4 & 4
+        0 & 1 & -1 \\
+        2 & 3 & 2  \\
+        1 & 1 & -1
 \end{bmatrix} =
 \begin{bmatrix}
         1           & 0            & 0 \\
@@ -50,4 +50,4 @@ Si se sabe que
 \end{bmatrix}
 \]
 
-@. Expresar a $A$ como producto de matrices elementales.
+@. Expresar a $A$ en 1. y 2. como producto de matrices elementales.

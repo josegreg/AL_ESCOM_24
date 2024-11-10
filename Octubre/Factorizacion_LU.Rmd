@@ -329,3 +329,7 @@ u_{ij} = a_{ij} - \sum_{p=1}^{i-1} m_{ip}u_{pj}
 \end{equation}
 
 Para $j<i$ la matriz $U$ cancela los términos mas allá de $p=j$
+
+# Aplicaciones
+
+
