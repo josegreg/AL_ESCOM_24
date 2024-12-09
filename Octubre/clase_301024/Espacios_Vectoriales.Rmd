@@ -109,9 +109,9 @@ Para todo vector $x\in V$, $-(-x)=x$.
 ## Proposición{#sec:prop1}
 
 Para todo $\mathbf{x}\in V$, 
-$$
+\[
 (-\lambda)\cdot \mathbf{x}=-\lambda\cdot\mathbf{x}
-$${\#eq:p4}
+\]{\#eq:p4}
 
 Por la propiedad II.3 
 \[
@@ -134,9 +134,9 @@ ii) Si $\alpha\cdot\mathbf{x}=\beta\cdot \mathbf{x}$ y $\mathbf{x}\ne\mathbf{0}$
 **Demostración**:
 
 Como $\alpha\cdot(-\mathbf{y}) = -\alpha\cdot \mathbf{y}$ 
-$$
+\[
 \alpha\cdot(\mathbf{x}+(-\mathbf{y})) = \alpha\cdot \mathbf{x} + \alpha\cdot(-\mathbf{y}) = \alpha\cdot \mathbf{x} + (-\alpha\cdot\mathbf{y}) = \alpha\cdot \mathbf{x} + (-\alpha\cdot\mathbf{x}) = \mathbf{0}
-$${\#eq:p5}
+\]{\#eq:p5}
 
 por la proposición [@sec:prop0] como $\alpha \ne 0$ entonces $x+(-y) = \mathbf{0}$ entonces $\mathbf{x} = \mathbf{y}$.
 
@@ -487,13 +487,12 @@ Para esto verifiquemos que si
 $x, y \in W,$ entonces $x + y \in W$. 
 
 Como $x,y \in W,$ $x=(x_1,x_2, 0)$ y $y =(y_1,y_2, 0 )$, luego  
-$$
+\[
 x + y = (x_1+y_1,x_2 + y_2, 0) \in W 
-$$.
+\]
 
-Ahora veamos que si $x \in W$ y $\lambda \in \Bbb{R}$, $\lambda \cdot x \in W$, lo cual se sigue pues si $x =(x_1,x_2, 0)$, entonces 
-$$\lambda \cdot x =\lambda\cdot (x_1,x_2, 0) =
-(\lambda x_1,\lambda x_2, 0) \in W$$
+Ahora veamos que si $x \in W$ y $\lambda \in \Bbb{R}$, $\lambda \cdot x \in W$, lo cual se sigue pues si $x =(x_1,x_2, 0)$, entonces  $\lambda \cdot x =\lambda\cdot (x_1,x_2, 0) =
+(\lambda x_1,\lambda x_2, 0) \in W$
 
 
 ## Ejemplo 4
@@ -811,7 +810,7 @@ Resolviendo el sistema: $c=6,\, a=-1,\, b=0$ por lo que $5x^{2}+6x+5$ es combina
 \]
 es decir $5x^2 + 6x +5 \in \mathcal{g}(v_1,v_2,v_3)$.
 
-c) $x^{3} \notin \mathcal{g}(v_1,v_2,v_3)$. Pues ninguna combinación lineal de polinomios de 2do grado tendrá grado mayor o igual a 2.
+c) $x^{3} \notin \mathcal{g}(v_1,v_2,v_3)$. Pues ninguna combinación lineal de polinomios de 2do grado tendrá grado menor o igual a 2.
 
 d) De igual forma obtenemos el siguiente sistema
 
@@ -865,132 +864,6 @@ Como el sistema no es compatible entonces $(3,6,9) \notin \mathcal{g}((1,4,6), (
 
 
 Un caso importante  de los subespacios generados es cuando el subespacio $\mathcal{g}(U)=V$, es decir el subespacio resulta ser **todo** el espacio vectorial $V$.
-
-### Definición. Conjunto generador 
-
-Decimos que $U$ es un conjunto generador de $V$ o bien que $U$ _genera_ a $V$ si 
-
-\[
-\mathcal{g}(U) = V
-\]
-
-#### Ejemplo 3
-
-Sea $V=\mathbb{R}^{2}$ y sea $W=\{(0,1),(1,0)\}$, para todo vector $\mathbf{x}=(x_1,x_2)$ tenemos que 
-$$
-(x_1,x_2) = x_1\cdot (1,0) + x_2\cdot (0,1)
-$$
-
-es decir todo elemento de $\mathbb{R}^{2}$ es una combinación lineal de vectores de $W$, entonces $\{(1,0), (0,1)\}$ **genera** a $W$.
-De manera más general
-
-#### Ejemplo 4
-
-Sea $V=\mathbb{R}^{n}$ y sea $W=\{ e_i=(0,\ldots,0,1,0,\ldots,0) \, \mbox{ para }i=1,2,\ldots,n \}$, para todo vector $\mathbf{x}=(x_1,x_2,\ldots,x_n)$ tenemos que 
-$$
-(x_1,x_2,\ldots,x_n) = x_1\cdot e_1 + x_2\cdot e_2 + \ldots x_n\cdot e_n
-$$
-
-#### Ejemplo 5
-
-En $\mathbb{R}^{3}$ calcular $\mathcal{g}(W)$ con $W=\{(1,0,0),(0,0,1)\}$.
-\[
-\mathcal{g}(W)=\{\alpha\cdot (1,0,0)+\beta\cdot (0,0,1):\,\alpha,\beta\in\mathbb{R} \} = \{(x,0,z):x,z\in\mathbb{R}\}
-\]
-
-#### Ejemplo 6
-
-¿Que subespacio generan los vectores $\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$
-La pregunta es equivalente a verificar si el sistema tiene solución para cualquier vector $\begin{pmatrix} a\\b\\c \end{pmatrix}$
-\begin{equation*}
-\begin{array}{ccc}
-[\mathbf{A}|\mathbf{b}]     = &  \begin{bmatrix} 
-                                  1     & 1        &  1 &|& x    \\ 
-                                  1     & 2        &  3 &|& y    \\
-                                  1     & 3        &  2 &|& z
-  \end{bmatrix} 
-\end{array}
-\end{equation*}
-
-Haciendo la reducción gaussiana obtenemos que el sistema es equivalente a 
-
-
-\begin{equation*}
-\begin{array}{ccc}
-[\mathbf{A}|\mathbf{x}]     = &  \begin{bmatrix} 
-                                  1     & 1        &  1 &|& x    \\ 
-                                  0     & 1        &  2 &|& y-x    \\
-                                  0     & 0        &  1 &|& \frac{2}{3}y -\frac{z}{3} -\frac{x}{3}
-  \end{bmatrix} 
-\end{array}
-\end{equation*}
-
-Como la matriz escalonada es triangular y sin _ceros_ en la diagonal, entonces el sistema tiene solución _para_ _cualquier_ $(x,y,z)\in \mathbb{R}^{3}$. 
-Por tanto 
-$\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$ generan a $\mathbb{R}^{3}$.
-
-#### Ejemplo 7
-
-Si $V=\mathbb{R}^{2}[x]$ son los polinomios con grado $\leq 2$. Sean $p(x)= 1+ 2x +x^{2}$ y  $q(x)=2+x^{2}$. ¿Es  $\{p(x),q(x)\}$ un generador de $\mathbb{R}^{2}[x]$?
-
-No. Pues $V$ es un espacio de polinomios de grado 2.
-
-#### Ejemplo 6
-
-¿El conjunto de matrices $U$ genera a $\mathcal{M}^{2,2}(\mathbb{R})$?
-
-$$
-U=\Bigg\{ \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},\,
-          \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix},\,
-          \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},\,
-          \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}
-          \Bigg\}
-$$
-
-
-Si aplicamos la definición de combinación lineal obtenemos...
-
-\[
-  \begin{pmatrix} x & y \\ z & w \end{pmatrix} = \alpha_1 \cdot 
-  \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix} + \alpha_2 \cdot
-  \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix} + \alpha_3 \cdot
-  \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \alpha_4 \cdot
-  \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}
-\]
-
-Esta combinación lineal se puede expresar como un sistema de ecuaciones si aplicamos las operaciones entrada por entrada
-
-\begin{equation*}
-  \begin{array}{ccc}
-    x  & = & \alpha_1 + \alpha_3 \\
-    y  & = & \alpha_1 + \alpha_4 \\
-    z  & = & \alpha_2 + \alpha_4 \\
-    w  & = & \alpha_2 + \alpha_3 + \alpha_4
-  \end{array}
-\end{equation*}
-
-Por lo que las combinaciónes lineales resultan en la siguiente matriz extendida del sistema anterior
-
-\begin{equation*}
- \begin{array}{ccc}
-  \begin{bmatrix} 
-      1 & 0 & 1 & 0 &\bigm|& x\\ 
-      1 & 0 & 0 & 1 &\bigm|& y\\
-      0 & 1 & 0 & 1 &\bigm|& z\\
-      0 & 1 & 1 & 1 &\bigm|& w
-   \end{bmatrix} & 
-   \rightarrow   &
-    \begin{bmatrix} 
-      1 & 0 & 1 & 0 &\bigm|& x\\ 
-      0 & 1 & 1 & 1 &\bigm|& w \\
-      0 & 0 &-1 & 0 &\bigm|& z-w\\
-      0 & 0 & 0 & 1 &\bigm|& y-x-z+w
-   \end{bmatrix}
-  \end{array} 
-\end{equation*}
-
-Como el sistema de ecuaciones tiene solución única para cada $(x,y,z,w)$ entonces las combinaciones lineales de las matrices existen y nos dan igual a la matriz $\begin{pmatrix} x & y \\ z & w \end{pmatrix}$.
-
 
 ## Dependencia lineal de vectores
 
@@ -1172,6 +1045,134 @@ entonces $\alpha_1=\beta_1,\,$ $\alpha_2=\beta_2,\,\ldots,$ $\alpha_m = \beta_m$
 
 
 
+### Definición. Conjunto generador 
+
+Decimos que $U$ es un conjunto generador de $V$ o bien que $U$ _genera_ a $V$ si 
+
+\[
+\mathcal{g}(U) = V
+\]
+
+#### Ejemplo 3
+
+Sea $V=\mathbb{R}^{2}$ y sea $W=\{(0,1),(1,0)\}$, para todo vector $\mathbf{x}=(x_1,x_2)$ tenemos que 
+$$
+(x_1,x_2) = x_1\cdot (1,0) + x_2\cdot (0,1)
+$$
+
+es decir todo elemento de $\mathbb{R}^{2}$ es una combinación lineal de vectores de $W$, entonces $\{(1,0), (0,1)\}$ **genera** a $W$.
+De manera más general
+
+#### Ejemplo 4
+
+Sea $V=\mathbb{R}^{n}$ y sea $W=\{ e_i=(0,\ldots,0,1,0,\ldots,0) \, \mbox{ para }i=1,2,\ldots,n \}$, para todo vector $\mathbf{x}=(x_1,x_2,\ldots,x_n)$ tenemos que 
+$$
+(x_1,x_2,\ldots,x_n) = x_1\cdot e_1 + x_2\cdot e_2 + \ldots x_n\cdot e_n
+$$
+
+#### Ejemplo 5
+
+En $\mathbb{R}^{3}$ calcular $\mathcal{g}(W)$ con $W=\{(1,0,0),(0,0,1)\}$.
+\[
+\mathcal{g}(W)=\{\alpha\cdot (1,0,0)+\beta\cdot (0,0,1):\,\alpha,\beta\in\mathbb{R} \} = \{(x,0,z):x,z\in\mathbb{R}\}
+\]
+
+#### Ejemplo 6
+
+¿Que subespacio generan los vectores $\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$
+La pregunta es equivalente a verificar si el sistema tiene solución para cualquier vector $\begin{pmatrix} a\\b\\c \end{pmatrix}$
+\begin{equation*}
+\begin{array}{ccc}
+[\mathbf{A}|\mathbf{b}]     = &  \begin{bmatrix} 
+                                  1     & 1        &  1 &|& x    \\ 
+                                  1     & 2        &  3 &|& y    \\
+                                  1     & 3        &  2 &|& z
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+Haciendo la reducción gaussiana obtenemos que el sistema es equivalente a 
+
+
+\begin{equation*}
+\begin{array}{ccc}
+[\mathbf{A}|\mathbf{x}]     = &  \begin{bmatrix} 
+                                  1     & 1        &  1 &|& x    \\ 
+                                  0     & 1        &  2 &|& y-x    \\
+                                  0     & 0        &  1 &|& \frac{2}{3}y -\frac{z}{3} -\frac{x}{3}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+Como la matriz escalonada es triangular y sin _ceros_ en la diagonal, entonces el sistema tiene solución _para_ _cualquier_ $(x,y,z)\in \mathbb{R}^{3}$. 
+Por tanto 
+$\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$ generan a $\mathbb{R}^{3}$.
+
+#### Ejemplo 7
+
+Si $V=\mathbb{R}^{2}[x]$ son los polinomios con grado $\leq 2$. Sean $p(x)= 1+ 2x +x^{2}$ y  $q(x)=2+x^{2}$. ¿Es  $\{p(x),q(x)\}$ un generador de $\mathbb{R}^{2}[x]$?
+
+No. Pues $V$ es un espacio de polinomios de grado 2.
+
+#### Ejemplo 6
+
+¿El conjunto de matrices $U$ genera a $\mathcal{M}^{2,2}(\mathbb{R})$?
+
+$$
+U=\Bigg\{ \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},\,
+          \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix},\,
+          \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},\,
+          \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}
+          \Bigg\}
+$$
+
+
+Si aplicamos la definición de combinación lineal obtenemos...
+
+\[
+  \begin{pmatrix} x & y \\ z & w \end{pmatrix} = \alpha_1 \cdot 
+  \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix} + \alpha_2 \cdot
+  \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix} + \alpha_3 \cdot
+  \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \alpha_4 \cdot
+  \begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}
+\]
+
+Esta combinación lineal se puede expresar como un sistema de ecuaciones si aplicamos las operaciones entrada por entrada
+
+\begin{equation*}
+  \begin{array}{ccc}
+    x  & = & \alpha_1 + \alpha_3 \\
+    y  & = & \alpha_1 + \alpha_4 \\
+    z  & = & \alpha_2 + \alpha_4 \\
+    w  & = & \alpha_2 + \alpha_3 + \alpha_4
+  \end{array}
+\end{equation*}
+
+Por lo que las combinaciónes lineales resultan en la siguiente matriz extendida del sistema anterior
+
+\begin{equation*}
+ \begin{array}{ccc}
+  \begin{bmatrix} 
+      1 & 0 & 1 & 0 &\bigm|& x\\ 
+      1 & 0 & 0 & 1 &\bigm|& y\\
+      0 & 1 & 0 & 1 &\bigm|& z\\
+      0 & 1 & 1 & 1 &\bigm|& w
+   \end{bmatrix} & 
+   \rightarrow   &
+    \begin{bmatrix} 
+      1 & 0 & 1 & 0 &\bigm|& x\\ 
+      0 & 1 & 1 & 1 &\bigm|& w \\
+      0 & 0 &-1 & 0 &\bigm|& z-w\\
+      0 & 0 & 0 & 1 &\bigm|& y-x-z+w
+   \end{bmatrix}
+  \end{array} 
+\end{equation*}
+
+Como el sistema de ecuaciones tiene solución única para cada $(x,y,z,w)$ entonces las combinaciones lineales de las matrices existen y nos dan igual a la matriz $\begin{pmatrix} x & y \\ z & w \end{pmatrix}$.
+
+
+
+
 # Bases de espacios vectoriales
 
 ## Generadores de un espacio vectorial
@@ -1218,6 +1219,8 @@ Si un conjunto de vectores $U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\}$
 ## Lema de intercambio de vectores
 
 Sea $L=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \}$ y $S=\{\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_m\}$ dos conjuntos finitos de vectores de $V$, un espacio vectorial. Suponga que $L$ es un conjunto _linealmente_ _independiente_ y $S$ un conjunto _generador_ de $V$. Entonces $n\leq m$ y podemos encontrar $\mathbf{s}_1,\mathbf{s}_2,\ldots,\mathbf{s}_{m-n}$ **en** **S** tal que $L\cup\{\mathbf{s}_1,\mathbf{s}_2,\ldots,\mathbf{s}_{m-n}\}$ es un conjunto generador. 
+
+# Bases de espacios vectoriales
 
 El siguiente concepto es fundamental:
 
@@ -1300,6 +1303,79 @@ $$
 Es decir, $c_3=z+3x$, $c_2=y+2x + z+ 3x = 5x + y +z$ y $c_1= 12x + 2y + 3z$.
 Por lo que el sistema siempre tiene solución y cualquier vector es combinación lineal de los 3 vectores, es decir, $\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}$ es un conjunto generador.
 Y por tanto $\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}$ forma una base de $\mathbb{R}^{3}$.
+
+
+## Espacio vectorial finito-dimensional
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong> Sea $V$ un espacio vectorial y $\mathcal{B}$ es una conjunto generador del espacio $V$ entonces decimos que el espacio vectorial es de dimensión finita o finito dimensional si $\mathcal{B}$ es un conjunto finito . 
+</div>
+
+## Teorema
+
+Sea $V$ un espacio vectorial, suponga que es de dimensión finita. Entonces
+
+a) $V$ contiene una base con un número finito de elementos
+
+b) Si $\mathcal{B}$ y $\mathcal{B}'$ son dos bases de $V$ entonces tienen el mismo número de elementos.
+
+Demostración
+
+a) Como $V$ es de dimensión finita, considere al conjunto $\mathcal{B}$, generador de $V$ con el menor número de vectores. $\mathcal{B}$ es un conjunto generador. Suponga que no es linealmente independiente, entonces existe al menos un vector en $\mathcal{B}$ tal que $v\in\mathcal{g}(\mathcal{B}/\{v\})$ pero entonces $\mathcal{g}(\mathcal{B}/\{v\})$ genera a $V$, lo cual no es posible pues $\mathcal{B}$ tenía el menor número de vectores que generan a $V$.
+
+b) Si $\mathcal{B}$ es una base con $n$ elementos. Sea $\mathcal{B}'$ otra base de $V$, suponga que tiene $m$ elementos. Por el lema de intercambio de renglónes (5.3) como $\mathcal{B}'$ es un conjunto linealmente independiente de vectores y $\mathcal{B}$ es un conjunto generador de $V$ entonces $\mathcal{B}'$ tiene a lo más $n$ elementos, es decir $m\leq n$. Intercambiando los roles
+tenemos que $n\leq m$.
+
+## Dimensión de un espacio vectorial
+
+<div style="background-color:#FFE9B1">
+Sea $V$ un espacio vectorial de dimensión finita. La **dimensión** de $V$ es el número elementos que tiene cualquier base de $V$
+</div>
+
+### Teorema 
+Sea $V$ un espacio vectorial de dimension $n$. Entonces
+
+a) Todo conjunto de vectores linealmente independiente de $V$ tiene *a* *lo* *más* $n$ elementos.
+
+b) Cualquier conjunto generador de vectores de $V$ tiene al menos $n$ elementos.
+
+c) Si $S$ es un subconjunto de $V$ con $n$ elementos, entonces las siguientes condiciones son  *equivalentes*:
+
+ 1) $S$ es linealmente independiente.
+ 2) $S$ es un conjunto generador de $V$
+ 3) $S$ es una base de $V$.
+
+a) Fijemos a $\mathcal{B}$ una base de V, sea $S=\{v_1,\ldots,v_k\}$. Como $\mathcal{B}$ es base, entonces genera a todo $V$ y por tanto $l\leq n$.
+
+b) Similarmente, como $\mathcal{B}$ es un conjunto linealmente independiente, si $r=\#A$ entonces $n\leq r$.
+
+
+
+## Teorema{#sec:teom4}
+
+Si $V$ es un espacio vectoral, tal que $dim(V)=n$ entonces
+
+1) Si $\{y_1,y_2,\ldots,y_m\}$ es un conjunto de vectores linealmente independiente entonces $m\leq n$.
+
+2) Si $\{y_1,y_2,\ldots,y_m\}$ es un conjunto generador entonces $m\geq n$.
+
+3) Si $\{y_1,y_2,\ldots,y_n\}$ son linealmente independientes entonces forman una base.
+
+4) Si $\{y_1,y_2,\ldots,y_n\}$ son generadores de $V$ entonces forman una base.
+
+El siguiente resultado es útil para verificar si un conjunto de $n$ vectores en $\mathbb{R}^{n}$ es linealmente independiente.
+
+## Teorema{#sec:teom5}
+
+Sean $\{\mathbf{v}_1,\,\mathbf{v}_2,\,\ldots,\, \mathbf{v}_n\}\subset \mathbb{R}^{n}$ es linealmente independiente si y solo si la matriz de vectores columna 
+
+\[
+ A=\begin{bmatrix} \mathbf{v}_1 | \mathbf{v}_2 | \ldots | \mathbf{v}_n \end{bmatrix}
+\]
+es tal que $\det(A)\ne 0$
+
+Por el teorema de la [@sec:teom4] esto implica que si $n$ vectores forman una matriz con determinante no nulo entonces forman una base de $\mathbb{R}^{n}$.
+
 
 ### Ejemplo
 
@@ -1384,70 +1460,89 @@ Es decir, <em> $U=\{(1,2,3),(2,3,4),(1,0,1)\}$ es una base </em> de $\mathbb{R}^
 
 Este proceso, se le suele llamar <em> extender un conjunto de vectores linealmente independientes</em> a una base del espacio.
 
-## Espacio vectorial finito-dimensional
+
+## Consideraciones adicionales
+
+Suponga que deseamos averiguar si $U=\{v_1,v_2,\ldots,v_k\}\subset \mathbb{R}^n$ es un conjunto generador de $\mathbb{R}^n$. Considere a la matriz $A'$ con los vectores como _filas_. Calculamos su matriz escalonada _reducida_, $A'_{red}$, entonces $U$ es generador si y solo sí $A'_{red}$ tiene vectores columna *que* *generan* a $\mathbb{R}^n$. Esto ocurre si $A'_{red}$ tiene pivotes en cada columna
+
+
+Suponga que queremos averiguar si $U=\{v_1,v_2,\ldots,v_k\}$ es _base_, por los teoremas vistos se requiere que $k=n$ y que sean linealmente independientes, sea $A$ la matriz con los vectores como _columnas_, si la matriz escalonada reducida de $A$, $A_{red}=I_n$ entonces $U$ forma una base
+
+### Ejemplo
+
+Considere a $S$ como $U=\Bigg\{\begin{pmatrix} 1 \\ -2\\0 \end{pmatrix},\begin{pmatrix} 0\\1\\2 \end{pmatrix},\begin{pmatrix}-5 \\6\\-8 \end{pmatrix} ,\begin{pmatrix}1 \\-2\\1 \end{pmatrix}\Bigg\}$.
+
+* Mostrar que $S$ es generador de $\mathbb{R}^3$.
+
+* Encontrar una base en $S$
+
+* Encontrar las coordenadas de $(1,1,1)$ con respecto a la base 
+
+
+# Dimensión de subespacios vectoriales 
+
+Dado que la definición de subespacio, si $M$ es un subespacio entonces las operaciones de suma y multiplicación escalar hacen que $(M,+\cdot)$ sea un espacio vectorial y por tanto las definiciones anteriores también aplican a $M$. 
+Es decir, tenemos la siguiente definición, que es una adaptación a la definición de dimensión de un espacio vectorial.
 
 <div style="background-color:#FFE9B1">
-<strong>Definición</strong> Sea $V$ un espacio vectorial y $\mathcal{B}$ es una conjunto generador del espacio $V$ entonces decimos que el espacio vectorial es de dimensión finita o finito dimensional si $\mathcal{B}$ es un conjunto finito . 
-</div>
+<strong>Definición</strong>
 
-## Teorema
-
-Sea $V$ un espacio vectorial, suponga que es de dimensión finita. Entonces
-
-a) $V$ contiene una base con un número finito de elementos
-
-b) Si $\mathcal{B}$ y $\mathcal{B}'$ son dos bases de $V$ entonces tienen el mismo número de elementos.
-
-Demostración
-
-a) Como $V$ es de dimensión finita, considere al conjunto $\mathcal{B}$, generador de $V$ con el menor número de vectores. $\mathcal{B}$ es un conjunto generador. Suponga que no es linealmente independiente, entonces existe al menos un vector en $\mathcal{B}$ tal que $v\in\mathcal{g}(\mathcal{B}/\{v\})$ pero entonces $\mathcal{g}(\mathcal{B}/\{v\})$ genera a $V$, lo cual no es posible pues $\mathcal{B}$ tenía el menor número de vectores que generan a $V$.
-
-b) Si $\mathcal{B}$ es una base con $n$ elementos. Sea $\mathcal{B}'$ otra base de $V$, suponga que tiene $m$ elementos. Como $\mathcal{B}'$ es un conjunto linealmente independiente de vectores y $\mathcal{B}$ es un conjunto generador de $V$ entonces $\mathcal{B}'$ tiene a lo más $n$ elementos, es decir $m\leq n$. Intercambiando los roles
-tenemos que $n\leq m$.
-
-## Dimensión de un espacio vectorial
-
-<div style="background-color:#FFE9B1">
-Sea $V$ un espacio vectorial de dimensión finita. La **dimensión** de $V$ es el número elementos que tiene cualquier base de $V$
-</div>
-
-### Teorema 
-Sea $V$ un espacio vectorial de dimension $n$. Entonces
-
-a) Todo conjunto de vectores linealmente independiente de $V$ tiene *a* *lo* *más* $n$ elementos.
-
-b) Cualquier conjunto generador de vectores de $V$ tiene al menos $n$ elementos.
-
-c) Si $S$ es un subconjunto de $V$ con $n$ elementos, entonces:
-
- 1) $S$ es linealmente independiente.
- 2) $S$ es un conjunto generador de $V$
- 3) $S$ es una base de $V$.
+Sea $V$ un espacio vectorial y $M\subset V$, un subespacio vectorial de $V$.  
+ Decimos que un conjunto de vectores $U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}, U\subset M$  es una **base** de $M$ si se cumple
  
-## Teorema{#sec:teom4}
-
-Si $V$ es un espacio vectoral, tal que $dim(V)=n$ entonces
-
-1) Si $\{y_1,y_2,\ldots,y_m\}$ es un conjunto de vectores linealmente independiente entonces $n\leq m$.
-
-2) Si $\{y_1,y_2,\ldots,y_m\}$ es un conjunto generador entonces $m\geq n$.
-
-3) Si $\{y_1,y_2,\ldots,y_n\}$ son linealmente independientes entonces forman una base.
-
-4) Si $\{y_1,y_2,\ldots,y_n\}$ son generadores de $V$ entonces forman una base.
-
-El siguiente resultado es útil para verificar si un conjunto de $n$ vectores en $\mathbb{R}^{n}$ es linealmente independiente.
-
-## Teorema{#sec:teom5}
-
-Sean $\{\mathbf{v}_1,\,\mathbf{v}_2,\,\ldots,\, \mathbf{v}_n\}\subset \mathbb{R}^{n}$ es linealmente independiente si y solo si la matriz de vectores columna 
-
+ 1) todo vector $\mathbf{v}\in M$ se puede expresar como una combinación lineal de los vectores en $U$.
 \[
- A=\begin{bmatrix} \mathbf{v}_1 | \mathbf{v}_2 | \ldots | \mathbf{v}_n \end{bmatrix}
+\mathbf{v}=\alpha_1\cdot\mathbf{v}_1+\alpha_2\cdot\mathbf{v}_2+\ldots+\alpha_k\cdot\mathbf{v}_k
 \]
-es tal que $\det(A)\ne 0$
 
-Por el teorema de la [@sec:teom4] esto implica que si $n$ vectores forman una matriz con determinante no nulo entonces forman una base de $\mathbb{R}^{n}$.
+ 2) el conjunto de vectores $U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\subset M$ es linealmente independiente.
+ 
+ <strong>Observación:</strong> Los vectores que forman base del subespacio $M$ deben ser elementos de $M$.
+</div>
+
+Y similarmente tenemos la definición de **dimensión** **de** **un** **subespacio**
+
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+
+Sea $V$ un espacio vectorial de dimensión finita y $M$ un subespacio. La **dimensión** de $M$ es el número elementos que tiene cualquier base de $M$
+</div>
+
+En el caso de que $M=\{\mathbf{0}\}$ entonces $\dim(\{\mathbf{0}\})=0$.
+
+## Proposición
+
+Si V es un espacio vectorial _finito-dimensional_ y $M\subseteq V$ es un subespacio de $V$ entonces 
+
+1) $M$ es un subespacio finito-dimensional, es decir tiene un conjunto generador finito.
+
+2) $\dim(M) \leq \dim(V)$.
+
+3) Si $\dim(M)=\dim(V)$ entonces $M=V$.
+
+1) Es claro que si $V$ es generado por $\{y_1,y_2,\ldots, y_m\}$ entonces el mismo conjunto $\{y_1,y_2,\ldots, y_m\}$ genera a $M$. Es decir, $M$ tiene un conjunto finito de vectores que generan a $M$ y por tanto es _finito_ _dimensional_.
+
+Sea $\mathcal{B}_M = \{w_1,w_2,\ldots,w_k\}$ una base de $M$ en particular son un conjunto linealmente independiente y por tanto $k\leq \dim(V)$ por el lema de intercambio. Es decir
+\[
+\dim(M)\leq \dim(V)
+\]
+
+Para ver 3) observe que si $\dim(M) = \dim(V) = n$ entonces $\mathcal{B}_M=\{w_1,w_2,\ldots,w_n\}$ son un conjunto de $n$ vectores linealmente independientes entonces por el teorema  [@sec:teom5], $\det(A)=\det([w_1 | w_2 | \ldots | w_n])\ne 0$ por tanto la matriz es invertible, esto implica que para todo vector $\mathbf{v}\in V$ $A\vec{c} =\mathbf{v}$ tiene solución, es decir $\{w_1,w_2,\ldots,w_n\}$ son linealmente independientes y generan a $V$ entonces $M=\mathcal{g}(w_1,w_2,\ldots,w_n)=V$.
+
+## Teorema de expansión
+
+Si $V$ es un espacio vectorial finito dimensional, $\dim(V)=n$ y $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ es una lista de vectores linealmente independientes en $V$ y $m\leq n$ entonces $V$ tiene una base $\mathcal{B}_V$ tal que $\mathcal{B}_V=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{x}_{m+1},\mathbf{x}_{m+2},\ldots,\mathbf{x}_n\}$.
+
+Dicho de otra forma, todo conjunto de vectores linealmente independientes es una base o esta contenido en una base.
+
+_Demostración_: Sean $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ vectores l.i. del espacio vectorial $V$. 
+Suponga que $\dim(V) = n$ y $m=n$, entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n$ es un conjunto generador y una base de $V$.
+
+Si $m<n$ entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ no puede generar a $V$, sea $\mathbf{y}_{m+1}\notin\mathcal{G}(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\})$ y por el lema $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{y}_{m+1}\}$ es linealmente independiente. Si $m+1<n$ entonces  repetimos el nuevo argumento con los $n+1$ vectores. Tras añadir $m-n$ vectores $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{y}_{m+1}\ldots,\mathbf{y}_{m + n-m}\}$
+
+# Ejemplos
+
 
 ### Ejemplo
 
@@ -1568,54 +1663,285 @@ $$
 $$
 Resolviendo el sistema de ecuaciones se obtiene que $a=0,b=0,c=0,d=0$. Como son 4 vectores linealmente independientes y $\dim(\mathcal{M}^{2,2}(\mathbb{R}))=4$ entonces forman una base.
 
-# Dimensión de subespacios
-
-Dado que la definición de subespacio, si $M$ es un subespacio entonces las operaciones de suma y multiplicación escalar hacen que $(M,+\cdot)$ sea un espacio vectorial y por tanto las definiciones anteriores también aplican a $M$. 
-Es decir, tenemos la siguiente definición, que es una adaptación a la definición de dimensión de un espacio vectorial.
 
 
-<div style="background-color:#FFE9B1">
-<strong>Definición</strong>
 
-Sea $V$ un espacio vectorial y $M\subset V$, un subespacio vectorial de $V$.  
- Decimos que un conjunto de vectores $U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}, U\subset M$  es una **base** de $M$ si se cumple
- 
- 1) todo vector $\mathbf{v}\in M$ se puede expresar como una combinación lineal de los vectores en $U$.
+## Ejemplo 1
+
+  Sea $V=\mathbb{R}^3$ y $\mathtt{v}_1=(1,1,2)$ y $\mathtt{v}_2=(3,2,-1)$ encuentre un vector $\mathtt{v}_3$ tal que $\{\mathtt{v}_1,\mathtt{v}_2,\mathtt{v}_3\}$ es una base de $\mathbb{R}^3$
+  
+  Dados $\mathtt{u}_1=(1,-1,0,1)$ y $\mathtt{u}_2=(2,1,0,2)$ encontrar vectores $\mathtt{u}_3$ y $\mathtt{u}_4$ tal que $\{\mathtt{u}_1, \mathtt{u}_2,\mathtt{u}_3,\mathtt{u}_4\}$ es una base de $\mathbb{R}^4$
+
+
+
+Si bien la proposición anterior es útil, en ocasiones puede ser más sencillo usar la siguiente idea. 
+
+Sea $U=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\}$ el conjunto de vectores linealmente independientes y $\mathcal{B}=\{\mathbf{b}_1,\mathbf{b}_2,\ldots,\mathbf{b}_n\}$ una base conocida de $V$. Consideremos la matriz extendida (el espacio generado por la unión de ambos conjuntos)
+
 \[
-\mathbf{v}=\alpha_1\cdot\mathbf{v}_1+\alpha_2\cdot\mathbf{v}_2+\ldots+\alpha_k\cdot\mathbf{v}_k
+A=[\mathbf{x}_1|\mathbf{x}_2|\ldots|\mathbf{x}_m|\mathbf{b}_1,\mathbf{b}_2,\ldots,\mathbf{b}_n]
 \]
 
- 2) el conjunto de vectores $U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\subset M$ es linealmente independiente
- 
- <strong>Observación:</strong> Los vectores que forman base del subespacio $M$ deben ser elementos de $M$.
-</div>
 
-Y similarmente tenemos la definición de **dimensión** **de** **un** **subespacio**
+Y reduzcamos con Gauss-Jordan, entonces, como $U$ es un conjunto linealmente independiente, entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ serán básicas y otro conjunto de la base $\mathcal{B}$, digamos $\mathbf{b}_{k_1},\mathbf{b}_{k_2},\ldots,\mathbf{b}_{k_{n-m}}$
 
+## Ejemplo 2
+
+Extender el conjunto de vectores linealmente independientes 
+\[
+\mathcal{S}=
+\Bigg\{ 
+        \begin{pmatrix} 1 \\ 0 \\ -1\\ 2 \end{pmatrix},
+        \begin{pmatrix} 0 \\ 0 \\ 1 \\- 2 \end{pmatrix}
+\Bigg\}
+\]
+ a una base de $\mathbb{R}^4$.
+
+## Ejemplo 3
+
+Sea $W$ el conjunto de vectores en $(x,y,z,t)\in\mathbb{R}^4$ tal que $x=z$ y $y=t$.
+
+a) Probar que $W$ es un subespacio.
+
+b) Encontrar una base de $W$ y su dimensión.
+
+c) Completar la base de $W$ para hallar una base de $\mathbb{R}^4$
+
+
+## Ejemplo 4
+
+Determinar la dimensión, así como una base del espacio generado por 
+\[
+\mathcal{S}=
+\Bigg\{ 
+        \begin{pmatrix} 1 \\ 2\\ 1 \end{pmatrix},
+        \begin{pmatrix} 1 \\ 0\\ 2 \end{pmatrix},
+        \begin{pmatrix} 5 \\ 6\\ 7 \end{pmatrix}
+\Bigg\}
+\]
+
+## Ejemplo 5
+
+Encontrar una base del subespacio $\mathcal{g}(\{\mathtt{v}_1,\mathtt{v}_2, \mathtt{v}_3\})$ con $\mathtt{v}_1=(1,-1,2)$, $\mathtt{v}_2=(-2,0,1)$ y $\mathtt{v}_3=(3,-1,1)$.
+
+Sea $W_1$ y $W_2$ subespacios da $\mathbb{R}^3$ definidos como
+\[
+\begin{matrix}
+W_1=\{(x,y,z)\in\mathbb{R}^3\,:\, x+y-z=0 \} \\
+W_2=\{(x,y,z)\in\mathbb{R}^3\,:\, -x+y=0,\}
+\end{matrix}
+\]
+
+Obtener la dimensión de $W_1\cap W_2$. Verificar si los siguientes vectores son parte del subespacio vectorial.
+
+*$(1,1,1)$
+
+*$(1,1,-1)$
+
+*$(-1,1,0)$
+
+### Ejemplo 6 
+
+Encontrar la dimensión del siguiente subespacio de $M^{2,2}(\mathbb{R})$.
+
+\[
+W=\Bigg\{\begin{pmatrix} a & b \\c & d \end{pmatrix}\in M^{2,2}(\mathbb{R}) |\, a=d ,b=-c \Bigg\}
+\]
+
+# Rango de un subespacio generado
+
+Sea $A$ una matriz, que se compone por vectores columna, definimos al _rango_ de una matriz como el número de vectores columna que son linealmente independientes
+
+Suponga que $v_1,v_2,\ldots,v_m$ son vectores de un e.v. $V$, sea $A=[\mathtt{v}_1|\mathtt{v}_2|\ldots|\mathtt{v}_m]$. Entonces $\dim\{\mathcal{G}(\{\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_m\})\}=\mbox{Rango}(A)$.
 
 <div style="background-color:#FFE9B1">
 <strong>Definición</strong>
 
-Sea $V$ un espacio vectorial de dimensión finita y $M$ un subespacio. La **dimensión** de $M$ es el número elementos que tiene cualquier base de $M$
+El **rango** **de** **un** **conjunto** **de** **vectores** $K=\{v_1,v_2\ldots, v_n\}$ es el **mayor** número de vectores que son **linealmente** **independientes**
+
 </div>
 
-En el caso de que $M=\{\mathbf{0}\}$ entonces $\dim(\{\mathbf{0}\})=0$.
 
-## Proposición
 
-Si V es un espacio vectorial _finito-dimensional_ y $M\subseteq V$ es un subespacio de $V$ entonces 
+# Coordenadas de un vector respecto a una base
 
-1) $M$ es un subespacio finito-dimensional, es decir tiene un conjunto generador finito.
+Una propiedad esencial de usar una base en un espacio vectorial es que nos permite expresar cada vector de **manera** **única** como combinación lineal de sus vectores básicos. 
 
-2) $\dim(M) \leq \dim(V)$.
+## Definiciones 
 
-3) Si $\dim(M)=\dim(V)$ entonces $M=V$.
+Un conjunto $\{\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_n\}$ de vectores de un espacio vectorial $V$ es una base _ordenada_ es una secuencia fija de los vectores $\mathtt{v}_1, \mathtt{v}_2,\ldots, \mathtt{v}_n$ en la base.
 
-Al igual que antes, si tenemos una lista de vectores $\{y_1,y_2,\ldots,y_m\}$ generadores de $V$ entonces generan a $M$.
-Sea $\mathcal{B}_M = \{w_1,w_2,\ldots,w_k\}$ una base de $M$ en particular son un conjunto linealmente independiente y por tanto $k\leq \dim(V)$ por el lema de intercambio.
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
 
-Para ver 3) observe que si $\dim(M) = \dim(V) = n$ entonces $\{w_1,w_2,\ldots,w_n\}$ son un conjunto de $n$ vectores linealmente independientes entonces por el teorema  [@sec:teom5], $\det(A)=\det([w_1 | w_2 | \ldots | w_n])\ne 0$ por tanto la matriz es invertible, esto implica que para todo vector $\mathbf{v}\in V$ $A\vec{c} =\mathbf{v}$ tiene solución, es decir $\{w_1,w_2,\ldots,w_n\}$ son linealmente independientes y generan a $V$ entonces $M=\mathcal{g}(w_1,w_2,\ldots,w_n)=V$.
+Sea $V$ un espacio vectorial con $\mathcal{B}$ una base **ordenada**. Y un vector $v\in V$, decimos que $(\alpha_1,\alpha_2,\ldots,\alpha_n)$ son las **coordenadas de** $u$ **con respecto de** $\mathcal{B}$ si $\alpha_1$, $\alpha_2,\ldots,\alpha_n$ son _escalares_ tales que 
 
-## Teorema de expansión
+\begin{equation}
+u= \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n
+\end{equation}
 
-Si $V$ es un espacio vectorial finito dimensional, $\dim(V)=n$ y $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ es una lista de vectores linealmente independientes en $V$ y $m\leq n$ entonces $V$ tiene una base $\mathcal{B}_V$ tal que $\mathcal{B}_V=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{x}_{m+1},\mathbf{x}_{m+2},\ldots,\mathbf{x}_n\}$
+Para referirnos a estas coordenadas usaremos la notación $u=(\alpha_1,\alpha_2,\ldots, \alpha_n)_{\mathcal{B}}$.
+</div>
+
+Esto significa que, _fijando_ _una_ _base_ $\mathcal{B}$, en $V$ podemos corresponder a cada vector $v \rightarrow (\alpha_1,\alpha_2,\ldots, \alpha_n)$ 
+
+### Ejemplo 1
+
+Consideremos a las bases de $\mathbb{R}^2$ 
+
+\[
+\mathcal{B}=\{\mathtt{e}_1=(1,0),\quad \mathtt{e}_2=(0,1)\} \quad\quad \mathcal{B}'=\{ u_1 = (2,2),\quad u_2=(1,-2)\}
+\]
+
+Calcular las coordenadas del vector $v=(4,-2)$ con respecto a ambas bases $\mathcal{B}$ y $\mathcal{B}'$.
+
+Para la base $\mathcal{B}$ tenemos que 
+\[
+(4,-2) = 4\mathtt{e}_1 -2\mathtt{e}_2 = 4 \cdot (1,0) + (-2)\cdot(0,1)
+\]
+
+Con respecto a la base $\mathcal{B}'$ tenemos que 
+\[
+(4,-2) = 1(2,2) + 2(1,-2) 
+\]
+
+Por tanto, las coordenadas con respecto a cada base son iguales a 
+\[
+\begin{matrix}
+v = (4,-2)_{\mathcal{B}} & \quad v = (1,2)_{\mathcal{B}'}
+\end{matrix}
+\]
+
+
+### Ejemplo 2
+
+Mostrar que los vectores 
+\[
+\begin{matrix}  
+    \alpha_1 = (1,1,0,0), & \alpha_2 = (0,0,1,1), \\ 
+    \alpha_3 = (1,0,0,4), & \alpha_4 = (0,0,0,2)      
+\end{matrix}
+\]
+
+Encontrar las coordenadas de cada uno de los vectores en la base canónica $\mathtt{e}_1,\mathtt{e}_2,\mathtt{e}_3,\mathtt{e}_4$.
+
+
+## Cambios de Base
+
+Sean $\mathcal{B}=\{v_1,v_2,\ldots,v_n\}$ y $\mathcal{B}'=\{w_1,w_2,\ldots,w_n\}$ dos bases de un espacio vectorial $V$ de dimensión $n$. 
+Cualquier vector $x\in V$ lo podemos escribir como combinación lineal de los elementos de $\mathcal{B}$ y como combinación lineal de los elementos de $\mathcal{B}'$
+Es decir, 
+\[
+\begin{matrix}
+x\rightarrow (x_1,x_2,\ldots,x_n)_{\mathcal{B}} & & x\rightarrow (y_1,y_2,\ldots,y_n)_{\mathcal{B}'} 
+\end{matrix}
+\]
+
+¿Qué relación hay entre ambas coordenadas?
+
+Como ambas son bases, entonces con respecto a  $\mathcal{B}$ tenemos
+\[
+x =  x_{11} v_1 + x_{12} v_2 +  \ldots + x_{1n} v_n
+\]
+y con respecto a $\mathcal{B}'$ tenemos
+\[
+x =  x'_{1} w_1 + x'_{2} w_2 +  \ldots +x'_{n} w_n
+\]
+
+Para averiguarlo, supongamos que $\mathcal{B}'$  es la _nueva_ base, y como dicha base genera a $V$ entonces para cada elemento de la base $\mathcal{B}$, lo expresamos como combinación lineal de la nueva base.
+
+\[
+\begin{matrix}
+v_1 = v'_{11} w_1 + v'_{12} w_2 +  \ldots v'_{1n} w_n\\
+v_2 = v'_{21} w_1 + v'_{22} w_2 +  \ldots v'_{2n} w_n\\
+\vdots\\
+v_n = v'_{n1} w_1 + v'_{n2} w_2 +  \ldots v'_{nn} w_n\\
+\end{matrix}
+\]
+
+Entonces sustituyendo en la primer combinación lineal tenemos  que
+\[
+\begin{matrix}
+x & = x_{1} v_1 + x_{2} v_2 +  \ldots + x_{n} v_n \\
+  & = x_{1} (v'_{11} w_1 + v'_{12} w_2  +  \ldots v'_{1n} w_n)  \\
+  & \,\, + x_{2} (v'_{21} w_1 + v'_{22} w_2 +  \ldots v'_{2n} w_n)  \\
+  & \ldots  \\
+  & \,\, + x_{n} (v'_{n1} w_1 + v'_{n2} w_2 +  \ldots v'_{nn} w_n)
+\end{matrix}
+\]
+
+Factorizando por $w_1,w_2,\ldots,w_n$ tenemos que
+\[
+\begin{matrix}
+x & = & (x_{1}v'_{11} + x_{2}v'_{21} + \ldots  +x_{n}v'_{n1}) w_1 + 
+        (x_{1}v'_{12} + x_{2}v'_{22} + \ldots  +x_{n}v'_{n2}) w_2 + \ldots\\
+  &   & (x_{1}v'_{1,n-1} + x_{2}v'_{2,n-1} + \ldots  +x_{n}v'_{n,n-1}) w_{n-1}+(x_{1}v'_{1n} + x_{2}v'_{2n} + \ldots  +x_{n}v'_{nn}) w_n
+\end{matrix}
+\]
+Comparandolo con $x =  x'_{1} w_1 + x'_{2} w_2 +  \ldots +x'_{n} w_n$ como $\{w_1,w_2,\ldots,w_n\}$ son linealmente independientes entonces
+
+\[
+\begin{matrix}
+x'_1    & = & x_{1}v'_{11} + x_{2}v'_{21} + \ldots  +x_{n}v'_{n1} \\
+x'_2    & = & x_{1}v'_{12} + x_{2}v'_{22} + \ldots  +x_{n}v'_{n2}  \\
+\vdots  & \vdots & \vdots \\
+x'_n    & = & x_{1}v'_{1n} + x_{2}v'_{2n} + \ldots  +x_{n}v'_{nn}
+\end{matrix}
+\]
+
+Por tanto llegamos que las coordenadas con respecto a la base $\mathcal{B}'=\{w_1,w_2,\ldots,w_n\}$ y $\mathcal{B}=\{v_1,v_2,\ldots,v_n\}$ se relaciona por medio de 
+\begin{equation}
+\begin{pmatrix} x'_{1} \\ x'_{2} \\ \vdots \\ x'_{n} \end{pmatrix}_{\mathcal{B}'} = 
+\begin{pmatrix} 
+    v'_{11} &  v'_{21} & \ldots  & v'_{n1} \\
+    v'_{12} &  v'_{22} & \ldots  & v'_{n2} \\
+    \vdots  &   \vdots & \vdots  & \vdots  \\
+    v'_{1n} &  v'_{2n} & \ldots  & v'_{nn}
+    \end{pmatrix} \cdot \begin{pmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_n \end{pmatrix}_{\mathcal{B}}
+\end{equation}
+
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+A la matriz de la ecuación (8) se le denota por $\mathcal{Q}_{\mathcal{B}\mathcal{B}'}$  y se le denomina como la **matriz cambio de base** **de la base** $\mathcal{B}$  **a**  $\mathcal{B}'$
+</div>
+
+
+La matriz cambio de base coincide con la matriz de coordenadas por columnas de $\{v_1,v_2,\ldots,v_n\}$ con respecto a $\mathcal{B}'$.
+
+Además, la matriz es invertible pues en la nueva base $\mathcal{B}'$ las columnas de $\mathcal{Q}$ representan a los vectores linealmente independientes $v_1,v_2,\ldots, v_n$, por lo que $\det(\mathcal{Q})\ne 0$.
+
+### Ejemplo
+
+El cálculo de la matriz cambio de base es sencillo cuando los vectores de la nueva base están dados como combinación lineal de los vectores de la otra base.
+Suponga que $\mathcal{B}'=\{v_1',v_2',v_3'\}$ y la base anterior esta dada por $\mathcal{B}=\{3v_1'-v_2'+v_3',\,-5v'_1+4v'_2+v'_3,\,2v_1'+2v_2'-4v'_3\}$, en este caso si queremos calcular la matriz $Q_{\mathcal{B}\mathcal{B}'}$, es decir la matriz cambio de base de $\mathcal{B}\rightarrow\mathcal{B}'$ esta dada por
+\[
+
+\mathcal{Q}=
+          \begin{pmatrix} 
+              3 & -5 & 3 \\ 
+              -1& 4  & 2 \\
+              1 & 1  &-4
+          \end{pmatrix}
+\]
+
+Sea $x=2v_1-v_2+v_3$ calcular las coordenadas con respecto a $\mathcal{B}'$.
+
+### Ejemplo
+
+Sean $\mathcal{A}=\{u_1=(2,-1,0),\,u_2=(-1,-1,1),\,u_3=(2,2,-1)\}$ y $\mathcal{B}=\{u_1=(1,0,0),\,u_2=(-2,1,0),\,u_3=(1,-2,1)\}$. Hallar la matriz cambio de base.
+
+### Ejemplo.
+
+Considere las siguientes bases de $\mathbb{R}^3$, 
+$B=\{(0,-2,3),(0,1,1),(1,1,0)\}$ y $C=\{(0,-1,1),(0,3,0),(1,-1,1)\}$.
+
+* Determinar la matriz  cambio de base de $C\rightarrow B$.
+
+* Determinar la matriz cambio de base de $B\rightarrow C$
+
+* Si $[u]_{C}=(2,1,3)$ encontrar $[u]_{\mathcal{B}}$
+
+* Si $[v]_{B}=(-1,4,1)$ encontrar $[v]_{\mathcal{C}}$
+
+

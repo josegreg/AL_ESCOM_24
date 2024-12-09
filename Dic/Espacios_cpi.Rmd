@@ -1,0 +1,207 @@
+---
+title: "Espacios con producto interno"
+author: "Álgebra lineal"
+header-includes:
+ -\usepackage{amsmath}
+output: 
+  slidy_presentation:
+    number_sections: true
+    footer: Álgebra lineal, José Rodríguez Villarreal
+    math_method: "mathjax"
+---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
+# Espacios con producto interno
+
+Un \textit{producto interno} en un espacio vectorial real $V$ es una función que a cada par de vectores 
+	$\mathbf{u}$ y $\mathbf{v}$ en $V$, le asigna un número real denotado por $\langle \mathbf{u}, \mathbf{v}\rangle$.
+	Esta función satisface las siguientes propiedades: si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ son vectores y 
+	$c$ es un escalar, entonces
+	
+	
+$a)$ $\langle \mathbf{u}, \mathbf{v}\rangle = \langle \mathbf{v}, \mathbf{u}\rangle$. 
+
+$b)$ $\langle \mathbf{u}, \mathbf{v}+\mathbf{w}\rangle 
+			      = \langle \mathbf{u}, \mathbf{v}\rangle + \langle \mathbf{u}, \mathbf{w}\rangle$. 
+			      
+$c)$ $c\langle \mathbf{u}, \mathbf{v}\rangle = \langle c\mathbf{u}, \mathbf{v}\rangle$
+
+$d)$ $\langle \mathbf{v}, \mathbf{v}\rangle \geq 0$\,  $\forall\,\, \mathbf{v}\in V$. 
+
+$e)$ $\langle \mathbf{v}, \mathbf{v}\rangle = 0$ si y sólo si $\mathbf{v}=\mathbf{0}$. 
+	
+	
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+	Un espacio vectorial $V$ en el que hay definido un producto interno se denomina **espacio con producto interno**.
+</div>
+
+
+
+## Ejemplo 1
+Demuestre que en $\mathbb{R}^n$ el producto punto de dos vectores $\mathbf{u}=(u_1,\ldots,u_n)$ y $\mathbf{v}=(v_1,\ldots,v_n)$,
+\[
+		\langle \mathbf{u}, \mathbf{v}\rangle = \mathbf{u}\cdot \mathbf{v} = u_1v_1 + \cdots + u_nv_n
+\]
+	es un producto interno en $\mathbb{R}^n$.
+
+
+## Ejemplo 2
+
+Demuestre que en $\mathbb{R}^2$ la función que a los vectores $\mathbf{u}=(u_1,u_2)$ y 
+		$\mathbf{v}=(v_1,v_2)$ le asigna el número real
+\[
+		\langle \mathbf{u}, \mathbf{v}\rangle = u_1v_1 + 2u_2v_2
+\]
+es un producto interno en $\mathbb{R}^2$.
+
+## Norma de un vector
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+  La norma inducida por el producto interno se define como
+  \begin{equation}
+    \|\mathtt{x}\| = \sqrt{\langle \mathtt{x}, \mathtt{x}  \rangle}
+  \end{equation}
+</div>
+
+### Propiedades de la norma 
+
+a) Para todo $\mathtt{x}\in V$, si $\|\mathtt{x}\|= \mathbf{0} \Leftrightarrow \mathtt{x}=\mathbf{0}$.
+
+b) Para todo $c\in \mathbb{R}$ y $\mathtt{x}\in V$
+\[
+\|c\cdot \mathtt{x}\| = |c|\|\mathtt{x}\|
+\]
+
+c) Para todo $\mathtt{x},\mathtt{y}\in V$  se cumple la desigualdad de Cauchy-Schwarz
+\[
+|\langle \mathtt{x},\mathtt{y} \rangle|\leq \|\mathtt{x} \|\|\mathtt{y} \|
+\]
+
+d) Para todo $\mathtt{x},\mathtt{y}\in V$
+\[
+\|\mathbf{x}+\mathbf{y}\|\leq \|\mathbf{x}\| + \|\mathbf{y}\|
+\]
+
+## Distancia entre vectores
+
+Definimos la distancia entre vectores $\mathbf{x}$, $\mathbf{y}\in V$ tal que 
+\[
+d(\mathbf{x},\mathbf{y})=\|\mathbf{y}-\mathbf{x}\|
+\]
+
+
+## Ángulo entre vectores
+
+Definimos al ángulo entre dos vectores como
+\[
+\cos\theta = \frac{\langle \mathbf{x}, \mathbf{y}\rangle}{\|\mathbf{x}\|\|\mathbf{y}\|}
+\]
+
+## Ortogonalidad
+
+Por tanto, dos vectores formarán un _ángulo_ de $90°$ si $\cos \theta=0$ es decir $\theta=\frac{\pi}{2}$, esto ocurre sólo si $\langle \mathbf{x},\mathbf{y}\rangle = 0$.
+
+<div style="background-color:#FFE9B1">
+<strong>Ortogonalidad</strong>
+Sea $V$ un espacio vectorial con producto interno, decimos que dos vectores son <red>ortogonales</red>  si
+  \begin{equation}
+  \langle \mathbf{x}, \mathbf{y} \rangle =0
+  \end{equation}
+</div>
+
+
+Igualmente, un conjunto de vectores $U$ es **ortogonal** si toda pareja de vectores $\mathbf{v}_i$ y $\mathbf{v}_j$ son ortogonales es decir
+
+\[
+\langle v_i, v_j \rangle = \begin{cases}
+                                    0 & i\ne j\\
+                                    \|v_i\|^2 & i=j
+                            \end{cases}
+\]
+
+### Proposición
+
+Si $U$ es un conjunto de vectores _ortogonales_ entonces es un conjunto de vectores **linealmente** **independiente**.
+
+### Proposición
+
+Si $U$ es un conjunto de vectores generadores de $V$ que son ortogonales entonces 
+\[
+\mathbf{v}=\sum_{i=1}^n \frac{\langle \mathbf{v},\mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2}\mathbf{v}_i
+\]
+
+En efecto, si $U$ es un conjunto generador de $V$ y $U$ es un conjunto de vectores ortogonales, como $U$ genera a $V$ entonces para todo $v\in V$ y $\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_j \in U$
+\[
+\mathbf{v}=\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots + \alpha_j \mathbf{v}_j
+\]
+Entonces, si tomamos  el producto interno por $\mathbf{v}_j$
+\[
+\begin{matrix}
+\langle \mathbf{v}, \mathbf{v}_j \rangle  & = & 
+  \langle \alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots + \alpha_j \mathbf{v}_j, \mathbf{v}_j \rangle \\
+\langle \mathbf{v}, \mathbf{v}_j \rangle  & = & \sum_{i=1}^{j}\alpha_i \langle \mathbf{v}_i ,\mathbf{v}_j\rangle  \\
+\langle \mathbf{v}, \mathbf{v}_j \rangle  & = & \alpha_j \|\mathbf{v}_j\|^2
+\end{matrix}
+\]
+Entonces, los escalares de la combinación lineal están dados por
+\[
+\alpha_j = \frac{\langle \mathbf{v},\mathbf{v}_j  \rangle}{\|\mathbf{v}_j\|^2}
+\]
+
+## Proyección ortogonal sobre un vector
+
+Si $w$ es un vector definimos la _proyección_ _ortogonal_ de $\mathbf{v}$ sobre $\mathbf{w}$ como 
+\[
+P\mathbf{v}= \mathbf{w}-\frac{\langle \mathbf{v}, \mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
+\]
+
+
+
+## Ortogonalización de Gramm-Schmidt
+
+Se busca obtener la existencia de una base de vectores ortonormales de un espacio vectorial. 
+Sabemos que si $V$ es un espacio vectorial finitamente generado, entonces existe una base $\mathcal{B}$. ¿Existe una base de vectores _ortonormales_?
+
+El proceso de ortogonalización da una respuesta afirmativa y un procedimiento para calcular una base ortonormal a partir de una base de vectores.
+
+Sea $\mathcal{B}=\{v_1,v_2,\ldots,v_n\}$ una base ordenada de $V$.
+
+Definimos a los siguientes vectores
+\[
+w_1=v_1,
+\]
+
+\[
+w_2 = v_2 - P_{w_1}w_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle w_1,w_1 \rangle}w_1,
+\]
+
+\[
+w_{n-1} = v_{n-1} - \sum^{n-2}_{k=1} P_{w_k}v_{n-1} = v_{n-1} - \frac{\langle v_{n-1},w_1 \rangle}{\langle w_1,w_1 \rangle}w_1- \frac{\langle v_{n-1},w_2 \rangle}{\langle w_2,w_2 \rangle}w_2 \ldots - \frac{\langle v_{n-1},w_{n-2} \rangle}{\langle w_{n-2},w_{n-2} \rangle}w_{n-2},
+\]
+
+
+\[
+w_{n} = v_{n} - \sum^{n-1}_{k=1} P_{w_k}v_{n} = v_{n} - \frac{\langle v_{n},w_1 \rangle}{\langle w_1,w_1 \rangle}w_1- \frac{\langle v_{n},w_2 \rangle}{\langle w_2,w_2 \rangle}w_2 \ldots - \frac{\langle v_{n},w_{n-1} \rangle}{\langle w_{n-1},w_{n-1} \rangle}w_{n-1},
+\]
+
+
+Posteriormente, la base **ortonormal** $\mathcal{O}=\{\mathbf{y}_1,\mathbf{y}_2,\ldots , \mathbf{y}_n\}$ está dada por
+\[
+\mathbf{y}_i = \frac{w_i}{\|w_i\|}
+\]
+
+ 
+### Proposición
+
+Los vectores $\mathbf{w}_i$ son ortogonales a los vectores $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-1}$. Por hipótesis de inducción, supondremos que $\mathbf{w}_{i-1}$ es ortogonal a los vectores $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-2}$, entonces
+\[
+\langle w_i, w_j \rangle = \langle \mathbf{v}_{i} - \sum_{k=1}^{n} \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{k} \rangle}{\|\mathbf{w}_k\|^2},\mathbf{w}_j
+\]

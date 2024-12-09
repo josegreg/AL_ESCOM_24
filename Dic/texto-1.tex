@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usetikzlibrary{calc,positioning}
+\usetikzlibrary{intersections}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{amsmath}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}[dot/.style={circle,inner sep=1pt,fill,label={#1},name=#1},
+  extended line/.style={shorten >=-#1,shorten <=-#1},
+  extended line/.default=1cm]
+ \draw[thick,-stealth] (-4.5,0) -- (5.5,0);
+ \draw[thick,-stealth] (0,0) -- (0,4.5);
+ \coordinate (A) at (0,0);
+ \coordinate (B) at (-4,3);
+ \draw [extended line=0.5cm, stealth-stealth] (A) -- (B) node[pos=1.15,font=\small]{$\textbf{v}$};     
+\coordinate (C) at (-1.5,4.3);
+\coordinate(O) at (0,0);
+ \draw [ -stealth] (0,0) -- (-1.5, 4.3) coordinate (yn) node[right]{$\textbf{u}$}; 
+ \draw[dashed] (yn) --  node[midway,above left]{$\small{\textbf{u}-\textbf{Pu}}$} ($(A)!(yn)!(B)$) node[below left]{$\textbf{Pu}$};
+\end{tikzpicture}
+
+\end{document}

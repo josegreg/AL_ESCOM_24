@@ -1,55 +1,54 @@
 ---
 title: "Tarea 3"
+header-includes:
+   - \usepackage{blindtext}
+   - \usepackage{amsmath}
+   - \usepackage{mathtools}
+   - \usepackage{multicol}
+geometry: "left=1cm,right=0.8cm,top=1cm,bottom=0.8cm"
 author: "Álgebra lineal"
 output: pdf_document
 ---
 
+# Espacios vectoriales
+
 @. Sea $V = \mathbb{R}^{+}$ y $\mathbb{K}=\mathbb{R}$, es decir, el campo de escalares son los números reales. Se define sobre $V$ las siguientes operaciones:
-
-  - Definimos la suma $$ x \oplus y = xy $$ para todo $x$, $y \in V$.
-
+  - Definimos la suma $x \oplus y = xy$ para todo $x$, $y \in V$.
   - Y la multiplicación por escalar como $\alpha \odot x = x^{\alpha}$ para todo $\alpha \in \mathbb{R}, x\in V$.
 
 Averiguar si con estas operaciones, $(V,\oplus,\odot)$  es un espacio vectorial. En su defecto indicar que axioma no se cumple con un ejemplo.
 
 
 @. Explicar por que el plano cartesiano $\mathbb{R}^{2}$ con la suma usual de vectores y el producto escalar definido como sigue
-
 * $x \oplus  y = x + y\,\quad(\mbox{ suma usual en } \mathbb{R}^n)$, $\alpha \cdot (x,y) :=  (\alpha y, \alpha x)$
-
 * $x \oplus  y = x + y\,\quad(\mbox{ suma usual en } \mathbb{R}^n)$, $\alpha\cdot (x,y) := (x^{\alpha}, y)$
-
 Es un espacio vectorial o no lo es. 
 
 
 @. Sea $V=\mathbb{R}^2$ y definimos las siguientes operaciones en $V$:
+  suma: $(a_1,a_2)\oplus (b_1,b_2) = (a_1+b_1,a_2+b_2)$ (suma usual en $\mathbb{R}^2$) y producto escalar: $\alpha\odot (a_1,a_2) = (\alpha a_1,a_2)$ para todo $\alpha\in\mathbb{R}$. ¿Es $V$ con estás operaciones un espacio vectorial real?
 
-  a) suma: $(a_1,a_2)\oplus (b_1,b_2) = (a_1+b_1,a_2+b_2)$ (suma usual en $\mathbb{R}^2$)
-  
-  b) producto escalar: $\alpha\odot (a_1,a_2) = (\alpha a_1,a_2)$ para todo $\alpha\in\mathbb{R}$.
-  
-¿Es $V$ con estás operaciones un espacio vectorial real?
+@. Verificar que $\mathbb{R}[X]=\{p : p(x)=a_4x^4 + a_3x^2 + a_2x^2 + a_1 x + a_0,\quad a_i\in \mathbb{R}\}$ el conjunto de polinomios de grado $\leq 3$. Con las operaciones 
 
-@. Verificar que $\mathbb{R}[X]=\{p : p(x)=a_4x^4 + a_3x^2 + a_2x^2 + a_1 x + a_0,\quad a_i\in \mathbb{R}\}$ el conjunto de polinomios de grado $\leq $3. Con las operaciones 
+* $(p + q)(x) = p(x) + q(x)$ para todo $x\in \mathbb{R}$ y  $c \cdot p(x) = ca_3 x^3 + ca_2 x^2 + ca_1 x + ca_0\quad$  forma  un espacio vectorial.
 
-* $(p + q)(x) = p(x) + q(x)$ para todo $x\in \mathbb{R}$.
+@. En $V=\mathbb{R}^n$  define 2 operaciones, $\alpha \oplus \beta=\alpha - \beta$, $c\cdot \alpha =-c\alpha$. ¿Qué axiomas de los espacios vectoriales cumplen las operaciones ($\oplus$,$\cdot$)?
 
-* $c \cdot p(x) = ca_3 x^3 + ca_2 x^2 + ca_1 x + ca_0$
+@. Definimos a $C^{2}(\mathbb{R};\mathbb{R})$ como el conjunto de funciones con segundas derivadas definimos a $W$ como
+\[
+W=\{y\in C^{2}(\mathbb{R};\mathbb{R}): \,\, y''(x)+2y'(x)+y(x)=0 \}
+\]
 
-forma  un espacio vectorial.
+a) Demostrar que $W$ es un subespacio vectorial.
 
+b) Verificar si $f(x)=e^{-x}$ está en $W$.
 
-## Subespacios vectoriales
+# Subespacios vectoriales
 
 @. ¿Cuál de los siguientes subconjuntos de $\mathbb{R}^3$ son realmente subespacios, verificar las 3 propiedades o bien, dar un contraejemplo:
-
   a) El plano de los vectores $\mathbf{v}=(x_1,x_2,x_3)$ con $x_1=0$.
-  
   b) Los vectores $\mathbf{v}$ con $\mathbf{v}_1\mathbf{v}_2=0$.
-  
   c) El plano en $\mathbb{R}^{3}$ dado por la ecuación $x+2y+z=6$. 
-  
-  d)
 
 @. Sea $V$ el espacio vectorial de funciones continuas, $V=C([0,1];\mathbb{R})$ ¿Qué conjuntos son un subespacio de $V$.
 
@@ -62,13 +61,14 @@ forma  un espacio vectorial.
   d) $I=\{f\in V:\, f \mbox{ es par}\}$.
   
 @. Sea $W$   el espacio de vectores $(x_1,x_2,x_3,x_4)\in\mathbb{R}^5$ el cual cumple. Explica por que es un subespacio
+\begin{equation}
 \begin{matrix}
   2x_1 &- x_2 &+\frac{4}{3}x_3 &-x_4  &     &= 0\\
   x_1  &      &+\frac{2}{3}x_3 &      &-x_5 &=0 \\  
   9x_1 &-3x_2 &+6x_3           &-3x_4 & -3x_5& = 0
 \end{matrix}
-
-@. Sea $V=\mathcal{M}^{n,n}(\mathbb{R})$ el espacio vectorial de todas las matrices con entradas reales. 
+\end{equation}
+@. Sea $V=\mathcal{M}^{n,n}(\mathbb{R})$ el espacio vectorial de todas las matrices con entradas reales. Determinar y explicar si $W$ es un subespacio vectorial o en su defecto explicar que propiedad no se cumple.
 
   a) Sea $B$ una matriz fija, $B\in\mathcal{M}^{n,n}(\mathbb{R})$, considera a $W=\{A\in V\,:\,AB=BA\}$
   
@@ -76,3 +76,397 @@ forma  un espacio vectorial.
 
 @. Explica por que si $W_1$ y $W_2$ son dos subespacios de $V$ tal que $V$ es **suma** **directa** de $W_1$ y $W_2$, entonces todo vector $\alpha \in V$ se puede expresar de manera única como $\alpha = w_1 + w_2$ con $w_1 \in W_1$ y $w_2 \in W_2$.
   
+  
+@. Probar que el conjunto
+\begin{equation*}
+S =\big\{ ax^{3}+bx^{2}+cx +d \in P_3(\mathbb{R}) : a=2b \mbox{ y } c = -d \big\}
+\end{equation*}
+
+es un subespacio.
+
+@. Probar que el conjunto de matrices 
+\begin{equation*}
+ \mathcal{U}=\big\{\ A\in \mathcal{M}^{2,2}(\mathbb{R}) : |A| = 0 \big\}
+\end{equation*}
+**no** es un subespacio vectorial
+
+@. Describir al subespacio $W\subset \mathbb{R}^{3}$ generado por el conjunto de vectores $\mathbf{v}_1=(1,2,3)$, $\mathbf{v}_2=(-1,1,-1)$, $\mathbf{v}_3=(2,1,4)$ 
+
+@. Sea $\mathcal{S}^{n}$ el conjunto de matrices simétricas de tamaño $n\times n$ y $\mathcal{A}^{n}(\mathbb{R})$ el conjunto de matrices antisimétricas.
+
+a) Probar que el conjunto de matrices simétricas y el conjunto de matrices antisimétricas $n\times n$ son subespacios vectoriales de $\mathcal{M}^{n}(\mathbb{R})$ son subespacios vectoriales. 
+
+b) Probar que toda matriz se puede expresar como suma de dos matrices $S\in\mathcal{S}^{n}(\mathbb{R}),\,A\in\mathcal{}^{n}(\mathbb{R})$. (Sugerencia: Probar que $S=\frac{1}{2}\big( A + A^{T}\big)$ es una matriz simétrica, $\Lambda =\frac{1}{2}\big( A - A^{T}\big)$).
+
+@. Sea $V=\mathcal{F}(\mathbb{R};\mathbb{R})$. Y sea $g(x)$, una función fija, mostrar que el conjunto $E$ de todas las funciones $f:\mathbb{R}\rightarrow \mathbb{R}$ tales que $f(g(x))=f(x)$ es un subespacio vectorial de $E$. 
+
+@. Definimos a la traza de una matriz como $tr(A)=\sum_{i=1}^{n}a_{i,i}$, es decir la suma de la diagonal principal. Verificar que el conjunto
+$$
+W = \Big\{ A\in\mathcal{M}^{n}(\mathbb{R})\,\,:\,\, tr(A)=0 \Big\}
+$$
+es un subespacio del espacio vectorial $\mathcal{M}^{n}(\mathbb{R})$.
+
+@. Sea $\mathbb{R}[x]$ la colección de todos los polinomios con coeficientes reales, sea $W\subset \mathbb{R}[x]$ tal que
+
+  a) $W=\{f\in \mathbb{R}[x]: grado(f) = 3\}$
+  
+  b) $W=\{f\in \mathbb{R}[x]: 2f(0) = f(1)\}$
+  
+  c) $W=\{f\in \mathbb{R}[x]: f(t) \geq 0 \, t \in [0,1]\}$
+  
+  d) $W=\{f\in \mathbb{R}[x]: f(t) = f(1-t)\,\,\mbox{ para todo }t\in\mathbb{R}\}$
+  
+@. En $V=(\mathbb{R}^4,+,\cdot)$ determinar cual de los siguientes conjuntos son un subespacio vectorial. (Se puede usar los ejemplos vistos en clase).
+
+  a) $\{(x,y,z,t)\in\mathbb{R}^4\, : \,\, x=y,z=t\}$.
+  
+  b) $\{(x,y,z,t)\in\mathbb{R}^4\, : \,\, x+y+z+t=0\}$.
+
+  c) $\{(x,y,z,t)\in\mathbb{R}^4\, : \,\, x=1\}$.
+  
+  d)  c) $\{(x,y,z,t)\in\mathbb{R}^4\, : \,\, xt=yz\}$.
+
+@. En $V=C^2([0,1];\mathbb{R})$ el espacio vectorial de funciones continuas. Considere al siguiente conjunto
+$$
+\{f\in C([0,1];\mathbb{R})\,:\, f'' +f' =0\}
+$$
+
+@. Analiza y explica si los siguientes subconjuntos de $\mathbb{^R}^{3}$ son subespacios de $\mathbb{R}^{3}$:
+
+  a) $U=\{(x,y,z):2x+y=z\}$
+  
+  b) $U=\{(x,y,z): x\geq 0\}$
+  
+  c) $U=\{(x,y,z): x = 0\}$
+  
+@. Consideremos a $\mathbb{R}^{n}$ con las operaciones usuales y definamos
+  
+  a) $U=\{(x_1,x_2,\ldots,x_n)\in \mathbb{R}^{n}: \sum_{i=1}^{n}x_i = 0\}$
+  
+  b) $W=\{(x_1,x_2,\ldots,x_n)\in \mathbb{R}^{n}: \sum_{i=1}^{n}x_i = 1\}$
+
+Son $U$ y $W$ subespacios
+
+@. Sea $\mathcal{F}(\mathbb{R};\mathbb{R})$ y sean
+
+  a) $M = \{f\in \mathcal{F}(\mathbb{R};\mathbb{R}) : \, \, f(x) = 0 \mbox{ para } x\in (-\infty,0)\}$
+  
+  b) $N= \{f\in \mathcal{F}(\mathbb{R};\mathbb{R}) : \, \, f(x) = 0 \mbox{ para } x\in (0,\infty)\}$
+  
+  Verificar si $M$ y $N$ son subespacios vectoriales.
+  Calcular $M\cap N$
+  
+@. Sea $V$ el espacio vectorial de funciones continuas, $C(\mathbb{R};\mathbb{R})$. Decimos que una función $y(t)$ es _par_ si $y(-t) = y(t)$ para todo $t\in\mathbb{R}$. Decimos que una función $z(t)$ es _impar_ si $z(-t) = -z(t)$ para todo $t\in \mathbb{R}$.
+
+Sea $M=\{y\in C(\mathbb{R};\mathbb{R}): y \mbox{ es par }\}$ y $N=\{z\in C(\mathbb{R};\mathbb{R}): z \mbox{ es impar }\}$. 
+
+a) Probar que $M$ y $N$ son subespacios
+
+b) Probar que $V = M \oplus N$ (_considere_ $y(t) = \frac{1}{2}(y(t)+ y(-t))$ y $z(t)=\frac{1}{2}(z(t)-z(-t))$)
+
+c) Encontrar la descomposición de $f(t) = e^{t}$ como suma de una función par e impar. Encontrar la descomposición de $f(x) = x+1$ como suma de una función par e impar.
+
+@. Sea $V=\{f:\mathbb{R}\rightarrow \mathbb{R}: f \mbox{ es función }\}$
+  
+  a) $U=\{f\in V: f(x^2) = (f(x))^{2\mbox{ para todo } x}\}$
+
+  b) $U=\{f\in V: f(0) = f(1) \}$
+  
+  c) $U=\{f\in V: f(3) = 1 \}$ 
+  
+@. Si $\vec{a}_1,\vec{a_2}\in\mathbb{R}^{n}$, mostrar que el conjunto de vectores $\vec{b}$ tales que $\vec{b}$ es perpendicular a $\vec{a}_1$ y $\vec{a}_2$ es un subespacio vectorial.
+
+@. Mostrar que los siguientes conjuntos en $\mathbb{R}^{3}$ forman un subespacio vectorial
+
+* El conjunto de vectores $\{(x,y,z)\in\mathbb{R}^{3}\,:\, x+y=3z\}$
+
+* El conjunto de vectores $\{(x,y,z)\in\mathbb{R}^{3}\,:\, x=y,\,\,2y=z\}$
+
+@. Demostrar que una línea recta que _no_ pasa por el origen, no puede ser un subespacio vectorial.  
+  
+## Combinaciones lineales, independencia lineal y generadores de subespacios
+
+@. Expresar al vector $\vec{x}$ como combinación lineal de los vectores $\vec{u}$ y $\vec{v}$ (y $\vec{w}$ si es el caso) o explicar por qué no es posible.
+
+* $\vec{x}=(1,0)$, $\vec{u}=(1,1)$, $\vec{v}=(0,1)$.
+
+* $\vec{x}=(1,1)$, $\vec{u}=(2,1)$, $\vec{v}=(-1,0)$.
+
+* $\vec{x}=(4,3)$, $\vec{u}=(2,1)$, $\vec{v}=(-1,0)$.
+
+* $\vec{x}=(1,1,1)$, $\vec{u}=(0,1,-1)$, $\vec{v}=(1,1,0)$, $\vec{w}=(1,0,2)$.
+
+* $\vec{x}=(0,0,1)$, $\vec{u}=(1,1,1)$, $\vec{v}=(-1,1,0)$, $\vec{w}=(1,0,-1)$.
+
+@. ¿Para que valores de $k$ el vector $\mathbf{u} = (1,k,5) \in \mathbb{R}^{3}$ será una combinación lineal de los vectores $\mathbf{v}=(1,-3,2)$ y $\mathbf{\omega} = (2,-1,1)$.
+
+
+\large\textbf{3} ¿Es $(1,2)$ ó $(0,1)$ una combinación lineal de los vectores $(1,1)$ y $(1,2)$ en $\mathbb{R}^{2}$. Calcular $\mathcal{S}( \{ (1,1), (1,2) \} )$, el espacio generado por los dos vectores.
+
+
+\large\textbf{4} Encontrar $a$ y $b$ números reales tales que 
+
+ * $u=(1,a,b,8)$ sea una combinación lineal de ${ \mathbf{v}_1=(1,0,-3,4), \mathbf{w}_1 = (-2,1,3,-5)}$
+
+\large\textbf{4} a) Demostrar que ${u,v}$ es linealmente independiente si y sólo si ${u+v,u-v}$ es linealmente independiente.
+
+ b) Demostrar que ${u,v,w}$ es linealmente independiente si y solo si ${u+v,u+w,v+w}$ sea linealmente independiente.
+
+\large\textbf{5} ¿Cual es el subespacio generado en $\mathbb{R}^{3}$ del conjunto $\mathcal{S}(\{\mathbf{v}_1, \mathbf{v}_2,\,\mathbf{v}_3 \})$?
+
+ * $\mathbf{v}_1=(1,1,1),$ $\mathbf{v}_2=(0,1,1)$, $\mathbf{v}_3=(0,0,1)$.
+ 
+ * $\mathbf{v}_1=(2,1,0),$ $\mathbf{v}_2=(0,1,1)$, $\mathbf{v}_3=(0,0,1)$.
+ 
+ 
+@. ¿Qué valores de $k$ hace que el siguiente conjunto de vectores sea linealmente independiente?
+ 
+ \[
+ \begin{Bmatrix}
+  (1,2,3), (-1,k,1),(1,1,0)
+\end{Bmatrix}
+ \]
+ 
+\large\textbf{7} Para qué valores de $k$, los siguientes vectores generan i) una recta, ii) un plano o iii) todo $\mathbb{R}^3$
+\[
+\begin{array}{ccc}
+ A = \{(0,1,-1), (1,2,1),(k,-1,4)\} & & A=\{(1,2,3), (3,k,k+3),(2,4,k)\}
+\end{array}
+ \]
+ 
+@. Sea $p(x)=-4x^{3}+2ax^{2}+x+b$ sea combinación lineal de los polinomios $q(x)= x^{3}-x^{2}+2,\,\,r(x)=2x^{2}+x-3$ y $s(x)=2x^{3}+x+1$
+
+@. Mostrar que las matrices $A_1\, A_2\, A_3$ son linealmente independientes
+
+\begin{equation}
+  \begin{array}{cccccccc}
+    A_1 = & \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} & \,\,\, & 
+    A_2 = & \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} & \,\,\, &
+    A_3 = & \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}
+  \end{array}
+\end{equation}
+
+@. Probar que los polinomios siguientes son linealmente independientes
+\begin{equation}
+\begin{array}{cccccccc}
+p(x) = & x^{3}-5x^{2} +1 & \,\,\, & 
+q(x) = & 2x^{4} +5x -6   & \,\,\, & 
+r(x) = & x^{2}-5x +2  
+\end{array}
+\end{equation}
+
+@. En el espacio de polinomios $\mathcal{P}^{3}$ de los polinomios con grado $\leq 3$ verificar si los polinomios son _linealmente_ _dependientes_ o _linealmente_ _independientes_.
+
+\begin{equation}
+\begin{array}{cccccccc}
+p(x) = & x^{3}-3x^{2} + 5x +1   & \,\,\, & 
+q(x) = & x^{3}-x^{2}  + 6x +2   & \,\,\, & 
+r(x) = & x^{3}-7x^{2} + 4x  
+\end{array}
+\end{equation}
+
+@. Hallar una solución no trivial para el sistema homógeneo 
+
+\begin{equation*}
+\begin{array}{ccccccccc}
+     x_{1} & + & 2x_{2}  & + & 3x_{3} & + & 4x_4 & = & 0       \\ 
+    2x_{1} & + & x_{2}   & + & x_{3}  & - & x_4  & = & 0       \\
+    3x_{1} & - & 2x_{2}  & + & x_{3}  &-  & 2x_4 & = & 0
+\end{array}
+\end{equation*}
+
+A partir de ahí, obtener una combinación lineal de los vectores $\mathbf{v}_1= \begin{pmatrix} 1,2,3\end{pmatrix}$, $\mathbf{v}_2= \begin{pmatrix} 2,1,-2\end{pmatrix}$, $\mathbf{v}_3= \begin{pmatrix} 3,1,1\end{pmatrix}$, $\mathbf{v}_4= \begin{pmatrix} 4,-1,-2\end{pmatrix}$ nula y  en la cual no todos los coeficientes no son todos iguales a cero.
+
+@. Mostrar que el vector $\mathbf{v}_1= \begin{pmatrix} 1 \\ 4 \\ 2 \end{pmatrix}$ pertenece al espacio generado por 
+$$
+\Bigg\{ \mathbf{v}_1= \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix},\,\, \mathbf{v}_2= \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}\Bigg\}
+$$
+
+
+@. Como se menciona en clase, para verificar que $\{ \mathbf{v}_1,\,\mathbf{v}_2,\,\mathbf{v}_3  \}$ es un generador de $\mathbb{R}^3$, sea $\mathbf{x}=(x,y,z)^{T}$ un vector arbitrario, se tiene que verificar que $\mathbf{x}$  es una combinación lineal de $\{ \mathbf{v}_1,\,\mathbf{v}_2,\,\mathbf{v}_3  \}$.
+
+a) Determinar si $\mathbf{v}_1= \begin{pmatrix} 1 \\ -1 \\ 2 \end{pmatrix}$, $\mathbf{v}_2= \begin{pmatrix} -1 \\ 0 \\ 3 \end{pmatrix}$,  $\mathbf{v}_3= \begin{pmatrix} 0 \\ -1 \\ 5 \end{pmatrix}$ y $\mathbf{v}_4= \begin{pmatrix} 3 \\ -2 \\ 2 \end{pmatrix}$, generan a $\mathbb{R}^{3}$.
+
+@. Determinar si los conjuntos de vectores son linealmente independientes. Si no lo son, escribir a uno de los vectores como combinación lineal de los otros
+ 
+  a) 
+  $\begin{Bmatrix}  \begin{pmatrix} 1\\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 2\\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1\\ 5 \\ 9 \end{pmatrix}  \end{Bmatrix}$  
+  
+  b) 
+  $\begin{Bmatrix}  \begin{pmatrix} 1\\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 0\\ 4 \\ 5 \end{pmatrix}, \begin{pmatrix} 0\\ 0 \\ 6 \end{pmatrix}, \begin{pmatrix} 1\\ 1 \\ 6 \end{pmatrix}   \end{Bmatrix}$  
+  
+  c) 
+  $\begin{Bmatrix}  \begin{pmatrix} 3\\ 2 \\ 1 \end{pmatrix}, \begin{pmatrix} 1\\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 2\\ 1 \\ 0 \end{pmatrix}\end{Bmatrix}$  
+  
+  d) 
+  $\begin{Bmatrix}  \begin{pmatrix} 2, 2, 2, 2 \end{pmatrix}, \begin{pmatrix} 2, 2, 0,2  \end{pmatrix}, \begin{pmatrix} 2, 0, 2, 2 \end{pmatrix}\end{Bmatrix}$  
+  
+@. Determinar si el siguiente conjunto de matrices es linealmente independiente
+\[
+\begin{Bmatrix}  
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 1  \\ 0& 0  \end{pmatrix},
+\begin{pmatrix} 1 & 1 \\  1& 0  \end{pmatrix},
+\begin{pmatrix} 1 & 1 \\ 1 & 1  \end{pmatrix}
+\end{Bmatrix}
+\]
+
+@. Si $\mathcal{S}=\{u_1,u_2,\ldots,u_n\}$ es un conjunto de $\mathbb{R}^{m}$ y $\mathbf{P}$ es una matriz no singular $m\times m$, demostrar que $\mathbf{P}\mathcal{S}=\{\mathbf{P} u_1,\mathbf{P} u_2,\ldots,\mathbf{P} u_n\}$ es un conjunto linealmente independiente. 
+Dar un ejemplo que falle si la matriz es singular.
+
+@. Usar el ejemplo anterior o bien de otra forma demostrar que si $\{u_1,u_2,\ldots,u_n\}$ son linealmente independientes entonces los vectores
+$\{u_1,u_1+u_2,\sum_{i=1}^3u_i,\ldots,\sum_{i=1}^nu_i\}$ son linealmente independientes.
+
+@. Determinar si los polinomios $p_1(t)=t+t^{3}$, $p_2(t)=-1+t^{2}$, $p_3(t)$ generan $\mathbb{R}_{3}[x]$.
+
+@. Mostrar si los siguientes conjuntos de vectores generan el espacio vectorial correspondiente
+  
+\begin{multicols}{2}
+  a) \begin{equation*}
+  \Bigg\{
+        \begin{pmatrix} 1 \\ 1 \end{pmatrix},
+        \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+  \Bigg\}, V=\mathbb{R}^2
+  \end{equation*}
+   b) \begin{equation*}
+  \Bigg\{
+        \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix},
+        \begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix},
+        \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+  \Bigg\},\quad V=\mathbb{R}^{3}
+  \end{equation*}
+\end{multicols}
+
+@. Sean $\mathbf{v}_1=(1,2,0),\mathbf{v}_2=(3,1,1)$ y $\mathbf{w}=(4,-7,3)$.
+Determinar el espacio generado por $\mathbf{v}_1,\mathbf{v}_2$. Luego, explicar si $\mathbf{w}$ pertenece a dicho subespacio
+
+## Bases de subespacios vectoriales
+
+\large\textbf{1.} ¿Cual de los siguientes conjuntos de vectores forman una base de $\mathbb{R}^2$?
+
+* $\{(0,1),(1,0)\}$
+* $\{(1,1),(2,2)\}$
+* $\{(1,0), (2,3)\}$
+
+\large\textbf{2.} Del siguiente conjunto 
+$$
+\mathcal{A} = \big\{ (1,-3,2),(2,4,1),(3,1,3), (1,1,1)  \big\}
+$$
+
+\begin{description}
+  \item[a)] Elige una base de $\mathbb{R}^{3}$.
+  \item[b)] Expresa los vectores de la base canónica de $\mathbb{R}^{3}$
+\end{description}
+
+
+\large\textbf{3.} Determinar si el siguiente conjunto de matrices es una base para $\mathcal{M}^{2,2}(\mathbb{R})$.
+  \[
+    \Large{\mathcal{S}}=
+    \Bigg\{ 
+      \begin{pmatrix} 1 & 3 \\ -1 & 0 \end{pmatrix}, 
+      \begin{pmatrix} 1 & -1 \\ 0 & 1\end{pmatrix},
+      \begin{pmatrix} 1 & -3 \\ 2 & 1\end{pmatrix},
+      \begin{pmatrix} 3 & -3 \\ -1 & 1\end{pmatrix}
+    \Bigg\}
+  \]
+    
+\large\textbf{4.} Demostrar que cada uno de los conjuntos de vectores es una base
+ 
+ * $\mathbf{u}_1=(1,1,1)$, $\mathbf{u}_2=(1,2,1)$ y $\mathbf{u}_3=(2,1,2)$
+ 
+ * $\mathbf{u}_1=(1,0,-1)$, $\mathbf{u}_2=(2,5,1)$ y $\mathbf{u}_3=(0,4,-3)$
+ 
+ * $\mathbf{u}_1=(2,-4,1)$, $\mathbf{u}_2=(0,3,-1)$ y $\mathbf{u}_3=(6,0,-1)$
+ 
+ * $\mathbf{u}_1=(1,-3,-2)$, $\mathbf{u}_2=(-3,1,3)$ y $\mathbf{u}_3=(-2,-10,-2)$
+
+\large\textbf{5.} Sean 
+\[
+  A = \mathcal{G}((1,0,0),(0,1,1),(1,1,1)) \mbox{  y  } B= \mathcal{G}((1,1,1),(2,1,1),(1,0,0))
+\]
+Encontrar una base de cada subespacio y la dimensión de $A$, $B$ y $A \cap B$.
+
+\large\textbf{6.} Describir a 
+$$
+\mathcal{G}\Bigg\{
+\begin{pmatrix} 1\\ 0 \\ -1 \end{pmatrix}, \begin{pmatrix} 1\\ 2 \\ 1 \end{pmatrix},
+\begin{pmatrix} 0\\ -3 \\2 \end{pmatrix}\Bigg\}
+$$
+
+
+\large\textbf{7.} Determinar si alguno de los conjuntos de polinomios es una base para $\mathcal{P}^2(\mathbb{R})$, el conjunto de polinomios de grado menor o igual a 2.
+
+ a) $\{1-x-2x^2, 2+x-2x^{2}, 1-2x+4x^{2}\}$.
+ 
+ b) $\{1+2x+x^2, 3+x^{2}, x+x^{2}\}$.
+ 
+ c) $\{1+4x-2x^2, -2+3x-x^{2}, -3-12x+6x^{2}\}$
+ 
+\large\textbf{8.} Mostrar que los polinomios $1,x,x^{2}-3x+1$ forman una base de $\mathcal{P}^2$. Exprese al polinomio $2x^2-5x +6$ como combinación lineal de los elementos de esa base.
+
+\large\textbf{9.} Sean $v$ y $w$ vectores l.i. de $V$. Si $\alpha\ne 0$ probar que el conjunto de los elementos $\{v,v+\alpha\cdot u\}$ es una base del subespacio generado por los vectores $v,v+u,v+2u,\ldots,v+nu\ldots$.
+
+
+\large\textbf{10.} Sea $\{\mathbf{v}_1,\mathbf{v}_2,\,\ldots,\mathbf{v}_m\}$ son linealmente independientes, probar que $\mathbf{v}_1,\mathbf{v}_2-\mathbf{v}_1,\ldots,\mathbf{v}_m-\mathbf{v}_1$ también son linealmente independientes. 
+
+ 
+\large\textbf{11.} Determinar si el conjunto $\mathcal{B}$ es una base para el espacio vectorial $V$
+
+a) \begin{equation}
+    \Large{\mathcal{B}}=
+    \Bigg\{ 
+      \begin{pmatrix} 1 & 0  \\ 0 & 1\end{pmatrix}, 
+      \begin{pmatrix} 0 & -1 \\ 1 & 0\end{pmatrix},
+      \begin{pmatrix} 1 &  1 \\ 1 & 1\end{pmatrix},
+      \begin{pmatrix} 1 &  1 \\ 1 &-1\end{pmatrix},
+    \Bigg\}, V=\mathcal{M}^{2,2}(\mathbb{R})
+\end{equation}
+
+b)  \begin{equation}
+    \Large{\mathcal{B}}=
+    \Bigg\{ 
+      \begin{pmatrix} 1 & 0  \\ 0 & 1\end{pmatrix}, 
+      \begin{pmatrix} 0 & 1 \\ 1 & 0\end{pmatrix},
+      \begin{pmatrix} 1 &  1 \\ 0 & 1\end{pmatrix},
+      \begin{pmatrix} 1 &  0 \\ 1 & 1\end{pmatrix},
+    \Bigg\}, V=\mathcal{M}^{2,2}(\mathbb{R})
+\end{equation}
+
+c) \begin{equation}
+    \Large{\mathcal{B}}=
+    \Bigg\{ 
+      x, 
+      1+x,
+      x-x^2
+    \Bigg\}, V=\mathbb{R}^{2}[x]
+\end{equation}
+
+
+d) \begin{equation}
+    \Large{\mathcal{B}}=
+    \Bigg\{ 
+      1, 
+      2-x,
+      3-x^2, x + 2x^2
+    \Bigg\}, V=\mathbb{R}^{2}[x]
+\end{equation}
+
+
+
+\large\textbf{12} Sea $V=\mathbb{R}^4$ considere los subespacios vectoriales 
+
+\begin{equation}
+    U = \mathcal{S}
+    \Bigg\{ 
+      \begin{pmatrix} 1\\ 0 \\0 \\1  \end{pmatrix}, 
+      \begin{pmatrix} 1\\ 1 \\1 \\1  \end{pmatrix},
+            \begin{pmatrix} 0\\ 2 \\2 \\0  \end{pmatrix}
+    \Bigg\}, 
+    V=\Bigg\{ \begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} :\quad \begin{matrix} 3x +y -z -3t = 0 \\ y -t = 0 \end{matrix} \Bigg\}
+\end{equation}
+
+Determinar una base para $U\cap V$ y $U+V$.
+
+\large\textbf{13} Sea $V=\mathbb{R}_2[x]$ el espacio de polinomios con grado $\leq 2$. 
+Mostrar $\mathcal{B}'=\{v_1(t)=1,v_2(t)=t-1,v_3(t)=t(t-1)\}$
+
+forma  una base de $V$.

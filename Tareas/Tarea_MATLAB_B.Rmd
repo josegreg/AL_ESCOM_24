@@ -1,0 +1,21 @@
+---
+title: "Tarea_MATLAB_B"
+author: "Álgebra lineal"
+date: "5/12/2024"
+output: pdf_document
+---
+
+@. Construir una función que calcula la multiplicación de una matriz por un vector $A\vec{x}$.
+
+@. Construir una función que calcule el producto vectorial de dos vectores en $\mathbb{R}^3$.
+
+@. Construir una función que tome un polinomio de _grado_ $3$ y regrese sus coordenadas con respecto a la base canónica $\{1,x,x^2,x^3\}$
+
+@. Construir una función que calcule el producto interno de dos polinomios de  grado $3$, con $\langle p,q \rangle = \int_{0}^1 p(s)q(s)ds$
+
+@. Calcular una función que calcule la matriz escalonada reducida de una matriz $A$, $n\times n$.
+
+@. Una forma alternativa de calcular la factorización $LU$ es usando el algoritmo de _Crout_. Investigar el algoritmo y construir una función que devuelva a las funciones $P$, $L$ y $U$.
+
+@. Escribir una función que a partir de una base de $R^{3}$ calcule una base _ortonormal_.
+ 

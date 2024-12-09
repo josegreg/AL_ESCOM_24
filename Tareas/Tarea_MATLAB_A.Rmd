@@ -1,0 +1,29 @@
+---
+title: "Tarea MATLAB A"
+author: "Álgebra lineal"
+date: "5/12/2024"
+geometry: "left=1cm,right=0.8cm,top=1cm,bottom=0.8cm"
+output: pdf_document
+---
+
+@. Construir una función que calcula la multiplicación de dos matrices.
+
+@. Construir una función que calcule el producto punto de dos vectores en $\mathbb{R}^3$.
+
+@. Construir una función que calcule la traza de una matriz. La traza de una matriz $A$, $n\times n$ se define como
+\[
+tr(A)=\sum_{i=1}^n a_{ii}
+\]
+
+@. Usando la función anterior, programar una función que calcule el producto interno de matrices $\langle A,B \rangle=tr(AB^{T})$
+
+@. Calcular una función que calcule la matriz escalonada reducida de una matriz $A$, $n\times n$.
+
+@. Una matriz _simétrica_ $A$, $n\times n$ es _positiva_ _definida_ si  para todo $x\ne \vec{0}$ 
+\[
+x^{T}Ax > 0
+\]
+ * Escribir una función que determine si una matriz simétrica es _positiva_ _definida_. Puede usar el _criterio_ _de_ _Sylvester_ y la función $\det$.
+ \tiny{https://es.wikipedia.org/wiki/Criterio_de_Sylvester}
+ 
+ @. Escribir una función que a partir de una base de $R^{3}$ calcule una base _ortonormal_.
