@@ -1,24 +1,18 @@
 ---
 title: "Espacios con producto interno"
-author: "Álgebra lineal"
+author: "Álgebra lineal."
 header-includes:
  -\usepackage{amsmath}
 output: 
   slidy_presentation:
     number_sections: true
+    font_adjustment: -2
     footer: Álgebra lineal, José Rodríguez Villarreal
     math_method: "mathjax"
 ---
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
-
-
 # Espacios con producto interno
 
-Un \textit{producto interno} en un espacio vectorial real $V$ es una función que a cada par de vectores 
+Un <strong>producto interno</strong> en un espacio vectorial real $V$ es una función que a cada par de vectores 
 	$\mathbf{u}$ y $\mathbf{v}$ en $V$, le asigna un número real denotado por $\langle \mathbf{u}, \mathbf{v}\rangle$.
 	Esta función satisface las siguientes propiedades: si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ son vectores y 
 	$c$ es un escalar, entonces
@@ -45,6 +39,7 @@ $e)$ $\langle \mathbf{v}, \mathbf{v}\rangle = 0$ si y sólo si $\mathbf{v}=\math
 
 
 ## Ejemplo 1
+
 Demuestre que en $\mathbb{R}^n$ el producto punto de dos vectores $\mathbf{u}=(u_1,\ldots,u_n)$ y $\mathbf{v}=(v_1,\ldots,v_n)$,
 \[
 		\langle \mathbf{u}, \mathbf{v}\rangle = \mathbf{u}\cdot \mathbf{v} = u_1v_1 + \cdots + u_nv_n
@@ -61,7 +56,28 @@ Demuestre que en $\mathbb{R}^2$ la función que a los vectores $\mathbf{u}=(u_1,
 \]
 es un producto interno en $\mathbb{R}^2$.
 
+## Ejemplo 3
+
+Mostrar que en $V=\mathbb{R}_3[x]$, la siguiente función $\langle , \rangle:V\times V \rightarrow \mathbb{R}$ $\langle p, q\rangle=\int_0^1p(s)q(s)ds$ es un producto interno.
+
+## Ejemplo 4
+
+Mostrar que en $V=\mathcal{M}^{n,n}(\mathbb{R})$, $\langle A,B \rangle = tr(AB^{T})$.
+\[
+  tr(AB^{T}) = \sum_{i=1}^n\sum_{j=1}^na_{ij}b_{ij}
+\]
+
+## Ejemplo 5
+
+Sea $V=\mathbb{R}^3$, defina la función multivariable
+\[
+\langle \mathbf{u}, \mathbf{v}\rangle_3 = u_1v_1 + 3u_1v_2 + 3u_2v_1 + 4u_2v_2 + u_3v_3
+\]
+esta función es un producto interno.
+
 ## Norma de un vector
+
+Por medio del producto interno, podemos definir la norma de un vector.
 
 <div style="background-color:#FFE9B1">
 <strong>Definición</strong>
@@ -70,6 +86,7 @@ es un producto interno en $\mathbb{R}^2$.
     \|\mathtt{x}\| = \sqrt{\langle \mathtt{x}, \mathtt{x}  \rangle}
   \end{equation}
 </div>
+
 
 ### Propiedades de la norma 
 
@@ -87,7 +104,7 @@ c) Para todo $\mathtt{x},\mathtt{y}\in V$  se cumple la desigualdad de Cauchy-Sc
 
 d) Para todo $\mathtt{x},\mathtt{y}\in V$
 \[
-\|\mathbf{x}+\mathbf{y}\|\leq \|\mathbf{x}\| + \|\mathbf{y}\|
+\|\mathtt{x}+\mathtt{y}\|\leq \|\mathtt{x}\| + \|\mathtt{y}\|
 \]
 
 ## Distancia entre vectores
@@ -97,28 +114,37 @@ Definimos la distancia entre vectores $\mathbf{x}$, $\mathbf{y}\in V$ tal que
 d(\mathbf{x},\mathbf{y})=\|\mathbf{y}-\mathbf{x}\|
 \]
 
+Derivado de las propiedades de la norma de vectores, la distancia entre 2 vectores, como función $d:V\times V\rightarrow \mathbb{R}$ se cumple que 
+<dl>
+  <dt>a)</dt> Para todo $\mathbf{x}\in V$ $d(\mathbf{x},\mathbf{x})=0$.
+  <dt>b)</dt> Para todo $\mathbf{x},\mathbf{y}\in V$, $d(\mathbf{x},\mathbf{y})\geq 0$ y además $d(\mathbf{x},\mathbf{y})=0$ si y sólo si $\mathbf{x}=\mathbf{y}$
+  <dt>c)</dt> Para todo $\mathbf{x},\mathbf{y},\mathbf{z}\in V$
+  \[
+  d(\mathbf{x},\mathbf{y}) \leq d(\mathbf{x},\mathbf{z})+d(\mathbf{z},\mathbf{y})
+  \]
+</dl>
 
 ## Ángulo entre vectores
 
-Definimos al ángulo entre dos vectores como
+_Definimos_ al ángulo entre dos vectores, $\mathbf{x},\mathbf{y}\in V$ como
 \[
 \cos\theta = \frac{\langle \mathbf{x}, \mathbf{y}\rangle}{\|\mathbf{x}\|\|\mathbf{y}\|}
 \]
 
 ## Ortogonalidad
 
-Por tanto, dos vectores formarán un _ángulo_ de $90°$ si $\cos \theta=0$ es decir $\theta=\frac{\pi}{2}$, esto ocurre sólo si $\langle \mathbf{x},\mathbf{y}\rangle = 0$.
+Por tanto, dos vectores formarán un _ángulo_ de $90°$ si $\cos \theta=0$ es decir $\theta= \pm \frac{\pi}{2}+2\pi k$, esto ocurre sólo si $\langle \mathbf{x},\mathbf{y}\rangle = 0$.
 
 <div style="background-color:#FFE9B1">
 <strong>Ortogonalidad</strong>
-Sea $V$ un espacio vectorial con producto interno, decimos que dos vectores son <red>ortogonales</red>  si
+Sea $V$ un espacio vectorial con producto interno, decimos que dos vectores son <red>**ortogonales**</red>  si
   \begin{equation}
   \langle \mathbf{x}, \mathbf{y} \rangle =0
   \end{equation}
 </div>
 
 
-Igualmente, un conjunto de vectores $U$ es **ortogonal** si toda pareja de vectores $\mathbf{v}_i$ y $\mathbf{v}_j$ son ortogonales es decir
+Igualmente, un conjunto de vectores $U=\{v_1,v_2,\ldots,v_k\}$ es un conjunto de vectores **ortogonales** si toda pareja de vectores $\mathbf{v}_i\in U$ y $\mathbf{v}_j\in U$ son ortogonales es decir
 
 \[
 \langle v_i, v_j \rangle = \begin{cases}
@@ -127,9 +153,23 @@ Igualmente, un conjunto de vectores $U$ es **ortogonal** si toda pareja de vecto
                             \end{cases}
 \]
 
+Por último, un conjunto de vectores finitos $U=\{v_1,v_2,\ldots, v_k\}$ se dice ser **ortonormal** si 
+
+\begin{equation}
+ \langle \mathbf{x} , \mathbf{y} \rangle = \begin{cases} 
+                                                0 & \mbox{si }\, i\ne j \\
+                                                1 & \mbox{si }\, i = j
+                                            \end{cases}
+\end{equation}
+
 ### Proposición
 
 Si $U$ es un conjunto de vectores _ortogonales_ entonces es un conjunto de vectores **linealmente** **independiente**.
+Suponga que $\sum_i \alpha_i\mathbf{v}_i=\mathbf{0}$ entonces tomando el producto interno, con $\mathbf{v}_i$ tenemos que 
+\[
+0=\langle \mathbf{0}, \mathbf{v}_i \rangle = \langle \sum_{k}\alpha_k\mathbf{v}_k, \mathbf{v}_i\rangle = \alpha_i\|\mathbf{v}_i\|^2
+\]
+Como $\mathbf{v}_i$ es un elemento de un conjunto de vectores linealmente independiente entonces $\mathbf{v}_i\ne 0$ (¿por que?) y esto implica que $\alpha_i=0$
 
 ### Proposición
 
@@ -156,19 +196,62 @@ Entonces, los escalares de la combinación lineal están dados por
 \alpha_j = \frac{\langle \mathbf{v},\mathbf{v}_j  \rangle}{\|\mathbf{v}_j\|^2}
 \]
 
+
+### Ejemplo de bases ortogonales y ortonormales
+
+Sea $V=\mathbb{R}^{3}$ y
+
+\[
+\begin{array}{ccc}
+\mathbf{v}_1 = 
+               \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}, & 
+\mathbf{v}_2 = 
+               \begin{pmatrix} 0 \\ 1 \\ 2 \end{pmatrix}, &
+\mathbf{v}_3 = 
+               \begin{pmatrix} 5 \\ -2 \\ 1 \end{pmatrix}               
+\end{array}
+\]
+
+Los vectores son ortogonales $\mathbf{v}_1\bullet \mathbf{v}_2 = 1\cdot 0 + 2\cdot 1 + (-1)\cdot 2=0$, similarmente, $\mathbf{v}_1\bullet \mathbf{v}_3 = 1\cdot 5 + 2\cdot(-2) + (-1)\cdot 1=0$ y $\mathbf{v}_2\bullet \mathbf{v}_3 = 0\cdot 5 + 1\cdot (-2) + 2\cdot 1=0$.
+
+La norma de los vectores $\|\mathbf{v}_1\|=\sqrt{1^2 + 2^2 + (-1)^2}=\sqrt{6}$, $\|\mathbf{v}_2\|=\sqrt{0^2 + 1^2 + 2^2}=\sqrt{5}$ y $\|\mathbf{v}_3\|=\sqrt{5^2 + (-2)^2 + 1^2}=\sqrt{30}$. 
+
+Por las propiedades de los conjuntos ortogonales, tenemos a 3 vectores linealmente independientes, por tanto forman una base de $\mathbb{R}^3$.
+
+Una base ortonormal sería
+
+\[
+\begin{array}{ccc}
+\hat{\mathbf{v}}_1 = 
+               \begin{pmatrix} 
+                1/\sqrt{6} \\ 2/\sqrt{6} \\ -1/\sqrt{6} \end{pmatrix}, & 
+\hat{\mathbf{v}}_2 = 
+               \begin{pmatrix} 
+               0 \\ 1/\sqrt{5} \\ 2/\sqrt{5} \end{pmatrix}, &
+\hat{\mathbf{v}}_3 = 
+               \begin{pmatrix} 
+               5/\sqrt{30} \\ -2/\sqrt{30} \\ 1/\sqrt{30} \end{pmatrix}               
+\end{array}
+\]
+
+
 ## Proyección ortogonal sobre un vector
 
 Si $w$ es un vector definimos la _proyección_ _ortogonal_ de $\mathbf{v}$ sobre $\mathbf{w}$ como 
 \[
-P\mathbf{v}= \mathbf{w}-\frac{\langle \mathbf{v}, \mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
+P_w\mathbf{v}= \mathbf{w}-\frac{\langle \mathbf{v}, \mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
 \]
 
 
+![\textsl{Proyección de $u$ sobre $v$}](Proyecction_Ortogonal.png){ width=50% }		
 
-## Ortogonalización de Gramm-Schmidt
+
+## Proceso de ortogonalización de Gramm-Schmidt
+
+Es fácil ver, como en el ejemplo anterior, que en $\mathbb{R}^n$ existen bases $ortogonales$ y _ortonormales_. ¿Se cumple para un espacio vectorial $V$ arbitrario, finitamente generado?
 
 Se busca obtener la existencia de una base de vectores ortonormales de un espacio vectorial. 
-Sabemos que si $V$ es un espacio vectorial finitamente generado, entonces existe una base $\mathcal{B}$. ¿Existe una base de vectores _ortonormales_?
+Sabemos que si $V$ es un espacio vectorial finitamente generado, entonces existe una base $\mathcal{B}$. ¿Siempre existe una base de vectores _ortonormales_?
 
 El proceso de ortogonalización da una respuesta afirmativa y un procedimiento para calcular una base ortonormal a partir de una base de vectores.
 
@@ -199,9 +282,97 @@ Posteriormente, la base **ortonormal** $\mathcal{O}=\{\mathbf{y}_1,\mathbf{y}_2,
 \]
 
  
-### Proposición
+## Proposición
 
-Los vectores $\mathbf{w}_i$ son ortogonales a los vectores $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-1}$. Por hipótesis de inducción, supondremos que $\mathbf{w}_{i-1}$ es ortogonal a los vectores $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-2}$, entonces
+_Los_ _vectores_ $\mathbf{w}_i$ _son ortogonales a los vectores_ $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-1}$. 
+
+Por hipótesis de inducción, supondremos que $\mathbf{w}_{i-1}$ es ortogonal a los vectores $\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-2}$, entonces por la linealidad del producto interno si $i\ne j$
 \[
-\langle w_i, w_j \rangle = \langle \mathbf{v}_{i} - \sum_{k=1}^{n} \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{k} \rangle}{\|\mathbf{w}_k\|^2},\mathbf{w}_j
+\langle w_i, w_j \rangle = \biggl< \mathbf{v}_{i} - \sum_{k=1}^{n} \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{k} \rangle}{\|\mathbf{w}_k\|^2}\mathbf{w}_k,\mathbf{w}_j\biggr>= \langle \mathbf{v}_i, \mathbf{w}_j \rangle - \sum_{k=1}^n \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{k} \rangle}{\|\mathbf{w}_k\|^2}\langle \mathbf{w}_k, \mathbf{w}_j \rangle
 \]
+\[
+\langle w_i, w_j \rangle = \langle \mathbf{v}_i, \mathbf{w}_j \rangle - 
+ \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{j} \rangle}{\|\mathbf{w}_j\|^2}\langle \mathbf{w}_j, \mathbf{w}_j \rangle=0
+\]
+
+## Teorema. 
+
+<div style=background-color:#9DE2D5>
+Sea $V$ un espacio vectorial de dimensión finita. Suponga que $v_1,\ldots,v_m$ es una lista de vectores linealmente independientes en $V$. Definimos 
+\[
+\begin{matrix}
+\mathbf{w}_1=\mathbf{v}_1, &\quad\quad & \mathbf{w}_2=\mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{w}_1 \rangle}{\|\mathbf{w}_1\|^2}\mathbf{w}_1, \\
+ \ldots & \quad\quad & \ldots  \\
+\mathbf{w}_m= \mathbf{v}_m - \sum_{k=1}^{m-1}\frac{\langle\mathbf{v}_n, \mathbf{w}_k\rangle}{\|\mathbf{w}_k\|^2}\mathbf{w}_{k}
+\end{matrix}
+\]
+\begin{equation}
+  \mathbf{y}_i=\frac{\mathbf{w}_i}{\|\mathbf{w}_i\|},\mbox{ para todo }i=1,\ldots,m
+\end{equation}
+
+Entonces $\{\mathbf{u}_1,\mathbf{u}_2,\ldots, \mathbf{u}_m\}$ es una lista de vectores ortonormales en $V$. Y además
+\[
+\mathcal{S}(\mathbf{v}_1,\mathbf{v}_2,\ldots, \mathbf{v}_m) = \mathcal{S}(\mathbf{y}_1,\mathbf{y}_2,\ldots, \mathbf{y}_m)
+\]
+
+En particular, todo espacio vectorial de dimensión finita con producto interno tiene una base de vectores _ortonormales_.
+
+</div>
+
+### Ejemplo
+
+a) Usar el proceso de ortogonalización de Gram-Schmidt para determinar una base ortonormal de $\mathbb{R}^3$, a partir de los siguientes vectores
+\[
+\begin{Bmatrix}
+  \begin{pmatrix}1\\ 1 \\ 0 \end{pmatrix},
+  \begin{pmatrix}0\\ 1 \\-1 \end{pmatrix},
+  \begin{pmatrix}1\\ 0 \\-1 \end{pmatrix}
+\end{Bmatrix}
+\]
+
+b) Usa el proceso de ortogonalización de Gram-Schmidt para determinar una base ortogonal a partir de 
+\[
+\begin{Bmatrix}
+  \begin{pmatrix} 1\\ 2 \\ 3 \end{pmatrix},
+  \begin{pmatrix} 4\\ 5 \\ 0 \end{pmatrix},
+  \begin{pmatrix} 2\\ 3 \\-1 \end{pmatrix}
+\end{Bmatrix}
+\]
+
+c) Encuentra una base ortonormal para el subespacio generado por los vectores 
+\[
+\begin{Bmatrix}
+  \begin{pmatrix} 0\\ 2 \\ 1 \end{pmatrix},
+  \begin{pmatrix} 1\\ -2 \\ 1 \end{pmatrix}
+\end{Bmatrix}
+\]
+
+Solución a)
+\[
+\mathbf{w}_1=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}
+\]
+entonces
+\[
+\mathbf{w}_2=\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix} - \frac{(0,1,-1)\cdot(1,1,0)}{(1,1,0)\cdot (1,1,0)}\begin{pmatrix} 1\\ 1 \\ 0\end{pmatrix} =\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix} - \frac{1}{2}\begin{pmatrix} 1\\ 1 \\ 0\end{pmatrix} =
+\begin{pmatrix} -1/2\\ 1/2 \\ -1\end{pmatrix}
+\]
+
+\[
+\mathbf{w}_3=
+\begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} - \frac{(1,0,-1)\cdot(1,1,0)}{(1,1,0)\cdot (1,1,0)}
+\begin{pmatrix} 1\\ 1 \\ 0\end{pmatrix}  - \frac{(1,0,-1)\cdot(-1/2,1/2,-1)}{(-1/2,1/2,-1)\cdot(-1/2,1/2,-1)}
+\begin{pmatrix} -\frac{1}{2}\\ \frac{1}{2} \\ -1\end{pmatrix} =
+\begin{pmatrix} 2/3 \\ -2/3 \\ -2/3\end{pmatrix}
+\]
+Calculamos la norma
+\[
+\begin{matrix} 
+  \|w_1\|= & \sqrt{1^2 + 1^2 +0^2}=\sqrt{2} \\
+  \|w_2\|= & \sqrt{(-\frac{1}{2})^2 + (\frac{1}{2})^2+ (-1)^2} = \sqrt{\frac{3}{2}}\\
+  \|w_3\|= & \sqrt{(\frac{2}{3})^2 + (-\frac{2}{3})^2+ (-\frac{2}{3})^2} = \frac{2}{3}\sqrt{2}
+\end{matrix}
+\]
+
+La base ortonormal de $V$ esta dada por: $\Big\{\frac{w_1}{\|w_1\|}, \frac{w_2}{\|w_2\|},\frac{w_3}{\|w_3\|} \Big\}$
+
+

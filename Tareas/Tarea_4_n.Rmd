@@ -1,0 +1,232 @@
+---
+title: "Tarea 4"
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{mathtools}
+  - \usepackage{multicol}
+geometry: "left=1cm,right=0.8cm,top=1cm,bottom=0.8cm"
+author: "Álgebra Lineal"
+output: pdf_document
+---
+
+# Espacios con producto interno
+
+@. Si $V=\mathcal{M}^{n,n}(\mathbb{R})$ el espacio de matrices $n\times n$, mostrar que $\langle A, B \rangle = tr(AB^{T})$ es un producto interno.
+
+@. Calcular la norma y el ángulo formado por las matrices $A=\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$  $B=\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ respecto al producto interno del ejercicio anterior.
+
+@. Sea $V=\mathbb{R}_2[x]$. Calcular las normas y la distancia entre los vectores $p_1(t)=1$, $p_2(t)=t$ y $p_3(t)=t^2$ con el producto $\langle p , q\rangle = \int_{0}^{1}p(s)q(s)ds$.
+
+@. Sea $V=\mathbb{R}^2$, definamos el siguiente producto $\langle \vec{x}, \vec{y} \rangle_2 = 2x_1y_1+3x_2y_2$. 
+
+\begin{multicols}{2}
+  a) Demostrar es un producto interno. b) Encontrar una matriz $A$ tal que $\langle \vec{x}, \vec{y} \rangle_2 = x^{T}Ay$.
+\end{multicols}
+
+
+
+@. Determinar si las siguientes funciones son productos internos o bien especificar que propiedad del producto interno no se cumple
+a) $V=C([0,1];\mathbb{R})$ y $\langle f,g \rangle=\int_0^1 f(s)g(s)e^{-t}ds$
+
+b) $V=\mathbb{R}_3[x]$ y $\langle p, q \rangle = \int_0^1 p(s)q(s)ds + \int_0^1 p'(s)q'(s)ds$
+ 
+c) $V=\mathbb{R}^3[x]$ y $\langle p, q \rangle =  \int_0^1 \frac{dp}{ds}(s)\frac{dq}{ds}(s)ds$ 
+
+d) $V=\mathbb{R}^2$ y $\langle \mathbf{x}, \mathbf{y} \rangle =\det([\mathbf{x},\mathbf{y}])$
+
+e) $V=\mathbb{R}_2[x]$ y $\langle p, q \rangle =p(0)q(0) + p(1)q(1)$
+
+@. Establezca si una de las siguientes funciones es un producto interno en $\mathbb{R}^3$, si $\vec{a}=(a_1,a_2,a_3)$ y $\vec{b}=(b_1,b_2,b_3)$
+  * $\langle\, \vec{a} , \vec{b}\, \rangle = a_1b_1 + a_2b_2 + a_3 b_3 +2a_2 b_3 - 2a_3b_2$
+
+
+
+## Ortogonalidad 
+
+@. Obtener una base ortonormal (considerando al producto punto) para el siguiente subespacio
+\[
+W=\{(x,y,z)\in \mathbb{R}^3 \,:\, x-y+z=0\}
+\]
+
+@. Obtener una base ortonormal para el subespacio generado por los vectores 
+\[
+\begin{pmatrix} 
+  1\\ 1 \\1 \\-1 
+\end{pmatrix},
+\begin{pmatrix} 
+  2\\ 1 \\-1 \\1 
+\end{pmatrix},
+\begin{pmatrix} 
+  -1\\ 2 \\2 \\1 
+\end{pmatrix}
+\]
+
+@. Considerando al producto punto en $\mathbb{R}^4$ use el proceso de ortogonalización de Gram-Schmidt para obtener una base ortonormal a partir de la base $\mathcal{B}=\{\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3,\mathbf{u}_4\}$ con 
+
+\begin{multicols}{2}
+$\mathbf{u}_1=(0,2,1,0)$  $\mathbf{u}_2=(1,1,0,0)$,
+$\mathbf{u}_3=(1,2,0,-1)$ $\mathbf{u}_5=(1,0,0,1)$
+\end{multicols}
+
+@. Sea $V=\mathbb{R}_2[x]$ con el producto interno $<f,g>=\int_0^1 f(s)g(s)ds$, verificar si algunas de las bases es una base ortonormal con respecto al producto interno definido.
+ a) $\{1,t,t^2\}$,
+ b) $\big\{1, 2\sqrt{3}(t-\frac{1}{2}, 6\sqrt{5}(t^2-t+\frac{1}{6})\big\}$,
+ c) $\{1, t-\frac{1}{2}, t^2-t+\frac{1}{6}\}$
+ 
+ @. Sea $P$ la proyección ortogonal sobre la recta $y=3x$ o equivalentemente, sobre $\omega=(1,3)$, si $\mathbf{u}=(2,5)$ y $\mathbf{v}=(x,10)$ ¿cuál es el valor de $x$ para que $P_{\omega}\mathbf{u} = P_{\omega}\mathbf{v}$.
+ 
+ @. Sea $V=\mathbb{R}^4$ y $\langle\,,\,\rangle$ su producto interno, sean $v1=(1,0,1,0)$, $v_2=(1,1,2,1)$ y $v_3=(0,1,1,2)$ probar que 
+ 
+ a) El conjunto $A=\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}$ es un conjunto de vectores linealmente independientes. Posteriormente, complete a $A$ para que sea una base de $\mathbb{R}^4$.
+ 
+ b) Use el proceso de Gram-Schmidt para encontrar una base ortonormal $\mathcal{B}'$ a partir de $\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}$.
+
+ c) Calcular la matriz cambio de base entre la base ortonormal de b) y la base canónica, así como la matriz cambio de base entre la base canónica a la base ortonormal de b).
+ 
+@. Encuentra una base ortonormal para cada uno de los siguientes subespacios $W \subset \mathbb{R}^4$ con el producto interno igual al producto punto.
+
+a. $W=\big\{(x_1,x_2,x_3,x_4) \in \mathbb{R}^4:\, x_1+x_2+x_3+x_4=0  \big\}$
+
+b. $W=\big\{(x_1,x_2,x_3,x_4) \in \mathbb{R}^4:\, \begin{matrix} x_1 = x_2, & x_3=x_4 \end{matrix}  \big\}$
+ 
+@. Considere a $W$ como el subespacio generado por las columnas de la matriz
+
+\[
+A=\begin{pmatrix}
+  1 & -1 & 2 & -3 \\
+  -1&  1 &-3 & 2 \\
+  2 & -2 & 5 &-5
+\end{pmatrix}
+\] 
+a) Encontrar una base para $W$.
+
+b) A partir de esta base, encontrar una base ortonormal de $W$.
+
+# Proyecciones ortogonales
+
+Si $W$ es un subespacio, y $\mathcal{B}_0=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_m\}$ es una base **ortogonal** de $W$, si $\mathbf{v}_0\notin W$, definimos la proyección ortogonal sobre $W$ como 
+\[
+P_{W}\mathbf{v}_0 = \sum_{i=1}^m \frac{\langle \mathbf{v}_0,  \mathbf{v}_i\rangle}{\|\mathbf{v}_i\|^2}\mathbf{v}_i
+\]
+
+a) Si $V=\mathbb{R}^2$ y $\mathbf{u}=(2,6)$ y $W=\{(x,y)\in \mathbb{R}^2 : \, y = 4x \}$ (aquí una base es cualquier vector dirección de la recta)
+
+b) Si $V=\mathbb{R}^3$ y $\mathbf{u}=(2,1,3)$ y $W=\{(x,y)\in \mathbb{R}^3 : \, x+3y-z=0 \}$  (calcular primero una base de $W$, aplicar el proceso de Gram-Schmidt y finalmente la proyección sobre esa base)
+
+c) Sea $V=C([0,1];\mathbb{R})$ con el producto interno usual $\langle f,g \rangle=\int_0^1f(t)g(t)dt$, sea $W=\mathcal{S}(t,\sqrt{t})$.
+  - Encuentre una base ortonormal de $W$ (es decir aplique el proceso de Gram-Schmidt a $t,\sqrt{t}$),
+  - Calcule la proyección de $y(t)=e^{-t}$ sobre $W$.
+
+d) Sea $V=\mathbb{R}[x]$ con $\langle f,g \rangle=\int_0^1f(t)g(t)dt$, si $v=4+3x-2x^2$, calcular la proyección sobre $W=\{p(t)\in V: p(t)=\alpha_0 + \alpha_1 t\}$ (considere a la base usual de $W$, $\mathcal{B}=\{1,t\}$ y aplique Gram-Schmidt para obtener una base ortogonal)
+
+# Cambios de base
+
+1.- a) Encuentra la matriz $P$ de transición de la base $\mathcal{B}$ canónica de $\mathbb{R}^{3}$ a la base $\mathcal{B}'$.
+
+  \[
+    \Large{\mathcal{B}}'=
+    \Bigg\{ 
+      \begin{pmatrix} 0 \\ 0 \\ 1\end{pmatrix}, 
+      \begin{pmatrix} 0 \\ 1 \\ 1\end{pmatrix},
+      \begin{pmatrix} 1 \\ 1 \\ 1\end{pmatrix}
+    \Bigg\}
+  \]
+    b) Obtener las nuevas coordenadas del vector $\mathbf{v}=\begin{pmatrix} 1\\ 1 \\ 4 \end{pmatrix}$
+
+2.- a) Encuentra la matriz $P$ cambio de base base de $\mathcal{B}$ la base canónica de $\mathbb{R}^{3}$ a la base $\mathcal{B}'$ dada por
+  \[
+    \Large{\mathcal{B}}'=
+    \Bigg\{ 
+      \begin{pmatrix} 1 \\ 1 \\ -2\end{pmatrix}, 
+      \begin{pmatrix} 1 \\ 2 \\ -1\end{pmatrix},
+      \begin{pmatrix} 1 \\ 1 \\ 1\end{pmatrix}
+    \Bigg\}
+  \]
+    b) Obtener las nuevas coordenadas del vector $\mathbf{v}=\begin{pmatrix} 1\\ 0 \\ 1 \end{pmatrix}$
+
+3.- Encontrar la matriz cambio de base en cada uno de los casos
+
+a) $\mathcal{B}=\{(1,1,0),(-1,1,1),(0,1,2)\}$, $\mathcal{B}'=\{(2,1,1),(0,0,1),(-1,1,1)\}$.
+
+b) $\mathcal{B}=\{(3,2,1),(0,-2,5),(1,1,2)\}$, $\mathcal{B}'=\{(1,1,0),(-1,2,4),(2,-1,1)\}$.
+
+4.- Determinar la matriz cambio de base de la siguiente base $\mathcal{B}$
+$$
+\{(1,0,0,1), (0,0,0,1),(1,1,0,0),(0,1,1,0)\}
+$$
+a la base canónica en $\mathbb{R}^{4}$
+
+5.- Considere  a los vectores 
+$$
+\mathbf{v}_1 = (1,2)\quad\quad \mathbf{v}_2=(1,3)
+$$
+a) Verificar si $\{\mathbf{v}_1,\mathbf{v}_2\}$ es una base de $\mathbf{R}^{2}$.
+
+b) Representar a $\mathbf{v}=(1,1)$ como combinación lineal de la nueva base, $\mathcal{B}'$, .
+
+c) Encontrar la matriz cambio de base $P$. ¿cómo se relacionan $(1,1)$ y las nuevas coordenadas del vector en la base $\mathcal{B}'$.
+
+6.- Determinar la matriz cambio de base de $\{\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3\}$ en $\mathbb{R}^{3}$ a la base $\{(1,1,0),\,\, (0,1,1),\,\,(2,1,-2)\}$
+
+7.- Determinar la matriz cambio de base de $\{\mathbf{e}_i\}_{\{i\leq 3 \}}$ a la base $\{(1,2,-1),\,(2,0,5),\,(0,-1,2)\}$
+
+8.- Si
+\[
+  \begin{bmatrix} 1 & -1 & 1 \\ 
+                  2 &  2 & 1 \\
+                  0 & -1 & 2
+  \end{bmatrix}
+\]
+es la matriz inversa de la matriz de transición de una base $\mathcal{B}$ a otra, $\mathcal{B}'$ encontrar las nuevas coordenadas que corresponden al vector con coordenadas en $\mathcal{B}$, $(1,-1,1),$ $(2,1,1),$ $(-2,1,3)$.
+
+
+# Rango de una matriz
+
+\large\textbf{1} Determinar a las columnas básicas de $A$
+\[
+\begin{array}{cc}
+A = &   \begin{pmatrix} 
+              1   & 2  & 1 & 1  & 5       \\ 
+             -2   &-4  & 0 & 4  &-2        \\
+              1   & 2  & 2 & 4  & 9        
+          \end{pmatrix}
+\end{array}
+\]
+Calcular el rango  de $A$.
+
+\large\textbf{2} Determinar al rango de $A$
+\[
+\begin{array}{cc}
+A = &   \begin{pmatrix} 
+              0   & 2  & 4 & 2  & 2       \\ 
+              4   & 4  & 4 & 8  & 0        \\
+              8   & 2  & 0 & 10 & 2        \\
+              6   & 3  & 2 & 9  & 1        
+          \end{pmatrix}
+\end{array}
+\]
+
+\large\textbf{3} Calcular el rango de las siguientes matrices
+
+\begin{multicols}{2}
+\begin{equation*}
+\begin{array}{cc}
+1) A = &   \begin{pmatrix} 
+              2   & 5  &-1 & 4  & 3       \\ 
+             -3   & 1  & 2 & 0  & 1       \\
+              4   & 1  & 6 &-1  &-1        \\
+             -2   & 3  & 0 & 4  &-9
+          \end{pmatrix}
+\end{array}
+\end{equation*}
+\begin{equation*}
+\begin{array}{cc}
+2) B = &  \begin{pmatrix} 
+             -3 & 2  & 0 & 1  & 4       \\ 
+             -1 & 5  & 2 & 3  & 5       \\
+              6 &-12 & 3 &-7  &-8        \\
+             -3 & 7  & 9 & 4  &15
+          \end{pmatrix}
+\end{array}
+\end{equation*}
+\end{multicols}
