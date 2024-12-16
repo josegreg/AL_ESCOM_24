@@ -1,1 +1,20 @@
+---
+title: "Transformaciones lineales"
+author: "Álgebra lineal."
+header-includes:
+ -\usepackage{amsmath}
+output: 
+  slidy_presentation:
+    number_sections: true
+    font_adjustment: -2
+    footer: Álgebra lineal, José Rodríguez Villarreal
+    math_method: "mathjax"
+---
 
+# Transformación lineal
+
+Sean $V$ y $W$ dos espacios vectoriales.
+
+<div>
+ Una **transformación** **lineal** de $V$ a $W$ es una función de correspondencia, $T$m que asocia un vector $\mathtt{v}\in V$ con un vector en $W$. 
+</div>
