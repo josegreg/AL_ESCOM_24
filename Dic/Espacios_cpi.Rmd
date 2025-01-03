@@ -156,7 +156,7 @@ Igualmente, un conjunto de vectores $U=\{v_1,v_2,\ldots,v_k\}$ es un conjunto de
 Por último, un conjunto de vectores finitos $U=\{v_1,v_2,\ldots, v_k\}$ se dice ser **ortonormal** si 
 
 \begin{equation}
- \langle \mathbf{x} , \mathbf{y} \rangle = \begin{cases} 
+ \langle v_i , v_i \rangle = \begin{cases} 
                                                 0 & \mbox{si }\, i\ne j \\
                                                 1 & \mbox{si }\, i = j
                                             \end{cases}
@@ -239,7 +239,7 @@ Una base ortonormal sería
 
 Si $w$ es un vector definimos la _proyección_ _ortogonal_ de $\mathbf{v}$ sobre $\mathbf{w}$ como 
 \[
-P_w\mathbf{v}= \mathbf{w}-\frac{\langle \mathbf{v}, \mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
+P_w\mathbf{v}= \frac{\langle \mathbf{v}, \mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
 \]
 
 

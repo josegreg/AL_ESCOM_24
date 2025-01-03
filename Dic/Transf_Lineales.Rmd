@@ -1,0 +1,385 @@
+---
+title: "Transformaciones lineales"
+author: "Álgebra Lineal IA"
+header-includes:
+  #-\usepackage[latin1]{inputenc}
+  -\usepackage{mathtools}
+output: 
+ slidy_presentation:  
+    number_sections: true
+    font_adjustment: -2
+    footer: Álgebra lineal, José Rodríguez Villarreal
+    math_method: "mathjax"
+#    pandoc_args: [ "--filter", "pandoc-crossref" ]
+---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
+# Transformaciones lineales
+
+
+## Introducción a las transformaciones lineales
+
+
+### Definición
+
+Sean $V$ y $W$ dos espacios vectoriales. Sea $T:V\rightarrow W$ una función que asigna a cada vector $v\in V$ un elemento en $W$. $T$ es una transformación lineal si para cada $\texttt{u},\texttt{v}\in V$
+
+* $T(\texttt{u}+\texttt{v})= T(\texttt{u}) + T(\texttt{v})$.
+
+* Para todo $\lambda$, escalar $T(\lambda\texttt{u})=\lambda T(\texttt{u})$.
+
+### Transformaciones especiales
+
+Existen una variedad de transformaciones lineales, por ejemplo, la transformación $\textbf{0}$ que _recibe_ un vector $\texttt{v}\in V$ y lo manda al cero en $\textbf{0} \in W$ se le conoce como la transformación **cero**.
+
+La transformación que recibe un vector y lo relaciona consigo mismo es la transformación identidad, en este caso $V=W$. 
+
+La transformación $Mv=-v$ también es una transformación lineal de $M:V\rightarrow V$.
+
+
+
+### Definición
+
+Una transformación lineal $T:V\rightarrow V$, es decir el dominio de $T$ y el codominio de $T$ es $V$ decimos que es un _operador_ _lineal_.
+
+### Propiedades de una transformación lineal
+
+Si $T:V\rightarrow W$ es una transformación lineal entonces
+
+a) $T(\mathbf{0}) = \mathbf{0}$.
+
+b) Para todo $\texttt{v}\in V$, $T(-\texttt{v})=-T(\texttt{v})$.
+
+c) $T(\texttt{v}-\texttt{w})=T(\texttt{v})-T(\texttt{w})$.
+
+### Ejemplo
+
+Estudiar si las siguientes aplicaciones de $V=\mathbb{R}^3$ en $\mathbb{R}^4$ son o no son lineales
+
+a) $T(x,y,z)=(x+z,2x-3y-z, 3x-3y,x-3y-2z)$
+
+b) $S\begin{pmatrix} x \\ y \\ z \end{pmatrix}=\begin{pmatrix} x+z \\ 2x-3y-z \\x-3y\\x-3y-2z+1 \end{pmatrix}$
+
+Solución de a), notar que 
+\[
+T(x,y,z) = (x,y,z)
+            \begin{pmatrix} 
+                1 & 2 & 3 & 1\\
+                0 &-3 &-3 & -3\\
+                1 & -1& 0 & -2
+             \end{pmatrix} 
+\]
+Es decir lo podemos ver como $Tv = v'[T]$ con $[T]$ la matriz anterior.
+
+Por las propiedades de la multiplicación de matrices entonces tenemos $T(\mathtt{v}+\mathtt{u})= (\mathtt{v}+\mathtt{u})'[T] = \mathtt{v}'[T] +u'[T]= T(\mathtt{v}) + T(\mathtt{u})$.
+Similarmente si $c$ es un escalar, entonces $T(c\cdot \mathtt{v}) = (c\cdot \mathtt{v})'[T]=c(v'[T])=cT(v)$.
+
+Otra forma de verificar que la función es lineal, es aplicarlo a un vector "suma" $(x+u,y+v,z+w)$ es decir 
+\[
+\begin{matrix}
+T(x+u,y+v,z+w) & = & ((x+u) +(z+w),2(x+u)-3(y+v)-(z+w), 3(x+u)-3(y+v),(x+u)-3(y+v)-2(z+w)) \\
+               & = & (x+z + \mathtt{u+w}, 2x-3y-z + \mathtt{2u-3v-w} , 3x-3y + \mathtt{3u-3v}, x-3y-2z + \mathtt{u-3v-2w} )    \\
+               & = & (x+z, 2x-3y-z, 3x-3y, x-3y-2z) + (\mathtt{u+w},\mathtt{2u-3v-w},\mathtt{3u-3v},\mathtt{u-3v-2w}) \\
+               & = & T(x,y,z) + T(\mathtt{u,v,w})
+\end{matrix}
+\]
+
+Solución de b) 
+\begin{equation*}
+\begin{matrix}
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix} & = & 
+      \begin{pmatrix} x+u+z+w \\ 2(x+u)-3(y+v)-(z+w) \\(x+u)-3(y+v)\\(x+u)-3(y+v)-2(z+w)+1 \end{pmatrix} \\
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix} & = & 
+      \begin{pmatrix} x+z + \mathtt{u+w} \\ 2x-3y-z + \mathtt{2u-3v-w} \\3x-3y + \mathtt{3u-3v} \\ x-3y-2z + \mathtt{u-3v-2w} + 1\end{pmatrix}\\
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix}  & = & 
+\begin{pmatrix} x+z\\ 2x-3y-z \\ 3x-3y \\ x-3y-2z +1 \end{pmatrix} + \begin{pmatrix}\mathtt{u+w} \\ \mathtt{2u-3v-w} \\ \mathtt{3u-3v} \\ \mathtt{u-3v-2w}\end{pmatrix} \\
+               & = & S \begin{pmatrix} x \\ y \\ z \end{pmatrix} + \begin{pmatrix}\mathtt{u+w} \\ \mathtt{2u-3v-w} \\ \mathtt{3u-3v} \\ \mathtt{u-3v-2w}\end{pmatrix} \\
+\end{matrix}
+\end{equation*}
+El último término no es igual a $S\begin{pmatrix}\mathtt{u} \\ \mathtt{v} \\ \mathtt{w} \end{pmatrix}$, por tanto la función no es lineal
+
+### Ejemplo
+
+Sea $V=\mathbb{R}^{n}$, sea $A$ una matriz fija $n\times n$, definamos a $T_A:\mathbb{R}^n\rightarrow \mathbb{R}^m$ como
+
+\[
+T_A\mathbf{x}
+      =\begin{pmatrix} 
+      a_{11} & a_{12} & \ldots & a_{1n}\\ 
+      a_{21} & a_{22} & \ldots & a_{2n}\\ 
+      \vdots & \vdots & \vdots & \vdots \\
+      a_{m1} & a_{n2} & \ldots & a_{mn} 
+    \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \ldots \\ x_n \end{pmatrix}
+\]
+
+Entonces $T_A$ es una transformación lineal.
+
+
+### Núcleo (Espacio Nulo) e Imagen
+
+### Definición
+
+ Se $T:V\rightarrow W$ es una transformación lineal, entonces el conjunto de vectores en $V$ que $T$ mandan a $\mathbf{0}$ se conoce como **núcleo** **de** $T$ (**kernel** **o** **espacio** **nulo**). Se denota por $N(T)$ o $Ker(T)$.
+
+El conjunto de todos los **vectores** **en** **W** que son envíados por $T$ desde $V$, es decir si $w\in W$ es tal que $\texttt{w}=T\texttt{v}$ para algún $\texttt{v}\in V$. Este subespacio se conoce como $Im(T)$ o $R(T)$.
+
+
+
+## Teorema
+
+Si $T:V\rightarrow W$ es una transformación lineal entonces:
+
+a) El núcleo de $T$ es un subespacio de $V$.
+
+b) La imagen de $T$ es un subespacio de $W$.
+
+A la dimensión de la imagen de $T$ se conoce como **rango** **de** **$T$**. A la dimensión del núcloe se le denomina **nulidad** **de** **$T$**
+
+### Definición
+
+La **nulidad** de la transformación lineal es igual a
+\[
+\mbox{nulidad}(T) = \dim(N(T))
+\]
+
+El **rango** de una transformación lineal es igual a 
+\[
+\mbox{rango}(T)=\dim(Im(T))
+\]
+
+#### Teorema
+
+Si $T:V\rightarrow W$ es una transformación lineal desde un espacio vectorial $V$ hacia un espacio vectorial $W$, con $\dim(V)=n$ entonces
+\[
+n = \dim(V) = rango(T) + nulidad(T)
+\]
+
+En particular si $A$ es una matriz $m\times n$ entonces la dimensión del espacio de soluciones de $A\texttt{x}=\texttt{0}$ es 
+\[
+n-rango(A)
+\]
+
+_Demostración_:
+sea $U=N(T)$, por ser un subespacio de $V$ entonces existe una base de vectores $\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k\}$. Por el teorema de extensión de un conjunto de vectores linealmente independiente, sabemos que existen $\mathtt{u}_{k+1},\mathtt{u}_{k+2},\ldots, \mathtt{u}_n$ tal que se extiende a una base de $V$, es decir $\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k,\mathtt{u}_{k+1},\ldots \mathtt{u}_n\}$ es una _base_ de $V$.  
+
+Ahora, considere a los vectores $T(\mathtt{u}_{k+1}), T(\mathtt{u}_{k+2}),\ldots, T(\mathtt{u}_{n})$, dicho conjunto es linealmente independiente. En efecto, suponga que 
+\[
+c_1 T(\mathtt{u}_{k+1}) + c_2T(\mathtt{u}_{k+2}) + \ldots + c_{n-k}T(\mathtt{u}_{n}) = \mathbf{0}
+\]
+
+Entonces, como $T$ es lineal
+\[
+T(c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots + c_{n-k}\mathtt{u}_{n}) = \mathbf{0}
+\]
+
+entonces
+\[
+\mathtt{v}^{\star} = c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots + c_{n-k}\mathtt{u}_{n} \in N(T)
+\]
+Como $\mathtt{v}^{\star}\in N(T)$ y $\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k$ es una base de $N(T)$ entonces es igual a una combinación lineal de la base, es decir
+\[
+\mathtt{v}^{\star} = \sum_{i=1}^k \beta_i \mathtt{u}_i
+\]
+Por tanto, 
+\[
+c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots + c_{n-k}\mathtt{u}_{n} - \sum_{i=1}^k \beta_{i} \mathtt{u}_{i} = \mathbf{0}
+\]
+
+como forman una base de $V$ entonces deben ser linealmente independiente, es decir
+
+\[
+c_1 = c_2 = c_3 =\ldots = c_{n-k} = \beta_{1} = \ldots \beta_{k} = 0
+\]
+
+Esto implica que 
+\[
+T(\mathtt{u}_{k+1}), T(\mathtt{u}_{k+2}),\ldots, T(\mathtt{u}_{n})
+\]
+
+es un conjunto de vectores linealmente independiente en $W$.
+
+Y también genera a $Im(T)$, si $w\in Im(T)$ entonces existe un vector $v\in V$ tal que $w=Tv$, como $\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k,\mathtt{u}_{k+1},\ldots \mathtt{u}_n\}$ es una base, entonces $v$ es combinación lineal de los vectores, entonces
+\[
+w=T(\sum_{i=1}^n c_i\mathtt{u}_i) = \sum_{i=1}^n c_i T(\mathtt{u}_i) = \sum_{i=k+1}^n c_iT(\mathtt{u}_i)
+\]
+
+
+Además, $T\mathtt{u}_{k+1},T\mathtt{u}_{k+2},\ldots, T\mathtt{u}_n$ generan a la imagen de $T$. 
+
+y por tanto $T\mathtt{u}_{k+1},T\mathtt{u}_{k+2},\ldots, T\mathtt{u}_n$ es una base de la imagen de $T$.
+
+\[rango(T)=n-k = n- \dim(N(T))\]
+
+
+## Ejemplos
+
+1- Considere a $T(x,y,z,w)=(x+y,y-z,x+w)$, calcular una base para su espacio nulo y su imagen. Calcular la nulidad de $T$ y el rango de $T$.
+
+2- Considere a $T(x,y,z)=(x+y,y+z,x+w)$, calcular una base para su espacio nulo y su imagen. Calcular la nulidad de $T$ y el rango de $T$.
+
+3-Sea $f(x,y)=\begin{pmatrix} x+y \\ x-y \end{pmatrix}$. Calcular la nulidad y el rango de la transformación lineal.
+
+
+El **núcleo** de una matriz es igual al núcleo de la transformación $T_A$.
+
+4- Calcular el núcleo de la matriz $\begin{pmatrix} 1 & -1 \\ 1 & -1  \end{pmatrix}$-
+
+## Otros ejemplos de transformación lineal
+
+@. Sea $V=\mathbb{R}_n[x]$ el espacio de polinomios de grado $\leq n$.
+Sea $p(t)=a_nt^n + a_{n-1}t^{n-1} + \ldots + a_1 t +a_0$.
+Definimos a las transformaciones:
+\[
+\begin{matrix}
+D:V\rightarrow V, & \mbox{ para todo t }\quad Dp(t)=a_1 + 2a_2 x + 3a_3x^2 + \ldots + n a_{n}x^{n-1}.   \\
+I:V\rightarrow V, & \mbox{ para todo t }\quad Ip(t)=a_0 x + a_1 x^2 + \ldots + a_n \frac{x^{n+1}}{n+1}
+\end{matrix}
+\]
+
+@. Sea $V=\mathcal{M}^{n,n}(\mathbb{R})$ el espacio vectorial de matrices $2\times 2$. Definimos a $T_B:\mathcal{M}^{n,n}(\mathbb{R}) \rightarrow \mathcal{M}^{n,n}(\mathbb{R})$ como 
+\[
+T_M A = M\cdot A,
+\]
+
+@. Sea $V=\mathcal{M}^{n,m}(\mathbb{R})$ el espacio vectorial de matrices $n\times m$, sean $P\in \mathcal{M}^{n,n}$ y $Q \in \mathcal{M}^{m,m}$ definimos a $T_{Q,P}$ como
+\[
+T_{Q,P}(A)= PAQ
+\]
+
+
+@. Encontrar una transformación lineal $T:\mathbb{R}^2\rightarrow \mathbb{R}^3$ tal que si $\mathtt{v}_1=(1,2)$ y $\mathtt{v}_2=(3,4)$ entonces
+
+\[
+\begin{matrix}
+T\mathtt{v}_1=(3,2,1) \\
+T\mathtt{v}_2=(6,5,4)
+\end{matrix}
+\]
+
+Basta con calcular $T(1,0)$ y $T(0,1)$. Pues la fórmula en general estaría dada por 
+\[
+T(x,y) = T(x(1,0)+y(0,1))=x\cdot T(1,0) + y T(0,1)
+\]
+Por otro lado $\{\mathtt{v}_1,\mathtt{v}_2\}$ es base de $\mathbb{R}^2$. Entonces $(1,0)=-2(1,2)+1(3,4)$ y $(0,1)=\frac{3}{2}(1,2) + (-\frac{1}{2})(3,4)$ entonces
+\[
+\begin{matrix}
+T(1,0) =-2T(1,2) + 1T(3,4) =-2(3,2,1) + 1(6,5,4) = (0,1,2) \\
+T(0,1) =\frac{3}{2}T(1,2) + (-\frac{1}{2})T(3,4) = \frac{3}{2}(3,2,1) + (-\frac{1}{2})(6,5,4) = (\frac{3}{2},\frac{1}{2},2) \\
+\end{matrix}
+\]
+
+## Matriz asociada a una transformación lineal 
+
+Una transformación lineal $T$ de $\mathbb{R}^{n}$  a $\mathbb{R}^m$ es una transformación de la forma 
+\begin{equation}
+ T \texttt{v} = A \cdot \texttt{v}                    
+\end{equation}
+
+Sea $\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}$  una base de $V$, entonces
+\[
+\begin{array}{cc}
+\texttt{v} =& \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots + \alpha_n\texttt{e}_n,\\
+T(\texttt{v}) =&  \alpha_1T(\texttt{e}_1) + \alpha_2T(\texttt{e}_2)+ \ldots + \alpha_nT(\texttt{e}_n)
+\end{array}
+\]
+La última combinación lineal se puede expresar como multiplicación matricial con
+\[
+\begin{array}{cccc}
+ T(\texttt{e}_1) =  \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1}  \end{pmatrix}_{\mathcal{D}}, &
+ T(\texttt{e}_2) =  \begin{pmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2}  \end{pmatrix}_{\mathcal{D}}, &
+  \ldots ,& 
+T(\texttt{e}_n) =  \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn}  \end{pmatrix}_{\mathcal{D}}  &
+\end{array}
+\]
+con ${\mathcal{D}}$ una base en $W$
+\[
+A= 
+\begin{pmatrix} 
+    a_{11} & a_{12} & \ldots & a_{1n} \\
+    a_{21} & a_{22} & \ldots & a_{2n} \\
+     \vdots& \vdots & \ddots & \vdots \\
+     a_{m1}& a_{m2} & \ldots & a_{mn}  
+\end{pmatrix}
+\]
+
+A esta matriz $A=[T]$ se le llama la matriz asociada a la transformación en la base $\mathcal{B}$ (en $V$) y $\mathcal{D}$ en $W$. Y $T(\texttt{v})=A\texttt{v}$
+
+### Ejemplos
+
+#### Dilatación. 
+
+Si $V=\mathbb{R}^3$ $\vec{\texttt{x}}=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}$, la transformación $T(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix}$ es una transformación lineal. Para ver que es una transformación lineal 
+\[
+T(\vec{\texttt{x}} +\vec{\texttt{w}} ) =
+\begin{pmatrix} 3(x_1+w_1) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}=
+\begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix} +
+\begin{pmatrix} 3w_1 \\ 2w_2 \\ 3w_3 \end{pmatrix} =
+T(\vec{\texttt{x}}) + T(\vec{\texttt{w}} )
+\]
+La primer propiedad se cumple.
+Si $\lambda \in \mathbb{R}$
+
+\[
+T(\lambda\vec{\texttt{x}}) =
+\begin{pmatrix} 3(\lambda x_1) \\ 2(\lambda x_2) \\ 3(\lambda x_3) \end{pmatrix}=
+\begin{pmatrix} \lambda 3x_1 \\ \lambda 2x_2 \\ \lambda 3x_3 \end{pmatrix} =
+\lambda \begin{pmatrix} 3x_1 \\ 2x_2 
+\\ 3x_3 \end{pmatrix} =
+\lambda T(\vec{\texttt{x}}) 
+\]
+
+Por lo que la transformación es lineal.
+
+Como se ha comentado, cualquier transformación lineal tiene una matriz asociada. En este caso, 
+
+\[
+[T]= \begin{bmatrix} T(\texttt{e}_1)\,\, |\,\, T(\texttt{e}_2) \,\, |\,\, T(\texttt{e}_3) \end{bmatrix}
+\]
+
+En este caso $T(\texttt{e}_1)=\begin{pmatrix} 3(1) \\ 2(0) \\ 3(0)\end{pmatrix} = \begin{pmatrix} 3  \\ 0 \\ 0\end{pmatrix}$. $T(\texttt{e}_2)=\begin{pmatrix} 3(0) \\ 2(1) \\ 3(0)\end{pmatrix} = \begin{pmatrix} 0  \\ 2 \\ 0\end{pmatrix}$. $T(\texttt{e}_3)=\begin{pmatrix} 3(0) \\ 2(0) \\ 3(1)\end{pmatrix} = \begin{pmatrix} 0  \\ 0 \\ 3\end{pmatrix}$.
+
+
+\[
+[T]= \begin{bmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 &3   \end{bmatrix}
+\]
+
+En la base canónica, podemos verificar que la matriz asociada a la transformación lineal es la anterior, multiplicando la matriz por un vector $\vec{\texttt{x}}=\begin{pmatrix}  x_1 \\ x_2\\x_3\end{pmatrix}$
+
+\[
+[T]\cdot \vec{\texttt{x}} = 
+\begin{bmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 &3   \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3\end{bmatrix} = 
+\begin{bmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{bmatrix} = T(\vec{\texttt{x}})
+\]
+
+#### Ejemplo 2
+Si una de las entradas incluye a una función real no lineal, entonces la transformación no será lineal por ejemplo
+$S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\ 2x_2 \\ 3x_3 \end{pmatrix}$
+Si comparamos $S(\vec{\texttt{x}} +\vec{\texttt{w}})$ con $S(\vec{\texttt{x}}) + S(\vec{\texttt{w}})$
+\[
+S(\vec{\texttt{x}} +\vec{\texttt{w}}) = \begin{pmatrix} 3(x_1+w_1)^2 \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
+                                      = \begin{pmatrix} 3(x_1^{2}+2x_1w_1+w_1^2) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix} 
+                                      = \begin{pmatrix} 3x_1^{2}+6x_1w_1+3w_1^2 \\ 2x_2+2w_2   \\ 3x_3+3w_3 \end{pmatrix}
+\]
+
+Por otro lado
+\[
+S(\vec{\texttt{x}}) +S(\vec{\texttt{w}}) = \begin{pmatrix} 3x_1^2 \\ 2x_2 \\ 3x_3 \end{pmatrix} + 
+                                           \begin{pmatrix} 3w_1^2 \\ 2w_2 \\ 3w_3 \end{pmatrix} 
+                                      = \begin{pmatrix} 3x_1^{2}+3w_1^2 \\ 2x_2+ 2w_2 \\ 3x_3+3w_3 \end{pmatrix} 
+                                      \ne S(\vec{\texttt{x}} +\vec{\texttt{w}})
+\]
+pues $S(\vec{\texttt{x}} +\vec{\texttt{w}})$ tiene un término extra $6x_1w_1$.
+
+#### Reflexión respecto al eje $x$.
+
+Sea $V=\mathbb{R}^2$ $R_1(x,y) = (x,-y)$.  $R$ es una transformación lineal. Si $\texttt{v}_1 = \begin{pmatrix} x_1\\ y_1 \end{pmatrix}$ y $\texttt{v}_2 = \begin{pmatrix} x_2\\ y_2 \end{pmatrix}$ 
+\[
+R_1(\texttt{v}_1 + \texttt{v}_2) = (x_1+x_2, -(y_1+y_2)) = (x_1+x_2,-y_1-y_2) = (x_1,-y_1)+(x_2,-y_2) = R_1(\texttt{v}_1) + R_1(\texttt{v}_2)
+\]
+
+Similarmente $R(\lambda \vec{\texttt{v}}) = \lambda R(\vec{\texttt{v}})$

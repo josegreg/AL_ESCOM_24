@@ -1,0 +1,527 @@
+---
+title: "Tarea 5"
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{mathtools}
+  - \usepackage{multicol}
+geometry: "left=1cm,right=0.8cm,top=1cm,bottom=0.8cm"
+author: "Álgebra Lineal"
+output: pdf_document
+---
+
+
+
+# Transformaciones Lineales
+
+\large\textbf{1} Verifica que la transformación $T:\mathbb{R}^2\rightarrow\mathbb{R}^2$ tal que $T \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -x \\ -y \end{pmatrix}$ cumple la definición de una transformación lineal.
+
+\large\textbf{2} Explique por qué las siguientes aseveraciones son falsas o verdaderas para cualquier $A\in\mathcal{L}(V;W)$, en caso de ser falsas, dar un contraejemplo. 
+
+ a) Para cualquier $A\in\mathcal{L}(V;W)$ se cumple que $A\mathbf{0} = \mathbf{0}$.
+ 
+ b) Si $\mathbf{v}\in V$ tal que $A\mathbf{v}=0$ entonces $\mathbf{v}=\mathbf{0}$.
+
+ c) Si $\mathbf{w}=\mathbf{v}+\mathbf{u}$ entonces $A\mathbf{w} = A\mathbf{v}+A\mathbf{u}$.
+ 
+ d) Si $\mathbf{v}$ es combinación lineal de $\mathbf{u}_1, \mathbf{u}_2,\ldots \mathbf{u}_n$ entonces $A\mathbf{v}$ es combinación lineal de $A\mathbf{u}_1, A\mathbf{u}_2,\ldots A\mathbf{u}_n$.
+ 
+ e) Si combinación lineal de $\mathbf{u},\mathbf{v}, \mathbf{w}$ son colineales entonces $A\mathbf{u},A\mathbf{v}, A\mathbf{w}$ también son colineales. (Los vectores son colineales si estan en una misma recta).
+ 
+ 
+\large\textbf{3} Dados los vectores $\mathbf{u}_1=(2,-1)$, $\mathbf{u}_2=(1,1)$, $\mathbf{u}_3=(-1,-4)$, $\mathbf{v}_1=(1,3)$, $\mathbf{v}_2=(2,3)$ y $\mathbf{v}_2=(-5,-6)$. Justifique si existe una transformación lineal $A:\mathbb{R}^2 \rightarrow\mathbb{R}^2$  tal que $A\mathbf{u}_1=\mathbf{v}_1$, $A\mathbf{u}_2=\mathbf{v}_2$ y $A\mathbf{u}_3=\mathbf{v}_3$.
+
+\large\textbf{4} Determine la matriz del operador $A:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}$ de modo que transforme los vectores $\mathbf{u}=(1,2)$ y $\mathbf{v}=(3,4)$, a $A\mathbf{u}=(1,1)$ y $A\mathbf{v}=(2,2)$.
+
+\large\textbf{5} Dada la expresión general de una transformación lineal $f:\mathbb{R}^3\rightarrow \mathbb{R}$, $f(x,y,z) = ax+by+cz$. Determinar la transformación lineal que asocie los vectores $\mathbf{u}=(1,2,3)$ con $1$, $\mathbf{v}=(-1,2,3)$ con $0$ y $\mathbf{u}=(1,-2,3)$ con $0$.
+
+\large\textbf{6} Suponga que $\mathbb{R}^2$ y $\mathbb{R}^3$ se expresan en las bases canónicas.  $A:\mathbb{R}^2\rightarrow\mathbb{R}^3$ es una transformación lineal tal que $A\begin{pmatrix} -1\\1 \end{pmatrix}= \begin{pmatrix} 1\\2 \\3 \end{pmatrix}$, $A\begin{pmatrix} 2\\3 \end{pmatrix}= \begin{pmatrix} 1\\1 \\1 \end{pmatrix}$. Determinar la matriz de la transformación $A$.
+
+\large\textbf{7} Determinar la transformación $T:\mathbb{R}^3\rightarrow\mathbb{R}^3$ tal que $T(1,0,1)=(1,0,0)$, $T(0,1,1)=(0,1,0)$, $T(0,0,1)=(1,1,1)$.
+
+\large\textbf{8} Determinar la transformación $T:\mathbb{R}^3\rightarrow\mathbb{R}^3$ tal que $T(0,1,1)=(1,2,3)$, $T(1,0,1)=(1,-1,2)$ y $T(1,1,0)=(-1,-1,-1)$.
+
+
+\large\textbf{9} ¿Cuál de las transformaciones definidas a continuación son lineales? En caso de que no sean lineales, dar un contraejemplo a una de las propiedades de las transformaciones lineales
+
+ * Sea $A:\mathbb{R}^3\rightarrow\mathbb{R}^3$, $A(x,y,z)=(3x,a,5z)$ con $a\in\mathbb{R},$ un número fijo.
+ 
+ * Sea $A:\mathbb{R}^4\rightarrow\mathbb{R}^3$, $A(x,y,z,w)=(x-w,y-w,x+z)$ 
+ 
+ * Sea $A:\mathbb{R}^3\rightarrow\mathbb{R}^3$, $A(x,y,z)=(x-y,2^y,z)$ 
+
+\large\textbf{10} Sean $\mathcal{B}_V$ y $\mathcal{B}_W$ las bases canónicas de $V$ y $W$. Calcular la matriz asociada a la transformación lineal
+
+ a) $T(x_1,x_2)=(2x_1-x_2,3x_1+4x_2,x_1)$.
+ 
+ b) $T(x_1,x_2,x_3)=(2x_1+3x_2-x_3,x_1+x_3)$.
+
+ c) $T(x_1,x_2,x_3)=(x_1+2x_2-x_3,x_2+x_3,x_1+x_2-2x_3)$.
+
+\large\textbf{11} Sea $U=\{ (x,y,z) \in\mathbb{R}^3 \, | \, x+2y+3z=0 \}$ y $W=\{ (x,y,z) \in\mathbb{R}^3 \, | \, 2x-y+z=0 \}$. Encontrar una transformación lineal $T:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$ tal que $T(U)=W$. (_sugerencia_: _encontrar_ _bases_ _de_ _cada_ _subespacio_).  
+
+
+# Operaciones con transformaciones lineales
+
+Suponga que $T$, $S:V \rightarrow W$ se definen a continuación. 
+
+\large\textbf{1} - Para $V=\mathbb{R}^2,W=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
+
+$$
+T \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} x_1 -x_2 \\ x_1 + x_2 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} 2y_1 \\ -y_2 \end{pmatrix} 
+$$
+
+\large\textbf{2}- Para $V=\mathbb{R}^2,W=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
+
+$$
+T \begin{pmatrix} x_1 \\  x_2 \end{pmatrix} = \begin{pmatrix} x_1 + 2x_2 \\ -3x_1 + x_2 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 + 3y_2 \\ y_1 -y_2 \end{pmatrix} 
+$$
+
+\large\textbf{3}- Para $V=\mathbb{R}^3,W=\mathbb{R}^2, Y=\mathbb{R}^3$. Encontrar $TS$ y la representación matricial de la transformación resultante
+$$
+T \begin{pmatrix} x_1 \\  x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix}  x_1 + 2x_2 \\ 2x_2 - x_3 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 - y_2 \\ y_1 +y_2 \\ -y_1+y_2 \end{pmatrix} 
+$$
+
+\large\textbf{4}- Para $V=\mathbb{R}^3,W=\mathbb{R}^2, Y=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
+$$
+T \begin{pmatrix} x_1 \\  x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix}  x_1 + x_2 -x_3 \\ 2x_1 -x_2 + x_3 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 - y_2 \\ y_1 +y_2 \\ -y_1 + y_2\\ -y_1 + y_2 \end{pmatrix} 
+$$
+
+\large\textbf{5}- Considere a los operadores lineales $R,S,P:\mathbb{R}^2\rightarrow \mathbb{R}^2$. Con $R$ la transformación que rota $30^o$ a un vector, $S$ la reflexión en torno a la recta $y=2x$ y $P$ la proyección ortogonal sobre la misma recta.
+
+ i) Explicar por que $PS=SP = P$.
+ 
+ ii) Verificar que $RSR=S$.
+ 
+ iii) Determinar todos los vectores $\mathbf{x}\in \mathbb{R}^2$ con $PR\mathbf{x}=0$. 
+
+\large\textbf{6}- Sea $A:\mathbb{R}^3\rightarrow\mathbb{R}^{3}$ definido como $A(x,y,z)=(ax+by+cz,0)$. Mostrar que $A^{3} = A\cdot A\cdot A=0$. Esta es otra diferencia del espacio vectorial $\mathcal{M}^{n,n}(\mathbb{R})$ y los números reales. 
+
+\large\textbf{7}- Sea $A,B,C,D:\mathbb{R}^2\rightarrow\mathbb{R}^{2}$ dados por 
+
+
+* $A(x,y)=(x+y,0)$
+
+* $B(x,y)=(-y,x)$
+
+obtener las expresiones de los operadores $A+B,\,AB,\,BA,\,A^{2},\,B^{2}$ 
+
+\large\textbf{8} En el espacio vectorial $\mathcal{P}$ de polinomios de grado $\leq n$ , sean $D,A:\mathcal{P}\rightarrow\mathcal{P}$, con $Dp(x)=p'(x)$ y $A(x)=xp(x)$. Determinar $DA-AD$.
+
+\large\textbf{9} Sea $V=\mathbb{R}^n$ un espacio vectorial de dimensión $n$, Para todo $k=2,3,\ldots,n$ encontrar un operador lineal $A:\mathbb{R}^n\rightarrow\mathbb{R}^n$ tal que $A^{k}=0$ pero $A^{j}\ne 0$.
+
+\large\textbf{10} Sea $V$ el espacio de plinomios con grado menor o igual a 2. Considere las transformaciones lineales
+
+* $T:\mathbb{R}^{3}\rightarrow V$, $T(a,b,c)=a + 2bx + 2cx^2$.
+
+* $S:V\rightarrow \mathcal{M}^{2}(\mathbb{R})$, $S(a+bx+cx^{2})= \begin{pmatrix} a & a+b \\ a-c & b\end{pmatrix}$
+
+Con respecto a $\mathcal{B}_1=\{1,x,x^2\}$ de $V$, la base canónica en $\mathbb{R}^3$ y la base canónica $\mathcal{B}_3=\{E_{11},E_{12},E_{21},E_{22}\}$
+
+ * Probar que $T$ y $S$ son mapeos lineales.
+ 
+ * Encontrar las matrices de las transformaciones lineales $T$ y $S$ con respecto a las bases.
+ 
+ * Encontrar la matriz de composición $ST$ con respecto a las bases,
+ 
+ * Calcular explicitamente $ST$.
+
+# Transformaciones y cambios de base
+
+@. Sea $T:\mathbb{R}^2\rightarrow \mathbb{R}^2$ tal que $T(x,y)=(x-2y,\,\,3x+y)$ y sea $\mathcal{B}=\{(1,1),(0,3)\}$ y $\Gamma=\{(-1,2),\,(-1,0)\}$.
+ 
+ * Calcular la matriz asociada a $T$, $[T]_{\mathcal{B}}^{\Gamma}$.
+ 
+ * Calcular los vectores $[u]_{\mathcal{B}}$ y $[Tu]_{\Gamma}$ con $u=(1,1)$.
+ 
+ * Verificar que $[T]_{\mathcal{B}}^{\Gamma}[u]_{\mathcal{B}}=[Tu]_{\Gamma}$
+ 
+@. Sea $A=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$ y $\mathcal{B}=\{(1,1),(-1,3)\}$ y $\Gamma=\{(0,-2),\,(-5,1)\}$
+ 
+ * Calcular la matriz cambio de base $Q_{\mathcal{B}->\Gamma}$
+ 
+ * Calcular la matriz asociada a $T$, $[T]_{\mathcal{B}}^{\mathcal{B}}$.
+ 
+ * Calcular la matriz asociada a $T$, $[T]_{\Gamma}^{\Gamma}$.
+ 
+@. Sea $A=\begin{pmatrix} 1 & 2 \\ -1 & 0 \end{pmatrix}$, sea $T\mathtt{v} = A\mathtt{v}$ y sean $\mathcal{B}=\{(1,0),(0,1)\}$ y $\Gamma=\{(1,1),\,(1,-1)\}$
+  
+  * Calcular $[T_A]_\mathcal{B}$
+  
+  * Calcular la matriz $Q_{\mathcal{B}\rightarrow \Gamma}$
+  
+  * Calcular $[T_A]_\mathcal{\Gamma}$
+
+@. Considere las 2 bases de $\mathbb{R}^3$ y $\mathcal{B}=\{(1,0,0),(0,1,0),(0,0,1)\}$ y $\Gamma=\{u_1=(1,0,1),u_2=(2,1,2), u_3=(1,2,2)\}$ y
+\[
+A=\begin{bmatrix} 1 & 3 & -2 \\ 2 & -4 & 1 \\ 3 & -1 & 2 \end{bmatrix}
+\]
+
+* Encontrar la matriz cambio de base $Q_{B\rightarrow \Gamma}$
+
+* $[T]_B$
+
+* $[T]_{\Gamma}$
+
+@. Considere el operador $G:\mathbb{R}^2 \rightarrow\, \mathbb{R}^2$, $G(x,y)=(2x-7y,\,\,4x+3y)$ y $S=\{(1,3),\,\,(2,5)\}$
+
+* Calcular la matriz cambio de base
+
+* Usando $Q_{C->S}$ encontrar $[G]_S$
+
+* Comprobar que $[G\mathtt{v}]_{S}=[G]_S[\mathtt{v}]_S$
+
+# Transformaciones invertibles 
+
+\large\textbf{1} Sea $T$ el operador en $\mathbb{R}^{3}$ definido por
+
+\begin{equation}
+  T\begin{pmatrix} x_1\\ x_2 \\ x_3 \end{pmatrix} = 
+    \begin{pmatrix} 3x_1 \\ x_1-x_2 \\ 2x_1+x_2 + x_3\end{pmatrix} 
+\end{equation}
+
+ a) Obtener la representación matricial de $T$ en la base canónica $\mathcal{B}=\{\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3\}$.
+ 
+ b) Demostrar que $T$ es invertible y encontrar una expresión para $T^{-1}$.
+ 
+ c) Verificar que 
+ \begin{equation}
+  \begin{bmatrix} T^{-1} \end{bmatrix}_{\mathcal{B}} =   
+  \begin{bmatrix} T \end{bmatrix}^{-1}_{\mathcal{B}} 
+ \end{equation}
+
+\large\textbf{2} Sea $V$ y $W$ espacios vectoriales de dimensión finita y $T:\rightarrow W$ un isomorfismo. Si $\mathcal{B}_V$ es una base para $V$ probar que $\{T(\mathbf{v})\}_{\mathbf{v}\in \mathcal{B}_V}$ es una base para $W$.
+
+\large\textbf{3} Sea $B\in\mathcal{M}^{n,n}(\mathbb{R})$ con $B$ invertible. Definir $\varphi_B:\mathcal{M}^{n,n}(\mathbb{R}) \rightarrow \mathcal{M}^{n,n}(\mathbb{R})$ como $\varphi_B(A)=B^{-1}AB$. Probar que $\varphi_B$ es un isomorfismo.
+
+\large\textbf{4} Sea $W$ el conjunto de todas las matrices $2\times 2$ hermitianas. Sea $\phi:\mathbb{R}^{4}\rightarrow W$ dada por
+
+\begin{equation}
+  \begin{array}{cc}
+    \phi(x,y,z,t) = & \begin{pmatrix} t+x & y+ iz \\ y- iz & t-x \end{pmatrix}
+  \end{array}
+\end{equation}
+Probar que $\phi$ es un isomorfismo.
+
+\large\textbf{5} Mostrar que cada uno de los siguientes operadores es inverible y encontrar a la inversa.
+
+* $T(x,y,z)=(x-3y-2z,y-4z,z)$
+
+* $S(x,y,z)=(x+z,x-z,y)$
+
+
+\large\textbf{6} Mostrar que si $T:V\rightarrow V$ es un operador lineal tal que $T^{2}-T +I_V = \mathbf{0}_V$
+
+\large\textbf{7} Mostrar que si $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$ es un operador lineal dado por
+\[
+f(x,y,z) = (x+y+z, 2x-y-z, x+2y-z )
+\]
+es una biyección y por tanto es invertible.
+
+\large\textbf{8}  Sea $T:\mathbb{R}^{2}\rightarrow \mathbb{R}^2$ la transformación lineal definida por 
+\[
+T(x,y,z)=\begin{pmatrix} x+y \\ x+2y \end{pmatrix}
+\]
+
+a) Calcular la matriz que representa $T$ en la base canónica.
+
+b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+
+c) Mostrar que por b) entonces $T$ es biyectiva y calcular $T^{-1}(x,y,z)$.
+
+d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+
+
+\large\textbf{9}  Sea $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^3$ la transformación lineal definida por 
+\[
+T(x,y,z)=\begin{pmatrix} x+y+z \\ x+2y-4z \\ z \end{pmatrix}
+\]
+
+a) Calcular la matriz que representa $T$ en la base canónica.
+
+b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+
+c) Mostrar que por b) entonces $T$ es biyectiva y calcular $T^{-1}(x,y,z)$.
+
+d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \\2 \end{pmatrix}$
+
+e) ¿Existe algún valor de $\mathbf{b}$ para el cual
+$T(x,y,z) = \mathbf{b}$ no tenga solución?
+e) ¿Existe algún vector $\begin{pmatrix} a\\ b \end{pmatrix} \in \mathbb{R}^2$ tal que la ecuación $T(x,y,z) = \begin{pmatrix} a \\ b \end{pmatrix}$ no tenga solución?
+
+
+\large\textbf{10}  Sea $T:\mathbb{R}_{2}[x]\rightarrow \mathbb{R}_{2}[x]$ la transformación lineal definida por 
+\[
+T(p(t))= p'(t)-2p()t
+\]
+
+a) Calcular la matriz que representa $T$ en la base canónica $\{p_1(t)=1,p_2(t)=t,p_3(t)=t^{2}\}$
+
+b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+
+c) Mostrar que por b) entonces $T$ es biyectiva y calcular la matriz asociada a $T^{-1}$ en la misma base. Obtener una expresión para $T^{-1}(q(t))$
+
+d) Resolver la ecuación diferencial 
+\[
+p'(t)-2p(t) = 1 +t +t^{2}
+\]
+
+
+# Espacios de una transformación lineal
+
+\large\textbf{1} Para las siguientes transformaciones lineales encuentra la representación matricial, encuentra una base para el espacio nulo de $T$ y una base para el rango. Encuentra el rango y la nulidad de $T$.
+
+ a) Para $T:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ definida como
+ \begin{equation}
+  T\begin{pmatrix} x \\ y \\ z \end{pmatrix} = 
+  \begin{pmatrix} x - 2y \\ y + 3z \\ 2x-3y + 3z\end{pmatrix} 
+ \end{equation}
+
+ b) Para $T:\mathbb{R}^4 \rightarrow \mathbb{R}^3$ definida como
+ \begin{equation}
+  T\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = 
+  \begin{pmatrix} x_1 - x_4 \\ x_2-x_3 \\ x_1 + x_2 - x_3 - x_4\end{pmatrix} 
+ \end{equation}
+
+\large\textbf{2} Sea $T:\mathcal{P}^{3}(\mathbb{R}) \rightarrow \mathbb{R}^{3}$ una transformación lineal dada por: 
+$T(1+x)=\mathbf{e}_1$, $T(2x^{2}+x+1)=\mathbf{e}_1+\mathbf{e}_2$, $T(x^{3}+x)=\mathbf{e}_3+2\mathbf{e}_1$, $T(x+x^{2}- x^{3})=\mathbf{e}_1-\mathbf{e}_2+\mathbf{e}_3$.
+
+Determina
+$T(a+bx+cx^{2}+dx^{3})$.
+$\mbox{ ker}T, \mbox{nulidad de T}$ y el rango de $T$.
+
+\large\textbf{3} Sea $V=\{ f:(-1,1)\rightarrow \mathbb{R}\,\, |\,\,f \mbox{ es derivable }, f\in \mathcal{P}^{n}  \}$. Sea $T:V\rightarrow V$ dada por $T(f)(x)=xf'(x)$ para todo $x\in (-1,1)$.
+ a) Demostrar que es una transformación lineal.
+ b) Encontrar una representación lineal en la base canónica.
+ c) Encontrar una base para $\ker T$ e $\mbox{Im}T$.
+ d) Calcular la nulidad y el rango de $T$.
+ 
+\large\textbf{4} En el espacio vectorial de funciones continuas, sea $W=\mathcal{G}(\sin, \cos)$. Determinar la nulidad de $\varphi:W\rightarrow \mathbb{R}$ dado por
+
+a) $\varphi(f) = \int_0^{\pi}f(s)ds$
+
+b) $\varphi(f) = f'(0)$
+
+\large\textbf{5} En el espacio vectorial de funciones continuas, sea $W=\mathcal{G}(e^{x}, e^{-x},x)$ sea $T:W\rightarrow W$ dado por
+\[
+T(f) = f''(x)-x
+\]
+Determinar el rango y nulidad de $T$
+
+\large\textbf{6}- Considerando a la base canónica en $\mathbb{R}^{3}$ describir al espacio nulo para la transformación y a la imagen.
+ 
+ * $T(x,y,z) = (x-2y+z, 2x-3y+z,x+y-2z)$ 
+ 
+\large\textbf{7}- Considerando a la base canónica en $\mathbb{R}^{4}$ describir al espacio nulo para la transformación y a la imagen. $S:\mathbb{R}^4\rightarrow\mathbb{R}^3$, definida por 
+$$
+S\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = 
+  \begin{pmatrix} x_1 + x_2 +x_3 + x_4   \\ 
+                 2x_1 + x_2 -x_3 + x_4   \\ 
+                 x_1 - x_2 + x_3 - x_4 
+    \end{pmatrix}
+$$
+
+\large\textbf{8} Sea $V$ el espacio de polinomios con coeficientes reales cuyo grado es menor o igual a $3$. Y sea $T:V\rightarrow\mathbb{R}^{4}$ definido como
+\begin{equation}
+ T(p) = (p(0),p(1),p(-1),p(2))
+\end{equation}
+
+a) ¿Es $T$ una transformación inyectiva? (puede considerar al espacio nulo de $T$).
+b) Calcular la imagen de $T$.
+
+\large\textbf{9} Sea $S:\mathbb{R}^{3}\rightarrow \mathbb{R}_3[x]$ la transformación lineal tal que
+\[
+f(1,0,0)=2x+x^{3};\quad\quad f(0,1,0)=-2x+x^{2};\quad\quad f(0,0,1)=x^{2}+x^{3}
+\]
+Determinar
+
+a) $S(x,y,z)$ para todo $(x,y,z)\in\mathbb{R}^{3}$
+
+b) Dejando fija a la base canónica, $\mathcal{B}$ en $\mathbb{R}^{3}$ y  la base canónica en $\mathbb{R}_{3}[x]={1,t,t^{2},t^{3}}$ determinar la matriz asociada a la transformación lineal $S$.
+
+c) $Im(S)$ y una base del subespacio.
+
+d) $Ker(S)$ y una base del subespacio.
+
+\large\textbf{10} Determinar $Im(f)$, $Ker(f)$ y encontrar una base para $Ker(f)$. Calcular la nulidad y el rango de $f$.
+
+ a) Sea $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{2}$, $f(x,y,z) =(x-y + 2z, 2x-z)$.
+ 
+ b) Sea $h:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$, $h(x,y,z) =(x-y + 2z, 2x-z,4x+2y7z)$. Adicionalmente, deducir una base para $Im(h)$.
+ 
+ c) Sea $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$, $f(x,y,z)=(x+y+z,y+z,2y+z)$. Determinar $Ker(f)$. Explicar por que $f$ es un isomorfismo.
+
+ d) Sea $D:\mathcal{P}^{3}\rightarrow \mathcal{P}^{3}$ definida por 
+\begin{equation}
+ Dp(x) = p'(x)-p(1)
+\end{equation}
+
+ e) Sea $I:\mathcal{P}^{3}(\mathbb{R})\rightarrow \mathcal{P}^{4}(\mathbb{R})$
+\begin{equation}
+ Ip(x) = \int_0^{x}p(t)dt
+\end{equation}
+ 
+\large\textbf{11} Sea $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^2$ la transformación lineal definida por 
+\[
+T(x,y,z)=\begin{pmatrix} x+y \\ x+y-z \end{pmatrix}
+\]
+
+a) Calcular la matriz que representa $T$ en la base canónica.
+
+b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+
+c) Calcular una base para la imagen de $T$ ¿ Es suprayectiva?
+
+d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+
+e) ¿Existe algún vector $\begin{pmatrix} a\\ b \end{pmatrix} \in \mathbb{R}^2$ tal que la ecuación $T(x,y,z) = \begin{pmatrix} a \\ b \end{pmatrix}$ no tenga solución?
+
+
+\large\textbf{12} Sea $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^3$ la transformación lineal que en la base $v_1=(1,1,1)$, $v_2=(1,1,0)$ y $v_3=(1,0,0)$ tiene como matriz a 
+\[
+\begin{pmatrix} 1 & 2 & 2 \\ 2 & 4 & 4 \\ 0 & 0 & 2 \end{pmatrix}
+\]
+
+a) Calcular la base del kernel de $T$. ¿Es inyectiva?.
+
+b) Calcular una base para la imagen de $T$ ¿ Es suprayectiva?
+
+c) Mostrar que la ecuación $T(x,y,z)=\begin{pmatrix} 2 \\ 4 \\ 0 \end{pmatrix}$ no tiene soluciones
+
+d) ¿Existe algún vector $\begin{pmatrix} a\\ b \\c \end{pmatrix} \in \mathbb{R}^3$ tal que la ecuación $T(x,y,z) = \begin{pmatrix} a \\ b \\c \end{pmatrix}$ no tenga solución?
+
+
+## Valores y vectores propios
+
+\large\textbf{1} Determinar el polinomio característico de 
+\[
+\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2  \\ 0 & 0 & 1 \end{pmatrix},\quad\quad 
+\begin{pmatrix} 1 & 1 & 0 \\ -1 & 1 & 1 \\ 0 & 1 & -1 \end{pmatrix},\quad\quad
+\begin{pmatrix} 1 & -4 & 0 \\ 2 & -2 & -2 \\ -\frac{3}{2} & 1 & -2 \end{pmatrix}
+\]
+
+\large\textbf{2} Encontrar los valores propios y vectores propios de 
+
+\[
+\begin{pmatrix} 1 & -2  \\ -2 & 1  \end{pmatrix},\quad\quad 
+\begin{pmatrix} 3 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 3 \end{pmatrix},\quad\quad
+\begin{pmatrix} 1 & -4 & 0 \\ 2 & -2 & -2 \\ -\frac{3}{2} & 1 & -2 \end{pmatrix}
+\]
+
+
+\[
+\begin{pmatrix} -1 & -1 & 4  \\ 1 & 3 & -2 \\ 1 & 1 & -1  \end{pmatrix},\quad\quad 
+\begin{pmatrix} 1 & -3 & 11 \\ 2 & -6 & 16 \\ 1 & -3 & 7 \end{pmatrix},\quad\quad
+\begin{pmatrix} 2 & -1 & -1 \\ -2 & 1 & 1 \\ 1 & 0 & 1 \end{pmatrix}
+\]
+
+
+\large\textbf{3}  Considere a $K=\mathbb{C}$. Encontrar los valores propios y vectores propios de $R_{\theta}=\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta  \end{pmatrix}$
+
+
+\large\textbf{4} Encontrar los valores propios y vectores propios de
+\[
+\begin{pmatrix} 0 & c & -b  \\ -c & 0 & a \\ b & -a & 0  \end{pmatrix}
+\]
+
+## Diagonalización
+
+@.  Determinar si $\begin{pmatrix} 3 & 2 \\ -2 & -1 \end{pmatrix}$ es diagonalizable.
+
+@. Explicar por que la matriz $\begin{pmatrix} 5 & 2 \\ 2 & 4 \end{pmatrix}$ es diagonalizable.
+
+@. Explicar por que la matriz $\begin{pmatrix} 5 & -2 & 6 \\ 0 & -1 & 9 \\ 0 & 0 & 3 \end{pmatrix}$ es diagonalizable.
+
+@. Sea $A=\begin{pmatrix} 1 & 2 \\ 2 & -2 \end{pmatrix}$
+  
+  a) Explicar por que $\lambda=2$ es un valor propio y encontrar la base del correspondiente espacio propio.
+  
+  b) Si se sabe que $\lambda=2,-3$ son valores propios de la matriz ¿Cuál es su polinomio característico?
+  
+  c) ¿Por que es fácil ver que  $A$ es diagonalizable?
+  
+  d) Verificar que $\begin{pmatrix}- 1  \\ 2  \end{pmatrix}$ es un vector propio del valor propio $\lambda=-3$.
+  
+  e) Encontrar una matriz $P$ tal que $P^{-1}AP=\begin{pmatrix} -3 & 0 \\ 0 & 2 \end{pmatrix}$
+
+@. Sea $A=\begin{pmatrix} 4 & 2 & 2 \\ -5 & -3 & -2 \\ 5 & 5 & 4 \end{pmatrix}$.
+
+a) Calcular el polinomio característico de $A$.
+
+b) Explicar por que $A$ es diagonalizable.
+
+c) Obtener la diagonalización de $A$ y  la base en la cual $[A]_{\mathcal{B'}}$ es igual a 
+$\begin{pmatrix} 4 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 2 \end{pmatrix}$
+
+@. Sea $A=\begin{pmatrix} 4 & 0 & 1 \\ 2 & 3 & 2 \\ 1 & 0 & 4 \end{pmatrix}$.
+
+a) Calcular el polinomio característico de $A$.
+
+b) Determinar los valores propios y vectores propios.
+
+c) Determinar si la matriz es diagonalizable.
+
+@. Determinar si la matriz
+\[
+A=\begin{pmatrix} 1 & 3 & 0 \\ 2 & 2 & 1 \\ -4 & 0 & -2 \end{pmatrix}
+\]
+
+
+
+@. Para las siguientes matrices, calcular su polinomio característico de $A$. Explicar si es diagonalizable, si lo es, encontrar su diagonalización y la base con respecto a la cual $A$ es una matriz diagonal.
+
+\begin{multicols}{2}
+\begin{equation*}
+\begin{array}{cc}
+1) A = &   \begin{pmatrix} 
+              3   & 1   &  1          \\ 
+             -4   & -2  & -5          \\
+              2   & 2   &  5   
+          \end{pmatrix}\\
+2) A = &  \begin{pmatrix} 
+              -1  & 3  & 0        \\ 
+               0  & 2  & 0        \\
+               2  & 1  & -1         
+          \end{pmatrix}
+\end{array}
+\end{equation*} 
+\begin{equation*}
+\begin{array}{cc}
+3) A = &   \begin{pmatrix} 
+              2   & 1   &  1          \\ 
+              0   & 1   &  0          \\
+              1   &-1   &  2   
+          \end{pmatrix}
+\end{array}
+\end{equation*}
+\begin{equation*}
+\begin{array}{cc}
+4) A = &  \begin{pmatrix} 
+               3  &  0 & 6        \\ 
+               0  & -3  & 0        \\
+               5  &  0  & 2         
+          \end{pmatrix}
+\end{array}
+\end{equation*} 
+\end{multicols}
+
+@. Sea $V=\mathbb{R}_2[x]$ el espacio vectorial de polinomios con grado $\leq 2$, sea $T:V\rightarrow V$ la transformación dada por 
+
+\[
+Tp(x) = x^2 \frac{d^2p}{dx^2}+x\frac{dp}{dx}
+\]
+Calcular los valores y vectores propios de $T$.
+
+
+## Formas cuadráticas
+
+\textbf{1} Comprobar que $f(x,y)=A x^{2}+Bxy+c y^{2}= \begin{pmatrix} x&y\end{pmatrix} \begin{pmatrix} A & \frac{1}{2}B \\ \frac{1}{2}B  & C \end{pmatrix}\begin{pmatrix} x \\ y\end{pmatrix}$
+
+\textbf{2} Hallar un cambio de base para que el término $xy$ desaparezca en las siguientes curvas
+
+ a) $5x^{2} + 4xy + 2y^{2} = 6$
+ 
+ b) $x^{2}-8xy -5y^{2} = 16$
+ 
+ c) $x^{2} + xy + y^{2} = 6$
+ 
+ d) $4x^{2} + 10xy + 4y^{2}= 9$

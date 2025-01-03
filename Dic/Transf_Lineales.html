@@ -5,10 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Álgebra lineal." />
+  <meta name="author" content="Álgebra Lineal IA" />
   <meta name="copyright" content="Álgebra lineal, José Rodríguez Villarreal" />
   <meta name="font-size-adjustment" content="-2" />
-  <title>Espacios con producto interno</title>
+  <title>Transformaciones lineales</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -395,388 +395,422 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Espacios con producto interno</h1>
+  <h1 class="title">Transformaciones lineales</h1>
   <p class="author">
-Álgebra lineal.
+Álgebra Lineal IA
   </p>
 </div>
-<div id="espacios-con-producto-interno" class="slide section level1">
-<h1>1 Espacios con producto interno</h1>
-<p>Un <strong>producto interno</strong> en un espacio vectorial real
-<span class="math inline">\(V\)</span> es una función que a cada par de
-vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(V\)</span>, le asigna un número real denotado por
-<span class="math inline">\(\langle \mathbf{u},
-\mathbf{v}\rangle\)</span>. Esta función satisface las siguientes
-propiedades: si <span class="math inline">\(\mathbf{u},
-\mathbf{v}\)</span> y <span class="math inline">\(\mathbf{w}\)</span>
-son vectores y <span class="math inline">\(c\)</span> es un escalar,
-entonces</p>
-<p><span class="math inline">\(a)\)</span> <span class="math inline">\(\langle \mathbf{u}, \mathbf{v}\rangle = \langle
-\mathbf{v}, \mathbf{u}\rangle\)</span>.</p>
-<p><span class="math inline">\(b)\)</span> <span class="math inline">\(\langle \mathbf{u},
-\mathbf{v}+\mathbf{w}\rangle  = \langle \mathbf{u}, \mathbf{v}\rangle +
-\langle \mathbf{u}, \mathbf{w}\rangle\)</span>.</p>
-<p><span class="math inline">\(c)\)</span> <span class="math inline">\(c\langle \mathbf{u}, \mathbf{v}\rangle = \langle
-c\mathbf{u}, \mathbf{v}\rangle\)</span></p>
-<p><span class="math inline">\(d)\)</span> <span class="math inline">\(\langle \mathbf{v}, \mathbf{v}\rangle \geq
-0\)</span>, <span class="math inline">\(\forall\,\, \mathbf{v}\in
-V\)</span>.</p>
-<p><span class="math inline">\(e)\)</span> <span class="math inline">\(\langle \mathbf{v}, \mathbf{v}\rangle = 0\)</span>
-si y sólo si <span class="math inline">\(\mathbf{v}=\mathbf{0}\)</span>.</p>
-<div style="background-color:#FFE9B1">
-<p><strong>Definición</strong> Un espacio vectorial <span class="math inline">\(V\)</span> en el que hay definido un producto
-interno se denomina <strong>espacio con producto interno</strong>.</p>
+<div class="slide section level2">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 </div>
-<h2 id="ejemplo-1">1.1 Ejemplo 1</h2>
-<p>Demuestre que en <span class="math inline">\(\mathbb{R}^n\)</span> el
-producto punto de dos vectores <span class="math inline">\(\mathbf{u}=(u_1,\ldots,u_n)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,\ldots,v_n)\)</span>, <span class="math display">\[
-        \langle \mathbf{u}, \mathbf{v}\rangle = \mathbf{u}\cdot
-\mathbf{v} = u_1v_1 + \cdots + u_nv_n
-\]</span> es un producto interno en <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<h2 id="ejemplo-2">1.2 Ejemplo 2</h2>
-<p>Demuestre que en <span class="math inline">\(\mathbb{R}^2\)</span> la
-función que a los vectores <span class="math inline">\(\mathbf{u}=(u_1,u_2)\)</span> y <span class="math inline">\(\mathbf{v}=(v_1,v_2)\)</span> le asigna el número
-real <span class="math display">\[
-        \langle \mathbf{u}, \mathbf{v}\rangle = u_1v_1 + 2u_2v_2
-\]</span> es un producto interno en <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
-<h2 id="ejemplo-3">1.3 Ejemplo 3</h2>
-<p>Mostrar que en <span class="math inline">\(V=\mathbb{R}_3[x]\)</span>, la siguiente función
-<span class="math inline">\(\langle , \rangle:V\times V \rightarrow
-\mathbb{R}\)</span> <span class="math inline">\(\langle p,
-q\rangle=\int_0^1p(s)q(s)ds\)</span> es un producto interno.</p>
-<h2 id="ejemplo-4">1.4 Ejemplo 4</h2>
-<p>Mostrar que en <span class="math inline">\(V=\mathcal{M}^{n,n}(\mathbb{R})\)</span>, <span class="math inline">\(\langle A,B \rangle = tr(AB^{T})\)</span>. <span class="math display">\[
-  tr(AB^{T}) = \sum_{i=1}^n\sum_{j=1}^na_{ij}b_{ij}
-\]</span></p>
-<h2 id="ejemplo-5">1.5 Ejemplo 5</h2>
-<p>Sea <span class="math inline">\(V=\mathbb{R}^3\)</span>, defina la
-función multivariable <span class="math display">\[
-\langle \mathbf{u}, \mathbf{v}\rangle_3 = u_1v_1 + 3u_1v_2 + 3u_2v_1 +
-4u_2v_2 + u_3v_3
-\]</span> esta función es un producto interno.</p>
-<h2 id="norma-de-un-vector">1.6 Norma de un vector</h2>
-<p>Por medio del producto interno, podemos definir la norma de un
-vector.</p>
-<div style="background-color:#FFE9B1">
-<p><strong>Definición</strong> La norma inducida por el producto interno
-se define como <span class="math display">\[\begin{equation}
-    \|\mathtt{x}\| = \sqrt{\langle \mathtt{x}, \mathtt{x}  \rangle}
-  \end{equation}\]</span></p>
+<div id="transformaciones-lineales" class="title-slide slide section level1">
+<h1>1 Transformaciones lineales</h1>
+
 </div>
-<h3 id="propiedades-de-la-norma">1.6.1 Propiedades de la norma</h3>
+<div id="introducción-a-las-transformaciones-lineales" class="slide section level2">
+<h1>1.1 Introducción a las transformaciones lineales</h1>
+<h3 id="definición">1.1.1 Definición</h3>
+<p>Sean <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> dos espacios vectoriales. Sea <span class="math inline">\(T:V\rightarrow W\)</span> una función que asigna a
+cada vector <span class="math inline">\(v\in V\)</span> un elemento en
+<span class="math inline">\(W\)</span>. <span class="math inline">\(T\)</span> es una transformación lineal si para
+cada <span class="math inline">\(\texttt{u},\texttt{v}\in V\)</span></p>
+<ul>
+<li><p><span class="math inline">\(T(\texttt{u}+\texttt{v})=
+T(\texttt{u}) + T(\texttt{v})\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(\lambda\)</span>, escalar
+<span class="math inline">\(T(\lambda\texttt{u})=\lambda
+T(\texttt{u})\)</span>.</p></li>
+</ul>
+<h3 id="transformaciones-especiales">1.1.2 Transformaciones
+especiales</h3>
+<p>Existen una variedad de transformaciones lineales, por ejemplo, la
+transformación <span class="math inline">\(\textbf{0}\)</span> que
+<em>recibe</em> un vector <span class="math inline">\(\texttt{v}\in
+V\)</span> y lo manda al cero en <span class="math inline">\(\textbf{0}
+\in W\)</span> se le conoce como la transformación
+<strong>cero</strong>.</p>
+<p>La transformación que recibe un vector y lo relaciona consigo mismo
+es la transformación identidad, en este caso <span class="math inline">\(V=W\)</span>.</p>
+<p>La transformación <span class="math inline">\(Mv=-v\)</span> también
+es una transformación lineal de <span class="math inline">\(M:V\rightarrow V\)</span>.</p>
+<h3 id="definición-1">1.1.3 Definición</h3>
+<p>Una transformación lineal <span class="math inline">\(T:V\rightarrow
+V\)</span>, es decir el dominio de <span class="math inline">\(T\)</span> y el codominio de <span class="math inline">\(T\)</span> es <span class="math inline">\(V\)</span> decimos que es un <em>operador</em>
+<em>lineal</em>.</p>
+<h3 id="propiedades-de-una-transformación-lineal">1.1.4 Propiedades de
+una transformación lineal</h3>
+<p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es una
+transformación lineal entonces</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Para todo <span class="math inline">\(\mathtt{x}\in V\)</span>,
-si <span class="math inline">\(\|\mathtt{x}\|= \mathbf{0}
-\Leftrightarrow \mathtt{x}=\mathbf{0}\)</span>.</p></li>
-<li><p>Para todo <span class="math inline">\(c\in \mathbb{R}\)</span> y
-<span class="math inline">\(\mathtt{x}\in V\)</span> <span class="math display">\[
-\|c\cdot \mathtt{x}\| = |c|\|\mathtt{x}\|
-\]</span></p></li>
-<li><p>Para todo <span class="math inline">\(\mathtt{x},\mathtt{y}\in
-V\)</span> se cumple la desigualdad de Cauchy-Schwarz <span class="math display">\[
-|\langle \mathtt{x},\mathtt{y} \rangle|\leq \|\mathtt{x} \|\|\mathtt{y}
-\|
-\]</span></p></li>
-<li><p>Para todo <span class="math inline">\(\mathtt{x},\mathtt{y}\in
-V\)</span> <span class="math display">\[
-\|\mathtt{x}+\mathtt{y}\|\leq \|\mathtt{x}\| + \|\mathtt{y}\|
-\]</span></p></li>
+<li><p><span class="math inline">\(T(\mathbf{0}) =
+\mathbf{0}\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(\texttt{v}\in V\)</span>,
+<span class="math inline">\(T(-\texttt{v})=-T(\texttt{v})\)</span>.</p></li>
+<li><p><span class="math inline">\(T(\texttt{v}-\texttt{w})=T(\texttt{v})-T(\texttt{w})\)</span>.</p></li>
 </ol>
-<h2 id="distancia-entre-vectores">1.7 Distancia entre vectores</h2>
-<p>Definimos la distancia entre vectores <span class="math inline">\(\mathbf{x}\)</span>, <span class="math inline">\(\mathbf{y}\in V\)</span> tal que <span class="math display">\[
-d(\mathbf{x},\mathbf{y})=\|\mathbf{y}-\mathbf{x}\|
+<h3 id="ejemplo">1.1.5 Ejemplo</h3>
+<p>Estudiar si las siguientes aplicaciones de <span class="math inline">\(V=\mathbb{R}^3\)</span> en <span class="math inline">\(\mathbb{R}^4\)</span> son o no son lineales</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(T(x,y,z)=(x+z,2x-3y-z,
+3x-3y,x-3y-2z)\)</span></p></li>
+<li><p><span class="math inline">\(S\begin{pmatrix} x \\ y \\ z
+\end{pmatrix}=\begin{pmatrix} x+z \\ 2x-3y-z \\x-3y\\x-3y-2z+1
+\end{pmatrix}\)</span></p></li>
+</ol>
+<p>Solución de a), notar que <span class="math display">\[
+T(x,y,z) = (x,y,z)
+            \begin{pmatrix}
+                1 &amp; 2 &amp; 3 &amp; 1\\
+                0 &amp;-3 &amp;-3 &amp; -3\\
+                1 &amp; -1&amp; 0 &amp; -2
+             \end{pmatrix}
+\]</span> Es decir lo podemos ver como <span class="math inline">\(Tv =
+v&#39;[T]\)</span> con <span class="math inline">\([T]\)</span> la
+matriz anterior.</p>
+<p>Por las propiedades de la multiplicación de matrices entonces tenemos
+<span class="math inline">\(T(\mathtt{v}+\mathtt{u})=
+(\mathtt{v}+\mathtt{u})&#39;[T] = \mathtt{v}&#39;[T] +u&#39;[T]=
+T(\mathtt{v}) + T(\mathtt{u})\)</span>. Similarmente si <span class="math inline">\(c\)</span> es un escalar, entonces <span class="math inline">\(T(c\cdot \mathtt{v}) = (c\cdot
+\mathtt{v})&#39;[T]=c(v&#39;[T])=cT(v)\)</span>.</p>
+<p>Otra forma de verificar que la función es lineal, es aplicarlo a un
+vector “suma” <span class="math inline">\((x+u,y+v,z+w)\)</span> es
+decir <span class="math display">\[
+\begin{matrix}
+T(x+u,y+v,z+w) &amp; = &amp; ((x+u) +(z+w),2(x+u)-3(y+v)-(z+w),
+3(x+u)-3(y+v),(x+u)-3(y+v)-2(z+w)) \\
+               &amp; = &amp; (x+z + \mathtt{u+w}, 2x-3y-z +
+\mathtt{2u-3v-w} , 3x-3y + \mathtt{3u-3v}, x-3y-2z + \mathtt{u-3v-2w}
+)    \\
+               &amp; = &amp; (x+z, 2x-3y-z, 3x-3y, x-3y-2z) +
+(\mathtt{u+w},\mathtt{2u-3v-w},\mathtt{3u-3v},\mathtt{u-3v-2w}) \\
+               &amp; = &amp; T(x,y,z) + T(\mathtt{u,v,w})
+\end{matrix}
 \]</span></p>
-Derivado de las propiedades de la norma de vectores, la distancia entre
-2 vectores, como función <span class="math inline">\(d:V\times
-V\rightarrow \mathbb{R}\)</span> se cumple que
-<dl>
-<dt>
-a)
-</dt>
-Para todo <span class="math inline">\(\mathbf{x}\in V\)</span> <span class="math inline">\(d(\mathbf{x},\mathbf{x})=0\)</span>.
-<dt>
-b)
-</dt>
-Para todo <span class="math inline">\(\mathbf{x},\mathbf{y}\in
-V\)</span>, <span class="math inline">\(d(\mathbf{x},\mathbf{y})\geq
-0\)</span> y además <span class="math inline">\(d(\mathbf{x},\mathbf{y})=0\)</span> si y sólo si
-<span class="math inline">\(\mathbf{x}=\mathbf{y}\)</span>
-<dt>
-c)
-</dt>
-Para todo <span class="math inline">\(\mathbf{x},\mathbf{y},\mathbf{z}\in V\)</span>
+<p>Solución de b) <span class="math display">\[\begin{equation*}
+\begin{matrix}
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix} &amp; = &amp;
+      \begin{pmatrix} x+u+z+w \\ 2(x+u)-3(y+v)-(z+w)
+\\(x+u)-3(y+v)\\(x+u)-3(y+v)-2(z+w)+1 \end{pmatrix} \\
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix} &amp; = &amp;
+      \begin{pmatrix} x+z + \mathtt{u+w} \\ 2x-3y-z + \mathtt{2u-3v-w}
+\\3x-3y + \mathtt{3u-3v} \\ x-3y-2z + \mathtt{u-3v-2w} +
+1\end{pmatrix}\\
+S\begin{pmatrix} x+u \\ y+v\\ z+w \end{pmatrix}  &amp; = &amp;
+\begin{pmatrix} x+z\\ 2x-3y-z \\ 3x-3y \\ x-3y-2z +1 \end{pmatrix} +
+\begin{pmatrix}\mathtt{u+w} \\ \mathtt{2u-3v-w} \\ \mathtt{3u-3v} \\
+\mathtt{u-3v-2w}\end{pmatrix} \\
+               &amp; = &amp; S \begin{pmatrix} x \\ y \\ z \end{pmatrix}
++ \begin{pmatrix}\mathtt{u+w} \\ \mathtt{2u-3v-w} \\ \mathtt{3u-3v} \\
+\mathtt{u-3v-2w}\end{pmatrix} \\
+\end{matrix}
+\end{equation*}\]</span> El último término no es igual a <span class="math inline">\(S\begin{pmatrix}\mathtt{u} \\ \mathtt{v} \\
+\mathtt{w} \end{pmatrix}\)</span>, por tanto la función no es lineal</p>
+<h3 id="ejemplo-1">1.1.6 Ejemplo</h3>
+<p>Sea <span class="math inline">\(V=\mathbb{R}^{n}\)</span>, sea <span class="math inline">\(A\)</span> una matriz fija <span class="math inline">\(n\times n\)</span>, definamos a <span class="math inline">\(T_A:\mathbb{R}^n\rightarrow \mathbb{R}^m\)</span>
+como</p>
+<p><span class="math display">\[
+T_A\mathbf{x}
+      =\begin{pmatrix}
+      a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n}\\
+      a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n}\\
+      \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+      a_{m1} &amp; a_{n2} &amp; \ldots &amp; a_{mn}
+    \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \ldots \\ x_n
+\end{pmatrix}
+\]</span></p>
+<p>Entonces <span class="math inline">\(T_A\)</span> es una
+transformación lineal.</p>
+<h3 id="núcleo-espacio-nulo-e-imagen">1.1.7 Núcleo (Espacio Nulo) e
+Imagen</h3>
+<h3 id="definición-2">1.1.8 Definición</h3>
+<p>Se <span class="math inline">\(T:V\rightarrow W\)</span> es una
+transformación lineal, entonces el conjunto de vectores en <span class="math inline">\(V\)</span> que <span class="math inline">\(T\)</span> mandan a <span class="math inline">\(\mathbf{0}\)</span> se conoce como
+<strong>núcleo</strong> <strong>de</strong> <span class="math inline">\(T\)</span> (<strong>kernel</strong>
+<strong>o</strong> <strong>espacio</strong> <strong>nulo</strong>). Se
+denota por <span class="math inline">\(N(T)\)</span> o <span class="math inline">\(Ker(T)\)</span>.</p>
+<p>El conjunto de todos los <strong>vectores</strong>
+<strong>en</strong> <strong>W</strong> que son envíados por <span class="math inline">\(T\)</span> desde <span class="math inline">\(V\)</span>, es decir si <span class="math inline">\(w\in W\)</span> es tal que <span class="math inline">\(\texttt{w}=T\texttt{v}\)</span> para algún <span class="math inline">\(\texttt{v}\in V\)</span>. Este subespacio se
+conoce como <span class="math inline">\(Im(T)\)</span> o <span class="math inline">\(R(T)\)</span>.</p>
+</div>
+<div id="teorema" class="slide section level2">
+<h1>1.2 Teorema</h1>
+<p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es una
+transformación lineal entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>El núcleo de <span class="math inline">\(T\)</span> es un
+subespacio de <span class="math inline">\(V\)</span>.</p></li>
+<li><p>La imagen de <span class="math inline">\(T\)</span> es un
+subespacio de <span class="math inline">\(W\)</span>.</p></li>
+</ol>
+<p>A la dimensión de la imagen de <span class="math inline">\(T\)</span>
+se conoce como <strong>rango</strong> <strong>de</strong> <strong><span class="math inline">\(T\)</span></strong>. A la dimensión del núcloe se
+le denomina <strong>nulidad</strong> <strong>de</strong> <strong><span class="math inline">\(T\)</span></strong></p>
+<h3 id="definición-3">1.2.1 Definición</h3>
+<p>La <strong>nulidad</strong> de la transformación lineal es igual a
 <span class="math display">\[
-  d(\mathbf{x},\mathbf{y}) \leq
-d(\mathbf{x},\mathbf{z})+d(\mathbf{z},\mathbf{y})
-  \]</span>
-</dl>
-<h2 id="ángulo-entre-vectores">1.8 Ángulo entre vectores</h2>
-<p><em>Definimos</em> al ángulo entre dos vectores, <span class="math inline">\(\mathbf{x},\mathbf{y}\in V\)</span> como <span class="math display">\[
-\cos\theta = \frac{\langle \mathbf{x},
-\mathbf{y}\rangle}{\|\mathbf{x}\|\|\mathbf{y}\|}
+\mbox{nulidad}(T) = \dim(N(T))
 \]</span></p>
-<h2 id="ortogonalidad">1.9 Ortogonalidad</h2>
-<p>Por tanto, dos vectores formarán un <em>ángulo</em> de <span class="math inline">\(90°\)</span> si <span class="math inline">\(\cos
-\theta=0\)</span> es decir <span class="math inline">\(\theta= \pm
-\frac{\pi}{2}+2\pi k\)</span>, esto ocurre sólo si <span class="math inline">\(\langle \mathbf{x},\mathbf{y}\rangle =
-0\)</span>.</p>
-<div style="background-color:#FFE9B1">
-<p><strong>Ortogonalidad</strong> Sea <span class="math inline">\(V\)</span> un espacio vectorial con producto
-interno, decimos que dos vectores son
-<red><strong>ortogonales</strong></red> si <span class="math display">\[\begin{equation}
-  \langle \mathbf{x}, \mathbf{y} \rangle =0
-  \end{equation}\]</span></p>
-</div>
-<p>Igualmente, un conjunto de vectores <span class="math inline">\(U=\{v_1,v_2,\ldots,v_k\}\)</span> es un conjunto
-de vectores <strong>ortogonales</strong> si toda pareja de vectores
-<span class="math inline">\(\mathbf{v}_i\in U\)</span> y <span class="math inline">\(\mathbf{v}_j\in U\)</span> son ortogonales es
-decir</p>
+<p>El <strong>rango</strong> de una transformación lineal es igual a
+<span class="math display">\[
+\mbox{rango}(T)=\dim(Im(T))
+\]</span></p>
+<h4 id="teorema-1">1.2.1.1 Teorema</h4>
+<p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es una
+transformación lineal desde un espacio vectorial <span class="math inline">\(V\)</span> hacia un espacio vectorial <span class="math inline">\(W\)</span>, con <span class="math inline">\(\dim(V)=n\)</span> entonces <span class="math display">\[
+n = \dim(V) = rango(T) + nulidad(T)
+\]</span></p>
+<p>En particular si <span class="math inline">\(A\)</span> es una matriz
+<span class="math inline">\(m\times n\)</span> entonces la dimensión del
+espacio de soluciones de <span class="math inline">\(A\texttt{x}=\texttt{0}\)</span> es <span class="math display">\[
+n-rango(A)
+\]</span></p>
+<p><em>Demostración</em>: sea <span class="math inline">\(U=N(T)\)</span>, por ser un subespacio de <span class="math inline">\(V\)</span> entonces existe una base de vectores
+<span class="math inline">\(\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k\}\)</span>.
+Por el teorema de extensión de un conjunto de vectores linealmente
+independiente, sabemos que existen <span class="math inline">\(\mathtt{u}_{k+1},\mathtt{u}_{k+2},\ldots,
+\mathtt{u}_n\)</span> tal que se extiende a una base de <span class="math inline">\(V\)</span>, es decir <span class="math inline">\(\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k,\mathtt{u}_{k+1},\ldots
+\mathtt{u}_n\}\)</span> es una <em>base</em> de <span class="math inline">\(V\)</span>.</p>
+<p>Ahora, considere a los vectores <span class="math inline">\(T(\mathtt{u}_{k+1}), T(\mathtt{u}_{k+2}),\ldots,
+T(\mathtt{u}_{n})\)</span>, dicho conjunto es linealmente independiente.
+En efecto, suponga que <span class="math display">\[
+c_1 T(\mathtt{u}_{k+1}) + c_2T(\mathtt{u}_{k+2}) + \ldots +
+c_{n-k}T(\mathtt{u}_{n}) = \mathbf{0}
+\]</span></p>
+<p>Entonces, como <span class="math inline">\(T\)</span> es lineal <span class="math display">\[
+T(c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots +
+c_{n-k}\mathtt{u}_{n}) = \mathbf{0}
+\]</span></p>
+<p>entonces <span class="math display">\[
+\mathtt{v}^{\star} = c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots
++ c_{n-k}\mathtt{u}_{n} \in N(T)
+\]</span> Como <span class="math inline">\(\mathtt{v}^{\star}\in
+N(T)\)</span> y <span class="math inline">\(\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k\)</span>
+es una base de <span class="math inline">\(N(T)\)</span> entonces es
+igual a una combinación lineal de la base, es decir <span class="math display">\[
+\mathtt{v}^{\star} = \sum_{i=1}^k \beta_i \mathtt{u}_i
+\]</span> Por tanto, <span class="math display">\[
+c_1 \mathtt{u}_{k+1} + c_2\mathtt{u}_{k+2} + \ldots +
+c_{n-k}\mathtt{u}_{n} - \sum_{i=1}^k \beta_{i} \mathtt{u}_{i} =
+\mathbf{0}
+\]</span></p>
+<p>como forman una base de <span class="math inline">\(V\)</span>
+entonces deben ser linealmente independiente, es decir</p>
 <p><span class="math display">\[
-\langle v_i, v_j \rangle = \begin{cases}
-                                    0 &amp; i\ne j\\
-                                    \|v_i\|^2 &amp; i=j
-                            \end{cases}
+c_1 = c_2 = c_3 =\ldots = c_{n-k} = \beta_{1} = \ldots \beta_{k} = 0
 \]</span></p>
-<p>Por último, un conjunto de vectores finitos <span class="math inline">\(U=\{v_1,v_2,\ldots, v_k\}\)</span> se dice ser
-<strong>ortonormal</strong> si</p>
-<p><span class="math display">\[\begin{equation}
-\langle v_i , v_i \rangle = \begin{cases}
-                                                0 &amp; \mbox{si }\,
-i\ne j \\
-                                                1 &amp; \mbox{si }\, i =
-j
-                                            \end{cases}
-\end{equation}\]</span></p>
-<h3 id="proposición">1.9.1 Proposición</h3>
-<p>Si <span class="math inline">\(U\)</span> es un conjunto de vectores
-<em>ortogonales</em> entonces es un conjunto de vectores
-<strong>linealmente</strong> <strong>independiente</strong>. Suponga que
-<span class="math inline">\(\sum_i
-\alpha_i\mathbf{v}_i=\mathbf{0}\)</span> entonces tomando el producto
-interno, con <span class="math inline">\(\mathbf{v}_i\)</span> tenemos
-que <span class="math display">\[
-0=\langle \mathbf{0}, \mathbf{v}_i \rangle = \langle
-\sum_{k}\alpha_k\mathbf{v}_k, \mathbf{v}_i\rangle =
-\alpha_i\|\mathbf{v}_i\|^2
-\]</span> Como <span class="math inline">\(\mathbf{v}_i\)</span> es un
-elemento de un conjunto de vectores linealmente independiente entonces
-<span class="math inline">\(\mathbf{v}_i\ne 0\)</span> (¿por que?) y
-esto implica que <span class="math inline">\(\alpha_i=0\)</span></p>
-<h3 id="proposición-1">1.9.2 Proposición</h3>
-<p>Si <span class="math inline">\(U\)</span> es un conjunto de vectores
-generadores de <span class="math inline">\(V\)</span> que son
-ortogonales entonces <span class="math display">\[
-\mathbf{v}=\sum_{i=1}^n \frac{\langle \mathbf{v},\mathbf{v}_i
-\rangle}{\|\mathbf{v}_i\|^2}\mathbf{v}_i
+<p>Esto implica que <span class="math display">\[
+T(\mathtt{u}_{k+1}), T(\mathtt{u}_{k+2}),\ldots, T(\mathtt{u}_{n})
 \]</span></p>
-<p>En efecto, si <span class="math inline">\(U\)</span> es un conjunto
-generador de <span class="math inline">\(V\)</span> y <span class="math inline">\(U\)</span> es un conjunto de vectores ortogonales,
-como <span class="math inline">\(U\)</span> genera a <span class="math inline">\(V\)</span> entonces para todo <span class="math inline">\(v\in V\)</span> y <span class="math inline">\(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_j \in
-U\)</span> <span class="math display">\[
-\mathbf{v}=\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots +
-\alpha_j \mathbf{v}_j
-\]</span> Entonces, si tomamos el producto interno por <span class="math inline">\(\mathbf{v}_j\)</span> <span class="math display">\[
+<p>es un conjunto de vectores linealmente independiente en <span class="math inline">\(W\)</span>.</p>
+<p>Y también genera a <span class="math inline">\(Im(T)\)</span>, si
+<span class="math inline">\(w\in Im(T)\)</span> entonces existe un
+vector <span class="math inline">\(v\in V\)</span> tal que <span class="math inline">\(w=Tv\)</span>, como <span class="math inline">\(\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k,\mathtt{u}_{k+1},\ldots
+\mathtt{u}_n\}\)</span> es una base, entonces <span class="math inline">\(v\)</span> es combinación lineal de los vectores,
+entonces <span class="math display">\[
+w=T(\sum_{i=1}^n c_i\mathtt{u}_i) = \sum_{i=1}^n c_i T(\mathtt{u}_i) =
+\sum_{i=k+1}^n c_iT(\mathtt{u}_i)
+\]</span></p>
+<p>Además, <span class="math inline">\(T\mathtt{u}_{k+1},T\mathtt{u}_{k+2},\ldots,
+T\mathtt{u}_n\)</span> generan a la imagen de <span class="math inline">\(T\)</span>.</p>
+<p>y por tanto <span class="math inline">\(T\mathtt{u}_{k+1},T\mathtt{u}_{k+2},\ldots,
+T\mathtt{u}_n\)</span> es una base de la imagen de <span class="math inline">\(T\)</span>.</p>
+<p><span class="math display">\[rango(T)=n-k = n-
+\dim(N(T))\]</span></p>
+</div>
+<div id="ejemplos" class="slide section level2">
+<h1>1.3 Ejemplos</h1>
+<p>1- Considere a <span class="math inline">\(T(x,y,z,w)=(x+y,y-z,x+w)\)</span>, calcular una
+base para su espacio nulo y su imagen. Calcular la nulidad de <span class="math inline">\(T\)</span> y el rango de <span class="math inline">\(T\)</span>.</p>
+<p>2- Considere a <span class="math inline">\(T(x,y,z)=(x+y,y+z,x+w)\)</span>, calcular una base
+para su espacio nulo y su imagen. Calcular la nulidad de <span class="math inline">\(T\)</span> y el rango de <span class="math inline">\(T\)</span>.</p>
+<p>3-Sea <span class="math inline">\(f(x,y)=\begin{pmatrix} x+y \\ x-y
+\end{pmatrix}\)</span>. Calcular la nulidad y el rango de la
+transformación lineal.</p>
+<p>El <strong>núcleo</strong> de una matriz es igual al núcleo de la
+transformación <span class="math inline">\(T_A\)</span>.</p>
+<p>4- Calcular el núcleo de la matriz <span class="math inline">\(\begin{pmatrix} 1 &amp; -1 \\ 1 &amp; -1
+\end{pmatrix}\)</span>-</p>
+</div>
+<div id="otros-ejemplos-de-transformación-lineal" class="slide section level2">
+<h1>1.4 Otros ejemplos de transformación lineal</h1>
+<ol class="example" style="list-style-type: decimal">
+<li><p>Sea <span class="math inline">\(V=\mathbb{R}_n[x]\)</span> el
+espacio de polinomios de grado <span class="math inline">\(\leq
+n\)</span>. Sea <span class="math inline">\(p(t)=a_nt^n + a_{n-1}t^{n-1}
++ \ldots + a_1 t +a_0\)</span>. Definimos a las transformaciones: <span class="math display">\[
 \begin{matrix}
-\langle \mathbf{v}, \mathbf{v}_j \rangle  &amp; = &amp;
-  \langle \alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots +
-\alpha_j \mathbf{v}_j, \mathbf{v}_j \rangle \\
-\langle \mathbf{v}, \mathbf{v}_j \rangle  &amp; = &amp;
-\sum_{i=1}^{j}\alpha_i \langle \mathbf{v}_i ,\mathbf{v}_j\rangle  \\
-\langle \mathbf{v}, \mathbf{v}_j \rangle  &amp; = &amp; \alpha_j
-\|\mathbf{v}_j\|^2
+D:V\rightarrow V, &amp; \mbox{ para todo t }\quad Dp(t)=a_1 + 2a_2 x +
+3a_3x^2 + \ldots + n a_{n}x^{n-1}.   \\
+I:V\rightarrow V, &amp; \mbox{ para todo t }\quad Ip(t)=a_0 x + a_1 x^2
++ \ldots + a_n \frac{x^{n+1}}{n+1}
 \end{matrix}
-\]</span> Entonces, los escalares de la combinación lineal están dados
-por <span class="math display">\[
-\alpha_j = \frac{\langle
-\mathbf{v},\mathbf{v}_j  \rangle}{\|\mathbf{v}_j\|^2}
-\]</span></p>
-<h3 id="ejemplo-de-bases-ortogonales-y-ortonormales">1.9.3 Ejemplo de
-bases ortogonales y ortonormales</h3>
-<p>Sea <span class="math inline">\(V=\mathbb{R}^{3}\)</span> y</p>
-<p><span class="math display">\[
-\begin{array}{ccc}
-\mathbf{v}_1 =
-               \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}, &amp;
-\mathbf{v}_2 =
-               \begin{pmatrix} 0 \\ 1 \\ 2 \end{pmatrix}, &amp;
-\mathbf{v}_3 =
-               \begin{pmatrix} 5 \\ -2 \\ 1 \end{pmatrix}               
-\end{array}
-\]</span></p>
-<p>Los vectores son ortogonales <span class="math inline">\(\mathbf{v}_1\bullet \mathbf{v}_2 = 1\cdot 0 +
-2\cdot 1 + (-1)\cdot 2=0\)</span>, similarmente, <span class="math inline">\(\mathbf{v}_1\bullet \mathbf{v}_3 = 1\cdot 5 +
-2\cdot(-2) + (-1)\cdot 1=0\)</span> y <span class="math inline">\(\mathbf{v}_2\bullet \mathbf{v}_3 = 0\cdot 5 +
-1\cdot (-2) + 2\cdot 1=0\)</span>.</p>
-<p>La norma de los vectores <span class="math inline">\(\|\mathbf{v}_1\|=\sqrt{1^2 + 2^2 +
-(-1)^2}=\sqrt{6}\)</span>, <span class="math inline">\(\|\mathbf{v}_2\|=\sqrt{0^2 + 1^2 +
-2^2}=\sqrt{5}\)</span> y <span class="math inline">\(\|\mathbf{v}_3\|=\sqrt{5^2 + (-2)^2 +
-1^2}=\sqrt{30}\)</span>.</p>
-<p>Por las propiedades de los conjuntos ortogonales, tenemos a 3
-vectores linealmente independientes, por tanto forman una base de <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<p>Una base ortonormal sería</p>
-<p><span class="math display">\[
-\begin{array}{ccc}
-\hat{\mathbf{v}}_1 =
-               \begin{pmatrix}
-                1/\sqrt{6} \\ 2/\sqrt{6} \\ -1/\sqrt{6} \end{pmatrix},
-&amp;
-\hat{\mathbf{v}}_2 =
-               \begin{pmatrix}
-               0 \\ 1/\sqrt{5} \\ 2/\sqrt{5} \end{pmatrix}, &amp;
-\hat{\mathbf{v}}_3 =
-               \begin{pmatrix}
-               5/\sqrt{30} \\ -2/\sqrt{30} \\ 1/\sqrt{30}
-\end{pmatrix}               
-\end{array}
-\]</span></p>
-<h2 id="proyección-ortogonal-sobre-un-vector">1.10 Proyección ortogonal
-sobre un vector</h2>
-<p>Si <span class="math inline">\(w\)</span> es un vector definimos la
-<em>proyección</em> <em>ortogonal</em> de <span class="math inline">\(\mathbf{v}\)</span> sobre <span class="math inline">\(\mathbf{w}\)</span> como <span class="math display">\[
-P_w\mathbf{v}= \frac{\langle \mathbf{v},
-\mathbf{w}\rangle}{\|\mathbf{w}\|^2}\mathbf{w}
-\]</span></p>
-<div class="float">
-<img src="data:image/png;base64,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6a233vryl79sJ+0LOHjwoJ2xNPrhD3/oLvnEE0/YmXfeeWfha961a9f8nxteZS+O16d2ux19oWffOH8ECGAcRbkwWEgmY3f9dqaaZPrJT35y66232gZo69atF1544bp1666//vqXX37ZX25u7sSJE+6SLpkc9zWPmExVvjhe/ywpLZ/8IkZ2m/sjQADjKOqrX/2q3VksTiY7tjOrJNN1111nn12dXcZfeiULyfTQQw/9Y97jjz/+n//858033/SXWMRdcnEyua95xGSamJhQ+PXSEvZVGb+IkX3j/BEgINRx3Ldv3969e/M8t48PPPCAO/n666/v2bPn7rvv/tWvfnX48GF3MlBDJNPBgwf/by2ujutlIZmef/55f6o3d8nCk0mTbZhs2+QXMbJvnD8CBIQ6jo8++uh3v/td+++0bt26Bx980J08evToli1bNm7ceMcddxw5csSdDNTyZNq5c6edWSWZRjdiMn3lK1+xM1Emk4m70LNvnD8CBAQ8jrZDcq9Z8Oc//9mfmpu7+uqr43gY1de//nW7apZGfj03d8MNN9gZnWQ644wz7JL/+te//Hpu7pOf/KSdiTWZbK4iLvTsG+ePAAFhj+PPf/5z+x910UUXnTx50pbPPffceeed9/bbb7vPBu2WW26xq3b99de75bPPPvvxj3/cXVl3pgwDJdPnP/95u+Qf/vAHt5ycnDzrrLPszM033+zORGZmZsaunc4jBotlV80fAQLCHke7s3CPVP773/9uy+9///t79uxxnwrd4cOHv/3tb2/YsOFb3/rWN7/5ze9973u//e1v7ZoaC4B33nnHX64g9veff/75GzdutG3oOeecY8cf/ehHn3nmGf/plTz99NMWTnaxLVu2bN68+bbbbrvmmmvcV3jFFVf4C/XHtiNB3OM3Go2pqSm/iIt91/wRICD4cdy2bZv9p7r00ks7nY7dS77xxhv+E1E4duzY9PS0eynVN9988+DBg3YFpe7E7auynw/cnvXIkSOvvfaanTlx4oT7bD/Unr20CkvQLMv8Ii4kE6QEP44vv/zymWeeaf+vvvCFL8T9uN4oaT57qZeICz2SCVJiGMetW7fa/6uzzz479EeKp8bu4m23JPjspVXEWuiRTJASwzi+8MILH/zgB3fs2OHXCITUi+P1qdVqBfc194NkgpRIxjGOx+MlxXYeofx6abFu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" style="width:50.0%" alt />
-<div class="figcaption"></div>
-</div>
-<h2 id="proceso-de-ortogonalización-de-gramm-schmidt">1.11 Proceso de
-ortogonalización de Gramm-Schmidt</h2>
-<p>Es fácil ver, como en el ejemplo anterior, que en <span class="math inline">\(\mathbb{R}^n\)</span> existen bases <span class="math inline">\(ortogonales\)</span> y <em>ortonormales</em>. ¿Se
-cumple para un espacio vectorial <span class="math inline">\(V\)</span>
-arbitrario, finitamente generado?</p>
-<p>Se busca obtener la existencia de una base de vectores ortonormales
-de un espacio vectorial. Sabemos que si <span class="math inline">\(V\)</span> es un espacio vectorial finitamente
-generado, entonces existe una base <span class="math inline">\(\mathcal{B}\)</span>. ¿Siempre existe una base de
-vectores <em>ortonormales</em>?</p>
-<p>El proceso de ortogonalización da una respuesta afirmativa y un
-procedimiento para calcular una base ortonormal a partir de una base de
-vectores.</p>
-<p>Sea <span class="math inline">\(\mathcal{B}=\{v_1,v_2,\ldots,v_n\}\)</span> una
-base ordenada de <span class="math inline">\(V\)</span>.</p>
-<p>Definimos a los siguientes vectores <span class="math display">\[
-w_1=v_1,
-\]</span></p>
-<p><span class="math display">\[
-w_2 = v_2 - P_{w_1}w_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle
-w_1,w_1 \rangle}w_1,
-\]</span></p>
-<p><span class="math display">\[
-w_{n-1} = v_{n-1} - \sum^{n-2}_{k=1} P_{w_k}v_{n-1} = v_{n-1} -
-\frac{\langle v_{n-1},w_1 \rangle}{\langle w_1,w_1 \rangle}w_1-
-\frac{\langle v_{n-1},w_2 \rangle}{\langle w_2,w_2 \rangle}w_2 \ldots -
-\frac{\langle v_{n-1},w_{n-2} \rangle}{\langle w_{n-2},w_{n-2}
-\rangle}w_{n-2},
-\]</span></p>
-<p><span class="math display">\[
-w_{n} = v_{n} - \sum^{n-1}_{k=1} P_{w_k}v_{n} = v_{n} - \frac{\langle
-v_{n},w_1 \rangle}{\langle w_1,w_1 \rangle}w_1- \frac{\langle v_{n},w_2
-\rangle}{\langle w_2,w_2 \rangle}w_2 \ldots - \frac{\langle
-v_{n},w_{n-1} \rangle}{\langle w_{n-1},w_{n-1} \rangle}w_{n-1},
-\]</span></p>
-<p>Posteriormente, la base <strong>ortonormal</strong> <span class="math inline">\(\mathcal{O}=\{\mathbf{y}_1,\mathbf{y}_2,\ldots ,
-\mathbf{y}_n\}\)</span> está dada por <span class="math display">\[
-\mathbf{y}_i = \frac{w_i}{\|w_i\|}
-\]</span></p>
-<h2 id="proposición-2">1.12 Proposición</h2>
-<p><em>Los</em> <em>vectores</em> <span class="math inline">\(\mathbf{w}_i\)</span> <em>son ortogonales a los
-vectores</em> <span class="math inline">\(\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-1}\)</span>.</p>
-<p>Por hipótesis de inducción, supondremos que <span class="math inline">\(\mathbf{w}_{i-1}\)</span> es ortogonal a los
-vectores <span class="math inline">\(\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-2}\)</span>,
-entonces por la linealidad del producto interno si <span class="math inline">\(i\ne j\)</span> <span class="math display">\[
-\langle w_i, w_j \rangle = \biggl&lt; \mathbf{v}_{i} - \sum_{k=1}^{n}
-\frac{\langle \mathbf{v}_{i}, \mathbf{w}_{k}
-\rangle}{\|\mathbf{w}_k\|^2}\mathbf{w}_k,\mathbf{w}_j\biggr&gt;= \langle
-\mathbf{v}_i, \mathbf{w}_j \rangle - \sum_{k=1}^n \frac{\langle
-\mathbf{v}_{i}, \mathbf{w}_{k} \rangle}{\|\mathbf{w}_k\|^2}\langle
-\mathbf{w}_k, \mathbf{w}_j \rangle
-\]</span> <span class="math display">\[
-\langle w_i, w_j \rangle = \langle \mathbf{v}_i, \mathbf{w}_j \rangle -
-\frac{\langle \mathbf{v}_{i}, \mathbf{w}_{j}
-\rangle}{\|\mathbf{w}_j\|^2}\langle \mathbf{w}_j, \mathbf{w}_j \rangle=0
-\]</span></p>
-<h2 id="teorema.">1.13 Teorema.</h2>
-<div style="background-color:#9DE2D5">
-<p>Sea <span class="math inline">\(V\)</span> un espacio vectorial de
-dimensión finita. Suponga que <span class="math inline">\(v_1,\ldots,v_m\)</span> es una lista de vectores
-linealmente independientes en <span class="math inline">\(V\)</span>.
-Definimos <span class="math display">\[
-\begin{matrix}
-\mathbf{w}_1=\mathbf{v}_1, &amp;\quad\quad &amp;
-\mathbf{w}_2=\mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{w}_1
-\rangle}{\|\mathbf{w}_1\|^2}\mathbf{w}_1, \\
-\ldots &amp; \quad\quad &amp; \ldots  \\
-\mathbf{w}_m= \mathbf{v}_m - \sum_{k=1}^{m-1}\frac{\langle\mathbf{v}_n,
-\mathbf{w}_k\rangle}{\|\mathbf{w}_k\|^2}\mathbf{w}_{k}
-\end{matrix}
-\]</span> <span class="math display">\[\begin{equation}
-  \mathbf{y}_i=\frac{\mathbf{w}_i}{\|\mathbf{w}_i\|},\mbox{ para todo
-}i=1,\ldots,m
-\end{equation}\]</span></p>
-<p>Entonces <span class="math inline">\(\{\mathbf{u}_1,\mathbf{u}_2,\ldots,
-\mathbf{u}_m\}\)</span> es una lista de vectores ortonormales en <span class="math inline">\(V\)</span>. Y además <span class="math display">\[
-\mathcal{S}(\mathbf{v}_1,\mathbf{v}_2,\ldots, \mathbf{v}_m) =
-\mathcal{S}(\mathbf{y}_1,\mathbf{y}_2,\ldots, \mathbf{y}_m)
-\]</span></p>
-<p>En particular, todo espacio vectorial de dimensión finita con
-producto interno tiene una base de vectores <em>ortonormales</em>.</p>
-</div>
-<h3 id="ejemplo">1.13.1 Ejemplo</h3>
-<ol style="list-style-type: lower-alpha">
-<li><p>Usar el proceso de ortogonalización de Gram-Schmidt para
-determinar una base ortonormal de <span class="math inline">\(\mathbb{R}^3\)</span>, a partir de los siguientes
-vectores <span class="math display">\[
-\begin{Bmatrix}
-  \begin{pmatrix}1\\ 1 \\ 0 \end{pmatrix},
-  \begin{pmatrix}0\\ 1 \\-1 \end{pmatrix},
-  \begin{pmatrix}1\\ 0 \\-1 \end{pmatrix}
-\end{Bmatrix}
 \]</span></p></li>
-<li><p>Usa el proceso de ortogonalización de Gram-Schmidt para
-determinar una base ortogonal a partir de <span class="math display">\[
-\begin{Bmatrix}
-  \begin{pmatrix} 1\\ 2 \\ 3 \end{pmatrix},
-  \begin{pmatrix} 4\\ 5 \\ 0 \end{pmatrix},
-  \begin{pmatrix} 2\\ 3 \\-1 \end{pmatrix}
-\end{Bmatrix}
+<li><p>Sea <span class="math inline">\(V=\mathcal{M}^{n,n}(\mathbb{R})\)</span> el
+espacio vectorial de matrices <span class="math inline">\(2\times
+2\)</span>. Definimos a <span class="math inline">\(T_B:\mathcal{M}^{n,n}(\mathbb{R}) \rightarrow
+\mathcal{M}^{n,n}(\mathbb{R})\)</span> como <span class="math display">\[
+T_M A = M\cdot A,
 \]</span></p></li>
-<li><p>Encuentra una base ortonormal para el subespacio generado por los
-vectores <span class="math display">\[
-\begin{Bmatrix}
-  \begin{pmatrix} 0\\ 2 \\ 1 \end{pmatrix},
-  \begin{pmatrix} 1\\ -2 \\ 1 \end{pmatrix}
-\end{Bmatrix}
+<li><p>Sea <span class="math inline">\(V=\mathcal{M}^{n,m}(\mathbb{R})\)</span> el
+espacio vectorial de matrices <span class="math inline">\(n\times
+m\)</span>, sean <span class="math inline">\(P\in
+\mathcal{M}^{n,n}\)</span> y <span class="math inline">\(Q \in
+\mathcal{M}^{m,m}\)</span> definimos a <span class="math inline">\(T_{Q,P}\)</span> como <span class="math display">\[
+T_{Q,P}(A)= PAQ
 \]</span></p></li>
+<li><p>Encontrar una transformación lineal <span class="math inline">\(T:\mathbb{R}^2\rightarrow \mathbb{R}^3\)</span>
+tal que si <span class="math inline">\(\mathtt{v}_1=(1,2)\)</span> y
+<span class="math inline">\(\mathtt{v}_2=(3,4)\)</span>
+entonces</p></li>
 </ol>
-<p>Solución a) <span class="math display">\[
-\mathbf{w}_1=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}
-\]</span> entonces <span class="math display">\[
-\mathbf{w}_2=\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix} -
-\frac{(0,1,-1)\cdot(1,1,0)}{(1,1,0)\cdot (1,1,0)}\begin{pmatrix} 1\\ 1
-\\ 0\end{pmatrix} =\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix} -
-\frac{1}{2}\begin{pmatrix} 1\\ 1 \\ 0\end{pmatrix} =
-\begin{pmatrix} -1/2\\ 1/2 \\ -1\end{pmatrix}
-\]</span></p>
 <p><span class="math display">\[
-\mathbf{w}_3=
-\begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} -
-\frac{(1,0,-1)\cdot(1,1,0)}{(1,1,0)\cdot (1,1,0)}
-\begin{pmatrix} 1\\ 1 \\ 0\end{pmatrix}  -
-\frac{(1,0,-1)\cdot(-1/2,1/2,-1)}{(-1/2,1/2,-1)\cdot(-1/2,1/2,-1)}
-\begin{pmatrix} -\frac{1}{2}\\ \frac{1}{2} \\ -1\end{pmatrix} =
-\begin{pmatrix} 2/3 \\ -2/3 \\ -2/3\end{pmatrix}
-\]</span> Calculamos la norma <span class="math display">\[
 \begin{matrix}
-  \|w_1\|= &amp; \sqrt{1^2 + 1^2 +0^2}=\sqrt{2} \\
-  \|w_2\|= &amp; \sqrt{(-\frac{1}{2})^2 + (\frac{1}{2})^2+ (-1)^2} =
-\sqrt{\frac{3}{2}}\\
-  \|w_3\|= &amp; \sqrt{(\frac{2}{3})^2 + (-\frac{2}{3})^2+
-(-\frac{2}{3})^2} = \frac{2}{3}\sqrt{2}
+T\mathtt{v}_1=(3,2,1) \\
+T\mathtt{v}_2=(6,5,4)
 \end{matrix}
 \]</span></p>
-<p>La base ortonormal de <span class="math inline">\(V\)</span> esta
-dada por: <span class="math inline">\(\Big\{\frac{w_1}{\|w_1\|},
-\frac{w_2}{\|w_2\|},\frac{w_3}{\|w_3\|} \Big\}\)</span></p>
+<p>Basta con calcular <span class="math inline">\(T(1,0)\)</span> y
+<span class="math inline">\(T(0,1)\)</span>. Pues la fórmula en general
+estaría dada por <span class="math display">\[
+T(x,y) = T(x(1,0)+y(0,1))=x\cdot T(1,0) + y T(0,1)
+\]</span> Por otro lado <span class="math inline">\(\{\mathtt{v}_1,\mathtt{v}_2\}\)</span> es base de
+<span class="math inline">\(\mathbb{R}^2\)</span>. Entonces <span class="math inline">\((1,0)=-2(1,2)+1(3,4)\)</span> y <span class="math inline">\((0,1)=\frac{3}{2}(1,2) +
+(-\frac{1}{2})(3,4)\)</span> entonces <span class="math display">\[
+\begin{matrix}
+T(1,0) =-2T(1,2) + 1T(3,4) =-2(3,2,1) + 1(6,5,4) = (0,1,2) \\
+T(0,1) =\frac{3}{2}T(1,2) + (-\frac{1}{2})T(3,4) = \frac{3}{2}(3,2,1) +
+(-\frac{1}{2})(6,5,4) = (\frac{3}{2},\frac{1}{2},2) \\
+\end{matrix}
+\]</span></p>
+</div>
+<div id="matriz-asociada-a-una-transformación-lineal" class="slide section level2">
+<h1>1.5 Matriz asociada a una transformación lineal</h1>
+<p>Una transformación lineal <span class="math inline">\(T\)</span> de
+<span class="math inline">\(\mathbb{R}^{n}\)</span> a <span class="math inline">\(\mathbb{R}^m\)</span> es una transformación de la
+forma <span class="math display">\[\begin{equation}
+T \texttt{v} = A \cdot \texttt{v}                    
+\end{equation}\]</span></p>
+<p>Sea <span class="math inline">\(\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}\)</span>
+una base de <span class="math inline">\(V\)</span>, entonces <span class="math display">\[
+\begin{array}{cc}
+\texttt{v} =&amp; \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots +
+\alpha_n\texttt{e}_n,\\
+T(\texttt{v}) =&amp;  \alpha_1T(\texttt{e}_1) + \alpha_2T(\texttt{e}_2)+
+\ldots + \alpha_nT(\texttt{e}_n)
+\end{array}
+\]</span> La última combinación lineal se puede expresar como
+multiplicación matricial con <span class="math display">\[
+\begin{array}{cccc}
+T(\texttt{e}_1) =  \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\
+a_{m1}  \end{pmatrix}_{\mathcal{D}}, &amp;
+T(\texttt{e}_2) =  \begin{pmatrix} a_{12} \\ a_{22} \\ \vdots \\
+a_{m2}  \end{pmatrix}_{\mathcal{D}}, &amp;
+  \ldots ,&amp;
+T(\texttt{e}_n) =  \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\
+a_{mn}  \end{pmatrix}_{\mathcal{D}}  &amp;
+\end{array}
+\]</span> con <span class="math inline">\({\mathcal{D}}\)</span> una
+base en <span class="math inline">\(W\)</span> <span class="math display">\[
+A=
+\begin{pmatrix}
+    a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+    a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+     \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\
+     a_{m1}&amp; a_{m2} &amp; \ldots &amp; a_{mn}  
+\end{pmatrix}
+\]</span></p>
+<p>A esta matriz <span class="math inline">\(A=[T]\)</span> se le llama
+la matriz asociada a la transformación en la base <span class="math inline">\(\mathcal{B}\)</span> (en <span class="math inline">\(V\)</span>) y <span class="math inline">\(\mathcal{D}\)</span> en <span class="math inline">\(W\)</span>. Y <span class="math inline">\(T(\texttt{v})=A\texttt{v}\)</span></p>
+<h3 id="ejemplos-1">1.5.1 Ejemplos</h3>
+<h4 id="dilatación.">1.5.1.1 Dilatación.</h4>
+<p>Si <span class="math inline">\(V=\mathbb{R}^3\)</span> <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1 \\ x_2 \\ x_3
+\end{pmatrix}\)</span>, la transformación <span class="math inline">\(T(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1 \\ 2x_2
+\\ 3x_3 \end{pmatrix}\)</span> es una transformación lineal. Para ver
+que es una transformación lineal <span class="math display">\[
+T(\vec{\texttt{x}} +\vec{\texttt{w}} ) =
+\begin{pmatrix} 3(x_1+w_1) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}=
+\begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix} +
+\begin{pmatrix} 3w_1 \\ 2w_2 \\ 3w_3 \end{pmatrix} =
+T(\vec{\texttt{x}}) + T(\vec{\texttt{w}} )
+\]</span> La primer propiedad se cumple. Si <span class="math inline">\(\lambda \in \mathbb{R}\)</span></p>
+<p><span class="math display">\[
+T(\lambda\vec{\texttt{x}}) =
+\begin{pmatrix} 3(\lambda x_1) \\ 2(\lambda x_2) \\ 3(\lambda x_3)
+\end{pmatrix}=
+\begin{pmatrix} \lambda 3x_1 \\ \lambda 2x_2 \\ \lambda 3x_3
+\end{pmatrix} =
+\lambda \begin{pmatrix} 3x_1 \\ 2x_2
+\\ 3x_3 \end{pmatrix} =
+\lambda T(\vec{\texttt{x}})
+\]</span></p>
+<p>Por lo que la transformación es lineal.</p>
+<p>Como se ha comentado, cualquier transformación lineal tiene una
+matriz asociada. En este caso,</p>
+<p><span class="math display">\[
+[T]= \begin{bmatrix} T(\texttt{e}_1)\,\, |\,\, T(\texttt{e}_2) \,\,
+|\,\, T(\texttt{e}_3) \end{bmatrix}
+\]</span></p>
+<p>En este caso <span class="math inline">\(T(\texttt{e}_1)=\begin{pmatrix} 3(1) \\ 2(0) \\
+3(0)\end{pmatrix} = \begin{pmatrix} 3 \\ 0 \\ 0\end{pmatrix}\)</span>.
+<span class="math inline">\(T(\texttt{e}_2)=\begin{pmatrix} 3(0) \\ 2(1)
+\\ 3(0)\end{pmatrix} = \begin{pmatrix} 0 \\ 2 \\
+0\end{pmatrix}\)</span>. <span class="math inline">\(T(\texttt{e}_3)=\begin{pmatrix} 3(0) \\ 2(0) \\
+3(1)\end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\
+3\end{pmatrix}\)</span>.</p>
+<p><span class="math display">\[
+[T]= \begin{bmatrix} 3 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0
+&amp;3   \end{bmatrix}
+\]</span></p>
+<p>En la base canónica, podemos verificar que la matriz asociada a la
+transformación lineal es la anterior, multiplicando la matriz por un
+vector <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1
+\\ x_2\\x_3\end{pmatrix}\)</span></p>
+<p><span class="math display">\[
+[T]\cdot \vec{\texttt{x}} =
+\begin{bmatrix} 3 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0
+&amp;3   \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3\end{bmatrix} =
+\begin{bmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{bmatrix} = T(\vec{\texttt{x}})
+\]</span></p>
+<h4 id="ejemplo-2">1.5.1.2 Ejemplo 2</h4>
+<p>Si una de las entradas incluye a una función real no lineal, entonces
+la transformación no será lineal por ejemplo <span class="math inline">\(S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\
+2x_2 \\ 3x_3 \end{pmatrix}\)</span> Si comparamos <span class="math inline">\(S(\vec{\texttt{x}} +\vec{\texttt{w}})\)</span> con
+<span class="math inline">\(S(\vec{\texttt{x}}) +
+S(\vec{\texttt{w}})\)</span> <span class="math display">\[
+S(\vec{\texttt{x}} +\vec{\texttt{w}}) = \begin{pmatrix} 3(x_1+w_1)^2 \\
+2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
+                                      = \begin{pmatrix}
+3(x_1^{2}+2x_1w_1+w_1^2) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
+                                      = \begin{pmatrix}
+3x_1^{2}+6x_1w_1+3w_1^2 \\ 2x_2+2w_2   \\ 3x_3+3w_3 \end{pmatrix}
+\]</span></p>
+<p>Por otro lado <span class="math display">\[
+S(\vec{\texttt{x}}) +S(\vec{\texttt{w}}) = \begin{pmatrix} 3x_1^2 \\
+2x_2 \\ 3x_3 \end{pmatrix} +
+                                           \begin{pmatrix} 3w_1^2 \\
+2w_2 \\ 3w_3 \end{pmatrix}
+                                      = \begin{pmatrix} 3x_1^{2}+3w_1^2
+\\ 2x_2+ 2w_2 \\ 3x_3+3w_3 \end{pmatrix}
+                                      \ne S(\vec{\texttt{x}}
++\vec{\texttt{w}})
+\]</span> pues <span class="math inline">\(S(\vec{\texttt{x}}
++\vec{\texttt{w}})\)</span> tiene un término extra <span class="math inline">\(6x_1w_1\)</span>.</p>
+<h4 id="reflexión-respecto-al-eje-x.">1.5.1.3 Reflexión respecto al eje
+<span class="math inline">\(x\)</span>.</h4>
+<p>Sea <span class="math inline">\(V=\mathbb{R}^2\)</span> <span class="math inline">\(R_1(x,y) = (x,-y)\)</span>. <span class="math inline">\(R\)</span> es una transformación lineal. Si <span class="math inline">\(\texttt{v}_1 = \begin{pmatrix} x_1\\ y_1
+\end{pmatrix}\)</span> y <span class="math inline">\(\texttt{v}_2 =
+\begin{pmatrix} x_2\\ y_2 \end{pmatrix}\)</span> <span class="math display">\[
+R_1(\texttt{v}_1 + \texttt{v}_2) = (x_1+x_2, -(y_1+y_2)) =
+(x_1+x_2,-y_1-y_2) = (x_1,-y_1)+(x_2,-y_2) = R_1(\texttt{v}_1) +
+R_1(\texttt{v}_2)
+\]</span></p>
+<p>Similarmente <span class="math inline">\(R(\lambda \vec{\texttt{v}})
+= \lambda R(\vec{\texttt{v}})\)</span></p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
