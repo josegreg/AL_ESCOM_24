@@ -1,6 +1,6 @@
 ---
 title: "Transformaciones lineales"
-author: "Álgebra Lineal IA"
+author: "Álgebra Lineal. ESCOM"
 header-includes:
   #-\usepackage[latin1]{inputenc}
   -\usepackage{mathtools}
@@ -32,6 +32,8 @@ Sean $V$ y $W$ dos espacios vectoriales. Sea $T:V\rightarrow W$ una función que
 * $T(\texttt{u}+\texttt{v})= T(\texttt{u}) + T(\texttt{v})$.
 
 * Para todo $\lambda$, escalar $T(\lambda\texttt{u})=\lambda T(\texttt{u})$.
+
+![\textsl{Transformación}](mapeo_1.png){ width=50% }		
 
 ### Transformaciones especiales
 
@@ -67,17 +69,18 @@ b) $S\begin{pmatrix} x \\ y \\ z \end{pmatrix}=\begin{pmatrix} x+z \\ 2x-3y-z \\
 
 Solución de a), notar que 
 \[
-T(x,y,z) = (x,y,z)
+T(x,y,z) = 
             \begin{pmatrix} 
-                1 & 2 & 3 & 1\\
-                0 &-3 &-3 & -3\\
-                1 & -1& 0 & -2
-             \end{pmatrix} 
+                1 & 0 & 1 \\
+                2 &-3 &-1 \\
+                3 &-3 & 0 \\
+                1 &-3 & -2
+             \end{pmatrix} \begin{pmatrix} x \\ y \\ z\end{pmatrix}
 \]
-Es decir lo podemos ver como $Tv = v'[T]$ con $[T]$ la matriz anterior.
+Es decir lo podemos ver como $T\mathtt{v} = A\cdot \mathtt{v}$ con $A$ la matriz anterior.
 
-Por las propiedades de la multiplicación de matrices entonces tenemos $T(\mathtt{v}+\mathtt{u})= (\mathtt{v}+\mathtt{u})'[T] = \mathtt{v}'[T] +u'[T]= T(\mathtt{v}) + T(\mathtt{u})$.
-Similarmente si $c$ es un escalar, entonces $T(c\cdot \mathtt{v}) = (c\cdot \mathtt{v})'[T]=c(v'[T])=cT(v)$.
+Por las propiedades de la multiplicación de matrices entonces tenemos $T(\mathtt{v}+\mathtt{u})= A(\mathtt{v}+\mathtt{u}) = A\mathtt{v} + A\mathtt{u}= T(\mathtt{v}) + T(\mathtt{u})$.
+Similarmente si $c$ es un escalar, entonces $T(c\cdot \mathtt{v}) = A (c\cdot \mathtt{v})=c(A\mathtt{v})=cT(v)$.
 
 Otra forma de verificar que la función es lineal, es aplicarlo a un vector "suma" $(x+u,y+v,z+w)$ es decir 
 \[
@@ -280,14 +283,36 @@ Una transformación lineal $T$ de $\mathbb{R}^{n}$  a $\mathbb{R}^m$ es una tran
  T \texttt{v} = A \cdot \texttt{v}                    
 \end{equation}
 
-Sea $\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}$  una base de $V$, entonces
+Sea $\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}$  una base de $V$ y $\mathcal{D}=\{w_1,w_2,\ldots, w_m\}$ es una base de $\mathbb{R}^{m}$, entonces
 \[
 \begin{array}{cc}
 \texttt{v} =& \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots + \alpha_n\texttt{e}_n,\\
 T(\texttt{v}) =&  \alpha_1T(\texttt{e}_1) + \alpha_2T(\texttt{e}_2)+ \ldots + \alpha_nT(\texttt{e}_n)
 \end{array}
 \]
-La última combinación lineal se puede expresar como multiplicación matricial con
+
+Ahora, como $\mathcal{D}$ es una base de $\mathbb{R}^{m}$ entonces genera a todo el espacio, en particular, todos los vectores $T(\mathtt{e}_i)$ son combinación lineal de $\mathcal{D}$, es decir, existen $a_{ij}$ tal que 
+\[
+T(\mathtt{e}_i)= a_{1i}\mathtt{w}_1 + a_{2i}\mathtt{w}_2 + \ldots + a_{mi}\mathtt{w}_m
+\]
+sustituyendo en $T(\mathtt{v})$ entonces
+\[
+\begin{array}{ccc}
+T(\mathtt{v}) & = & \alpha_1T(\mathtt{e}_1) + \alpha_2 T(\mathtt{e}_2) + \ldots + \alpha_n T(\mathtt{e}_n) \\
+T(\mathtt{v}) & = & \sum_{i=1}^n \alpha_i \sum_{j=1}^m a_{ji}\mathtt{w}_j = \sum_{j=1}^m \big( \sum_{i=1}^n a_{ji}\alpha_i \big) \mathtt{w}_j
+\end{array}
+\]
+
+Dicho de otra forma **las coordenadas de $T(\mathtt{v})$ con respecto a la base $\mathcal{D}$ son iguales a**
+
+\begin{equation}
+\begin{array}{ccc}
+  [T\mathtt{v}]_{\mathcal{D}} & = & (\sum_{k=1}^n a_{jk}\alpha_k)_{\mathcal{D}} \\
+  [T\mathtt{v}]_{\mathcal{D}} & = & (a_{11}\alpha_1+a_{12}\alpha_2 + \ldots + a_{1n}\alpha_n, a_{21}\alpha_1+a_{22}\alpha_2 + \ldots + a_{2n}\alpha_n,\ldots,a_{m1}\alpha_1+a_{m2}\alpha_2 + \ldots + a_{mn}\alpha_n )_{\mathcal{D}}
+\end{array}
+\end{equation}
+
+La última igualdad se puede expresar como una multiplicación matricial con
 \[
 \begin{array}{cccc}
  T(\texttt{e}_1) =  \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1}  \end{pmatrix}_{\mathcal{D}}, &
@@ -296,9 +321,15 @@ La última combinación lineal se puede expresar como multiplicación matricial 
 T(\texttt{e}_n) =  \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn}  \end{pmatrix}_{\mathcal{D}}  &
 \end{array}
 \]
-con ${\mathcal{D}}$ una base en $W$
+ y 
+ 
+\begin{equation}
+T(\mathtt{v}) = [T](\mathtt{v})_{\mathcal{B}}
+\end{equation}
+
+y
 \[
-A= 
+[T]= 
 \begin{pmatrix} 
     a_{11} & a_{12} & \ldots & a_{1n} \\
     a_{21} & a_{22} & \ldots & a_{2n} \\
@@ -307,9 +338,106 @@ A=
 \end{pmatrix}
 \]
 
-A esta matriz $A=[T]$ se le llama la matriz asociada a la transformación en la base $\mathcal{B}$ (en $V$) y $\mathcal{D}$ en $W$. Y $T(\texttt{v})=A\texttt{v}$
+A esta matriz $A=[T]$ se le llama la matriz asociada a la transformación en la base $\mathcal{B}$ (en $V$) y $\mathcal{D}$ en $W$. Y **dejando fijas las bases** 
+\[
+ \Big(T(\texttt{v})\Big)_{\mathcal{D}}=\Big[T\Big]_{\mathcal{B}}^{\mathcal{D}}\Big(\texttt{v}\Big)_{\mathcal{B}}
+\]
+
+
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+Dada una transformación lineal entre dos espacios vectoriales $T:V \rightarrow W$ y una base, $\mathcal{B}$, para $V$ y $\mathcal{D}$ para $W$ *fijas*, podemos asociar una matriz que transforma las coordenadas (c.r.a. $\mathcal{B}$) de $\mathtt{v}\in V$ a las coordenadas (c.r.a $\mathcal{D}$) de $T\mathtt{v}$. Se le llama la matriz **asociada** a la transformación lineal $T$ (con respecto a las bases $\mathcal{B}$ y $\mathcal{D}$).
+  \begin{equation}
+    \Big[T\Big]_{\mathcal{B}}^{\mathcal{D}} = \begin{bmatrix} T(\mathtt{e}_1) | T(\mathtt{e}_2) | \ldots | T(\mathtt{e}_n) \end{bmatrix}
+  \end{equation}
+</div>
 
 ### Ejemplos
+
+#### Ejemplo 1.
+
+Suponga que $A:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ dada por $A(x,y,z) = (x+2y+z,-y,x+7z)$. Sean $\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2, \mathtt{e}_3\}$ la base canónica de $\mathbb{R}^3$ y $\mathcal{B}'=\big\{(1,0,0),(1,1,0), (1,1,1)\big\}$
+
+* Obtener la matriz asociada a $A$,  $\Big[A\Big]_{\mathcal{C}}^{\mathcal{C}}$ con respecto a las bases $\mathcal{C}$ $\mathcal{C}$
+
+* Obtener la matriz asociada a $A$, con respecto a las bases $\mathcal{C}$ y $\mathcal{B}'$.
+
+* Obtener la matriz asociada a $A$, con respecto a las bases $\mathcal{B}'$ y $\mathcal{B}'$.
+
+#### Ejemplo 2
+
+Considere a $T(x,y)=(y,-2x + 3y)$ en $\mathbb{R}^2$, con la base $\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2\}$ y $\mathcal{B}'=\{(1,1),(1,2)\}$.
+
+
+### Transformaciones lineales y Cambios de base
+
+Sea $T$ una transformación lineal, $T:V\rightarrow V$ y suponga que en $V$ en el "dominio" tenemos a la base $\mathcal{B}$ y en el "contradominio" se usa la base $\mathcal{B}'$ entonces sabemos que existe una matriz cambio de base de $\mathcal{B} \rightarrow \mathcal{B}'$, $Q_{\mathcal{B}\rightarrow \mathcal{B}'}$ tal que 
+
+\[
+\big( \mathtt{v}\big)_{\mathcal{B}'} = Q_{\mathcal{B} \rightarrow \mathcal{B}'} \big(\mathtt{v}\big)_{\mathcal{B}}
+\]
+
+Similarmente, tenemos que 
+\[
+\big( T\mathtt{v}\big)_{\mathcal{B}} = Q_{\mathcal{B}' \rightarrow \mathcal{B}} \big(T\mathtt{v}\big)_{\mathcal{B}'} \quad\mbox{ y } \quad 
+\big( T\mathtt{v}\big)_{\mathcal{B}'} = Q_{\mathcal{B} \rightarrow \mathcal{B}'} \big(T\mathtt{v}\big)_{\mathcal{B}} 
+\]
+
+por otro lado $\big(T\mathtt{v}\big)_{\mathcal{B}} = \big[ T \big]_{\mathcal{B}}^{\mathcal{B}}\big(\mathtt{v}\big)_{\mathcal{B}}$ entonces
+
+\[
+\begin{array}{ccc}
+\big( T \mathtt{v}\big)_{\mathcal{B}} & = & Q_{\mathcal{B}'->\mathcal{B}} \big( T \mathtt{v}\big)_{\mathcal{B}'}\\
+\big( T \mathtt{v}\big)_{\mathcal{B}} & = & Q_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}'}^{\mathcal{B}'} \big( \mathtt{v}\big)_{\mathcal{B}'}\\
+\end{array}
+\]
+
+Desarrollando el lado izquierdo
+
+\[
+\begin{array}{ccc}
+\big( T \mathtt{v}\big)_{\mathcal{B}} & = & Q_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}'}^{\mathcal{B}'} \big( \mathtt{v}\big)_{\mathcal{B}'}\\
+\big[T\big]_{\mathcal{B}}^{\mathcal{B}} \big(\mathtt{v}\big)_{\mathcal{B}} & = & Q_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}'}^{\mathcal{B}'} \big( \mathtt{v}\big)_{\mathcal{B}'}\\
+\big[T\big]_{\mathcal{B}}^{\mathcal{B}}  Q_{\mathcal{B}' \rightarrow \mathcal{B}} \big(\mathtt{v}\big)_{\mathcal{B}'} & = & Q_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}'}^{\mathcal{B}'} \big( \mathtt{v}\big)_{\mathcal{B}'}\\
+\end{array}
+\]
+
+Como esto aplica para todo vector $\big( \mathtt{v}\big)_{\mathcal{B}'}$ entonces
+
+\[
+\big[T\big]_{\mathcal{B}}  Q_{\mathcal{B}' \rightarrow \mathcal{B}} =  Q_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}'}
+\]
+
+entonces, despejando a $\big[T\big]_{\mathcal{B}'}$
+
+\[
+\big[T\big]_{\mathcal{B}'} = Q^{-1}_{\mathcal{B}'->\mathcal{B}} \big[T\big]_{\mathcal{B}}  Q_{\mathcal{B}' \rightarrow \mathcal{B}} 
+\]
+
+
+### Teorema
+
+Si $T:V\rightarrow V$, sea $\big[ T \big]_{\mathcal{B}}= \big[ T \big]_{\mathcal{B}}^{\mathcal{B}}$ la matriz asociada a $T$ con respecto a la base $\mathcal{B}$ y $\big[ T \big]_{\mathcal{B}'}= \big[ T \big]_{\mathcal{B}'}^{\mathcal{B}'}$ entonces existe $Q$ invertible tal que 
+
+\begin{equation}
+  \big[T\big]_{\mathcal{B}'} = Q^{-1} \big[T\big]_{\mathcal{B}} Q
+\end{equation}
+ y además $Q=Q_{\mathcal{B}'\rightarrow \mathcal{B}}$.
+ 
+
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+Dos matrices $A,B\in \mathcal{M}^{n,n}$ se dice que son **similares** si existe una matriz invertible $P$ tal que
+  \begin{equation}
+    B = P^{-1}A P
+  \end{equation}
+</div>
+
+Entonces, si dos matrices representan a la misma transformación lineal entonces son similares.
+
+
 
 #### Dilatación. 
 
@@ -357,6 +485,7 @@ En la base canónica, podemos verificar que la matriz asociada a la transformaci
 \]
 
 #### Ejemplo 2
+
 Si una de las entradas incluye a una función real no lineal, entonces la transformación no será lineal por ejemplo
 $S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\ 2x_2 \\ 3x_3 \end{pmatrix}$
 Si comparamos $S(\vec{\texttt{x}} +\vec{\texttt{w}})$ con $S(\vec{\texttt{x}}) + S(\vec{\texttt{w}})$
@@ -383,3 +512,71 @@ R_1(\texttt{v}_1 + \texttt{v}_2) = (x_1+x_2, -(y_1+y_2)) = (x_1+x_2,-y_1-y_2) = 
 \]
 
 Similarmente $R(\lambda \vec{\texttt{v}}) = \lambda R(\vec{\texttt{v}})$
+
+
+# Diagonalización
+
+En esta sección trabajaremos con transformaciones lineales $T:V\rightarrow V$. Buscamos si podemos determinar una **base** $\mathcal{B}'$ de $V$ tal que $[T]_{\mathcal{B}'}$ sea una matriz diagonal. Digamos
+
+\begin{equation}
+\begin{bmatrix} 
+     \alpha_1 & 0        & \ldots & 0 \\ 
+      0       & \alpha_2 & \ldots & 0 \\ 
+      0       &     0    & \ldots & \alpha_n  
+\end{bmatrix}
+\end{equation}
+
+Esto implica que con respecto a esa base $\mathcal{B}'$, $(T\mathtt{v}_1)_{\mathcal{B}'}=\begin{pmatrix} \lambda_1 \\ 0 \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$, $(T\mathtt{v}_2)_{\mathcal{B}'} = \begin{pmatrix} 0 \\ \lambda_2 \\ \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$ ... $T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \vdots \\ \lambda_n \end{pmatrix}_{\mathcal{B}'}$ 
+
+Como estamos en las coordenadas con respecto a $\mathcal{B}'$ esto significa que 
+\begin{equation*}
+\begin{array}{cccc}
+ T\mathtt{v}_1 = \lambda_1 \mathtt{v}_1 & T\mathtt{v}_2 = \lambda_2 \mathtt{v}_2 & \ldots &T\mathtt{v}_n = \lambda_n \mathtt{v}_n
+\end{array}
+\end{equation*}
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+Dada una transformación lineal  $T:V \rightarrow V$ decimos que $\lambda$ es un **valor propio** de $T$ si 
+  \begin{equation}
+    T\mathtt{v} = \lambda \mathtt{v}
+  \end{equation}
+Al vector $\mathtt{v}$ que cumple con la igualdad anterior decimos que es un **vector propio** de $T$.
+</div>
+
+
+Suponga que $A=[T]_{\mathcal{C}}$ en la base canónica, entonces buscamos a una base $\mathcal{B}'$ tal que $[T]_{\mathcal{B}'}$ sea una matriz diagonal. 
+
+## Espectro de $T$
+
+Al conjunto de valores propios distintos de una transformación lineal, $\sigma(T)$, lo llamamos **el espectro de $A$**.
+
+Tenemos la siguiente equivalencia.
+
+* El escalar $\lambda$ es un valor propio de $T$ si y sólo si $[A-\lambda I| \vec{\mathbf{0}}]$ tiene soluciones no triviales.
+
+* El escalar $\lambda$ es un valor propio de $T$ si y sólo si $\big(A-\lambda I\big) \mathtt{x}=\mathbf{0}$ tiene más de una solución $\leftrightarrow \det(A-\lambda I)=0$
+
+* $\lambda$ es un valor propio de $T$ si y sólo si $Ker(T-\lambda I)\ne \{\mathbf{0}\}$
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+Si $T$ es una transformación y $A$ su matriz en la base canónica, suponga que $\lambda$ es un valor propio de $A$, entonces a $Ker\big(T-\lambda I\big)$ se le llama **un espacio propio de A**
+</div>
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+Si $T$ es una transformación y $A$ su matriz en la base canónica, suponga que $\lambda$ es un valor propio de $A$, entonces a $\dim(Ker\big(T-\lambda I\big))$ se le llama  la _multiplicidad_ _geométrica_ de $T$.
+</div>
+
+Un término crucial para el cálculo de valores propios es el **polinomio** **característico**, $p(\lambda)=\det(A-\lambda I)$. Y como mencionamos anteriormente, $\lambda$ es un valor propio de $T$ (o de $A$) si y sólo si $p(t)=\det(A-t I)=0$ se anula cuando $t=\lambda$.
+
+### Ejemplo 
+
+Sea $\begin{pmatrix} 7 & -4 \\ 5 & -2 \end{pmatrix}$ y $T_A\mathtt{v}=A\mathtt{v}$. Calcular los vectores propios de $A$. Buscamos los valores de $\lambda$ tal que $\det(A-\lambda I)=0$.
+Entonces calculamos el **polinomio** **característico** de $A$. 
+\[
+p_A(\lambda)=\begin{vmatrix} 7 -\lambda & -4 \\ 5 & -2-\lambda  \end{vmatrix} = (7-\lambda)(-2-\lambda) -(-4)(5) = (\lambda +7)(\lambda+2) + 20 = \lambda^2-5\lambda +6
+\]
+
+Para buscar los valores propios de $A$ o equivalentemente de $T_A$ buscamos las raíces de $p_A(\lambda)$, factorizando al polinomio, tenemos que $p_A(\lambda)=(\lambda-3)(\lambda-2)$

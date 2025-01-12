@@ -1,0 +1,104 @@
+---
+title: "Examen 1B 2BV2"
+header-includes:
+   - \usepackage{amsmath}
+   - \usepackage{multicol}
+geometry: "left=1cm,right=3cm,top=0.5cm,bottom=0.5cm"   
+output: pdf_document
+---
+Resolver explicando tu respuesta e incluyendo todos los cálculos. 
+
+1- (2 pts) 
+  a) Define que es la inversa de una matriz cuadrada y aplica el método de Gauss-Jordan para calcular $A^{-1}$
+\begin{equation*}
+\begin{array}{cc}
+A= & 
+  \begin{bmatrix} 
+    1  & 2 & 2 \\
+    3  &-1 & 0  \\
+   -1  & 1 & 6  
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+  
+  b) (0.75 pts) Usando el resultado en b). Resolver el siguiente sistema como función de $\alpha,\beta$. 
+  \begin{equation*}
+  \begin{array}{ccccccc}
+  2x  & + & 4y& +&4z  & = & \alpha  \\
+  6x  & - & 2y&   &   & = & \beta  \\
+   x  & - & y & -&6z  & = & -\alpha\beta  
+  \end{array}
+  \end{equation*}
+  
+2- Se dan los vértices de un paralelogramo $ABCD$ conn $A=(1,0,-2)$, $C=(0,1,3)$ y $D=(2,-1,1)$.
+ 
+  i) (0.25 pts) calcular las coordenadas de $B=(x_0,y_0,z_0)$  considerando que $\overrightarrow{AD}$ es paralelo a $\overrightarrow{BC}$. Calcular los ángulos internos del vértice $A$. 
+
+ ii) (1.5 pts) Calcular la ecuación del plano que contiene al paralelogramo $ABCD$.
+ 
+ iii) (1 pts) Encontrar el conjunto intersección del plano en iii) y el plano $x+y+z=1$
+
+3.- a) (2 pts) Resolver por Gauss-Jordan y obtener la forma escalonada _reducida_ de la matriz $A$
+\begin{equation*}
+  \begin{array}{cccccccc}
+     2 x_1 & -  & x_2   & + & 2x_3 & + & x_4  & = 0  \\
+       x_1 & +  & x_2   & + &  x_3 & - & x_4  & = 0\\
+     2 x_1 &    &       & + &4x_3  & - & x_3  & = 0
+  \end{array}
+\end{equation*}
+
+b) (1 pts) Encontrar el conjunto solución (o solución general) de forma paramétrica.
+
+4.- Para el siguiente sistema de ecuaciones lineales 
+\begin{equation*}
+  \begin{array}{cccccc}
+       x_1 & +  & x_2           & + &  \lambda x_3 & = 2  \\
+       x_1 & +  & \lambda x_2   & + &  x_3         & = -1  \\
+       x_1 & +  &   x_2         &  + &  x_3               & = -1
+  \end{array}
+\end{equation*}
+
+a) (2 pts) Usando la regla de Cramer, resolver el sistema para $\lambda = 2$
+
+b) (0.5 pts) Encontrar los valores para los cuales el sistema no tiene solución, tiene una única solución y tiene una infinidad de soluciones. 
+
+5.- a) (2 pts) Obtener la factorización $LU$ de la siguiente matriz
+\begin{equation*}
+\begin{array}{cc}
+A= & 
+  \begin{bmatrix} 
+     3 & -1    \\
+    -1 & 2   
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+
+b) (0.75 pts) Usando la factorización en $A$ resolver los sistemas
+\begin{multicols}{3}
+\begin{equation*}
+  \begin{array}{ccccc}
+   3x  & -& y  & = & 1  \\
+   -x  & +& 2y & = & 0  
+  \end{array}
+  \end{equation*}
+  \begin{equation*}
+  \begin{array}{ccccc}
+   3x  & -& y  & = & 0  \\
+   -x  & +& 2y & = & 1  
+  \end{array}
+  \end{equation*}
+  \end{multicols}
+c) (0.5 pts) Con lo hecho en b), obtener (sin cálculos adiciones)  la inversa de $A$.
+
+6- Aplicando las propiedades del determinante  
+\begin{equation*}
+\begin{array}{cc}
+A =& \begin{pmatrix} 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & -3 \\ 2 & 2 & -2 & -2 \\ 3 & -1 & -1 & -1 \end{pmatrix}
+\end{array}
+\end{equation*}
+
+* Calcular $\det(A)$ (2pts) 
+
+* Calcular $\det(AA^{T})$ (1.25 pts),
+
+* Calcular $\det(A-\frac{\lambda}{2}A)$ (1 pts)

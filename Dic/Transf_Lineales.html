@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Álgebra Lineal IA" />
+  <meta name="author" content="Álgebra Lineal. ESCOM" />
   <meta name="copyright" content="Álgebra lineal, José Rodríguez Villarreal" />
   <meta name="font-size-adjustment" content="-2" />
   <title>Transformaciones lineales</title>
@@ -397,10 +397,10 @@ list-style-type: none;
 <div class="slide titlepage">
   <h1 class="title">Transformaciones lineales</h1>
   <p class="author">
-Álgebra Lineal IA
+Álgebra Lineal. ESCOM
   </p>
 </div>
-<div class="slide section level2">
+<div class="slide section level1">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -408,12 +408,10 @@ MathJax.Hub.Config({
 });
 </script>
 </div>
-<div id="transformaciones-lineales" class="title-slide slide section level1">
+<div id="transformaciones-lineales" class="slide section level1">
 <h1>1 Transformaciones lineales</h1>
-
-</div>
-<div id="introducción-a-las-transformaciones-lineales" class="slide section level2">
-<h1>1.1 Introducción a las transformaciones lineales</h1>
+<h2 id="introducción-a-las-transformaciones-lineales">1.1 Introducción a
+las transformaciones lineales</h2>
 <h3 id="definición">1.1.1 Definición</h3>
 <p>Sean <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> dos espacios vectoriales. Sea <span class="math inline">\(T:V\rightarrow W\)</span> una función que asigna a
 cada vector <span class="math inline">\(v\in V\)</span> un elemento en
@@ -426,6 +424,10 @@ T(\texttt{u}) + T(\texttt{v})\)</span>.</p></li>
 <span class="math inline">\(T(\lambda\texttt{u})=\lambda
 T(\texttt{u})\)</span>.</p></li>
 </ul>
+<div class="float">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsgAAAFcCAIAAABa1t/pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACc8SURBVHhe7d0JfFTVvcDxBIVEZImfUlAQg9j3EIziWjceWMUHFlo+aLAVFAUU9SFQW6OIRQkIBBesYakCjQqYFgxQCC1EoaAsEQKCQpA17EZASCAhhGzzDtxDjEOWycyZM/ee+/t++NA5504Q0Ob++J9hEuYBAABQhLAAAADKEBYAAEAZwgIAAChDWAAAAGUICwAAoAxhAQAAlCEsAACAMoQFAABQhrAAAADKEBYAAEAZwgIAAChDWAAAAGUICwAAoAxhAQAAlCEsAACAMoQFAABQhrAAAADKEBYAAEAZwgIAAChDWAAAAGUICwAAoAxhAQAAlCEsAACAMoQFAMBYRSVF87bO6zKzS/jI8LCRYXdOv1NeQNAQFgAAA+3J2TN86fDL37pc9ESLt1u8tvy1W96/hbDQgLAAAJij4oiiTnyd7sndF25bWFxaLC7dP+N+wkIDwgIAYIILRxT7c/fLa+cQFnoQFgAAB6tmROGFsNCDsAAAOFKNIwovhIUehAUAwEl8H1F4ISz0ICwAAM5Q2xGFF8JCD8ICAGBrfo8ovBAWehAWAACbCnBE4YWw0IOwAADYi6oRhRfCQg/CAgBgF2pHFF4ICz0ICwBAiAVpROGFsNCDsAAAhExQRxReCAs9CAsAgG56RhReCAs9CAsAgD46RxReCAs9CAsAQNCFZEThhbDQg7AAAARRCEcUXggLPQgLAIB6dhhReCEs9CAsAAAq2WdE4YWw0IOwAAAoYMMRhRfCQg/CAgAQENuOKLwQFnoQFgAAf9h/ROGFsNCDsAAA1I5TRhReCAs9CAsAgE8cN6LwQljoQVgAAGrg0BGFF8JCD8ICAAKycOHCdu3ajRo1qkWLFlFRUdOmTVu/fv1dd93VoEGDe++999SpU/J5DuT0EYUXwkIPwgIAAjJy5MjIyMiZM2cWFxdPmjRJtEWvXr2ys7OPHTsmUmP27NnyeY5ixojCC2GhB2EBANWJj4/v1KnTHXfcIb63dOzYceDAgfv3yxvtb3/72yFDhliPV65cKSJDJIW1FB/18ccfW48dwbARhRfCQg/CAgCq0717d/H9Qw89VFZWZu0UFRUNGDBg8ODB+fn5YtmyZculS5dalyZNmtS5c2frsXh+o0aNNm7caC1tzsgRhRfCQg/CAgCqlJWVNXTo0Ly8vP79+8stj+fgwYOjR4+eMWPG4sWLjx49GhYWdvz4ceuSCI5hw4ZZj3fu3BkRESEqxFrak9kjCi+EhR6EBQBU6f3331+0aFFqampycrLc8nimTZu2Zs2apKQksZ+WltaqVSt5weO56aabPvnkE+vx7Nmzb731VuuxDblhROGFsNCDsACAKvXu3TsvL+/5558vf9mE0K9fv+Li4gcffPDQoUMJCQnigbVfVFRUr169rKwsazls2LCBAwdaj+3DVSMKL4SFHoQFAFSutLS0Z8+e4kHFcxCRFGIzLi5uzJgxcsshXDii8EJY6EFYAEDlMjIyRo8efeDAgebNm5f/fZCYmJj77rtv7ty58km25+YRhRfCQg/CAgAqN27cuLVr1yYlJS1btkwsu3XrduLEiaFDh27evNl6gs0xovBCWOhBWABA5WJjY0tKSvr163f69GmxTElJSUxMPHDgwOOPP249wZ4YUVSFsNCDsACAShQUFPTp06esrOzhhx+2dkpLSzt37ixS4+mnn96xY4e1aSuMKKpHWOhBWABAJdLS0t57772NGzfGx8fLLY8nMTFxzpw5u3bteuqpp+SWDTCi8BFhoQdhAQCViIuLu/HGG9u2bbty5Uq55fHk5+e3a9euU6dOUVFRe/fulbuhw4iiVggLPQgLAHAYRhT+ISz0ICwAwDEYUQSCsNCDsAAAu2NEoQRhoQdhAQD2xYhCIcJCD8ICAGyHEUUwEBZ6EBYAYCOMKIKHsNCDsACA0GNEoQFhoQdhAQChxIhCG8JCD8ICAEKAEYV+hIUehAUAaMWIIlQICz0ICwDQgRFFyBEWehAWABBcjChsgrDQg7AAgKBgRGE3hIUehAUAKMaIwp4ICz0ICwBQgxGFzREWehAWABAoRhSOQFjoQVgAgJ8YUTgLYaEHYQEAtcaIwokICz0ICwDwFSMKRyMs9CAsAKBmjCgMQFjoQVgAQJUYUZiEsNCDsACASjCiMA9hoQdhAQA/YkRhMMJCD8ICAM5iRGE8wkIPwgKAqzGicA/CQg/CAoBLMaJwG8JCD8ICgLswonAtwkIPwgKAWzCicDnCQg/CAoDhGFHAQljoQVgAMBYjClREWOhBWAAwDSMKVIqw0IOwAGAORhSoBmGhB2EBwPEYUcAXhIUehAUAB2NEAd8RFnoQFgCchxEF/EBY6EFYAHASRhTwG2GhB2EBwAEYUSBwhIUehAUAW2NEAVUICz0ICzhefmHxlOW7fjtp1aGcArkFU7yx6g1GFFCFsNCDsICDWUlxY3xa9EuLxLfl2w7LCzBF7JzYFm+3YEQBJQgLPQgLOFLFpHg8aW3SqizCwkgiLNpNbicXQGAICz0ICziMV1J8te+42Nyw7zhhYSTCAgoRFnoQFnCMSpPCQliYirCAQoSFHoQFHKCapLAQFqYiLKAQYaEHYQFbqzEpLISFqQgLKERY6EFYwKZ8TAoLYWEqwgIKERZ6EBawnVolhYWwMBVhAYUICz0IC9iIH0lhISxMRVhAIcJCD8ICtuB3UlgIC1MRFlCIsNCDsECIBZgUFsLCVIQFFCIs9CAsEDJKksJCWJiKsIBChIUehAVCQGFSWAgLUxEWUIiw0IOwgFbKk8JCWJiKsIBChIUehAU0CVJSWAgLUxEWUIiw0IOwQNAFNSkshIWpCAsoRFjoQVggiDQkhYWwMBVhAYUICz0ICwSFtqSwEBamIiygEGGhB2EBxTQnhYWwMBVhAYUICz0ICygTkqSwEBamIiygEGGhB2EBBUKYFBbCwlSEBRQiLPQgLOxo3rx5N9xww5gxY6Kjoxs2bPjyyy/LC/YT8qSwEBamIiygEGGhB2FhRyNGjIiMjPzggw+KiopWr14dFhaWk5Mjr9mGTZLCQliYirCAQoSFHoRFCMTHx3fq1OmOO+4Q31s6duw4cODA/fv3W0/o3r37oEGDrMe5ubl2CwtbJYWFsDAVYQGFCAs9CIsQEN0gvn/ooYfKysqsnaKiogEDBgwePDg/P18sW7Ro8dlnn1mXVqxYIZbW45CzYVJYCAtTERZQiLDQg7DQLSsra+jQoXl5ef3795dbHs/BgwdHjx49Y8aMxYsXHzlyJCws7NixY9ald955xwqR0LJtUlgIC1MRFlCIsNCDsNDt/fffX7RoUWpqanJystzyeKZNm7ZmzZqkpCSxn5aW1qpVK3nB43nsscdeffVVuQgFmyeFhbAwFWEBhQgLPQgL3Xr37p2Xl/f888+XzySEfv36FRcXP/jgg4cOHUpISBAP5AWPJyYmZv78+XKhlyOSwkJYmIqwgEKEhR6EhValpaU9e/YUDyqeg4ikEJtxcXFjxoyRW6HmoKSwEBamIiygEGGhB2GhVUZGxujRow8cONC8efPyvw8SExNz3333zZ07Vz4ppByXFBbCwlSEBRQiLPQgLLQaN27c2rVrk5KSli1bJpbdunU7ceLE0KFDN2/ebD0hhByaFBbCwlSEBRQiLPQgLLSKjY0tKSnp16/f6dOnxTIlJSUxMfHAgQOPP/649YSQcHRSWAgLUxEWUIiw0IOw0KegoKBPnz5lZWUPP/ywtVNaWtq5c2eRGk8//fSOHTusTZ0MSAoLYWEqwgIKERZ6EBb6pKWlvffeexs3boyPj5dbHk9iYuKcOXN27dr11FNPyS0tjEkKC2FhKsICChEWehAW+sTFxd14441t27ZduXKl3BI3+Pz8du3aderUKSoqau/evXI3mAxLCgthYSrCAgoRFnoQFi5iZFJYCAtTERZQiLDQg7BwBYOTwkJYmIqwgEKEhR6EheGMTwoLYWEqwgIKERZ6EBbGcklSWAgLUxEWwXa6+HRxabFcmI6w0IOwMJCrksJCWJiKsAiq1G2pV7x1xcjlI+XadISFHoSFUVyYFBbCwlSERZBkHc+676P7Loq/qO6ouvty98ld0xEWehAWhnBtUlgIC1MRFsqdLj7952V/vuT1S0RViO/jV/z4tjrGIyz0ICwcz+VJYSEsTEVYqLVo+6LL37q8/uv1w0aGiW/N325eWFwor7kAYaEHYeFgJEU5wsJUhIVCZ0rOhI8Mt5JCfKs/pv7inYvlNXcgLPQgLByJpPBCWJiKsFBr8rrJVlVcPOri/535v3LXNQgLPQgLhyEpKkVYmIqwUOhk4UmrKi55/RLxbW+Ojq8hYCuEhR6EhWOQFNUgLExFWKhSXhX5Z/JTMlNmb54tL7gJYaEHYeEAJEWNCAtTERZKVKwKueVKhIUehIWtkRQ+IixM5XdYJCYmhoWFHTp0SK49nk2bNomd66+/Xq7PGTly5EUXXeT3Fxb+9ttvxY9ZlV//+tfW05577rnu3btbj2NjY6Ojo63HFe3cubNu3brPPPPMhAkTxE+ytLRUXggYVVGOsNCDsLApkqJWCAtT+R0WM2bMELf2rVu3yrXH069fP7Fz1VVXybXHU1RUdMUVVzz44INyXXs5OTnp502cOFH8+GPGjJHr9PQ9e/aI5+zatUsUQ0ZGhvUhImXCw8Pz8vKsZTkRHA0bNjx8+HBBQUGzZs2SkpLkhcBQFRURFnoQFrZDUviBsDCV32GxYMECcZv/8ssvreXRo0cjIyM7duzYuHFja0f4+9//Lp7z+eefy3VgrBlJZmamXJ/33HPP3XrrrXLh8aSkpIinrVu3Tq7PERUiNseNG2ct4+Li2rVTcABEVXghLPQgLGyEpPAbYWEqv8NixYoV4lb96aefWssxY8Y0adJElESdOnXKysqszbvuuqt9+/bW48D1799ftEtJSYlcn1NYWBgVFTVhwgS5Pn968uGHH8r1OR06dIiOjj59+rS13LBhg3jO6tWrraV/qIoLERZ6EBa2QFIEiLAwld9hYb2iIiUlRTwuLi6+8sorX3nllWXLlonNkydPik3r5u114iCaQzy5Kl7R4OWWW26pOJmwWH1Tfg4iiB8kIiIiLi5Orj2e+fPni+ckJyfLtcdTWlraqFGjESNGyHXtURWVIiz0ICxCjKRQgrAwld9hsWfPnvJumD17dt26dQ8dOiRu8GLz4MGDYvOJJ574+c9/Xj4ksCxfvlw8oSqdOnWSz7uAyIXIyMgBAwbI9XkJCQnh4eFnzpyR63Pat2/frVs367HolTZt2tx+++3lcxRLhw4d7r//frmoJaqiKoSFHoRFyJAUChEWpvI7LI4fPy5S4C9/+Yt4fPfdd/fu3Vs82L59u9jMzMy0XnLxyiuvnHvuj06ePCnioyrbtm2Tz7vAli1bxI88ceJEuT5vyJAhFV/VYRE/mauvvtp6PGXKFPGBF5569OzZ87rrrpOL2qAqqkFY6EFYhABJoRxhYSq/w6K0tDQ8PHzUqFHWkYf1Ysns7GzxOD09fezYsdYMw3pyOb+PQmbNmiV+5C+++EKuzxs4cGDTpk3l4jzxTxc/t1OnTuXl5TVr1qxXr17yQgUiPlq3bi0XPqMqqkdY6EFYaEVSBAlhYSq/w0Jo2LDhCy+80Ldv3zvvlPcScS8Xt/9//etfLVu2fOSRR6zNivw+ComLixNPOHHihFyf9/LLL4uCkYvzFi5cKJ68fv36ESNGREREZGVlyQsVdO3a9Ze//KVc+IaqqBFhoQdhoQlJEVQhDItzd5zKVfo+SKiVQMLiyiuv7NGjh7hzz57949tXX3zxxQ8//LD4t5Oeni63KvD7KOT+++8vP92o6KOPPhL/rAMHDsj1Obt37xab48ePv/TSSyu+irOiNm3aPPbYY3LhA6rCF4SFHoRF0JEUGoQwLM6+EdJ5l19+eZcuXeQiPf2rr76ST4K/AgmLmJiYOnXqtGzZsri4WG55PJdddpnYrO0woEZNmzbt2bOnXFRgvYZ07ty5cn1OWVmZSIrIyMgmTZrk5ubK3QpycnLCw8OnTZsm1zWhKnxEWOhBWAQRSaGNTY5CoqOj+/TpIxdQIZCwuPvuu8VNPSEhQa7PadWqldicNWuWXKtgvXRj5MiRcv1TImKeeOIJuTjvtttuEx8yadIkuf4p8dOLiIj44Ycf5LpaVIXvCAs9CIugICk0IyxMFUhY2MQHH3zQqFGjU6dOybUPunbt+uijj8pFtaiKWiEs9CAsFCMpQoKwMJUBYVFSUtK2bds333xTrmuycePGiIiInTt3ynXVqIraIiz0ICyUISlCiLAwlQFhIaSnp0+ePFkuarJ48eKK78JZFarCD4SFHoSFAiRFyBEWpjIjLJSjKvxDWOhBWASEpLAJwsJUhMWFqAq/ERZ6EBZ+IilshbAwFWHhhaoIBGGhB2FRaySFDREWpiIsKqIqAkRY6EFY1AJJYVuEhakIi3JUReAICz0IC5+QFDZHWJiKsLBQFUoQFnoQFjUgKRzBJmEB5QgLgapQhbDQg7CoEknhIISFqQgLqkIhwkIPwqISJIXjEBamcnlYUBVqERZ6EBY/QVI4FGFhKjeHBVWhHGGhB2EhkRSORliYyrVhQVUEA2GhB2FBUpiAsDCVO8OCqggSwkIPV4cFSWEMwsJULgwLqiJ4CAs9XBoWJIVhCAtTuS0sqIqgIiz0cF1YkBRGIixM5aqwoCqCjbDQw3VhMeDDdS5JimPHPEOGeE6ckEuzERamck9YUBVBteXwliH/HnLpmEs7ftBRbiFoXBcWPSevemRqulyYa/9+z1VXeS65xFNQIHfMRliYyiVhQVUESUFRwYxNM+7+293i97be6Hq/T/n9xuyN8hqCxo1h8ej0L+XCUFu3epo08YSHe373O7ljPMLCVG4IC6oiGKwRRVRClPiN/e+J//3W6reO5B+R1xBkhIVp1qzxNGrkCQvzNGzoWbZMbhqPsDCV8WFBVah14Yhi+Z7lZWVl8jK0ICyMsmiRp379s1UhvkVFeUpK5L7xCAtTmR0WVIVCjCjsg7AwxyefnH1RhVUVF13kGTxY7rsBYWEqg8OCqlCCEYUNERbm+OtffwyLSy/1bHTTS5QcHRZFRUWHDh3avHlzRkbGypUrly5dumjRopSUlI8//vhvf/vb5MmTJ0yYMHbs2D//+c+DBg165JFHunTpcscdd7Rr165FixZRUVHNmjW75pprbrrppnvuuadHjx59+/YdOnToiBEjxIe8/fbb4sOnT58+c+bMOXPmLFiwYMmSJcuXL1+zZs3XX3+dnZ1dXFwsfxJ2ZWpYUBWBY0RhW4SFUSIjz1ZFvXqeli09rkp2O4dFYWHhvn371q1bl5qaKu7xr7/+eu/evUUWXHTRRWF20qpVq27dur388suTJk2aPXu26I8tW7YcOXKkJKQnakaGBVURCEYU9kdYmGPJkrNV8cknnpde8sydKzddIuRhIeohMzNz/vz548aN69mz5zXXXCNv19WKjo7u3r37K6+8MmXKFHEvX7hwYVpa2ueff7527dpNmzZt27Zt796933//fU5OzunTp0tLS+U/zAfiyQUFBeIDxYeLrNmxY4c1EVm1atWyZcv+/e9/z5kzZ/LkyeIf3aNHj1/84hfyJ1QtUUJt2rTp27evKI8lS5bs2rVLw8DDvLCgKvzGiMIpCAtDiM/woiquvFIu3UZnWIh79v79+5cuXSpq4NFHH73sssvkjfcC4jbcq1ev+Pj4qVOnLliw4Msvv9yzZ4+438sfyJZEKxw+fFhUiOiPf/zjH4mJiS+++GLXrl1FA8lf1QUaNWr00EMPvfPOO6mpqVu3bhUNJH8sFQwLC6rCD4woHIewMMQvfnE2LIqK5NJtghcWubm5a9eunTlz5gsvvHDttdfKe+lPtW3bNi4uTjxn3bp1OTk58iMNJT6hf/fdd1988UVSUtLzzz8vfu3yd+Gn6tWr16VLl4SEhLlz53799df5+X7eR00KC6qithhROBRhYQLrECQ1VS5dSGFYZGdn//Of/xwyZEj9+vXlTbKCyy67rE+fPlOmTFm6dOmBAwdqdTxhMFEbR48eTU9PnzVr1vDhw2+++Wb5+/VTzZs3f+mllxYsWCB+63z8E6cxYUFV+I4RhdMRFo7n8kMQSyBhkZeXt2LFinHjxl34UoOOHTuOHTt2/vz5mZmZhYWF8gPgs9zc3A0bNsyePXv06NE33nij/G09r2HDhoMGDZozZ87OnTurSjQzwoKq8BEjCjMQFo7n8kMQS63Cori4eNOmTVOnTu3cubO8xZ0XExPz5ptvrlq16tSpU/LZUCo/P3/NmjWJiYm/+tWv5G/6eeHh4Y8++uiMGTO2bNlS/rJQA8KCqqgRIwrDEBbOxiGIpfqwEJ+h9u7dK/5k3L9/f3kTO69x48YvvPDCokWLDh9W//oM1KiwsHDDhg3Tp0/v0aOH/FdSwW9+85ubE25u/VZr+7/fRlWoiuoxojASYeFgHIKUqzQscnNz582b1717d3mbOu/3v//9rFmzdu7cyR+J7KakpCQzM3PmzJl9+/aV7/PRKyzs/87+7yWXXPLiiy9+9tlneXl58tnnjB49et26dXJhM1RFVRhRmI2wcDAOQcqVh4W4M61du3b48OFn70XntWzZ8t13383IyDhz5oz8ADiBuNM8kPRAi7EtYmNj5b/L80Qdzpkz56uvvqpbt65ojgceeGD79u3yw+yBqqgUIwo3ICycikOQihZnbBNhce2vHpS3nXOee+65FStWEBOOVvE1FidOnEhLS/vjH/9Yr149+e84LOziiy8W39epUycyMrJv377Z2dnWk0OLqvDCiMJVCAtH4hBEKCgoWLJkibiXiPtKveZtRFhEXn1zhw4dkpOTjxzhz0CGqOrFm0VFRWvXrr3lllvO1YVkTS+GDx/udVyiGVVRESMKFyIsHMnNhyBbt25NSEho1KiRvJmEhTVo0GDoqL+cPQr5lhdgmqb6vxXSpk2b+vXrN64gMjJS/Cfxs5/9LDMzUz5JL6rCwojCzQgL53HnIcj27duHDRtmlYSlT58+ixcvtv5eaCDvYwE7qz4sRD0sq+Czzz4T/0ksWrRo4cKFIRlaUBUCIwoQFg7jtkOQPXv2jBo1SqbEubc6ePfdd/fv3y8vn0dYmMpB72Ph8qpgRIFyhIXDuOQQ5ODBg2+++aasiXMSEhIu7IlyhIWpnBIWbq4KRhTwQlg4ifGHIIcPH544caL1On/La6+9tnv3bnm5aoSFqRwRFu6sCkYUqAph4RgGH4IcO3Zs6tSpjRs3ljURFvbiiy9u27ZNXvYBYWEq+4eFC6uCEQWqR1g4hnmHIPn5+TNmzLjiiitkTZx754lvvvnGjz/0EBamsnlYuKoqGFHAR4SFMxh2CJKZmfm73/1O1kRY2IABAzIyMgL5DEVYmMrOYeGeqmBEgVohLBzAmEOQM2fOJCcnR0REWD1x2223rVixoqqvl10rhIWpbBsWbqiKgqKCjzZ9xIgCtUVYBEVsbGx0dLRcVLBz5866des+88wzcu0bAw5BsrKyxK/a6glh5MiRar+aKGFhKnuGhfFVwYgCgSAsgkLcOMPDwy98ix4RHA0bNqzVPdXRhyAlJSULFy4sfxVF69atFy9erGRE4YWwMJUNw8LgqmBEASUIi6BISUkR91Gvr+acnp4uNseNGyfXPnDuIUh2dnbFN8r8wx/+UM27UASOsDCV3cLC1KpgRAGFCIug+Pbbb8Xd9MMPP5Trczp06BAdHX369Gm59oHjDkHEH26WLVt23XXXWT0RFRUlGqso+L8AwsJUtgoL86qCEQWCgbAIipKSkoiIiLi4OLn2eObPny9utMnJyXLtA2cdguTm5o4fP97qCeHxxx/fvn27vBZ8hIWp7BMWhlUFIwoED2ERLO3bt+/WrZv1uLi4uE2bNrfffrvvfxRw0CHI4cOHn332WRkU5+Y0BQUF8pouhIWpbBIWxlQFIwpoQFgES+/eva+++mrr8ZQpU8Qdd/Xq1dbSF444BNm/f3/521HExMRs2LBBXtCOsDCVHcLCjKpgRAFtCItgGTt2bHh4+KlTp/Ly8po1a9arVy95wQf2PwTZsWNH586draS45557avX228FAWJgq5GHh9KpgRAH9CItgWbhwobjprl+/fsSIEREREVlZWfJCTWx+CLJp06abbrrJSorY2Ni9e/fKCyFFWJgqtGHh6KpgRIFQISyCZffu3eLWO378+EsvvbTiqzhrZNtDkNWrV7ds2dJKiqeeeur777+XF2yAsDBVCMPCoVXBiAIhR1gEi/h/skiKyMjIJk2a5Obmyt2a2PAQRPxCPv30U/FrsZJi2LBhOTk58pptEBamClVYOLEqGFHAJgiLILrtttvEnXjSpElyXRO7HYKUlpbOmzfP6glh/Pjx+fl2/CQr0mfGmj2EhZFCEhbOqgpGFLAbwsJG7HMIUlxc/NFHH8mgCAv761//WlhYKK/Zifjs+Vnm990SvxBV0fGN/3yXq/uvuSLY9IeFg6qCEQXsibCwC5scgohbdWpqqgyKsLCPP/5YRIa8ZicVk+J/xv9nTsb+ohL1X4IEIac5LBxRFYwoYHOEhS3Y5BBk3bp1DRo0sJLik08+CcZXCwscSeEqOsPC/lXBiAKOQFjYQsgPQXbv3l3+l0gnTJig4at7+IGkcCFtYWHnqmBEAWchLEIvtIcgP/zwwyOPPGIlxeDBg0+ePCkv2AlJ4Vp6wsK2VcGIAk5EWIRYCA9BCgoKRowYYSVF165dDx06JC/YCUnhchrCwoZVwYgCjkZYhFhIDkFKSkqmT59uJcXVV1+dmZkpL9gJSQEh2GFht6pgRAEDEBahFJJDkLS0NCsphOXLl8tdOyEpUC6oYWGfqmBEAZMQFiGj/xBk48aNTZs2tZIiOTnZhn/pg6SAl+CFhU2qghEFzENYhIzOQ5B9+/Z16NDBSoqEhAQbvtsVSYFKBSksQl4VjChgMMIiNLQdgpw5c2bYsGFWUjz55JM2/DIfJAWqEYywCG1VMKKA8QiLENB2CPL5559bSRETE7Nv3z65axskBWqkPCxCVRWMKOAehEUIaDgEOXr06L333mtVRaqtvljqOSQFfKQ2LEJSFYwo4DaEhW7BPgQR9+ypU6daSfHkk0+eOnVKXrAHkgK1ojAsNFcFIwq4FmGhVbAPQTIzM60v9hEREbF582a5aw8kBfygKix0VgUjCrgcYaFV8A5BCgoKnn32WWtQMWXKFFv9VVKSAn5TEhZ6qoIRBWAhLPQJ3iHI4sWLraTo2LHjkSM2+rMRSYEABR4WGqqCEQVQEWGhSZAOQb777rvyr0r6n//8R+7aAEkBJQIMi6BWBSMKoFKEhSbKD0FKSkreeustKyn+9Kc/2ec9r0gKKBRIWASvKhhRANUgLHRQfgiyYcMGKymaNm26Y8cOuRtqJAWU8zssglEVjCgAXxAWQaf2EKSwsHDAgAFWVcycOdMmn9RICgSJf2GhvCoYUQC+IyyCTuEhyDfffGMlRZcuXY4fPy53Q4qkQFD5ERYKq4IRBeAHwiK4VB2ClJSUxMfHW1WxYMECuRtSJAU0qG1YqKoKRhSA3wiLIFJ1CLJ3797GjRuLpGjbtq0d/jYpSQFtahUWgVcFIwogcIRFEP3XfwV6CCI+o02bNs0aVEydOjXkn+BICmjme1gEWBWMKABVCItgCfwQ5OjRozExMSIpGjRokJWVJXdDhKRASPgYFn5XBSMKQDnCIigCPwRJTU21BhWvvvpqSUmJ3A0FkgIh5EtY+FcVjCiAICEsgiKQQ5C8vLxu3bpZVbFp0ya5GwokBUKuxrCobVUwogCCjbBQL5BDkPT0dCspnnjiiRC+mSZJAZuoPixqVRWMKAA9CAvF/D4EKSoqGjRokFUVK1askLvakRSwlWrCwseqYEQBaEZYKObfIcjWrVutpLjnnntOnDghd/UiKWBDVYWFL1XBiAIICcJCJT8OQcTt/I033rCqIiUlRe7qRVLAtioNi+qrghEFEFqEhTJ+HILk5ORcf/31IilatWqVnZ0tdzUiKWBzF4ZFNVXBiAKwA8JCmdoegmRkZFiDipEjR5aW6r6dkxRwBK+wqLQqGFEAtkJYqFGrQxDxKW/8+PFWVaxevVru6kJSwEEqhsWFVcGIArAhwkKBWh2C5Obm3nDDDSIpWrdu/cMPP8hdLUgKOE55WFSsCkYUgJ0RFgr4fgiyfv16a1Dx2muv6Tz+ICngUFZYlFfFuoPrGFEANkdYBMr3Q5Dp06dbVaHz+IOkgKOJsLh20rVWVdw5/U7xPSMKwOYIi4DU6hBk8uTJ7du313b8QVLAAG0mtrGqQnxjRAE4AmERkMC/MHowkBQwhpUUsbNjGVEATkFY+C/wL4yuHEkBw6zYs+LLA4pfFAUgqAgLPwX+hdHVIikAAHZAWPjJPocgJAUAwD4IC3/Y5BCEpAAA2A1hUWt2OAQhKQAA9kRY1FpoD0FICgCAnREWtRPCQxCSAgBgf4RFLYTqEISkAAA4BWFRC/oPQUgKAICzEBa+0nwIQlIAAJyIsPCJzkMQkgIA4FyEhU/0HIKQFAAApyMsaqbhEISkAACYgbCoQbAPQUgKAIBJCIsaBO8QhKQAAJiHsKhOkA5BSAoAgKkIiyoF4xCEpAAAmI2wqJLaQxCSAgDgBoRF5RQegpAUAAD3ICwqoeoQhKQAALgNYVGJwA9BSAoAgDsRFt4CPAQhKQAAbkZY/EQghyAkBQAAhMVP+HcIQlIAAGAhLH7kxyEISQEAQEWEhVTbQxCSAgCACxEWku+HICQFAABVISzO8vEQhKQAAKB6hIVPhyAkBQAAviAsajgEISkAAPCd28OimkMQkgIAgNpydVhUdQhCUgAA4B9Xh8WFhyAkBQAAgXBvWHgdgpAUAAAEzqVhUfEQhKQAAEAVl4aFdQhy5gxJAQCASm4Mi64JX4aFlY39kKQAAEAx14VFj0mrRExc9SRJAQCAeu4Ki7KyMtET4luHBJICAAD1XDexAAAAwUNYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBnCAgAAKENYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBnCAgAAKENYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBnCAgAAKENYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBnCAgAAKENYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBnCAgAAKENYAAAAZQgLAACgDGEBAACUISwAAIAyhAUAAFCGsAAAAMoQFgAAQBGP5/8BZ9pXBQUA5kAAAAAASUVORK5CYII=" style="width:50.0%" alt />
+<div class="figcaption"></div>
+</div>
 <h3 id="transformaciones-especiales">1.1.2 Transformaciones
 especiales</h3>
 <p>Existen una variedad de transformaciones lineales, por ejemplo, la
@@ -463,20 +465,19 @@ transformación lineal entonces</p>
 \end{pmatrix}\)</span></p></li>
 </ol>
 <p>Solución de a), notar que <span class="math display">\[
-T(x,y,z) = (x,y,z)
+T(x,y,z) =
             \begin{pmatrix}
-                1 &amp; 2 &amp; 3 &amp; 1\\
-                0 &amp;-3 &amp;-3 &amp; -3\\
-                1 &amp; -1&amp; 0 &amp; -2
-             \end{pmatrix}
-\]</span> Es decir lo podemos ver como <span class="math inline">\(Tv =
-v&#39;[T]\)</span> con <span class="math inline">\([T]\)</span> la
-matriz anterior.</p>
+                1 &amp; 0 &amp; 1 \\
+                2 &amp;-3 &amp;-1 \\
+                3 &amp;-3 &amp; 0 \\
+                1 &amp;-3 &amp; -2
+             \end{pmatrix} \begin{pmatrix} x \\ y \\ z\end{pmatrix}
+\]</span> Es decir lo podemos ver como <span class="math inline">\(T\mathtt{v} = A\cdot \mathtt{v}\)</span> con <span class="math inline">\(A\)</span> la matriz anterior.</p>
 <p>Por las propiedades de la multiplicación de matrices entonces tenemos
 <span class="math inline">\(T(\mathtt{v}+\mathtt{u})=
-(\mathtt{v}+\mathtt{u})&#39;[T] = \mathtt{v}&#39;[T] +u&#39;[T]=
-T(\mathtt{v}) + T(\mathtt{u})\)</span>. Similarmente si <span class="math inline">\(c\)</span> es un escalar, entonces <span class="math inline">\(T(c\cdot \mathtt{v}) = (c\cdot
-\mathtt{v})&#39;[T]=c(v&#39;[T])=cT(v)\)</span>.</p>
+A(\mathtt{v}+\mathtt{u}) = A\mathtt{v} + A\mathtt{u}= T(\mathtt{v}) +
+T(\mathtt{u})\)</span>. Similarmente si <span class="math inline">\(c\)</span> es un escalar, entonces <span class="math inline">\(T(c\cdot \mathtt{v}) = A (c\cdot
+\mathtt{v})=c(A\mathtt{v})=cT(v)\)</span>.</p>
 <p>Otra forma de verificar que la función es lineal, es aplicarlo a un
 vector “suma” <span class="math inline">\((x+u,y+v,z+w)\)</span> es
 decir <span class="math display">\[
@@ -536,9 +537,7 @@ denota por <span class="math inline">\(N(T)\)</span> o <span class="math inline"
 <p>El conjunto de todos los <strong>vectores</strong>
 <strong>en</strong> <strong>W</strong> que son envíados por <span class="math inline">\(T\)</span> desde <span class="math inline">\(V\)</span>, es decir si <span class="math inline">\(w\in W\)</span> es tal que <span class="math inline">\(\texttt{w}=T\texttt{v}\)</span> para algún <span class="math inline">\(\texttt{v}\in V\)</span>. Este subespacio se
 conoce como <span class="math inline">\(Im(T)\)</span> o <span class="math inline">\(R(T)\)</span>.</p>
-</div>
-<div id="teorema" class="slide section level2">
-<h1>1.2 Teorema</h1>
+<h2 id="teorema">1.2 Teorema</h2>
 <p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es una
 transformación lineal entonces:</p>
 <ol style="list-style-type: lower-alpha">
@@ -621,9 +620,7 @@ T\mathtt{u}_n\)</span> generan a la imagen de <span class="math inline">\(T\)</s
 T\mathtt{u}_n\)</span> es una base de la imagen de <span class="math inline">\(T\)</span>.</p>
 <p><span class="math display">\[rango(T)=n-k = n-
 \dim(N(T))\]</span></p>
-</div>
-<div id="ejemplos" class="slide section level2">
-<h1>1.3 Ejemplos</h1>
+<h2 id="ejemplos">1.3 Ejemplos</h2>
 <p>1- Considere a <span class="math inline">\(T(x,y,z,w)=(x+y,y-z,x+w)\)</span>, calcular una
 base para su espacio nulo y su imagen. Calcular la nulidad de <span class="math inline">\(T\)</span> y el rango de <span class="math inline">\(T\)</span>.</p>
 <p>2- Considere a <span class="math inline">\(T(x,y,z)=(x+y,y+z,x+w)\)</span>, calcular una base
@@ -635,9 +632,8 @@ transformación lineal.</p>
 transformación <span class="math inline">\(T_A\)</span>.</p>
 <p>4- Calcular el núcleo de la matriz <span class="math inline">\(\begin{pmatrix} 1 &amp; -1 \\ 1 &amp; -1
 \end{pmatrix}\)</span>-</p>
-</div>
-<div id="otros-ejemplos-de-transformación-lineal" class="slide section level2">
-<h1>1.4 Otros ejemplos de transformación lineal</h1>
+<h2 id="otros-ejemplos-de-transformación-lineal">1.4 Otros ejemplos de
+transformación lineal</h2>
 <ol class="example" style="list-style-type: decimal">
 <li><p>Sea <span class="math inline">\(V=\mathbb{R}_n[x]\)</span> el
 espacio de polinomios de grado <span class="math inline">\(\leq
@@ -687,24 +683,56 @@ T(0,1) =\frac{3}{2}T(1,2) + (-\frac{1}{2})T(3,4) = \frac{3}{2}(3,2,1) +
 (-\frac{1}{2})(6,5,4) = (\frac{3}{2},\frac{1}{2},2) \\
 \end{matrix}
 \]</span></p>
-</div>
-<div id="matriz-asociada-a-una-transformación-lineal" class="slide section level2">
-<h1>1.5 Matriz asociada a una transformación lineal</h1>
+<h2 id="matriz-asociada-a-una-transformación-lineal">1.5 Matriz asociada
+a una transformación lineal</h2>
 <p>Una transformación lineal <span class="math inline">\(T\)</span> de
 <span class="math inline">\(\mathbb{R}^{n}\)</span> a <span class="math inline">\(\mathbb{R}^m\)</span> es una transformación de la
 forma <span class="math display">\[\begin{equation}
 T \texttt{v} = A \cdot \texttt{v}                    
 \end{equation}\]</span></p>
 <p>Sea <span class="math inline">\(\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}\)</span>
-una base de <span class="math inline">\(V\)</span>, entonces <span class="math display">\[
+una base de <span class="math inline">\(V\)</span> y <span class="math inline">\(\mathcal{D}=\{w_1,w_2,\ldots, w_m\}\)</span> es
+una base de <span class="math inline">\(\mathbb{R}^{m}\)</span>,
+entonces <span class="math display">\[
 \begin{array}{cc}
 \texttt{v} =&amp; \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots +
 \alpha_n\texttt{e}_n,\\
 T(\texttt{v}) =&amp;  \alpha_1T(\texttt{e}_1) + \alpha_2T(\texttt{e}_2)+
 \ldots + \alpha_nT(\texttt{e}_n)
 \end{array}
-\]</span> La última combinación lineal se puede expresar como
-multiplicación matricial con <span class="math display">\[
+\]</span></p>
+<p>Ahora, como <span class="math inline">\(\mathcal{D}\)</span> es una
+base de <span class="math inline">\(\mathbb{R}^{m}\)</span> entonces
+genera a todo el espacio, en particular, todos los vectores <span class="math inline">\(T(\mathtt{e}_i)\)</span> son combinación lineal de
+<span class="math inline">\(\mathcal{D}\)</span>, es decir, existen
+<span class="math inline">\(a_{ij}\)</span> tal que <span class="math display">\[
+T(\mathtt{e}_i)= a_{1i}\mathtt{w}_1 + a_{2i}\mathtt{w}_2 + \ldots +
+a_{mi}\mathtt{w}_m
+\]</span> sustituyendo en <span class="math inline">\(T(\mathtt{v})\)</span> entonces <span class="math display">\[
+\begin{array}{ccc}
+T(\mathtt{v}) &amp; = &amp; \alpha_1T(\mathtt{e}_1) + \alpha_2
+T(\mathtt{e}_2) + \ldots + \alpha_n T(\mathtt{e}_n) \\
+T(\mathtt{v}) &amp; = &amp; \sum_{i=1}^n \alpha_i \sum_{j=1}^m
+a_{ji}\mathtt{w}_j = \sum_{j=1}^m \big( \sum_{i=1}^n a_{ji}\alpha_i
+\big) \mathtt{w}_j
+\end{array}
+\]</span></p>
+<p>Dicho de otra forma <strong>las coordenadas de <span class="math inline">\(T(\mathtt{v})\)</span> con respecto a la base
+<span class="math inline">\(\mathcal{D}\)</span> son iguales
+a</strong></p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccc}
+  [T\mathtt{v}]_{\mathcal{D}} &amp; = &amp; (\sum_{k=1}^n
+a_{jk}\alpha_k)_{\mathcal{D}} \\
+  [T\mathtt{v}]_{\mathcal{D}} &amp; = &amp;
+(a_{11}\alpha_1+a_{12}\alpha_2 + \ldots + a_{1n}\alpha_n,
+a_{21}\alpha_1+a_{22}\alpha_2 + \ldots +
+a_{2n}\alpha_n,\ldots,a_{m1}\alpha_1+a_{m2}\alpha_2 + \ldots +
+a_{mn}\alpha_n )_{\mathcal{D}}
+\end{array}
+\end{equation}\]</span></p>
+<p>La última igualdad se puede expresar como una multiplicación
+matricial con <span class="math display">\[
 \begin{array}{cccc}
 T(\texttt{e}_1) =  \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\
 a_{m1}  \end{pmatrix}_{\mathcal{D}}, &amp;
@@ -714,9 +742,12 @@ a_{m2}  \end{pmatrix}_{\mathcal{D}}, &amp;
 T(\texttt{e}_n) =  \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\
 a_{mn}  \end{pmatrix}_{\mathcal{D}}  &amp;
 \end{array}
-\]</span> con <span class="math inline">\({\mathcal{D}}\)</span> una
-base en <span class="math inline">\(W\)</span> <span class="math display">\[
-A=
+\]</span> y</p>
+<p><span class="math display">\[\begin{equation}
+T(\mathtt{v}) = [T](\mathtt{v})_{\mathcal{B}}
+\end{equation}\]</span></p>
+<p>y <span class="math display">\[
+[T]=
 \begin{pmatrix}
     a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
     a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
@@ -725,9 +756,124 @@ A=
 \end{pmatrix}
 \]</span></p>
 <p>A esta matriz <span class="math inline">\(A=[T]\)</span> se le llama
-la matriz asociada a la transformación en la base <span class="math inline">\(\mathcal{B}\)</span> (en <span class="math inline">\(V\)</span>) y <span class="math inline">\(\mathcal{D}\)</span> en <span class="math inline">\(W\)</span>. Y <span class="math inline">\(T(\texttt{v})=A\texttt{v}\)</span></p>
+la matriz asociada a la transformación en la base <span class="math inline">\(\mathcal{B}\)</span> (en <span class="math inline">\(V\)</span>) y <span class="math inline">\(\mathcal{D}\)</span> en <span class="math inline">\(W\)</span>. Y <strong>dejando fijas las
+bases</strong> <span class="math display">\[
+\Big(T(\texttt{v})\Big)_{\mathcal{D}}=\Big[T\Big]_{\mathcal{B}}^{\mathcal{D}}\Big(\texttt{v}\Big)_{\mathcal{B}}
+\]</span></p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong> Dada una transformación lineal entre dos
+espacios vectoriales <span class="math inline">\(T:V \rightarrow
+W\)</span> y una base, <span class="math inline">\(\mathcal{B}\)</span>,
+para <span class="math inline">\(V\)</span> y <span class="math inline">\(\mathcal{D}\)</span> para <span class="math inline">\(W\)</span> <em>fijas</em>, podemos asociar una
+matriz que transforma las coordenadas (c.r.a. <span class="math inline">\(\mathcal{B}\)</span>) de <span class="math inline">\(\mathtt{v}\in V\)</span> a las coordenadas (c.r.a
+<span class="math inline">\(\mathcal{D}\)</span>) de <span class="math inline">\(T\mathtt{v}\)</span>. Se le llama la matriz
+<strong>asociada</strong> a la transformación lineal <span class="math inline">\(T\)</span> (con respecto a las bases <span class="math inline">\(\mathcal{B}\)</span> y <span class="math inline">\(\mathcal{D}\)</span>). <span class="math display">\[\begin{equation}
+    \Big[T\Big]_{\mathcal{B}}^{\mathcal{D}} = \begin{bmatrix}
+T(\mathtt{e}_1) | T(\mathtt{e}_2) | \ldots | T(\mathtt{e}_n)
+\end{bmatrix}
+  \end{equation}\]</span></p>
+</div>
 <h3 id="ejemplos-1">1.5.1 Ejemplos</h3>
-<h4 id="dilatación.">1.5.1.1 Dilatación.</h4>
+<h4 id="ejemplo-1.">1.5.1.1 Ejemplo 1.</h4>
+<p>Suponga que <span class="math inline">\(A:\mathbb{R}^3 \rightarrow
+\mathbb{R}^3\)</span> dada por <span class="math inline">\(A(x,y,z) =
+(x+2y+z,-y,x+7z)\)</span>. Sean <span class="math inline">\(\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2,
+\mathtt{e}_3\}\)</span> la base canónica de <span class="math inline">\(\mathbb{R}^3\)</span> y <span class="math inline">\(\mathcal{B}&#39;=\big\{(1,0,0),(1,1,0),
+(1,1,1)\big\}\)</span></p>
+<ul>
+<li><p>Obtener la matriz asociada a <span class="math inline">\(A\)</span>, <span class="math inline">\(\Big[A\Big]_{\mathcal{C}}^{\mathcal{C}}\)</span>
+con respecto a las bases <span class="math inline">\(\mathcal{C}\)</span> <span class="math inline">\(\mathcal{C}\)</span></p></li>
+<li><p>Obtener la matriz asociada a <span class="math inline">\(A\)</span>, con respecto a las bases <span class="math inline">\(\mathcal{C}\)</span> y <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p></li>
+<li><p>Obtener la matriz asociada a <span class="math inline">\(A\)</span>, con respecto a las bases <span class="math inline">\(\mathcal{B}&#39;\)</span> y <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p></li>
+</ul>
+<h4 id="ejemplo-2">1.5.1.2 Ejemplo 2</h4>
+<p>Considere a <span class="math inline">\(T(x,y)=(y,-2x + 3y)\)</span>
+en <span class="math inline">\(\mathbb{R}^2\)</span>, con la base <span class="math inline">\(\mathcal{C}=\{\mathtt{e}_1,
+\mathtt{e}_2\}\)</span> y <span class="math inline">\(\mathcal{B}&#39;=\{(1,1),(1,2)\}\)</span>.</p>
+<h3 id="transformaciones-lineales-y-cambios-de-base">1.5.2
+Transformaciones lineales y Cambios de base</h3>
+<p>Sea <span class="math inline">\(T\)</span> una transformación lineal,
+<span class="math inline">\(T:V\rightarrow V\)</span> y suponga que en
+<span class="math inline">\(V\)</span> en el “dominio” tenemos a la base
+<span class="math inline">\(\mathcal{B}\)</span> y en el “contradominio”
+se usa la base <span class="math inline">\(\mathcal{B}&#39;\)</span>
+entonces sabemos que existe una matriz cambio de base de <span class="math inline">\(\mathcal{B} \rightarrow \mathcal{B}&#39;\)</span>,
+<span class="math inline">\(Q_{\mathcal{B}\rightarrow
+\mathcal{B}&#39;}\)</span> tal que</p>
+<p><span class="math display">\[
+\big( \mathtt{v}\big)_{\mathcal{B}&#39;} = Q_{\mathcal{B} \rightarrow
+\mathcal{B}&#39;} \big(\mathtt{v}\big)_{\mathcal{B}}
+\]</span></p>
+<p>Similarmente, tenemos que <span class="math display">\[
+\big( T\mathtt{v}\big)_{\mathcal{B}} = Q_{\mathcal{B}&#39; \rightarrow
+\mathcal{B}} \big(T\mathtt{v}\big)_{\mathcal{B}&#39;} \quad\mbox{ y }
+\quad
+\big( T\mathtt{v}\big)_{\mathcal{B}&#39;} = Q_{\mathcal{B} \rightarrow
+\mathcal{B}&#39;} \big(T\mathtt{v}\big)_{\mathcal{B}}
+\]</span></p>
+<p>por otro lado <span class="math inline">\(\big(T\mathtt{v}\big)_{\mathcal{B}} = \big[ T
+\big]_{\mathcal{B}}^{\mathcal{B}}\big(\mathtt{v}\big)_{\mathcal{B}}\)</span>
+entonces</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\big( T \mathtt{v}\big)_{\mathcal{B}} &amp; = &amp;
+Q_{\mathcal{B}&#39;-&gt;\mathcal{B}} \big( T
+\mathtt{v}\big)_{\mathcal{B}&#39;}\\
+\big( T \mathtt{v}\big)_{\mathcal{B}} &amp; = &amp;
+Q_{\mathcal{B}&#39;-&gt;\mathcal{B}}
+\big[T\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;} \big(
+\mathtt{v}\big)_{\mathcal{B}&#39;}\\
+\end{array}
+\]</span></p>
+<p>Desarrollando el lado izquierdo</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\big( T \mathtt{v}\big)_{\mathcal{B}} &amp; = &amp;
+Q_{\mathcal{B}&#39;-&gt;\mathcal{B}}
+\big[T\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;} \big(
+\mathtt{v}\big)_{\mathcal{B}&#39;}\\
+\big[T\big]_{\mathcal{B}}^{\mathcal{B}}
+\big(\mathtt{v}\big)_{\mathcal{B}} &amp; = &amp;
+Q_{\mathcal{B}&#39;-&gt;\mathcal{B}}
+\big[T\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;} \big(
+\mathtt{v}\big)_{\mathcal{B}&#39;}\\
+\big[T\big]_{\mathcal{B}}^{\mathcal{B}}  Q_{\mathcal{B}&#39; \rightarrow
+\mathcal{B}} \big(\mathtt{v}\big)_{\mathcal{B}&#39;} &amp; = &amp;
+Q_{\mathcal{B}&#39;-&gt;\mathcal{B}}
+\big[T\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;} \big(
+\mathtt{v}\big)_{\mathcal{B}&#39;}\\
+\end{array}
+\]</span></p>
+<p>Como esto aplica para todo vector <span class="math inline">\(\big(
+\mathtt{v}\big)_{\mathcal{B}&#39;}\)</span> entonces</p>
+<p><span class="math display">\[
+\big[T\big]_{\mathcal{B}}  Q_{\mathcal{B}&#39; \rightarrow \mathcal{B}}
+=  Q_{\mathcal{B}&#39;-&gt;\mathcal{B}} \big[T\big]_{\mathcal{B}&#39;}
+\]</span></p>
+<p>entonces, despejando a <span class="math inline">\(\big[T\big]_{\mathcal{B}&#39;}\)</span></p>
+<p><span class="math display">\[
+\big[T\big]_{\mathcal{B}&#39;} =
+Q^{-1}_{\mathcal{B}&#39;-&gt;\mathcal{B}}
+\big[T\big]_{\mathcal{B}}  Q_{\mathcal{B}&#39; \rightarrow \mathcal{B}}
+\]</span></p>
+<h3 id="teorema-2">1.5.3 Teorema</h3>
+<p>Si <span class="math inline">\(T:V\rightarrow V\)</span>, sea <span class="math inline">\(\big[ T \big]_{\mathcal{B}}= \big[ T
+\big]_{\mathcal{B}}^{\mathcal{B}}\)</span> la matriz asociada a <span class="math inline">\(T\)</span> con respecto a la base <span class="math inline">\(\mathcal{B}\)</span> y <span class="math inline">\(\big[ T \big]_{\mathcal{B}&#39;}= \big[ T
+\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;}\)</span> entonces existe
+<span class="math inline">\(Q\)</span> invertible tal que</p>
+<p><span class="math display">\[\begin{equation}
+  \big[T\big]_{\mathcal{B}&#39;} = Q^{-1} \big[T\big]_{\mathcal{B}} Q
+\end{equation}\]</span> y además <span class="math inline">\(Q=Q_{\mathcal{B}&#39;\rightarrow
+\mathcal{B}}\)</span>.</p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong> Dos matrices <span class="math inline">\(A,B\in \mathcal{M}^{n,n}\)</span> se dice que son
+<strong>similares</strong> si existe una matriz invertible <span class="math inline">\(P\)</span> tal que <span class="math display">\[\begin{equation}
+    B = P^{-1}A P
+  \end{equation}\]</span></p>
+</div>
+<p>Entonces, si dos matrices representan a la misma transformación
+lineal entonces son similares.</p>
+<h4 id="dilatación.">1.5.3.1 Dilatación.</h4>
 <p>Si <span class="math inline">\(V=\mathbb{R}^3\)</span> <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1 \\ x_2 \\ x_3
 \end{pmatrix}\)</span>, la transformación <span class="math inline">\(T(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1 \\ 2x_2
 \\ 3x_3 \end{pmatrix}\)</span> es una transformación lineal. Para ver
@@ -776,7 +922,7 @@ vector <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1
 &amp;3   \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3\end{bmatrix} =
 \begin{bmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{bmatrix} = T(\vec{\texttt{x}})
 \]</span></p>
-<h4 id="ejemplo-2">1.5.1.2 Ejemplo 2</h4>
+<h4 id="ejemplo-2-1">1.5.3.2 Ejemplo 2</h4>
 <p>Si una de las entradas incluye a una función real no lineal, entonces
 la transformación no será lineal por ejemplo <span class="math inline">\(S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\
 2x_2 \\ 3x_3 \end{pmatrix}\)</span> Si comparamos <span class="math inline">\(S(\vec{\texttt{x}} +\vec{\texttt{w}})\)</span> con
@@ -800,7 +946,7 @@ S(\vec{\texttt{x}}) +S(\vec{\texttt{w}}) = \begin{pmatrix} 3x_1^2 \\
 +\vec{\texttt{w}})
 \]</span> pues <span class="math inline">\(S(\vec{\texttt{x}}
 +\vec{\texttt{w}})\)</span> tiene un término extra <span class="math inline">\(6x_1w_1\)</span>.</p>
-<h4 id="reflexión-respecto-al-eje-x.">1.5.1.3 Reflexión respecto al eje
+<h4 id="reflexión-respecto-al-eje-x.">1.5.3.3 Reflexión respecto al eje
 <span class="math inline">\(x\)</span>.</h4>
 <p>Sea <span class="math inline">\(V=\mathbb{R}^2\)</span> <span class="math inline">\(R_1(x,y) = (x,-y)\)</span>. <span class="math inline">\(R\)</span> es una transformación lineal. Si <span class="math inline">\(\texttt{v}_1 = \begin{pmatrix} x_1\\ y_1
 \end{pmatrix}\)</span> y <span class="math inline">\(\texttt{v}_2 =
@@ -811,6 +957,39 @@ R_1(\texttt{v}_2)
 \]</span></p>
 <p>Similarmente <span class="math inline">\(R(\lambda \vec{\texttt{v}})
 = \lambda R(\vec{\texttt{v}})\)</span></p>
+</div>
+<div id="diagonalización" class="slide section level1">
+<h1>2 Diagonalización</h1>
+<p>En esta sección trabajaremos con transformaciones lineales <span class="math inline">\(T:V\rightarrow V\)</span>. Buscamos si podemos
+determinar una <strong>base</strong> <span class="math inline">\(\mathcal{B}&#39;\)</span> de <span class="math inline">\(V\)</span> tal que <span class="math inline">\([T]_{\mathcal{B}&#39;}\)</span> sea una matriz
+diagonal. Digamos</p>
+<p><span class="math display">\[\begin{equation}
+\begin{bmatrix}
+     \alpha_1 &amp; 0        &amp; \ldots &amp; 0 \\
+      0       &amp; \alpha_2 &amp; \ldots &amp; 0 \\
+      0       &amp;     0    &amp; \ldots &amp; \alpha_n  
+\end{bmatrix}
+\end{equation}\]</span></p>
+<p>Esto implica que con respecto a esa base <span class="math inline">\(\mathcal{B}&#39;\)</span>, <span class="math inline">\((T\mathtt{v}_1)_{\mathcal{B}&#39;}=\begin{pmatrix}
+\lambda_1 \\ 0 \vdots \\ 0 \end{pmatrix}_{\mathcal{B}&#39;}\)</span>,
+<span class="math inline">\((T\mathtt{v}_2)_{\mathcal{B}&#39;} =
+\begin{pmatrix} 0 \\ \lambda_2 \\ \vdots \\ 0
+\end{pmatrix}_{\mathcal{B}&#39;}\)</span> … <span class="math inline">\(T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \vdots \\
+\lambda_n \end{pmatrix}_{\mathcal{B}&#39;}\)</span></p>
+<p>Como estamos en las coordenadas con respecto a <span class="math inline">\(\mathcal{B}&#39;\)</span> esto significa que <span class="math display">\[\begin{equation*}
+\begin{array}{cccc}
+T\mathtt{v}_1 = \lambda_1 \mathtt{v}_1 &amp; T\mathtt{v}_2 = \lambda_2
+\mathtt{v}_2 &amp; \ldots &amp;T\mathtt{v}_n = \lambda_n \mathtt{v}_n
+\end{array}
+\end{equation*}\]</span></p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong> Dada una transformación lineal <span class="math inline">\(T:V \rightarrow V\)</span> decimos que <span class="math inline">\(\lambda\)</span> es un valor propio de <span class="math inline">\(T\)</span> si <span class="math display">\[\begin{equation}
+    T\mathtt{v} = \lambda \mathtt{v}
+  \end{equation}\]</span> Al vector <span class="math inline">\(\mathtt{v}\)</span> que cumple con la igualdad
+anterior decimos que es un vector propio de <span class="math inline">\(T\)</span>.</p>
+</div>
+<p>Suponga que <span class="math inline">\(A=[T]_{\mathcal{C}}\)</span>
+en la base canónica, entonces buscamos a una</p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

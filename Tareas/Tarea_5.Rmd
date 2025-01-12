@@ -60,71 +60,6 @@ output: pdf_document
 \large\textbf{11} Sea $U=\{ (x,y,z) \in\mathbb{R}^3 \, | \, x+2y+3z=0 \}$ y $W=\{ (x,y,z) \in\mathbb{R}^3 \, | \, 2x-y+z=0 \}$. Encontrar una transformación lineal $T:\mathbb{R}^{3}\rightarrow\mathbb{R}^{3}$ tal que $T(U)=W$. (_sugerencia_: _encontrar_ _bases_ _de_ _cada_ _subespacio_).  
 
 
-# Operaciones con transformaciones lineales
-
-Suponga que $T$, $S:V \rightarrow W$ se definen a continuación. 
-
-\large\textbf{1} - Para $V=\mathbb{R}^2,W=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
-
-$$
-T \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} x_1 -x_2 \\ x_1 + x_2 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} 2y_1 \\ -y_2 \end{pmatrix} 
-$$
-
-\large\textbf{2}- Para $V=\mathbb{R}^2,W=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
-
-$$
-T \begin{pmatrix} x_1 \\  x_2 \end{pmatrix} = \begin{pmatrix} x_1 + 2x_2 \\ -3x_1 + x_2 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 + 3y_2 \\ y_1 -y_2 \end{pmatrix} 
-$$
-
-\large\textbf{3}- Para $V=\mathbb{R}^3,W=\mathbb{R}^2, Y=\mathbb{R}^3$. Encontrar $TS$ y la representación matricial de la transformación resultante
-$$
-T \begin{pmatrix} x_1 \\  x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix}  x_1 + 2x_2 \\ 2x_2 - x_3 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 - y_2 \\ y_1 +y_2 \\ -y_1+y_2 \end{pmatrix} 
-$$
-
-\large\textbf{4}- Para $V=\mathbb{R}^3,W=\mathbb{R}^2, Y=\mathbb{R}^2$. Encontrar $TS$ y la representación matricial de la transformación resultante
-$$
-T \begin{pmatrix} x_1 \\  x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix}  x_1 + x_2 -x_3 \\ 2x_1 -x_2 + x_3 \end{pmatrix},\,\,\,S\begin{pmatrix} y_1 \\ y_2 \end{pmatrix} = \begin{pmatrix} y_1 - y_2 \\ y_1 +y_2 \\ -y_1 + y_2\\ -y_1 + y_2 \end{pmatrix} 
-$$
-
-\large\textbf{5}- Considere a los operadores lineales $R,S,P:\mathbb{R}^2\rightarrow \mathbb{R}^2$. Con $R$ la transformación que rota $30^o$ a un vector, $S$ la reflexión en torno a la recta $y=2x$ y $P$ la proyección ortogonal sobre la misma recta.
-
- i) Explicar por que $PS=SP = P$.
- 
- ii) Verificar que $RSR=S$.
- 
- iii) Determinar todos los vectores $\mathbf{x}\in \mathbb{R}^2$ con $PR\mathbf{x}=0$. 
-
-\large\textbf{6}- Sea $A:\mathbb{R}^3\rightarrow\mathbb{R}^{3}$ definido como $A(x,y,z)=(ax+by+cz,0)$. Mostrar que $A^{3} = A\cdot A\cdot A=0$. Esta es otra diferencia del espacio vectorial $\mathcal{M}^{n,n}(\mathbb{R})$ y los números reales. 
-
-\large\textbf{7}- Sea $A,B,C,D:\mathbb{R}^2\rightarrow\mathbb{R}^{2}$ dados por 
-
-
-* $A(x,y)=(x+y,0)$
-
-* $B(x,y)=(-y,x)$
-
-obtener las expresiones de los operadores $A+B,\,AB,\,BA,\,A^{2},\,B^{2}$ 
-
-\large\textbf{8} En el espacio vectorial $\mathcal{P}$ de polinomios de grado $\leq n$ , sean $D,A:\mathcal{P}\rightarrow\mathcal{P}$, con $Dp(x)=p'(x)$ y $A(x)=xp(x)$. Determinar $DA-AD$.
-
-\large\textbf{9} Sea $V=\mathbb{R}^n$ un espacio vectorial de dimensión $n$, Para todo $k=2,3,\ldots,n$ encontrar un operador lineal $A:\mathbb{R}^n\rightarrow\mathbb{R}^n$ tal que $A^{k}=0$ pero $A^{j}\ne 0$.
-
-\large\textbf{10} Sea $V$ el espacio de plinomios con grado menor o igual a 2. Considere las transformaciones lineales
-
-* $T:\mathbb{R}^{3}\rightarrow V$, $T(a,b,c)=a + 2bx + 2cx^2$.
-
-* $S:V\rightarrow \mathcal{M}^{2}(\mathbb{R})$, $S(a+bx+cx^{2})= \begin{pmatrix} a & a+b \\ a-c & b\end{pmatrix}$
-
-Con respecto a $\mathcal{B}_1=\{1,x,x^2\}$ de $V$, la base canónica en $\mathbb{R}^3$ y la base canónica $\mathcal{B}_3=\{E_{11},E_{12},E_{21},E_{22}\}$
-
- * Probar que $T$ y $S$ son mapeos lineales.
- 
- * Encontrar las matrices de las transformaciones lineales $T$ y $S$ con respecto a las bases.
- 
- * Encontrar la matriz de composición $ST$ con respecto a las bases,
- 
- * Calcular explicitamente $ST$.
-
 # Transformaciones y cambios de base
 
 @. Sea $T:\mathbb{R}^2\rightarrow \mathbb{R}^2$ tal que $T(x,y)=(x-2y,\,\,3x+y)$ y sea $\mathcal{B}=\{(1,1),(0,3)\}$ y $\Gamma=\{(-1,2),\,(-1,0)\}$.
@@ -170,53 +105,6 @@ A=\begin{bmatrix} 1 & 3 & -2 \\ 2 & -4 & 1 \\ 3 & -1 & 2 \end{bmatrix}
 
 * Comprobar que $[G\mathtt{v}]_{S}=[G]_S[\mathtt{v}]_S$
 
-# Transformaciones invertibles 
-
-\large\textbf{1} Sea $T$ el operador en $\mathbb{R}^{3}$ definido por
-
-\begin{equation}
-  T\begin{pmatrix} x_1\\ x_2 \\ x_3 \end{pmatrix} = 
-    \begin{pmatrix} 3x_1 \\ x_1-x_2 \\ 2x_1+x_2 + x_3\end{pmatrix} 
-\end{equation}
-
- a) Obtener la representación matricial de $T$ en la base canónica $\mathcal{B}=\{\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3\}$.
- 
- b) Demostrar que $T$ es invertible y encontrar una expresión para $T^{-1}$.
- 
- c) Verificar que 
- \begin{equation}
-  \begin{bmatrix} T^{-1} \end{bmatrix}_{\mathcal{B}} =   
-  \begin{bmatrix} T \end{bmatrix}^{-1}_{\mathcal{B}} 
- \end{equation}
-
-\large\textbf{2} Sea $V$ y $W$ espacios vectoriales de dimensión finita y $T:\rightarrow W$ un isomorfismo. Si $\mathcal{B}_V$ es una base para $V$ probar que $\{T(\mathbf{v})\}_{\mathbf{v}\in \mathcal{B}_V}$ es una base para $W$.
-
-\large\textbf{3} Sea $B\in\mathcal{M}^{n,n}(\mathbb{R})$ con $B$ invertible. Definir $\varphi_B:\mathcal{M}^{n,n}(\mathbb{R}) \rightarrow \mathcal{M}^{n,n}(\mathbb{R})$ como $\varphi_B(A)=B^{-1}AB$. Probar que $\varphi_B$ es un isomorfismo.
-
-\large\textbf{4} Sea $W$ el conjunto de todas las matrices $2\times 2$ hermitianas. Sea $\phi:\mathbb{R}^{4}\rightarrow W$ dada por
-
-\begin{equation}
-  \begin{array}{cc}
-    \phi(x,y,z,t) = & \begin{pmatrix} t+x & y+ iz \\ y- iz & t-x \end{pmatrix}
-  \end{array}
-\end{equation}
-Probar que $\phi$ es un isomorfismo.
-
-\large\textbf{5} Mostrar que cada uno de los siguientes operadores es inverible y encontrar a la inversa.
-
-* $T(x,y,z)=(x-3y-2z,y-4z,z)$
-
-* $S(x,y,z)=(x+z,x-z,y)$
-
-
-\large\textbf{6} Mostrar que si $T:V\rightarrow V$ es un operador lineal tal que $T^{2}-T +I_V = \mathbf{0}_V$
-
-\large\textbf{7} Mostrar que si $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$ es un operador lineal dado por
-\[
-f(x,y,z) = (x+y+z, 2x-y-z, x+2y-z )
-\]
-es una biyección y por tanto es invertible.
-
 \large\textbf{8}  Sea $T:\mathbb{R}^{2}\rightarrow \mathbb{R}^2$ la transformación lineal definida por 
 \[
 T(x,y,z)=\begin{pmatrix} x+y \\ x+2y \end{pmatrix}
@@ -224,11 +112,9 @@ T(x,y,z)=\begin{pmatrix} x+y \\ x+2y \end{pmatrix}
 
 a) Calcular la matriz que representa $T$ en la base canónica.
 
-b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+b) Calcular la base del kernel de $T$.
 
-c) Mostrar que por b) entonces $T$ es biyectiva y calcular $T^{-1}(x,y,z)$.
-
-d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+c) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
 
 
 \large\textbf{9}  Sea $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^3$ la transformación lineal definida por 
@@ -236,35 +122,32 @@ d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
 T(x,y,z)=\begin{pmatrix} x+y+z \\ x+2y-4z \\ z \end{pmatrix}
 \]
 
-a) Calcular la matriz que representa $T$ en la base canónica.
+a) Calcular la matriz que representa $T$ en la base canónica, $[T]_{\mathcal{C}}$
 
-b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+b) Calcular la base del kernel de $T$.
 
-c) Mostrar que por b) entonces $T$ es biyectiva y calcular $T^{-1}(x,y,z)$.
-
-d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \\2 \end{pmatrix}$
-
-e) ¿Existe algún valor de $\mathbf{b}$ para el cual
-$T(x,y,z) = \mathbf{b}$ no tenga solución?
-e) ¿Existe algún vector $\begin{pmatrix} a\\ b \end{pmatrix} \in \mathbb{R}^2$ tal que la ecuación $T(x,y,z) = \begin{pmatrix} a \\ b \end{pmatrix}$ no tenga solución?
-
+c) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \\2 \end{pmatrix}$
 
 \large\textbf{10}  Sea $T:\mathbb{R}_{2}[x]\rightarrow \mathbb{R}_{2}[x]$ la transformación lineal definida por 
 \[
 T(p(t))= p'(t)-2p()t
 \]
 
-a) Calcular la matriz que representa $T$ en la base canónica $\{p_1(t)=1,p_2(t)=t,p_3(t)=t^{2}\}$
+a) Calcular la matriz $[T]_{\mathcal{C}}$ que representa $T$ en la base canónica $\{p_1(t)=1,p_2(t)=t,p_3(t)=t^{2}\}$
 
-b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+b) Calcular la base del kernel de $T$. 
 
-c) Mostrar que por b) entonces $T$ es biyectiva y calcular la matriz asociada a $T^{-1}$ en la misma base. Obtener una expresión para $T^{-1}(q(t))$
+\large\textbf{11} Sea $V$ el espacio de plinomios con grado menor o igual a 2. Considere las transformaciones lineales
 
-d) Resolver la ecuación diferencial 
-\[
-p'(t)-2p(t) = 1 +t +t^{2}
-\]
+* $T:\mathbb{R}^{3}\rightarrow V$, $T(a,b,c)=a + 2bx + 2cx^2$.
 
+* $S:V\rightarrow \mathcal{M}^{2}(\mathbb{R})$, $S(a+bx+cx^{2})= \begin{pmatrix} a & a+b \\ a-c & b\end{pmatrix}$
+
+Con respecto a $\mathcal{B}_1=\{1,x,x^2\}$ de $V$, la base canónica en $\mathbb{R}^3$ y la base canónica $\mathcal{B}_3=\{E_{11},E_{12},E_{21},E_{22}\}$
+
+ * Probar que $T$ y $S$ son mapeos lineales.
+ 
+ * Encontrar las matrices de las transformaciones lineales $T$ y $S$ con respecto a las bases.
 
 # Espacios de una transformación lineal
 
@@ -348,7 +231,7 @@ d) $Ker(S)$ y una base del subespacio.
  
  b) Sea $h:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$, $h(x,y,z) =(x-y + 2z, 2x-z,4x+2y7z)$. Adicionalmente, deducir una base para $Im(h)$.
  
- c) Sea $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$, $f(x,y,z)=(x+y+z,y+z,2y+z)$. Determinar $Ker(f)$. Explicar por que $f$ es un isomorfismo.
+ c) Sea $f:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$, $f(x,y,z)=(x+y+z,y+z,2y+z)$. Determinar $Ker(f)$.
 
  d) Sea $D:\mathcal{P}^{3}\rightarrow \mathcal{P}^{3}$ definida por 
 \begin{equation}
@@ -367,9 +250,9 @@ T(x,y,z)=\begin{pmatrix} x+y \\ x+y-z \end{pmatrix}
 
 a) Calcular la matriz que representa $T$ en la base canónica.
 
-b) Calcular la base del kernel de $T$. ¿Es inyectiva?
+b) Calcular la base del kernel de $T$.
 
-c) Calcular una base para la imagen de $T$ ¿ Es suprayectiva?
+c) Calcular una base para la imagen de $T$. 
 
 d) Resolver la ecuación $T(x,y,z)=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$
 
@@ -381,13 +264,11 @@ e) ¿Existe algún vector $\begin{pmatrix} a\\ b \end{pmatrix} \in \mathbb{R}^2$
 \begin{pmatrix} 1 & 2 & 2 \\ 2 & 4 & 4 \\ 0 & 0 & 2 \end{pmatrix}
 \]
 
-a) Calcular la base del kernel de $T$. ¿Es inyectiva?.
+a) Calcular la base del kernel de $T$.
 
-b) Calcular una base para la imagen de $T$ ¿ Es suprayectiva?
+b) Calcular una base para la imagen de $T$ 
 
 c) Mostrar que la ecuación $T(x,y,z)=\begin{pmatrix} 2 \\ 4 \\ 0 \end{pmatrix}$ no tiene soluciones
-
-d) ¿Existe algún vector $\begin{pmatrix} a\\ b \\c \end{pmatrix} \in \mathbb{R}^3$ tal que la ecuación $T(x,y,z) = \begin{pmatrix} a \\ b \\c \end{pmatrix}$ no tenga solución?
 
 
 ## Valores y vectores propios
@@ -509,19 +390,7 @@ A=\begin{pmatrix} 1 & 3 & 0 \\ 2 & 2 & 1 \\ -4 & 0 & -2 \end{pmatrix}
 \[
 Tp(x) = x^2 \frac{d^2p}{dx^2}+x\frac{dp}{dx}
 \]
-Calcular los valores y vectores propios de $T$.
 
+* Calcular los valores y vectores propios de $T$.
 
-## Formas cuadráticas
-
-\textbf{1} Comprobar que $f(x,y)=A x^{2}+Bxy+c y^{2}= \begin{pmatrix} x&y\end{pmatrix} \begin{pmatrix} A & \frac{1}{2}B \\ \frac{1}{2}B  & C \end{pmatrix}\begin{pmatrix} x \\ y\end{pmatrix}$
-
-\textbf{2} Hallar un cambio de base para que el término $xy$ desaparezca en las siguientes curvas
-
- a) $5x^{2} + 4xy + 2y^{2} = 6$
- 
- b) $x^{2}-8xy -5y^{2} = 16$
- 
- c) $x^{2} + xy + y^{2} = 6$
- 
- d) $4x^{2} + 10xy + 4y^{2}= 9$
+* Indicar si la transformación es diagonalizable.

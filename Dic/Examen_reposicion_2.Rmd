@@ -1,0 +1,59 @@
+---
+title: "Examen Reposición"
+author: "Álgebra Lineal"
+date: "9/1/2025"
+output: pdf_document
+---
+
+Responder 
+
+1- Sean $S=\{(-1,2,1),(0,1,1),(-2,2,1)\}$ y $\mathcal{T}=\{(-1,1,0),(0,1,0),(0,1,1)\}$ dos conjuntos de vectores de $\mathbb{R}^{3}$. 
+
+ a) Verificar que $S$ es una base de $\mathbb{R}^3$ usando la definición de base de un espacio vectorial.
+ 
+ b) Encontrar la matriz cambio de base de $\mathcal{T}$ a $S$, puede calcular la matriz directamente o bien calculando $Q_{\mathcal{T}\rightarrow \mathcal{C}}$ y de $Q_{\mathcal{C}\rightarrow S}$.
+ 
+ c) Si $(\mathtt{v})_{S}=(1,0,-2)_{S}$ calcular las coordenadas del vector con respecto a $\mathcal{T}$.
+ 
+2- Sea $W$ el conjunto de vectores que son ortogonales a $\mathtt{w}=(-1,2,1)$. 
+ 
+  a) Obtener una expresión del conjunto $W$.
+  
+  b) Determinar si es un subespacio vectorial de $\mathbb{R}^{3}$.
+  
+  c) Calcular una base para $W$ y su dimensión.
+  
+3- Construir una base ortonormal para $\mathbb{R}^3$ a partir del siguiente conjunto de vectores $\mathcal{A}=\{\mathtt{v}_1=(1,-1,1),\mathtt{v}_2=(-2,3,1), \mathtt{v}_3=(-3,5,1),\mathtt{v}_4=(1,2,-4)\}$. 
+(!!) _'cuántos_ _elementos_ _debe_ _tener_ _una_ _base_ _de_ $\mathbb{R}^{3}$.
+
+
+4- Para qué valores de $k$, los siguientes vectores 
+ 
+ i) son linealmente independientes,  
+ 
+ ii) generan una recta.
+ 
+ iii) un plano.
+\[
+  A=\{(1,2,3), (3,k,k+3),(2,4,k)\}
+ \]
+ 
+ 5- Considere el subespacio $W$ de $\mathbb{R}^4$ generado por los vectores $A=\{\mathtt{v}_1=(0,1,-3,2)$, $\mathtt{v}_2=(1,-1,0,1)$, $\mathtt{v}_3=(3,0,1,-1)$ y $\mathtt{v}_4=(3,0,1,-1,13)\}$.
+ 
+  i) ¿Es una base de $\mathbb{R}^4$?
+  
+  ii) Extraer una base del subespacio generado y su dimensión
+  
+  iii) Obtener la ecuación o conjunto de ecuaciones que describan al subespacio.
+  
+6- Deomstrar que el siguiente conjunto es un subespacio vectorial. Encontrar una base para el subespacio.
+Sea $V =M^{2,2}(R)$ y
+\[
+W_1=\Big\{A \in M^{2,2}(\mathbb{R}) :\,A= \begin{pmatrix} a & -b \\ b & a 
+\end{pmatrix}\Big\},\quad 
+W_2=\Big\{A \in M^{2,2}(\mathbb{R}) :\,A= \begin{pmatrix} 0 & -a \\ a & c 
+\end{pmatrix}\Big\}
+\]
+Demostrar que $W_1$ y $W_2$ son subespacios de $V$ y encontrar las dimensiones de $W_1$, $W_2$ y
+$W1 \cap W2$.
+
