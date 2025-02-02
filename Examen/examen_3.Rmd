@@ -1,0 +1,51 @@
+---
+title: "Examen 3"
+author: "Álgebra Lineal"
+geometry: "left=1cm,right=3cm,top=0.5cm,bottom=0.5cm"   
+output: pdf_document
+---
+Nombre:_________________________________________________
+
+Resolver explicando tu respuesta e incluyendo todos los cálculos. 
+
+1- Considere la matriz
+  a) Define que es la inversa de una matriz cuadrada y aplica el método de Gauss-Jordan para calcular $A^{-1}$
+\begin{equation*}
+\begin{array}{cc}
+A= & 
+  \begin{bmatrix} 
+    -1  & -2 & -2 \\
+    1   &  2 &  1  \\
+   -1   & -1 & 0  
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+
+a) Calcular los valores propios y vectores propios de $A$.
+
+b) Determinar si la matriz es diagonalizable.
+
+c) Si b) es afirmativa, obtener la base $\mathcal{B}'$ que diagonaliza a la matriz.
+
+d) Calcular a las matrices tal que $P^{-1}AP$ es una matriz diagonal.
+
+2- Si $T:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ la transformación lineal definida por 
+\[
+T\begin{pmatrix} x, y, z \end{pmatrix} = \begin{pmatrix} x+y+z \\ 2x-y-z \\ x +2y-z \end{pmatrix}
+\]
+
+a)  Obtener la matriz que representa a $T$ en la base canónica, $\Big[T\Big]_{\mathcal{C}}$.
+
+b) Obtener $Ker(T)$ y calcular la nulidad y el rango de la transformación.
+
+c) Sea $\mathcal{B}' = \begin{Bmatrix} \begin{pmatrix} 1\\ 0 \\0 \end{pmatrix}, \begin{pmatrix} 1\\ -2 \\1 \end{pmatrix}, \begin{pmatrix} 1\\ 1 \\1 \end{pmatrix} \end{Bmatrix}$. Calcular las matriz cambio de base (o de transición) de $\mathcal{C}\rightarrow \mathcal{B}'$ con $\mathcal{C}$ la base canónica de $\mathbb{R}^3$. Calcular $\Big[T\Big]{\mathcal{B}'}$.
+
+d) Usando c), si $\mathtt{v}= \begin{pmatrix} 3\\ 2 \\ 1 \end{pmatrix}$, coordenadas en la base canónica. Calcular las coordenadas de $T\mathtt{v}$ con respecto a la base $\mathcal{B}'$, $\Big[T\Big]_{\mathcal{B}'}$.
+
+3- Sea $T$ la transformación lineal en $\mathbb{R}^2$ dada por $T\mathtt{v}= A\mathtt{v}$ con $A=\begin{pmatrix} -2 & 2 \\ 2 & 1 \end{pmatrix}$.
+
+a) Determinar si la transformación es diagonalizable.
+
+b) Calcular $A^5$.
+
+c) Calcular $B=A^{1/3}$ es decir, $B$ es una matriz tal que $B^3 = A$.

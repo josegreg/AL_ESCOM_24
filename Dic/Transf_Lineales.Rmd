@@ -580,3 +580,248 @@ p_A(\lambda)=\begin{vmatrix} 7 -\lambda & -4 \\ 5 & -2-\lambda  \end{vmatrix} = 
 \]
 
 Para buscar los valores propios de $A$ o equivalentemente de $T_A$ buscamos las raíces de $p_A(\lambda)$, factorizando al polinomio, tenemos que $p_A(\lambda)=(\lambda-3)(\lambda-2)$
+
+Si factorizamos el polinomio característico $p(\lambda)$ entonces podemos obtener los **valores propios** de $A$. En este caso $\lambda=3$ y $\lambda=2$.
+
+Para encontrar los **vectores** **propios** de $A$, calculamos una base para cada de los espacios propios
+
+\[
+\mbox{ Para }\lambda=3
+N_3=Ker(A-3I)=\Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, A\vec{v}-3I\vec{v}=\vec{\mathbf{0}}  \Bigg\} 
+             =\Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, \begin{matrix} 7x - 4y = 3x\\
+                                                                                                 5x-2y = 3y \end{matrix}  \Bigg\}
+\]
+\[
+Ker(A-3I)=\Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, \begin{matrix} 4x - 4y = 3x\\
+                                                                                               2x-2y = 3y \end{matrix}  \Bigg\}
+\]
+\[
+\begin{bmatrix} 
+  4 & -4 & | & 0  \\
+  2 & -2 & | & 0
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  1 & -1 & | & 0  \\
+  0 &  0 & | & 0
+\end{bmatrix} \Rightarrow 
+\begin{matrix}
+x-y=0 \Leftrightarrow x= y
+\end{matrix}
+\]
+
+Luego, una base para $N_3=\Bigg\{ \begin{pmatrix} x \\ y  \end{pmatrix} \in \mathbb{R}^2 \,\,:\, \begin{pmatrix} x \\ y  \end{pmatrix} =  x\begin{pmatrix} 1\\ 1 \end{pmatrix},\,x\in \mathbb{R} \Bigg\}$. Por tanto, una base de $N_3$ es $\mathcal{B}_3=\Big\{\begin{pmatrix} 1\\ 1 \end{pmatrix}\Bigg\}$.
+
+Ahora calculemos los valores propios de $\lambda =2$, por medio de una base para $N_2=Ker(A-2I)$.
+\[
+N_2=Ker(A-2I) = \Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, A\vec{v}-2I\vec{v}=\vec{\mathbf{0}}  \Bigg\} 
+             =\Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, \begin{matrix} 7x - 4y = 2x\\
+                                                                                                 5x-2y = 2y \end{matrix}  \Bigg\}
+\]
+\[
+Ker(A-3I)=\Bigg\{ \begin{pmatrix} x \\ y \end{pmatrix} \in \mathbb{R}^2 \,:\, \begin{matrix} 5x - 4y = 0\\
+                                                                                             5x - 4y = 0 \end{matrix}  \Bigg\}
+\]
+\[
+\begin{bmatrix} 
+  5 & -4 & | & 0  \\
+  5 & -4 & | & 0
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  5 & -4 & | & 0  \\
+  0 &  0 & | & 0
+\end{bmatrix} \Rightarrow 
+\begin{matrix}
+5x-4y=0 \Leftrightarrow x=\frac{4}{5} y
+\end{matrix}
+\]
+
+Luego, una base para $N_2=\Bigg\{ \begin{pmatrix} x \\ y  \end{pmatrix} \in \mathbb{R}^2 \,\,:\, \begin{pmatrix} x \\ y  \end{pmatrix} =  y\begin{pmatrix} \frac{4}{5}\\ 1 \end{pmatrix},\,y\in \mathbb{R} \Bigg\}$. Por tanto, una base de $N_2$ es $\mathcal{B}_2=\Big\{\begin{pmatrix} 4/5\\ 1 \end{pmatrix}\Bigg\}$.
+
+### Teorema
+
+_Vectores propios asociados a valores propios diferentes son linealmente independientes_
+
+Por lo que en este caso de hecho tenemos una **Base** de vectores propios.
+
+
+#### Diagonalización.
+
+Consideremos esta base de vectores propios $\mathcal{B}'=\Bigg\{ \begin{pmatrix} 1\\ 1 \end{pmatrix}, \begin{pmatrix} 4/5 \\ 1 \end{pmatrix}\Bigg\}$.
+Calculamos la matriz cambio de base $Q_{\mathcal{B}'\righarrow \mathcal{B}}$ en este caso
+\[
+\begin{bmatrix} 
+  1 & 0 & | & 1 & 4/5  \\
+  0 & 1 & | & 1 & 1
+\end{bmatrix} 
+\]
+Y en este caso en particular (por tomar a la nueva base como la canónica) $Q=\begin{pmatrix} 1 & 4/5 \\ 1 & 1 \end{pmatrix}$, ahora calculamos $Q_{\mathcal{B}\rightarrow \mathcal{B}'}$
+\[
+\begin{bmatrix} 
+  1 & 4/5 & | & 1 & 0 \\
+  1 &  1  & | & 0 & 1
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  1 &  0  & | & 5  &  -4   \\
+  0 &  1/5 & | & -1 & 1
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  1 &  0  & | & 5  & -4   \\
+  0 &  1 & | & -5 & 5
+\end{bmatrix} 
+\]
+Por tanto $Q_{\mathcal{B}\rightarrow \mathcal{B}'}=\begin{pmatrix} 5 & -4 \\ -5 & -5 \end{pmatrix}$. Si calculamos la matriz asociada a la transformación $A$, según el teorema de cambio de base
+
+\begin{equation}
+\begin{matrix}
+\Big[ T \Big] =&  Q^{-1}\cdot A\cdot Q \\
+\Big[ T \Big]              =&  \begin{pmatrix} 5 & -4 \\ -5 & 5 \end{pmatrix}\begin{pmatrix} 7 & -4 \\ 5 & -2 \end{pmatrix} \begin{pmatrix} 1 & 4/5 \\ 1 & 1 \end{pmatrix}\\
+\Big[ T \Big] =& \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix}
+\end{matrix}
+\end{equation}
+
+## Ejemplo 2
+
+Determinar los valores propios y vectores propios de 
+\[
+\begin{bmatrix} 
+ -3 & 1 & -3  \\
+  20& 3 & 10  \\
+  2 &-2 & 4
+\end{bmatrix} 
+\]
+
+Calculamos el polinomio característico de $A$, $p(\lambda) = \det(A-\lambda I)$.
+\[
+p(\lambda)=|A-\lambda I| = \begin{vmatrix} 
+                  -3-\lambda & 1       & -3 \\
+                  20        &3-\lambda & 10 \\
+                  2         & -2       & 4-\lambda
+\end{vmatrix}
+\]
+$p(\lambda)=\lambda^3-4\lambda^2-3\lambda+18=(\lambda-3)^2(\lambda+2)$.
+Entonces **los valores propios de** $A$ son $\lambda=3$ y $\lambda=-2$.
+Para encontrar la factorización, tenemos que evaluar un valor de $\lambda$ que elimine a $p(\lambda)$. Los divisores de $p(0)$ son posibles candidatos a ser raíces enteras de $p(\lambda)$.
+Si $\lambda=3$ entonces $p(3)=(3)^3-4(3)^2-3(3)+18=27-36-9+18=0$ Entonces $\lambda=3$ es raíz. Esto significa que $\lambda-3$ **divide** a $p(\lambda)$, si hacemos la división obtenemos que $\frac{p(\lambda)}{\lambda-3}=\lambda^2-\lambda-6=(\lambda-3)(\lambda+2)$. Factorizando dichho resultado. 
+Entonces $p(\lambda)=(\lambda-3)^2(\lambda+2)$ y los valores propios de la matriz (y de la transformación asociada a la matriz) son $\lambda=3,\lambda=-2$.
+
+
+Calculamos una base de sus subespacios propios $N_{-2}=Ker(A+2I)$ y $N_3=Ker(A-3I)$. 
+Para el primer subespacio propio
+\[
+Ker(A+2I) = \Bigg\{ \begin{pmatrix} x\\ y\\ z\end{pmatrix} \in \mathbb{R}^3 : \,\,\begin{pmatrix} -3 +2 & 1 & -3 \\ 20 & 3 +2 & 10 \\ 2 & -2 & 4+2  \end{pmatrix} \begin{pmatrix} x\\ y \\ z\end{pmatrix} = \begin{pmatrix} 0\\ 0 \\ 0\end{pmatrix}\Bigg\}
+\]
+
+\[
+\begin{bmatrix} 
+  -1 & 1 & -3| & 0 \\
+  20 & 5 & 10| & 0  \\
+  2  &-2 & 6 | & 0
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  1 &  0   & 1 &| & 0   \\
+  0 &  1   &-2 &| & 0 \\
+  0 &  0   & 0 &| & 0
+\end{bmatrix} 
+\Rightarrow 
+\begin{matrix}
+x+z=0  \Leftrightarrow x=-z\\
+y-2z=0 \Leftrightarrow y=2z
+\end{matrix}
+\]
+Una base de dicho espacio propio, $N_{-2}$ es $\begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix}$. Simiarmente una base para $N_3$ es$\begin{pmatrix} 1\\ 0 \\-2 \end{pmatrix}$.
+Si juntamos en este caso los vectores propios no formamos una base, entonces $A$ **no es diagonalizable**.
+Este es un ejemplo de una matriz que no es diagonalizable, pues no podemos encontrar una base de vectores. 
+Existe otro criterio para determinar si una matriz será o no será diagonalizable, para entender dicho criterio requerimos el concepto de multiplicidad.
+
+### Multiplicidad algebraica
+
+Sea $T$ una transformación lineal y $\lambda_1,\lambda_2,\ldots,\lambda_n$ valores propios y $\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_n$ vectores  propios asociados cada valor propio.
+Si $p(\lambda)=(\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}\ldots (\lambda - \lambda_n)^{k_n}$, al grado del $(\lambda-\lambda_i)$ le llamamos la multiplicidad **algebraica** del valor propio.
+
+### Multiplicidad geométrica
+
+Sea $T$ una transformación lineal y $\lambda_1,\lambda_2,\ldots,\lambda_n$ valores propios y $\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_n$ vectores  propios asociados cada valor propio.
+A la dimensión del espacio propio $N_{\lambda_i}$ lo llamamos la multiplicidad geométrica.
+
+
+<div style="background-color:#FFE9B1">
+<strong>Teorema</strong>
+Sea $T$ una transformación lineal y $\lambda_1,\lambda_2,\ldots,\lambda_n$ valores propios y $\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_n$ vectores  propios asociados cada valor propio.
+Si para todo valor propio $\lambda_i$ la multiplicidad geométrica = multiplicidad algebraica entonces $T$ es **diagonalizable**.
+</div>
+
+
+En el último ejemplo, el polinomio característico de $A$ esta dado por $p(\lambda)=(\lambda-3)^2(\lambda+2)$ entonces la multiplicidad algebraica de $\lambda=3$ es 2 pero  $dim(Ker(A-3I))=1$ por que sólo encontramos un vector en la base de $Ker(A-3I)$ entonces no es diagonalizable. 
+
+
+### Ejemplo 3
+Determinar si la siguiente matriz es diagonalizable, encontrar una base de vectores que diagonaliza a la matriz $A$ si es el caso.
+
+\[
+A=\begin{pmatrix} 1 & -4 & -4 \\ 8 & -11 & -8 \\ -8 & 8 & 5 \end{pmatrix}
+\]
+Entonces 
+\[
+A-\lambda I = \begin{pmatrix} 1-\lambda & -4 & -4 \\ 8 & -11-\lambda & -8 \\ -8 & 8 & 5-\lambda \end{pmatrix}
+\]
+
+**Polinomio característico**:
+\[
+p(\lambda) = \begin{vmatrix} 1-\lambda & -4 & -4 \\ 8 & -11-\lambda & -8 \\ -8 & 8 & 5-\lambda \end{vmatrix}
+\]
+$p(\lambda)=(1-\lambda)[(-11-\lambda)(5-\lambda)-(-8)8]-(-4)(8(5-\lambda)-(-8)(-8))-4(8(8)-(-8)(-11-\lambda))$ desarrollando los términos 
+\[
+p(\lambda)=(1-\lambda)(\lambda^2+6\lambda + 9) = -(\lambda-1)(\lambda+3)^2
+\]
+por tanto los valores propios son $\lambda=1$ y $\lambda=-3$, en este caso decimos que $\lambda=-3$ tiene multiplicidad 2 y $\lambda=1$ tiene multiplicidad 1.
+Calculamos los espacios propios
+\[
+N_1=\Bigg\{\begin{pmatrix} x\\ y \\z\end{pmatrix}\in \mathbb{R}^3 :\,\, \begin{pmatrix} 1-1 & -4 & -4 \\ 8 & -11-1 & -8 \\ -8 & 8 & 5-1 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 0\\ 0\\ 0 \end{pmatrix}\Bigg\}
+\]
+
+\[
+\begin{bmatrix} 
+  0 & -4 & -4| & 0 \\
+  8 &-12 & 8 | & 0  \\
+  -8&  8 & 4 | & 0
+\end{bmatrix} \rightarrow 
+\begin{bmatrix} 
+  0 &  1   & 1 &| & 0   \\
+  2 &  -3  &-2 &| & 0 \\
+  -2&  2   & 1 &| & 0
+\end{bmatrix} 
+\rightarrow 
+\begin{bmatrix} 
+  2 &  0   & 1 &| & 0   \\
+  0 &  1   & 1 &| & 0 \\
+  0 &  0   & 0 &| & 0
+\end{bmatrix} 
+\rightarrow 
+\begin{matrix}
+2x+z=0   \Leftrightarrow x=-z\\
+y + z =0 \Leftrightarrow y=2z
+\end{matrix}
+\]
+
+Entonces un vector propio de $\lambda=1$ es $\begin{pmatrix} 1 \\ -2 \\ 2\end{pmatrix}$ o $\begin{pmatrix} 1/2 \\ -1 \\ 1\end{pmatrix}$.
+
+Similarmente una base del espacio propio asociado a $\lambda=-3$ es igual a $\Bigg\{ \begin{pmatrix} 1\\ 1 \\0 \end{pmatrix} , \begin{pmatrix} 1\\ 0 \\1 \end{pmatrix} \Bigg\}$. 
+Por tanto 
+\[
+Q=\begin{pmatrix} 1 & 1 & 1 \\ -2 & 1 & 0 \\ 2 & 0 & 1 \end{pmatrix},\quad\quad Q^{-1}=\begin{pmatrix} 1 & -1 & -1 \\ 2 & -1 & -2 \\ -2 & 2 & 3 \end{pmatrix}\quad \mbox{y}
+\]
+\[
+\begin{pmatrix}1 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & 3  \end{pmatrix} = \begin{pmatrix} 1 & -1 & -1 \\ 2 & -1 & -2 \\ -2 & 2 & 3 \end{pmatrix}\begin{pmatrix} 1 &-4 &-4 \\ 8 &-11 &-8 \\-8 & 8 & 5 \end{pmatrix}\begin{pmatrix} 1 & 1 & 1 \\ -2 & 1 & 0 \\ 2 & 0 & 1 \end{pmatrix}
+\]
+
+Una forma de verificar, sin realizar todo el cálculo de $Q$ es por medio del Teorema sobre las multiplicidades algebraicas y geométricas de $T$.
+El polinomio característico estaba dado por $p(\lambda)=-(\lambda-1)(\lambda+3)^2$ entonces, la multiplicidad algebraica de $\lambda=1$ es 1, y la multiplicidad algebraica de $\lambda=-3$ es 2, por que es aparece como raíz 2 veces.
+Por otro lado $dim(Ker(A-I)=1$ pues su base solo tiene 1 vector y $dim(Ker(A+3I))=2$ debido a que una base es $\Bigg\{ \begin{pmatrix} 1\\ 1 \\0 \end{pmatrix} , \begin{pmatrix} 1\\ 0 \\1 \end{pmatrix} \Bigg\}$. En este caso las dimensiones de los espacios propios, coinciden con las _potencias_ de cada valor propio en  el polinomio. El teorema implica que si se cumple esta condición la transformación es diagonalizable.
+
+## Diagonalización Ortogonal
+
+Si $A$ es una matriz simétrica y la matriz es diagonalizable, es posible obtener la factorización
+\[
+D=Q^{t}AQ
+\]
+Con $Q$ una matriz **ortogonal**, dicha descomposición facilita el cálculo de la diagonalización, sin embargo para obtener dicha descomposición, se requiere obtener una base de valores propios **ortonormales**. Aplicando el proceso de ortogonalización de Gram Schmidt a la base de vectores propios de $A$. La matriz cambio de base $Q$ en este caso será una matriz ortogonal, es decir $Q^{-1}=Q^{t}$
