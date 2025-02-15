@@ -50,25 +50,31 @@ En este caso, la cantidad de interés se representa como un vector en $4$ dimens
 
 _Balancear_ la reacción, significa encontrar los números de moléculas que hacen que se conserve la _materia_, que no se 'pierdan' moleculas en la reacción.
 
+
+
+
 # Los espacios $\mathbb{R}^{2}$ y $\mathbb{R}^{3}$
 
 ## 1. Definición
 
-La recta real $\mathbb{R}$ es el conjunto de números reales.  También es un campo de escalares.
+La recta real $\mathbb{R}$ es el conjunto de números reales.  Es el campo de escalares más típico.
 
 
 ![recta real](recta_real.jpg "\mathbb{R}"){ width=40% }		
 
 ## Campo de escalares
 
-Un **campo** **de** **escalares** es un conjunto $\mathbb{K}$ de elementos con las siguientes propiedades. Existen dos operaciones $+$ y $\cdot$
-Para $\alpha,\beta\in \mathbb{K}$
+### Definición
+
+Un **campo** **de** **escalares** es un conjunto $\mathbb{K}$ de elementos con las siguientes propiedades. 
+
+Existen dos operaciones $+$ y $\cdot$, _suma_ y _multiplicación_ en el mismo conjunto tal que para $\alpha,\beta\in \mathbb{K}$
 
 1) $\alpha$ + $\beta$ = $\beta$ + $\alpha$
 
 2) $(\alpha+\beta)+\gamma$ = $\alpha$+$(\beta+\gamma)$
 
-3)Existe un elemento llamado el **elemento** **nulo**, $0$ tal que para todo $x\in K$ $x+0=x$
+3) Existe un elemento llamado el **elemento** **nulo**, $0$ tal que para todo $x\in K$ $x+0=x$
 
 4) Para todo elemento $x\in \mathbb{K}$ existe $y\in\mathbb{K}$ tal que $x+y=0$.
 
@@ -91,16 +97,24 @@ x\cdot x^{-1} = 1
 
 ### Ejemplos de campos
 
-1. **Los racionales** $\mathbb{Q}$.
+1. **Los racionales** $\mathbb{Q}$ con la suma y multiplicación de fracciones.
 
-2. **Los números reales** $\mathbb{R}$.
+2. **Los números reales** $\mathbb{R}$ con la suma y multiplicación de números reales.
 
-3 **Los números complejos** $\mathbb{C}$.
+3 **Los números complejos** $\mathbb{C}$ con la suma y multiplicación de números complejos.
+
+En el campo de escalares podemos multiplicar y dividir entre elementos del mismo campo.
 
 
-## 2. Definición
 
-Sea $n$ un número entero positivo. Denotamos por $\mathbb{R}^n$ al conjunto de todas las $n-$tuplas de números reales. En estas secciones nos centraremos en las definiciones para $\mathbb{R}^{2}$ y $\mathbb{R}^{3}$.
+Un vector dado con dichas coordenadas se considera que representa al vector $\vec{OP}$ que une el origen con el punto en el espacio $P$. Un vector dado $\vec{v}$ se puede representar de múltiples formas, anclado al origen o anclado a otro punto. Dos vectores son **equipotentes** ó **equipolentes** si son no nulos, tienen el mismo módulo, la misma dirección y sentido, es decir si representan al mismo vector, aunque su origen sea diferente.
+
+
+![Vectores equipotentes](vectores-equipolentes.gif){ width=40% }		
+
+Los vectores $\overrightarrow{AB}$ y $\overrightarrow{CD}$ son equipolentes por que tienen misma magnitud, dirección y sentido. 
+
+En estas secciones nos centraremos en las definiciones y operaciones principales para $\mathbb{R}^{2}$, $\mathbb{R}^{3}$ y $\mathbb{R}^n$.
 
 ## 3. Definición $\mathbb{R}^2$
 
@@ -148,6 +162,16 @@ Usualmente, seguiremos la siguiente notación
 \mathbf{v} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}
 \]
  
+## Definición de $\mathbb{R}^n$
+
+Sea $n$ un número entero positivo. Denotamos por $\mathbb{R}^n$ al conjunto de todas las $n-$tuplas de números reales. Es decir,
+
+\begin{equation}
+  \mathbb{R}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{R} \mbox{ para }i=1,2,\ldots,n\Big\}
+\end{equation}
+
+A los números $x_i$ de la n-tupla $(x_1,x_2,\ldots,x_n)$ le llamamos la **i-ésima coordenada**.
+ 
 ## 2. Definición de igualdad de vectores
 
 Dos vectores son iguales si todas sus componentes correspondientes son iguales
@@ -179,6 +203,14 @@ Una forma concisa de escribir a las entradas del vector es por medio de los índ
 $$
 \mbox{ Para }k\in \{1,2,3\}\quad (a+b)_k=a_k + b_k
 $$
+Para $\vec{a},\vec{b} \in \mathbb{R}^n$ entonces
+\[
+\vec{a} = \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} 
+\quad \mbox{ y } \quad
+\vec{b} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} \mbox{ entonces  }\quad 
+\vec{a} + \vec{b} = \begin{pmatrix} a_1+b_1 \\ a_2 + b_2 \\ \vdots \\ a_n + b_n \end{pmatrix}
+\]
+
 
 Geometricamente, la suma de vectores en $\mathbb{R}^2$ y en $\mathbb{R}^3$ se puede obtener por medio de la _regla_ _del_ _paralelogramo_.
 

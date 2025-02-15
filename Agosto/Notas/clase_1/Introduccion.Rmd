@@ -56,54 +56,52 @@ Se evaluará el curso de la siguiente forma:
 
 1. En el primer parcial
 
-  - Examen parcial: 80%
+  - Examen parcial: $80\%$
   
-  - Tareas y prácticas: 20%
+  - Tareas y prácticas: $20\%$
 
 2. En el segundo y tercer parcial parcial
   
-  - Examen parcial: 75%
+  - Examen parcial: $80\%$
   
-  - Tarea: 10% 
+  - Evaluación continua: $20\%$ 
   
-  - Prácticas en MATLAB 15% (tipo proyecto)
   
 ## Interacción y material para estudio
 
 Las notas y asignación de tareas se subirán en un google classroom, se recomienda darse de alta.
 
-### Classroom: https://classroom.google.com/c/NzA4NzQ3NjkwOTE1?cjc=upzqrxf code: upzqrxf
-
-Página: 
+### Classroom: https://classroom.google.com/c/NzYwMzMxMTY0NzE4 code: tuy2lgn
 
 
 # Bibliografía
 
 Las principales referencias del curso son los siguientes libros
 
+* <h4> Grossman, I. Álgebra lineal. </h4>
+
 * <h4> Poole, D. Álgebra lineal. Una introducción moderna. </h4>
 
-* <h4> Maltsev, I. Fundamentos de Álgebra lineal. </h4>
+* <h4> Kolman, B. Álgebra lineal. Fundamentos y aplicaciones </h4>
+
+
 
 
 Algunos otros libros de referencia y apoyo son los siguientes:
 
 * Lipschutz, S. Álgebra lineal.
 
-* Kolman, B. Álgebra lineal: Fundamentos y aplicaciones
+* Maltsev, I. Fundamentos de Álgebra lineal.
 
 * Anton H. Introducción al álgebra lineal.
 
-* Grossman. Álgebra lineal y aplicaiones
 
 
 ## Tareas y Prácticas
 
 Consisten en :
-  
-* Ejercicios de reforzamiento en clase.
 
-* Problemas, demostraciones de teoremas o aplicaciones 
+* Ejercicios y problemas, demostraciones de teoremas o aplicaciones 
 
 
 **No** habrá tolerancia ni modificación en fecha de entrega de ejercicios.
@@ -140,7 +138,7 @@ Aplicaciones en la física
 
 En física varias transformaciones se expresan sucintamente por medio de transformaciones lineales.
 ```{r echo=FALSE, fig.align='center', out.width='50%'}
-knitr::include_graphics('rotacion.png')
+knitr::include_graphics('rotacion_2.png')
 ```
 
 

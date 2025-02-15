@@ -1,5 +1,5 @@
 ---
-title: "Vectores"
+title: "Vectores y $\mathbb{R}^n$"
 author: "Jose Rodriguez Villarreal"
 header-includes: 
   - \usepackage{amsmath}
@@ -31,7 +31,7 @@ En esta parte del curso veremos a los vectores de manera intuitiva, usaremos las
 
 
 
-Desde el punto de vista teórico, un vector es un elemento de un **espacio** **vectorial**. Esta definición se verá más adelante a detalle, pero podemos dar una definición simplificada en este momento:  un vector en el espacio puede ser pensado como una terna ordenada de números reales o una $n$-tupla de números reales.
+Desde el punto de vista teórico, un vector es un elemento de un **espacio** **vectorial**. Esta definición se verá más adelante a detalle, pero podemos dar una definición simplificada en este momento:  un vector en el espacio puede ser pensado como una terna ordenada de números reales o una $n$-tupla de números reales junto con las operaciones elementales de $suma$ y $multiplicación$ $escalar$.
 
 ### Ejemplo.
 
