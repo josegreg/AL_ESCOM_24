@@ -7,7 +7,7 @@ output:
   slidy_presentation:
     footer: "Álgebra lineal, ESCOM 2BV1, 2BV2"
     math_method: "mathjax"
-    pandoc_args: [ "--filter", "pandoc-crossref" ]
+#    pandoc_args: [ "--filter", "pandoc-crossref" ]
     df_print: paged
 ---
 
@@ -170,6 +170,16 @@ Sea $n$ un número entero positivo. Denotamos por $\mathbb{R}^n$ al conjunto de 
   \mathbb{R}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{R} \mbox{ para }i=1,2,\ldots,n\Big\}
 \end{equation}
 
+## Definición de $\mathbb{K}^n$
+
+Sea $n$ un número entero positivo. Denotamos por $\mathbb{K}^n$ al conjunto de todas las $n-$tuplas de números del campo. Es decir,
+
+\begin{equation}
+  \mathbb{K}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{K} \mbox{ para }i=1,2,\ldots,n\Big\}
+\end{equation}
+
+
+
 A los números $x_i$ de la n-tupla $(x_1,x_2,\ldots,x_n)$ le llamamos la **i-ésima coordenada**.
  
 ## 2. Definición de igualdad de vectores
@@ -285,7 +295,7 @@ $$
 \mbox{Para todo }\vec{v} \in\mathbb{R}^{3} \,\,\mbox{y}\,\,  \lambda,\mu\in\mathbb{R}, \quad \,\,\lambda\cdot(\mu\cdot\vec{v}) = (\lambda\mu)\cdot\vec{v}
 $$
 
-## Producto escalar
+## Producto escalar o producto punto
 
 En $\mathbb{R}^2$, $\mathbb{R}^3$ y en general, en $\mathbb{R}^n$ definimos el **producto** **punto** como
 Suponga que $\vec{v},\vec{u}\in \mathbb{R}^3$
@@ -294,16 +304,15 @@ Suponga que $\vec{v},\vec{u}\in \mathbb{R}^3$
 \vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + v_3u_3
 \]
 
-y en general en $\mathbb{R}^n$
+y en general en $\mathbb{R}^n$, si $\vec{\mathtt{v}}=(\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_n)$ y $\vec{\mathtt{u}}=(\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_n)$
 
 \[
-\vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + \ldots + v_nu_n = \sum_{i=1}^n v_ku_k
+\vec{\mathtt{v}} \cdot  \vec{\mathtt{u}} = v_1u_1 +v_2u_2 + \ldots + v_nu_n = \sum_{i=1}^n v_ku_k
 \]
 
 Algunas propiedades del producto punto
 
 1. $\vec{v}\cdot \vec{u} = \vec{u}\cdot \vec{v}$
-
 
 2. $(\vec{v}+ \vec{w})\cdot \vec{u} = \vec{v}\cdot \vec{u} + \vec{w}\cdot \vec{u}$
 
@@ -314,7 +323,7 @@ Algunas propiedades del producto punto
 5. En particular, si $\vec{v}\cdot \vec{v}= 0$ entonces $\vec{v}=\vec{0}$.
 
 
-## Norma euclideana
+## Norma euclideana de un vector
 
 Sea $v\in \mathbb{R}^{2}$ un vector, definimos a la norma del vector $v$ como
 
@@ -326,6 +335,46 @@ En general, si $v\in\mathbb{R}^{n}$ es un vector en el espacio de $n$ dimensione
 \begin{equation}
  \|v\|=\sqrt{v_1^2 + v_2^2+\ldots+ v_n^{2}} = \sqrt{\sum_{i=1}^n v_i^{2}} = \sqrt{ \vec{v} \boldsymbol{\cdot} \vec{v}}
 \end{equation}
+
+### Propiedades de la norma
+Suponga que $\vec{x},\vec{y}\in\mathbb{R}^n$ y $\alpha$ un escalar, $\alpha\in\mathbb{R}$.
+
+@. Para todo $\vec{x}\in \mathbb{R}^n$, $\|\vec{x}\| \geq 0$.
+
+@. $\|\alpha \cdot \vec{x}\| = |\alpha|\|\vec{x}\|$ para todo $\alpha\in \mathbb{R}$ y $\vec{x} \in \mathbb{R}^n$
+
+@. Si $\|\vec{x}\|=0$ entonces $\vec{x}=\vec{0}$.
+
+@. Para todo $\vec{x},\vec{y}\in \mathbb{R}^n$  se cumple **la Desigualdad de Cauchy-Schwarz**:
+\begin{equation}
+|\vec{x} \boldsymbol{\cdot} \vec{y}| \leq \|\vec{x}\| \|\vec{y}\|
+\end{equation}
+
+@. Para todo $\vec{x},\vec{y}\in \mathbb{R}^n$
+\begin{equation}
+\| \vec{x} + \vec{y} \| \leqslant \| \vec{x} \| + \| \vec{y} \|
+\end{equation}
+
+La última desigualdad recibe el nombre de **desigualdad** **del** **triángulo**.
+
+Demostración:
+
+Para 1) se tiene que $\| \vec{x} \| = \sqrt{x_1^2+x_2^2+\ldots + x_n^2}$ como $\vec{x} \boldsymbol{\cdot} \vec{x} \geq 0$ por propiedades del producto punto entonces $\| \vec{x} \| \geq 0$.
+
+Para 2) por propiedades del producto punto 
+\[
+\|\alpha \cdot \vec{x}\|= 
+\sqrt{ (\alpha\vec{x}) \boldsymbol{\cdot} (\alpha\vec{x})} = 
+\sqrt{\alpha^2 \vec{x} \boldsymbol{\cdot} \vec{x}} = 
+|\alpha|\sqrt{\vec{x} \boldsymbol{\cdot}  \vec{x} } =
+|\alpha|\| \vec{x} \|
+\]
+
+Para 3), es obvio que si $\|\vec{x}\|=0$ entonces
+\[
+\sum_{i=1}^n x^2_i = 0 \Rightarrow x_i = 0
+\]
+
 
 Veremos a detalle el concepto de norma en otra sección del curso. Por el momento nos contentaremos con indicar que la norma definida es _la_ _norma_ _euclidiana_ y representa la _longitud_ del vector, del origen al punto que representa el vector.
 
@@ -389,6 +438,21 @@ Considerando que $|\cos \theta| \leq 1$ para todo $\theta$ entonces
   \end{equation}
 </div>
 
+Considere
+\[
+\begin{array}{lcl}
+\| \vec{x} + \vec{y} \|^2  & = & (\vec{x} + \vec{y}) \boldsymbol{\cdot} (\vec{x} + \vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  & = & \vec{x} \boldsymbol{\cdot} (\vec{x} + \vec{y})   + \vec{y}  \boldsymbol{\cdot} (\vec{x} + \vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  & = & \vec{x} \boldsymbol{\cdot} \vec{x}    + \vec{x} \boldsymbol{\cdot} \vec{y}+ \vec{y}  \boldsymbol{\cdot} \vec{x} + \vec{y}  \boldsymbol{\cdot}\vec{y}  \\
+\| \vec{x} + \vec{y} \|^2  & = & \| \vec{x} \|^2 + 2 \vec{x} \boldsymbol{\cdot} \vec{y}+ \| \vec{y} \|^2 \\
+\| \vec{x}  + \vec{y} \|^2  & \leq & \| \vec{x} \|^2 + 2 \|\vec{x}\| \|\vec{y}\| + \| \vec{y} \|^2 = (\| \vec{x} \| + \|\vec{y} \|)^2 
+\end{array}
+\]
+La última desigualdad proviene de la desigualdad de Cauchy-Schwarz aplicándola al segundo término, aplicando la raíz cuadrada tenemos
+
+\begin{equation}
+\| \vec{x}  + \vec{y} \| \leq \| \vec{x} \| + \|\vec{y} \|
+\end{equation}
 
 <div class="def">
 <h3>Ortogonalidad en $\mathbb{R}^n$</h3>
@@ -400,6 +464,11 @@ Considerando que $|\cos \theta| \leq 1$ para todo $\theta$ entonces
   \vec{x}\boldsymbol{\cdot}\vec{y} = 0
   \end{equation}
 </div>
+
+Si el ángulo entre dos vectores $\vec{x}$ y $\vec{y}$ es $90°$ (o $\frac{\pi}{2}$, $-\frac{\pi}{2}$) entonces
+\[
+\vec{x}\boldsymbol{\cdot} \vec{y} = \|\vec{x}\| \|\vec{y}\| \cos( \pm\pi/2)=0
+\]
 
 Aplicando el mismo cálculo para $\vec{x}$ y $\vec{y}$ **ortogonales** obtenemos el siguiente resultado
 
@@ -416,7 +485,6 @@ Aplicando el mismo cálculo para $\vec{x}$ y $\vec{y}$ **ortogonales** obtenemos
 
 
 
-
 ## 5. Combinaciones lineales
 
 ### Combinaciones lineales de vectores
@@ -429,6 +497,9 @@ donde $c_1, c_2, \dots, c_k$ son números reales (llamados coeficientes de la co
 
 ![Figura 1.2](linear_comb.png "Vector"){ width=50% }
 
+### Base canónica
+
+Llamamos a los vectores $\{\mathbf{i}=(1,0,0), \mathbf{j}=(0,1,0), \mathbf{k}=(0,0,1)\}$
 
 ### Ejemplo 
 

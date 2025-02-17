@@ -1842,6 +1842,15 @@ números reales. Es decir,</p>
   \mathbb{R}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{R}
 \mbox{ para }i=1,2,\ldots,n\Big\}
 \end{equation}\]</span></p>
+<h2 id="definición-de-mathbbkn">Definición de <span class="math inline">\(\mathbb{K}^n\)</span></h2>
+<p>Sea <span class="math inline">\(n\)</span> un número entero positivo.
+Denotamos por <span class="math inline">\(\mathbb{K}^n\)</span> al
+conjunto de todas las <span class="math inline">\(n-\)</span>tuplas de
+números del campo. Es decir,</p>
+<p><span class="math display">\[\begin{equation}
+  \mathbb{K}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{K}
+\mbox{ para }i=1,2,\ldots,n\Big\}
+\end{equation}\]</span></p>
 <p>A los números <span class="math inline">\(x_i\)</span> de la n-tupla
 <span class="math inline">\((x_1,x_2,\ldots,x_n)\)</span> le llamamos la
 <strong>i-ésima coordenada</strong>.</p>
@@ -1967,16 +1976,19 @@ vector.</p>
 \,\,\mbox{y}\,\,  \lambda,\mu\in\mathbb{R}, \quad
 \,\,\lambda\cdot(\mu\cdot\vec{v}) = (\lambda\mu)\cdot\vec{v}
 \]</span></p>
-<h2 id="producto-escalar">Producto escalar</h2>
+<h2 id="producto-escalar-o-producto-punto">Producto escalar o producto
+punto</h2>
 <p>En <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="math inline">\(\mathbb{R}^3\)</span> y en general, en <span class="math inline">\(\mathbb{R}^n\)</span> definimos el
 <strong>producto</strong> <strong>punto</strong> como Suponga que <span class="math inline">\(\vec{v},\vec{u}\in \mathbb{R}^3\)</span></p>
 <p><span class="math display">\[
 \vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + v_3u_3
 \]</span></p>
-<p>y en general en <span class="math inline">\(\mathbb{R}^n\)</span></p>
+<p>y en general en <span class="math inline">\(\mathbb{R}^n\)</span>, si
+<span class="math inline">\(\vec{\mathtt{v}}=(\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_n)\)</span>
+y <span class="math inline">\(\vec{\mathtt{u}}=(\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_n)\)</span></p>
 <p><span class="math display">\[
-\vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + \ldots + v_nu_n = \sum_{i=1}^n
-v_ku_k
+\vec{\mathtt{v}} \cdot  \vec{\mathtt{u}} = v_1u_1 +v_2u_2 + \ldots +
+v_nu_n = \sum_{i=1}^n v_ku_k
 \]</span></p>
 <p>Algunas propiedades del producto punto</p>
 <ol style="list-style-type: decimal">
@@ -1991,7 +2003,8 @@ v_i^2\)</span>.</p></li>
 <li><p>En particular, si <span class="math inline">\(\vec{v}\cdot
 \vec{v}= 0\)</span> entonces <span class="math inline">\(\vec{v}=\vec{0}\)</span>.</p></li>
 </ol>
-<h2 id="norma-euclideana">Norma euclideana</h2>
+<h2 id="norma-euclideana-de-un-vector">Norma euclideana de un
+vector</h2>
 <p>Sea <span class="math inline">\(v\in \mathbb{R}^{2}\)</span> un
 vector, definimos a la norma del vector <span class="math inline">\(v\)</span> como</p>
 <p><span class="math display">\[\begin{equation}
@@ -2003,6 +2016,43 @@ de manera análoga a su norma como <span class="math display">\[\begin{equation}
 \|v\|=\sqrt{v_1^2 + v_2^2+\ldots+ v_n^{2}} = \sqrt{\sum_{i=1}^n v_i^{2}}
 = \sqrt{ \vec{v} \boldsymbol{\cdot} \vec{v}}
 \end{equation}\]</span></p>
+<h3 id="propiedades-de-la-norma">Propiedades de la norma</h3>
+<p>Suponga que <span class="math inline">\(\vec{x},\vec{y}\in\mathbb{R}^n\)</span> y <span class="math inline">\(\alpha\)</span> un escalar, <span class="math inline">\(\alpha\in\mathbb{R}\)</span>.</p>
+<ol class="example" style="list-style-type: decimal">
+<li><p>Para todo <span class="math inline">\(\vec{x}\in
+\mathbb{R}^n\)</span>, <span class="math inline">\(\|\vec{x}\| \geq
+0\)</span>.</p></li>
+<li><p><span class="math inline">\(\|\alpha \cdot \vec{x}\| =
+|\alpha|\|\vec{x}\|\)</span> para todo <span class="math inline">\(\alpha\in \mathbb{R}\)</span> y <span class="math inline">\(\vec{x} \in \mathbb{R}^n\)</span></p></li>
+<li><p>Si <span class="math inline">\(\|\vec{x}\|=0\)</span> entonces
+<span class="math inline">\(\vec{x}=\vec{0}\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(\vec{x},\vec{y}\in
+\mathbb{R}^n\)</span> se cumple <strong>la Desigualdad de
+Cauchy-Schwarz</strong>: <span class="math display">\[\begin{equation}
+|\vec{x} \boldsymbol{\cdot} \vec{y}| \leq \|\vec{x}\| \|\vec{y}\|
+\end{equation}\]</span></p></li>
+<li><p>Para todo <span class="math inline">\(\vec{x},\vec{y}\in
+\mathbb{R}^n\)</span> <span class="math display">\[\begin{equation}
+\| \vec{x} + \vec{y} \| \leqslant \| \vec{x} \| + \| \vec{y} \|
+\end{equation}\]</span></p></li>
+</ol>
+<p>La última desigualdad recibe el nombre de
+<strong>desigualdad</strong> <strong>del</strong>
+<strong>triángulo</strong>.</p>
+<p>Demostración:</p>
+<p>Para 1) se tiene que <span class="math inline">\(\| \vec{x} \| =
+\sqrt{x_1^2+x_2^2+\ldots + x_n^2}\)</span> como <span class="math inline">\(\vec{x} \boldsymbol{\cdot} \vec{x} \geq 0\)</span>
+por propiedades del producto punto entonces <span class="math inline">\(\| \vec{x} \| \geq 0\)</span>.</p>
+<p>Para 2) por propiedades del producto punto <span class="math display">\[
+\|\alpha \cdot \vec{x}\|=
+\sqrt{ (\alpha\vec{x}) \boldsymbol{\cdot} (\alpha\vec{x})} =
+\sqrt{\alpha^2 \vec{x} \boldsymbol{\cdot} \vec{x}} =
+|\alpha|\sqrt{\vec{x} \boldsymbol{\cdot}  \vec{x} } =
+|\alpha|\| \vec{x} \|
+\]</span></p>
+<p>Para 3), es obvio que si <span class="math inline">\(\|\vec{x}\|=0\)</span> entonces <span class="math display">\[
+\sum_{i=1}^n x^2_i = 0 \Rightarrow x_i = 0
+\]</span></p>
 <p>Veremos a detalle el concepto de norma en otra sección del curso. Por
 el momento nos contentaremos con indicar que la norma definida es
 <em>la</em> <em>norma</em> <em>euclidiana</em> y representa la
@@ -2071,6 +2121,29 @@ Para cualquier vector <span class="math inline">\(\vec{x},\vec{y}\in\mathbb{R}^n
     \|\vec{x}+\vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|
   \end{equation}\]</span></p>
 </div>
+<p>Considere <span class="math display">\[
+\begin{array}{lcl}
+\| \vec{x} + \vec{y} \|^2  &amp; = &amp; (\vec{x} + \vec{y})
+\boldsymbol{\cdot} (\vec{x} + \vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  &amp; = &amp; \vec{x} \boldsymbol{\cdot}
+(\vec{x} + \vec{y})   + \vec{y}  \boldsymbol{\cdot} (\vec{x} +
+\vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  &amp; = &amp; \vec{x} \boldsymbol{\cdot}
+\vec{x}    + \vec{x} \boldsymbol{\cdot} \vec{y}+
+\vec{y}  \boldsymbol{\cdot} \vec{x} +
+\vec{y}  \boldsymbol{\cdot}\vec{y}  \\
+\| \vec{x} + \vec{y} \|^2  &amp; = &amp; \| \vec{x} \|^2 + 2 \vec{x}
+\boldsymbol{\cdot} \vec{y}+ \| \vec{y} \|^2 \\
+\| \vec{x}  + \vec{y} \|^2  &amp; \leq &amp; \| \vec{x} \|^2 + 2
+\|\vec{x}\| \|\vec{y}\| + \| \vec{y} \|^2 = (\| \vec{x} \| + \|\vec{y}
+\|)^2
+\end{array}
+\]</span> La última desigualdad proviene de la desigualdad de
+Cauchy-Schwarz aplicándola al segundo término, aplicando la raíz
+cuadrada tenemos</p>
+<p><span class="math display">\[\begin{equation}
+\| \vec{x}  + \vec{y} \| \leq \| \vec{x} \| + \|\vec{y} \|
+\end{equation}\]</span></p>
 <div class="def">
 <h3>
 Ortogonalidad en <span class="math inline">\(\mathbb{R}^n\)</span>
@@ -2084,6 +2157,10 @@ dos vectores.
   \vec{x}\boldsymbol{\cdot}\vec{y} = 0
   \end{equation}\]</span></p>
 </div>
+<p>Si el ángulo entre dos vectores <span class="math inline">\(\vec{x}\)</span> y <span class="math inline">\(\vec{y}\)</span> es <span class="math inline">\(90°\)</span> (o <span class="math inline">\(\frac{\pi}{2}\)</span>, <span class="math inline">\(-\frac{\pi}{2}\)</span>) entonces <span class="math display">\[
+\vec{x}\boldsymbol{\cdot} \vec{y} = \|\vec{x}\| \|\vec{y}\| \cos(
+\pm\pi/2)=0
+\]</span></p>
 <p>Aplicando el mismo cálculo para <span class="math inline">\(\vec{x}\)</span> y <span class="math inline">\(\vec{y}\)</span> <strong>ortogonales</strong>
 obtenemos el siguiente resultado</p>
 <div class="theorem">
@@ -2115,6 +2192,9 @@ suma de múltiplos de los vectores <span class="math inline">\(\vec{v}_1,
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASMAAACWCAMAAACijh5tAAABEVBMVEX////79PSnIyOuMzP39/fs7Oyvr6+VAACPAAAAkiWSAACZAAD7/fyDzZzjsrJ7yJXnvr5vxYvm5uZsZGTT7dzfqando6PW1tYvq1cAmDHrysr47OyzQEDLdXUVoEKL0aLXmZmmpqby+vWt3769VFQepErTiorEa2u44sfy3d3K6tVOuHDn9ezw09NjwIFJBASeExPpxcXDTU25u7u948q/XFzShIRvAQD14+OZ1q6f2LJBs2a3ODlTGxputYpUu3Y5oGJZLi7Ozs5ZRka2SEhYr3uUlZGnEBA0AwOFBwUOi0CIxqHEDAwqlFSwWlqWLyyZyauIGxtfVSkVhyuitalZonJEPxEFpTsAQROmOTAAAAAji7q2AAAKrElEQVR4nO1d+1+qTBMH1Egh5XgrRYuQREoSTYrUblanc3nO5bm+l///D3l3F8srKIIMvcfvD35WkmX9trMzOzM7UtQWW2yxxa+O/Yss9BCWAHyEiZvWw348gUHe2834XDsxbvN2mx9/ZKrtdutk2/1Wu02LNJ1FI4Qlafjpt5uPFzsY9vtj3BzikfND3DwekuvkEzv7uJkgzWPyLbLk4xfkS++T6xd2N6RNbo2T3o/JrXG7G/KVs3bbvnWim4lb5b8+3v79DY1wJxwyFqMQe7jJZfk4BrlgN0fziIB3aM99fP5W126cbrXbzW4vc9c/KSVLz4+tHOA80k22Et+Pww3AGfnDUjKZLCUPfu7sA45QrBsptg32eHfIB8kSwt3QFlIgFGIpjlUBB+CC5tEBZqh0FN8BpKhscizHMiLcCJxx+uEwebh3kjzoIgUBOI7LFMdxrAQ4AgfIjTO0Cl03qb1+E3go/BOStAoNPIo5ICFLlu4auCnL0IORDIOL3IKdx0KWyY/eZSHlDEFiGV2N1oIt17CQHb0JWPYY1rouIIqoeJQkrXl0kiydNcbylQVV+pgiQwcdwCy6WMg+nE5cgaeIKYMOYBq2kF1PaTFoioRIzSKiyc5qM1ez4BRFR58RczFzuvyDoUIwIkPRrCaLCqIzi2QiZI15SxHaD9E2WAF4CDZO5zTZK7I7sCS1DSMNOgAbPNmTHeUX/Q1ao5UjMYua10jI+jV+4R8jQFEBdAAY+YyTkGGAU8SAU8Q37pCQ7TlrsiEsRbrBFkEHQMnX/WSy33PzeSwWwLCgM5wEOoD83kny8K4Ly4IrdAbW6dg9P0ye7C3UZFGBBjqL5Fq/VDq4dncsAm/RYGcR2bWed5d8ClqjaTE4irBBfZJZuicDp4hJ1WGezPeQQe2uyWyAUxRLXYI8GPtfD8+7K8Q3EsAUWbHdSwiFS4TMxVycBA8bArEqqWr4T5UbWJPVwENkKwHNovApsjVZI/TnrgerEjpF/HQkcSkSwD41EVEU7lrE20GO1YUMOtQoPu2GG4u1w/WraLJX/GoU2f5XT3syaLuIVnbV8GT9LSfGC8ApQrMotLWI+F/PHPyvztgHpUh/fPhshpX0gDVZydH/Glnkrq4ewhG0pf7XqEJ7uPo9F8aDZCRkyf46BjWwQ1KsG99zuRD2QCTIsdQ1tBDZC1DbMV1JGdbmH8N3kZCdLI4kLgWsRtNULhWCS63Z6+NI4pq7VlCK4hLDhpAwm8+crOB/dQQoRVaMxXnXm00Nkbvn/nJi+AtIQRNVTNFGdyC2JlvB/+oC2K2+xLGcscETDiNNFuFI4lIU2ZiSkjbWPTYXIx5JXIoCy2i0tKFp1Oytay5OAjrUSFLTNwRbk/n2v0Lv9AucsaG8a7kbkJBBUySwG6JohZyYFREBijaSyIdzYkrjnBhRaK+93kGHGjeUd91A5uLJZJBD4Tpr7wXjsL7rjcwiuddHBnVvbFBr9Y6paIE/JxyUjeApsoVsQpPp1U71vRJEMmbTwZq+/Ok5Pvg7FrK4YHaKPjwu0KFGHVEUaIdy7Sw5FUmkJcV8fYS4TnZu9hg27aFscIEmFY8O/o4Zsi471bFZUe147xJa6WvB5l0viCReVpG6JytRG00mc+C5T2iKygwXXN61UySRljoDFfGjGHFKkbz2Ck2RFmA6qGMkUeyomvWE5o/ApTXvxSVgQ41BZszmHY9LUWkOaTQTP2igFKNZgMMZGhOQt4jHBvVUJHHSJW4VaK3KqMU42jebCvQhPG8IKqlYnnUNFRRzZn8sFLU6J1B04QX6YI43WMFQRDTZZJDDqjNv1oQ2thvjDFYO3izt7AWsW1eLBZB3PX8mUat2LsvCSKDomGqLHaJG8L4SQWs0K7brmyLsf50+kyionfokFapRrqs0pRnVasezMR8BivzmOjax//XDhJDRRcV8FbLRmi1wTB3NITqtSJ4Dm9AUiZWUP4pIJHEqyVyrd9Q3f3i5ghceyzQ7zLpPAC0URvlPKl4QSSx0LkfrMa5CqL/gAxR6mmqvf6oL1kgQ/VG08EyiLlJikSw5qoJeTHN0XY3CcXfvQBT5yHUkZxIXJJnTdUVhTA0He9sUXYlWCSmvwBmz697brBH/66Igh9mxKJ1DulJkBIqqvvjJYcoC1+H1kVTsGknEphA1QHpNRwY1Ved8WBbQEZC1ZxHxvy4SshE0ZBcJFfyEwaBt1vX1967QSh9RZK4zi+RePzklZLouzFs8JlEFQsf0sysDpig7/J5aJ+96FEmcWIaElxdpjmvsHNI1n0mvwIKWuGm1vnunCJuL08elBNNUpqwHu1PJ1NWO3ygUcKhx+Om31tDjPXJtJpJIiWlFKUyuNlZdIUoszgzM4jtzoc1CeLpp5RKeBKG5dzAdSUQaq2NOTRUdbfQtC1OjqRGo/eMLlsrGskMvcSo7kjijycT666ZMJ4ykOwVLV03Mkf/NQxx0/0FLTIrz9G+We0vOJCokUiaKBVMJyLmY2IEMNQoVjwmzS84kptF2TLG3ZHU1qIwTUKWvqxzLcczquwP3M4kWjfZkdWqk2QJLeIe1i6qeSoLLJP/VOclcY9Jo4WaKT8Ge2QY2HenK6iXBR9VNXVLz6MGTcFk3B9Vgy5AAFwor4pLgKy3Y7jXhRhCfED9l03hfYSB3FFimbZor2EWrnklsv7wUkS0RpQraK0BuItw2mouISONizvRS+xfvWt2FbIyCAVzAbh3UbjOZzJf7nwu+YXqlpGKya139dL0Pz8cCZL1ukNZHY5GUpFcpwwtbEw7aX9RenlTs70yif0SAoiX6DEcSDz+sfSbRP0KjKI/VdXdOWJZS5PdMon+EF2p8fkbL0bdZjpZQxPf6pVU12eYQ2lYfccTfZ2YuuicV50lNuNP3fCbRGxBHeCpNQXcr5vwOqpsGjefbr/czl3TGMe+aVDcN5LiUPyRCdRd17+9nQoM641TMmfhfo1ATLuwqWM8zv0PiSNGpt5pwGwS0XeSQMeu5JtwGAU7RwnTQptNvckAAnqIFs8j5NzlAkIDOdWRnXYS4umkUf/gGCvOzaOR//XXMxWWwZilyOckBhDjwfwsXc554y9fuIidkWdBQ42zGbKQ02SugNdpUxmzENNkI4BQ9vVG0VnXTEABO0dssWrO6aQgADjWKrzVmo6fJogLaLuZsVzeNliaLCmhz17RPckAGOSINkned38NnEqMqZCGGGhcibnKmHeTw5RoSA42/WlMZAdAaLa58/gP7X/0KmcQ+Se3AqtVWGLWgv/IEfcAh9/jPn/8KIpIo7XIpNqZUc7n9j48XfnurpFjWqJiSzuu53Efgknyfr/795x8/BoOYXzAcznjjWldXn1q7rR8+ezNIbymWGzxcXT3CUoQ4uvkPEwTQt2JZ7qV1tfvfFtf63WdvLOabMyrVdO7qRyhFy12AREOkg0B914ipRStLZG3Hb2+xFOJHENGKlMjlgI+kUXxQmw5dattrLB9EOfhicVyUM4Lboi222GKLLd49fgIm9b0DNJ5vbzNfvn2FHkfksZ1HW2yxccjYw93cOnHdkLlHL3O5t1tMYsvRUsjPiJ78/VavuSD/Ba1HcwnKW0wCcyQ/30MPI9q4fc58vb2HHkW0wctNOTB/5Rb/j/gfu2AqS/XRpM4AAAAASUVORK5CYII=" title="Vector" style="width:50.0%" alt="Figura 1.2" />
 <div class="figcaption">Figura 1.2</div>
 </div>
+<h3 id="base-canónica">Base canónica</h3>
+<p>Llamamos a los vectores <span class="math inline">\(\{\mathbf{i}=(1,0,0), \mathbf{j}=(0,1,0),
+\mathbf{k}=(0,0,1)\}\)</span></p>
 <h3 id="ejemplo">Ejemplo</h3>
 <p>Para los vectores</p>
 <p><span class="math display">\[\begin{equation}
@@ -2323,7 +2403,7 @@ siguiente <em>sistema</em> <em>de</em> <em>ecuaciones</em></p>
 <p>Resolviendo las ecuaciones obtenemos que <span class="math inline">\(\alpha=\frac{1}{3}\)</span>, <span class="math inline">\(\beta=\frac{1}{6}\)</span> y <span class="math inline">\(\gamma=\frac{1}{2}\)</span>. Entonces el vector
 <span class="math inline">\(\begin{pmatrix} 1\\1\\1
 \end{pmatrix}\)</span> es una combinación lineal de los vectores <span class="math inline">\(\vec{u},\, \vec{v},\,\vec{w}\)</span></p>
-<h2 id="base-canónica">Base canónica</h2>
+<h2 id="base-canónica-1">Base canónica</h2>
 <div class="def">
 <p>Los vectores <span class="math inline">\(\mathbf{i}=(1,0,0)\)</span>,
 <span class="math inline">\(\mathbf{j}=(0,1,0)\)</span> y <span class="math inline">\(\mathbf{k}=(0,0,1)\)</span> son los vectores
