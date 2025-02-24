@@ -1837,6 +1837,56 @@ y \\ z \end{pmatrix}\)</span> y <span class="math inline">\(\vec{P}=\begin{pmatr
 calcular la ecuación del plano, <span class="math inline">\(\vec{Q},\vec{P}\)</span> y <span class="math inline">\(\vec{R}\)</span>, en este caso <span class="math inline">\(\vec{u}=\overrightarrow{QP}\)</span> y <span class="math inline">\(\vec{v} = \overrightarrow{QR}\)</span> entonces un
 vector normal se puede calcular como <span class="math inline">\(\vec{n}
 = \vec{u} \times \vec{v}\)</span>.</p>
+<p>A dicho producto, definido sólo para <span class="math inline">\(\mathbb{R}^3\)</span> se le llama el
+<strong>producto</strong> <strong>vectorial</strong> de los vectores
+<span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span>. Si <span class="math inline">\(\vec{u}=(u_1,u_2,u_3)\)</span> y <span class="math inline">\(\vec{v}=(v_1,v_2,v_3)\)</span></p>
+<p><span class="math display">\[
+\begin{array}{cc}
+\vec{u}\times \vec{v} = &amp; \begin{vmatrix}
+                          \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}
+\\
+                          u_1        &amp;
+u_2        &amp;  u_3       \\
+                          v_1        &amp; v_2        &amp;  v_3
+                          \end{vmatrix} \\
+\vec{u}\times \vec{v} = &amp; \mathbf{i}
+                          \begin{vmatrix} u_2 &amp; u_3 \\ v_2 &amp; v_3
+\end{vmatrix} -
+                          \mathbf{j}
+                          \begin{vmatrix} u_1 &amp; u_3 \\ v_1 &amp; v_3
+\end{vmatrix} +
+                          \mathbf{k}
+                          \begin{vmatrix} u_1 &amp; u_2 \\ v_1 &amp; v_2
+\end{vmatrix}
+\end{array}
+\]</span></p>
+<p>y <span class="math inline">\(\begin{vmatrix} a &amp; b \\ c &amp; d
+\end{vmatrix}=ad-bc\)</span></p>
+<p><strong>Nota</strong> Los vectores están dados por <span class="math inline">\(\mathbf{i}:=(1,0,0)\)</span>, <span class="math inline">\(\mathbf{j}:=(0,1,0)\)</span> y <span class="math inline">\(\mathbf{k}:=(0,0,1)\)</span>. Se les suele llamar
+<em>la</em> <em>base</em> <em>canónica</em>.</p>
+<h3 id="ejemplo-3">Ejemplo</h3>
+<p>Calcular <span class="math inline">\(\mathbf{u}\times
+\mathbf{v}\)</span> y <span class="math inline">\(\mathbf{v} \times
+\mathbf{u}\)</span> si <span class="math inline">\(\mathbf{u}=2\mathbf{i}+ 4\mathbf{j}-
+5\mathbf{k}\)</span> y <span class="math inline">\(\mathbf{v}=-3\mathbf{i}-2\mathbf{j}+\mathbf{k}\)</span>.</p>
+<h3 id="propiedades-del-producto-cruz">Propiedades del producto
+cruz</h3>
+<ul>
+<li><p><span class="math inline">\(\vec{u}\times \vec{0} = \vec{0}\times
+\vec{u}=\vec{0}\)</span></p></li>
+<li><p><span class="math inline">\(\vec{u}\times \vec{v} =
+-(\vec{v}\times \vec{u})\)</span></p></li>
+<li><p><span class="math inline">\((\alpha\vec{u})\times \vec{v} =
+\alpha(\vec{u}\times \vec{v})\)</span></p></li>
+<li><p><span class="math inline">\(\vec{u}\times(\vec{v}+\vec{w})=\vec{u}\times\vec{v}+\vec{w}
+\times \vec{u}\)</span></p></li>
+<li><p><span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> son <strong>ortogonales</strong>
+a <span class="math inline">\(\vec{u}\times \vec{v}\)</span></p></li>
+<li><p><span class="math inline">\((\vec{u}\times \vec{v})\cdot \vec{w}=
+\vec{u} \cdot(\vec{v}\times\vec{w})\)</span></p></li>
+</ul>
+<p>*<span class="math inline">\(\|\vec{u}\times \vec{v}\| =
+\|\vec{u}\|\|\vec{v}\|\sin \theta\)</span></p>
 <h4 id="ejemplo.">Ejemplo.</h4>
 <p>Encontrar el plano que pasa por <span class="math inline">\(\vec{P}=\begin{pmatrix} 2 \\ 1 \\ 3
 \end{pmatrix}\)</span>, <span class="math inline">\(\vec{Q}=\begin{pmatrix} 1 \\ 3 \\ 2
@@ -1859,7 +1909,7 @@ del plano se calcula como</p>
 \end{pmatrix}\)</span> entonces <span class="math inline">\(\vec{X}
 \cdot \vec{n} = \vec{p}\cdot \vec{n}\)</span> entonces la ecuación del
 plano está dada por <span class="math inline">\(3x+4y+5z=25\)</span>.</p>
-<h4 id="ejemplo-3">Ejemplo</h4>
+<h4 id="ejemplo-4">Ejemplo</h4>
 <p>Encontrar una ecuación del plano que pasa por <span class="math inline">\(P_1\)</span> y paralelo a <span class="math inline">\(\Pi_1\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Si <span class="math inline">\(\Pi_1\)</span> tiene como ecuación
@@ -1894,7 +1944,7 @@ forma vectorial del plano, tenemos</li>
 \end{equation}\]</span></p>
 <p>La ecuación está dada por <span class="math inline">\(x+2y+z=
 5\)</span></p>
-<h4 id="ejemplo-4">Ejemplo</h4>
+<h4 id="ejemplo-5">Ejemplo</h4>
 Encontrar la ecuación del plano <span class="math inline">\(\Pi\)</span>
 que contiene <span class="math inline">\(l_1\)</span> y <span class="math inline">\(l_2\)</span> dada por [
 <span class="math display">\[\begin{array}{cc}
@@ -1903,7 +1953,7 @@ L_1: &amp; \frac{x-1}{3} = \frac{y+2}{2} = \frac{z-2}{2}
 <span class="math display">\[\begin{array}{cc}
 L_2: &amp; \frac{x-1}{1} = \frac{y+2}{1} = \frac{z-2}{0}
 \end{array}\]</span>
-<h4 id="ejemplo-5">Ejemplo</h4>
+<h4 id="ejemplo-6">Ejemplo</h4>
 <p>Mostrar que el plano <span class="math inline">\(2x-3y + z -2 =
 0\)</span> es paralelo a la recta <span class="math inline">\(L:
 \frac{x-2}{1}=\frac{y+2}{1} = \frac{z+1}{1}\)</span>.</p>

@@ -52,7 +52,6 @@ _Balancear_ la reacción, significa encontrar los números de moléculas que hac
 
 
 
-
 # Los espacios $\mathbb{R}^{2}$ y $\mathbb{R}^{3}$
 
 ## 1. Definición
@@ -314,7 +313,7 @@ Algunas propiedades del producto punto
 5. En particular, si $\vec{v}\cdot \vec{v}= 0$ entonces $\vec{v}=\vec{0}$.
 
 
-## Norma euclideana
+## Norma euclideana de un vector
 
 Sea $v\in \mathbb{R}^{2}$ un vector, definimos a la norma del vector $v$ como
 
@@ -326,6 +325,46 @@ En general, si $v\in\mathbb{R}^{n}$ es un vector en el espacio de $n$ dimensione
 \begin{equation}
  \|v\|=\sqrt{v_1^2 + v_2^2+\ldots+ v_n^{2}} = \sqrt{\sum_{i=1}^n v_i^{2}} = \sqrt{ \vec{v} \boldsymbol{\cdot} \vec{v}}
 \end{equation}
+
+### Propiedades de la norma
+Suponga que $\vec{x},\vec{y}\in\mathbb{R}^n$ y $\alpha$ un escalar, $\alpha\in\mathbb{R}$.
+
+@. Para todo $\vec{x}\in \mathbb{R}^n$, $\|\vec{x}\| \geq 0$.
+
+@. $\|\alpha \cdot \vec{x}\| = |\alpha|\|\vec{x}\|$ para todo $\alpha\in \mathbb{R}$ y $\vec{x} \in \mathbb{R}^n$
+
+@. Si $\|\vec{x}\|=0$ entonces $\vec{x}=\vec{0}$.
+
+@. Para todo $\vec{x},\vec{y}\in \mathbb{R}^n$  se cumple **la Desigualdad de Cauchy-Schwarz**:
+\begin{equation}
+|\vec{x} \boldsymbol{\cdot} \vec{y}| \leq \|\vec{x}\| \|\vec{y}\|
+\end{equation}
+
+@. Para todo $\vec{x},\vec{y}\in \mathbb{R}^n$
+\begin{equation}
+\| \vec{x} + \vec{y} \| \leqslant \| \vec{x} \| + \| \vec{y} \|
+\end{equation}
+
+La última desigualdad recibe el nombre de **desigualdad** **del** **triángulo**.
+
+Demostración:
+
+Para 1) se tiene que $\| \vec{x} \| = \sqrt{x_1^2+x_2^2+\ldots + x_n^2}$ como $\vec{x} \boldsymbol{\cdot} \vec{x} \geq 0$ por propiedades del producto punto entonces $\| \vec{x} \| \geq 0$.
+
+Para 2) por propiedades del producto punto 
+\[
+\|\alpha \cdot \vec{x}\|= 
+\sqrt{ (\alpha\vec{x}) \boldsymbol{\cdot} (\alpha\vec{x})} = 
+\sqrt{\alpha^2 \vec{x} \boldsymbol{\cdot} \vec{x}} = 
+|\alpha|\sqrt{\vec{x} \boldsymbol{\cdot}  \vec{x} } =
+|\alpha|\| \vec{x} \|
+\]
+
+Para 3), es obvio que si $\|\vec{x}\|=0$ entonces
+\[
+\sum_{i=1}^n x^2_i = 0 \Rightarrow x_i = 0
+\]
+
 
 Veremos a detalle el concepto de norma en otra sección del curso. Por el momento nos contentaremos con indicar que la norma definida es _la_ _norma_ _euclidiana_ y representa la _longitud_ del vector, del origen al punto que representa el vector.
 
@@ -389,6 +428,21 @@ Considerando que $|\cos \theta| \leq 1$ para todo $\theta$ entonces
   \end{equation}
 </div>
 
+Considere
+\[
+\begin{array}{lcl}
+\| \vec{x} + \vec{y} \|^2  & = & (\vec{x} + \vec{y}) \boldsymbol{\cdot} (\vec{x} + \vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  & = & \vec{x} \boldsymbol{\cdot} (\vec{x} + \vec{y})   + \vec{y}  \boldsymbol{\cdot} (\vec{x} + \vec{y})  \\
+\| \vec{x} + \vec{y} \|^2  & = & \vec{x} \boldsymbol{\cdot} \vec{x}    + \vec{x} \boldsymbol{\cdot} \vec{y}+ \vec{y}  \boldsymbol{\cdot} \vec{x} + \vec{y}  \boldsymbol{\cdot}\vec{y}  \\
+\| \vec{x} + \vec{y} \|^2  & = & \| \vec{x} \|^2 + 2 \vec{x} \boldsymbol{\cdot} \vec{y}+ \| \vec{y} \|^2 \\
+\| \vec{x}  + \vec{y} \|^2  & \leq & \| \vec{x} \|^2 + 2 \|\vec{x}\| \|\vec{y}\| + \| \vec{y} \|^2 = (\| \vec{x} \| + \|\vec{y} \|)^2 
+\end{array}
+\]
+La última desigualdad proviene de la desigualdad de Cauchy-Schwarz aplicándola al segundo término, aplicando la raíz cuadrada tenemos
+
+\begin{equation}
+\| \vec{x}  + \vec{y} \| \leq \| \vec{x} \| + \|\vec{y} \|
+\end{equation}
 
 <div class="def">
 <h3>Ortogonalidad en $\mathbb{R}^n$</h3>
@@ -400,6 +454,11 @@ Considerando que $|\cos \theta| \leq 1$ para todo $\theta$ entonces
   \vec{x}\boldsymbol{\cdot}\vec{y} = 0
   \end{equation}
 </div>
+
+Si el ángulo entre dos vectores $\vec{x}$ y $\vec{y}$ es $90°$ (o $\frac{\pi}{2}$, $-\frac{\pi}{2}$) entonces
+\[
+\vec{x}\boldsymbol{\cdot} \vec{y} = \|\vec{x}\| \|\vec{y}\| \cos( \pm\pi/2)=0
+\]
 
 Aplicando el mismo cálculo para $\vec{x}$ y $\vec{y}$ **ortogonales** obtenemos el siguiente resultado
 
@@ -657,3 +716,21 @@ Algo parecido en $\mathbb{R}^n$. En este caso $\mathbf{e}_i=(0,0,\ldots,1,0,\ldo
 
 
 
+### Ejercicios 
+
+1. Encontrar la norma de los siguientes vectores
+
+* $P=(3,6)$  
+* $A=(-1,3,4,1)$
+* $\vec{OP}=(4,-1,3,5)$
+
+2. Encontrar las siguientes normas, si $A=(3,-1,4)$ y $B=(4,2,-1)$
+
+* $\|A+B\|$
+
+* $\|2A\|$
+
+* $\|A-2B\|$
+
+3. Encontrar la longitud del triángulo formado por 
+$A=(1,1,1)$, $B=(1,1,0)$ $C=(0,1,1)$.
