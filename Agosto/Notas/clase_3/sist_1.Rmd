@@ -7,7 +7,7 @@ output:
   slidy_presentation:
     footer: "Álgebra lineal, ESCOM 2BV1, 2BV2"
     math_method: "mathjax"
-    pandoc_args: [ "--filter", "pandoc-crossref" ]
+#    pandoc_args: [ "--filter", "pandoc-crossref" ]
     df_print: paged
 ---
 
@@ -169,6 +169,16 @@ Sea $n$ un número entero positivo. Denotamos por $\mathbb{R}^n$ al conjunto de 
   \mathbb{R}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{R} \mbox{ para }i=1,2,\ldots,n\Big\}
 \end{equation}
 
+## Definición de $\mathbb{K}^n$
+
+Sea $n$ un número entero positivo. Denotamos por $\mathbb{K}^n$ al conjunto de todas las $n-$tuplas de números del campo. Es decir,
+
+\begin{equation}
+  \mathbb{K}^n =\Big\{ (x_1,x_2,\ldots,x_n)\,\,:\,\, x_i\in\mathbb{K} \mbox{ para }i=1,2,\ldots,n\Big\}
+\end{equation}
+
+
+
 A los números $x_i$ de la n-tupla $(x_1,x_2,\ldots,x_n)$ le llamamos la **i-ésima coordenada**.
  
 ## 2. Definición de igualdad de vectores
@@ -284,7 +294,7 @@ $$
 \mbox{Para todo }\vec{v} \in\mathbb{R}^{3} \,\,\mbox{y}\,\,  \lambda,\mu\in\mathbb{R}, \quad \,\,\lambda\cdot(\mu\cdot\vec{v}) = (\lambda\mu)\cdot\vec{v}
 $$
 
-## Producto escalar
+## Producto escalar o producto punto
 
 En $\mathbb{R}^2$, $\mathbb{R}^3$ y en general, en $\mathbb{R}^n$ definimos el **producto** **punto** como
 Suponga que $\vec{v},\vec{u}\in \mathbb{R}^3$
@@ -293,16 +303,15 @@ Suponga que $\vec{v},\vec{u}\in \mathbb{R}^3$
 \vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + v_3u_3
 \]
 
-y en general en $\mathbb{R}^n$
+y en general en $\mathbb{R}^n$, si $\vec{\mathtt{v}}=(\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_n)$ y $\vec{\mathtt{u}}=(\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_n)$
 
 \[
-\vec{v} \cdot  \vec{u} = v_1u_1 +v_2u_2 + \ldots + v_nu_n = \sum_{i=1}^n v_ku_k
+\vec{\mathtt{v}} \cdot  \vec{\mathtt{u}} = v_1u_1 +v_2u_2 + \ldots + v_nu_n = \sum_{i=1}^n v_ku_k
 \]
 
 Algunas propiedades del producto punto
 
 1. $\vec{v}\cdot \vec{u} = \vec{u}\cdot \vec{v}$
-
 
 2. $(\vec{v}+ \vec{w})\cdot \vec{u} = \vec{v}\cdot \vec{u} + \vec{w}\cdot \vec{u}$
 
@@ -475,7 +484,6 @@ Aplicando el mismo cálculo para $\vec{x}$ y $\vec{y}$ **ortogonales** obtenemos
 
 
 
-
 ## 5. Combinaciones lineales
 
 ### Combinaciones lineales de vectores
@@ -488,6 +496,9 @@ donde $c_1, c_2, \dots, c_k$ son números reales (llamados coeficientes de la co
 
 ![Figura 1.2](linear_comb.png "Vector"){ width=50% }
 
+### Base canónica
+
+Llamamos a los vectores $\{\mathbf{i}=(1,0,0), \mathbf{j}=(0,1,0), \mathbf{k}=(0,0,1)\}$
 
 ### Ejemplo 
 
