@@ -92,7 +92,15 @@ de tal forma que $b\ne 0$ o $d\ne 0$ entonces, las rectas son paralelas si
 </div>
  
 
+### Actividad 
 
+Usando el siguiente sitio https://www.geogebra.org/m/xHjeaupv#material/eyaTVm2A
+
+* Encontrar un sistema de ecuaciones $2\times 2$ que no tenga solución, usando el applet. Adjuntar guardar un screenshot para tu práctica.
+
+* Calcular el determinante $\Delta$ del sistema.
+
+* Encontrar 3 sistemas de ecuaciones con solución única, calcular el determinante del sistema 
 
 ## Sistemas de ecuaciones $3\times 3$
 
@@ -111,10 +119,35 @@ donde $a_{ij},b_i\in\mathbb{R},\ i=1,2$ y $j=1,2$ suelen ser constantes conocida
 
 * A los escalares $b_1,\,b_2,\,\ldots,b_n$ es el término independiente.
 
-* Al vector $\vec{\mathbf{x}}=(x_1,x_2,\ldots,x_n)$ es el vector incógnita.
+* Al vector $\vec{\mathbf{x}}=(x_1,x_2,x_3)$ es el vector incógnita.
+
+### Definición
+
+Un vector $\vec{\mathbf{x}}=(x^{\star}_1,x^{\star}_2,x^{\star}_3)$ es una **solución** del sistema sí, de manera simultánea, el vector $\vec{\mathbf{x}}=(x^{\star}_1,x^{\star}_2,x^{\star}_3)$ cumple la igualdad 
+
+\[
+\begin{matrix}
+a_{11}x^{\star}_1 + a_{12}x^{\star}_2 + a_{13}x^{\star}_3 = & b_1\\
+a_{21}^{\star}x_1 + a_{22}x^{\star}_2 + a_{23}x^{\star}_3 = & b_2\\
+a_{31}x^{\star}_1 + a_{32}x^{\star}_2 + a_{33}x^{\star}_3 = & b_3
+\end{matrix}
+\]
+
+Al conjunto de todas las posibles soluciones, se le refiere como el conjunto solución, $\mathcal{X}$.
+
+Es decir, el conjunto solución son todos los vectores $(x_1,x_2,x_3)$ que cumplen con la igualdad.
+
+\[
+\mathcal{X}=\begin{Bmatrix} (x_1,x_2,x_3)\in \mathbb{R}^3 :\, \, \begin{matrix}
+a_{11}x^{\star}_1 + a_{12}x^{\star}_2 + a_{13}x^{\star}_3 = & b_1\\
+a_{21}^{\star}x_1 + a_{22}x^{\star}_2 + a_{23}x^{\star}_3 = & b_2\\
+a_{31}x^{\star}_1 + a_{32}x^{\star}_2 + a_{33}x^{\star}_3 = & b_3
+\end{matrix}
+\end{Bmatrix}
+\]
+
 
 Al sistema de ecuaciones lineales de la forma 
-
 \begin{equation}
 \begin{matrix}
  a_{11}x_1+a_{12}x_2 + a_{13}x_3 = & 0\\
@@ -124,6 +157,20 @@ Al sistema de ecuaciones lineales de la forma
 \end{equation}
 
 Se dice ser un sistema _homogéneo_. En caso contrario, es _no_ _homogéneo_.
+
+## Interpretación geométrica de un sistema de ecuaciones
+
+https://www.geogebra.org/m/jfcbkgvp
+
+
+### Actividad para la práctica 2.
+
+* Revisar el applet y encontrar un caso en el que no exista solución única pero los planos se intersecten.
+
+* Revisar el applet y encontrar un caso en el que exista una solución única.
+
+* Revisar el applet y encontrar un caso en el que exista solución pero no sea única
+
 
 ## Operaciones elementales
 
@@ -310,7 +357,7 @@ Else:
 
 ## Ejemplo
 
-Aplicar el algoritmo al sistema
+Aplicar el algoritmo de eliminación gaussiana para resolver el sistema
 
 
 \begin{equation*}
@@ -371,6 +418,31 @@ Aplicar el algoritmo al sistema
 
 La solución es única y es igual a $x=\frac{3}{4}$, $y=\frac{1}{4}$, $z=\frac{5}{8}$, o bien $\mathcal{X}=\begin{Bmatrix}\,(\frac{3}{4},\frac{1}{4},\frac{5}{8})\,\,\end{Bmatrix}$.
 
+## Ejemplo
+
+Aplicar el algoritmo de eliminación gaussiana para resolver el sistema
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           2x  & +4 y  & +6z & = 18  \\
+           4x &  +5 y  & +4z  & = 24 \\
+           3x &  + y   & -2z  & = 4
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+## Ejemplo
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           3x  & +  y  & + z & = 8  \\
+           x   & +2 y  & -z  & = 9 \\
+           x &  +3 y   & +2z  & = 9
+  \end{matrix}
+\end{array}
+\end{equation*}
 
 # Sistemas consistentes e inconsistentes
 
@@ -381,13 +453,63 @@ Un sistema de ecuaciones es **consistente** si tiene al menos una solución. Si 
 Dos sistemas son **equivalentes** si tienen exactamente al mismo conjunto solución. 
 Un sistema de ecuaciones puede ser consistente sin tener una única solución.
 
-
 # Uso de matrices
 
-
 \small
-Como el procedimiento de eliminación gaussiana sólo involucra a los coeficientes, una forma de simplificar los cálculos es por medio de un arreglo que llamaremos **Matriz**.
-La matriz asociada al sistema de ecuaciones:
+La forma general de un *sistema* *de* *ecuaciones* *lineales* con $k-$ ecuaciones y $n$ incógnitas es de la forma
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2 + & \cdots   & +a_{1n} x_n  &= b_1  \\
+     a_{21} x_1 & +a_{22} x_2 + & \cdots   & +a_{2n} x_n  &= b_2\\
+    \vdots    & \vdots  & \vdots   & \vdots \\
+     a_{k1} x_1 & +a_{k2} x_2 + & \cdots   & +a_{kn} x_n  & =b_k
+  \end{matrix}
+\end{equation}
+
+Una solución es un vector $\vec{x}^{\star}=(x_1,x_2,\ldots,x_n)$ tal que la igualdad se cumple en las ecuaciones.
+
+Observe que el método de eliminación gaussiana solo requiere a los coeficientes y a las operaciones elementales entre los coeficientes y el término independiente. Como el procedimiento sólo involucra a los coeficientes, una forma de simplificar los cálculos en eliminación gaussiana es por medio de un arreglo que llamaremos **Matriz**, más concretamente _la matriz asociada al sistema de ecuaciones_ o _matriz_ _del_ _sistema_.
+
+\begin{equation*}
+  \begin{pmatrix}
+              a_{11}   &   a_{12} &  \ldots  &  a_{1n}  \\
+              a_{21}   &   a_{22} &  \ldots  &  a_{2n}   \\
+              \vdots   &   \vdots &  \vdots  &  \vdots \\
+              a_{k1}   &   a_{k2} &   \ldots &  a_{kn} \\
+  \end{pmatrix}
+\end{equation*}
+
+Y la siguiente matriz,
+
+\begin{equation*}
+  \begin{bmatrix}
+              a_{11}   &   a_{12} &  \ldots  &  a_{1n}  &|      & b_1  \\
+              a_{21}   &   a_{22} &  \ldots  &  a_{2n}  &|      & b_2   \\
+              \vdots   &   \vdots &  \vdots  &  \vdots  &\vdots & \vdots\\
+              a_{k1}   &   a_{k2} &   \ldots &  a_{kn}  &|      & b_k\\
+  \end{bmatrix}
+\end{equation*}
+
+es **la matriz extendida del sistema**.
+
+* Nota: Así como para los vectores, indistintamente podemos usar $[ ]$ ó $( )$.
+
+## Ejemplos
+
+Obtener las matrices asociadas al sistema y la matriz extendida del sistema $[\mathbf{A}|\vec{b}]$ y aplicar el algoritmo de eliminación gaussiana.
+
+### Ejemplo 1 
+
+Resolver el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+        x_1 &  +  2x_2    & = 3  \\
+       4x_1 & + 5x_2    & = 6   \\
+       7x_1 & + 8x_2    & = 9
+  \end{matrix}
+\end{equation*}
 
 
 
@@ -446,8 +568,64 @@ Regresamos al sistema asociado a esta matriz extendida
 
 y se obtiene la solucion $\vec{x}=(10,6,3)$
 
-### Ejemplo 3
 
+### Ejemplo
+Aplicar eliminación gaussiana para determinar si existe solución al sistema
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+             & +2 y  & +3z  & = 4  \\
+          2x & -6 y  & +7z  & = 15 \\
+            x& -2y  & +5z  & = 10
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+\newpage
+Obtener las matrices asociadas al sistema y la matriz extendida del sistema $[\mathbf{A}|\vec{b}]$.
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           x  & +2 y  & +13z  & = -4  \\
+              & -7 y  & -20z  & = 15 \\
+              &  +7y  & +21z  & = -15
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           3x  & +4 y  & +z  & = 10  \\
+            x  & +2 y  & +4z  & = 13 \\
+           2x  & +3y  & +3z  & =  5
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+
+
+### Ejemplo 4
+Resolver el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+      x_1   & +2x_2   & +3x_3    & = 4  \\
+     5x_1    & + 6x_2 & +7x_3    & = 8   \\
+    9x_1     & + 10x_2& + 11x_3  & =12 \\
+      13x_1  & + 14x_2 &+15x_5   & = 16
+  \end{matrix}
+\end{equation*}
+
+
+
+### Ejemplo 5
+Resolver el siguiente sistema de ecuaciones. Identificar si el conjunto solución es un punto, una recta o un plano, o algo diferente.
 
 \begin{equation*}
   \begin{matrix}
@@ -464,9 +642,8 @@ Es igual a
         1   & - 1 & - 1  & 2   \\
         2   & - 2 & - 1  & 3    \\
       - 1   &   1 &  -1  & 0    
-  \end{bmatrix}
+      \end{bmatrix}
 \end{equation*}
-
 Existe otra matriz asociada, la **matriz** **extendida**
 
 
@@ -481,7 +658,7 @@ Existe otra matriz asociada, la **matriz** **extendida**
 \end{equation*} 
 
 
-### Ejemplo 
+### Ejemplo  6
 
 Encontrar el valor de $m$ tal que el siguiente sistema tenga una solución única
 
@@ -495,20 +672,264 @@ Encontrar el valor de $m$ tal que el siguiente sistema tenga una solución únic
 
 El método de eliminación gaussiana, también nos permite determinar si un sistema es **inconsistente**.
 
-### Ejemplo 
+### Ejemplo 7
 
 Encontrar el conjunto solución
 
 \begin{equation*}
   \begin{matrix}
-         &  y  & -4z &  = 8  \\
+          &  y     & -4z &  = 8  \\
        2x & - 3y   & +2z & = 1   \\
        4x &  -8y   & +12z & =1 
   \end{matrix}
 \end{equation*}
 
 
+### Combinaciones lineales de vectores
 
+Una <strong>combinación lineal</strong> de vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$ es el vector resultante de "combinar" los vectores por medio de la siguiente operación:
+\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_k \vec{v}_k = \sum_{i=1}^k c_i \vec{v}_i,
+\end{equation} 
+donde $c_1, c_2, \dots, c_k$ son números reales (llamados coeficientes de la combinación lineal). En otras palabras, una combinación lineal es una suma de múltiplos de los vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$.
+
+![Figura 1.2](linear_comb.png "Vector"){ width=50% }
+
+
+### Ejemplo 
+
+Para los vectores
+	
+\begin{equation}
+	\vec{v}_1 = \left(
+	\begin{array}{c}
+	1 \\
+	-1
+\end{array}	\right) \quad 
+\text{y} \quad
+	\vec{v}_2 = \left(
+	\begin{array}{c}
+	1 \\
+	3
+	\end{array}
+	\right),
+\end{equation} 
+	
+obtener las combinaciones lineales:
+	
+* $\vec{v}_1 + \vec{v}_2 =$
+
+* $4 \vec{v}_1 = 4 \vec{v}_1 + 0 \vec{v}_2 =$
+* $\vec{v}_2 = 0\vec{v}_1 + 1\vec{v}_2 =$
+* $\frac{1}{2}\vec{v}_1  -1 \vec{v}_2 =$
+
+Geometricamente, _cualquier_ vector del plano puede ser representado como combinación lineal de vectores que no son colineales.
+
+![Figura 1.3](semana02-comblinear1.png "Combinación lineal"){ width=40% }	
+
+![Figura 1.4](semana02-comblinear3.png "Combinación lineal"){ width=40% }		
+	
+Por ejemplo, para representar el vector $\vec{v}$ como combinación lineal de $\vec{v}_1$ y $\vec{v}_2$, podemos trazar rectas paralelas a los vectores, pasando por el origen y por el extremo del vector $\vec{v}$ como en la figura.
+	
+	
+De forma mas general, decimos que un vector $\vec{v} \in \mathbb{R}^n$ es una **combinación** **lineal** de los $k$ vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k  \in \mathbb{R}^n$ cuando existen coeficientes $c_1, c_2, \dots, c_k$ tales que
+
+\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \dots + c_k \vec{v}_k.
+\end{equation} 
+
+
+Para decidir si un vector es combinación lineal de otros, debemos determinar si existen  _escalares_ $c_1, c_2, \dots, c_k$ tales que
+
+\begin{equation}
+\vec{v}_1 = \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right), \,
+\vec{v}_2 =
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right), \,
+\vec{v}_3 =
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right), \, \cdots, 
+\vec{v}_k =
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right), \,
+\vec{v} =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} vemos que encontrar los coeficientes de la combinación lineal, en caso de que estos existan, equivale a resolver una ecuación
+\begin{equation}
+c_1 \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right) + c_2
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right) + c_3
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right) + \cdots + c_k
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} que, a su vez, es equivalente a
+\begin{equation}
+\left(
+\begin{array}{c}
+v_{11} c_1 + v_{12} c_2 + v_{13} c_3 + \cdots + v_{1k} c_k  \\
+v_{21} c_1 + v_{22} c_2 + v_{23} c_3 + \cdots + v_{2k} c_k  \\
+v_{31} c_1 + v_{32} c_2 + v_{33} c_3 + \cdots + v_{3k} c_k  \\
+\vdots  \\
+v_{m1} c_1 + v_{m2} c_2 + v_{m3} c_3 + \cdots + v_{mk}cx_k
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right)
+\end{equation}
+
+### Ejemplo
+
+En $\mathbb{R}^{3}$ todo vector es una combinación lineal de los vectores $\hat{i}=(1,0,0)$, $\hat{j}=(0,1,0)$ y $\hat{k}=(0,0,1)$. En efecto, si $\vec{v}=(v_x,v_y,v_z)$ entonces 
+
+$$
+\vec{v}=v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+$$
+
+A los vectores $\hat{i}=(1,0,0)$, $\hat{j}=(0,1,0)$ y $\hat{k}=(0,0,1)$ se les llama la **base** **canónica**.
+
+### Ejemplo
+
+Dados $\vec{u}=\begin{pmatrix} 1\\2\\3 \end{pmatrix}$, $\vec{v}=\begin{pmatrix} 3\\2\\0 \end{pmatrix}$ y
+$\vec{w}=\begin{pmatrix} 2\\0\\0 \end{pmatrix}$ ¿es $\begin{pmatrix} 1\\1\\1 \end{pmatrix}$ una combinación lineal de los vectores $\vec{u},\vec{v},\vec{w}$?
+
+Debemos averiguar si existen constantes $\alpha,\beta,\gamma$ tal que 
+
+$$
+\begin{pmatrix} 1\\1\\1 \end{pmatrix} = \alpha\cdot \vec{u}+ \beta\cdot \vec{v} + \gamma\cdot \vec{w}
+$$
+
+Sustituyendo a los vectores por sus coordenadas obtenemos el siguiente _sistema_ _de_ _ecuaciones_
+
+$$
+\begin{array}{ccc}
+\alpha + 3\beta+2\gamma & = & 1 \\
+2\alpha + 2\beta        & = & 1 \\
+3\alpha & = & 1
+\end{array}
+$$
+
+
+
+# Práctica
+
+Para los siguientes sistemas, determinar si existe una solución única, una infinidad de soluciones o el sistema es inconsistente. Describir al conjunto solución
+
+\begin{equation*}
+  \begin{matrix}
+        x & + y  & -z   & = 0  \\
+       2x &-4 y  &  +3z & = 0   \\
+       3x &+7 y  & -z   & = 0 
+  \end{matrix}
+\end{equation*}
+
+
+
+\begin{equation*}
+  \begin{matrix}
+        x_1 & + x_2  & -x_3   & = 0  \\
+       2x_1 &-4 x_2  &  +3x_3 & = 0   \\
+       -x_1 &-7 x_2  &  +6x_3 & = 0 
+  \end{matrix}
+\end{equation*}
+
+
+
+\begin{equation*}
+  \begin{matrix}
+        x & + y  & +3z & = 1  \\
+       2x &+3 y  & -z  & = 3   \\
+       5x &+7 y  & +z  & = 7 
+  \end{matrix}
+\end{equation*}
+
+* Sea $A=(1,-3,2)$, $B=(5,0,-4)$ y $C=(2,1,-1)$. 
+  
+  * Escriba a $(13,6,-16)$ como combinación lineal de $A$, $B$ y $C$.
+  
+  * Encuentre todos los vectores ortogonales a $A$, $B$ y $C$.
 
 ## Matrices
 

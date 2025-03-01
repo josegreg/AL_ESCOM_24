@@ -534,9 +534,9 @@ De forma mas general, decimos que un vector $\vec{v} \in \mathbb{R}^n$ es una **
 
 Para decidir si un vector es combinación lineal de otros, debemos determinar si existen  números $c_1, c_2, \dots, c_k$. 
 En coordenadas:
+
 \begin{equation}
-\vec{v}_1 =
-\left(
+\vec{v}_1 = \left(
 \begin{array}{c}
 v_{11} \\
 v_{21} \\

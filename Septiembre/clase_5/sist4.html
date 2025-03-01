@@ -604,6 +604,15 @@ si <span class="math display">\[
 \Delta=ad-bc = 0
 \]</span></p>
 </div>
+<h3 id="actividad">Actividad</h3>
+<p>Usando el siguiente sitio <a href="https://www.geogebra.org/m/xHjeaupv#material/eyaTVm2A" class="uri">https://www.geogebra.org/m/xHjeaupv#material/eyaTVm2A</a></p>
+<ul>
+<li><p>Encontrar un sistema de ecuaciones <span class="math inline">\(2\times 2\)</span> que no tenga solución, usando
+el applet. Adjuntar guardar un screenshot para tu práctica.</p></li>
+<li><p>Calcular el determinante <span class="math inline">\(\Delta\)</span> del sistema.</p></li>
+<li><p>Encontrar 3 sistemas de ecuaciones con solución única, calcular
+el determinante del sistema</p></li>
+</ul>
 <h2 id="sistemas-de-ecuaciones-3times-3">Sistemas de ecuaciones <span class="math inline">\(3\times 3\)</span></h2>
 <p>Un sistema de ecuaciones lineales <span class="math inline">\(3\times
 3\)</span> es de la siguiente forma: <span class="math display">\[
@@ -622,11 +631,35 @@ a_{22},\,a_{23},a_{31},\,a_{32},\, a_{33}\)</span> se les llama
 <em>coeficientes</em> del sistema</p></li>
 <li><p>A los escalares <span class="math inline">\(b_1,\,b_2,\,\ldots,b_n\)</span> es el término
 independiente.</p></li>
-<li><p>Al vector <span class="math inline">\(\vec{\mathbf{x}}=(x_1,x_2,\ldots,x_n)\)</span> es
-el vector incógnita.</p></li>
+<li><p>Al vector <span class="math inline">\(\vec{\mathbf{x}}=(x_1,x_2,x_3)\)</span> es el
+vector incógnita.</p></li>
 </ul>
-<p>Al sistema de ecuaciones lineales de la forma</p>
-<p><span class="math display">\[\begin{equation}
+<h3 id="definición">Definición</h3>
+<p>Un vector <span class="math inline">\(\vec{\mathbf{x}}=(x^{\star}_1,x^{\star}_2,x^{\star}_3)\)</span>
+es una <strong>solución</strong> del sistema sí, de manera simultánea,
+el vector <span class="math inline">\(\vec{\mathbf{x}}=(x^{\star}_1,x^{\star}_2,x^{\star}_3)\)</span>
+cumple la igualdad</p>
+<p><span class="math display">\[
+\begin{matrix}
+a_{11}x^{\star}_1 + a_{12}x^{\star}_2 + a_{13}x^{\star}_3 = &amp; b_1\\
+a_{21}^{\star}x_1 + a_{22}x^{\star}_2 + a_{23}x^{\star}_3 = &amp; b_2\\
+a_{31}x^{\star}_1 + a_{32}x^{\star}_2 + a_{33}x^{\star}_3 = &amp; b_3
+\end{matrix}
+\]</span></p>
+<p>Al conjunto de todas las posibles soluciones, se le refiere como el
+conjunto solución, <span class="math inline">\(\mathcal{X}\)</span>.</p>
+<p>Es decir, el conjunto solución son todos los vectores <span class="math inline">\((x_1,x_2,x_3)\)</span> que cumplen con la
+igualdad.</p>
+<p><span class="math display">\[
+\mathcal{X}=\begin{Bmatrix} (x_1,x_2,x_3)\in \mathbb{R}^3 :\, \,
+\begin{matrix}
+a_{11}x^{\star}_1 + a_{12}x^{\star}_2 + a_{13}x^{\star}_3 = &amp; b_1\\
+a_{21}^{\star}x_1 + a_{22}x^{\star}_2 + a_{23}x^{\star}_3 = &amp; b_2\\
+a_{31}x^{\star}_1 + a_{32}x^{\star}_2 + a_{33}x^{\star}_3 = &amp; b_3
+\end{matrix}
+\end{Bmatrix}
+\]</span></p>
+<p>Al sistema de ecuaciones lineales de la forma <span class="math display">\[\begin{equation}
 \begin{matrix}
 a_{11}x_1+a_{12}x_2 + a_{13}x_3 = &amp; 0\\
 a_{21}x_1+a_{22}x_2+ a_{23}x_3  = &amp; 0\\
@@ -635,6 +668,19 @@ a_{31}x_1+a_{32}x_2+ a_{33}x_3  = &amp; 0
 \end{equation}\]</span></p>
 <p>Se dice ser un sistema <em>homogéneo</em>. En caso contrario, es
 <em>no</em> <em>homogéneo</em>.</p>
+<h2 id="interpretación-geométrica-de-un-sistema-de-ecuaciones">Interpretación
+geométrica de un sistema de ecuaciones</h2>
+<p><a href="https://www.geogebra.org/m/jfcbkgvp" class="uri">https://www.geogebra.org/m/jfcbkgvp</a></p>
+<h3 id="actividad-para-la-práctica-2.">Actividad para la práctica
+2.</h3>
+<ul>
+<li><p>Revisar el applet y encontrar un caso en el que no exista
+solución única pero los planos se intersecten.</p></li>
+<li><p>Revisar el applet y encontrar un caso en el que exista una
+solución única.</p></li>
+<li><p>Revisar el applet y encontrar un caso en el que exista solución
+pero no sea única</p></li>
+</ul>
 <h2 id="operaciones-elementales">Operaciones elementales</h2>
 <ol style="list-style-type: decimal">
 <li><p>Intercambiar una ecuación con otra ecuación</p></li>
@@ -805,7 +851,8 @@ hacia atrás</h3>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>      suma = suma - a(k,j)*x(j)</span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    x(k) = suma/a(k,k)</span></code></pre></div>
 <h2 id="ejemplo">Ejemplo</h2>
-<p>Aplicar el algoritmo al sistema</p>
+<p>Aplicar el algoritmo de eliminación gaussiana para resolver el
+sistema</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{ccc}
   \begin{matrix}
@@ -859,10 +906,32 @@ hacia atrás</h3>
 \end{array}
 \end{equation*}\]</span></p>
 <p>La solución es única y es igual a <span class="math inline">\(x=\frac{3}{4}\)</span>, <span class="math inline">\(y=\frac{1}{4}\)</span>, <span class="math inline">\(z=\frac{5}{8}\)</span>, o bien <span class="math inline">\(\mathcal{X}=\begin{Bmatrix}\,(\frac{3}{4},\frac{1}{4},\frac{5}{8})\,\,\end{Bmatrix}\)</span>.</p>
+<h2 id="ejemplo-2">Ejemplo</h2>
+<p>Aplicar el algoritmo de eliminación gaussiana para resolver el
+sistema</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           2x  &amp; +4 y  &amp; +6z &amp; = 18  \\
+           4x &amp;  +5 y  &amp; +4z  &amp; = 24 \\
+           3x &amp;  + y   &amp; -2z  &amp; = 4
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<h2 id="ejemplo-3">Ejemplo</h2>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           3x  &amp; +  y  &amp; + z &amp; = 8  \\
+           x   &amp; +2 y  &amp; -z  &amp; = 9 \\
+           x &amp;  +3 y   &amp; +2z  &amp; = 9
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
 </div>
 <div id="sistemas-consistentes-e-inconsistentes" class="slide section level1">
 <h1>Sistemas consistentes e inconsistentes</h1>
-<h2 id="definición">Definición</h2>
+<h2 id="definición-1">Definición</h2>
 <p>Un sistema de ecuaciones es <strong>consistente</strong> si tiene al
 menos una solución. Si no es consistente entonces se dice ser
 <strong>inconsistente</strong>.</p>
@@ -872,11 +941,69 @@ consistente sin tener una única solución.</p>
 </div>
 <div id="uso-de-matrices" class="slide section level1">
 <h1>Uso de matrices</h1>
-<p>Como el procedimiento de eliminación gaussiana sólo involucra a los
-coeficientes, una forma de simplificar los cálculos es por medio de un
-arreglo que llamaremos <strong>Matriz</strong>. La matriz asociada al
-sistema de ecuaciones:</p>
-<h3 id="ejemplo-2">Ejemplo 2</h3>
+<p>La forma general de un <em>sistema</em> <em>de</em>
+<em>ecuaciones</em> <em>lineales</em> con <span class="math inline">\(k-\)</span> ecuaciones y <span class="math inline">\(n\)</span> incógnitas es de la forma</p>
+<p><span class="math display">\[\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 &amp; +a_{12} x_2 + &amp; \cdots   &amp; +a_{1n}
+x_n  &amp;= b_1  \\
+     a_{21} x_1 &amp; +a_{22} x_2 + &amp; \cdots   &amp; +a_{2n}
+x_n  &amp;= b_2\\
+    \vdots    &amp; \vdots  &amp; \vdots   &amp; \vdots \\
+     a_{k1} x_1 &amp; +a_{k2} x_2 + &amp; \cdots   &amp; +a_{kn}
+x_n  &amp; =b_k
+  \end{matrix}
+\end{equation}\]</span></p>
+<p>Una solución es un vector <span class="math inline">\(\vec{x}^{\star}=(x_1,x_2,\ldots,x_n)\)</span> tal
+que la igualdad se cumple en las ecuaciones.</p>
+<p>Observe que el método de eliminación gaussiana solo requiere a los
+coeficientes y a las operaciones elementales entre los coeficientes y el
+término independiente. Como el procedimiento sólo involucra a los
+coeficientes, una forma de simplificar los cálculos en eliminación
+gaussiana es por medio de un arreglo que llamaremos
+<strong>Matriz</strong>, más concretamente <em>la matriz asociada al
+sistema de ecuaciones</em> o <em>matriz</em> <em>del</em>
+<em>sistema</em>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{pmatrix}
+              a_{11}   &amp;   a_{12} &amp;  \ldots  &amp;  a_{1n}  \\
+              a_{21}   &amp;   a_{22} &amp;  \ldots  &amp;  a_{2n}   \\
+              \vdots   &amp;   \vdots &amp;  \vdots  &amp;  \vdots \\
+              a_{k1}   &amp;   a_{k2} &amp;   \ldots &amp;  a_{kn} \\
+  \end{pmatrix}
+\end{equation*}\]</span></p>
+<p>Y la siguiente matriz,</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{bmatrix}
+              a_{11}   &amp;   a_{12}
+&amp;  \ldots  &amp;  a_{1n}  &amp;|      &amp; b_1  \\
+              a_{21}   &amp;   a_{22}
+&amp;  \ldots  &amp;  a_{2n}  &amp;|      &amp; b_2   \\
+              \vdots   &amp;   \vdots
+&amp;  \vdots  &amp;  \vdots  &amp;\vdots &amp; \vdots\\
+              a_{k1}   &amp;   a_{k2} &amp;   \ldots
+&amp;  a_{kn}  &amp;|      &amp; b_k\\
+  \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>es <strong>la matriz extendida del sistema</strong>.</p>
+<ul>
+<li>Nota: Así como para los vectores, indistintamente podemos usar <span class="math inline">\([ ]\)</span> ó <span class="math inline">\((
+)\)</span>.</li>
+</ul>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>Obtener las matrices asociadas al sistema y la matriz extendida del
+sistema <span class="math inline">\([\mathbf{A}|\vec{b}]\)</span> y
+aplicar el algoritmo de eliminación gaussiana.</p>
+<h3 id="ejemplo-1-1">Ejemplo 1</h3>
+<p>Resolver el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        x_1 &amp;  +  2x_2    &amp; = 3  \\
+       4x_1 &amp; + 5x_2    &amp; = 6   \\
+       7x_1 &amp; + 8x_2    &amp; = 9
+  \end{matrix}
+\end{equation*}\]</span></p>
+<h3 id="ejemplo-2-1">Ejemplo 2</h3>
 <p>Resolver el siguiente sistema de ecuaciones, aplicando eliminación
 Gaussiana.</p>
 <p><span class="math display">\[\begin{equation*}
@@ -921,7 +1048,53 @@ Gaussiana.</p>
   \end{matrix}
 \end{equation*}\]</span></p>
 <p>y se obtiene la solucion <span class="math inline">\(\vec{x}=(10,6,3)\)</span></p>
-<h3 id="ejemplo-3">Ejemplo 3</h3>
+<h3 id="ejemplo-4">Ejemplo</h3>
+<p>Aplicar eliminación gaussiana para determinar si existe solución al
+sistema</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+             &amp; +2 y  &amp; +3z  &amp; = 4  \\
+          2x &amp; -6 y  &amp; +7z  &amp; = 15 \\
+            x&amp; -2y  &amp; +5z  &amp; = 10
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p></p>
+<p>Obtener las matrices asociadas al sistema y la matriz extendida del
+sistema <span class="math inline">\([\mathbf{A}|\vec{b}]\)</span>.</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           x  &amp; +2 y  &amp; +13z  &amp; = -4  \\
+              &amp; -7 y  &amp; -20z  &amp; = 15 \\
+              &amp;  +7y  &amp; +21z  &amp; = -15
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           3x  &amp; +4 y  &amp; +z  &amp; = 10  \\
+            x  &amp; +2 y  &amp; +4z  &amp; = 13 \\
+           2x  &amp; +3y  &amp; +3z  &amp; =  5
+  \end{matrix}
+\end{array}
+\end{equation*}\]</span></p>
+<h3 id="ejemplo-4-1">Ejemplo 4</h3>
+<p>Resolver el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+      x_1   &amp; +2x_2   &amp; +3x_3    &amp; = 4  \\
+     5x_1    &amp; + 6x_2 &amp; +7x_3    &amp; = 8   \\
+    9x_1     &amp; + 10x_2&amp; + 11x_3  &amp; =12 \\
+      13x_1  &amp; + 14x_2 &amp;+15x_5   &amp; = 16
+  \end{matrix}
+\end{equation*}\]</span></p>
+<h3 id="ejemplo-5">Ejemplo 5</h3>
+<p>Resolver el siguiente sistema de ecuaciones. Identificar si el
+conjunto solución es un punto, una recta o un plano, o algo
+diferente.</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
         w   &amp; - x  &amp; - y  &amp; +2z &amp; = 1  \\
@@ -935,10 +1108,9 @@ Gaussiana.</p>
         1   &amp; - 1 &amp; - 1  &amp; 2   \\
         2   &amp; - 2 &amp; - 1  &amp; 3    \\
       - 1   &amp;   1 &amp;  -1  &amp; 0    
-  \end{bmatrix}
-\end{equation*}\]</span></p>
-<p>Existe otra matriz asociada, la <strong>matriz</strong>
-<strong>extendida</strong></p>
+      \end{bmatrix}
+\end{equation*}\]</span> Existe otra matriz asociada, la
+<strong>matriz</strong> <strong>extendida</strong></p>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{cc}
   [\mathbf{A}| \mathbf{b}] &amp; = \begin{bmatrix}
@@ -951,7 +1123,7 @@ Gaussiana.</p>
                                 \end{bmatrix}
 \end{array}
 \end{equation*}\]</span></p>
-<h3 id="ejemplo-4">Ejemplo</h3>
+<h3 id="ejemplo-6">Ejemplo 6</h3>
 <p>Encontrar el valor de <span class="math inline">\(m\)</span> tal que
 el siguiente sistema tenga una solución única</p>
 <p><span class="math display">\[\begin{equation*}
@@ -963,15 +1135,265 @@ el siguiente sistema tenga una solución única</p>
 \end{equation*}\]</span></p>
 <p>El método de eliminación gaussiana, también nos permite determinar si
 un sistema es <strong>inconsistente</strong>.</p>
-<h3 id="ejemplo-5">Ejemplo</h3>
+<h3 id="ejemplo-7">Ejemplo 7</h3>
 <p>Encontrar el conjunto solución</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
-         &amp;  y  &amp; -4z &amp;  = 8  \\
+          &amp;  y     &amp; -4z &amp;  = 8  \\
        2x &amp; - 3y   &amp; +2z &amp; = 1   \\
        4x &amp;  -8y   &amp; +12z &amp; =1
   \end{matrix}
 \end{equation*}\]</span></p>
+<h3 id="combinaciones-lineales-de-vectores">Combinaciones lineales de
+vectores</h3>
+<p>Una <strong>combinación lineal</strong> de vectores <span class="math inline">\(\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k\)</span> es
+el vector resultante de “combinar” los vectores por medio de la
+siguiente operación: <span class="math display">\[\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_k \vec{v}_k =
+\sum_{i=1}^k c_i \vec{v}_i,
+\end{equation}\]</span> donde <span class="math inline">\(c_1, c_2,
+\dots, c_k\)</span> son números reales (llamados coeficientes de la
+combinación lineal). En otras palabras, una combinación lineal es una
+suma de múltiplos de los vectores <span class="math inline">\(\vec{v}_1,
+\vec{v}_2, \dots, \vec{v}_k\)</span>.</p>
+<div class="float">
+<img src="data:image/png;base64,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" title="Vector" style="width:50.0%" alt="Figura 1.2" />
+<div class="figcaption">Figura 1.2</div>
+</div>
+<h3 id="ejemplo-8">Ejemplo</h3>
+<p>Para los vectores</p>
+<p><span class="math display">\[\begin{equation}
+    \vec{v}_1 = \left(
+    \begin{array}{c}
+    1 \\
+    -1
+\end{array} \right) \quad
+\text{y} \quad
+    \vec{v}_2 = \left(
+    \begin{array}{c}
+    1 \\
+    3
+    \end{array}
+    \right),
+\end{equation}\]</span></p>
+<p>obtener las combinaciones lineales:</p>
+<ul>
+<li><p><span class="math inline">\(\vec{v}_1 + \vec{v}_2
+=\)</span></p></li>
+<li><p><span class="math inline">\(4 \vec{v}_1 = 4 \vec{v}_1 + 0
+\vec{v}_2 =\)</span></p></li>
+<li><p><span class="math inline">\(\vec{v}_2 = 0\vec{v}_1 + 1\vec{v}_2
+=\)</span></p></li>
+<li><p><span class="math inline">\(\frac{1}{2}\vec{v}_1 -1 \vec{v}_2
+=\)</span></p></li>
+</ul>
+<p>Geometricamente, <em>cualquier</em> vector del plano puede ser
+representado como combinación lineal de vectores que no son
+colineales.</p>
+<div class="float">
+<img src="data:image/png;base64,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O8nKytIQMZjkAlASBEmEmMDIY/ZD6tSpY69EAyXPqFGjtMVFNQKgOAiSiOjUqZNMnDhR21uTJ0/Waa2WLVva1V+YzXlj4MCB+hkAisIeiYfifWb7qlWrtMV14YUX6ujv4Uy4mMmue++992B769hjj9XPAHA0BImH4h0khdm6dat88sknB6uUGTNm6ERXhQoV9BoAjoYg8ZBfg8Q8Y1KzZs18Dyea/REztQUARSFIPOTnigQASovNdgCAE4IEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATggSAIATggQA4IQgAQA4IUgAAE4IEgCAE4IEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATgiSGEtPT5eEhAT92Ldvn70LAOGRsP+XG7/dPJKYmCi5ubn2CgDCgYoEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATggSAIATggQA4IQgAQA4IUgAAE4IEgCAE4IEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATggSAIATggQA4IQgAQA4IUgAAE4IEgCAE4IEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATggSAIATggQA4IQgAQA4IUgAAE4IEgCAE4IEAOCEIAEAOCFIAABOCBIAgBOCBADghCABADghSAAATggSAIATggQA4EDk/7BI1kGiEjHaAAAAAElFTkSuQmCC" title="Combinación lineal" style="width:40.0%" alt="Figura 1.3" />
+<div class="figcaption">Figura 1.3</div>
+</div>
+<div class="float">
+<img src="data:image/png;base64,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" title="Combinación lineal" style="width:40.0%" alt="Figura 1.4" />
+<div class="figcaption">Figura 1.4</div>
+</div>
+<p>Por ejemplo, para representar el vector <span class="math inline">\(\vec{v}\)</span> como combinación lineal de <span class="math inline">\(\vec{v}_1\)</span> y <span class="math inline">\(\vec{v}_2\)</span>, podemos trazar rectas
+paralelas a los vectores, pasando por el origen y por el extremo del
+vector <span class="math inline">\(\vec{v}\)</span> como en la
+figura.</p>
+<p>De forma mas general, decimos que un vector <span class="math inline">\(\vec{v} \in \mathbb{R}^n\)</span> es una
+<strong>combinación</strong> <strong>lineal</strong> de los <span class="math inline">\(k\)</span> vectores <span class="math inline">\(\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k \in
+\mathbb{R}^n\)</span> cuando existen coeficientes <span class="math inline">\(c_1, c_2, \dots, c_k\)</span> tales que</p>
+<p><span class="math display">\[\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \dots + c_k \vec{v}_k.
+\end{equation}\]</span></p>
+<p>Para decidir si un vector es combinación lineal de otros, debemos
+determinar si existen <em>escalares</em> <span class="math inline">\(c_1, c_2, \dots, c_k\)</span> tales que</p>
+<p><span class="math display">\[\begin{equation}
+\vec{v}_1 = \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right), \,
+\vec{v}_2 =
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right), \,
+\vec{v}_3 =
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right), \, \cdots,
+\vec{v}_k =
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right), \,
+\vec{v} =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation}\]</span> vemos que encontrar los coeficientes de la
+combinación lineal, en caso de que estos existan, equivale a resolver
+una ecuación <span class="math display">\[\begin{equation}
+c_1 \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right) + c_2
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right) + c_3
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right) + \cdots + c_k
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation}\]</span> que, a su vez, es equivalente a <span class="math display">\[\begin{equation}
+\left(
+\begin{array}{c}
+v_{11} c_1 + v_{12} c_2 + v_{13} c_3 + \cdots + v_{1k} c_k  \\
+v_{21} c_1 + v_{22} c_2 + v_{23} c_3 + \cdots + v_{2k} c_k  \\
+v_{31} c_1 + v_{32} c_2 + v_{33} c_3 + \cdots + v_{3k} c_k  \\
+\vdots  \\
+v_{m1} c_1 + v_{m2} c_2 + v_{m3} c_3 + \cdots + v_{mk}cx_k
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right)
+\end{equation}\]</span></p>
+<h3 id="ejemplo-9">Ejemplo</h3>
+<p>En <span class="math inline">\(\mathbb{R}^{3}\)</span> todo vector es
+una combinación lineal de los vectores <span class="math inline">\(\hat{i}=(1,0,0)\)</span>, <span class="math inline">\(\hat{j}=(0,1,0)\)</span> y <span class="math inline">\(\hat{k}=(0,0,1)\)</span>. En efecto, si <span class="math inline">\(\vec{v}=(v_x,v_y,v_z)\)</span> entonces</p>
+<p><span class="math display">\[
+\vec{v}=v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+\]</span></p>
+<p>A los vectores <span class="math inline">\(\hat{i}=(1,0,0)\)</span>,
+<span class="math inline">\(\hat{j}=(0,1,0)\)</span> y <span class="math inline">\(\hat{k}=(0,0,1)\)</span> se les llama la
+<strong>base</strong> <strong>canónica</strong>.</p>
+<h3 id="ejemplo-10">Ejemplo</h3>
+<p>Dados <span class="math inline">\(\vec{u}=\begin{pmatrix} 1\\2\\3
+\end{pmatrix}\)</span>, <span class="math inline">\(\vec{v}=\begin{pmatrix} 3\\2\\0
+\end{pmatrix}\)</span> y <span class="math inline">\(\vec{w}=\begin{pmatrix} 2\\0\\0
+\end{pmatrix}\)</span> ¿es <span class="math inline">\(\begin{pmatrix}
+1\\1\\1 \end{pmatrix}\)</span> una combinación lineal de los vectores
+<span class="math inline">\(\vec{u},\vec{v},\vec{w}\)</span>?</p>
+<p>Debemos averiguar si existen constantes <span class="math inline">\(\alpha,\beta,\gamma\)</span> tal que</p>
+<p><span class="math display">\[
+\begin{pmatrix} 1\\1\\1 \end{pmatrix} = \alpha\cdot \vec{u}+ \beta\cdot
+\vec{v} + \gamma\cdot \vec{w}
+\]</span></p>
+<p>Sustituyendo a los vectores por sus coordenadas obtenemos el
+siguiente <em>sistema</em> <em>de</em> <em>ecuaciones</em></p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\alpha + 3\beta+2\gamma &amp; = &amp; 1 \\
+2\alpha + 2\beta        &amp; = &amp; 1 \\
+3\alpha &amp; = &amp; 1
+\end{array}
+\]</span></p>
+</div>
+<div id="práctica" class="slide section level1">
+<h1>Práctica</h1>
+<p>Para los siguientes sistemas, determinar si existe una solución
+única, una infinidad de soluciones o el sistema es inconsistente.
+Describir al conjunto solución</p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        x &amp; + y  &amp; -z   &amp; = 0  \\
+       2x &amp;-4 y  &amp;  +3z &amp; = 0   \\
+       3x &amp;+7 y  &amp; -z   &amp; = 0
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        x_1 &amp; + x_2  &amp; -x_3   &amp; = 0  \\
+       2x_1 &amp;-4 x_2  &amp;  +3x_3 &amp; = 0   \\
+       -x_1 &amp;-7 x_2  &amp;  +6x_3 &amp; = 0
+  \end{matrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+        x &amp; + y  &amp; +3z &amp; = 1  \\
+       2x &amp;+3 y  &amp; -z  &amp; = 3   \\
+       5x &amp;+7 y  &amp; +z  &amp; = 7
+  \end{matrix}
+\end{equation*}\]</span></p>
+<ul>
+<li><p>Sea <span class="math inline">\(A=(1,-3,2)\)</span>, <span class="math inline">\(B=(5,0,-4)\)</span> y <span class="math inline">\(C=(2,1,-1)\)</span>.</p>
+<ul>
+<li><p>Escriba a <span class="math inline">\((13,6,-16)\)</span> como
+combinación lineal de <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>.</p></li>
+<li><p>Encuentre todos los vectores ortogonales a <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>
+y <span class="math inline">\(C\)</span>.</p></li>
+</ul></li>
+</ul>
 <h2 id="matrices">Matrices</h2>
 <p>A los arreglos rectangulares con las listas de coeficientes <span class="math inline">\(a_{ij}\)</span> de cada ecuación, se les llama
 <strong>matrices</strong>. Formalmente, una matriz es una asignación de
@@ -998,7 +1420,7 @@ nulas.</p></li>
 <li><p>En cada renglón no nulo, la primer entrada no nula está a la
 izquierda de la primer entrada no nula del siguiente renglón.</p></li>
 </ol>
-<h2 id="ejemplo-6">Ejemplo</h2>
+<h2 id="ejemplo-11">Ejemplo</h2>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{ccc}
 a) \begin{bmatrix}
@@ -1022,7 +1444,7 @@ c) \begin{bmatrix}
 <p>Las matrices <span class="math inline">\(a)\)</span> y <span class="math inline">\(c)\)</span> tienen la forma escalonada, la matriz
 <span class="math inline">\(b)\)</span> no están en su forma
 escalonada.</p>
-<h2 id="ejemplo-7">Ejemplo</h2>
+<h2 id="ejemplo-12">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -1077,7 +1499,7 @@ es</p>
         0   &amp;   0 &amp;  88   &amp;| &amp;-6    
   \end{bmatrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-8">Ejemplo</h2>
+<h2 id="ejemplo-13">Ejemplo</h2>
 <p>Resolver el sistema <em>homogéneo</em> usando la matriz aumentada del
 sistema</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1165,7 +1587,7 @@ x_1 \\ x_2  \\ x_3 \\ x_4
 -3 \\ -2  \\ 1 \\ 0
 \end{pmatrix},\,\, t\in\mathbb{R}\end{Bmatrix}
 \]</span></p>
-<h2 id="ejemplo-9">Ejemplo</h2>
+<h2 id="ejemplo-14">Ejemplo</h2>
 <p>Considere el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{equation*}
   \begin{matrix}
@@ -1231,7 +1653,7 @@ x_1 \\ x_2  \\ x_3
      4 x_1 &amp; + 8x_2  &amp;-7x_3 &amp;            &amp;= -10
   \end{matrix}
 \end{equation*}\]</span></p>
-<h2 id="ejemplo-10">Ejemplo</h2>
+<h2 id="ejemplo-15">Ejemplo</h2>
 <p>Obtener la matriz extendida del sistema, identificar el sistema
 triangular o escalonado.</p>
 <p><span class="math display">\[\begin{equation*}
