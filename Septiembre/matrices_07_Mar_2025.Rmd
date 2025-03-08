@@ -1,0 +1,1508 @@
+---
+title: "Sistemas de ecuaciones, eliminación gaussiana II"
+author: "Álgebra Lineal 2025 JGRV"
+header-includes: 
+  - \usepackage{amsmath}
+  - \usepackage{mathtools}
+slidy_presentation:
+    css: styles.css
+    footer: "Álgebra lineal, ESCOM 2CV5/2BV1, José Rodríguez Villarreal"
+    pandoc_argd: ["--title-prefix","Bar"]
+---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
+
+
+# Sistemas de ecuaciones. Eliminación gaussiana 
+
+\small
+En esta sección daremos una introducción a uno de los métodos más usados para resolver un sustema de ecuaciones lineales, el método recibe el nombre de _eliminación_ _gaussiana_, en honor a Carl Gauss.
+
+Analizamos a fondo el método de eliminación gaussiana. Considere el sistema de ecuaciones
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2 + & \cdots   & +a_{1n} x_n  &= b_1  \\
+     a_{21} x_1 & +a_{22} x_2 + & \cdots   & +a_{2n} x_n  &= b_2\\
+    \vdots    & \vdots  & \vdots   & \vdots \\
+     a_{n1} x_1 & +a_{n2} x_2 + & \cdots   & +a_{nn} x_n  & =b_n
+  \end{matrix}
+\end{equation}
+
+Suponga que $a_{11}\ne 0$ entonces podemos aplicar la operación elemental $3$ para eliminar $x_1$ de las ecuaciones $i=2,\ldots,n$. Por ejemplo para la $i-$ésima ecuación, tenemos que multiplicar la primer ecuación por
+
+\begin{equation*}
+m_{i1}=\frac{a_{i1}}{a_{11}}, \mbox{para }i=2,\ldots,n
+\end{equation*}
+y sumarla a la ecuación $i$. Cabe resaltar que para no alterar la igualdad, debemos multiplicar _todos_ los términos de la primera ecuación .
+
+Obtenemos el siguiente sistema
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & \cdots   & +a_{1n} x_n  &= b_1  \\
+                & a^{(2)}_{22} x_2 + & \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+               & \vdots  & \vdots   & \vdots \\
+               & +a^{(2)}_{n2} x_2 + & \cdots   & +a^{(2)}_{nn} x_n  & =b^{(2)}_n
+  \end{matrix}
+\end{equation}
+ 
+Con $a^{(2)}_{ij} = a_{ij}- m_{i1}a_{1j}$ y $b^{(2)}_i=b_i-m_{i1}b_1$ los nuevos coeficientes del bloque de ecuaciones inferior de tamaño $(n-1)\times(n-1)$.
+En este paso hemos reducido la primer columna del sistema (salvo el pivote) a $0$.
+
+Ahora aplicamos el mismo proceso al sistema de ecuaciones  $(n-1)x(n-1)$, 
+
+Si $a^{(2)}_{22}\ne 0$ entonces podemos eliminar $x_2$ de las ecuaciones $i=3,\ldots,n$ multiplicando la segunda ecuación por
+
+\begin{equation*}
+m_{i2}=\frac{a^{(2)}_{i2}}{a^{(2)}_{22}}, \mbox{para }i=3,\ldots,n
+\end{equation*}
+
+y restarla a la ecuación $i$.
+
+
+Obtenemos el siguiente sistema
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & a_{13}x_3 +      & \cdots   & +a_{1n} x_n  &= b_1  \\
+                & a^{(2)}_{22} x_2 + & a^{(2)}_{23}x_3 +& \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+                &                  +& a^{(3)}_{33}x_3 +& \cdots   & +a^{(3)}_{2n} x_n  &= b^{(3)}_3\\
+                & \vdots           & \vdots&          & \vdots   &    \vdots          & \vdots\\
+                &                  +& a^{(3)}_{n3}x_3 +& \cdots   & +a^{(3)}_{nn} x_n  & =b^{(3)}_n
+  \end{matrix}
+\end{equation}
+
+Procedemos, si es posible, de la misma forma con el sistema formado por los renglones 2 a $n$.
+
+Después de $k-1$ pasos  si $a^{(k-1)}_{kk}\ne 0$ entonces podemos eliminar $x_k$ de las ecuaciones $i=k+1,\ldots,n$ multiplicando la  ecuación $k-ésima$ por
+
+\begin{equation*}
+m_{ik}=\frac{a^{(k-1)}_{ik}}{a^{(k-1)}_{kk}}, \mbox{para }i=k+1,\ldots,n
+\end{equation*}
+y sumarla a la ecuación $i$, para $i\geqslant k+1$. Procedemos así hasta obtener el sistema triangular o bien, hasta que no sea posible eliminar variables.
+
+\begin{equation}
+  \begin{matrix}
+     a_{11} x_1 & +a_{12} x_2      + & a_{13}x_3 +      & \cdots   & +a_{1n} x_n        &= b_1  \\
+                & a^{(2)}_{22} x_2 + & a^{(2)}_{23}x_3 +& \cdots   & +a^{(2)}_{2n} x_n  &= b^{(2)}_2\\
+                &                  +& a^{(3)}_{33}x_3 +& \cdots    & +a^{(3)}_{2n} x_n  &= b^{(3)}_3\\
+                & \vdots             & \vdots           & \vdots   &    \vdots          & \vdots\\
+                &                    &                  & \cdots   & +a^{(n-1)}_{n-1n} x_n  & =b^{(n-1)}_{n-1}\\
+                &                    &                  & \cdots   & +a^{(n-1)}_{nn} x_n  & =b^{(n-1)}_n
+  \end{matrix}
+\end{equation}
+
+Si tenemos un sistema triangular, como el de la ecuación, anterior, procedemos a calcular la solución. Primero encontramos el valor de $x_n$ usando la última ecuación, posteriormente, usando la ecuación $n-1$ y el valor obtenido, despejamos $x_{n-1}$ y así sucesivamente.
+
+## Sustitución hacia atrás
+
+Para $k =n$
+$$
+x_n = \frac{b^{(n-1)}_n}{a^{(n-1)}_{nn}}
+$$
+
+Para $k=n-1$
+
+$$
+x_{n-1} = \frac{b^{(n-1)}_{n-1} - a^{(n-1)}_{n-1,n}x_n}{a^{(n-1)}_{n-1,n-1}}
+$$
+
+Y
+$$
+x_{n-2} = \frac{b^{(n-2)}_{n-2}- a^{(n-2)}_{n-2,n-1}x_{n-1} - a^{(n-2)}_{n-2,n}x_n}{a^{(n-2)}_{n-2,n-2}}
+$$
+
+Y en general
+
+\[x_{k}=\frac{b^{(k)}_k-\sum_{i=k+1}^{n}a^{(k)}_{kj}x_j}{a^{(k)}_{kk}}\]
+
+
+## Algoritmo de eliminación gaussiana
+El algoritmo en pseudocódigo:
+
+```{verbatim}
+for k= 1, ..., n-1:{
+
+  If A(k,k)=0:  
+    proc: "intercambiar renglones"
+    # A(k,k,) es el pivote
+    for i=k+1,...,n:{
+      m(i,k) = A(i,k)/A(k,k)            #Calculamos el multiplicador del rengĺón pivotal
+      for j=k+1,...,n:{                 #Modifcamos a las columnas del renglón i
+        A(i,j)  = A(i,j)-m(i,k)*A(k,j)
+        b(i)    = b(i)-m(i,k)b(k)
+      }
+    }
+}
+```
+
+Si es posible obtener un sistema triangular entonces, realizamos la sustitución hacia atrás:
+
+## Algoritmo de sustitución hacia atrás
+
+```{verbatim}
+If a(n,n)=0:
+    no existe solución única
+Else:
+  for k=n-1,n-1,...,1
+    suma = b(k)
+    for j=k+1,...,n
+      suma = suma - a(k,j)*x(j)
+    x(k) = suma/a(k,k)
+```
+
+## Ejemplo
+
+Aplicar el método de eliminación gaussiana al sistema
+
+\begin{equation*}
+  \begin{matrix}
+           4x  & -9 y  & +2z & = 2  \\
+           2x & -4 y  & +4z & = 3  \\
+           -x & +2 y  & +2z  & = 1´
+  \end{matrix}
+\end{equation*}
+
+Primero, obtenemos la matriz extendida del sistema
+
+\begin{equation*}
+ \begin{array}{ccc}
+    \begin{pmatrix}
+                  4   & -9  &   2  &\biggm|& 2   \\
+                  2   & -4  &   4  &\biggm|& 3   \\
+                  -1  &  2  &   2  &\biggm|& 1
+                     \end{pmatrix} & 
+    \begin{matrix} 
+      (E_3 \leftrightarrow E_1   ) \\
+    \end{matrix}
+    & 
+    \begin{pmatrix}
+                 -1   &  2  &  2  &\biggm|& 1   \\
+                  2   & -4  &  4  &\biggm|& 3   \\
+                  4   & -9  &  2  &\biggm|& 2
+    \end{pmatrix}
+ \end{array}
+\end{equation*}
+
+
+## Ejemplos
+
+Obtener las matrices asociadas al sistema y la matriz extendida del sistema $[\mathbf{A}|\vec{b}]$ y aplicar el algoritmo de eliminación gaussiana.
+
+### Ejemplo 1 
+
+Resolver el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+        x_1 &  +  2x_2    & = 3  \\
+       4x_1 & + 5x_2    & = 6   \\
+       7x_1 & + 8x_2    & = 9
+  \end{matrix}
+\end{equation*}
+
+
+
+### Ejemplo 2
+
+
+Resolver el siguiente sistema de ecuaciones, aplicando eliminación Gaussiana.
+
+
+\begin{equation*}
+  \begin{matrix}
+            &   v  & - w   & = 3  \\
+     -2 u   & + 4v & - w   & = 1   \\
+     -2 u   & + 5v &  -4w  & =-2
+  \end{matrix}
+\end{equation*}
+
+
+\begin{equation*}
+  \begin{bmatrix}
+              0   &   1 & - 1  &\biggm| & 3  \\
+             -2   &   4 & - 1  &\biggm| & 1   \\
+             -2   &   5 &  -4  &\biggm| &-2
+  \end{bmatrix}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+             -2   &   4 & - 1  &\biggm| & 1   \\
+              0   &   1 & -1   &\biggm| & 3
+  \end{bmatrix}
+\end{equation*} 
+
+\begin{equation*}
+  \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+              0   & -1  &   3  &\biggm| & 3   \\
+              0   &   1 & -1   &\biggm| & 3
+  \end{bmatrix} \rightarrow
+    \begin{bmatrix}
+              -2  &   5 & - 4  &\biggm| &-2   \\
+              0   & -1  &   3  &\biggm| & 3   \\
+              0   &  0  &   2   &\biggm| & 6
+  \end{bmatrix} 
+\end{equation*}
+
+Regresamos al sistema asociado a esta matriz extendida
+
+\begin{equation*}
+\begin{matrix}
+      -2u   &  +5v  & -4 w   & = -2  \\
+            &  -v   &  +3w   & = 3   \\
+            &       &  2w    & =6
+  \end{matrix}
+\end{equation*}
+
+y se obtiene la solucion $\vec{x}=(10,6,3)$
+
+
+### Ejemplo
+Aplicar eliminación gaussiana para determinar si existe solución al sistema
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+             & +2 y  & +3z  & = 4  \\
+          2x & -6 y  & +7z  & = 15 \\
+            x& -2y  & +5z  & = 10
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+\newpage
+Obtener las matrices asociadas al sistema y la matriz extendida del sistema $[\mathbf{A}|\vec{b}]$.
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           x  & +2 y  & +13z  & = -4  \\
+              & -7 y  & -20z  & = 15 \\
+              &  +7y  & +21z  & = -15
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccc}
+  \begin{matrix}
+           3x  & +4 y  & +z  & = 10  \\
+            x  & +2 y  & +4z  & = 13 \\
+           2x  & +3y  & +3z  & =  5
+  \end{matrix}
+\end{array}
+\end{equation*}
+
+
+
+
+### Ejemplo 4
+Resolver el siguiente sistema
+
+\begin{equation*}
+  \begin{matrix}
+      x_1   & +2x_2   & +3x_3    & = 4  \\
+     5x_1    & + 6x_2 & +7x_3    & = 8   \\
+    9x_1     & + 10x_2& + 11x_3  & =12 \\
+      13x_1  & + 14x_2 &+15x_5   & = 16
+  \end{matrix}
+\end{equation*}
+
+
+
+### Ejemplo 5
+Resolver el siguiente sistema de ecuaciones. Identificar si el conjunto solución es un punto, una recta o un plano, o algo diferente.
+
+\begin{equation*}
+  \begin{matrix}
+        w   & - x  & - y  & +2z & = 1  \\
+     2 w    & - 2x & - y  & +3z & = 3   \\
+      -w    & + x  &  -y  &     &=-3
+  \end{matrix}
+\end{equation*}
+
+Es igual a
+
+\begin{equation*}
+  \begin{bmatrix}
+        1   & - 1 & - 1  & 2   \\
+        2   & - 2 & - 1  & 3    \\
+      - 1   &   1 &  -1  & 0    
+      \end{bmatrix}
+\end{equation*}
+Existe otra matriz asociada, la **matriz** **extendida**
+
+
+\begin{equation*}
+ \begin{array}{cc}
+  [\mathbf{A}| \mathbf{b}] & = \begin{bmatrix}
+                                  1   & - 1 & - 1  & 2 &\biggm| & 1  \\
+                                  2   & - 2 & - 1  & 3 &\biggm| & 3   \\
+                                 -1   &   1 &  -1  & 0 &\biggm| &-3
+                                \end{bmatrix}
+ \end{array}
+\end{equation*} 
+
+
+### Ejemplo  6
+
+Encontrar el valor de $m$ tal que el siguiente sistema tenga una solución única
+
+\begin{equation*}
+  \begin{matrix}
+        m x  & -5 y  & +2z & = 0  \\
+           x & - y  & +3z & = 0   \\
+      3 x    &  -7y & -5z &=0 
+  \end{matrix}
+\end{equation*}
+
+El método de eliminación gaussiana, también nos permite determinar si un sistema es **inconsistente**.
+
+### Ejemplo 7
+
+Encontrar el conjunto solución
+
+\begin{equation*}
+  \begin{matrix}
+          &  y     & -4z &  = 8  \\
+       2x & - 3y   & +2z & = 1   \\
+       4x &  -8y   & +12z & =1 
+  \end{matrix}
+\end{equation*}
+
+
+### Combinaciones lineales de vectores
+
+Una <strong>combinación lineal</strong> de vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$ es el vector resultante de "combinar" los vectores por medio de la siguiente operación:
+\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \cdots + c_k \vec{v}_k = \sum_{i=1}^k c_i \vec{v}_i,
+\end{equation} 
+donde $c_1, c_2, \dots, c_k$ son números reales (llamados coeficientes de la combinación lineal). En otras palabras, una combinación lineal es una suma de múltiplos de los vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$.
+
+![Figura 1.2](linear_comb.png "Vector"){ width=50% }
+
+
+### Ejemplo 
+
+Para los vectores
+	
+\begin{equation}
+	\vec{v}_1 = \left(
+	\begin{array}{c}
+	1 \\
+	-1
+\end{array}	\right) \quad 
+\text{y} \quad
+	\vec{v}_2 = \left(
+	\begin{array}{c}
+	1 \\
+	3
+	\end{array}
+	\right),
+\end{equation} 
+	
+obtener las combinaciones lineales:
+	
+* $\vec{v}_1 + \vec{v}_2 =$
+
+* $4 \vec{v}_1 = 4 \vec{v}_1 + 0 \vec{v}_2 =$
+* $\vec{v}_2 = 0\vec{v}_1 + 1\vec{v}_2 =$
+* $\frac{1}{2}\vec{v}_1  -1 \vec{v}_2 =$
+
+Geometricamente, _cualquier_ vector del plano puede ser representado como combinación lineal de vectores que no son colineales.
+
+![Figura 1.3](semana02-comblinear1.png "Combinación lineal"){ width=40% }	
+
+![Figura 1.4](semana02-comblinear3.png "Combinación lineal"){ width=40% }		
+	
+Por ejemplo, para representar el vector $\vec{v}$ como combinación lineal de $\vec{v}_1$ y $\vec{v}_2$, podemos trazar rectas paralelas a los vectores, pasando por el origen y por el extremo del vector $\vec{v}$ como en la figura.
+	
+	
+De forma mas general, decimos que un vector $\vec{v} \in \mathbb{R}^n$ es una **combinación** **lineal** de los $k$ vectores $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k  \in \mathbb{R}^n$ cuando existen coeficientes $c_1, c_2, \dots, c_k$ tales que
+
+\begin{equation}
+\vec{v} = c_1 \vec{v}_1 + c_2 \vec{v}_2 + \dots + c_k \vec{v}_k.
+\end{equation} 
+
+
+Para decidir si un vector es combinación lineal de otros, debemos determinar si existen  _escalares_ $c_1, c_2, \dots, c_k$ tales que
+
+\begin{equation}
+\vec{v}_1 = \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right), \,
+\vec{v}_2 =
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right), \,
+\vec{v}_3 =
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right), \, \cdots, 
+\vec{v}_k =
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right), \,
+\vec{v} =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} vemos que encontrar los coeficientes de la combinación lineal, en caso de que estos existan, equivale a resolver una ecuación
+\begin{equation}
+c_1 \left(
+\begin{array}{c}
+v_{11} \\
+v_{21} \\
+v_{31} \\
+\vdots \\
+v_{m1}
+\end{array}
+\right) + c_2
+\left(
+\begin{array}{c}
+v_{12} \\
+v_{22} \\
+v_{32} \\
+\vdots \\
+v_{m2}
+\end{array}
+\right) + c_3
+\left(
+\begin{array}{c}
+v_{13} \\
+v_{23} \\
+v_{33} \\
+\vdots \\
+v_{m3}
+\end{array}
+\right) + \cdots + c_k
+\left(
+\begin{array}{c}
+v_{1k} \\
+v_{2k} \\
+v_{3k} \\
+\vdots \\
+v_{mk}
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right),
+\end{equation} que, a su vez, es equivalente a
+\begin{equation}
+\left(
+\begin{array}{c}
+v_{11} c_1 + v_{12} c_2 + v_{13} c_3 + \cdots + v_{1k} c_k  \\
+v_{21} c_1 + v_{22} c_2 + v_{23} c_3 + \cdots + v_{2k} c_k  \\
+v_{31} c_1 + v_{32} c_2 + v_{33} c_3 + \cdots + v_{3k} c_k  \\
+\vdots  \\
+v_{m1} c_1 + v_{m2} c_2 + v_{m3} c_3 + \cdots + v_{mk}cx_k
+\end{array}
+\right) =
+\left(
+\begin{array}{c}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\vdots \\
+b_{m}
+\end{array}
+\right)
+\end{equation}
+
+### Ejemplo
+
+En $\mathbb{R}^{3}$ todo vector es una combinación lineal de los vectores $\hat{i}=(1,0,0)$, $\hat{j}=(0,1,0)$ y $\hat{k}=(0,0,1)$. En efecto, si $\vec{v}=(v_x,v_y,v_z)$ entonces 
+
+$$
+\vec{v}=v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+$$
+
+A los vectores $\hat{i}=(1,0,0)$, $\hat{j}=(0,1,0)$ y $\hat{k}=(0,0,1)$ se les llama la **base** **canónica**.
+
+### Ejemplo
+
+Dados $\vec{u}=\begin{pmatrix} 1\\2\\3 \end{pmatrix}$, $\vec{v}=\begin{pmatrix} 3\\2\\0 \end{pmatrix}$ y
+$\vec{w}=\begin{pmatrix} 2\\0\\0 \end{pmatrix}$ ¿es $\begin{pmatrix} 1\\1\\1 \end{pmatrix}$ una combinación lineal de los vectores $\vec{u},\vec{v},\vec{w}$?
+
+Debemos averiguar si existen constantes $\alpha,\beta,\gamma$ tal que 
+
+$$
+\begin{pmatrix} 1\\1\\1 \end{pmatrix} = \alpha\cdot \vec{u}+ \beta\cdot \vec{v} + \gamma\cdot \vec{w}
+$$
+
+Sustituyendo a los vectores por sus coordenadas obtenemos el siguiente _sistema_ _de_ _ecuaciones_
+
+$$
+\begin{array}{ccc}
+\alpha + 3\beta+2\gamma & = & 1 \\
+2\alpha + 2\beta        & = & 1 \\
+3\alpha & = & 1
+\end{array}
+$$
+
+
+
+
+# Reducción y uso de matrices
+
+\small
+Como el procedimiento de eliminación gaussiana sólo involucra a los coeficientes, una forma de simplificar los cálculos es por medio de un arreglo que llamaremos **Matriz**.
+La matriz asociada al sistema de ecuaciones:
+\begin{equation*}
+  \begin{matrix}
+        w   & - x  & - y  & +2z & = 1  \\
+     2 w    & - 2x & - y  & +3z & = 3   \\
+      -w    & + x  &  -y  &     &=-3
+  \end{matrix}
+\end{equation*}
+
+Es igual a
+
+\begin{equation*}
+  \begin{pmatrix}
+        1   & - 1 & - 1  & 2   \\
+        2   & - 2 & - 1  & 3    \\
+      - 1   &   1 &  -1  & 0 
+  \end{pmatrix}
+\end{equation*}
+ 
+Existe otra matriz asociada, la **matriz** **extendida**
+
+\begin{equation*}
+ \begin{array}{cc}
+  [\mathbf{A}| \mathbf{b}] & = \begin{pmatrix}
+                                  1   & - 1 & - 1  & 2 &\biggm| & 1  \\
+                                  2   & - 2 & - 1  & 3 &\biggm| & 3   \\
+                                 -1   &   1 &  -1  & 0 &\biggm| &-3
+                                \end{pmatrix}
+ \end{array}
+\end{equation*}
+
+
+# Sistemas consistentes e inconsistentes
+
+## Definición 
+
+Un sistema de ecuaciones es **consistente** si tiene al menos una solución. Si no es consistente entonces se dice ser **inconsistente**.
+
+Dos sistemas son **equivalentes** si tienen exactamente al mismo conjunto solución. 
+Un sistema de ecuaciones puede ser consistente sin tener una única solución.
+
+## Ejemplo 1
+
+Considere el  sistema de ecuaciones
+
+\begin{equation*}
+  \begin{matrix}
+           x  & +2 y  & +3z & = 1  \\
+           3x & +5 y  & -2z & = 2   \\
+           4x & +7 y  & +z  & = 3
+  \end{matrix}
+\end{equation*}
+
+Aplicamos eliminación gaussiana, 
+$$
+\begin{array}{ccc}
+  R_2 \rightarrow -3R_1 + R_2 & & \\
+  x + 2y +3z  & = &  1 \\
+  0x  -y -11z & = & -1 \\
+  4x +7y +z   & = & 3
+\end{array}
+$$
+
+$$
+\begin{array}{ccc}
+  R_3 \rightarrow -4R_1 + R_3 & & \\
+  x + 2y +3z  & = &  1 \\
+  0x  -y -11z & = & -1 \\
+  0x -y +-11  & = & -1\end{array}
+$$
+
+Ahora, podemos hacer otra operación elemental, sumando $2R_2 + R_1$ a la primera
+
+$$
+\begin{array}{ccc}
+  R_1 \rightarrow -2R_2 + R_1 & & \\
+  x + 0y -19z  & = &  -1 \\
+  0x + y +11z  & = &  1 \\
+  0x -y  +-11  & = & -1\end{array}
+$$
+
+Ahora sumamos el segundo renglón al tercero, $R_2+R_3\rightarrow R_3$  
+
+
+$$
+\begin{array}{ccc}
+  R_1 \rightarrow -2R_2 + R_1 & & \\
+  x + 0y -19z  & = &  -1 \\
+  0x + y +11z  & = &  1 \\
+  0x + 0y +0z  & = & 0
+\end{array}
+$$
+No es posible obtener el valor de $z$ de la tercer ecuación. Pero se puede proceder a resolver la segunda ecuación, en función de $z$
+
+$$
+\begin{array}{ccc}
+  \quad\quad  x & = &  -1 + 19z \\
+  \quad\quad  y & = &  1 - 11z
+  \end{array}
+$$
+
+El conjunto solución se puede expresar de la forma
+$$
+\mathcal{X}= \Bigg\{\vec{\mathbf{v}}\in\mathbb{R}^{3}:\,\,
+                    \vec{\mathbf{v}}=\begin{pmatrix}
+                                          x \\ y \\z
+                                      \end{pmatrix} = \begin{pmatrix}
+                                                        -1 \\ 1 \\0
+                                                        \end{pmatrix} + z 
+                                                        \begin{pmatrix}
+                                                          19 \\ -11 \\1
+                                                        \end{pmatrix}, \quad z\in\mathbb{R}    
+              \Bigg\}
+$$
+
+Por lo que, en caso de no poder obtener una matriz triangular superior en el proceso de eliminación gaussiana,  el sistema no tiene una solución **única**.
+Y de hecho, en éste caso, el sistema tiene una infinidad de soluciones. El conjunto solución es una línea recta.
+
+Este es un ejemplo en el que el sistema es _consistente_ aunque no tiene una única solución.
+
+## Ejemplo 2
+
+Considere el  sistema de ecuaciones
+
+\begin{equation*}
+  \begin{matrix}
+           -x  & +3 y  & -2z & = 1  \\
+           -x & +4 y  & -3z & = 0   \\
+           -x & +5 y  & -4z  & = 0
+  \end{matrix}
+\end{equation*}
+
+
+Aplicar eliminación gaussiana, se puede ver que el sistema es _inconsistente_. En efecto, aplicando eliminación gaussiana
+
+\begin{equation*}
+  \begin{matrix}
+           -x  & +3 y  & -2z & = 1  \\
+           -x & +4 y  & -3z & = 0   \\
+           -x & +5 y  & -4z  & = 0
+  \end{matrix}
+\end{equation*}
+
+
+### Definición 
+<div>
+Una matriz de _orden_ $m\times n$ es una función $\mathbf{A}:\{1,2,\ldots,m\}\times\{1,2,\ldots,n\} \rightarrow\mathbb{R}$. Que se representa como un arreglo rectangular
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix}
+        a_{11}  & a_{12}  & \cdots   & a_{1n}   \\
+        a_{21}  & a_{22}  & \cdots   & a_{2n} \\
+        \vdots   & \vdots  & \vdots   & \vdots \\
+        a_{m1}  & a_{m2}  & \cdots   & a_{mn} 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+</div>
+
+En ocasiones, nos referimos al _orden_ de la matriz como su _tamaño_. Si el _orden_ de una matriz es $m\times n$ decimos también que la matriz tiene $m$ filas y $n$ columnas. También decimos que la entrada de la matriz en la fila $i$ y coulmna $j$ es el número $a_{ij}$.
+
+
+- Al número de la fila $i$ y columna $j$ es el número $a_{ij}$ se le llama elemento ${(i,j)}$ de la matriz.
+
+
+- Una matriz es _cuadrada_ si $m=n$, es decir si el número de renglones es igual al número de columnas. En cualquier otro caso, decimos que la matriz es rectangular.
+
+- Todo vector fila o vector columna se puede interpretar como una matriz $1\times n$ o $n\times 1$.
+
+- La _diagonal_ _principal_ de la matriz es el arreglo $\{a_{11}, a_{22},\ldots, a_{nn} \}$. Toda matriz _cuadrada_ tiene una diagonal principal.
+
+
+- Una matriz _diagonal_ es una matriz cuadrada tal que todos los elementos que no están en la diagonal principal son iguales a cero. Podemos referirnos a la matriz diagonal como $\mbox{diag}(d_1,d_2,\ldots, d_n)$.
+
+La condición de que una matriz sea _diagonal_ se puede expresar de la siguiente forma
+\[
+a_{i,j}=\begin{cases} 
+                  d_i   &    \mbox{ si }i = j\\
+                  0     &    \mbox{ si }i\ne j\\
+        \end{cases}
+\]
+
+- Una matriz es una matriz _triangular_ _inferior_ $\mathbf{L}$ de tamaño $m\times n$ si se cumple $L_{ij}=0$ si $i<j$, para $1\leq i\leq m$ y $1\leq j\leq n$. 
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix}
+        l_{11}  & 0      & 0       & \cdots &  0       & \cdots & 0      \\
+        l_{21}  & l_{22} & 0       & \cdots &  0       & \cdots & 0      \\
+        \vdots  & \vdots & \vdots  & \ddots &  \vdots  & \vdots & \vdots \\
+        l_{i1}  & l_{i2} & l_{i3}  & \cdots &  l_{ii}  & \cdots & 0 \\
+        \vdots  & \vdots & \vdots  & \vdots &  \vdots  & \ddots & \vdots \\
+        l_{n1}  & l_{n2} & l_{n3}  & \cdots &  l_{ni}  & \cdots & l_{nn} 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+Es decir, todas las entradas arriba de la diagonal son nulos
+
+- Una matriz es una matriz _triangular_ _superior_ $\mathbf{U}$ de tamaño $m\times n$ si se cumple $U_{ij}=0$ si $i>j$, para $1\leq i\leq m$ y $1\leq j\leq n$. Es decir, todas las entradas por debajo de la diagonal son nulas 
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix}
+        u_{11}  & u_{12} & u_{13}  & \cdots &  u_{1i}  & \cdots & u_{1n} \\
+          0     & u_{22} & u_{23}  & \cdots &  u_{2i}  & \cdots & u_{2n} \\
+          0     &   0    & u_{33}  & \cdots &  u_{3i}  & \cdots & u_{3n} \\
+        \vdots  & \vdots & \vdots  & \ddots &  \vdots  & \vdots & \vdots \\
+          0     &   0    &  0      & \vdots &  u_{ii}  & \cdots & u_{in} \\
+        \vdots  & \vdots & \vdots  & \vdots &  \vdots  & \ddots & \vdots \\
+          0   ´  &   0    &    0    & \cdots &    0     & \cdots & u_{nn} 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+- La matriz _identidad_ $I_n$ es la matriz _diagonal_ cuya diagonal principal es $\{1,\ldots,1\}$ y sus otras entradas son $0$.
+\pause
+\begin{equation}
+\begin{array}{cc}
+\mathbf{I}_n  =&  \begin{bmatrix}
+        1  & 0  & \ldots   & 0   \\
+        0  & 1  & \ldots   & 0 \\
+        \vdots  & \vdots   & \ddots   & \vdots \\
+        0  & 0  & \ldots   & 1 
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+
+- La matriz _cero_ $\Big[0\Big]_{mn}$ es la matriz con $a_{ij}=0$, para $i=1,2,\ldots,n$, $j=1,2,\ldots,n$ 
+
+- Dos matrices $\textbf{A}$ y $\textbf{B}$ son _iguales_ si y solo si:
+
+  * $\textbf{A}$ y $\textbf{B}$ tienen el mismo número de renglones y el mismo número de columnas
+  * Todos los elementos correspondientes $(i,j)$ son iguales, es decir
+  $a_{ij}=b_{ij}$ para $i=1,2,\ldots,m$ y $j=1,2,\ldots,m$.
+
+Toda matriz se puede interpretar como un arreglo de vectores renglón o bien, un arreglo de vectores columna
+
+\begin{equation*}
+  \mathbf{A} = 
+    \begin{bmatrix} \mathbf{a_{\cdot,1}}|\mathbf{a_{\cdot,2}}|\ldots |\mathbf{a_{\cdot,n}} \end{bmatrix}
+\end{equation*}
+
+En este caso los vectores $\mathbf{a_{\cdot,i}}$ son vectores columna de tamaño $m\times 1$.
+
+# **Matrices**
+
+## Ejercicios
+\small
+Obtener la expresión matricial de los sistemas de ecuaciones lineales en los ejemplos de la clase.
+
+Para el siguiente sistema
+\begin{equation*}
+  \begin{matrix}
+     -2 x_1 & -4 x_2 & +2 x_3 &-6x_4     & = 0  \\
+      3 x_1 &  6 x_2  & -2 x_3& +13 x_4  &= 6\\
+     2 x_1 &  + 4x_2  &      &  +14 x_4  &=12\\
+     4 x_1 & + 8x_2  &-7x_3 &            &= -10
+  \end{matrix}
+\end{equation*}
+
+La matriz extendida asociada al sistema es 
+
+\begin{equation*}
+  \begin{pmatrix}
+      - 2   & - 4 &   2  & -6 & \big| & 0   \\
+        3   &   6 & - 2  & 1  & \big| & 6    \\
+        2   &   4 &   0  & 14 & \big| & 12  \\
+        4   &   8 &  -7  & 0  & \big| & -10
+  \end{pmatrix}
+  \xrightarrow[\frac{1}{2}E_2\rightarrow E_2]{-\frac{1}{2}E_1 \rightarrow E_1}
+  \begin{pmatrix}
+        1   &   2 &   -1 & 3  & \big| & 0   \\
+        3   &   6 & - 2  & 1  & \big| & 6    \\
+        1   &   2 &   0  & 14 & \big| & 12  \\
+        4   &   8 &  -7  & 0  & \big| & -10
+  \end{pmatrix}
+\end{equation*}
+
+
+# **Matrices** II
+\small
+## Operaciones con matrices
+Al igual que en el caso de los números, se puede definir operaciones aritméticas para las matrices. En ese sentido, las matrices son una generalización de los números y de los vectores
+
+### Suma y resta de matrices
+
+En esta sección suponga que $\mathbf{A}$ y $\mathbf{B}$ son matrices del mismo orden.
+
+La **suma** de matrices $A$ y $B$ se define como $A+B$ es la matriz con entradas 
+
+\begin{equation*}
+\begin{array}{cc}
+\mathbf{A} + \mathbf{B}   = & 
+      \begin{bmatrix}
+              a_{11}+b_{11}  & a_{12}+b_{12}  & \cdots   & a_{1n}+b_{1n}   \\
+              a_{21}+b_{21}  & a_{22}+b_{22}  & \cdots   & a_{2n}+b_{2n} \\
+              \vdots   & \vdots  & \vdots   & \vdots \\
+              a_{m1}+b_{m1}  & a_{m2}+b_{m2}  & \cdots   & a_{mn}+b_{mn} 
+        \end{bmatrix}
+\end{array}
+\end{equation*}
+
+La **multiplicación** **por** **escalar** $\lambda \in\mathbb{R}$ o $\lambda\in\mathbb{C}$.
+
+\begin{equation*}
+\begin{array}{cc}
+\lambda \mathbf{A}    = & 
+      \begin{bmatrix}
+              \lambda a_{11}  & \lambda a_{12}  & \cdots   & \lambda a_{1n}   \\
+              \lambda a_{21}  & \lambda a_{22}  & \cdots   & \lambda a_{2n} \\
+              \vdots  & \vdots  & \vdots   & \vdots \\
+              \lambda a_{m1}  & \lambda a_{m2}  & \cdots   & \lambda a_{mn} 
+        \end{bmatrix}
+\end{array}
+\end{equation*}
+
+
+## **Multiplicación** **de** **Matrices** 
+\small
+
+### Operaciones con matrices
+
+La multiplicación de una matriz difiere de la suma y resta de matrices.
+
+Para que la multiplicación de dos matrices $A$ y $B$ esté definida, _el_ _número_ _de_ _columnas_ _de_ $A$ _debe_ _ser_ _igual_ _al_ _número_ _de_ _renglones_ _de_ $B$. Supongamos que  el orden de $A$ es $n\times m$ y $B$ tiene el orden $m\times p$. Entonces la multiplicación de $A\cdot B$ es la matriz con entradas:
+
+\begin{equation}
+\begin{array}{cc}
+\mathbf{A} \cdot \mathbf{B}   = & 
+      \begin{bmatrix}
+              \sum_{k=1}^{m}a_{1k}b_{k1}  & \sum_{k=1}^{m}a_{1k}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{1k}b_{kn}   \\
+              \sum_{k=1}^{m}a_{2k}b_{k1} & \sum_{k=1}^{m}a_{2k}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{2k}b_{kn} \\
+              \vdots   & \vdots  & \vdots   & \vdots \\
+              \sum_{k=1}^{m}a_{mk}b_{k1}  & \sum_{k=1}^{m}a_{mk}b_{k2}  & \cdots   & \sum_{k=1}^{m}a_{mk}b_{kn} 
+        \end{bmatrix}
+\end{array}
+\end{equation}
+
+Dicho de otra forma, las entradas de la multiplicación da una matriz con entradas $\big( A\cdot B\big)_{ij} = \sum_{k=1}^{m}a_{ik}b_{kj}$ $=a_{i1}b_{1j}+a_{i2}b_{2j}+\ldots+a_{im}b_{mj}$ con $i=1,\,2,\,\ldots,n$ y $j=1,2,\ldots,p$. El producto de matrices tendrá $n-$ filas y $p-$ columnas.
+
+
+
+### Ejemplo 1
+
+Si
+
+\begin{equation*}
+  \begin{array}{ccccc}
+    A = & \begin{pmatrix} 1 & 2 & -1 & 0  \\ 2 & 0 & -2 & 3 \\ 5 & -2 & 3 & -4 \end{pmatrix} &\,\,\,\, &  
+    C = & \begin{pmatrix} 2 & 1 & 0  \\ 3 & 4 & 2 \end{pmatrix}  \\
+    D = &  \begin{pmatrix} 1 & 0 \\ 2 & -3 \\ -1 & -6 \end{pmatrix}  
+  \end{array}
+\end{equation*}
+ 
+ Calcular
+ $C\cdot A$, $D\cdot C$ y $C\cdot D$.
+ 
+\begin{equation*}
+  \begin{array}{ccc}
+    C\cdot A = & \begin{pmatrix} 2\cdot 1 + 1\cdot 2 + 0\cdot 5 & 2\cdot 2 + 1\cdot 0 + 0\cdot(-2) & 2\cdot(-1) + 1\cdot(-2) + 0\cdot 3 & 2\cdot 0 + 1\cdot 3 + 0\cdot(-4)  \\ 3\cdot 1 + 4\cdot 2 + 2\cdot 5 & 3\cdot 2 + 4\cdot 0 + 2\cdot(-2) & 3\cdot(-1) + 4\cdot(-2) + 2\cdot 3 & 3\cdot 0 + 4\cdot 3 + 2\cdot(-4) \end{pmatrix} &    
+  \end{array}
+\end{equation*}
+  
+ 
+\begin{equation*}
+  \begin{array}{ccc}
+    C\cdot A = & \begin{pmatrix} 
+                          4 & 4 & -4 & 3  \\
+                         21 & 2 & -5 & 4 
+                  \end{pmatrix} &    
+  \end{array}
+\end{equation*}
+ 
+ 
+ 
+\begin{equation*}
+  \begin{array}{ccc}
+    D\cdot C = & \begin{pmatrix} 
+                          1\cdot 2 + 0\cdot 3 & 1\cdot 1 + 0\cdot 4 & 1\cdot 0 + 0\cdot 2   \\
+                          2\cdot 2 + (-3)\cdot 3 & 2\cdot 1 + (-3)\cdot 4 & 2\cdot 0 + (-3)\cdot 2   \\
+                          (-1)\cdot 2 + (-6)\cdot 3 & (-1)\cdot 1 + (-6)\cdot 4 & (-1)\cdot 0 + (-6)\cdot 2   \\
+                  \end{pmatrix} &    
+  \end{array}
+\end{equation*},
+
+
+\begin{equation*}
+  \begin{array}{ccc}
+    D\cdot C = & \begin{pmatrix} 
+                          2   & 1    & 0   \\
+                          -5  & -10 &-6   \\
+                          -20 & -25 & -12   \\
+                  \end{pmatrix} &    
+  \end{array}
+\end{equation*}
+ 
+ 
+ 
+\begin{equation*}
+  \begin{array}{ccc}
+C\cdot D = & \begin{pmatrix} 
+            2\cdot 1 + 1\cdot 2 + 0\cdot(-1) &   2\cdot 0 + 1\cdot(-3) + 0\cdot(-6)   \\
+            3\cdot 1 + 4\cdot 2 + 2\cdot(-1) &   3\cdot 0 + 4\cdot(-3) + 2\cdot(-6)
+            \end{pmatrix} &    
+  \end{array}
+\end{equation*},
+
+
+\begin{equation*}
+  \begin{array}{ccc}
+    C\cdot D = & \begin{pmatrix} 
+                           4   & -3    \\
+                           9   & -24    
+                  \end{pmatrix} &    
+  \end{array}
+\end{equation*}
+ 
+### Observación
+
+El producto de dos matrices **no** es conmutativo, es decir, el orden de los factores **sí** altera el producto. Los productos $C\cdot D$ y $D\cdot C$ ¡ni siquiera tienen el mismo tamaño!
+
+Esquematicamente podemos definir al producto de la siguiente forma
+
+La entrada $c_{11}$ de la matriz $C=AB$ resultante es el producto punto del renglón 1 de $\mathbf{A}$ $\mathbf{a}_{1\cdot}$ y la columna 1 de $\mathbf{B}$, $\mathbf{b}_{\cdot1}$.
+
+```{r echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics('matrix_chunk1.jpg')
+```
+
+La entrada $c_{22}$ de la matriz $C=AB$ resultante es el producto punto del renglón 2 de $\mathbf{A}$ $\mathbf{a}_{2\cdot}$ y la columna 2 de $\mathbf{B}$, $\mathbf{b}_{\cdot 2}$.
+
+```{r echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics('matrix_chunk2.jpg')
+```
+
+La multiplicación matricial se puede aplicar para los casos en que uno de los elementos es un vector (interpretando a dicho vector como una matriz de tamaño $1\times n$ o $m\times 1$).
+
+### Ejemplo 2
+
+ a) Sea $A=\begin{pmatrix} 1 & -1 & 1 \end{pmatrix}$  y $B=\begin{pmatrix} 7 \\ 0 \\ 5 \end{pmatrix}$. Determinar que productos son posibles $A\cdot B$ y/o $B\cdot A$.
+ b) Determinar el producto de las matrices
+ 
+\begin{equation*}
+  \begin{array}{cccc}
+   & \begin{bmatrix} 3 & -1 & 4 & 0  \end{bmatrix} &\cdot &  
+     \begin{bmatrix} 1 \\-2 \\ 3\\ 1 \end{bmatrix}  \\  
+  \end{array},
+\end{equation*}
+
+
+\begin{equation*}
+  \begin{array}{cccc}
+   & \begin{bmatrix} 
+        1 & -1 & 0 & 2 \\
+        0 &  1 & 3 & 4 \\
+        2 &  0 &-1 & 3
+      \end{bmatrix} &\cdot &  
+     \begin{bmatrix} 2 \\-1 \\ 0\\ 3 \end{bmatrix}  \\  
+  \end{array},
+\end{equation*}
+
+#### _Respuesta_
+
+a)$A$ es una matriz $1\times 4$ y $B$ es una matriz $4\times 1$. Entonces, $A\cdot B$ esta definido pues las columnas de $A$ = los renglones de $B$ y el resultado será una matriz de tamaño $1\times 1$ es decir un escalar.
+
+En este caso $A\cdot B = 1\cdot 7 + (-1) \cdot 0 + 1\cdot 5$ = (12) = 12.
+Por otro lado $B\cdot A$ también esta definido y el resultado será una matriz de tamaño $4\times 4$.
+
+
+\begin{equation*}
+  \begin{array}{cccc}
+   & \begin{bmatrix} 
+        7\cdot 1 & 7\cdot(-1) & 7\cdot 1  \\
+        0\cdot 1 & 0\cdot(-1) & 0\cdot 1  \\
+        5\cdot 1 & 5\cdot(-1) & 5\cdot 1 
+      \end{bmatrix} & = & 
+      \begin{bmatrix} 
+        7 & -7 & 7  \\
+        0 & 0  & 0  \\
+        5 & -5 & 5 
+      \end{bmatrix}
+  \end{array} ,
+\end{equation*}
+
+# Matrices
+
+## Propiedades de las operaciones on Matrices
+\small
+1.- Para toda matriz $A$ y $\alpha,\beta\in \mathbb{R}$.
+
+* $1 \cdot \textbf{A}$ = $\textbf{A} \cdot 1$ =  $\textbf{A}$.
+ 
+* $0\cdot  \mathbf{A}$ =$\mathbf{A}\cdot 0$ =  $\mathbf{0}$.
+ 
+* $\alpha \cdot (\beta\cdot A) = (\alpha \beta)\mathbf{A}$.
+
+
+2.- Si $A$, $B$ y $C$ tienen el mismo orden.
+
+* $\mathbf{A} + (\mathbf{B} + \mathbf{C}) = (\mathbf{A} + \mathbf{B}) + \mathbf{C}$.
+* $\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}$.
+* $(\alpha+\beta)\cdot A = \alpha\cdot \mathbf{A} + \beta \cdot \mathbf{B}$.
+* $\alpha \cdot (\mathbf{A}+ \mathbf{B}) = \alpha\cdot \mathbf{A} + \alpha \cdot \mathbf{B}$.
+* $\mathbf{A}+\mathbf{0} = \mathbf{0}+\mathbf{A}=\mathbf{A}$
+
+
+## Multiplicacion de Matrices
+\small
+
+3.- Si $A$, $B$ y $C$ tienen el orden adecuado.
+
+ a) $(A+B)C = AC + BC$.
+ b) $C(A+B) = CA + CB$.
+ c) $A(BC) = (AB)C$.
+
+Para ver la _asociatividad_, sea $M=AB$ y $N=BC$ queremos verificar que $AN = MC$.
+Por definición de la multiplicación de matrices 
+$$
+\begin{array}{cc}
+m_{ij} = & \sum_{k=1}^{n}a_{ik}b_{kj}. \\
+n_{ij} = & \sum_{r=1}^{p}b_{ir}b_{rj}.
+\end{array}
+$$
+Entonces 
+$$
+\big( MC \big)_{ij}=\sum_{l=1}^{p}m_{il}c_{lj} = \sum_{l=1}^{p} \sum_{k=1}^n a_{ik}b_{kl}c_{lj} =  \sum_{k=1}^n a_{ik} \sum_{l=1}^{p}  b_{kj}c_{lj}
+$$
+\[
+=\sum_{k=1}^na_{ik}n_{kj}=(AN)_{ij}
+\]
+
+De la fórmula se deduce que el producto de varias matrices dispuestas en un orden determinado no dependen de qué producto se hace primero.
+
+# Multiplicacion de Matrices
+\small
+
+Por ejemplo, por asociatividad
+$$
+((AB)C)D = (A(BC))D = A((BC)D)
+$$
+
+## Potencias de matrices
+
+Sea $M$ una matriz **cuadrada** de orden $n$, por definición
+
+\begin{equation*}
+M^{0}=Id(n)\,\,M^{1} = M\,\,  M^{2} = MM\,\, M^{3} = MMM.
+\end{equation*}
+
+En general
+$$
+\begin{array}{cc}
+M^{p}M^{q}= M^{p+q}\\
+(M^{p})^{q} = M^{pq}
+\end{array}
+$$
+
+_Observación_ : Las propiedades de productos notables no se conserven.
+
+$$
+\begin{array}{cccc}
+(A+B)^{2} & = & (A+B)(A+B) &= A^2 + AB + BA + B^2 \\
+(A+B)(A-B) &= &A(A-B) + B(A-B)& = A^2 -AB + BA -B^2
+\end{array}
+$$
+
+## Matriz transpuesta
+
+\small 
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$, la matriz transpuesta de $A$, $A^{T}$ es la matriz de orden $n\times m$ tal que $(A^T)_{ij}=A_{ji}$.
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} 3 & -2  \\ -4 & 3 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix} 3 & -4  \\ -2 & 3 \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} 3 & -1 & 0 \\ -2 & 1 & 1 \\ 2 & -1 & 4 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix}  3 & -2 & 2 \\ -1 & 1 & -1 \\ 0 & 1 & 4  \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} -1 & 3 & 0 \\ -2 & 1 & 1 \\ 3 & 0 & -2 \\ 4 & 1 & 2 \end{pmatrix} &\,\,\,\, & A^{T} = & \begin{pmatrix}  -1 & -2 & 3 & 4 \\ 3 & 1 & 0 &  1 \\ 0 & 1 & -2 & 2  \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+## Propiedades de la matriz transpuesta
+
+  1) $(\alpha A + \beta B)^{T} = \alpha A^{T} + \beta B^{T}$.
+  2) $(AB)^{T} = B^{T}A^{T}$.
+  3) $\big(A^{T}\big)^{T}=A$
+
+La primer propiedad es fácil de verificar.
+
+Si $a_{ij}$ y $b_{ij}$ son las entradas de las matrices $A$ y $B$ respectivamente, entonces las entradas de $A^{T}$ y $B^{T}$ son $a_{ji}$ y $b_{ji}$ por lo que 
+
+\[
+(A^{T} + B^{T})_{ij} = (a_{ji}+b_{ji})\quad\quad\mbox{ para }j=1,2,\ldots,m,\,\,i=1,2,\ldots,n
+\]
+Pero el último término corresponde con las entradas de $(A+B)^{T}$.
+
+La segunda propiedad se cumple por la siguiente razón
+\begin{equation*}
+  [(AB)^T]_{ij} = \sum_{k=1}^m a_{jk}b_{ki} = \sum_{k=1}^m b^T_{ik} a^T_{kj} = [B^TA^T]_{ij}
+\end{equation*}
+
+
+## Definición:
+
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$ y $\mathbf{A}=\mathbf{A}^{T}$ decimos que $\mathbf{A}$ es una matriz **simétrica**.
+Si $\mathbf{A}=-\mathbf{A}^{T}$ decimos que es **antisimétrica**.
+
+## Matriz conjugada
+\small
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$ de números complejos, la matriz **conjugada** de $A$, $\bar{A}$ es la matriz de orden $m\times n$ tal que $(\bar{A})_{ij}=\bar{a_{ij}}$.
+
+Sea $A=(a_{ij})$ una matriz de orden $m\times n$ de números complejos, la matriz **transpuesta** **conjugada** de $A$, $A^{*}$ es la matriz de orden $n\times m$ tal que $(A)_{ij}=(\bar{A})_{ji}$. Es decir, la adjunta de $A$ se obtiene al _conjugar_ y _transponer_ $A$.
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} -i & 2 + 3i  \\ -4i & 5+2i \end{pmatrix} &\,\,\,\, & A^{*} = & \begin{pmatrix} i & 4i  \\ 2-3i & 5-2i \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+Si $\mathbf{A}$ es una matriz cuadrada y $A$ es igual a su adjunta, entonces se dice que $\mathbf{A}$ es una matriz **hermitiana** o **simétrica** **según** **Hermite**.
+
+## Matriz Inversa
+\small 
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$, se dice que $X$ es la matriz **inversa** de $A$ si 
+$$
+A\cdot X = X\cdot A = \mathbf{Id}
+$$
+
+Si dicha matriz existe decimos que $A$ es **invertible**. La matriz inversa de $A$ se escribe como $A^{-1}$.
+
+## Ejemplo 
+
+Calcular la matriz inversa de 
+
+\[
+A =  \begin{pmatrix} 1 & 1 & 1  \\ 1 & 2 & 2 \\ 1 & 2 & 3 \end{pmatrix}
+\]
+
+
+\[
+B =  \begin{pmatrix} 1 & 2 \\ -2 & 4  \end{pmatrix}
+\]
+
+** Para calcular la inversa, se requiere resolver $n$ sistemas de ecuaciones, cada uno con $\vec{b}=\mathbf{e}_i=\begin{pmatrix} 0, \ldots,0,1,0,\ldots,0 \end{pmatrix}$**
+
+Para evitar repetir la matriz aumentada conservamos _cada_ _término_ _independiente_  en una matriz ampliada
+\[
+  \begin{bmatrix}
+        a_{11}   & \cdots   & a_{1n}   &\bigm| & 1       & 0      & \cdots  & 0 \\
+        a_{21}   & \cdots   & a_{2n}   &\bigm| & 0       & 1      & \cdots  &  0\\
+    \vdots       & \vdots   & \vdots   &\bigm| & \vdots  & \ddots & \cdots  & 0 \\
+      a_{n1}  & \cdots      & a_{nn}   &\bigm| & 0       & 0      & \cdots  & 1
+  \end{bmatrix}
+\]
+Y procedemos a aplicar operaciones elementales, en vez de obtener una matriz triangular superior, y aplicar sustitución hacia atrás, aplicamos operaciones elementales para obtener una **matriz** **identidad**.
+
+\[
+  \begin{bmatrix}
+        1   & 2 &\bigm| & 1       & 0     \\
+        -2  & 4  &\bigm| & 0       & 1     \\
+
+  \end{bmatrix} 
+  \xrightarrow{2E_1+E_2\rightarrow E_2}
+  \begin{bmatrix}
+        1   & 2  &\bigm| & 1       & 0     \\
+        0   & 8  &\bigm| & 2       & 1     \\
+  \end{bmatrix} 
+  \xrightarrow{1/8E_2\rightarrow E_2}
+\]
+
+\[
+  \begin{bmatrix}
+        1   & 2  &\bigm| & 1         & 0     \\
+        0   & 1  &\bigm| & 1/4       & 1/8     \\
+  \end{bmatrix} 
+  \xrightarrow{-2E_2+E_1\rightarrow E_1}
+  \begin{bmatrix}
+        1   & 0  &\bigm| & 1/2         & -1/4     \\
+        0   & 1  &\bigm| & 1/4       & 1/8     \\
+  \end{bmatrix} 
+\]
+
+A diferencia de eliminación gaussiana, el algoritmo termina cuando podemos encontrar una diagonal en la matriz izquierda. **Si** **esto** **es** **posible**, la matriz del lado derecho será la inversa. 
+
+Pues son las soluciones a los sistemas
+
+\begin{equation*}
+  \begin{matrix}
+           x  & +2 y  & = 1  \\
+           -2x & +4 y   & = 0   
+  \end{matrix} \quad \mbox{ y }\quad
+  \begin{matrix}
+           x  & +2 y  & = 0  \\
+           -2x & +4 y   & = 1   
+  \end{matrix}
+\end{equation*}
+
+### Aplicar eliminación gaussiana para invertir $A$.
+
+
+
+
+## Teorema
+Si $A$ es invertible, para __cualquier__ $\mathbf{b}\in\mathbb{R}^{n}$, el sistema de ecuaciones: $Ax =b$
+con :
+\begin{equation*}
+A =   \left[
+  \begin{matrix}
+     a_{11}   & \cdots   & a_{1n} \\
+    \vdots    &          & \vdots \\
+      a_{n1}  & \cdots        & a_{nn}
+  \end{matrix}
+  \right]
+\end{equation*}
+
+\begin{equation*}
+  \mathbf{x} =
+    
+  \begin{pmatrix}
+     x_1 \\
+     x_2 \\
+     \vdots \\
+     x_n
+  \end{pmatrix}
+     \hspace{.2cm}
+   \mbox{  y  }
+   \hspace{.2cm}  
+   \mathbf{b} =
+      \begin{pmatrix}
+       b_1 \\
+       b_2 \\
+       \vdots \\
+       b_n
+    \end{pmatrix}
+\end{equation*}
+
+tiene **solución** **única** y es igual a 
+
+\begin{equation*} \label{sistema}
+  x = \mathbf{A}^{-1}\mathbf{b}
+\end{equation*}
+
+Calcular la inversa para solucionar un sistema de ecuaciones es poco eficiente.
+Sin embargo, es útil para solucionar una _familia_ _de_ _sistemas_ _de_ _ecuaciones_.
+
+## Ejemplo
+
+1. verificar que la siguiente matriz es la inversa de $A$
+
+1. Calcular la inversa de la matriz $A$
+
+\begin{equation*}
+  A = \begin{pmatrix}
+          1 & 1 & 1 \\
+          1 & 2 & 2 \\
+          1 & 2 & 3 
+      \end{pmatrix}
+\end{equation*}
+
+
+1. Calcular la matriz inversa de 
+\begin{equation*}
+ \begin{bmatrix} 3 & -5 & 1   \\  
+                 0 & 1  & -1  \\ 
+                 3 & 5  & 7   
+ \end{bmatrix}  
+\end{equation*}
+
+
+1. Sea $a\in\mathbb{R}$, considere al siguiente sistema
+\begin{equation*}
+  \begin{matrix}
+    2x & -3y & = a\\
+    4x & -5y & = 1-a
+  \end{matrix}
+\end{equation*}
+
+
+
+# Ejercicios
+
+\begin{equation*}
+\begin{array}{ccccc}
+A = & \begin{pmatrix} 1 & -1 & 2  \\ 0 & 3 & 4 \end{pmatrix} &\,\,\,\, & 
+B = & \begin{pmatrix} 4 & 0 & -3  \\ -1 & -2 & 3 \end{pmatrix}  \\
+C = & \begin{pmatrix} 2 & -3 & 0 & 1  \\ 5 & -1 & -4 & 2 \\ -1 & 0 & 0 & 3 \end{pmatrix} &\,\,\,\, &
+D = & \begin{pmatrix}  2  \\ -1 \\ 3 \end{pmatrix}  \\
+\end{array}
+\end{equation*}
+
+* Calcular $3A - 4B$, $AC$, $BC$, $AD$, $BD$, $CD$
+
+* Encontrar $A^{T}$ y $A^{T}B$ y $A^{T}C$.
+
+Usando la definición de inversa, calcular $A^{-1}$ si $A=\begin{pmatrix} 1 & 1 & 1  \\ 0 & 1 & 2 \\ 1 & 2 & 4 \end{pmatrix}$
+
+Encuentra $x,y,z$ tal que $A$ es simétrica
+\[
+A = \begin{pmatrix} 2 & x & 3  \\ 4 & 5 & y\\ z & 1 & 7 \end{pmatrix}
+\]
+
+Encuentra $x,y,z$ tal que $A$ es hermitiana
+\[
+A = \begin{pmatrix} 3 & x+2i & yi  \\ 3-2i & 0 & 1+iz\\ yi & 1-xi & -1 \end{pmatrix}
+\]
+
+
+
+## Propiedades de la matriz inversa
+
+
+### Definición
+
+Una matriz es singular si existe $\mathbf{x}\ne \mathbf{0}$ que es solución al sistema 
+
+\begin{equation}
+\mathbf{A}\cdot \mathbf{x} = \mathbf{0}
+\end{equation}
+
+Una matriz es **no** **singular** si: para todo $x\in\mathbb{R}^{n}$, si $\mathbf{x}\ne \mathbf{0}$ entonces $\mathbf{A}\mathbf{x}\ne \mathbf{0}$. 
+Es decir una matriz es no singular si el conjunto solución del sistema $\mathbf{A}\mathbf{x}=\mathbf{0}$ es sólo el conjunto $\{\mathbf{0}\}$.
+
+De los resultados previos, sabemos que si $A$ es <strong>invertible</strong> entonces $\mathbf{A}\vec{\mathbf{x}} = \vec{\mathbf{0}}$ tiene una única solución $\vec{\mathbf{x}} = \mathbf{A}^{-1}\vec{\mathbf{0}}=\vec{\mathbf{0}}$. 
+
+Esto significa
+
+* Si $A$ es invertible, entonces $A$ es **no** **singular**.
+
+<strong>Propiedades </strong>
+
+1) Si $A$ es invertible, y tanto $X_1$ como $X_2$ cumple con $X_1\cdot A=\mathbf{I}_n=A\cdot X_1$ y $X_2\cdot A=\mathbf{I}_n=A\cdot X_2$ entonces $X_1=X_2=A^{-1}$. Es decir, la inversa es única.
+
+2) Si $A$ es invertible, entonces $A^{-1}$ también es invertible y 
+\[
+\Big(A^{-1}\Big)^{-1} = A 
+\]
+
+3) Si $A$ y $B$ son matrices de orden $n$ e invertibles entonces $AB$ es invertible. Además
+\begin{equation}
+ (AB)^{-1} = B^{-1} A^{-1}
+\end{equation}
+
+4) Si $A_1$, $A_2,\ldots,A_n$ son matrices invertibles de orden $n$, entonces el producto $A_1\cdot A_2\cdot\ldots\cdot A_n$ es 
+invertible. 
+
+\begin{equation}
+ (A_1A_2\ldots A_n)^{-1} = A_n^{-1}\cdot A_{n-1}^{-1}\cdots A_1^{-1}
+\end{equation}
+
+5) Si $A\in\mathcal{M}^{n}(\mathbb{R})$ una matriz de orden $n$ entonces $A^{T}$ también es invertible y 
+\begin{equation}
+\big(A^{T}\big)^{-1} = \big(A^{-1}\big)^{T}
+\end{equation}
+
+<strong>Explicación</strong>
+
+1) Si $X_1$ y $X_2$ cumplen con $X_1A = \mathbf{I}_n=X_2A$ entonces, 
+\[
+X_1 = X_1\cdot \mathbf{I}_n = X_1\cdot(A\cdot X_2) = (X_1\cdot A)\cdot X_2 = \mathbf{I}_n\cdot X_2 = X_2 
+\]
+Esto también implica que si $X_1$ es una matriz que es una inversa por la izquierda(por la derecha) entonces también es una inversa por la derecha(por la izquierda) y por tanto es la inversa de $A$.
+
+2) Si $A$ es invertible entonces $A\cdot A^{-1} = \mathbf{I}_n$ pero entonces $A^{-1}$ también es invertible y la inversa de $A^{-1}$ es $A$. Dicho de otra forma
+
+\begin{equation}
+ \big( A^{-1} \big)^{-1}
+\end{equation}
+
+
+3) Suponga que $A$ y $B$ son invertibles entonces, sea $X=B^{-1}A^{-1}$. Entonces
+\[
+AB\cdot X=AB\cdot B^{-1}A^{-1} = A\mathbf{I}_n\cdot A^{-1} = \mathbf{I}_n 
+\]
+
+
+De manera similar, se tiene 4).
+
+### Observación
+
+Si $\mathbf{A}\in\mathcal{M}^{n}(\mathbb{R})$ es invertible entonces, para cualquier $\mathbf{b}\in\mathbb{R}^{n}$
+\[
+\mathbf{A}\vec{\mathbf{x}} = \vec{\mathbf{b}}
+\]
+Tiene una solución única. Y además $\vec{\mathbf{x}} = \mathbf{A}^{-1}\vec{\mathbf{b}}$.
+
+En particular, el sistema homogéneo también tiene una solución única, la trivial.
+
+Usando la última observación, resolver los siguientes sistemas 
+
+
+\begin{equation*}
+  \begin{matrix}
+           x   & +3 y  &+2z  & = b_1  \\
+           15x & +2 y &  & = b_2   \\
+           4x & +2 y &  +z & = b_3
+  \end{matrix}
+\end{equation*}
+
+
+Con $\begin{pmatrix}2 \\ 2 \\1 \end{pmatrix}$ y $\begin{pmatrix}1 \\ -2 \\0 \end{pmatrix}$ 
+

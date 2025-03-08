@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.20)  7 MAR 2025 17:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.20)  7 MAR 2025 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tarea_1_n.tex
-(./Tarea_1_n.tex
+**tarea_vectores_1.tex
+(./tarea_vectores_1.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-07> (c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -370,8 +370,9 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count307
 \l__pdf_internal_box=\box56
-) (./Tarea_1_n.aux)
-\openout1 = `Tarea_1_n.aux'.
+)
+No file tarea_vectores_1.aux.
+\openout1 = `tarea_vectores_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
 LaTeX Font Info:    ... okay on input line 77.
@@ -432,9 +433,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 77.
-(./Tarea_1_n.out) (./Tarea_1_n.out)
 \@outlinefile=\write3
-\openout3 = `Tarea_1_n.out'.
+\openout3 = `tarea_vectores_1.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 79.
 (c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -467,34 +467,44 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 86.
+(Font)              <10> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 86.
+(Font)              <5> on input line 89.
+
+Underfull \hbox (badness 1509) in paragraph at lines 109--114
+[]\T1/lmr/m/n/10 Investigar el con-cepto de \T1/lmr/m/it/10 cosenos di-rec-tores\T1/lmr/m/n/10 . Cal-cu-lar los cosenos di-rec-tores de los sigu-ientes vec-tores
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 133.
 [1
 
 {c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 260.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 201.
 (c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] (./Tarea_1_n.aux)
-Package rerunfilecheck Info: File `Tarea_1_n.out' has not changed.
-(rerunfilecheck)             Checksum: 01AA5CA5E12D34BD79E9931C8CD42D5E;160.
- ) 
-Here is how much of TeX's memory you used:
- 11272 strings out of 477989
- 179743 string characters out of 5837725
- 1895340 words of memory out of 5000000
- 31256 multiletter control sequences out of 15000+600000
- 552707 words of font info for 70 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 75i,12n,76p,314b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/mb68387/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Tarea_1_n.pdf (2 pages, 146174 bytes).
-PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+)
 
+LaTeX Warning: Command \textdegree invalid in math mode on input line 284.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 284.
+
+[2] [3] [4]
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.557      x_1   & + x_2   & +x_3    & -2x_4    &
+                                                 = 3  \\ 
+Here is how much of TeX's memory you used:
+ 11347 strings out of 477989
+ 180442 string characters out of 5837725
+ 1880340 words of memory out of 5000000
+ 31276 multiletter control sequences out of 15000+600000
+ 589669 words of font info for 91 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 75i,12n,76p,321b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

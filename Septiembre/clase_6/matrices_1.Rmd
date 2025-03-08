@@ -1,7 +1,6 @@
 ---
 title: "Matrices"
 author: "Jose Rodriguez Villarreal"
-date: "2/28/2022"
 output: beamer_presentation
 ---
 
