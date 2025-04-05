@@ -1,0 +1,44 @@
+---
+title: "Práctica 4"
+author: "Álgebra Lineal"
+date: "28/3/2025"
+output: html_document
+---
+
+Resolver los siguientes problemas 
+
+@. Hallar el valor de $p\in \mathbb{R}$  tal que la matriz $A=\begin{bmatrix} 1 & 2 & 1\\ 2 & 0 & 1 \\ 2 & 3 & p \end{bmatrix}$ tenga $\det(A)=0$.
+
+
+@. Usar la regla de Cramer para encontrar la solución del sistema, determinar primero si tiene solución.
+
+\[
+\begin{matrix}
+x1  & + & 2x_2 & - &x_3 &=&-3 \\
+2x1 & + & 5x_2 & - &x_3 &=&-4 \\
+-x_1&   &      & - &4x_3&=&2
+\end{matrix}
+\]
+
+@. Demostrar que 
+\[
+\begin{vmatrix}
+ 1+x_1 & x_2 & x_3 & x_4 \\
+ x_1   & 1+x_2& x_3 & x_4 \\
+ x_1   & x_2  &1+x_3 & x_4 \\
+ x_1   & x_2  & x_3  & 1+x_4
+\end{vmatrix} = 1 +x_1 + x_2 +x_3 + x_4
+\]
+
+@. Una parábola vertical para por los puntos $A(-2,-2)$, $B(1,2)$ y $C(2,3)$, encontrar su ecuación usando determinantes.
+
+
+@. Calcular el determinante de Vandermonde con $n=4$,
+\[
+\begin{vmatrix}
+ 1 & 1 & 1 & 1 \\
+ x_1   & x_2& x_3 & x_4 \\
+ x_1^2   & x_2^2  &x_3^2 & x_4^2 \\
+ x_1^3   & x_2^3  & x_3^3  &x_4^3
+\end{vmatrix} 
+\]

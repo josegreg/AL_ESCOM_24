@@ -1,0 +1,30 @@
+---
+title: "Práctica 3"
+author: "Álgebra Lineal"
+date: "13/3/2025"
+output: pdf_document
+---
+
+
+## Problemas 
+
+### Sección 1.2
+
+@. Ejercicios 14, 17, 19 y 21.
+
+@. Problemas 22, 23, 25 y 26
+
+@. Ejercicios 45, 47, 48 y 56
+
+### Sección 1.4
+
+@. Ejercicios 22, 24 y 25
+
+### Sección 2.2.
+
+@. Ejercicios 37, 38, 39, 43 y 46
+
+### Sección 2.4 
+
+@. Ejercicios 25, 36, 38,  39 y 41
+

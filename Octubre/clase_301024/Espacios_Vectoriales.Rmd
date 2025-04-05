@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 Un **espacio** **vectorial** sobre $\mathbb{K}$ también llamado un espacio vectorial real o espacio vectorial complejo, consta de lo siguiente:
 
 
-1. Un conjunto $V,$ cuyos elementos se llaman vectores.
+1. Un conjunto $V,$ cuyos elementos se llaman **vectores**.
 2. Una operación binaria en $V,$ llamada suma de vectores, denotada por $+$, y que cumple lo
 siguiente:
 
@@ -51,6 +51,24 @@ para todos $\lambda,\mu \in K$ y para todos $\mathbf{x}, \mathbf{y} \in V$
 ## Definición
 
 Si el campo $\mathbb{K}=\mathbb{R}$  es el campo de los números reales se dice que $V$ es un espacio vectorial **real**. Si $\mathbb{K}=\mathbb{C}$ se dice que es un espacio vectorial **complejo**.
+
+
+## Ejemplo 
+
+Considere a $\mathbb{R}^3$ con la operación de suma vectorial
+\[
+\begin{pmatrix} x_1 \\ x_2\\ x_3\end{pmatrix} + \begin{pmatrix} y_1 \\ y_2\\ y_3\end{pmatrix} = 
+\begin{pmatrix} x_1 + y_1 \\  x_2+y_2 \\ x_3 + y_3\end{pmatrix}
+\]
+y la multiplicación escalar
+\[
+c \cdot \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 
+\begin{pmatrix} c x_1 \\ c x_2 \\ c x_3 \end{pmatrix} 
+\]
+
+Con estas operaciones $V=(\mathbb{R}^{3},+,\cdot)$ es un **espacio** **vectorial** en $\mathbb{R}$.
+
+
 
 # Consecuencias de la definición de espacio vectorial
 

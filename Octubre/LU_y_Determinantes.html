@@ -2392,7 +2392,745 @@ como producto de matrices elementales</p>
 </div>
 </div>
 </div>
+<div id="permutaciones" class="section level1">
+<h1>Permutaciones</h1>
+<p>Para definir de manera general a los determinantes en varias
+dimensiones, se usan a las permutaciones. Una permutación es una función
+<span class="math inline">\(\pi:\{1,2,\ldots,n\}\rightarrow
+\{1,2,\ldots,n\}\)</span> es decir, una permutación es una función que
+asigna o reordena a <span class="math inline">\(n\)</span> números
+enteros.</p>
+<div id="ejemplo-8" class="section level2">
+<h2>Ejemplo</h2>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\pi &amp;= &amp; \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\ 2
+&amp; 4 &amp; 1 &amp; 5 &amp; 3 \end{pmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Decimos que <span class="math inline">\(\pi\)</span> tiene una
+inversión si <span class="math inline">\(\pi\)</span> cambia el orden es
+decir, si <span class="math inline">\(i&lt;j\)</span> pero <span class="math inline">\(\pi(j) &lt; \pi(i)\)</span>.</p>
+<p><strong>Definición</strong> Una permutación <span class="math inline">\(\pi\)</span> es <em>par</em> o <em>impar</em> de
+acuerdo a si su número de inversiones es par ó impar.</p>
+Para la permutación <span class="math inline">\(\pi\)</span>, y para
+cada entero, analizamos el número de inversiones (o de cambios de
+orden).
+<p>Por tanto la permutación</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\pi &amp;= &amp; \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\ 2
+&amp; 4 &amp; 1 &amp; 5 &amp; 3 \end{pmatrix}
+\end{array}
+\end{equation*}\]</span> es par pues tiene <span class="math inline">\(4\)</span> inversiones</p>
+</div>
+</div>
+<div id="determinantes" class="section level1">
+<h1>Determinantes</h1>
+<p>La definición general del determinante está dada en términos de las
+permutaciones de los índices de filas y columnas de una matriz.</p>
+<div id="definición-7" class="section level2">
+<h2>Definición</h2>
+<p>El <strong>determinante</strong> de la matriz <span class="math inline">\(\mathbf{A}=(a_{ij})\)</span> <span class="math inline">\(n\times n\)</span>, es el número real</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &amp;= &amp; \sum_{\pi\in S_n}
+(-1)^{\mbox{sign}(\pi)} a_{1\pi(1)}a_{2\pi(2)}\cdots a_{n\pi(n)}
+\end{array}
+\end{equation*}\]</span></p>
+<p>En donde la s uma es sobre todas las permutaciones del conjunto <span class="math inline">\(\{1,2,\ldots,n\}\)</span>.</p>
+</div>
+<div id="definición-8" class="section level2">
+<h2>Definición</h2>
+<p>Suponga que <span class="math inline">\(\alpha\)</span> es una
+permutación <span class="math inline">\(\alpha(k)=i_{k}\)</span> con
+<span class="math inline">\([i_1,i_2,\ldots,i_n]\)</span> denotamos al
+signo de la permutación.</p>
+<div id="ejemplo-9" class="section level3">
+<h3>Ejemplo</h3>
+<p>Calcular el determinante, de acuerdo a la definición <span class="math display">\[
+\begin{vmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{vmatrix}
+\]</span></p>
+<p>Consideramos a las permutaciones, en este caso <span class="math inline">\(3!= 6\)</span></p>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_1 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 1 &amp; 2 &amp; 3  \end{pmatrix} &amp;
+sgn(\sigma_1)=1
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_2 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 1 &amp; 3 &amp; 2  \end{pmatrix} &amp;
+sgn(\sigma_2)=-1
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_3 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 2 &amp; 3 &amp; 1  \end{pmatrix} &amp;
+sgn(\sigma_3)=(-1)^{2}
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_4 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 2 &amp; 1 &amp; 3  \end{pmatrix} &amp;
+sgn(\sigma_4)=(-1)^{3}
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_5 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 3 &amp; 1 &amp; 2  \end{pmatrix} &amp;
+sgn(\sigma_5)=(-1)^{4}
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{cccc}
+\sigma_6 &amp;= &amp;
+\begin{pmatrix}
+1 &amp; 2 &amp; 3  \\ 3 &amp; 2 &amp; 1  \end{pmatrix} &amp;
+sgn(\sigma_6)=(-1)^{6}
+\end{array}\]</span>
+<p>Por tanto el determinante será la siguiente suma</p>
+<p><span class="math display">\[
+\det(A) = a_{11}a_{22}a_{33}
+-a_{11}a_{23}a_{32}+a_{12}a_{23}a_{31}-a_{12}a_{21}a_{33}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}
+\]</span></p>
+</div>
+<div id="ejemplo-10" class="section level3">
+<h3>Ejemplo</h3>
+<p>Calcular el determinante, de acuerdo a la definición <span class="math display">\[
+\begin{vmatrix}
+2  &amp; 1 &amp; 1 \\
+6  &amp; 2 &amp; 1 \\
+-2 &amp; 2 &amp; 1
+\end{vmatrix}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="cálculo-de-un-determinante" class="section level1">
+<h1>Cálculo de un determinante</h1>
+<p>Si <span class="math inline">\(A\)</span> es una matriz de orden n,
+sea <span class="math inline">\(A[i,j]\)</span> la matriz de orden <span class="math inline">\(n-1\)</span> que se obtiene eliminando la <span class="math inline">\(i-\)</span>ésima fila y la <span class="math inline">\(j\)</span>-ésima columna de <span class="math inline">\(A\)</span>. A dichas matrices se les llama
+<em>menor</em> de orden <span class="math inline">\(n-1\)</span></p>
+<div id="teorema-de-laplace" class="section level2">
+<h2>Teorema de Laplace</h2>
+<p>Considere un elemento de la matriz de orden <span class="math inline">\(n\)</span>, <span class="math inline">\(a_{ij}\)</span>, con <span class="math inline">\(i\in\{1,2,\ldots n\}\)</span>, <span class="math inline">\(j\in\{1,2,\ldots n\}\)</span>, llamamos
+<strong>cofactor</strong> al determinante <span class="math inline">\((-1)^{i+j}\det(A[i,j])\)</span> que se obtiene del
+menor de eliminar la fila <span class="math inline">\(i\)</span> y la
+columna <span class="math inline">\(j\)</span>.</p>
+<p>El cofactor se puede obtener factorizando el término <span class="math inline">\(a_{ij}\)</span> del desarrollo</p>
+<p><span class="math display">\[
+\sum_{\pi\in S_n, \pi(i)=j} (-1)^{\mbox{sign}(\pi)} a_{1\pi(1)}\cdots
+a_{i-1,\pi(i-1)}a_{i+1,\pi(i+1)}\cdots a_{n\pi(n)}
+\]</span></p>
+<div id="teorema-de-laplace-1" class="section level3">
+<h3>Teorema de Laplace</h3>
+<p>Sea <span class="math inline">\(\mathbf{A}\)</span> de orden <span class="math inline">\(n\)</span>. Para <span class="math inline">\(i\in
+\{1,2\ldots,n\}\)</span> se tiene que</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &amp;= &amp; (-1)^{i+1}a_{i1}A_{i1}
++(-1)^{i+2} a_{i2}A_{i2} + \ldots +(-1)^{i+n} a_{in}A_{in}
+\end{array}
+\end{equation}\]</span> Y para <span class="math inline">\(j \in
+\{1,2,\ldots, n\}\)</span> <span class="math display">\[\begin{equation}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &amp;= &amp; (-1)^{1+j}a_{1j}A_{1j}
++(-1)^{2+i} a_{2j}A_{2j} + \ldots +(-1)^{n+j} a_{nj}A_{nj}
+\end{array}
+\end{equation}\]</span></p>
+</div>
+</div>
+</div>
+<div id="ejemplo-11" class="section level1">
+<h1>Ejemplo</h1>
+<p>Evaluar el determinante de cada una de las matrices</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+A &amp;= &amp; \begin{pmatrix}
+  -3 &amp; 2 &amp; 5 \\
+   1 &amp; 0 &amp;-1 \\
+   4 &amp;-6 &amp; 7
+        \end{pmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+B &amp;= &amp; \begin{pmatrix}
+   8 &amp;-4 &amp; 0 \\
+   0 &amp; 6 &amp;-3 \\
+  -1 &amp; 5 &amp; 3
+        \end{pmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+</div>
+<div id="propiedades-de-los-determinantes" class="section level1">
+<h1>Propiedades de los determinantes</h1>
+<p>El determinante tiene las siguientes propiedades</p>
+<ol start="4" class="example" style="list-style-type: decimal">
+<li><p>El producto de <span class="math inline">\(a_{i_11}a_{i_22}\cdots
+a_{i_nn}\)</span> aparece en el determinante de orden <span class="math inline">\(n\)</span> con el signo igual a <span class="math inline">\(signo(\sigma)\)</span>, con <span class="math inline">\(\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp;
+\dots &amp; n \\ i_1 &amp; i_2 &amp; i_3 &amp; \dots &amp; i_n
+\end{pmatrix}\)</span></p></li>
+<li><p>Si una fila o una columna esta compuesta por 0’s entonces su
+determinante es igual a cero.</p></li>
+</ol>
+<div id="matrices-en-bloques" class="section level3">
+<h3>Matrices en bloques</h3>
+<p>Una muestra cuadrada se dice que es una matriz en bloques
+<em>semidescompuesta</em> si sus elementos pueden ser divididos en
+cuatro matrices de manera que a lo largo de la diagonal figuren matrices
+cuadradas y una de las otras dos matrices esté compuesta integramente
+por ceros.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP8AAABvCAIAAACsDIHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAEFNSURBVHhe7d0JvOdj3T9+pMUysoWyr7kjW1IIWULJrpuSNVsKpSwVP1sRSaRQ2UIYZN/GnptGdpGdsY1tUO7uffN/fj+vz7nmOt9z5sycOTOTf87r8eh6vD/v671f7+v6XJ/jdGa6/24wevToZZZZZtlll/3rX//6n//5n//3f//31ltv/c///M9//dd/oScKwsMYxlDQdlKFdmJqotP98fTmm2/+7//+77//+79r+szh44QuaALrRjs3jGFMLtpOqtBOTE1M53/aXZfnJeCwrzu+bxCJrAvt3DCGMbloO2kwaDWHgOliRccjtL4NEBoQhR4YsTWMYUw22k7qQXpvYLSaQ8B06XjwYPQeyGMBTg1e2wArxNYwhjHZaDupB9qsbbgJo9UcAjo3nwK9Xrz+8z//c4j/+I//MNokL7zwAuIvf/mL4HwZZ28k1la/wRTZlENEQspGNSakfM33i0apFzAlayxpho8ZIsZD/71CgqleMs2jsSBiUwStxR6k8bjTeCHAR6nxX/7lX/LYag4BvbofOC52bYBf//rXl19++ciRI4877rj5559/0003/epXv/rqq69GIPjrX/8qPoT2Mv7bv/1bw/5bQr8KSSQIj8lIHY0qmPrW6Oj0Rhez2QL/rSDGJJu90a/u3w1klzRD12OIlGKKIDZrYDpwX3rpJePVDXDq4nfUhoZ+ul9/6Bsdc911162wwgobbrjhuuuuu+OOO0433XSrrrrqd77znXHjxpGsN0kIsBOmSFhDgQDEljBKkKBxjZnqQgRqqG/2SejYyfbOAuDEFPqdAC2hIGqoCDlHlCUlnSJo1mE80lSnnXbaBhtssP3227///e8fMWLErbfeetJJJ5kVQ1ZkiOju/hhNBLfffvs666zz5ptvjh07lr+7777bRlQCAkaSqQJJo1qQ/Nd//df0RBcITDNYEh7FBoJJqGLzxhSk3k1INVrN3sBPjlBWGpFZZtFJNpy/P8gOpJlKhjBKWTEJTL3uj68//elP++yzjwvI6NGjzzvvPGfrVltt5VE3kmk1h4Du7ocsKk9XXnnlWmutJQjMHHuQRwIl8yeeeOL3v/+9QNG+CgTaqVlvRHLaIGezfSiRcMplTMnwm/L2QmZrhJ9kQ8QgvPjiizKSPnhERziKf3+Qe468wGOSLS+BKYLUsEY2GMSL+utJF+/vf//7HqdIU/XT/QV33HHHJptsIg50cs6qZzb74fnnn19//fVnnHFGdyRTN95442c+85l0SY2oTAMIMoEl7Ntuu+3kk092WqCfe+65e+65J1NdwOxCHfYbb7zhIDj11FN/8YtfvPzyy0ceeeRTTz1ltun/zs8JoF8j/3+HvMrN/vXXX3/ttddSWy/SMMuZOHRkIQpyYJWNl084Ndf93/3udxuNKYD+bz4htPJ6662XZU5MIcSkKGgxeRN98pOfPOOMM/7whz+4oi2++OLf/va36eakVB2SsRnFEI2HftDx0cwWFShdiJnZwknzRSwcUC9+xfbAAw8su+yyO+20k7ennbz//vt/73vfizCBEGVX47BGHc0+Jtoor09/+tPLL7/8nnvu6QK69dZbu4Becskl7BOjXuT7ItZixxginPiCPBqLzOSh468BU8UmLyWXyOQxAujwg45yHygL4SuuuOJTn/rUMsss84lPfOKnP/3plltuefrpp0clRsggYjaPRrp57Is6qqDx1guRyRiC2Fe+8pWf//znio8TxaGgn7M/zhA+MjbffPM8FuTeLJQcAPPOO29OVu+ppZde+otf/KLXk1liCdcCpOnLKZLNE7oGSadLeckicNSRO4+sxWDoQkCRAXUx5ptp00031fcN+62vf/3r008//bPPPlvfiGglvMLpIghff/31s88++8033+xRjtttt93PfvaztD5OWeDE0AXGjdkhZBJVqlFe66YgduoLxqCQYLI0iDLGlxHisRBKbRShMT/FTrQ1BKYCwp5zzjkPO+wwkt4A73vf+xwHaLPlBx6EQ2CGGBjkE3NSFlXjcCCw7CWs/rn5JPIhorv7xRFCKZ1wn/3sZ1vnPeC1ZEhm9dVX1+7goF1ppZVchCykR7O2B/nST2HChApUJOvELFUKlNlMFQFMYJCjcEo7HnfccdNNN12uOpZwiy22cHRlySGbpIBBU+WFrgg46QlvDO+0lIUd97qrrroKLR1rH7/4/KK7EGbHYoVEKGx5JX7AmezWBwEYY5mdOPUoBUQpeAirRsZsisB7FKGJuhcwX3nlFaWLsHGGGWbwqk8lKSpU1FOijJgk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41tvvbXwYsHdyXdCsvDYF9mQeX0zyDWCWRY4euWVV5KpKfa322471197jwBmWXtgKoQ0uct/c4Uk6CrLWv7DtkfMyDtN87viHo1dcH2dZZZZUii3Dq93ivlLkuIkgBAVQhaNxv9dfvnlptRE2HGBWYJJWXRX2ikCcjRiKoJZ8qYa8Y4uGY/gw/e4444rKQAixQknxKSju/uLVy7ZdcP77W9/G04QrzWEC6a++tWvapS99trLwf+Vr3zFVA6JKHYhujV8vDuef/KTn5iVocVWIG200EIL5bTzaAOYcvewu3IGN8YGQgJwy//yl798/vnno33COsCayQ6y07qAz50pqbn0u9fNOuus88477yqrrOISrCG8B8icdtpp++yzz3777edbsDHWacdTTjmFL4TwmLJXV1xxxbnmmqucxF3ID5HOPPNMW13BY4r6nXfeOcccc9hsKW+i8hKbeeaZczZBeihTETNaMtcVN0/lyjqSYX/OOee85pprMCOJqaE/8IEPKAtOoq1BUWevttpqV1xxhdvjsssui95333233357ucSXO+GRRx45duxYFY7NL3zhC081/zinFSSA8AFJxfbgGpNYgVmmHCW77777CSeccPLJJxd+CGEIjFmj17VPLzskRsgwaMroMUkNCv10P9M8aRqjL54UURBx2ZSlFxJcshWfMjntqFshs5jGGK9Bqwuvvvrqn/70J0dUVoIiOMZY85j8jaAtLDCPOK25CSMRIpwc3//+9w8//HBNpuIilJf+ZrCTRh9QiUfCxx9/PN377rvPKaWNdCS+ALzlfBcdddRR+Yq49tprfRh87Wtf84pwFZQRGXybx4aRF3hkVmolzZz966yzjo8l6qNHj7bDzzrrLOec44Duueee67AXBnmdOs888wgvSx77+IkZbSR58MEH33DDDWZtDy5IehV/+9vf9u0emUTC7AEHHHDvvfeis8o1mAVrqmjSp65NjTfeeGOcbrvttgsvvLCNbUU8WiySSyyxBOFDDjnETovY6aefvu666zKoJfg1CiwbuLPG//3fDr6NN97YW2iPPfbAlD6txABoIDZmzJh8TIaDiH020ZOB7u7nzMgiZ0qj9Mcee2w48YFITAU4gqjRTlTomO6NVnRo4Lo1N2GoslxCK7qmb5UrtFFWiLwpKhLXQ1k5pjgFMk47J3Ek4wLTdrI9nGT5Ikzz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" width="30%" style="display: block; margin: auto;" /></p>
+<ol start="6" class="example" style="list-style-type: decimal">
+<li>El determinante de una matriz en bloques <em>semidescompuesta</em>
+es igual al producto de sus determiantes de sus bloques diagonales.</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\begin{vmatrix} B &amp; D \\ O &amp; C   \end{vmatrix} = |B||C| - O|D| =
+\det(B)\det(C)
+\end{equation*}\]</span></p>
+<p>Para <span class="math inline">\(n=2\)</span> se sabe que se cumple.
+Suponga que es cierta para cualquier matriz de tamaño <span class="math inline">\(n-1\)</span>, entonces, ahora suponga que <span class="math inline">\(A = \begin{bmatrix} B &amp; D \\ \mathbf{0}_{sr}
+&amp; C \end{bmatrix}\)</span> entonces aplicando el desarrollo por
+cofactores obtenemos <span class="math display">\[
+|A|=a_{11}\det(A_{11})-a_{12}\det(A_{12}) + \ldots +
+(-1)^{n+1}\det(A_{1,n})
+\]</span> Pero todas las matrices <span class="math inline">\(A_{1,j}\)</span> son de tamaño <span class="math inline">\(n-1\)</span> y en bloques semidescompuesta, por lo
+que la hipótesis de inducción implica que se pueden descomponer como
+producto de determinantes. Paara las matrices <span class="math inline">\(A_{11}\ldots A_{1r}\)</span> se pueden dividir de
+manera que el cuadrado sea un cuadrado de orden <span class="math inline">\(r\)</span>, para estas matrices <span class="math inline">\(\det(A_{1j})=\det(B_{1j})\det(C)\)</span>, para el
+resto de submatrices <span class="math inline">\(A_{1,r+1},\ldots
+A_{1,n}\)</span> se pueden separar de forma que tenemos un renglón con
+<span class="math inline">\(0&#39;s\)</span> por tanto <span class="math display">\[
+\det(A)=a_{11}\det(B_{11})\det(C) - a_{12}\det(B_{12})\det(C) + \ldots +
+(-1)^{r+1}\det(B_{1,r})\det(C) = \det(B)\det(C).
+\]</span></p>
+<ol start="7" class="example" style="list-style-type: decimal">
+<li><p>Si se cambian dos filas o dos columnas de un determinante, el
+determinante sólo cambia de signo.</p></li>
+<li><p>El valor de un determinante no cambia si la matriz se
+traspone.</p></li>
+</ol>
+<p><span class="math display">\[
+\det(A) = \det(A^{T})
+\]</span></p>
+<ol start="9" class="example" style="list-style-type: decimal">
+<li><p>Si dos columnas del determinante son iguales, entonces <span class="math inline">\(|A| = 0\)</span>.</p></li>
+<li><p>Si dos filas del determinante son iguales, entonces <span class="math inline">\(|A| = 0\)</span></p></li>
+</ol>
+</div>
+</div>
+<div id="propiedades-de-los-determinantes-ii" class="section level1">
+<h1>Propiedades de los determinantes (II)</h1>
+<ol start="6" style="list-style-type: decimal">
+<li>Si se tiene que una columna de <span class="math inline">\(A\)</span> tienen un mismo factor común constante
+entonces</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; ca_{1,i}     &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; ca_{2,i}     &amp;
+\cdots     &amp; a_{2,n}      \\
+     a_{31}     &amp;  a_{32}     &amp;
+ca_{3,i}     &amp;  \cdots    &amp; a_{3,n}      \\
+    \vdots      &amp; \vdots      &amp; \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; ca_{n-1,i}   &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}     &amp;  a_{n-1,2} &amp; ca_{n,i}     &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation*}\]</span> es igual a</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+c \cdot &amp;  &amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}     &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}     &amp;
+\cdots     &amp; a_{2,n}      \\
+     a_{31}     &amp;  a_{32}     &amp;
+a_{3,i}     &amp;  \cdots    &amp; a_{3,n}      \\
+    \vdots      &amp; \vdots      &amp; \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}   &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}     &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+</div>
+<div id="propiedades-de-los-determinantes-iii" class="section level1">
+<h1>Propiedades de los determinantes (III)</h1>
+<ol start="11" class="example" style="list-style-type: decimal">
+<li>Si todo elemento de la <span class="math inline">\(k-\)</span>esima
+columna de un determinante viene dado como la suma de dos vectores
+columna <span class="math inline">\(a_{ik}=b_{ik}+c_{ik}\)</span>
+entonces</li>
+</ol>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccccc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; b_{1,i}  + c_{1,i}     &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; b_{2,i}  + c_{2,i}     &amp;
+\cdots     &amp; a_{2,n}      \\
+     a_{31}     &amp;  a_{32}     &amp; b_{3,i}  +
+c_{3,i}     &amp;  \cdots    &amp; a_{3,n}      \\
+    \vdots      &amp; \vdots      &amp; \vdots                 &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; b_{n-1,i}+ c_{n-1,i}   &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; b_{n,i}  + c_{n,i}     &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; b_{1,i}      &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; b_{2,i}      &amp;
+\cdots     &amp; a_{2,n}      \\
+     a_{31}     &amp;  a_{32}     &amp;
+b_{3,i}      &amp;  \cdots    &amp; a_{3,n}      \\
+    \vdots      &amp; \vdots      &amp; \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; b_{n-1,i}    &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; b_{n,i}      &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix} +
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; c_{1,i}       &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; c_{2,i}       &amp;
+\cdots     &amp; a_{2,n}      \\
+     a_{31}     &amp;  a_{32}     &amp;
+c_{3,i}       &amp;  \cdots    &amp; a_{3,n}      \\
+    \vdots      &amp; \vdots      &amp; \vdots        &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; c_{n-1,i}     &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; c_{n,i}       &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<ol start="12" class="example" style="list-style-type: decimal">
+<li>El valor de un determinante no varía si a todos los elementos de una
+de sus columnas se suman los elementos de otra columna multiplicada por
+un escalar.</li>
+</ol>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}  + ca_{1,j}     &amp;
+\cdots  &amp;  a_{1,j}   &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}  + ca_{2,j}     &amp;
+\cdots  &amp;  a_{2,j}   &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots                  &amp;
+\vdots &amp;  \vdots    &amp;  \vdots      \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}+ ca_{n-1,j}    &amp;
+\cdots &amp;  a_{n-1,j} &amp; a_{n-1,n}    \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}  + ca_{n,j}      &amp;
+\cdots &amp;  a_{n,j}   &amp; a_{n,n}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}      &amp;
+\cdots   &amp;  a_{1,j}    &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}      &amp;
+\cdots   &amp;  a_{2,j}    &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots      &amp;
+\vdots   &amp;  \vdots     &amp; \vdots       \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}    &amp;
+\cdots   &amp;  a_{n-1,j}  &amp; a_{n-1,n}    \\
+     a_{n,1}    &amp; a_{n-1,2}   &amp; a_{n,i}      &amp;
+\cdots   &amp;  a_{n,j}    &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>La explicación de ésta propiedad se deriva de la aplicación de la
+propiedad 7 <span class="math display">\[\begin{equation}
+\begin{array}{cccccc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}  + ca_{1,j}     &amp;
+\cdots  &amp;  a_{1,j}   &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}  + ca_{2,j}     &amp;
+\cdots  &amp;  a_{2,j}   &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots                  &amp;
+\vdots  &amp;  \vdots    &amp;  \vdots      \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}+ ca_{n-1,j}    &amp;
+\cdots  &amp;  a_{n-1,j} &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}  + ca_{n,j}      &amp;
+\cdots  &amp;  a_{n,j}   &amp; a_{n,n}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}      &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}      &amp;
+\cdots     &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}    &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}      &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix} + &amp;
+   &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; ca_{1,j}       &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; ca_{2,j}       &amp;
+\cdots     &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots        &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; ca_{n-1,j}     &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; ca_{n,j}       &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Ahora aplicando la propiedad 6</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccccc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}  + ca_{1,j}     &amp;
+\cdots  &amp;  a_{1,j}    &amp; \cdots  &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}  + ca_{2,j}     &amp;
+\cdots  &amp;  a_{2,j}    &amp; \cdots  &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots                  &amp;
+\vdots  &amp;  \vdots    &amp; \vdots  &amp;  \vdots      \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}+ ca_{n-1,j}    &amp;
+\cdots  &amp;  a_{n-1,j} &amp; \cdots  &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}  + ca_{n,j}      &amp;
+\cdots  &amp;  a_{n,j}   &amp; \cdots  &amp; a_{n,n}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}      &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}      &amp;
+\cdots     &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}    &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}      &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix} + &amp;
+   c\cdot &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,j}       &amp;
+\cdots    &amp;  a_{1,j}    &amp; \cdots    &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,j}       &amp;
+\cdots    &amp;  a_{2,j}    &amp; \cdots    &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots        &amp;
+\vdots   &amp;  \vdots     &amp; \cdots    &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,j}     &amp;
+\cdots    &amp;  a_{n-1,j}    &amp; \cdots    &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,j}       &amp;
+\cdots    &amp;  a_{n,j}    &amp; \cdots    &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Aplicando ahora la propiedad 5 en el último determinante, por tener
+la columna <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> iguales, dicho sumando es 0.</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccc}
+&amp;  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}  + ca_{1,j}     &amp;
+\cdots  &amp;  a_{1,j}    &amp; \cdots  &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}  + ca_{2,j}     &amp;
+\cdots  &amp;  a_{2,j}    &amp; \cdots  &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots                  &amp;
+\vdots  &amp;  \vdots    &amp; \vdots  &amp;  \vdots      \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}+ ca_{n-1,j}    &amp;
+\cdots  &amp;  a_{n-1,j} &amp; \cdots  &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}  + ca_{n,j}      &amp;
+\cdots  &amp;  a_{n,j}   &amp; \cdots  &amp; a_{n,n}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}     &amp; a_{21}      &amp; a_{1,i}      &amp;
+\cdots     &amp; a_{1,n}      \\
+     a_{21}     &amp; a_{22}      &amp; a_{2,i}      &amp;
+\cdots     &amp; a_{2,n}      \\
+    \vdots      &amp; \vdots      &amp;  \vdots       &amp;
+\vdots     &amp; \vdots \\
+     a_{n-1,1}  &amp; a_{n-1,2}   &amp; a_{n-1,i}    &amp;
+\cdots     &amp; a_{n-1,n}      \\
+     a_{n,1}    &amp;  a_{n-1,2}  &amp; a_{n,i}      &amp;
+\cdots     &amp; a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+</div>
+<div id="propiedades-de-los-determinantes-iv" class="section level1">
+<h1>Propiedades de los determinantes (IV)</h1>
+<ol start="13" class="example" style="list-style-type: decimal">
+<li>Si a la propiedad 8 la combinamos con la propiedad 3, obtenemos
+<em>El</em> <em>valor</em> <em>de</em> <em>un</em> <em>determinante</em>
+<em>no</em> <em>varía</em> <em>si</em> <em>a</em> <em>todos</em>
+<em>los</em> <em>elementos</em> <em>de</em> <em>una</em> <em>de</em>
+<em>sus</em> <em>filas</em> <em>se</em> <em>suman</em> <em>los</em>
+<em>elementos</em> <em>de</em> <em>otra</em> <em>fila</em>
+<em>multiplicada</em> <em>por</em> <em>un</em> <em>escalar</em></li>
+</ol>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccccc}
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{i1}+ca_{j1}&amp;a_{i2}+ca_{j2}&amp;\cdots&amp;a_{ii}+ca_{ji}
+&amp; \cdots     &amp; a_{in}+ca_{jn}\\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{i1}        &amp;a_{i2}    &amp;\cdots      &amp;a_{ii}        &amp;
+\cdots     &amp; a_{in}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix}
+   &amp; + &amp;
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+    ca_{j1}        &amp;ca_{j2}   &amp;\cdots      &amp;ca_{ji}       &amp;
+\cdots     &amp;ca_{jn}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Aplicando las propiedades 6 y 5 de los determinantes <span class="math display">\[\begin{equation}
+\begin{array}{ccccc}
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{i1}+ca_{j1}&amp;a_{i2}+ca_{j2}&amp;\cdots&amp;a_{ii}+ca_{ji}
+&amp; \cdots     &amp; a_{in}+ca_{jn}\\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{i1}        &amp;a_{i2}    &amp;\cdots      &amp;a_{ii}        &amp;
+\cdots     &amp; a_{in}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix}
+   &amp; + &amp;c \cdot
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp;\cdots      &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Se obtiene que el último sumando es 0, y por tanto <span class="math display">\[\begin{equation}
+\begin{array}{ccc}
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{i1}+ca_{j1}&amp;a_{i2}+ca_{j2}&amp;\cdots&amp;a_{ii}+ca_{ji}
+&amp; \cdots     &amp; a_{in}+ca_{jn}\\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix} &amp; = &amp;
+  \begin{vmatrix}
+     a_{11}        &amp; a_{21}   &amp; \cdots     &amp;
+a_{1i}       &amp; \cdots     &amp; a_{1n}      \\
+     a_{21}        &amp; a_{22}   &amp; \cdots     &amp;
+a_{2i}       &amp; \cdots     &amp; a_{2n}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{i1}        &amp;a_{i2}    &amp;\cdots      &amp;a_{ii}        &amp;
+\cdots     &amp; a_{in}      \\
+     \vdots        &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\  
+     a_{j1}        &amp; a_{j2}   &amp; \cdots     &amp;
+a_{ji}       &amp; \cdots     &amp; a_{jn}      \\
+      \vdots       &amp; \vdots   &amp;
+\vdots     &amp;  \vdots      &amp; \vdots     &amp; \vdots      \\
+      a_{n1}        &amp; a_{n2}   &amp; \cdots     &amp;
+a_{ni}       &amp; \cdots     &amp; a_{nn}
+  \end{vmatrix}
+\end{array}
+\end{equation}\]</span></p>
+</div>
+<div id="propiedades-de-los-determinantes-v" class="section level1">
+<h1>Propiedades de los determinantes (V)</h1>
+<p>11.- Si <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{B}\)</span> son matrices de orden <span class="math inline">\(n\)</span> entonces</p>
+<p><span class="math display">\[\begin{equation}
+  \left| \mathbf{A}\mathbf{B} \right| =   \left| \mathbf{A}  \right|
+\cdot   \left| \mathbf{B} \right|
+\end{equation}\]</span></p>
+<p>En particular, la propiedad 11 implica que para matrices cuadradas
+<span class="math display">\[\begin{equation}
+  \left| \mathbf{A}_1\mathbf{A}_2\cdots\mathbf{A}_n \right| =   \left|
+\mathbf{A}_1  \right| \cdot      \left| \mathbf{A}_2 \right|\cdots\left|
+\mathbf{A}_n\right|
+\end{equation}\]</span></p>
+<p>En particular <span class="math inline">\(|A^{k}| = \left| \mathbf{A}
+\right|^{k}\)</span></p>
+<div id="ejercicio" class="section level3">
+<h3>Ejercicio</h3>
+<p>Determinar el valor de los determinantes de las siguientes
+matrices</p>
+<p><img src="data:image/png;base64,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" width="60%" style="display: block; margin: auto;" /></p>
+<p>Aplicando las propiedades de los determinantes, calcular</p>
+<p><img src="data:image/png;base64,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" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="propiedades-de-los-determinantes-vi" class="section level1">
+<h1>Propiedades de los determinantes (VI)</h1>
+<p>Sea <span class="math inline">\(\mathbf{A}\)</span> una matriz
+cuadrada de orden <span class="math inline">\(n\)</span>. Denotemos por
+<span class="math inline">\(|A|_{i,j} = (-1)^{i+j}\det(A[i,j])\)</span>.
+Con <span class="math inline">\(|A|_{i,j}\)</span> el cofactor asociado
+al elemento <span class="math inline">\(a_{ij}\)</span>. Entonces el
+desarrollo por cofactores, del Teorema de Laplace, se puede escribir
+como</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+\left| A \right| = det(\mathbf{A}) &amp;=  (-1)^{1+i}a_{i1}|A[i,1]|
++(-1)^{i+2} a_{i2}|A[i,2]| + \ldots +(-1)^{i+n} a_{in}|A[i,n]| \\
+                                   &amp; =
+a_{i1}|A|_{i,1}+a_{i2}|A|_{i,2}+ \cdots + a_{in}|A|_{i,n}
+\end{array}
+\end{equation}\]</span></p>
+<p>Definimos a la matriz <em>adjunta</em> (clásica) como la transpuesta
+de la matriz formada por los cofactores (con su signo asociado), Es
+decir <span class="math display">\[\begin{equation}
+\begin{array}{cc}
+  A^{\star} =&amp; \begin{bmatrix}
+            |A|_{1,1}      &amp;|A|_{2,1}    &amp; \cdots     &amp;
+|A|_{n,1}      \\
+            |A|_{1,2}      &amp;|A|_{2,2}    &amp; \cdots     &amp;
+|A|_{n,2}      \\
+            \vdots         &amp; \vdots      &amp; \vdots     &amp;
+\vdots \\  
+            |A|_{1,n}      &amp;|A|_{2,n}    &amp; \cdots     &amp;
+|A|_{n,n}
+   \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Se puede ver que el Teorema de Laplace implica la siguiente identidad
+importante <span class="math display">\[\begin{equation}\label{eq:adj}
+A\cdot A^{\star} = |A|\cdot \mathbf{I} =\det(A)\cdot \mathbf{I}
+\end{equation}\]</span></p>
+<p>Esta identidad tiene como resultado el siguiente teorema</p>
+<p><strong>Teorema</strong> Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz cuadrada de
+orden <span class="math inline">\(n\)</span>, si el determinante de
+<span class="math inline">\(A\)</span> no es nulo, es decir <span class="math inline">\(|\mathbf{A}|=\det(A) \ne 0\)</span> entonces <span class="math inline">\(A\)</span> es <em>invertible</em> y además la
+identidad <span class="math inline">\(\eqref{eq:adj}\)</span> implica
+<span class="math display">\[\begin{equation}
+A^{-1} = \frac{1}{|A|} A^{\star}
+\end{equation}\]</span></p>
+<p>Además si <span class="math inline">\(A\)</span> es invertible
+entonces <span class="math inline">\(|A|\ne 0\)</span> y en particular
+<span class="math display">\[\begin{equation}
+|A^{-1}| = \frac{1}{|A|}
+\end{equation}\]</span></p>
+<p><strong>Teorema:</strong> <strong>Solubilidad</strong>
+<strong>de</strong> <strong>los</strong> <strong>sistemas</strong>
+<strong>de</strong> <strong>ecuaciones</strong> Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz cuadrada de
+orden <span class="math inline">\(n\)</span>, si el determinante de
+<span class="math inline">\(A\)</span> no es nulo, es decir <span class="math inline">\(|\mathbf{A}|=\det(A) \ne 0\)</span> entonces el
+sistema <span class="math display">\[\begin{equation}
+\mathbf{A}x = \mathbf{b}
+\end{equation}\]</span> tiene una única solución. En particular el
+sistema homogéneo <span class="math display">\[\begin{equation}
+\mathbf{A}x = \mathbf{0}
+\end{equation}\]</span> tiene como única solución a la solución trivial
+<span class="math inline">\(x=(0,0,..,0)\)</span>.</p>
+</div>
 <div id="regla-de-cramer" class="section level1">
+<h1>Regla de Cramer</h1>
+</div>
+<div id="regla-de-cramer-1" class="section level1">
 <h1>Regla de Cramer</h1>
 <p>Recordemos el siguiente resultado que es consecuencia del Teorema de
 Laplace.</p>
@@ -2455,7 +3193,7 @@ a_{i,2}      \\
 <p>Estos resultados nos sirven para obtener otro método para resolver un
 sistema de ecuaciones de orden <span class="math inline">\(n\)</span>,
 es decir, de <span class="math inline">\(n\)</span> incógnitas y <span class="math inline">\(n\)</span> ecuaciones.</p>
-<div id="regla-de-cramer-1" class="section level2">
+<div id="regla-de-cramer-2" class="section level2">
 <h2>Regla de Cramer</h2>
 <p>Suponga que <span class="math inline">\(\mathbf{A}\)</span> de tamaño
 <span class="math inline">\(n\times n\)</span> es la matriz asociada al
@@ -2498,7 +3236,7 @@ b_{n}      &amp; a_{n,i+1}  &amp;\cdots    &amp; a_{n,n}
 \end{array}
 \end{equation}\]</span></p>
 </div>
-<div id="ejemplo-8" class="section level2">
+<div id="ejemplo-12" class="section level2">
 <h2>Ejemplo</h2>
 <p>Encontrar <span class="math inline">\(x,y\)</span> y <span class="math inline">\(z\)</span> mediante la regla de Cramer</p>
 <p><span class="math display">\[\begin{equation}

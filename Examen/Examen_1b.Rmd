@@ -1,0 +1,94 @@
+---
+title: "Examen 1 tipo B"
+output: pdf_document
+geometry: margin=0.3cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{0.7cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 120pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+Nombre:__________________________________________
+
+Resolver explicando tu razonamiento y cálculos 4 de 6 problemas.
+
+\textbf{\large{1}-} a) Aplica el método de Gauss-Jordan para determinar si $A$ es invertible y calcular $A^{-1}$
+\[
+A=\begin{bmatrix} 
+  2 & 2 & 3  \\ 
+  1 & -1 & 0 \\
+  -1 & 2 & 1 
+  \end{bmatrix}
+\]
+b) Usar lo calculado en a) para obtener la solución del sistema
+ \begin{equation}
+  \begin{matrix} 
+    4x  &+ 4y & +6z & = & 6 \\
+    -2x &+ 2y &     & = & \alpha \\
+     x  &- 2y &  -z & = & \beta 
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{2}-} Se dan los vértices de un triángulo $A=(0,0,0)$, $B=(0,4,4)$ y $C=(3,3,0)$
+
+a) Encontrar los ángulos internos en cada vértice.
+
+b) Calcular la ecuación del plano que contiene al triángulo
+
+c) Encontrar la intersección del plano en b) con el plano $2x-y-2z=4$, y expresarlo como un conjunto solución.
+
+\textbf{\large{3}}- Encontrar los valores de $\lambda$  tales que 
+ a) Existe una solución única.   b) El sistema es consistente pero no hay solución única. c) El sistema es inconsistente
+ 
+ \begin{equation}
+  \begin{matrix} 
+    \lambda x & + y        & +z         & = & 1 \\
+            x & +\lambda y & +z         & = & 1 \\
+            x & + y        & +\lambda z & = & 1 
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{4}}- a) Calcular la adjunta de la siguiente matriz 
+\[
+A= \begin{pmatrix} 
+  1 & 1  & 0 \\
+  - 1 & 1 &0 \\
+  0   & 1 & 1
+  \end{pmatrix}
+\]
+
+b) Calcular la inversa, usando a).
+
+\textbf{\large{5}}- Calcular el determinante, aplicando las propiedades de los determinantes
+\begin{equation*}
+\begin{vmatrix} 
+  1     & 1    & 1   \\
+  2a    & 2b   & 2c   \\
+  3a^2  &3b^2  & 3c^2  
+\end{vmatrix} 
+\end{equation*}
+
+\textbf{\large{6}}- Si $A$ es la matriz asociada del sistema 
+
+a) Obtener las matrices elementales que transforman a $A$ en una matriz triangular superior.
+
+b) Usar a) para determinar la descomposición $PA=LU$ y resolver el sistema
+
+\[
+\begin{matrix}
+  & & 2y & + &  2z & = 4 \\
+-x&+& 2y & - & 4z & = 4 \\
+2x&-& 5y & + & z  & = -8
+\end{matrix}
+\]
+

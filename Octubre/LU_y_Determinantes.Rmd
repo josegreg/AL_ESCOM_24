@@ -1876,6 +1876,589 @@ Las siguientes propiedades son equivalentes
 Escribir la factorización de $A$ como producto de matrices elementales
 
 
+# Permutaciones
+\small
+Para definir de manera general a los determinantes en varias dimensiones, se usan a las permutaciones. Una permutación es una función $\pi:\{1,2,\ldots,n\}\rightarrow \{1,2,\ldots,n\}$ es decir, una permutación es una función que asigna o reordena a $n$ números enteros.
+
+## Ejemplo
+\smallsize
+\begin{equation*}
+\begin{array}{ccc}
+\pi &= & \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 2 & 4 & 1 & 5 & 3 \end{pmatrix}
+\end{array}
+\end{equation*}
+
+Decimos que $\pi$ tiene una inversión si $\pi$ cambia el orden es decir, si $i<j$ pero $\pi(j) < \pi(i)$.
+
+**Definición** Una permutación $\pi$ es _par_ o _impar_ de acuerdo a si su número de inversiones es par ó impar.
+
+
+Para la permutación $\pi$, y para cada entero, analizamos el número de inversiones (o de cambios de orden).
+\begin{itemize}
+\item Para $i=1$, existen 2 inversiones pues $2$ y $4$ están a la izquierda de $1$.
+\item Para $i=2$, existen 0 inversiones.
+\item Para $i=3$, existen 2 inversiones pues 4 y 5 están a la izquierda de $3$.
+\item Para $i=4$, existen 0 inersiones, pues 5 está a la derecha de 4.
+\end{itemize}
+
+Por tanto la permutación
+
+\begin{equation*}
+\begin{array}{ccc}
+\pi &= & \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 2 & 4 & 1 & 5 & 3 \end{pmatrix}
+\end{array}
+\end{equation*}
+es par  pues tiene $4$ inversiones
+
+
+# Determinantes
+
+La definición general del determinante está dada en términos de las permutaciones de los índices de filas y columnas de una matriz.
+
+## Definición
+
+El **determinante** de la matriz $\mathbf{A}=(a_{ij})$ $n\times n$,  es el número real
+
+\begin{equation*}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &= & \sum_{\pi\in S_n} (-1)^{\mbox{sign}(\pi)} a_{1\pi(1)}a_{2\pi(2)}\cdots a_{n\pi(n)}
+\end{array}
+\end{equation*}
+
+En donde la s
+uma es sobre todas las permutaciones del conjunto $\{1,2,\ldots,n\}$.
+
+## Definición
+Suponga que $\alpha$ es una permutación $\alpha(k)=i_{k}$ con $[i_1,i_2,\ldots,i_n]$ denotamos al signo de la permutación.
+
+### Ejemplo 
+Calcular el determinante, de acuerdo a la definición
+\[
+\begin{vmatrix}
+ 1 & 2 & 3 \\
+ 4 & 5 & 6 \\
+ 7 & 8 & 9 
+\end{vmatrix}
+\]
+
+Consideramos a las permutaciones, en este caso $3!= 6$
+
+\begin{array}{cccc}
+\sigma_1 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 1 & 2 & 3  \end{pmatrix} & sgn(\sigma_1)=1
+\end{array}
+
+\begin{array}{cccc}
+\sigma_2 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 1 & 3 & 2  \end{pmatrix} & sgn(\sigma_2)=-1
+\end{array}
+
+
+\begin{array}{cccc}
+\sigma_3 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 2 & 3 & 1  \end{pmatrix} & sgn(\sigma_3)=(-1)^{2}
+\end{array}
+
+\begin{array}{cccc}
+\sigma_4 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 2 & 1 & 3  \end{pmatrix} & sgn(\sigma_4)=(-1)^{3}
+\end{array}
+
+\begin{array}{cccc}
+\sigma_5 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 3 & 1 & 2  \end{pmatrix} & sgn(\sigma_5)=(-1)^{4}
+\end{array}
+
+\begin{array}{cccc}
+\sigma_6 &= & 
+\begin{pmatrix} 
+1 & 2 & 3  \\ 3 & 2 & 1  \end{pmatrix} & sgn(\sigma_6)=(-1)^{6}
+\end{array}
+
+Por tanto el determinante será la siguiente suma
+
+\[
+\det(A) = a_{11}a_{22}a_{33} -a_{11}a_{23}a_{32}+a_{12}a_{23}a_{31}-a_{12}a_{21}a_{33}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}
+\]
+
+
+### Ejemplo 
+Calcular el determinante, de acuerdo a la definición
+\[
+\begin{vmatrix}
+ 2  & 1 & 1 \\
+ 6  & 2 & 1 \\
+ -2 & 2 & 1 
+\end{vmatrix}
+\]
+
+# Cálculo de un determinante
+
+Si $A$ es una matriz de orden n, sea $A[i,j]$ la matriz de orden $n-1$ que se obtiene eliminando la $i-$ésima fila y la $j$-ésima columna de $A$. A dichas matrices se les llama _menor_ de orden $n-1$
+
+## Teorema de Laplace 
+
+Considere un elemento de la matriz de orden $n$,  $a_{ij}$, con $i\in\{1,2,\ldots n\}$, $j\in\{1,2,\ldots n\}$, llamamos **cofactor** al determinante $(-1)^{i+j}\det(A[i,j])$ que se obtiene del menor de eliminar la fila $i$ y la columna $j$. 
+
+El cofactor se puede obtener factorizando el término $a_{ij}$ del desarrollo
+
+$$
+\sum_{\pi\in S_n, \pi(i)=j} (-1)^{\mbox{sign}(\pi)} a_{1\pi(1)}\cdots a_{i-1,\pi(i-1)}a_{i+1,\pi(i+1)}\cdots a_{n\pi(n)}
+$$
+
+### Teorema de Laplace 
+
+Sea $\mathbf{A}$ de orden $n$. Para $i\in \{1,2\ldots,n\}$ se tiene que 
+
+\begin{equation}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &= & (-1)^{i+1}a_{i1}A_{i1} +(-1)^{i+2} a_{i2}A_{i2} + \ldots +(-1)^{i+n} a_{in}A_{in}
+\end{array}
+\end{equation}
+Y para $j \in \{1,2,\ldots, n\}$
+\begin{equation}
+\begin{array}{ccc}
+\left| A \right| = det(\mathbf{A}) &= & (-1)^{1+j}a_{1j}A_{1j} +(-1)^{2+i} a_{2j}A_{2j} + \ldots +(-1)^{n+j} a_{nj}A_{nj}
+\end{array}
+\end{equation}
+
+# Ejemplo
+
+Evaluar el determinante de cada una de las matrices
+
+\begin{equation*}
+\begin{array}{ccc}
+A &= & \begin{pmatrix} 
+  -3 & 2 & 5 \\
+   1 & 0 &-1 \\
+   4 &-6 & 7 
+        \end{pmatrix}
+\end{array}
+\end{equation*}
+
+ \begin{equation*}
+\begin{array}{ccc}
+B &= & \begin{pmatrix} 
+   8 &-4 & 0 \\
+   0 & 6 &-3 \\
+  -1 & 5 & 3 
+        \end{pmatrix}
+\end{array}
+\end{equation*}
+
+
+
+
+# Propiedades de los determinantes
+
+El determinante tiene las siguientes propiedades
+
+@. El producto de $a_{i_11}a_{i_22}\cdots a_{i_nn}$ aparece en el determinante de orden $n$ con el signo igual a $signo(\sigma)$, con $\sigma = \begin{pmatrix} 1 & 2 & 3 & \dots & n \\ i_1 & i_2 & i_3 & \dots & i_n \end{pmatrix}$
+
+@. Si una fila o una columna esta compuesta por 0's entonces su determinante es igual a cero.
+
+### Matrices en bloques
+
+Una muestra cuadrada se dice que es una matriz en bloques _semidescompuesta_ si sus elementos pueden ser divididos en cuatro matrices de manera que a lo largo de la diagonal figuren matrices cuadradas y una de las otras dos matrices esté compuesta integramente por ceros.
+
+```{r echo=FALSE, fig.align='center', out.width='30%'}
+knitr::include_graphics('bloque1.png')
+```
+
+@. El determinante de una matriz en bloques _semidescompuesta_ es igual al producto de sus determiantes de sus bloques diagonales.
+
+\begin{equation*}
+ \begin{vmatrix} B & D \\ O & C   \end{vmatrix} = |B||C| - O|D| = \det(B)\det(C)
+\end{equation*}
+
+Para $n=2$ se sabe que se cumple. Suponga que es cierta para cualquier matriz de tamaño $n-1$, entonces, ahora suponga que $A = \begin{bmatrix} B & D \\ \mathbf{0}_{sr} & C \end{bmatrix}$ entonces aplicando el desarrollo por cofactores obtenemos
+\[
+|A|=a_{11}\det(A_{11})-a_{12}\det(A_{12}) + \ldots + (-1)^{n+1}\det(A_{1,n})
+\]
+Pero todas las matrices $A_{1,j}$ son de tamaño $n-1$ y en bloques semidescompuesta, por lo que la hipótesis de inducción implica que se pueden descomponer como producto de determinantes. Paara las matrices $A_{11}\ldots A_{1r}$ se pueden dividir de manera que el cuadrado sea un cuadrado de orden $r$, para estas matrices $\det(A_{1j})=\det(B_{1j})\det(C)$, para el resto de submatrices $A_{1,r+1},\ldots A_{1,n}$ se pueden separar de forma que tenemos un renglón con $0's$ por tanto
+\[
+\det(A)=a_{11}\det(B_{11})\det(C) - a_{12}\det(B_{12})\det(C) + \ldots + (-1)^{r+1}\det(B_{1,r})\det(C) = \det(B)\det(C).
+\]
+
+
+@. Si se cambian dos filas o dos columnas de un determinante, el determinante sólo cambia de signo.
+
+@. El valor de un determinante no cambia si la matriz se traspone. 
+
+$$
+\det(A) = \det(A^{T})
+$$
+
+@. Si dos columnas del determinante son iguales, entonces $|A| = 0$.
+
+@. Si dos filas del determinante son iguales, entonces $|A| = 0$
+
+# Propiedades de los determinantes (II)
+
+6. Si se tiene que una columna de $A$ tienen un mismo factor común constante entonces
+
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & ca_{1,i}     & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & ca_{2,i}     & \cdots     & a_{2,n}      \\
+     a_{31}     &  a_{32}     & ca_{3,i}     &  \cdots    & a_{3,n}      \\
+    \vdots      & \vdots      & \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & ca_{n-1,i}   & \cdots     & a_{n-1,n}      \\
+     a_{n,1}     &  a_{n-1,2} & ca_{n,i}     & \cdots     & a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation*}
+es igual a
+
+
+\begin{equation}
+\begin{array}{cc}
+c \cdot &  &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}     & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}     & \cdots     & a_{2,n}      \\
+     a_{31}     &  a_{32}     & a_{3,i}     &  \cdots    & a_{3,n}      \\
+    \vdots      & \vdots      & \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}   & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}     & \cdots     & a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+
+
+
+# Propiedades de los determinantes (III)
+
+@. Si todo elemento de la $k-$esima columna de un determinante viene dado como la suma de dos vectores columna $a_{ik}=b_{ik}+c_{ik}$ entonces
+
+\begin{equation}
+\begin{array}{ccccc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & b_{1,i}  + c_{1,i}     & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & b_{2,i}  + c_{2,i}     & \cdots     & a_{2,n}      \\
+     a_{31}     &  a_{32}     & b_{3,i}  + c_{3,i}     &  \cdots    & a_{3,n}      \\
+    \vdots      & \vdots      & \vdots                 & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & b_{n-1,i}+ c_{n-1,i}   & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & b_{n,i}  + c_{n,i}     & \cdots     & a_{n,n}
+  \end{vmatrix} & = &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & b_{1,i}      & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & b_{2,i}      & \cdots     & a_{2,n}      \\
+     a_{31}     &  a_{32}     & b_{3,i}      &  \cdots    & a_{3,n}      \\
+    \vdots      & \vdots      & \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & b_{n-1,i}    & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & b_{n,i}      & \cdots     & a_{n,n}
+  \end{vmatrix} +
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & c_{1,i}       & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & c_{2,i}       & \cdots     & a_{2,n}      \\
+     a_{31}     &  a_{32}     & c_{3,i}       &  \cdots    & a_{3,n}      \\
+    \vdots      & \vdots      & \vdots        & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & c_{n-1,i}     & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & c_{n,i}       & \cdots     & a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+@. El valor de un determinante no varía si a todos los elementos de una de sus columnas se suman los elementos de otra 
+columna multiplicada por un escalar.
+
+\begin{equation}
+\begin{array}{cccc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}  + ca_{1,j}     & \cdots  &  a_{1,j}   & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}  + ca_{2,j}     & \cdots  &  a_{2,j}   & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots                  & \vdots &  \vdots    &  \vdots      \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}+ ca_{n-1,j}    & \cdots &  a_{n-1,j} & a_{n-1,n}    \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}  + ca_{n,j}      & \cdots &  a_{n,j}   & a_{n,n}
+  \end{vmatrix} & = &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}      & \cdots   &  a_{1,j}    & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}      & \cdots   &  a_{2,j}    & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots      & \vdots   &  \vdots     & \vdots       \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}    & \cdots   &  a_{n-1,j}  & a_{n-1,n}    \\
+     a_{n,1}    & a_{n-1,2}   & a_{n,i}      & \cdots   &  a_{n,j}    & a_{n,n}
+  \end{vmatrix} 
+\end{array}
+\end{equation}
+
+La explicación de ésta propiedad se deriva de la aplicación de la propiedad 7
+\begin{equation}
+\begin{array}{cccccc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}  + ca_{1,j}     & \cdots  &  a_{1,j}   & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}  + ca_{2,j}     & \cdots  &  a_{2,j}   & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots                  & \vdots  &  \vdots    &  \vdots      \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}+ ca_{n-1,j}    & \cdots  &  a_{n-1,j} & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}  + ca_{n,j}      & \cdots  &  a_{n,j}   & a_{n,n}
+  \end{vmatrix} & = &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}      & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}      & \cdots     & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}    & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}      & \cdots     & a_{n,n}
+  \end{vmatrix} + & 
+   &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & ca_{1,j}       & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & ca_{2,j}       & \cdots     & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots        & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & ca_{n-1,j}     & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & ca_{n,j}       & \cdots     & a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+Ahora aplicando la propiedad 6
+
+\begin{equation}
+\begin{array}{cccccc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}  + ca_{1,j}     & \cdots  &  a_{1,j}    & \cdots  & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}  + ca_{2,j}     & \cdots  &  a_{2,j}    & \cdots  & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots                  & \vdots  &  \vdots    & \vdots  &  \vdots      \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}+ ca_{n-1,j}    & \cdots  &  a_{n-1,j} & \cdots  & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}  + ca_{n,j}      & \cdots  &  a_{n,j}   & \cdots  & a_{n,n}
+  \end{vmatrix} & = &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}      & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}      & \cdots     & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}    & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}      & \cdots     & a_{n,n}
+  \end{vmatrix} + & 
+   c\cdot &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,j}       & \cdots    &  a_{1,j}    & \cdots    & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,j}       & \cdots    &  a_{2,j}    & \cdots    & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots        & \vdots   &  \vdots     & \cdots    & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,j}     & \cdots    &  a_{n-1,j}    & \cdots    & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,j}       & \cdots    &  a_{n,j}    & \cdots    & a_{n,n}
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+Aplicando ahora la propiedad 5 en el último determinante, por tener la columna $i$ y $j$ iguales, dicho sumando es 0.
+
+\begin{equation}
+\begin{array}{cccc}
+ &  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}  + ca_{1,j}     & \cdots  &  a_{1,j}    & \cdots  & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}  + ca_{2,j}     & \cdots  &  a_{2,j}    & \cdots  & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots                  & \vdots  &  \vdots    & \vdots  &  \vdots      \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}+ ca_{n-1,j}    & \cdots  &  a_{n-1,j} & \cdots  & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}  + ca_{n,j}      & \cdots  &  a_{n,j}   & \cdots  & a_{n,n}
+  \end{vmatrix} & = &
+  \begin{vmatrix} 
+     a_{11}     & a_{21}      & a_{1,i}      & \cdots     & a_{1,n}      \\ 
+     a_{21}     & a_{22}      & a_{2,i}      & \cdots     & a_{2,n}      \\
+    \vdots      & \vdots      &  \vdots       & \vdots     & \vdots \\
+     a_{n-1,1}  & a_{n-1,2}   & a_{n-1,i}    & \cdots     & a_{n-1,n}      \\
+     a_{n,1}    &  a_{n-1,2}  & a_{n,i}      & \cdots     & a_{n,n}
+  \end{vmatrix} 
+\end{array}
+\end{equation}
+
+# Propiedades de los determinantes (IV)
+\small 
+@. Si a la propiedad 8 la combinamos con la propiedad 3, obtenemos 
+_El_ _valor_ _de_ _un_ _determinante_ _no_ _varía_ _si_ _a_ _todos_ _los_ _elementos_ _de_ _una_ _de_ _sus_ _filas_  _se_ _suman_ _los_ _elementos_ _de_ _otra_ _fila_  _multiplicada_ _por_ _un_ _escalar_
+
+\begin{equation}
+\begin{array}{ccccc}
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{i1}+ca_{j1}&a_{i2}+ca_{j2}&\cdots&a_{ii}+ca_{ji} & \cdots     & a_{in}+ca_{jn}\\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix} & = &
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{i1}        &a_{i2}    &\cdots      &a_{ii}        & \cdots     & a_{in}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix}
+   & + &
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+    ca_{j1}        &ca_{j2}   &\cdots      &ca_{ji}       & \cdots     &ca_{jn}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+Aplicando las propiedades 6 y 5 de los determinantes
+\begin{equation}
+\begin{array}{ccccc}
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{i1}+ca_{j1}&a_{i2}+ca_{j2}&\cdots&a_{ii}+ca_{ji} & \cdots     & a_{in}+ca_{jn}\\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix} & = &
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{i1}        &a_{i2}    &\cdots      &a_{ii}        & \cdots     & a_{in}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix}
+   & + &c \cdot
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   &\cdots      & a_{ji}       & \cdots     & a_{jn}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+Se obtiene que el último sumando es 0, y por tanto 
+\begin{equation}
+\begin{array}{ccc}
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{i1}+ca_{j1}&a_{i2}+ca_{j2}&\cdots&a_{ii}+ca_{ji} & \cdots     & a_{in}+ca_{jn}\\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix} & = &
+  \begin{vmatrix}
+     a_{11}        & a_{21}   & \cdots     & a_{1i}       & \cdots     & a_{1n}      \\ 
+     a_{21}        & a_{22}   & \cdots     & a_{2i}       & \cdots     & a_{2n}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{i1}        &a_{i2}    &\cdots      &a_{ii}        & \cdots     & a_{in}      \\
+     \vdots        & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\  
+     a_{j1}        & a_{j2}   & \cdots     & a_{ji}       & \cdots     & a_{jn}      \\
+      \vdots       & \vdots   & \vdots     &  \vdots      & \vdots     & \vdots      \\
+      a_{n1}        & a_{n2}   & \cdots     & a_{ni}       & \cdots     & a_{nn} 
+  \end{vmatrix}
+\end{array}
+\end{equation}
+
+# Propiedades de los determinantes (V)
+
+11.- Si $\mathbf{A}$ y $\mathbf{B}$ son matrices de orden $n$ entonces
+
+\begin{equation}
+  \left| \mathbf{A}\mathbf{B} \right| =   \left| \mathbf{A}  \right| \cdot   \left| \mathbf{B} \right|
+\end{equation}
+
+En particular, la propiedad 11 implica que para matrices cuadradas
+\begin{equation}
+  \left| \mathbf{A}_1\mathbf{A}_2\cdots\mathbf{A}_n \right| =   \left| \mathbf{A}_1  \right| \cdot      \left| \mathbf{A}_2 \right|\cdots\left| \mathbf{A}_n\right|
+\end{equation}
+
+En particular $|A^{k}| = \left| \mathbf{A} \right|^{k}$
+
+
+### Ejercicio
+Determinar el valor de los determinantes de las siguientes matrices
+
+```{r echo=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics('ex_det_1.png')
+```
+
+Aplicando las propiedades de los determinantes, calcular
+
+```{r echo=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics('ex_det_2.png')
+```
+
+# Propiedades de los determinantes (VI)
+
+Sea $\mathbf{A}$ una matriz cuadrada de orden $n$. Denotemos por $|A|_{i,j} = (-1)^{i+j}\det(A[i,j])$. 
+Con $|A|_{i,j}$ el cofactor asociado al elemento $a_{ij}$.
+Entonces el desarrollo por cofactores, del Teorema de Laplace, se puede escribir como 
+
+\begin{equation}
+\begin{array}{cc}
+\left| A \right| = det(\mathbf{A}) &=  (-1)^{1+i}a_{i1}|A[i,1]| +(-1)^{i+2} a_{i2}|A[i,2]| + \ldots +(-1)^{i+n} a_{in}|A[i,n]| \\
+                                   & = a_{i1}|A|_{i,1}+a_{i2}|A|_{i,2}+ \cdots + a_{in}|A|_{i,n}
+\end{array}
+\end{equation}
+
+Definimos a la matriz *adjunta* (clásica) como la transpuesta de la matriz formada por los cofactores (con su signo asociado), Es decir
+\begin{equation}
+\begin{array}{cc}
+  A^{\star} =& \begin{bmatrix}
+            |A|_{1,1}      &|A|_{2,1}    & \cdots     & |A|_{n,1}      \\ 
+            |A|_{1,2}      &|A|_{2,2}    & \cdots     & |A|_{n,2}      \\
+            \vdots         & \vdots      & \vdots     & \vdots \\  
+            |A|_{1,n}      &|A|_{2,n}    & \cdots     & |A|_{n,n} 
+   \end{bmatrix}
+\end{array}
+\end{equation}
+
+Se puede ver que el Teorema de Laplace implica la siguiente identidad importante 
+\begin{equation}\label{eq:adj}
+A\cdot A^{\star} = |A|\cdot \mathbf{I} =\det(A)\cdot \mathbf{I} 
+\end{equation}
+
+Esta identidad tiene como resultado el siguiente teorema
+
+**Teorema**
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$, si el determinante de $A$ no es nulo, es decir $|\mathbf{A}|=\det(A) \ne 0$ entonces $A$ es _invertible_  y además la identidad $\eqref{eq:adj}$ implica
+\begin{equation}
+A^{-1} = \frac{1}{|A|} A^{\star}
+\end{equation}
+
+Además si $A$ es invertible entonces $|A|\ne 0$ y en particular
+\begin{equation}
+|A^{-1}| = \frac{1}{|A|} 
+\end{equation}
+
+**Teorema:** **Solubilidad** **de** **los** **sistemas** **de** **ecuaciones**
+Si $\mathbf{A}$ es una matriz cuadrada de orden $n$, si el determinante de $A$ no es nulo, es decir 
+$|\mathbf{A}|=\det(A) \ne 0$ entonces el sistema
+\begin{equation}
+\mathbf{A}x = \mathbf{b}
+\end{equation}
+tiene una única solución.
+En particular el sistema homogéneo
+\begin{equation}
+\mathbf{A}x = \mathbf{0}
+\end{equation}
+tiene como única solución a la solución trivial $x=(0,0,..,0)$.
+
+# Regla de Cramer
+
+
+
 
 # Regla de Cramer
 

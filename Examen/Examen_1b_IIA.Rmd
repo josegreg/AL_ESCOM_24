@@ -1,0 +1,86 @@
+---
+title: "Examen 1 tipo B IIA"
+output: pdf_document
+geometry: margin=0.3cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{0.2cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 180pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+Nombre:__________________________________________
+
+Resolver explicando tu razonamiento y cálculos 4 de 6 problemas.
+
+\textbf{\large{1}-} a) Determinar para que valores de $\alpha$ la matriz es invertible
+  b) Aplica el método de Gauss-Jordan para  calcular $A^{-1}$ para el resto de casos.
+\[
+A=\begin{bmatrix} 
+  1 & 1 & 0  \\ 
+  1 & 0 & 2 \\
+  1 & 2 & \alpha 
+  \end{bmatrix}
+\]
+
+\textbf{\large{2}}- Encontrar los valores de $\lambda$  tales que 
+ a) Existe una solución única.   b) El sistema es consistente pero no hay solución única. c) El sistema es inconsistente
+ \begin{equation}
+  \begin{matrix} 
+    \lambda x & + y        & +z         & = & 1       \\
+            x & +\lambda y & +z         & = & \lambda \\
+            x & + y        & +\lambda z & = & \lambda^2 
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{3}}- Aplicar la regla de Cramer para resolver el siguiente sistema de ecuaciones
+ \begin{equation}
+  \begin{matrix} 
+    2 x & + 4y & -3z & = & -1 \\
+      x & +  y & -3z & = & 2 \\
+    3 x & + 5y & +5z & = & 3 
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{4}}- Sea el plano que intersercta a los ejes en $A(2,0,0)$, $B=(0,2,0)$ y $C(0,0,2)$ 
+
+a) Calcular el ángulo en el vértice $C$.
+
+b) Calcular la distancia del plano al punto $Q(2,2,2)$.
+
+c) Encontrar la ecuación del plano y la intersección del plano con el plano $\Pi_2: x+4y-6z=1$.
+
+\textbf{\large{5}}- Suponga que $a\ne 0$. a) Calcular el determinante, aplicando las propiedades de los determinantes
+\begin{equation*}
+D(x)=
+\begin{vmatrix} 
+  x    & a    & a   & a   \\
+  a    & x    & a   & a  \\
+  a    & a    & x   & a  \\
+  a    & a    & a   & x
+  \end{vmatrix} 
+\end{equation*}
+b) Resolver $D(x)=0$
+
+\textbf{\large{6}}- Si $A$ es la matriz asociada del sistema 
+
+a) Obtener las matrices elementales que transforman a $A$ en una matriz triangular superior.
+
+b) Usar a) para determinar la descomposición $PA=LU$ y resolver el sistema
+\[
+\begin{matrix}
+  &   & 2y & + &  2z & = 4 \\
+-x& + & 2y & - & 4z & = 4 \\
+2x& - & 5y & + & z  & = -8
+\end{matrix}
+\]
+

@@ -1,0 +1,89 @@
+---
+title: "Examen  1 tipo A"
+output: pdf_document
+geometry: margin=0.5cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{1.0cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 120pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+Nombre:__________________________________________
+
+
+\textbf{\large{1}-}  Resolver el siguiente sistema por Regla de Cramer o invirtiendo la matriz del sistema
+\[
+\begin{matrix} 
+  2x + y - z & = & 1\\ 
+  x - 3y  +8z & = & -2 \\
+  2x-2y-z & = & 6 \end{matrix}
+\]
+
+\textbf{\large{2}-} a) Encontrar la ecuación cartesiana del plano 
+\[
+\Pi_1=\begin{Bmatrix} \vec{v}\in \mathbb{R}^3\,:\,\vec{v}=\begin{pmatrix} 3 \\ 2 \\1 \end{pmatrix} + s\begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix} + t \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}  \end{Bmatrix},
+\]
+
+
+b) Encontrar la ecuación del plano que $\Pi_2$ pasa por los ejes $x$, $y$ y $z$ en $A(1,0,0)$, $B(0,1,0)$ y $C(0,0,1)$.
+
+c) Encontrar la intersección de los planos $\Pi_1$ y $\Pi_2$.
+
+\textbf{\large{3}}- Encontrar los valores de $\beta$ y $\alpha$ tales que 
+ a) Existe una solución única
+ 
+ b) El sistema es consistente pero existe una infinidad de soluciones
+ 
+ c) El sistema es inconsistente
+ 
+ \begin{equation}
+  \begin{matrix} 
+    2x & +y & +z & = & -6\alpha \\
+    2x & +y & (\beta+1)z & = & 4 \\
+    \beta x & +3y & +2z & = & 3\alpha 
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{4}}- Para el siguiente sistema de ecuaciones determinar:
+
+a) La matriz escalonada reducida de la matriz del sistema.
+
+b) Explicar con la matriz escalonada reducida si el sistema es consistente o inconsistente, si tiene solución única o una infinidad de soluciones
+
+c) Obtener la solución general del sistema
+ \begin{equation}
+  \begin{matrix} 
+    x   & +y & +z  & = & 1 \\
+    2x  & -y & 2z  & = & 1 \\
+    3 x & +6y & +3z & = & 4
+  \end{matrix}
+ \end{equation}
+
+\textbf{\large{5}}- Calcular los siguientes determinantes
+\begin{equation*}
+\begin{vmatrix} 
+  1 & 0 & 2 & a  \\
+  2 & 0 & b & 0  \\
+  3 & c & 4 & 5 \\
+  d & 0 & 0 & 0
+\end{vmatrix} \quad 
+\begin{vmatrix} 
+  1  & 1 & 1  \\
+  a   & b & c  \\
+  a^3 & b^3 & c^3
+\end{vmatrix}
+\end{equation*}
+
+\textbf{\large{6}}- a) Determinar la descomposición $PA=LU$ de $A=\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 2 \\ 1 & 2 & 3 \end{pmatrix}$. 
+
+b) Calcular el determinante usando dicha factorización y propiedades del determinante.

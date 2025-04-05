@@ -1064,6 +1064,20 @@ aunque no tiene una única solución.</p>
            -x &amp; +5 y  &amp; -4z  &amp; = 0
   \end{matrix}
 \end{equation*}\]</span></p>
+</div>
+<div id="algoritmo-modificado-de-eliminación-gaussiana" class="section level2">
+<h2>Algoritmo modificado de eliminación gaussiana</h2>
+<p>Suponga que <span class="math inline">\(U\)</span> es la matriz
+aumentada asociada al sistema de ecuaciones, después de la <span class="math inline">\(i-\)</span>esima iteración.</p>
+<ul>
+<li><p>Moverse de izquierda a derecha en <span class="math inline">\(U\)</span>, localizar la primer columna que
+contiene la entrada no nula en la <span class="math inline">\(i-\)</span>esima fila o posterior, digamos en la
+entrada <span class="math inline">\((i,j)\)</span>.</p></li>
+<li><p>La nueva posición pivotal será la entrada <span class="math inline">\((i,j)\)</span>.</p></li>
+<li><p>Aplicar la eliminación a partir de dicho elemento.</p></li>
+<li><p>Si todas las filas posteriores al proceso de eliminación son
+nulas, el proceso de eliminación gaussiana concluye.</p></li>
+</ul>
 <div id="definición-1" class="section level3">
 <h3>Definición</h3>
 <div>
@@ -1622,8 +1636,16 @@ A\cdot X = X\cdot A = \mathbf{Id}
 <p>Si dicha matriz existe decimos que <span class="math inline">\(A\)</span> es <strong>invertible</strong>. La
 matriz inversa de <span class="math inline">\(A\)</span> se escribe como
 <span class="math inline">\(A^{-1}\)</span>.</p>
+<div id="ejemplo-11" class="section level3">
+<h3>Ejemplo</h3>
+<p>Si <span class="math inline">\(A=\begin{bmatrix} 1&amp; 2 \\ 0 &amp;
+1 \end{bmatrix}\)</span> y <span class="math inline">\(B=\begin{bmatrix}
+2 &amp; 5 \\ 3 &amp; 7 \end{bmatrix}\)</span> verificar que si <span class="math inline">\(X=\begin{bmatrix} 1 &amp; -2 \\ 0 &amp;
+1\end{bmatrix}\)</span> y <span class="math inline">\(Y=\begin{bmatrix}
+-7 &amp; 5 \\ 3 &amp; -2 \end{bmatrix}\)</span> entonces <span class="math inline">\(X=A^{-1}\)</span> y <span class="math inline">\(Y=B^{-1}\)</span>.</p>
 </div>
-<div id="ejemplo-11" class="section level2">
+</div>
+<div id="ejemplo-12" class="section level2">
 <h2>Ejemplo</h2>
 <p>Calcular la matriz inversa de</p>
 <p><span class="math display">\[
@@ -1633,9 +1655,50 @@ A =  \begin{pmatrix} 1 &amp; 1 &amp; 1  \\ 1 &amp; 2 &amp; 2 \\ 1 &amp;
 <p><span class="math display">\[
 B =  \begin{pmatrix} 1 &amp; 2 \\ -2 &amp; 4  \end{pmatrix}
 \]</span></p>
-<p>** Para calcular la inversa, se requiere resolver <span class="math inline">\(n\)</span> sistemas de ecuaciones, cada uno con
+<div id="solución" class="section level3">
+<h3>Solución</h3>
+<p><span class="math display">\[
+  \begin{bmatrix}
+        1  &amp; 1 &amp; 1 &amp;\bigm| &amp; 1  &amp; 0  &amp; 0     \\
+        1  &amp; 2 &amp; 2 &amp;\bigm| &amp; 0  &amp; 1  &amp; 0     \\
+        1  &amp; 2 &amp; 3 &amp;\bigm| &amp; 0  &amp; 0  &amp; 1
+  \end{bmatrix}
+  \xrightarrow[-E_1+E_3\rightarrow E_3]{-E_1+E_2\rightarrow E_2}
+  \begin{bmatrix}
+        1  &amp; 1 &amp; 1 &amp;\bigm| &amp; 1  &amp; 0  &amp; 0     \\
+        0  &amp; 1 &amp; 1 &amp;\bigm| &amp;-1  &amp; 1  &amp; 0     \\
+        0  &amp; 1 &amp; 2 &amp;\bigm| &amp;-1  &amp; 0  &amp; 1
+  \end{bmatrix}
+  \xrightarrow{-E_2+E_3\rightarrow E_3}
+  \begin{bmatrix}
+        1  &amp; 1 &amp; 1 &amp;\bigm| &amp; 1  &amp; 0  &amp; 0     \\
+        0  &amp; 1 &amp; 1 &amp;\bigm| &amp;-1  &amp; 1  &amp; 0     \\
+        0  &amp; 0 &amp; 1 &amp;\bigm| &amp; 0  &amp; -1 &amp; 1
+  \end{bmatrix}
+\]</span> <span class="math display">\[
+\begin{bmatrix}
+        1  &amp; 1 &amp; 1 &amp;\bigm| &amp; 1  &amp; 0  &amp; 0     \\
+        0  &amp; 1 &amp; 1 &amp;\bigm| &amp;-1  &amp; 1  &amp; 0     \\
+        0  &amp; 0 &amp; 1 &amp;\bigm| &amp; 0  &amp; -1 &amp; 1
+  \end{bmatrix}   \xrightarrow[-E_3+E_2\rightarrow
+E_2]{-E_3+E_1\rightarrow E_1}
+  \begin{bmatrix}
+        1  &amp; 1 &amp; 0 &amp;\bigm| &amp; 1  &amp;1  &amp;-1     \\
+        0  &amp; 1 &amp; 0 &amp;\bigm| &amp;-1  &amp; 2  &amp;-1     \\
+        0  &amp; 0 &amp; 1 &amp;\bigm| &amp;0  &amp; -1  &amp; 1
+  \end{bmatrix}
+  \xrightarrow{-E_2+E_3\rightarrow E_3}
+  \begin{bmatrix}
+        1  &amp; 0 &amp; 0 &amp;\bigm| &amp; 2  &amp; -1 &amp; 0     \\
+        0  &amp; 1 &amp; 0 &amp;\bigm| &amp;-1  &amp; 2  &amp;-1     \\
+        0  &amp; 0 &amp; 1 &amp;\bigm| &amp; 0  &amp; -1 &amp; 1
+  \end{bmatrix}
+\]</span></p>
+<p>La inversa de <span class="math inline">\(A\)</span> es <span class="math inline">\(A^{-1}=\begin{bmatrix} 2&amp; -1 &amp; 0 \\
+-1&amp; 2 &amp; -1 \\ 0 &amp; -1 &amp; 1 \end{bmatrix}\)</span></p>
+<p><strong>Para calcular la inversa, se requiere resolver <span class="math inline">\(n\)</span> sistemas de ecuaciones, cada uno con
 <span class="math inline">\(\vec{b}=\mathbf{e}_i=\begin{pmatrix} 0,
-\ldots,0,1,0,\ldots,0 \end{pmatrix}\)</span>**</p>
+\ldots,0,1,0,\ldots,0 \end{pmatrix}\)</span></strong></p>
 <p>Para evitar repetir la matriz aumentada conservamos <em>cada</em>
 <em>término</em> <em>independiente</em> en una matriz ampliada <span class="math display">\[
   \begin{bmatrix}
@@ -1651,20 +1714,18 @@ B =  \begin{pmatrix} 1 &amp; 2 \\ -2 &amp; 4  \end{pmatrix}
 \]</span> Y procedemos a aplicar operaciones elementales, en vez de
 obtener una matriz triangular superior, y aplicar sustitución hacia
 atrás, aplicamos operaciones elementales para obtener una
-<strong>matriz</strong> <strong>identidad</strong>.</p>
-[
-<span class="math display">\[\begin{bmatrix}
+<strong>matriz</strong> <strong>identidad</strong>. <span class="math display">\[
+  \begin{bmatrix}
         1   &amp; 2 &amp;\bigm| &amp; 1       &amp; 0     \\
-        -2  &amp; 4  &amp;\bigm| &amp; 0       &amp; 1     \\
-
+        -2  &amp; 4  &amp;\bigm| &amp; 0       &amp; 1     
   \end{bmatrix}
   \xrightarrow{2E_1+E_2\rightarrow E_2}
   \begin{bmatrix}
         1   &amp; 2  &amp;\bigm| &amp; 1       &amp; 0     \\
-        0   &amp; 8  &amp;\bigm| &amp; 2       &amp; 1     \\
+        0   &amp; 8  &amp;\bigm| &amp; 2       &amp; 1     
   \end{bmatrix}
-  \xrightarrow{1/8E_2\rightarrow E_2}\]</span>
-<p>]</p>
+  \xrightarrow{1/8E_2\rightarrow E_2}
+\]</span></p>
 <p><span class="math display">\[
   \begin{bmatrix}
         1   &amp; 2  &amp;\bigm| &amp; 1         &amp; 0     \\
@@ -1692,11 +1753,23 @@ inversa.</p>
            -2x &amp; +4 y   &amp; = 1   
   \end{matrix}
 \end{equation*}\]</span></p>
+</div>
 <div id="aplicar-eliminación-gaussiana-para-invertir-a." class="section level3">
 <h3>Aplicar eliminación gaussiana para invertir <span class="math inline">\(A\)</span>.</h3>
 </div>
-<div id="práctica-3" class="section level3">
-<h3>Práctica 3</h3>
+<div id="ejemplo-13" class="section level3">
+<h3>Ejemplo</h3>
+<ul>
+<li>Calcular la inversa de <span class="math inline">\(A\)</span> usando
+la matriz extendida de los sistemas de ecuaciones</li>
+</ul>
+<p><span class="math display">\[
+A=\begin{bmatrix} 3 &amp; -5 \\ -1 &amp; 2  \end{bmatrix}
+\]</span></p>
+<ul>
+<li>Verificar que <span class="math inline">\(A\cdot
+A^{-1}=I\)</span></li>
+</ul>
 </div>
 </div>
 <div id="teorema" class="section level2">
@@ -1741,11 +1814,10 @@ a</p>
 eficiente. Sin embargo, es útil para solucionar una <em>familia</em>
 <em>de</em> <em>sistemas</em> <em>de</em> <em>ecuaciones</em>.</p>
 </div>
-<div id="ejemplo-12" class="section level2">
+<div id="ejemplo-14" class="section level2">
 <h2>Ejemplo</h2>
 <ol style="list-style-type: decimal">
-<li><p>verificar que la siguiente matriz es la inversa de <span class="math inline">\(A\)</span></p></li>
-<li><p>Calcular la inversa de la matriz <span class="math inline">\(A\)</span></p></li>
+<li>Calcular la inversa de la matriz <span class="math inline">\(A\)</span></li>
 </ol>
 <p><span class="math display">\[\begin{equation*}
   A = \begin{pmatrix}
@@ -1890,13 +1962,92 @@ la trivial.</p>
 <p>Con <span class="math inline">\(\begin{pmatrix}2 \\ 2 \\1
 \end{pmatrix}\)</span> y <span class="math inline">\(\begin{pmatrix}1 \\
 -2 \\0 \end{pmatrix}\)</span></p>
+<ol style="list-style-type: decimal">
+<li>Sabiendo que <span class="math display">\[
+\begin{bmatrix} 1 &amp; 3 &amp; 2 \\ 15 &amp; 2 &amp; 0 \\ 4 &amp; 2
+&amp; 1 \end{bmatrix}^{-1} =
+\begin{bmatrix} 2 &amp; 1 &amp; -4 \\-15 &amp;-7&amp; 30 \\ 22 &amp; 10
+&amp; -43 \end{bmatrix}
+\]</span></li>
+</ol>
+<p>Resolver cada uno de los sistemas lineales <span class="math display">\[
+\begin{matrix}
+x_1 + 3x_2 +2x_3 = b_1\\
+15x_1 + 2x_2     =b_2 \\
+4z_1+2x_2+x_3=b_3
+\end{matrix}
+\]</span></p>
+<p>con <span class="math inline">\(\begin{pmatrix}b_1 \\ b_2 \\ b3
+\end{pmatrix} =\begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix},
+\begin{pmatrix}6 \\ 1 \\ 3 \end{pmatrix}\)</span> y <span class="math inline">\(\begin{pmatrix} 2 \\ 2 +\epsilon \\ 1-\epsilon
+\end{pmatrix}\)</span></p>
 </div>
 </div>
 <div id="forma-escalonada-y-forma-escalonada-reducida" class="section level2">
 <h2>Forma escalonada y forma escalonada reducida</h2>
+<div id="definición-1-1" class="section level3">
+<h3>Definición 1</h3>
+<div class=".def">
+<p>Dos matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> del mismo tamaño, es decir, <span class="math inline">\(A,B\in \mathcal{M}^{m,n}(\mathbb{R})\)</span> son
+<strong>equivalentes por filas</strong>, y escribimos <span class="math inline">\(A\sim_{f} B\)</span> si <span class="math inline">\(A=B\)</span> o si se puede transformar <span class="math inline">\(A\)</span> en <span class="math inline">\(B\)</span> mediante una sucesión finita de
+operaciones elementales entre filas.</p>
+</div>
+</div>
+<div id="ejemplo-2-3" class="section level3">
+<h3>Ejemplo 2</h3>
+<p>Sean <span class="math inline">\(A,B\in\mathcal{M}^{m,n}(\mathbb{R})\)</span>, el
+conjunto de matrices <span class="math inline">\(m\times n\)</span> con
+entradas reales. <span class="math display">\[
+\begin{array}{ccc}
+A=\begin{pmatrix}
+   0 &amp; -3 &amp; 3 \\
+   2 &amp; 6  &amp; 0 \\
+   1 &amp;-3  &amp; 2
+  \end{pmatrix}  &amp;   
+  &amp;
+B=\begin{pmatrix}
+  1 &amp; -3 &amp; 2 \\
+  0 &amp; 12 &amp;-4 \\
+  0 &amp;  0 &amp; 2
+\end{pmatrix}
+\end{array}
+\]</span></p>
+<p>entonces <span class="math inline">\(A\sim_{f}B\)</span> son
+equivalentes por filas</p>
+</div>
+<div id="teorema-1" class="section level3">
+<h3>Teorema</h3>
+<p>La relación ser <em>equivalentes por filas</em> es una relación de
+equivalencia.</p>
+<ul>
+<li><p>La relación es reflexiva <span class="math inline">\(A\sim_f
+A\)</span> pues por ejemplo <span class="math inline">\(A\xrightarrow{0E_1+E_1} A\)</span>, es decir <span class="math inline">\(A\sim_f A\)</span></p></li>
+<li><p>La relación es simétrica. Observe que existen operaciones
+elementales <em>inversas</em>, <span class="math inline">\(E_i\leftrightarrow E_j\)</span> su inversa es
+<span class="math inline">\(E_i\leftarrow E_j\)</span> <span class="math inline">\(cE_i\rightarrow E_i\)</span> su inversa es <span class="math inline">\(\frac{1}{c}E_i \rightarrow E_i\)</span>. <span class="math inline">\(\beta E_i+E_j \rightarrow E_j\)</span> su inversa
+es <span class="math inline">\(-\beta E_i+E_j\)</span>. Entonces, si
+<span class="math inline">\(A\xrightarrow{O_1} \xrightarrow{O_2}\cdots
+\xrightarrow{O_n}B\)</span>, por lo que si <span class="math inline">\(S_k\)</span> es la operación inversa de <span class="math inline">\(O_k\)</span></p></li>
+<li><p>La relación es transitiva.</p></li>
+</ul>
+</div>
+<div id="corolario" class="section level3">
+<h3>Corolario</h3>
+<p>La equivalencia por filas genera una partición del conjunto de
+matrices <span class="math inline">\(M^{m,n}(\mathbb{R})\)</span>.</p>
+</div>
+<div id="proposición" class="section level3">
+<h3>Proposición</h3>
+<p>Si <span class="math inline">\(A\sim_f B\)</span> entonces toda fila
+de <span class="math inline">\(B\)</span> es combinación lineal de filas
+de <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="ejemplo-15" class="section level3">
+<h3>Ejemplo</h3>
 <p>Estudiamos brevemente el caso en donde hay más incógnitas que
 ecuaciones, es decir, sistemas <span class="math inline">\(m\times
 n\)</span> con <span class="math inline">\(m&lt;n\)</span>.</p>
+</div>
 <div id="ejemplo-1-3" class="section level3">
 <h3>Ejemplo 1</h3>
 <p>Resolver el sistema definido por la matriz extendida</p>
@@ -1947,7 +2098,7 @@ triangular y no es posible tomar como pivote la diagonal
 “inmediata”.</p>
 </div>
 </div>
-<div id="ejemplo-2-3" class="section level2">
+<div id="ejemplo-2-4" class="section level2">
 <h2>Ejemplo 2</h2>
 <p>Aplicar eliminación gaussiana al siguiente sistema</p>
 <p><span class="math display">\[\begin{equation*}
@@ -1963,27 +2114,13 @@ triangular y no es posible tomar como pivote la diagonal
   \end{matrix}
 \end{equation*}\]</span></p>
 <p>(Ver notas)</p>
-</div>
-<div id="algoritmo-modificado-de-eliminación-gaussiana" class="section level2">
-<h2>Algoritmo modificado de eliminación gaussiana</h2>
-<p>Suponga que <span class="math inline">\(U\)</span> es la matriz
-aumentada asociada al sistema de ecuaciones, después de la <span class="math inline">\(i-\)</span>esima iteración.</p>
-<ul>
-<li><p>Moverse de izquierda a derecha en <span class="math inline">\(U\)</span>, localizar la primer columna que
-contiene la entrada no nula en la <span class="math inline">\(i-\)</span>esima fila o posterior, digamos en la
-entrada <span class="math inline">\((i,j)\)</span>.</p></li>
-<li><p>La nueva posición pivotal será la entrada <span class="math inline">\((i,j)\)</span>.</p></li>
-<li><p>Aplicar la eliminación a partir de dicho elemento.</p></li>
-<li><p>Si todas las filas posteriores al proceso de eliminación son
-nulas, el proceso de eliminación gaussiana concluye.</p></li>
-</ul>
 <p>Todo sistema de ecuaciones de tamaño <span class="math inline">\(m\times n\)</span> con más incógnitas que
 ecuaciones (<span class="math inline">\(m&lt;n\)</span>) tendrá una
 matriz escalonada en forma rectangular. Al tener más variables que
 incógnitas, habrá <span class="math inline">\(n-m\)</span> parámetros
 libres.</p>
 </div>
-<div id="teorema-1" class="section level2">
+<div id="teorema-2" class="section level2">
 <h2>Teorema</h2>
 <p><em>Todo</em> <em>sistema</em> <em>de</em> <em>ecuaciones</em>
 <em>de</em> <em>tamaño</em> <span class="math inline">\(m\times
@@ -2183,7 +2320,7 @@ sistemas de ecuaciones lineales en los ejemplos de la clase.</p>
 \mathbf{b}] =?\)</span></p>
 <div id="importancia-de-la-matriz-escalonada-reducida." class="section level2">
 <h2>Importancia de la matriz escalonada reducida.</h2>
-<div id="teorema-2" class="section level3">
+<div id="teorema-3" class="section level3">
 <h3>Teorema</h3>
 <p>Suponga que tenemos un sistema de ecuaciones lineales <span class="math inline">\(n\times m\)</span>, homogéneo, con <span class="math inline">\(n&lt;m\)</span>, es decir,</p>
 <p><span class="math display">\[\begin{equation}
@@ -2361,7 +2498,7 @@ A_2=\begin{bmatrix} 1 &amp; 1 &amp; 1 \\
 \end{array}
 \end{equation*}\]</span> Calcular <span class="math inline">\(S_{12}(-3)\mathbf{A}\)</span>, <span class="math inline">\(S_{12}(-2)\mathbf{A}\)</span> y finalmente <span class="math inline">\(S_{23}\big(\frac{4}{5}\big)S_{12}(-2)S_{12}(-3)\mathbf{A}\)</span></p>
 </div>
-<div id="ejemplo-2-4" class="section level2">
+<div id="ejemplo-2-5" class="section level2">
 <h2>Ejemplo 2</h2>
 <p>Aplicar eliminación gaussiana, por medio de matrices elementales</p>
 <p><span class="math display">\[\begin{equation*}
@@ -2375,7 +2512,397 @@ A_2=\begin{bmatrix} 1 &amp; 1 &amp; 1 \\
 <p>Descomponer a <span class="math inline">\(A\)</span> como producto de
 matrices elementales y una triangular superior.</p>
 </div>
-<div id="ejemplo-13" class="section level2">
+<div id="ejemplo-16" class="section level2">
+<h2>Ejemplo</h2>
+<p>Investigar si existe una factorización <span class="math inline">\(LU\)</span> de la matriz</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+\mathbf{A}  =&amp;  \begin{bmatrix} 1 &amp;- 3 &amp; 1 \\
+                                3 &amp; -8 &amp; 5 \\
+                                1 &amp; -5 &amp; -2
+                 \end{bmatrix}
+\end{array}
+\]</span></p>
+<ul>
+<li>Usar la factorización <span class="math inline">\(LU\)</span> para
+resolver el sistema</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+  \begin{matrix}
+      x_1   &amp; -3 x_2  &amp; + x_3  &amp; = 0  \\
+      3 x_1 &amp; -8 x_2  &amp; +5 x_3  &amp; = 3 \\
+      x_1   &amp; -5 x_2  &amp; -2 x_3  &amp; = -5
+  \end{matrix}
+\end{equation*}\]</span></p>
+<ul>
+<li>Investigar si existe la factorización <span class="math inline">\(LU\)</span> de la siguiente matriz</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{cc}
+\mathbf{A}  =&amp;  \begin{bmatrix} 2 &amp;  3 &amp; 2  &amp; 4 \\
+                                4 &amp; 10 &amp; -4 &amp; 0 \\
+                                -3&amp; -2 &amp; -5 &amp; -2 \\
+                                -2&amp;  4 &amp; 4 &amp; -7
+                 \end{bmatrix}
+\end{array}
+\]</span> Resolver el sistema <span class="math inline">\(\vec{b}=\begin{pmatrix} 4 \\ -8 \\ -4 \\ -1
+\end{pmatrix}\)</span></p>
+<div id="ejemplos-2" class="section level3">
+<h3>Ejemplos</h3>
+<p>Ejercicios 1 - 3, 5 del Grossmann. # Factorización <span class="math inline">\(LU\)</span></p>
+<p>La factorización <span class="math inline">\(LU\)</span> permitirá
+dividir la solución de cualquier sistema de ecuaciones <span class="math inline">\(Ax=b\)</span> en dos etapas, siempre que <span class="math inline">\(A\)</span> sea invertible.</p>
+<p>Si resolvemos el sistema de ecuaciones por medio de eliminación
+gaussiana, pero sin <em>intercambio</em> <em>de</em> <em>renglones</em>.
+Como sabemos, el método de eliminación gaussiana reduce la matriz <span class="math inline">\(A\)</span> a una matriz triangular en <span class="math inline">\(n-1\)</span> pasos.</p>
+<p>En el primer paso ciertos múltiplos del primer renglón son sumados
+(algebraicamente hablando) a las otras filas para obtener 0s en las
+entradas <span class="math inline">\((2,1),\,(3,1),\,\ldots,(n,1)\)</span>. Para que
+sea esto posible, se debe tener <span class="math inline">\(a_{11} \ne
+0\)</span>. En el primer paso, el multiplicador apropiado es <span class="math display">\[\begin{equation}
+m_{i1} = a_{i1}/a_{11}\,\,\,\,\,i=2,3,\ldots,n
+\end{equation}\]</span></p>
+<p>Por tanto, al final de este paso, obtenemos una nueva matriz <span class="math inline">\(A^{(1)}\)</span>, con</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccccc}
+a^{(1)}_{ij} &amp; = a_{ij} - m_{i1}a_{1j}&amp; &amp;
+j=2,3,\ldots,n\,\,&amp; i=2,\ldots,n\\
+b^{(1)}_{i}  &amp; = b_{i}  - m_{i1}b_{1} &amp; &amp;
+\,\               &amp; i=2,\ldots,n
+\end{array}
+\end{equation}\]</span></p>
+<p>Por lo que obtenemos la siguiente matriz <span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+     a_{11} &amp; a_{12}            &amp; a_{13}           &amp; \cdots
+&amp; a_{1n}        &amp; \bigm| &amp; b_1      \\
+     0      &amp; a^{(1)}_{22}      &amp; a^{(1)}_{23}     &amp; \cdots
+&amp; a^{(1)}_{2n}  &amp; \bigm| &amp; b_2^{(1)}\\
+     0      &amp; a^{(1)}_{32}      &amp; a^{(1)}_{33}     &amp; \cdots
+&amp; a^{(1)}_{3n}  &amp; \bigm| &amp; b_3^{(1)}\\
+    \vdots  &amp; \vdots            &amp; \vdots           &amp; \vdots
+&amp; \vdots        &amp; \vdots &amp; \\
+     0      &amp; a^{(1)}_{n-1,2}   &amp; a^{(1)}_{n-1,3}  &amp; \cdots
+&amp; a^{(1)}_{n-1,n}&amp; \bigm|&amp; b_{n-1}^{(1)}\\
+     0      &amp; a^{(1)}_{n,2}     &amp; a^{(1)}_{n,3}    &amp; \cdots
+&amp; a^{(1)}_{n,n}&amp; \bigm| &amp; b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>En una implementación computacional, no es necesario guardar a los
+<span class="math inline">\(0\)</span>’s de la matriz explicitamente. En
+vez de guardar los <span class="math inline">\(0\)</span>’s se pueden
+guardar los mulitplicadores del renglón 1. Entonces, después del primer
+paso, la memoria que inicialmente contenía <span class="math inline">\(\mathbf{A}|b\)</span> tendrá</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+     a_{11} &amp; a_{12}            &amp; a_{13}           &amp; \cdots
+&amp; a_{1n}        &amp; \bigm| &amp;b_1      \\
+     m_{21} &amp; a^{(1)}_{22}      &amp; a^{(1)}_{23}     &amp; \cdots
+&amp; a^{(1)}_{2n}  &amp; \bigm| &amp;b_2^{(1)}\\
+     m_{31} &amp; a^{(1)}_{32}      &amp; a^{(1)}_{33}     &amp; \cdots
+&amp; a^{(1)}_{3n}  &amp; \bigm| &amp;b_3^{(1)}\\
+    \vdots  &amp; \vdots            &amp; \vdots           &amp; \vdots
+&amp; \vdots        &amp; \vdots &amp;\\
+m_{n-1,1}  &amp; a^{(1)}_{n-1,2}   &amp; a^{(1)}_{n-1,3}  &amp; \cdots
+&amp; a^{(1)}_{n-1,n}&amp; \bigm| &amp; b_{n-1}^{(1)}\\
+     m_{nn} &amp; a^{(1)}_{n,2}     &amp; a^{(1)}_{n,3}    &amp; \cdots
+&amp; a^{(1)}_{n,n}&amp; \bigm| &amp;b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>En el segundo paso, aplicamos eliminación gaussiana nuevamente
+operando sobre las filas <span class="math inline">\(2,3,\ldots,n\)</span>. En el 2do paso de la
+eliminación gaussiana se ignora la primera fila y la primera columna.
+Múltiplos del renglón 2 son sumados a las filas <span class="math inline">\(3,4,\ldots n\)</span> para obtener un <span class="math inline">\(0\)</span> en las entradas <span class="math inline">\((3,2),\,(4,2),\ldots,(n,2)\)</span> por lo que el
+paso 2 es idéntico al paso 1 pero operado sobre la matriz</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+      a^{(1)}_{22}      &amp; a^{(1)}_{23}     &amp; \cdots &amp;
+a^{(1)}_{2n}  &amp; \bigm|  &amp;b_2^{(1)}\\
+      a^{(1)}_{32}      &amp; a^{(1)}_{33}     &amp; \cdots &amp;
+a^{(1)}_{3n}  &amp; \bigm|  &amp;b_3^{(1)}\\
+     \vdots             &amp; \vdots           &amp; \vdots &amp;
+\vdots        &amp; \vdots  &amp;\\
+    a^{(1)}_{n-1,2}     &amp; a^{(1)}_{n-1,3}  &amp; \cdots &amp;
+a^{(1)}_{n-1,n}&amp; \bigm| &amp; b_{n-1}^{(1)}\\
+     a^{(1)}_{n,2}      &amp; a^{(1)}_{n,3}    &amp; \cdots &amp;
+a^{(1)}_{n,n} &amp; \bigm|  &amp;b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Si <span class="math inline">\(a_{22}^{(1)} \ne 0\)</span> entonces
+es posible realizar la reducción usando al segundo renglón, por tanto
+los factores multiplicadores son <span class="math display">\[\begin{equation}
+m_{i2} = a^{(1)}_{i2}/a^{(1)}_{22}\,\,\,\,\,i=3,\ldots,n
+\end{equation}\]</span></p>
+<p>Al aplicar eliminación de las entradas en la columna <span class="math inline">\(2\)</span>, obtenemos una nueva matriz <span class="math inline">\([A^{(2)}|b^{(2)}]\)</span>, con</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccccc}
+a^{(2)}_{ij} &amp; = a^{(1)}_{ij} - m_{i2}a^{(1)}_{2j}&amp; &amp;
+j=3,\ldots,n\,\,&amp; i=3,\ldots,n\\
+b^{(2)}_{i}  &amp; = b^{(1)}_{i}  - m_{i1}b_{(1)}^{(1)} &amp; &amp;
+\,\               &amp; i=2,\ldots,n
+\end{array}
+\end{equation}\]</span></p>
+<p>Como <span class="math inline">\(A\)</span> es invertible, <span class="math inline">\(A^{(2)}\)</span> es invertible. Esto implica que
+<span class="math inline">\(a_{22}^{(1)} \ne 0\)</span>. Después de este
+paso, obtenemos la siguiente matriz</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+     a_{11} &amp; a_{12}            &amp; a_{13}           &amp; \cdots
+&amp; a_{1n}        &amp; \bigm| &amp; b_1      \\
+     0      &amp; a^{(1)}_{22}      &amp; a^{(1)}_{23}     &amp; \cdots
+&amp; a^{(1)}_{2n}  &amp; \bigm| &amp; b_2^{(1)}\\
+     0      &amp; 0                 &amp; a^{(2)}_{33}     &amp; \cdots
+&amp; a^{(2)}_{3n}  &amp; \bigm| &amp; b_3^{(2)}\\
+    \vdots  &amp; \vdots            &amp; \vdots           &amp; \vdots
+&amp; \vdots        &amp; \vdots &amp; \\
+     0      &amp; 0                 &amp; a^{(2)}_{n-1,3}  &amp; \cdots
+&amp; a^{(2)}_{n-1,n}&amp; \bigm|&amp; b_{n-1}^{(2)}\\
+     0      &amp; 0                 &amp; a^{(2)}_{n,3}    &amp; \cdots
+&amp; a^{(2)}_{n,n}&amp; \bigm| &amp; b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span> Sin embargo, en la memoria inicial que registra
+a <span class="math inline">\(A\)</span> guardamos los multiplicadores
+<span class="math inline">\(m_{2j}\)</span>, es decir, en memoria
+tendremos:</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+     a_{11} &amp; a_{12}            &amp; a_{13}           &amp; \cdots
+&amp; a_{1n}        &amp; \bigm| &amp;b_1      \\
+     m_{21} &amp; a^{(1)}_{22}      &amp; a^{(1)}_{23}     &amp; \cdots
+&amp; a^{(1)}_{2n}  &amp; \bigm| &amp;b_2^{(1)}\\
+     m_{31} &amp; m_{32}            &amp; a^{(2)}_{33}     &amp; \cdots
+&amp; a^{(2)}_{3n}  &amp; \bigm| &amp;b_3^{(2)}\\
+    \vdots  &amp; \vdots            &amp; \vdots           &amp; \vdots
+&amp; \vdots        &amp; \vdots &amp;\\
+m_{n-1,1}  &amp; m_{n-1,2}         &amp; a^{(2)}_{n-1,3}  &amp; \cdots
+&amp; a^{(2)}_{n-1,n}&amp; \bigm| &amp; b_{n-1}^{(2)}\\
+     m_{nn} &amp; m_{n,2}          &amp; a^{(2)}_{n,3}    &amp; \cdots
+&amp; a^{(2)}_{n,n}&amp; \bigm| &amp;b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>El tercer paso es idéntico al paso 2, sólo que operando con la
+matriz</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cc}
+&amp;  \begin{bmatrix}
+       a^{(2)}_{23}     &amp; \cdots &amp; a^{(2)}_{2n}   &amp;
+\bigm|  &amp;b_2^{(2)}\\
+       a^{(2)}_{33}     &amp; \cdots &amp; a^{(2}_{3n}   &amp;
+\bigm|  &amp;b_3^{(2)}\\
+     \vdots             &amp; \vdots &amp; \vdots         &amp;
+\vdots  &amp;\\
+     a^{(2)}_{n-1,3}    &amp; \cdots &amp; a^{(2)}_{n-1,n}&amp; \bigm|
+&amp; b_{n-1}^{(2)}\\
+     a^{(2)}_{n,3}      &amp; \cdots &amp; a^{(2)}_{n,n}  &amp;
+\bigm|  &amp;b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Para poder proseguir con la eliminación gaussiana, en el tercer paso
+(y sin intercambio de renglones) se necesita que <span class="math inline">\(a^{(2)}_{33} \ne 0\)</span>. … Después de <span class="math inline">\(n-1\)</span> si <span class="math inline">\(a_{nn}^{(n-1)}\ne 0\)</span> entonces obtenemos
+una matriz triangular superior <span class="math inline">\(\big[\mathbf{U}|y\big]\)</span>. Cada paso <span class="math inline">\(k\)</span> es posible si <span class="math inline">\(A^{(k)}\)</span> es invertible.</p>
+<p>Por otro lado las operaciones realizadas al vector “independiente”
+están dadas por la siguientes fórmulas</p>
+<p><span class="math display">\[\begin{equation}\label{bs}
+\begin{array}{ccccc}
+b^{(1)}_{i}  &amp; = b_{i}  - m_{i1}b_{1}             &amp; &amp;
+\,\,               &amp; i=2,\ldots,n \\
+b^{(2)}_{i}  &amp; = b^{(1)}_{i}  - m_{i2}b^{(1)}_{2} &amp; &amp;
+\,\,               &amp; i=3,\ldots,n \\
+\vdots       &amp;                                    &amp;
+&amp;                   &amp; \\
+b^{(j)}_{i}  &amp; = b^{(j-1)}_{i}  - m_{i,j}b^{(j-1)}_{j} &amp; &amp;
+\,\,          &amp; i=j+1,\ldots,n \\
+\vdots       &amp;                                    &amp;
+&amp;                   &amp; \\
+b^{(n-1)}_{i}  &amp; = b^{(n-2)}_{i}  - m_{i,n-1}b^{(n-2)}_{n-1} &amp;
+&amp; \,\,   &amp; i= n \\
+\end{array}
+\end{equation}\]</span></p>
+<p>Si escribimos <span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+   \begin{bmatrix}
+       b_1          \\  
+       b_2^{(1)}    \\
+       b_3^{(2)}    \\
+     \vdots         \\
+     b_{n-1}^{(n-2)}\\
+     b_{n}^{(n-1)}
+  \end{bmatrix}   &amp;= &amp;
+  \begin{bmatrix}
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>y la ecuación (<span class="math inline">\(\ref{bs}\)</span>) se
+puede expresar de la siguiente fórmula recursiva.</p>
+<p><span class="math display">\[\begin{equation}\label{bs2}
+\begin{array}{ccccc}
+y_{i}  &amp; = b_{i}  - \sum_{j=1}^{i-1} m_{i,j}y_j &amp; &amp;
+\,\,   &amp; i= n \\
+\end{array}
+\end{equation}\]</span></p>
+<p>O bien <span class="math display">\[
+\sum_{j=1}^{i-1} m_{i,j}y_j + y_i = b_i
+\]</span> Matricialmente, las relaciones recursivas se pueden expresar
+de forma matricial como</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix}
+       1        &amp;    0    &amp; \cdots &amp; 0   \\
+       m_{21}   &amp;    1    &amp; \cdots &amp; 0   \\
+     \vdots     &amp; \vdots  &amp; \vdots &amp; \vdots \\
+     m_{n-1,1}     &amp; m_{n-1,2} &amp; \cdots &amp; 0 \\
+     m_{n1}     &amp; m_{n,2} &amp; \cdots &amp; 1  
+  \end{bmatrix} &amp;
+  \begin{bmatrix}
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix} &amp;
+  =
+  &amp;
+  \begin{bmatrix}
+       b_1        \\  
+       b_2        \\
+       b_3        \\
+     \vdots       \\
+     b_{n-1}      \\
+     b_{n}
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>Entonces el sistema de ecuaciones <span class="math inline">\(\mathbf{A}x=b\)</span> Se ha reducido al sistema
+<span class="math display">\[
+\mathbf{U}x = y
+\]</span> y <span class="math display">\[
+\mathbf{L}y = b
+\]</span></p>
+<p><strong>Teorema</strong> <strong>Descomposición</strong>
+<strong>LU</strong> Sea <span class="math inline">\(\mathbf{A}\)</span>
+una matriz de <span class="math inline">\(n\times n\)</span> cuyas
+matrices <span class="math inline">\(A^{(k)}\)</span> son invertibles,
+entonces <span class="math inline">\(A\)</span> se puede factorizar
+como</p>
+<p><span class="math display">\[\begin{equation}
+\mathbf{A} = \mathbf{L}\mathbf{U}
+\end{equation}\]</span> En donde <span class="math inline">\(L\)</span>
+es una matriz triangular inferior y <span class="math inline">\(U\)</span> es una matriz triangular superior</p>
+<p><strong>Demostración</strong> Para las matrices de orden 1 <span class="math inline">\(a_{11}=1\cdot u_{11}\)</span> se cumple.
+Supongamos que se cumple para las matrices de orden <span class="math inline">\(n-1\)</span>. Para <span class="math inline">\(n=
+k\)</span>, partimos la matriz en bloques <span class="math display">\[\begin{equation*}
+\begin{array}{cc}
+  A = &amp; \begin{bmatrix}
+          \mathbf{A}_{n-1} &amp; \mathbf{a}_n \\
+          \mathbf{c}^{T}   &amp;  a_{nn}
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccccc}
+  L = &amp; \begin{bmatrix}
+          \mathbf{L}_{n-1} &amp; \mathbf{0} \\
+          \mathbf{m}^{T}   &amp;  1
+  \end{bmatrix} &amp; \,\,\,\,\, &amp;
+  U =&amp; \begin{bmatrix}
+          \mathbf{U}_{n-1} &amp; \mathbf{u} \\
+          \mathbf{0}      &amp;  u_{nn}
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Para que la factorización se cumpla <span class="math display">\[
+L_{n-1} \mathbf{u} = \mathbf{a}_n,\,\,\,\,
+\mathbf{m}^{T}\mathbf{U}_{k-1} = \mathbf{c}^{T}
+\]</span> Se pueden resolver, para <span class="math inline">\(\mathbf{u}\)</span> y para <span class="math inline">\(\mathbf{m}\)</span>. Finalmente, la última
+relación <span class="math inline">\(\mathbf{m}^{T}\mathbf{u} + u_{kk} =
+a_{kk}\)</span> esta completamente determinado por <span class="math inline">\(\mathbf{m}\)</span>, <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(a_{kk}\)</span>.</p>
+</div>
+</div>
+<div id="el-método-de-dolittle" class="section level2">
+<h2>El método de Dolittle</h2>
+<p>Se puede obtener de manera recursiva los términos de la factorización
+<span class="math inline">\(LU\)</span>.</p>
+<p>Se asume que la matriz <span class="math inline">\(L\)</span> tiene
+diagonal unitaria, es decir <span class="math inline">\(L_{ii}=
+1\)</span>. Es decir</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix}
+       1        &amp;    0    &amp; \cdots &amp; 0   \\
+       m_{21}   &amp;    1    &amp; \cdots &amp; 0   \\
+     \vdots     &amp; \vdots  &amp; \vdots &amp; \vdots \\
+     m_{n-1,1}     &amp; m_{n-1,2} &amp; \cdots &amp; 0 \\
+     m_{n1}     &amp; m_{n,2} &amp; \cdots &amp; 1  
+  \end{bmatrix} &amp;
+  \begin{bmatrix}
+      u_{11}  &amp;    u_{12}  &amp; \cdots &amp; u_{1n}   \\
+       0      &amp;    u_{22}  &amp; \cdots &amp; u_{2n}   \\
+     \vdots   &amp; \vdots     &amp; \vdots &amp; \vdots \\
+       0      &amp;  0         &amp; \cdots &amp; u_{n.1,n} \\
+       0      &amp;  0         &amp; \cdots &amp; u_{nn}  
+  \end{bmatrix} &amp;
+  =
+  &amp;
+  \begin{bmatrix}
+     a_{11} &amp; a_{12}      &amp; a_{13}     &amp; \cdots &amp;
+a_{1n}       \\
+     a_{21} &amp; a_{22}      &amp; a_{23}     &amp; \cdots &amp;
+a_{2n}       \\
+     a_{31} &amp; a_{32}      &amp; a_{33}     &amp; \cdots &amp;
+a_{3n}       \\
+    \vdots  &amp; \vdots      &amp; \vdots     &amp; \vdots &amp;
+\vdots       \\
+     a_{n-1,1}&amp; a_{n-1,2} &amp; a{n-1,3}   &amp; \cdots &amp;
+a_{n-1,n}    \\
+     a_{n1} &amp; a_{n,2}     &amp; a_{n,3}    &amp; \cdots &amp;
+a_{n,n}     \\
+  \end{bmatrix}
+\end{array}
+\end{equation}\]</span></p>
+<p>El método de Dolittle consiste en “resolver” las incógintas <span class="math inline">\(u_{11},\,u_{12},\ldots,u_{n1},\ldots,u_{nn}\)</span>,
+<span class="math inline">\(l_{21},\,l_{31},\ldots,l_{n1},l_{n,n-1}\)</span>
+en un orden particular, aprovechando la estructura de las matrices <span class="math inline">\(U\)</span> y <span class="math inline">\(L\)</span>. Notar que</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{ccc}
+l_{ij} &amp;  = &amp;\begin{cases}
+              1,        &amp; \text{si $j=i$}\\
+              0,        &amp; \text{si $j&gt;i$}\\
+              m_{ij}    &amp; \text{si $j \leq i$}
+            \end{cases}
+\end{array}
+\end{equation}\]</span></p>
+<p>Si se realiza la multiplicación, y <span class="math inline">\(j\geq
+i\)</span> obtenemos una fórmula recursiva <span class="math display">\[\begin{equation}
+  a_{ij} = \sum_{p=1}^{i} l_{ip}u_{pj} = \sum_{p=1}^{i-1}m_{ip}u_{pj} +
+u_{ij},\,\,\,\,\,
+  \mbox{ para } j=i,i+1,\ldots,n
+\end{equation}\]</span></p>
+<p>Notar que la segunda sumatoria incluye términos de las <em>filas</em>
+<em>anteriores</em> de <span class="math inline">\(U\)</span>, para
+poder calcular <span class="math inline">\(u_{ij}\)</span>.</p>
+<p>Entonces para <span class="math inline">\(j\geq i\)</span> <span class="math display">\[\begin{equation}
+u_{ij} = a_{ij} - \sum_{p=1}^{i-1} m_{ip}u_{pj}
+\end{equation}\]</span></p>
+<p>Para <span class="math inline">\(j&lt;i\)</span> la matriz <span class="math inline">\(U\)</span> cancela los términos mas allá de <span class="math inline">\(p=j\)</span></p>
+</div>
+<div id="ejemplo-17" class="section level2">
 <h2>Ejemplo</h2>
 <ol class="example" style="list-style-type: decimal">
 <li>Encontrar todas las soluciones del sistema, usando Gauss-Jordan</li>
@@ -2506,7 +3033,7 @@ a_{n,i}    &amp; a_{n,i+1}  &amp;\cdots    &amp; a_{n,n}
 \end{array}
 \end{equation}\]</span></p>
 </div>
-<div id="ejemplo-14" class="section level2">
+<div id="ejemplo-18" class="section level2">
 <h2>Ejemplo</h2>
 <p>Encontrar <span class="math inline">\(x,y\)</span> y <span class="math inline">\(z\)</span> mediante la regla de Cramer</p>
 <p><span class="math display">\[\begin{equation}
@@ -2551,7 +3078,7 @@ fila: <span class="math inline">\(\det(\mathbf{A})=(-1)^{3+1}2\cdot
 \frac{(-1)^{1+3}\cdot(-2)}{1} = -2
     \end{array}
   \end{equation*}\]</span></p>
-<div id="ejemplos-2" class="section level3">
+<div id="ejemplos-3" class="section level3">
 <h3>Ejemplos</h3>
 <ul>
 <li>Calcular el determinante de</li>

@@ -2,7 +2,7 @@
 title: "Sistemas de ecuaciones, eliminación gaussiana II"
 author: "Álgebra Lineal 2024 JGRV"
 slidy_presentation:
-    css: styles.css
+    css: 'styles.css'
     footer: "Álgebra lineal, ESCOM 2CV5, José Rodríguez Villarreal"
     pandoc_argd: ["--title-prefix","Bar"]
 ---
@@ -729,7 +729,23 @@ Aplicar eliminación gaussiana, se puede ver que el sistema es _inconsistente_. 
 \end{equation*}
 
 
+## Algoritmo modificado de eliminación gaussiana
+
+
+Suponga que $U$ es la matriz aumentada asociada al sistema de ecuaciones, después de la $i-$esima iteración. 
+
+* Moverse de izquierda a derecha en $U$, localizar la primer columna que contiene la entrada no nula en la $i-$esima fila o posterior, digamos en la entrada $(i,j)$.
+
+* La nueva posición pivotal será la entrada $(i,j)$.
+
+* Aplicar la eliminación a partir de dicho elemento.
+
+* Si todas las filas posteriores al proceso de eliminación son nulas, el proceso de eliminación gaussiana concluye.
+
+
+
 ### Definición 
+
 <div>
 Una matriz de _orden_ $m\times n$ es una función $\mathbf{A}:\{1,2,\ldots,m\}\times\{1,2,\ldots,n\} \rightarrow\mathbb{R}$. Que se representa como un arreglo rectangular
 
@@ -1211,6 +1227,7 @@ A = & \begin{pmatrix} -i & 2 + 3i  \\ -4i & 5+2i \end{pmatrix} &\,\,\,\, & A^{*}
 Si $\mathbf{A}$ es una matriz cuadrada y $A$ es igual a su adjunta, entonces se dice que $\mathbf{A}$ es una matriz **hermitiana** o **simétrica** **según** **Hermite**.
 
 ## Matriz Inversa
+
 \small 
 Si $\mathbf{A}$ es una matriz cuadrada de orden $n$, se dice que $X$ es la matriz **inversa** de $A$ si 
 $$
@@ -1218,6 +1235,13 @@ A\cdot X = X\cdot A = \mathbf{Id}
 $$
 
 Si dicha matriz existe decimos que $A$ es **invertible**. La matriz inversa de $A$ se escribe como $A^{-1}$.
+
+### Ejemplo
+
+Si $A=\begin{bmatrix} 1& 2 \\ 0 & 1 \end{bmatrix}$ y $B=\begin{bmatrix} 2 & 5 \\ 3 & 7 \end{bmatrix}$ verificar que si
+$X=\begin{bmatrix} 1 & -2  \\ 0 & 1\end{bmatrix}$ y  $Y=\begin{bmatrix} -7 & 5 \\ 3 & -2 \end{bmatrix}$ entonces $X=A^{-1}$ y $Y=B^{-1}$.
+
+
 
 ## Ejemplo 
 
@@ -1232,7 +1256,50 @@ A =  \begin{pmatrix} 1 & 1 & 1  \\ 1 & 2 & 2 \\ 1 & 2 & 3 \end{pmatrix}
 B =  \begin{pmatrix} 1 & 2 \\ -2 & 4  \end{pmatrix}
 \]
 
-** Para calcular la inversa, se requiere resolver $n$ sistemas de ecuaciones, cada uno con $\vec{b}=\mathbf{e}_i=\begin{pmatrix} 0, \ldots,0,1,0,\ldots,0 \end{pmatrix}$**
+### Solución
+
+
+\[
+  \begin{bmatrix}
+        1  & 1 & 1 &\bigm| & 1  & 0  & 0     \\
+        1  & 2 & 2 &\bigm| & 0  & 1  & 0     \\
+        1  & 2 & 3 &\bigm| & 0  & 0  & 1
+  \end{bmatrix} 
+  \xrightarrow[-E_1+E_3\rightarrow E_3]{-E_1+E_2\rightarrow E_2}
+  \begin{bmatrix}
+        1  & 1 & 1 &\bigm| & 1  & 0  & 0     \\
+        0  & 1 & 1 &\bigm| &-1  & 1  & 0     \\
+        0  & 1 & 2 &\bigm| &-1  & 0  & 1
+  \end{bmatrix} 
+  \xrightarrow{-E_2+E_3\rightarrow E_3}
+  \begin{bmatrix}
+        1  & 1 & 1 &\bigm| & 1  & 0  & 0     \\
+        0  & 1 & 1 &\bigm| &-1  & 1  & 0     \\
+        0  & 0 & 1 &\bigm| & 0  & -1 & 1
+  \end{bmatrix} 
+\]
+\[
+\begin{bmatrix}
+        1  & 1 & 1 &\bigm| & 1  & 0  & 0     \\
+        0  & 1 & 1 &\bigm| &-1  & 1  & 0     \\
+        0  & 0 & 1 &\bigm| & 0  & -1 & 1
+  \end{bmatrix}   \xrightarrow[-E_3+E_2\rightarrow E_2]{-E_3+E_1\rightarrow E_1}
+  \begin{bmatrix}
+        1  & 1 & 0 &\bigm| & 1  &1  &-1     \\
+        0  & 1 & 0 &\bigm| &-1  & 2  &-1     \\
+        0  & 0 & 1 &\bigm| &0  & -1  & 1
+  \end{bmatrix} 
+  \xrightarrow{-E_2+E_3\rightarrow E_3}
+  \begin{bmatrix}
+        1  & 0 & 0 &\bigm| & 2  & -1 & 0     \\
+        0  & 1 & 0 &\bigm| &-1  & 2  &-1     \\
+        0  & 0 & 1 &\bigm| & 0  & -1 & 1
+  \end{bmatrix} 
+\]
+
+La inversa de $A$ es $A^{-1}=\begin{bmatrix} 2& -1 & 0 \\ -1& 2 & -1 \\ 0 & -1 & 1 \end{bmatrix}$
+
+**Para calcular la inversa, se requiere resolver $n$ sistemas de ecuaciones, cada uno con $\vec{b}=\mathbf{e}_i=\begin{pmatrix} 0, \ldots,0,1,0,\ldots,0 \end{pmatrix}$**
 
 Para evitar repetir la matriz aumentada conservamos _cada_ _término_ _independiente_  en una matriz ampliada
 \[
@@ -1244,17 +1311,15 @@ Para evitar repetir la matriz aumentada conservamos _cada_ _término_ _independi
   \end{bmatrix}
 \]
 Y procedemos a aplicar operaciones elementales, en vez de obtener una matriz triangular superior, y aplicar sustitución hacia atrás, aplicamos operaciones elementales para obtener una **matriz** **identidad**.
-
 \[
   \begin{bmatrix}
         1   & 2 &\bigm| & 1       & 0     \\
-        -2  & 4  &\bigm| & 0       & 1     \\
-
+        -2  & 4  &\bigm| & 0       & 1     
   \end{bmatrix} 
   \xrightarrow{2E_1+E_2\rightarrow E_2}
   \begin{bmatrix}
         1   & 2  &\bigm| & 1       & 0     \\
-        0   & 8  &\bigm| & 2       & 1     \\
+        0   & 8  &\bigm| & 2       & 1     
   \end{bmatrix} 
   \xrightarrow{1/8E_2\rightarrow E_2}
 \]
@@ -1288,14 +1353,15 @@ Pues son las soluciones a los sistemas
 
 ### Aplicar eliminación gaussiana para invertir $A$.
 
-### Práctica 3
+### Ejemplo 
 
+* Calcular la inversa de $A$ usando la matriz extendida de los sistemas de ecuaciones
 
+\[
+A=\begin{bmatrix} 3 & -5 \\ -1 & 2  \end{bmatrix}
+\]
 
-
-
-
-
+* Verificar que $A\cdot A^{-1}=I$ 
 
 
 
@@ -1343,8 +1409,6 @@ Calcular la inversa para solucionar un sistema de ecuaciones es poco eficiente.
 Sin embargo, es útil para solucionar una _familia_ _de_ _sistemas_ _de_ _ecuaciones_.
 
 ## Ejemplo
-
-1. verificar que la siguiente matriz es la inversa de $A$
 
 1. Calcular la inversa de la matriz $A$
 
@@ -1396,7 +1460,6 @@ A = \begin{pmatrix} 3 & x+2i & yi  \\ 3-2i & 0 & 1+iz\\ yi & 1-xi & -1 \end{pmat
 
 
 ## Propiedades de la matriz inversa
-
 
 ### Definición
 
@@ -1488,8 +1551,79 @@ Usando la última observación, resolver los siguientes sistemas
 
 Con $\begin{pmatrix}2 \\ 2 \\1 \end{pmatrix}$ y $\begin{pmatrix}1 \\ -2 \\0 \end{pmatrix}$ 
 
+
+1. Sabiendo que 
+\[
+\begin{bmatrix} 1 & 3 & 2 \\ 15 & 2 & 0 \\ 4 & 2 & 1 \end{bmatrix}^{-1} = 
+\begin{bmatrix} 2 & 1 & -4 \\-15 &-7& 30 \\ 22 & 10 & -43 \end{bmatrix}
+\]
+
+
+Resolver cada uno de los sistemas lineales
+\[
+\begin{matrix} 
+x_1 + 3x_2 +2x_3 = b_1\\
+15x_1 + 2x_2     =b_2 \\
+4z_1+2x_2+x_3=b_3
+\end{matrix}
+\]
+
+con $\begin{pmatrix}b_1 \\ b_2 \\ b3 \end{pmatrix} =\begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}, \begin{pmatrix}6 \\ 1 \\ 3 \end{pmatrix}$ y $\begin{pmatrix} 2 \\ 2 +\epsilon \\ 1-\epsilon \end{pmatrix}$
+
+
 ## Forma escalonada y forma escalonada reducida 
 
+### Definición 1
+
+<div class=".def">
+  Dos matrices $A$ y $B$ del mismo tamaño, es decir, $A,B\in \mathcal{M}^{m,n}(\mathbb{R})$ son **equivalentes por filas**, y escribimos $A\sim_{f} B$ si $A=B$ o si se puede transformar $A$ en $B$ mediante una sucesión finita de operaciones elementales entre filas.
+</div>
+
+### Ejemplo 2
+
+Sean $A,B\in\mathcal{M}^{m,n}(\mathbb{R})$, el conjunto de matrices $m\times n$ con entradas reales.
+\[
+\begin{array}{ccc}
+A=\begin{pmatrix} 
+   0 & -3 & 3 \\
+   2 & 6  & 0 \\
+   1 &-3  & 2
+  \end{pmatrix}  &   
+  &
+B=\begin{pmatrix}
+  1 & -3 & 2 \\
+  0 & 12 &-4 \\
+  0 &  0 & 2
+\end{pmatrix}
+\end{array}
+\]
+
+entonces $A\sim_{f}B$ son equivalentes por filas
+
+### Teorema 
+
+La relación ser _equivalentes por filas_ es una relación de equivalencia.
+
+* La relación es reflexiva $A\sim_f A$ pues por ejemplo $A\xrightarrow{0E_1+E_1} A$, es decir $A\sim_f A$
+
+* La relación es simétrica. Observe que existen operaciones elementales _inversas_, 
+  $E_i\leftrightarrow E_j$ su inversa es $E_i\leftarrow E_j$
+  $cE_i\rightarrow E_i$   su inversa es $\frac{1}{c}E_i \rightarrow E_i$.
+  $\beta E_i+E_j \rightarrow E_j$ su inversa es $-\beta E_i+E_j$.
+Entonces, si $A\xrightarrow{O_1} \xrightarrow{O_2}\cdots \xrightarrow{O_n}B$, por lo que si $S_k$ es la operación inversa de $O_k$ 
+
+* La relación es transitiva.
+
+### Corolario
+
+La equivalencia por filas genera una partición del conjunto de matrices $M^{m,n}(\mathbb{R})$.
+
+### Proposición 
+
+Si $A\sim_f B$ entonces toda fila de $B$ es combinación lineal de filas de $A$.
+
+
+### Ejemplo
 Estudiamos brevemente el caso en donde hay más incógnitas que ecuaciones, es decir, sistemas $m\times n$ con $m<n$.
 
 ### Ejemplo 1
@@ -1544,20 +1678,6 @@ Aplicar eliminación gaussiana al siguiente sistema
 \end{equation*}
 
 (Ver notas)
-
-
-## Algoritmo modificado de eliminación gaussiana
-
-
-Suponga que $U$ es la matriz aumentada asociada al sistema de ecuaciones, después de la $i-$esima iteración. 
-
-* Moverse de izquierda a derecha en $U$, localizar la primer columna que contiene la entrada no nula en la $i-$esima fila o posterior, digamos en la entrada $(i,j)$.
-
-* La nueva posición pivotal será la entrada $(i,j)$.
-
-* Aplicar la eliminación a partir de dicho elemento.
-
-* Si todas las filas posteriores al proceso de eliminación son nulas, el proceso de eliminación gaussiana concluye.
 
 
 
@@ -1911,6 +2031,373 @@ Aplicar eliminación gaussiana, por medio de matrices elementales
 \end{equation*}
 
 Descomponer a $A$ como producto de matrices elementales y una triangular superior.
+
+## Ejemplo
+
+Investigar si existe una factorización $LU$ de la matriz
+
+\[
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix} 1 &- 3 & 1 \\
+                                3 & -8 & 5 \\
+                                1 & -5 & -2
+                 \end{bmatrix}
+\end{array}
+\]
+
+* Usar la factorización $LU$ para resolver el sistema
+
+\begin{equation*}
+  \begin{matrix}
+      x_1   & -3 x_2  & + x_3  & = 0  \\
+      3 x_1 & -8 x_2  & +5 x_3  & = 3 \\
+      x_1   & -5 x_2  & -2 x_3  & = -5 
+  \end{matrix}
+\end{equation*}
+
+
+* Investigar si existe la factorización $LU$ de la siguiente matriz
+
+\[
+\begin{array}{cc}
+\mathbf{A}  =&  \begin{bmatrix} 2 &  3 & 2  & 4 \\
+                                4 & 10 & -4 & 0 \\
+                                -3& -2 & -5 & -2 \\
+                                -2&  4 & 4 & -7
+                 \end{bmatrix}
+\end{array}
+\]
+Resolver el sistema $\vec{b}=\begin{pmatrix} 4 \\ -8 \\ -4 \\ -1 \end{pmatrix}$
+
+### Ejemplos
+
+Ejercicios 1  - 3, 5 del Grossmann.
+# Factorización $LU$
+
+La factorización $LU$ permitirá dividir la solución de cualquier sistema de ecuaciones $Ax=b$ en dos etapas, siempre que $A$ sea invertible.
+
+Si resolvemos el sistema de ecuaciones por medio de eliminación gaussiana, pero sin _intercambio_ _de_ _renglones_. Como sabemos, el método de eliminación gaussiana reduce la matriz $A$ a una matriz triangular en $n-1$ pasos. 
+
+En el primer paso ciertos múltiplos del primer renglón son sumados (algebraicamente hablando) a las otras filas  para obtener 0s en las entradas $(2,1),\,(3,1),\,\ldots,(n,1)$. Para que sea esto posible, se debe tener $a_{11} \ne 0$. En el primer paso, el multiplicador apropiado es 
+\begin{equation}
+m_{i1} = a_{i1}/a_{11}\,\,\,\,\,i=2,3,\ldots,n
+\end{equation}
+
+Por tanto, al final de este paso, obtenemos una nueva matriz $A^{(1)}$, con 
+
+\begin{equation}
+\begin{array}{ccccc}
+a^{(1)}_{ij} & = a_{ij} - m_{i1}a_{1j}& & j=2,3,\ldots,n\,\,& i=2,\ldots,n\\
+b^{(1)}_{i}  & = b_{i}  - m_{i1}b_{1} & & \,\               & i=2,\ldots,n
+\end{array}
+\end{equation}
+
+Por lo que obtenemos la siguiente matriz
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| & b_1      \\ 
+     0      & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| & b_2^{(1)}\\
+     0      & a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm| & b_3^{(1)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots & \\
+     0      & a^{(1)}_{n-1,2}   & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm|& b_{n-1}^{(1)}\\
+     0      & a^{(1)}_{n,2}     & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n}& \bigm| & b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+
+En una implementación computacional, no es necesario guardar a los $0$'s de la matriz explicitamente. En vez de guardar los $0$'s se pueden guardar los mulitplicadores del renglón 1.
+Entonces, después del primer paso, la memoria que inicialmente contenía $\mathbf{A}|b$ tendrá 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| &b_1      \\ 
+     m_{21} & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| &b_2^{(1)}\\
+     m_{31} & a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm| &b_3^{(1)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots &\\
+ m_{n-1,1}  & a^{(1)}_{n-1,2}   & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm| & b_{n-1}^{(1)}\\
+     m_{nn} & a^{(1)}_{n,2}     & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n}& \bigm| &b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+En  el segundo paso, aplicamos eliminación gaussiana nuevamente operando sobre las filas $2,3,\ldots,n$. En el 2do paso de la eliminación gaussiana se ignora la primera fila y la primera columna. Múltiplos del renglón 2 son sumados a las filas $3,4,\ldots n$ para obtener un $0$ en las entradas $(3,2),\,(4,2),\ldots,(n,2)$ por lo que el paso 2 es idéntico al paso 1 pero operado sobre la matriz 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+      a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm|  &b_2^{(1)}\\
+      a^{(1)}_{32}      & a^{(1)}_{33}     & \cdots & a^{(1)}_{3n}  & \bigm|  &b_3^{(1)}\\
+     \vdots             & \vdots           & \vdots & \vdots        & \vdots  &\\
+    a^{(1)}_{n-1,2}     & a^{(1)}_{n-1,3}  & \cdots & a^{(1)}_{n-1,n}& \bigm| & b_{n-1}^{(1)}\\
+     a^{(1)}_{n,2}      & a^{(1)}_{n,3}    & \cdots & a^{(1)}_{n,n} & \bigm|  &b_{n}^{(1)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+Si $a_{22}^{(1)} \ne 0$ entonces es posible realizar la reducción usando al segundo renglón, por tanto los factores multiplicadores son
+\begin{equation}
+m_{i2} = a^{(1)}_{i2}/a^{(1)}_{22}\,\,\,\,\,i=3,\ldots,n
+\end{equation}
+
+Al aplicar eliminación de las entradas en la columna $2$, obtenemos una nueva matriz $[A^{(2)}|b^{(2)}]$, con 
+
+\begin{equation}
+\begin{array}{ccccc}
+a^{(2)}_{ij} & = a^{(1)}_{ij} - m_{i2}a^{(1)}_{2j}& & j=3,\ldots,n\,\,& i=3,\ldots,n\\
+b^{(2)}_{i}  & = b^{(1)}_{i}  - m_{i1}b_{(1)}^{(1)} & & \,\               & i=2,\ldots,n
+\end{array}
+\end{equation}
+
+Como $A$ es invertible, $A^{(2)}$ es invertible. Esto implica que $a_{22}^{(1)} \ne 0$. Después de este paso, obtenemos la siguiente matriz
+
+\begin{equation*}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| & b_1      \\ 
+     0      & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| & b_2^{(1)}\\
+     0      & 0                 & a^{(2)}_{33}     & \cdots & a^{(2)}_{3n}  & \bigm| & b_3^{(2)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots & \\
+     0      & 0                 & a^{(2)}_{n-1,3}  & \cdots & a^{(2)}_{n-1,n}& \bigm|& b_{n-1}^{(2)}\\
+     0      & 0                 & a^{(2)}_{n,3}    & \cdots & a^{(2)}_{n,n}& \bigm| & b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+Sin embargo, en la memoria inicial que registra a $A$ guardamos los multiplicadores $m_{2j}$, es decir, en memoria tendremos:
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+     a_{11} & a_{12}            & a_{13}           & \cdots & a_{1n}        & \bigm| &b_1      \\ 
+     m_{21} & a^{(1)}_{22}      & a^{(1)}_{23}     & \cdots & a^{(1)}_{2n}  & \bigm| &b_2^{(1)}\\
+     m_{31} & m_{32}            & a^{(2)}_{33}     & \cdots & a^{(2)}_{3n}  & \bigm| &b_3^{(2)}\\
+    \vdots  & \vdots            & \vdots           & \vdots & \vdots        & \vdots &\\
+ m_{n-1,1}  & m_{n-1,2}         & a^{(2)}_{n-1,3}  & \cdots & a^{(2)}_{n-1,n}& \bigm| & b_{n-1}^{(2)}\\
+     m_{nn} & m_{n,2}          & a^{(2)}_{n,3}    & \cdots & a^{(2)}_{n,n}& \bigm| &b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+El tercer paso es idéntico al paso 2, sólo que operando con la matriz 
+
+\begin{equation}
+\begin{array}{cc}
+ &  \begin{bmatrix} 
+       a^{(2)}_{23}     & \cdots & a^{(2)}_{2n}   & \bigm|  &b_2^{(2)}\\
+       a^{(2)}_{33}     & \cdots & a^{(2}_{3n}   & \bigm|  &b_3^{(2)}\\
+     \vdots             & \vdots & \vdots         & \vdots  &\\
+     a^{(2)}_{n-1,3}    & \cdots & a^{(2)}_{n-1,n}& \bigm| & b_{n-1}^{(2)}\\
+     a^{(2)}_{n,3}      & \cdots & a^{(2)}_{n,n}  & \bigm|  &b_{n}^{(2)}\\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+Para poder proseguir con la eliminación gaussiana, en el tercer paso (y sin intercambio de renglones) se necesita que $a^{(2)}_{33} \ne 0$. 
+...
+Después de $n-1$ si $a_{nn}^{(n-1)}\ne 0$ entonces obtenemos una matriz triangular superior $\big[\mathbf{U}|y\big]$. Cada paso $k$ es posible si $A^{(k)}$ es invertible.
+
+Por otro lado las operaciones realizadas al vector "independiente" están dadas por la siguientes fórmulas
+
+\begin{equation}\label{bs}
+\begin{array}{ccccc}
+b^{(1)}_{i}  & = b_{i}  - m_{i1}b_{1}             & & \,\,               & i=2,\ldots,n \\
+b^{(2)}_{i}  & = b^{(1)}_{i}  - m_{i2}b^{(1)}_{2} & & \,\,               & i=3,\ldots,n \\
+\vdots       &                                    & &                   & \\
+b^{(j)}_{i}  & = b^{(j-1)}_{i}  - m_{i,j}b^{(j-1)}_{j} & & \,\,          & i=j+1,\ldots,n \\
+\vdots       &                                    & &                   & \\
+b^{(n-1)}_{i}  & = b^{(n-2)}_{i}  - m_{i,n-1}b^{(n-2)}_{n-1} & & \,\,   & i= n \\
+\end{array}
+\end{equation}
+
+Si escribimos 
+\begin{equation*}
+\begin{array}{ccc}
+   \begin{bmatrix} 
+       b_1          \\  
+       b_2^{(1)}    \\
+       b_3^{(2)}    \\
+     \vdots         \\
+     b_{n-1}^{(n-2)}\\
+     b_{n}^{(n-1)}
+  \end{bmatrix}   &= & 
+  \begin{bmatrix} 
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+y la ecuación (\ref{bs}) se puede expresar de la siguiente fórmula recursiva.
+
+\begin{equation}\label{bs2}
+\begin{array}{ccccc}
+y_{i}  & = b_{i}  - \sum_{j=1}^{i-1} m_{i,j}y_j & & \,\,   & i= n \\
+\end{array}
+\end{equation}
+
+O bien 
+$$
+\sum_{j=1}^{i-1} m_{i,j}y_j + y_i = b_i
+$$
+Matricialmente, las relaciones recursivas se pueden expresar de forma matricial como
+
+\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix} 
+       1        &    0    & \cdots & 0   \\
+       m_{21}   &    1    & \cdots & 0   \\
+     \vdots     & \vdots  & \vdots & \vdots \\
+     m_{n-1,1}     & m_{n-1,2} & \cdots & 0 \\
+     m_{n1}     & m_{n,2} & \cdots & 1  
+  \end{bmatrix} & 
+  \begin{bmatrix} 
+       y_1        \\  
+       y_2        \\
+       y_3        \\
+     \vdots       \\
+     y_{n-1}      \\
+     y_{n}
+  \end{bmatrix} &
+  = 
+  &
+  \begin{bmatrix} 
+       b_1        \\  
+       b_2        \\
+       b_3        \\
+     \vdots       \\
+     b_{n-1}      \\
+     b_{n}
+  \end{bmatrix} 
+\end{array}
+\end{equation}
+
+Entonces el sistema de ecuaciones $\mathbf{A}x=b$
+Se ha reducido al sistema 
+$$
+\mathbf{U}x = y
+$$
+y 
+$$
+\mathbf{L}y = b
+$$
+
+**Teorema** **Descomposición** **LU**
+Sea $\mathbf{A}$ una matriz de $n\times n$ cuyas matrices $A^{(k)}$ son invertibles, entonces $A$ se puede factorizar como
+
+\begin{equation}
+ \mathbf{A} = \mathbf{L}\mathbf{U}
+\end{equation}
+En donde $L$ es una matriz triangular inferior y $U$ es una matriz triangular superior
+
+**Demostración**
+Para las matrices de orden 1 $a_{11}=1\cdot u_{11}$ se cumple.
+Supongamos que se cumple para las matrices de orden $n-1$. Para $n= k$, partimos la matriz en bloques 
+\begin{equation*}
+\begin{array}{cc}
+  A = & \begin{bmatrix} 
+          \mathbf{A}_{n-1} & \mathbf{a}_n \\
+          \mathbf{c}^{T}   &  a_{nn}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{ccccc}
+  L = & \begin{bmatrix} 
+          \mathbf{L}_{n-1} & \mathbf{0} \\
+          \mathbf{m}^{T}   &  1
+  \end{bmatrix} & \,\,\,\,\, & 
+  U =& \begin{bmatrix} 
+          \mathbf{U}_{n-1} & \mathbf{u} \\
+          \mathbf{0}      &  u_{nn}
+  \end{bmatrix} 
+\end{array}
+\end{equation*}
+
+Para que la factorización se cumpla 
+$$
+L_{n-1} \mathbf{u} = \mathbf{a}_n,\,\,\,\, \mathbf{m}^{T}\mathbf{U}_{k-1} = \mathbf{c}^{T}
+$$
+Se pueden resolver, para $\mathbf{u}$ y para $\mathbf{m}$.
+Finalmente, la última relación $\mathbf{m}^{T}\mathbf{u} + u_{kk} = a_{kk}$ esta completamente determinado por $\mathbf{m}$, $\mathbf{u}$ y $a_{kk}$.
+
+
+
+
+
+
+
+
+
+
+
+## El método de Dolittle
+
+Se puede obtener de manera recursiva los términos de la factorización $LU$.
+
+Se asume que la matriz $L$ tiene diagonal unitaria, es decir $L_{ii}= 1$. Es decir
+
+\begin{equation}
+\begin{array}{cccc}
+   \begin{bmatrix} 
+       1        &    0    & \cdots & 0   \\
+       m_{21}   &    1    & \cdots & 0   \\
+     \vdots     & \vdots  & \vdots & \vdots \\
+     m_{n-1,1}     & m_{n-1,2} & \cdots & 0 \\
+     m_{n1}     & m_{n,2} & \cdots & 1  
+  \end{bmatrix} & 
+  \begin{bmatrix} 
+      u_{11}  &    u_{12}  & \cdots & u_{1n}   \\
+       0      &    u_{22}  & \cdots & u_{2n}   \\
+     \vdots   & \vdots     & \vdots & \vdots \\
+       0      &  0         & \cdots & u_{n.1,n} \\
+       0      &  0         & \cdots & u_{nn}  
+  \end{bmatrix} &
+  = 
+  &
+  \begin{bmatrix} 
+     a_{11} & a_{12}      & a_{13}     & \cdots & a_{1n}       \\ 
+     a_{21} & a_{22}      & a_{23}     & \cdots & a_{2n}       \\
+     a_{31} & a_{32}      & a_{33}     & \cdots & a_{3n}       \\
+    \vdots  & \vdots      & \vdots     & \vdots & \vdots       \\
+     a_{n-1,1}& a_{n-1,2} & a{n-1,3}   & \cdots & a_{n-1,n}    \\
+     a_{n1} & a_{n,2}     & a_{n,3}    & \cdots & a_{n,n}     \\
+  \end{bmatrix}
+\end{array}
+\end{equation}
+
+El método de Dolittle consiste en "resolver" las incógintas $u_{11},\,u_{12},\ldots,u_{n1},\ldots,u_{nn}$, $l_{21},\,l_{31},\ldots,l_{n1},l_{n,n-1}$ en un orden particular, aprovechando la estructura de las matrices $U$ y $L$.
+Notar que 
+
+\begin{equation}
+\begin{array}{ccc}
+l_{ij} &  = &\begin{cases}
+              1,        & \text{si $j=i$}\\
+              0,        & \text{si $j>i$}\\
+              m_{ij}    & \text{si $j \leq i$}
+            \end{cases}
+\end{array}
+\end{equation}
+
+Si se realiza la multiplicación, y $j\geq i$ obtenemos una fórmula recursiva
+\begin{equation}
+  a_{ij} = \sum_{p=1}^{i} l_{ip}u_{pj} = \sum_{p=1}^{i-1}m_{ip}u_{pj} + u_{ij},\,\,\,\,\, 
+  \mbox{ para } j=i,i+1,\ldots,n
+\end{equation}
+
+Notar que la segunda sumatoria incluye términos de las _filas_ _anteriores_ de $U$, para poder calcular $u_{ij}$. 
+
+Entonces para $j\geq i$ 
+\begin{equation}
+u_{ij} = a_{ij} - \sum_{p=1}^{i-1} m_{ip}u_{pj}
+\end{equation}
+
+Para $j<i$ la matriz $U$ cancela los términos mas allá de $p=j$
 
 
 ## Ejemplo
