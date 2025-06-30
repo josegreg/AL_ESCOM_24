@@ -1,0 +1,31 @@
+---
+title: "Ejercicios MATLAB"
+author: "Álgebra lineal"
+output: 
+    pdf_document
+---
+
+@. Escribe una función $\mathtt{Fibonacci}(n)$ que calcule los primeros $n$ números de Fibonacci. La sucesión de Fibonacci cumple la siguiente regla
+\[
+f_0=0,\quad\quad f_1=1,\quad\quad f_{n+1} = f_{n} + f_{n-1}.
+\]
+
+@. Realizar una tabla (y guardarla en un csv) con los valores $f_{n+1}/f_n$, ¿que observa?.
+
+@. Realizar una función que calcule el producto punto de dos vectores $\mahttt{v}_1$ y $\mathtt{v}_2$. $producto\,_\,punto(\mathtt{v}_1,\mathtt{v}_2)$, verificar que $\mathtt{v}_1$ y $\mathtt{v}_2$ tengan la misma dimensión.
+
+@. Realizar una función que calcule la norma euclideana de un vector.
+
+@. Realizar una función $angulo(\mathtt{v}_1,\mathtt{v}_2)$ que calcule el ángulo de dos vectores, en $\mathbb{R}^{3}$.
+
+@. Escribir una función que calcula la multiplicación de una matriz por un vector (por la derecha). Es decir $multip(A,\mathtt{v})$ que regrese el resultado de multiplicar $A\mathtt{v}$. Incluir casos cuando no sea posible o no este definida la multiplicación.
+
+@. Escribir un programa que dado un entero positivo $n$, calcule la matriz
+\[
+H_n= \begin{bmatrix} 1 & \frac{1}{2} & \cdots & \frac{1}{n-1} & \frac{1}{n} \\ \frac{1}{2} & \frac{1}{3} & \cdots & \frac{1}{n} & \frac{1}{n+1} \\
+\frac{1}{3} & \frac{1}{4} & \cdots & \frac{1}{n+1} & \frac{1}{n+2} \\
+\vdots & \vdots & \vdots & \vdots & \vdots \\ \frac{1}{n} & \frac{1}{n+1} & \cdots & \frac{1}{2n-1} & \frac{1}{2n} \end{bmatrix} 
+\]
+
+@. Escribir una función $matrix\_mult$ que verifique que las dimensiones son adecuadas para hacer la multiplicación de las matrices $A$ y $B$ y calcular la matriz. No se pueden usar los operadores de multiplicación.
+

@@ -1,21 +1,36 @@
 ---
-title: "Tarea_MATLAB_B"
+title: "Tarea MATLAB 1"
 author: "Álgebra lineal"
-date: "5/12/2024"
 output: pdf_document
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
 ---
 
-@. Construir una función que calcula la multiplicación de una matriz por un vector $A\vec{x}$.
+# Ejercicios
+
+@. Usando ciclos for, construir una función,  que calcula la multiplicación de una matriz por un vector $A\vec{x}$, no se puede usar ningún operador de multiplicación de MATLAB.
+
+@. Usando ciclos, construir una función que reciba dos matrices, verifique que se pueden multiplicar y calcular la multiplicación de las matrices.
 
 @. Construir una función que calcule el producto vectorial de dos vectores en $\mathbb{R}^3$.
 
-@. Construir una función que tome un polinomio de _grado_ $3$ y regrese sus coordenadas con respecto a la base canónica $\{1,x,x^2,x^3\}$
+@. Construir una función que calcule el producto punto de dos vectores. Los vectores pueden ser de cualquier magnitud.
 
-@. Construir una función que calcule el producto interno de dos polinomios de  grado $3$, con $\langle p,q \rangle = \int_{0}^1 p(s)q(s)ds$
+@. Construir una función que tome una función polinomica de _grado_ $3$ y regrese sus coordenadas con respecto a la base canónica $\{1,x,x^2,x^3\}$
 
-@. Calcular una función que calcule la matriz escalonada reducida de una matriz $A$, $n\times n$.
+@. Construir una función que calcule el producto interno de dos polinomios de  grado $3$, con $\langle p,q \rangle = \int_{0}^1 p(s)q(s)ds$. Puede usar la función \texttt{integral}.
+
+@. Dada una matriz $A$ de tamaño $3\times 3$. Escribir una función que calcule la matriz escalonada reducida de una matriz $A$. Generalizar la función para $n$.
 
 @. Una forma alternativa de calcular la factorización $LU$ es usando el algoritmo de _Crout_. Investigar el algoritmo y construir una función que devuelva a las funciones $P$, $L$ y $U$.
 
-@. Escribir una función que a partir de una base de $R^{3}$ calcule una base _ortonormal_.
+@. Escribir una función que a partir de una base de $R^{3}$, introducir la base de $\mathbb{R}^3$, como columnas de una matriz $B$, calcule una base _ortonormal_.
+
+@. Dadas dos bases de $\mathbb{R}^{n}$, y una transformación $T_A:\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}$ construir la matriz asociada a la transformación $T_A\vec{v}=A\vec{v}$. Obtener la matriz asociada a la transformación en la base $\mathcal{B}$, $\Big[A\Big]_{\mathcal{B}}$
  
+@. Hacer una animación que por medio de transformaciones lineales de rotación, dado un vector en $\mathbb{R}^2$ (digamos el vector $\vec{v}=(1,1)$) se rote $15^ot$ con $t=0,1,2,3,\ldots$.

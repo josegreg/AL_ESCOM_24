@@ -1,0 +1,35 @@
+---
+title: "Practica 5"
+author: "Álgebra Lineal"
+date: "11/4/2025"
+output: pdf_document
+---
+# Práctica
+
+Determinar si los conjuntos siguientes de $\mathbb{R}^3$ son subespacios, aplicando las propiedades de cerradura
+
+1.  $U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, | \,\, \vec{x} \mbox{ es de la forma }(a,0,0), a\in\mathbb{R}\}$.  
+
+2.  $U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, | \,\, \vec{x} \mbox{ es de la forma }(a,1,1), a\in\mathbb{R}\}$.  
+
+3. Todos los vectores de la forma $(x_1,x_2,x_3)$ con $x_2=x_1 + x_3$
+
+4. Todos los vectores de la forma $(x_1,x_2,x_3)$ con $x_2=x_1 + x_3 +1$
+
+5. Todas las matrices de la forma $\begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix}$
+
+6. Todas las matrices de la forma $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ con $a+d=0$
+
+Si $V=\mathbb{R}_3[x]$ es el conjunto de polinomios con grado igual o menor a 3.
+
+7. $\mathcal{U}$ el conjunto de polinomios con coeficientes enteros, es decir $p(x)\in \mathcal{U}$ si $p(x)=a_3x^3+a_2x^2+a_1x+a_0$ con $a_3,a_2,a_1,a_0$ enteros
+
+8. Si $V=\mathbb{R}_2[x]$, sea $S$ el conjunto de polinomios de la forma $ax^2 + bx$, ¿es $S$ un subespacio?
+
+9. Sea $S\subset \mathbb{R}^3$ el conjunto de vectores de la forma $(x,y,x+y)$
+
+10. Sea $S$ el conjunto de vectores $(x,y,z)\in\mathbb{R}^3$ con $x-y+2z=0$
+
+11. El conjunto de matrices de la forma $\begin{pmatrix}a & b \\ a & a+b \end{pmatrix}$, si $V=\mathcal{M}^{2,2}(\mathbb{R})$.
+
+12. El conjunto de vectores en $\mathbb{R}^3$ perpendiculares a $(4,1,3)$.

@@ -1,0 +1,67 @@
+---
+title: "Examen 2 tipo B IIA"
+output: pdf_document
+geometry: margin=0.3cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{0.2cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 180pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+Nombre:__________________________________________
+
+Resolver explicando tu razonamiento y cálculos 4 de 6 problemas.
+
+\textbf{\large{1}-} a) Encuentra el valor de $k$ para que los siguientes vectores sean linealmente independientes:
+\[
+\mathtt{v}_1=(1,-4,6),\,\mathtt{v}_2=(1,4,4),\,\,\mathtt{v}_3=(0,-4,k)
+\]
+
+b) ¿Para qué valores de $k$ generan un plano?
+
+\textbf{\large{2}}-  Si $V=\mathbb{R}^3$, $W\subset V$ 
+a) Defina que es un subespacio vectorial.
+
+b) Considere a $W=\Bigg\{(x,y,z)\in\mathbb{R}^3\,:\,  \begin{array}{ccc} x +y +z &= & 0 \\ x-z&=&0 \end{array}\Bigg\}$. Demuestre, **por** **definición** que es un subespacio vectorial
+
+c) Obtenga una base de $W$.
+
+\textbf{\large{3}}- Del siguiente conjunto 
+$$
+\mathcal{A} = \big\{ (1,-3,2),(2,4,1),(3,1,3), (1,1,1)  \big\}
+$$
+
+a) Determine si genera a $\mathbb{R}^3$.
+
+b) Si a) es afirmativo, elija una base de $\mathbb{R}^{3}$.
+
+
+\textbf{\large{4}}- Aplique el proceso de Gram-Schmidt para obtener una base ortonormal de $\beta_1=(1,0,1),\beta_2=(1,0,-1),\beta_3=(0,3,4)$. 
+
+
+\textbf{\large{5}}- a) Determinar la matriz cambio de base de $\mathcal{B}_1=\big\{ \mathbf{e}_1=(1,0,0), \mathbf{e}_2=(1,0,1),\mathbf{e}_3=(0,1,1)\big\}$ a $\mathcal{B}_2=\big\{ \mathbf{e}_1=(1,2,-1), \mathbf{e}_2=(2,0,5),\mathbf{e}_3=(0,-1,2)\big\}$
+
+b) Obtener las coordenadas bajo la base $\mathbf{B}_2$ de $(\mathtt{v})_{\mathcal{B}_1}=(-1,1,2)_{\mathcal{B}_1}$ y de $(\mathtt{v})_{\mathcal{B}_1}=(2,0,2)_{\mathcal{B}_1}$
+
+\textbf{\large{6}}- Sea $V=M^{2}(\mathbb{R})$ y 
+\[W_1=\Bigg\{
+\begin{pmatrix} a & b \\ c & a \end{pmatrix}\,:\, a,b,c\in\mathbb{R}\Bigg\},
+\quad\quad
+W_2= \Bigg\{
+\begin{pmatrix} 0 & a \\ -a & b \end{pmatrix}\,:\, a,b\in\mathbb{R}\Bigg\}
+\]
+
+a) Calcular la dimensión de $W_1$ y de $W_2$.
+
+b) Calcular la dimensión y una base de $W_1\cap W_2$.
+

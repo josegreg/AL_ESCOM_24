@@ -43,6 +43,8 @@ La transformación que recibe un vector y lo relaciona consigo mismo es la trans
 
 La transformación $Mv=-v$ también es una transformación lineal de $M:V\rightarrow V$.
 
+Las rotaciones en $\mathbb{R}^3$.
+
 
 
 ### Definición
@@ -60,6 +62,22 @@ b) Para todo $\texttt{v}\in V$, $T(-\texttt{v})=-T(\texttt{v})$.
 c) $T(\texttt{v}-\texttt{w})=T(\texttt{v})-T(\texttt{w})$.
 
 ### Ejemplo
+
+Considere a la transformación $T:\mathbb{R}^2\rightarrow \mathbb{R}^3$
+
+\[
+T\begin{pmatrix} x\\y \end{pmatrix} = \begin{pmatrix} x \\ 2x-y \\ 3x+4y \end{pmatrix}
+\]
+
+Determinar si la transformación es lineal o no.
+
+* Considere a la transformación
+
+\[
+F\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x \\ 2x-y +1 \\ 3x+4y+2 \end{pmatrix}
+\]
+
+
 
 Estudiar si las siguientes aplicaciones de $V=\mathbb{R}^3$ en $\mathbb{R}^4$ son o no son lineales
 
@@ -122,6 +140,196 @@ T_A\mathbf{x}
 
 Entonces $T_A$ es una transformación lineal.
 
+### Otras transformaciones lineales
+
+ En $\mathbb{R}^2$, definimos a la _rotación_ en $\mathbb{R}^2$, _con_ _respecto_ _al_ _origen_ está dada por
+\[
+R_{\theta}\begin{pmatrix} x\\ y \end{pmatrix} = 
+\begin{pmatrix} 
+\cos \theta & -\sin\theta \\
+\sin \theta & \cos \theta
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\]
+
+En $\mathbb{R}^3$, 
+
+\[
+R_{\theta}\begin{pmatrix} x\\ y \\ z \end{pmatrix} = 
+\begin{pmatrix} 
+\cos \theta & -\sin\theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+ 0          &   0         & 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\z
+\end{pmatrix}
+\]
+
+Es una rotación sobre el plano $x,y$.
+
+### Ejemplo 1
+
+Encontrar la imagen que se obtiene al aplicar una rotación de $60°$ al punto $(\sqrt{3},1)$
+
+### Ejemplo 2
+
+Sean $A=(4,0)$, $B=(0,2)$ y $C=(0,0)$. Encontrar la imagen del triángulo $\triangle ABC$ al aplicarle una rotación de $45°$ alrededor del origen.
+
+### _ejercicio_
+
+Suponga que $A=(1,2)$, $B=(3,-1)$, $C=(5,1)$, encontrar la imgaen del $\triangle ABC$ bajo la rotación,  alrededor del origen, de 
+
+a) $\theta=90°$
+
+b) $\theta=60°$
+
+c) $\theta=45°$
+
+### Álgebra de transformaciones lineales
+
+Al igual que en el caso de matrices, podemos definir las _mismas_ operaciones entre transformaciones lineales.
+
+Suponga que $\mathbf{T},\mathbf{S}:V\rightarrow W$, son transformaciones lineales
+
+#### Suma de transformaciones lineales
+
+Dados las dos transformaciones lineales en el mismo dominio y contradominio.
+\[
+(\mathbf{T}+\mathbf{S})(\mathtt{v}) :=\mathbf{T}(\mathtt{v}) + \mathbf{S}(\mathtt{v})
+\]
+
+#### Propiedades de la suma de transformaciones lineales
+
+Si $\mathbf{R},\mathbf{S},\mathbf{T}$ si $+$ es la suma de transformaciones lineales, entonces
+
+* $\mathbf{T}+\mathbf{S} = \mathbf{S} + \mathbf{T}$.
+
+* $(\mathbf{T} + \mathbf{S})+\mathbf{R} = \mathbf{T} + (\mathbf{S}+\mathbf{R})$.
+
+* $\mathbf{T}+\mathbf{0} = \mathbf{T}$.
+
+* Existe $-T : V \rightarrow W$, transformación lineal tal que $\mathbf{T}+(-\mathbf{T})=\mathbf{0}$.
+
+#### Multiplicación escalar de transformaciones lineales
+
+Sea $\mathbf{T}:V\rightarrow W$ y $c\in\mathbb{R}$ entonces definimos la transformación $\mathbf{M}:=c\mathbf{T}$ como 
+\[
+\mathbf{M}(\mathtt{v}) = c\cdot \mathbf{T}(\mathtt{v})
+\]
+
+#### Propiedades 
+
+* Para todo $c_1,c_2\in\mathbb{R}$ entonces $c_1\big(c_2 \mathbf{T}\big)=(c_1c_2)\mathbf{T}$.
+
+* Para todo $\mathbf{T}$ transformación lineal, $1\cdot \mathbf{T} = \mathbf{T}$.
+
+* Para todo $c_1,c_2\in\mathbb{R}$, $(c_1+c_2)\cdot \mathbf{T} = c_1\cdot \mathbf{T} + c_2\cdot \mathbf{T}$.
+
+* Para todo $\mathbf{T},\mathbf{S}$, $c\cdot(\mathbf{T}+\mathbf{S}) = c\cdot \mathbf{T} + c \cdot \mathbf{S}$.
+
+Esto implica que _el_ _conjunto_ _de_ _transformaciones_ _lineales_ _de_ $V$ _a_ $W$ es un **Espacio** **Vectorial**. A dicho espacio vectorial lo denotamos como 
+$\mathcal{L}(V;W)$.
+
+### Multiplicación de transformaciones lineales
+
+Al igual que con matrices, podemos definir la "multiplicación" de transformaciones lineales.
+
+Sea $\mathbf{T}:V\rightarrow W$ y $\mathbf{S}:W\rightarrow Z$ entonces definimos a la multiplicación como la transformación lineal $\mathbf{ST}:V\rightarrow Z$
+\begin{equation}
+ (ST)(\mathtt{v}) := S\big(T(\mathtt{v})\big)
+\end{equation}
+
+Es decir, la multiplicación de transformaciones corresponde con la _composición_ _de_ _funciones_.
+
+#### Propiedades de la multiplicación de transformaciones lineales
+
+* La transformación $\mathbf{P}=\mathbf{S}\mathbf{T}$ es líneal.
+  
+  **  Sea $\mathtt{v},\mathtt{u}\in V$, entonces 
+\[
+\mathbf{S}\mathbf{T}(\mathtt{v}+\mathtt{u}) = \mathbf{S}(\mathbf{T}(\mathtt{v}+\mathtt{u})) =\mathbf{S}\big(\mathbf{T}(\mathtt{v})+\mathbf{T}(\mathtt{u})\big) = \mathbf{S}(\mathbf{T}(\mathbf{v}))+\mathbf{S}(\mathbf{T}(\mathtt{u})) =\mathbf{ST}(\mathtt{v}) + \mathbf{ST}(\mathtt{u})
+\]
+
+Entonces se cumple la primera propiedad.
+
+  ** Sea $c$ un escalar y $\mathtt{v}\in V$ un vector. Similarmente se verifica que
+\[
+\mathbf{ST}(c\cdot \mathtt{v}) = \mathbf{S}\big(\mathbf{T}(c\cdot \mathtt{v})\big)=
+\mathbf{S}\big(c\mathbf{T}(\mathtt{v})\big)=c\mathbf{S}(\mathbf{T}(\mathtt{v})) = c\cdot \mathbf{ST}(\mathtt{v})
+\]
+
+#### Propiedades
+
+* Para todo escalar $c$, 
+
+\[
+c(\mathbf{T}\mathbf{S}) = \big(c\mathbf{T}\big)\mathbf{S}
+\]
+
+* Para todas transformaciones lineales
+
+\[
+(\mathbf{T}+\mathbf{S})\mathbf{R} = \mathbf{T}\mathbf{R} + \mathbf{S}\mathbf{R}
+\]
+\[
+\mathbf{R}(\mathbf{T}+\mathbf{S}) = \mathbf{R}\mathbf{T} + \mathbf{R}\mathbf{S}
+\]
+
+* Para todas las transformaciones lineales "pertinentes"
+
+\[
+(\mathbf{R}\mathbf{S})\mathbf{T} =\mathbf{R}(\mathbf{S}\mathbf{T}) =
+\]
+
+### Ejemplos
+
+Considere las siguientes transformaciones lineales $T_1,T_2,T_3$.
+\[
+\begin{array}{ccc}
+T_1(x_1,x_2) = (x_1-x_2,x_2) & T_2(x_1,x_2)=(x_1-x_2,x_2,x_1) & T_3(x_1,x_2)=(x_2,x_1-x_2,x_1+x_2)
+\end{array}
+\]
+Calcular 
+
+* $(T_2+T_3)(1,0)$
+
+* $(T_2+T_3)(1,1)$
+
+* $T_2 T_1(1,-1)$
+
+* $T_2 T_1(x_1,x_2)$
+
+* $T_3 T_1(x_1,x_2)$
+
+* $T_2 + T_3 (x_1,x_2)$
+
+* $\big[(T_2+T_3)T_1\big](x_1,x_2)$
+
+
+### Transformaciones invertibles
+
+<div style=background-color:#9DE2D5>
+
+Suponga que $T:V\rightarrow V$ es una transformación lineal. Decimos que 
+$\mathbf{T}$ es **invertible** si existe $T^{-1}:V\rightarrow V$ tal que
+\[
+TT^{-1} = I_V\quad \mbox{y}\quad T^{-1}T = I_V
+\]
+con $I_V:V\rightarrow V$ la transformación **identidad**.
+
+De la misma forma, si $\dim(V)=\dim(W)$, podemos definir que $T:V\rightarrow W$ es invertible si existe $T^{-1}:W \rightarrow V$ tal que
+\[
+T T^{-1}=I_W \quad\mbox{ y }\quad T^{-1}T=I_V
+\]
+</div>
+
+### Observación
+
+Si $T:V\rightarrow W$ es transformación lineal pero $\dim(V)\ne \dim(W)$ entonces $T$ **no** puede ser invertible.
+
 
 ### Núcleo (Espacio Nulo) e Imagen
 
@@ -129,8 +337,24 @@ Entonces $T_A$ es una transformación lineal.
 
  Se $T:V\rightarrow W$ es una transformación lineal, entonces el conjunto de vectores en $V$ que $T$ mandan a $\mathbf{0}$ se conoce como **núcleo** **de** $T$ (**kernel** **o** **espacio** **nulo**). Se denota por $N(T)$ o $Ker(T)$.
 
-El conjunto de todos los **vectores** **en** **W** que son envíados por $T$ desde $V$, es decir si $w\in W$ es tal que $\texttt{w}=T\texttt{v}$ para algún $\texttt{v}\in V$. Este subespacio se conoce como $Im(T)$ o $R(T)$.
 
+\[
+Ker(T) = \Bigg\{v\in V\,:\, Tv =\mathbf{0}_W\Bigg\}
+\]
+
+Si $V=\mathbb{R}^{n}$
+\[
+Ker(T)= \begin{Bmatrix} 
+\mathbf{\mathtt{x}}=\begin{pmatrix}x_1 \\ x_2 \\ ...\\ x_n \end{pmatrix}\in\mathbb{R}^n:\,\,T(\mathbf{\mathtt{x}})=\mathbf{0}_W
+\end{Bmatrix}
+\]
+El conjunto de todos los **vectores** **en** **W** que son envíados por $T$ desde $V$, es decir si $w\in W$ es tal que $\texttt{w}=T\texttt{v}$ para algún $\texttt{v}\in V$. Este subespacio se conoce como $Im(T)$ o $R(T)$.
+\begin{equation}
+  \begin{array}{cccc}
+    \mbox{Im}(T) & = & \Bigg\{ T(\mathtt{v}) : \mathtt{v}\in V \Bigg\} &= \\
+    \mbox{Im}(T) & = & \Bigg\{ w\in W : \exists \mathtt{v}\in V\,\,\mbox{tal que } T(\mathtt{v})=w \Bigg\} &
+  \end{array}
+\end{equation}
 
 
 ## Teorema
@@ -162,9 +386,9 @@ Si $T:V\rightarrow W$ es una transformación lineal desde un espacio vectorial $
 n = \dim(V) = rango(T) + nulidad(T)
 \]
 
-En particular si $A$ es una matriz $m\times n$ entonces la dimensión del espacio de soluciones de $A\texttt{x}=\texttt{0}$ es 
+En particular si $A$ es una matriz $n\times m$ entonces la dimensión del espacio de soluciones,  $\Big\{\mathtt{x}\in \mathbb{R}^m: A\texttt{x}=\texttt{0}\Big\}$ es 
 \[
-n-rango(A)
+m-rango(A)
 \]
 
 _Demostración_:
@@ -232,6 +456,27 @@ El **núcleo** de una matriz es igual al núcleo de la transformación $T_A$.
 
 4- Calcular el núcleo de la matriz $\begin{pmatrix} 1 & -1 \\ 1 & -1  \end{pmatrix}$-
 
+### Ejemplos
+
+@. Sea $T:\mathbb{R}^3 \rightarrow \mathbb{R}^4$ definida por
+\[
+T(x,y,z) = \begin{pmatrix} x +2y +3z \\ x +2z\\ 2x+y+z \\ x +y +z \end{pmatrix}
+\]
+Calcular una base para $Ker(T)$ y para $Im(T)$, calcular la nulidad(T) y $rango(T)$.
+
+
+@. Sea $T(x,y,z)=(2x,4x-y,2x+3y-z)$.
+ 
+ *  Calcular $Ker(T)$
+ 
+ * Concluir que $T$ es invertible.
+ 
+ * Encontrar una fórmula para $T^{-1}$.
+ 
+ * Encontrar una fórmula para $T^2$.
+ 
+
+
 ## Otros ejemplos de transformación lineal
 
 @. Sea $V=\mathbb{R}_n[x]$ el espacio de polinomios de grado $\leq n$.
@@ -276,14 +521,51 @@ T(0,1) =\frac{3}{2}T(1,2) + (-\frac{1}{2})T(3,4) = \frac{3}{2}(3,2,1) + (-\frac{
 \end{matrix}
 \]
 
+## Isomorfismos entre espacios vectoriales.
+
+**Definición** Sea $T$ una transformación lineal $T:V\rightarrow W$ decimos que es
+
+* *Inyectiva* o 1-1 si para todo $x,y\in V$, $x\ne y$ implica que $T(x)\ne T(y)$.
+
+* *Sobreyectiva* si **para todo** $w\in W$ existe $v\in V$ tal que 
+
+\[
+T(v)=w
+\]
+O dicho de otra forma $T(V)=W$.
+
+* *Biyectiva* Si $T$ es inyectiva y sobreyectiva.
+
+<div style=background-color:#DDF6D2>
+Sean $V$ y $W$ espacios vectoriales  y suponga que $T:V\rightarrow W$ es una transformación lineal **invertible**. Entonces, decimos que los espacios vectoriales $V$ y $W$ son **isomorfos**.
+
+Escribimos $V\cong W$ para expresar que los espacios son isomorfos. A cualquier transformación $T:V\rightarrow W$ que sea invertible diremos que es un **isomorfismo**.
+</div>
+
+
+### Proposición
+
+Si $T:V\rightarrow W$ es invertible, es decir es un **isomorfismo** entonces 
+
+* Si $\mathtt{v}_1,\mathtt{v}_2, \ldots, \mathtt{v}_n$ son linealmente independientes entonces $\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots, T(\mathtt{v}_n)\big\}$ es un conjunto de vectores linealmente independiente en $W$.
+
+* Si $\Big\{\mathtt{v}_1,\mathtt{v}_2, \ldots, \mathtt{v}_n\Big\}$ es un conjunto generador de $V$ entonces $\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots, T(\mathtt{v}_n)\big\}$ es un conjunto generador de $W$.
+
+* Si $\Big\{\mathtt{v}_1,\mathtt{v}_2, \ldots, \mathtt{v}_n\Big\}$ es una **base** de $V$ entonces $\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots, T(\mathtt{v}_n)\big\}$ es una **base** de $W$.
+
+
 ## Matriz asociada a una transformación lineal 
 
-Una transformación lineal $T$ de $\mathbb{R}^{n}$  a $\mathbb{R}^m$ es una transformación de la forma 
+Sean $V$ y $W$ espacios vectoriales. 
+Una _base_ _ordenada_ es un conjunto de vectores $\{\mathtt{v}_1, \mathtt{v}_2,\ldots, \mathtt{v}_n\big\}$ que forman cuyo orden es fijo.
+
+Suponga que una transformación lineal $T$ de $\mathbb{R}^{n}$  a $\mathbb{R}^m$ entonces afirmamos que si **fijamos** una base $\mathcal{B}$ en $\mathbb{R}^{n}$ y una base $\mathcal{D}$ en $\mathbb{R}^{m}$ entonces la transformación lineal se puede representar de la forma 
+
 \begin{equation}
- T \texttt{v} = A \cdot \texttt{v}                    
+ \big(T \mathtt{v}\big)_{\mathcal{D}} = A \cdot \big(\texttt{v}\big)_{\mathcal{B}}
 \end{equation}
 
-Sea $\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}$  una base de $V$ y $\mathcal{D}=\{w_1,w_2,\ldots, w_m\}$ es una base de $\mathbb{R}^{m}$, entonces
+Sea $\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}$  una base de $V$ y $\mathcal{D}=\{w_1,w_2,\ldots, w_m\}$ es una base de $\mathbb{R}^{m}$, además suponga que $\big( \mathtt{v} \big)_{\mathcal{B}} =(\alpha_1,\alpha_2,\ldots,\alpha_n)$ 
 \[
 \begin{array}{cc}
 \texttt{v} =& \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots + \alpha_n\texttt{e}_n,\\
@@ -324,7 +606,7 @@ T(\texttt{e}_n) =  \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn}  \end{pm
  y 
  
 \begin{equation}
-T(\mathtt{v}) = [T](\mathtt{v})_{\mathcal{B}}
+\big(T(\mathtt{v})\big)_{\mathcal{D}} = \big[T\big](\mathtt{v})_{\mathcal{B}}
 \end{equation}
 
 y
@@ -355,7 +637,22 @@ Dada una transformación lineal entre dos espacios vectoriales $T:V \rightarrow 
 
 ### Ejemplos
 
-#### Ejemplo 1.
+#### Ejemplo 1
+
+Considere a $T(x,y)=(y,-2x + 3y)$ en $\mathbb{R}^2$, con la base $\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2\}$ y $\mathcal{B}'=\{(1,1),(1,2)\}$.
+Calcular la matriz que representa a $T$, $\big[ T\big]_{\mathcal{C}}^{\mathcal{C}}$, $\big[ T\big]_{\mathcal{B}'}^{\mathcal{B}'}$ y $\big[ T\big]_{\mathcal{B}'}^{\mathcal{C}}$ 
+
+#### Ejemplo 2.
+Sea $A(x,y,z)=(x+2yz,-y,x+7z)$. 
+ 
+  * Determinar $[A]_{C}$ con $C$ la base caónica.
+  
+  * Determinar $[A]_{S}$ con $S=\Bigg\{\begin{pmatrix} 1 \\ 0 \\0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\1 \end{pmatrix}\Bigg\}$
+  
+  
+
+
+#### Ejemplo 3.
 
 Suponga que $A:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ dada por $A(x,y,z) = (x+2y+z,-y,x+7z)$. Sean $\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2, \mathtt{e}_3\}$ la base canónica de $\mathbb{R}^3$ y $\mathcal{B}'=\big\{(1,0,0),(1,1,0), (1,1,1)\big\}$
 
@@ -365,9 +662,6 @@ Suponga que $A:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ dada por $A(x,y,z) = (x+2y
 
 * Obtener la matriz asociada a $A$, con respecto a las bases $\mathcal{B}'$ y $\mathcal{B}'$.
 
-#### Ejemplo 2
-
-Considere a $T(x,y)=(y,-2x + 3y)$ en $\mathbb{R}^2$, con la base $\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2\}$ y $\mathcal{B}'=\{(1,1),(1,2)\}$.
 
 
 ### Transformaciones lineales y Cambios de base
@@ -437,81 +731,34 @@ Dos matrices $A,B\in \mathcal{M}^{n,n}$ se dice que son **similares** si existe 
 
 Entonces, si dos matrices representan a la misma transformación lineal entonces son similares.
 
+### Ejemplo 1
 
+Sea $T\begin{pmatrix} x\\ y \end{pmatrix} =\begin{pmatrix} 3x -y \\ x +3y \end{pmatrix}$ Sean $\mathcal{B}_1=\Bigg\{ \begin{pmatrix}1 \\1 \end{pmatrix},  \begin{pmatrix}1 \\ -1 \end{pmatrix}\Bigg\}$ y $\mathcal{B}'=\Bigg\{\begin{pmatrix}2 \\4 \end{pmatrix},\begin{pmatrix}3 \\1 \end{pmatrix}\Bigg\}$.
 
-#### Dilatación. 
+* Calcular la matriz asociada a $T$ en la base $\mathcal{B}$ (en dominio y contradominio).
 
-Si $V=\mathbb{R}^3$ $\vec{\texttt{x}}=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}$, la transformación $T(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix}$ es una transformación lineal. Para ver que es una transformación lineal 
+* Calcular la matriz cambio de base $Q$ de $\mathcal{B}$ a $\mathcal{B}'$
+
+* Calcular la matriz asociada a $T$ en la base $\mathcal{B}'$.
+
+### Ejemplo 2 
+Para $A=\begin{pmatrix} 1 & 1 & -1 \\ 2 & 0 & 1 \\ 1 & 1 & 0 \end{pmatrix}$ y $\beta=\Bigg\{\begin{pmatrix} -1 \\ 0 \\0 \end{pmatrix}, \begin{pmatrix} 2 \\ 1 \\0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\1 \end{pmatrix} \Bigg\}$ encontrar una matriz $[A]_\beta$ que sea similar a $A$. 
+
+Como $A$ es la matriz en la base canónica $\mathcal{C}=\{e_1=(1,0,0),e_2=(0,1,0),e_3=(0,0,1)\}$ entonces $[A]_{\mathcal{C}}=A$. 
 \[
-T(\vec{\texttt{x}} +\vec{\texttt{w}} ) =
-\begin{pmatrix} 3(x_1+w_1) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}=
-\begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix} +
-\begin{pmatrix} 3w_1 \\ 2w_2 \\ 3w_3 \end{pmatrix} =
-T(\vec{\texttt{x}}) + T(\vec{\texttt{w}} )
+Q_{\beta\rightarrow \mathcal{C}}=\begin{bmatrix} -1 & 2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1  \end{bmatrix}
 \]
-La primer propiedad se cumple.
-Si $\lambda \in \mathbb{R}$
-
+Y entonces $Q_{\mathcal{C}\rightarrow \beta}=Q^{-1}_{\beta\rightarrow\mathcal{C}}$
+Calculando la inversa de $Q$ obtenemos 
 \[
-T(\lambda\vec{\texttt{x}}) =
-\begin{pmatrix} 3(\lambda x_1) \\ 2(\lambda x_2) \\ 3(\lambda x_3) \end{pmatrix}=
-\begin{pmatrix} \lambda 3x_1 \\ \lambda 2x_2 \\ \lambda 3x_3 \end{pmatrix} =
-\lambda \begin{pmatrix} 3x_1 \\ 2x_2 
-\\ 3x_3 \end{pmatrix} =
-\lambda T(\vec{\texttt{x}}) 
+Q^{-1}=\begin{bmatrix} -1 & 2 & -1 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{bmatrix}
 \]
-
-Por lo que la transformación es lineal.
-
-Como se ha comentado, cualquier transformación lineal tiene una matriz asociada. En este caso, 
-
+Entonces
 \[
-[T]= \begin{bmatrix} T(\texttt{e}_1)\,\, |\,\, T(\texttt{e}_2) \,\, |\,\, T(\texttt{e}_3) \end{bmatrix}
+[A]_\beta = Q^{-1}AQ=\begin{bmatrix} 0 &  2 & 8 \\ -1 & 4 & 6 \\ 0 & -1 & -1 \end{bmatrix}
 \]
 
-En este caso $T(\texttt{e}_1)=\begin{pmatrix} 3(1) \\ 2(0) \\ 3(0)\end{pmatrix} = \begin{pmatrix} 3  \\ 0 \\ 0\end{pmatrix}$. $T(\texttt{e}_2)=\begin{pmatrix} 3(0) \\ 2(1) \\ 3(0)\end{pmatrix} = \begin{pmatrix} 0  \\ 2 \\ 0\end{pmatrix}$. $T(\texttt{e}_3)=\begin{pmatrix} 3(0) \\ 2(0) \\ 3(1)\end{pmatrix} = \begin{pmatrix} 0  \\ 0 \\ 3\end{pmatrix}$.
 
-
-\[
-[T]= \begin{bmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 &3   \end{bmatrix}
-\]
-
-En la base canónica, podemos verificar que la matriz asociada a la transformación lineal es la anterior, multiplicando la matriz por un vector $\vec{\texttt{x}}=\begin{pmatrix}  x_1 \\ x_2\\x_3\end{pmatrix}$
-
-\[
-[T]\cdot \vec{\texttt{x}} = 
-\begin{bmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 &3   \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3\end{bmatrix} = 
-\begin{bmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{bmatrix} = T(\vec{\texttt{x}})
-\]
-
-#### Ejemplo 2
-
-Si una de las entradas incluye a una función real no lineal, entonces la transformación no será lineal por ejemplo
-$S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\ 2x_2 \\ 3x_3 \end{pmatrix}$
-Si comparamos $S(\vec{\texttt{x}} +\vec{\texttt{w}})$ con $S(\vec{\texttt{x}}) + S(\vec{\texttt{w}})$
-\[
-S(\vec{\texttt{x}} +\vec{\texttt{w}}) = \begin{pmatrix} 3(x_1+w_1)^2 \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
-                                      = \begin{pmatrix} 3(x_1^{2}+2x_1w_1+w_1^2) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix} 
-                                      = \begin{pmatrix} 3x_1^{2}+6x_1w_1+3w_1^2 \\ 2x_2+2w_2   \\ 3x_3+3w_3 \end{pmatrix}
-\]
-
-Por otro lado
-\[
-S(\vec{\texttt{x}}) +S(\vec{\texttt{w}}) = \begin{pmatrix} 3x_1^2 \\ 2x_2 \\ 3x_3 \end{pmatrix} + 
-                                           \begin{pmatrix} 3w_1^2 \\ 2w_2 \\ 3w_3 \end{pmatrix} 
-                                      = \begin{pmatrix} 3x_1^{2}+3w_1^2 \\ 2x_2+ 2w_2 \\ 3x_3+3w_3 \end{pmatrix} 
-                                      \ne S(\vec{\texttt{x}} +\vec{\texttt{w}})
-\]
-pues $S(\vec{\texttt{x}} +\vec{\texttt{w}})$ tiene un término extra $6x_1w_1$.
-
-#### Reflexión respecto al eje $x$.
-
-Sea $V=\mathbb{R}^2$ $R_1(x,y) = (x,-y)$.  $R$ es una transformación lineal. Si $\texttt{v}_1 = \begin{pmatrix} x_1\\ y_1 \end{pmatrix}$ y $\texttt{v}_2 = \begin{pmatrix} x_2\\ y_2 \end{pmatrix}$ 
-\[
-R_1(\texttt{v}_1 + \texttt{v}_2) = (x_1+x_2, -(y_1+y_2)) = (x_1+x_2,-y_1-y_2) = (x_1,-y_1)+(x_2,-y_2) = R_1(\texttt{v}_1) + R_1(\texttt{v}_2)
-\]
-
-Similarmente $R(\lambda \vec{\texttt{v}}) = \lambda R(\vec{\texttt{v}})$
 
 
 # Diagonalización
@@ -526,7 +773,7 @@ En esta sección trabajaremos con transformaciones lineales $T:V\rightarrow V$. 
 \end{bmatrix}
 \end{equation}
 
-Esto implica que con respecto a esa base $\mathcal{B}'$, $(T\mathtt{v}_1)_{\mathcal{B}'}=\begin{pmatrix} \lambda_1 \\ 0 \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$, $(T\mathtt{v}_2)_{\mathcal{B}'} = \begin{pmatrix} 0 \\ \lambda_2 \\ \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$ ... $T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \vdots \\ \lambda_n \end{pmatrix}_{\mathcal{B}'}$ 
+Esto implica que con respecto a esa base $\mathcal{B}'$, $(T\mathtt{v}_1)_{\mathcal{B}'}=\begin{pmatrix} \lambda_1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$, $(T\mathtt{v}_2)_{\mathcal{B}'} = \begin{pmatrix} 0 \\ \lambda_2 \\ \vdots \\ 0 \end{pmatrix}_{\mathcal{B}'}$ ... $T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \\\vdots \\ \lambda_n \end{pmatrix}_{\mathcal{B}'}$ 
 
 Como estamos en las coordenadas con respecto a $\mathcal{B}'$ esto significa que 
 \begin{equation*}

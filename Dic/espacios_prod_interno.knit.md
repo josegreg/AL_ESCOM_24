@@ -4,12 +4,9 @@ author: "Álgebra lineal."
 header-includes:
  -\usepackage{amsmath}
 output: 
-  slidy_presentation:
-    number_sections: true
-    font_adjustment: -2
-    footer: Álgebra lineal, José Rodríguez Villarreal
-    math_method: "mathjax"
+  pdf_document
 ---
+
 # Espacios con producto interno
 
 Un <strong>producto interno</strong> en un espacio vectorial real $V$ es una función que a cada par de vectores 
@@ -309,7 +306,7 @@ w_1=v_1,
 \]
 
 \[
-w_2 = v_2 - P_{w_1}v_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle w_1,w_1 \rangle}w_1,
+w_2 = v_2 - P_{w_1}w_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle w_1,w_1 \rangle}w_1,
 \]
 
 \[
@@ -433,22 +430,17 @@ Calcula el ángulo entre los vectores $\mathtt{\vec{x}}$ y $\mathtt{\vec{y}}$.
 
 @. Calcula el ángulo entre los vectores
 
- * $\mathtt{u}_1=(1,1,1,1),\,\, \mathtt{u}_2=(1,1,1,-1)$. 
+ a) $\mathtt{u}_1=(1,1,1,1),\,\, \mathtt{u}_2=(1,1,1,-1)$. 
  
- * $\mathtt{u}_1=(1,1,1,1),\,\, \mathtt{u}_2=(1,-1,-1,-1)$. 
+ b) $\mathtt{u}_1=(1,1,1,1),\,\, \mathtt{u}_2=(1,-1,-1,-1)$. 
  
- * $\mathtt{u}_1=(1,\sqrt{2},1,0),\,\, \mathtt{u}_2=(0,1,\sqrt{2},1)$. 
+ c) $\mathtt{u}_1=(1,\sqrt{2},1,0),\,\, \mathtt{u}_2=(0,1,\sqrt{2},1)$. 
  
 @. Ejemplo. Sea $V=\mathbb{R}_2[x]$ y $f(x)=x^2 + x + 1$, $g(x)=3x+2$. 
 Calcular $\left \langle f,g \right\rangle$, $\|f\|$, $\|g\|$ y el ángulo entre los dos polinomios.
 
 @. Sea $V=\mathbb{R}^3$ y 
-\[
-\mathcal{B}=
-\begin{Bmatrix} 
-\mathtt{\vec{u}}_1 = \begin{pmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \\ 0  \end{pmatrix},  \mathtt{\vec{u}}_2 =\begin{pmatrix} 1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3}  \end{pmatrix},\,\, \mathtt{u}_3=\begin{pmatrix} -1/\sqrt{6} \\ -1/\sqrt{6} \\ 2/\sqrt{6}  \end{pmatrix}  
-\end{Bmatrix} 
-\]
+$\mathcal{B}=\begin{Bmatrix} \mathtt{\vec{u}}_1 = \begin{pmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \\ 0  \end{pmatrix},  \mathtt{\vec{u}}_2 =\begin{pmatrix} 1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3}  \end{pmatrix},\,\, \mathtt{u}_3=\begin{pmatrix} -1/\sqrt{6} \\ -1/\sqrt{6} \\ 2/\sqrt{6}  \end{pmatrix}  \end{Bmatrix} $
 
  * Demostrar que es una base ortonormal.
  
@@ -474,18 +466,11 @@ Calcular $\left \langle f,g \right\rangle$, $\|f\|$, $\|g\|$ y el ángulo entre 
  
  * Encontrar una base ortonormal de $\mathbb{R}^3$.
 
-@.  Sea 
-\[
-\mathcal{H}=\begin{Bmatrix} \mathtt{\vec{v}}_1 = \begin{pmatrix} 1  \\ -1 \\ 1  \end{pmatrix},\,\, \mathtt{\vec{v}}_2 = \begin{pmatrix} -2  \\ 3 \\ -1  \end{pmatrix},\,\, \mathtt{\vec{v}}_3 = \begin{pmatrix} -3  \\ 5 \\ -1 \end{pmatrix},\,\, \mathtt{\vec{v}}_4 = \begin{pmatrix} 1  \\ 2 \\ -4  \end{pmatrix} \end{Bmatrix}
-\]
+@.  Sea $\mathcal{H}=\begin{Bmatrix} \mathtt{\vec{v}}_1 = \begin{pmatrix} 1  \\ -1 \\ 1  \end{pmatrix},\,\, \mathtt{\vec{v}}_2 = \begin{pmatrix} -2  \\ 3 \\ -1  \end{pmatrix},\,\, \mathtt{\vec{v}}_3 = \begin{pmatrix} -3  \\ 5 \\ -1 \end{pmatrix},\,\, \mathtt{\vec{v}}_4 = \begin{pmatrix} 1  \\ 2 \\ -4  \end{pmatrix} \end{Bmatrix}$
  A partir de $\mathcal{H}$ construir una base ortonormal.
  
 @. Usar el proceso de Gram- Schmidt para obtener una base ortonormal de $\mathbb{R}^3$ a partir de 
-
 \[
 \mathcal{B} = \begin{Bmatrix} \begin{pmatrix} 1 \\ 2 \\3 \end{pmatrix}, \,\,  \begin{pmatrix} 4 \\ 5 \\0 \end{pmatrix},\,\,  \begin{pmatrix} 2 \\ 3 \\-1 \end{pmatrix}  \end{Bmatrix}
+
 \]
-
-@. Encontrar una base _ortonormal_ al subespacio generado por $\{\mathtt{v}_1=(1,1,-1),\mathtt{v}_2=(1,0,1)\}$
-
-@. Encontrar una base _ortonormal_ al subespacio generado por $\{\mathtt{v}_1=(1,2,1,0),\mathtt{v}_2=(1,2,3,1)\}$

@@ -457,30 +457,35 @@ Considere el siguiente ejemplo
 
 ## Ejemplo inicial
 
-Sea $I\subset \mathbb{R}$ un intervalo, $[a,b] \subset \mathbb{R}$. Considere a $V=\mathbf{F}(I;\mathbb{R})=\{f:I\rightarrow \mathbb{R}\,:\,f\mbox{ es una función}\}$. Entonces $C(I;\mathbb{R})=\{f:I\rightarrow \mathbb{R}\,:\,f\mbox{ es una función }\textbf{continua}\mbox{ en todo }x\in I\}$ y $\mathbb{R}[x]=\{f:I\rightarrow \mathbb{R}\,|\,f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0 \}$. 
+Sea $I\subset \mathbb{R}$ un intervalo, $[a,b]$ $\subset \mathbb{R}$ un interval. Ya hemos comentado que en el caso de funciones, tenemos varios espacios vectoriales, con el mismo tipo de suma y multiplicación escalar. Mas concretamente: 
+\[
+V=\mathbf{F}(I;\mathbb{R}) =\{f:I\rightarrow \mathbb{R}\,:\,f\mbox{ es una función}\}.  
+\]
+Entonces $C(I;\mathbb{R})=\{f:I\rightarrow \mathbb{R}\,:\,f\mbox{ es una función }\textbf{continua}\mbox{ en todo }x\in I\}$ y $\mathbb{R}[x]=\{f:I\rightarrow \mathbb{R}\,|\,f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0 \}$ son subconjuntos de $V$.
 
 En todos estos casos, son espacios vectoriales reales, con las _mismas_ operaciones.
 \[
 \mathbb{R}[x] \subset C(I;\mathbb{R}) \subset \mathbf{F}(I;\mathbb{R})
 \]
 
-En este caso decimos que son un **subespacio** **vectorial** de $V$.
+En este caso decimos que son **subespacios** **vectoriales** de $V$.
 
 ## Definición 
 
-Sea $(V,\oplus,\cdot)$ un espacio vectorial. Y sea $W$ un subconjunto de $V$, $W\subset V$, decimos que $W$ es un *subespacio* *vectorial* si $W$ es un espacio vectorial con las mismas operaciones $\oplus,\cdot$ restringidas a $W$.
+Sea $(V,\oplus,\cdot)$ un espacio vectorial. Y sea $W$ un subconjunto de $V$, $W\subset V$, decimos que $W$ es un *subespacio* *vectorial* si $W$ relativamente a las mismas operaciones definidas en $V$, también $W$ es un espacio vectorial.
 
 Para que $W$ sea un subespacio vectorial basta con verificar que $W$ es cerrado bajo la suma vectorial $\oplus$ y la multiplicación escalar $\cdot$.
 
 ### Proposición
 
-Sea $W$ un subconjunto no vacío de $V,$ se dice que $W$ es un \textbf{subespacio vectorial} de $V$, si y sólo si satisface las
+Sea $W$ un subconjunto no vacío de $V,$ se dice que $W$ es un \textbf{subespacio vectorial} de $V$, si y sólo si cumple con las
 siguientes propiedades:
 
- 1) Para todos $x$ y $y \in W,$ se tiene que $x+y \in W,$ es decir, $W$ es cerrado bajo la suma.
+ 1) $\vec{0}\in W$.
+
+ 2) Para todos $x$ y $y \in W,$ se tiene que $x+y \in W,$ es decir, $W$ es cerrado bajo la suma.
  
- 2) Para todo $x \in W$ y para todo $\lambda \in \Bbb{R}$, $\lambda
-  x \in W,$ es decir $W$ es cerrado bajo producto por escalar.
+ 3) Para todo $x \in W$ y para todo $\lambda \in \Bbb{R}$, $\lambda  x \in W,$ es decir $W$ es cerrado bajo producto por escalar.
 
 ## Ejemplo 1
 
@@ -515,7 +520,8 @@ Ahora veamos que si $x \in W$ y $\lambda \in \Bbb{R}$, $\lambda \cdot x \in W$, 
 
 ## Ejemplo 4
 
-Sea $\mathtt{v}_0 \in V$, con $\mathtt{v}_0\ne \mathbf{0}$. Considere al conjunto $W_{0}=\{\mathbf{v} = t\cdot\mathtt{v}_0  : t \in \mathbb{R}\}$. Es un subespacio vectorial propio de $V$, es decir $W_{0}\subset V$.
+Sea $\mathtt{u}_0 \in V$, con $\mathtt{u}_0\ne \mathbf{0}$. Considere al conjunto $W_{0}=\{\mathbf{v} = t\cdot\mathtt{u}_0  : t \in \mathbb{R}\}$. Es un subespacio vectorial propio de $V$, es decir $W_{0}\subset V$.
+
 
 ## Proposición
 
@@ -533,10 +539,17 @@ b) $L$ es una colección de índices es decir $L=\{1,2,\ldots,n \}$  tales que $
 
 Por ser subespacios vectoriales,  $\mathbf{0} \in W_1$ y $\mathbf{0} \in W_2$  entonces $\mathbf{0} \in W_1\cap W_2$
 
-Si $\mathbf{x},\mathbf{y}\in W_1\cap W_2$ entonces, $\mathbf{x}+\mathbf{y}\in W_1\cap W_2$.
+Si $\mathbf{x},\mathbf{y}\in W_1\cap W_2$ entonces, es fácil ver que, $\mathbf{x}+\mathbf{y}\in W_1\cap W_2$.
 
 Si $\alpha\in \mathbf{R}$ y $\mathbf{x}\in W_1\cap W_2$ entonces $\alpha\cdot \mathbf{x}\in W_1$ y  $\alpha\cdot \mathbf{x}\in W_2$ por que son subespacios. Entonces $\alpha\cdot \mathbf{x}\in W_1\cap W_2$.
 
+
+
+### Ejemplo 4.1 
+
+Sea $\Pi=\{(x,y,z)\in\mathbb{R}^3\,|\,\, x+y+z=3\}$, el plano con vector normal $\vec{n}=(1,1,1)$ **no** es un subespacio vectorial
+
+Por ejemplo tome $\vec{u}=(1,1,1)$ y $\vec{v}=(3,0,0)$, cada uno cumple con la ecuación del plano, por tanto $\vec{u}\in \Pi$ y $\vec{v}\in \Pi$. Pero $\vec{u}+\vec{v}\notin \Pi$
 
 ## Ejemplo 4{#sec:ej4}
 
@@ -588,6 +601,27 @@ $$
 $$
 es un **subespacio** **vectorial** de $\mathbb{R}^n$.
 
+Recuerde que el conjunto 
+
+\begin{equation}
+\begin{Bmatrix} 
+  \mathbf{x}\in\mathbb{R}^{n}:\, \mathbf{A}\vec{\mathbf{x}}=\vec{\mathbf{0}} 
+\end{Bmatrix}
+\end{equation}
+
+Es equivalente a 
+
+\begin{equation}
+\begin{array}{cccccc}
+     a_{11}x_{1}        & +a_{12}x_{2}    & \cdots  &+ a_{1n}x_{n}    & =       & 0       \\ 
+     a_{21}x_{1}        & +a_{22}x_{2}    & \cdots  &+ a_{2n}x_{n}    & =       & 0       \\
+    \vdots              & \vdots          & \vdots  & \vdots          & \vdots  &  \vdots      \\
+     a_{m-1,1x_{1}}     & +a_{n-1,2}x_{2} & \cdots  &+ a_{m-1,n}x_{n} & =       & 0      \\
+     a_{m,1}x_{1}       & +a_{n,2}x_{2}   & \cdots  &+ a_{m,j}x_n     & =       & 0
+\end{array}
+\end{equation}
+
+
 ## Ejemplo 6
 
 Sea $V=\mathcal{M}^{n,n}(\mathbb{R})$ el conjunto de matrices cuadradas de tamano $n$.
@@ -600,6 +634,11 @@ Dar una demostración o un contraejemplo.
 * ¿El conjunto de matrices simétricas es un subespacio vectorial?
 
 * ¿El conjunto de matrices invertibles es un subespacio vectorial?
+
+## Ejemplo 
+
+Si $V=\mathcal{M}^{n,n}$ es el espacio vectorial de matrices $n\times n$.
+Sea $S$ el conjunto de matrices simétricas $n\times n$, entonces $S$ es un subespacio vectorial
 
 
 ## Suma directa de subespacios
@@ -718,172 +757,38 @@ Sea $\mathbf{b}=(x,y)$ un vector arbitrario en $\mathbb{R}^2$ para revisar si $(
 \end{equation*}
 
 
+# Práctica
+
+Determinar si los conjuntos siguientes de $\mathbb{R}^3$ son subespacios, aplicando las propiedades de cerradura
+
+1.  $U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, | \,\, \vec{x} \mbox{ es de la forma }(a,0,0), a\in\mathbb{R}\}$.  
+
+2.  $U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, | \,\, \vec{x} \mbox{ es de la forma }(a,1,1), a\in\mathbb{R}\}$.  
+
+3. Todos los vectores de la forma $(x_1,x_2,x_3)$ con $x_2=x_1 + x_3$
+
+4. Todos los vectores de la forma $(x_1,x_2,x_3)$ con $x_2=x_1 + x_3 +1$
+
+5. Todas las matrices de la forma $\begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix}$
+
+6. Todas las matrices de la forma $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ con $a+d=0$
+
+Si $V=\mathbb{R}_3[x]$ es el conjunto de polinomios con grado igual o menor a 3.
+
+7. $\mathcal{U}$ el conjunto de polinomios con coeficientes enteros, es decir $p(x)\in \mathcal{U}$ si $p(x)=a_3x^3+a_2x^2+a_1x+a_0$ con $a_3,a_2,a_1,a_0$ enteros
+
+8. Si $V=\mathbb{R}_2[x]$, sea $S$ el conjunto de polinomios de la forma $ax^2 + bx$, ¿es $S$ un subespacio?
+
+9. Sea $S\subset \mathbb{R}^3$ el conjunto de vectores de la forma $(x,y,x+y)$
+
+10. Sea $S$ el conjunto de vectores $(x,y,z)\in\mathbb{R}^3$ con $x-y+2z=0$
+
+11. El conjunto de matrices de la forma $\begin{pmatrix}a & b \\ a & a+b \end{pmatrix}$, si $V=\mathcal{M}^{2,2}(\mathbb{R})$.
+
+12. El conjunto de vectores en $\mathbb{R}^3$ perpendiculares a $(4,1,3)$.
+
 ## Combinación lineal e independencia lineal
 
-**Definición**
-
-Sean $\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \in V$, decimos que el conjunto de vectores es **linealmente** **dependiente** si existe un conjunto de escalares $\alpha_1,\alpha_2,\ldots,\alpha_n \in \mathbb{R}$ tal que
- - No todos los escalaes $\alpha_i$ son simultaneamente cero
- - Y además
-
-\begin{equation}
-\alpha_1\cdot\mathbf{v}_1+ \alpha_2\cdot\mathbf{v}_2 + \ldots + \alpha_n\cdot\mathbf{v}_n = 0
-\end{equation}
-
-## Subespacios generados por conjuntos de vectores
-
-### Definición 
-
-Sea $A$ un subconjunto de $V$, no necesariamente un subespacio, un espacio vectorial, definimos al **subespacio** **generado** **por** $A$ como el conjunto de vectores que se expresan como combinaciones lineales de vectores que pertenecen a $A$. Para referirnos al subespacio generado por $A$, escribimos $\mathcal{G}(A)$
-
-
-$$
-\mathcal{g}(A) = \{\mathbf{v}\in V\,\, |\,\, v=\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots + \alpha_k \mathbf{v}_k \,:\, \mathbf{v}_i \in A, \,\, \alpha_i\in \mathbb{K}   \}
-$$
-
-Claramente $\mathcal{g}(A)$ es un subespacio de $V$. ¿Por qué?
-
-### Propiedades de los subespacios generados
- 
- Sea $V$ un espacio vectorial y $U\subset V$ subconjunto no vacío de $V$, el subespacio generado por $U$, entonces
- 
- 1) $\mathcal{g}(U)$ es un subespacio de $V$.
- 
- 2) $U\subset \mathcal{g}(U)$
- 
- 3) Si $W\subset V$ es un subespacio vectorial de $V$, tal que $U\subset W$ entonces $\mathcal{g}(U)\subseteq W$, es decir, $\mathcal{g}(U)$ es el subespacio _mínimo_ que contiene a $U$.
- 
- __Respuesta__
- 
- 1) Ya se vió por que es un subespacio.
- 
- 2) Si $v\in U$ entonces $1\cdot v$ es ua combinación lineal entonces $v\in \mathcal{g}(U)$, es decir $U\subset \mathcal{g}(U)$.
- 
- 3) Si $U \subseteq W$ las combinaciones lineales de vectores de $U$ pertenecen a $W$ es decir $\sum_{i=1}^k \alpha_i\mathbf{u}_i\in W$ pues $W$ es un subespacio. Pero entonces $\mathcal{g}(U)\subseteq W$
- 
-### Corolario
- 
- Si $A=\{v_1,v_2,\ldots,v_n\}$ entonces 
- \[
- \mathcal{g}(A) = \{\alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot \mathbf{v}_2 + \ldots + \alpha_n\cdot \mathbf{v}_n,\,\, \alpha_i\in\mathbb{K}\}
- \]
-
-#### Ejemplo 1
-
-Considere $V=\mathbb{R}^{2}[x]$ el espacio de polinomipos de grado $\le 2$ y $v_1(x)=x^{2}+1$, $v_2(x)=x^{2}-1$ y $v_3(x)=x^2 + x +1$. Sea $W=\mathcal{g}(v_1,v_2,v_3)$
-
-¿Cuál de los siguientes polinomios pertenecen a $W$?
-
-a) $p(x)=2x^{2}$
-
-b) $p(x)=5x^{2}+6x+5$
-
-c) $p(x)=x^3$
-
-d) $p(x)=1$
-
-_Respuesta_
-
-a) $2x^2\in W$ si existe una combinación lineal de $v_1,v_2,v_3$ tal que 
-$$
-2x^{2} = a\cdot v_1(x) + b\cdot v_2(x) + c\cdot v_3(x)
-$$
-
-$$
-\begin{array}{ccc}
-a(x^{2}+1) + b(x^2 -1) + c(x^2+x+1) & = & 2x^{2} \\
-(a+b+c) x^2 +cx + a-b+c & = & 2x ^2
-\end{array}
-$$
-
-Obtenemos el siguiente sistema de ecuaciones, comparando los coeficientes de los polinomios del lado izquierdo y lado derecho.
-
-$$
-\begin{array}{ccccccc}
-a & +& b & +& c & = & 2\\
-  &  &   &  & c & = & 0 \\
-a & -&b  & +&c  & = & 0
-\end{array}
-$$
-
-Resolviendo el sistema: $c=0,\, a=1,\, b=1$ 
-\[ 
-2x^{2}=1(x^{2}+1)+1(x^{2}-1)+0 v_3(x),
-\] 
-es decir $2x^2 \in \mathcal{g}(v_1,v_2,v_3)$.
-
-b) De la misma forma, obtenemos el siguiente sistema
-
-$$
-\begin{array}{ccccccc}
-a & +& b & +& c & = & 5\\
-  &  &   &  & c & = & 6 \\
-a & -&b  & +&c  & = & 5
-\end{array}
-$$
-
-Resolviendo el sistema: $c=6,\, a=-1,\, b=0$ por lo que $5x^{2}+6x+5$ es combinación lineal de los vectores
-\[
-5x^{2}+6x+5=-1(x^{2}+1)+0(x^{2}-1)+6 (x^{2}+x+1)$,
-\]
-es decir $5x^2 + 6x +5 \in \mathcal{g}(v_1,v_2,v_3)$.
-
-c) $x^{3} \notin \mathcal{g}(v_1,v_2,v_3)$. Pues ninguna combinación lineal de polinomios de 2do grado tendrá grado menor o igual a 2.
-
-d) De igual forma obtenemos el siguiente sistema
-
-$$
-\begin{array}{ccccccc}
-  a & +& b & +& c & = & 0\\
-    &  &   &  & c & = & 0 \\
-  a & -&b  & +&c  & = & 1
-\end{array}
-$$
-
-Resolviendo el sistema: $c=0,\, a=1/2,\, b=-1/2$ es decir $1 =\frac{1}{2}(x^{2}+1)-\frac{1}{2}(x^{2}-1)+ 0\cdot(x^{2}+x+1)$, es decir $1\in \mathcal{g}(v_1,v_2,v_3)$.
-
-#### Ejemplo 2
-
-Determinar si $(3,6,9)\in \mathcal{g}((1,4,6), (2,5,8))$.
-
-Se desea saber si 
-
-$$
-\begin{array}{ccc}
-\alpha\cdot \begin{pmatrix} 1\\ 4 \\ 6 \end{pmatrix} + \beta \cdot \begin{pmatrix} 2\\ 5 \\ 8 \end{pmatrix} & = & 
-\begin{pmatrix} 3\\ 6 \\ 9 \end{pmatrix}
-\end{array}
-$$
-
-\begin{equation*}
-\begin{array}{cccccc}
- &  \begin{bmatrix} 
-     1 & 2  & \bigm| & 3      \\ 
-     4 & 5  & \bigm| & 6      \\
-     6 & 8  & \bigm| & 9
-  \end{bmatrix}
- & \rightarrow & 
-\begin{bmatrix} 
-     1 & 2  & \bigm| & 3      \\ 
-     0 & -3 & \bigm| & -6      \\
-     0 & -4 & \bigm| & -9
-  \end{bmatrix}
- & \rightarrow &
-\begin{bmatrix} 
-     1 & 2  & \bigm| & 3      \\ 
-     0 & -3 & \bigm| & -6      \\
-     0 & 0  & \bigm| & -1
-  \end{bmatrix}
-\end{array}
-\end{equation*}
-
-
-Como el sistema no es compatible entonces $(3,6,9) \notin \mathcal{g}((1,4,6), (2,5,8))$.
-
-
-Un caso importante  de los subespacios generados es cuando el subespacio $\mathcal{g}(U)=V$, es decir el subespacio resulta ser **todo** el espacio vectorial $V$.
-
-## Dependencia lineal de vectores
 
 Los siguientes conceptos nos permiten describir cuando un vector "no depende" de otros. O dicho de otra forma, cuando un conjunto de generador de vectores será "mínimo".
 
@@ -963,7 +868,7 @@ $$
 \begin{pmatrix} 2\\ 5 \\ 3 \end{pmatrix} = 2 \cdot \begin{pmatrix} 1\\ 1 \\ 0 \end{pmatrix} +  3 \cdot \begin{pmatrix} 0\\ 1 \\ 1 \end{pmatrix} ¸
 $$
 
-# Independencia lineal
+## Independencia lineal
 
 Sea $S$ un conjunto no vacío de un espacio vectorial $V$ sobre $\mathbb{K}$. Se dice que el conjunto de vectores $S$ es **linealmente** **independiente** si ninguna combinación lineal de vectores de $S$ genera a $\{\mathbf{0}\}$ salvo la combinación lineal _trivial_.
 Es decir, la única forma de expresar al $\mathbf{0}$ con vectores de $S$ es cuando $\alpha_i=0$. También significa que ninguno de los vectores de $S$ se puede escribir como combinación lineal no nula, de los otros vectores.
@@ -1049,6 +954,188 @@ Luego los vectores son linealmente independientes.
 #### Proposición
 
  Si $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n+1}$ es un conjunto de vectores linealmente independientes entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n}$ también lo es.
+
+#### Demostración
+
+Suponga no son linealmente independientes, es decir que existe una combinación lineal de $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\}$, 
+\[
+c_1\mathbf{x}_1+c_2\mathbf{x}_2+\ldots +c_n\mathbf{x}_n = \mathbf{0}
+\] 
+con $c_1,c_2,\ldots,c_n\in\mathbb{R}$ tal que no todos son cero. Entonces también existe una combinación lineal de $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n,\mathbf{x}_{n+1}\}$
+\[
+c_1\mathbf{x}_1+c_2\mathbf{x}_2+\ldots +c_n\mathbf{x}_n + 0\mathbf{x}_{n+1} = \mathbf{0}
+\]
+tal que no todos los escalares en la combinación lineal son cero. Es decir $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n,\mathbf{x}_{n+1}\}$ tampoco es un conjunto de vectores linealmente independiente.
+
+
+### Ejemplos
+
+a) Determinar si los vectores $(2,-1,4),(1,0,2)$ y $(3,-1,5)$ son linealmente independientes.
+
+b) Sea $V=\mathbb{R}_2[x]$ el espacio de polinomios con grado $\leq 2$. Sean $p_1(x)=x-2x^2$, $p_2(x)=x^2-4x$ y $p_3(x)=-7x+8x^2$, determinar si los polinomios $p_1$, $p_2$ y $p_3$ son l.i. o linealmente independientes
+
+c) Sea $V=\mathcal{M}^{2,2}(\mathbb{R})$ y considere el siguiente conjunto
+\[
+\begin{pmatrix} 1 & -1 \\ 0 & 6 \end{pmatrix}, 
+\begin{pmatrix} -1 & 0 \\ 3 & 1 \end{pmatrix},
+\begin{pmatrix} 1 & 1 \\ -1 & 2 \end{pmatrix},
+\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+\]
+son linealmente independientes.
+
+d) ¿Para qué valores de $c\in\mathbb{R}$, $(2,3,1),$ $(1,-1,2)$ y $(7,3,c)$ son linealmente independientes.
+
+## Subespacios generados por conjuntos de vectores
+
+Como comentamos previamente, si $A$ es un subconjunto de vectores $V$, no necesariamente un subespacio vectorial, definimos al **subespacio** **generado** **por** $A$ como el conjunto de vectores dados por combinaciones lineales de vectores que pertenecen a $A$. Para referirnos al subespacio generado por $A$, escribimos $\mathcal{S}(A)$
+
+
+$$
+\mathcal{S}(A) = \{\mathbf{v}\in V\,\, |\,\, v=\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots + \alpha_k \mathbf{v}_k \,:\, \mathbf{v}_i \in A, \,\, \alpha_i\in \mathbb{K}   \}
+$$
+
+Claramente $\mathcal{S}(A)$ es un subespacio de $V$. ¿Por qué?
+
+### Propiedades de los subespacios generados
+ 
+ Sea $V$ un espacio vectorial y $U\subset V$ subconjunto no vacío de $V$, el subespacio generado por $U$, entonces
+ 
+ 1) $\mathcal{S}(U)$ es un subespacio de $V$.
+ 
+ 2) $U\subset \mathcal{S}(U)$
+ 
+ 3) Si $W\subset V$ es un subespacio vectorial de $V$, tal que $U\subset W$ entonces $\mathcal{S}(U)\subseteq W$, es decir, $\mathcal{S}(U)$ es el subespacio _mínimo_ que contiene a $U$.
+ 
+ __Respuesta__
+ 
+ 1) Ya se vió por que es un subespacio.
+ 
+ 2) Si $v\in U$ entonces $1\cdot v$ es ua combinación lineal entonces $v\in \mathcal{S}(U)$, es decir $U\subset \mathcal{S}(U)$.
+ 
+ 3) Si $U \subseteq W$ las combinaciones lineales de vectores de $U$ pertenecen a $W$ es decir $\sum_{i=1}^k \alpha_i\mathbf{u}_i\in W$ pues $W$ es un subespacio. Pero entonces $\mathcal{S}(U)\subseteq W$
+ 
+### Corolario
+ 
+ Si $A=\{v_1,v_2,\ldots,v_n\}$ entonces 
+ \[
+ \mathcal{S}(A) = \{\alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot \mathbf{v}_2 + \ldots + \alpha_n\cdot \mathbf{v}_n,\,\, \alpha_i\in\mathbb{K}\}
+ \]
+
+#### Ejemplo 1
+
+Considere $V=\mathbb{R}^{2}[x]$ el espacio de polinomipos de grado $\le 2$ y $v_1(x)=x^{2}+1$, $v_2(x)=x^{2}-1$ y $v_3(x)=x^2 + x +1$. Sea $W=\mathcal{S}(v_1,v_2,v_3)$
+
+¿Cuál de los siguientes polinomios pertenecen a $W$?
+
+a) $p(x)=2x^{2}$
+
+b) $p(x)=5x^{2}+6x+5$
+
+c) $p(x)=x^3$
+
+d) $p(x)=1$
+
+_Respuesta_
+
+a) $2x^2\in W$ si existe una combinación lineal de $v_1,v_2,v_3$ tal que 
+$$
+2x^{2} = a\cdot v_1(x) + b\cdot v_2(x) + c\cdot v_3(x)
+$$
+
+$$
+\begin{array}{ccc}
+a(x^{2}+1) + b(x^2 -1) + c(x^2+x+1) & = & 2x^{2} \\
+(a+b+c) x^2 +cx + a-b+c & = & 2x ^2
+\end{array}
+$$
+
+Obtenemos el siguiente sistema de ecuaciones, comparando los coeficientes de los polinomios del lado izquierdo y lado derecho.
+
+$$
+\begin{array}{ccccccc}
+a & +& b & +& c & = & 2\\
+  &  &   &  & c & = & 0 \\
+a & -&b  & +&c  & = & 0
+\end{array}
+$$
+
+Resolviendo el sistema: $c=0,\, a=1,\, b=1$ 
+\[ 
+2x^{2}=1(x^{2}+1)+1(x^{2}-1)+0 v_3(x),
+\] 
+es decir $2x^2 \in \mathcal{g}(v_1,v_2,v_3)$.
+
+b) De la misma forma, obtenemos el siguiente sistema
+
+$$
+\begin{array}{ccccccc}
+a & +& b & +& c & = & 5\\
+  &  &   &  & c & = & 6 \\
+a & -&b  & +&c  & = & 5
+\end{array}
+$$
+
+Resolviendo el sistema: $c=6,\, a=-1,\, b=0$ por lo que $5x^{2}+6x+5$ es combinación lineal de los vectores
+\[
+5x^{2}+6x+5=-1(x^{2}+1)+0(x^{2}-1)+6 (x^{2}+x+1)$,
+\]
+es decir $5x^2 + 6x +5 \in \mathcal{g}(v_1,v_2,v_3)$.
+
+c) $x^{3} \notin \mathcal{g}(v_1,v_2,v_3)$. Pues ninguna combinación lineal de polinomios de 2do grado tendrá grado menor o igual a 2.
+
+d) De igual forma obtenemos el siguiente sistema
+
+$$
+\begin{array}{ccccccc}
+  a & +& b & +& c & = & 0\\
+    &  &   &  & c & = & 0 \\
+  a & -&b  & +&c  & = & 1
+\end{array}
+$$
+
+Resolviendo el sistema: $c=0,\, a=1/2,\, b=-1/2$ es decir $1 =\frac{1}{2}(x^{2}+1)-\frac{1}{2}(x^{2}-1)+ 0\cdot(x^{2}+x+1)$, es decir $1\in \mathcal{g}(v_1,v_2,v_3)$.
+
+#### Ejemplo 2
+
+Determinar si $(3,6,9)\in \mathcal{S}((1,4,6), (2,5,8))$.
+
+Se desea saber si 
+
+$$
+\begin{array}{ccc}
+\alpha\cdot \begin{pmatrix} 1\\ 4 \\ 6 \end{pmatrix} + \beta \cdot \begin{pmatrix} 2\\ 5 \\ 8 \end{pmatrix} & = & 
+\begin{pmatrix} 3\\ 6 \\ 9 \end{pmatrix}
+\end{array}
+$$
+
+\begin{equation*}
+\begin{array}{cccccc}
+ &  \begin{bmatrix} 
+     1 & 2  & \bigm| & 3      \\ 
+     4 & 5  & \bigm| & 6      \\
+     6 & 8  & \bigm| & 9
+  \end{bmatrix}
+ & \rightarrow & 
+\begin{bmatrix} 
+     1 & 2  & \bigm| & 3      \\ 
+     0 & -3 & \bigm| & -6      \\
+     0 & -4 & \bigm| & -9
+  \end{bmatrix}
+ & \rightarrow &
+\begin{bmatrix} 
+     1 & 2  & \bigm| & 3      \\ 
+     0 & -3 & \bigm| & -6      \\
+     0 & 0  & \bigm| & -1
+  \end{bmatrix}
+\end{array}
+\end{equation*}
+
+
+Como el sistema no es compatible entonces $(3,6,9) \notin \mathcal{S}((1,4,6), (2,5,8))$.
+
+
+Un caso importante  de los subespacios generados es cuando el subespacio $\mathcal{g}(U)=V$, es decir el subespacio resulta ser **todo** el espacio vectorial $V$.
+
  
 ### Teorema
 
@@ -1322,6 +1409,18 @@ Es decir, $c_3=z+3x$, $c_2=y+2x + z+ 3x = 5x + y +z$ y $c_1= 12x + 2y + 3z$.
 Por lo que el sistema siempre tiene solución y cualquier vector es combinación lineal de los 3 vectores, es decir, $\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}$ es un conjunto generador.
 Y por tanto $\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}$ forma una base de $\mathbb{R}^{3}$.
 
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong> Sea $V$ un espacio vectorial y $\mathcal{B}=\{b_1,b_2,\ldots,b_n\}\subset V$. Las siguientes condiciones son equivalentes
+
+*  $\mathcal{B}$ es una _base_ de $V$.
+
+* $\mathcal{B}$ es un conjunto generador _mínimo_ de $V$.
+
+* $\mathcal{B}$ es un conjunto de vectores linealmente independiente, _maximal_ 
+
+</div>
+
+Un conjunto de vectores $\mathcal{B}$ linealmente independiente es _maximal_ en $V$ si para todo conjunto linealmente independiente $\mathcal{A}$ entonces $\#A \leq \#B$
 
 ## Espacio vectorial finito-dimensional
 
@@ -1496,6 +1595,29 @@ Considere a $S$ como $U=\Bigg\{\begin{pmatrix} 1 \\ -2\\0 \end{pmatrix},\begin{p
 
 * Encontrar las coordenadas de $(1,1,1)$ con respecto a la base 
 
+### El Wronskiano
+
+Sea $V$ un espacio vectorial de funciones de variable real, suponga que $\mathcal{U}=\{f_1,f_2,\ldots, f_n\}$ funciones $n-1$ veces diferenciables, definimos al _Wronskiano_ como 
+
+$$
+W(x) =\begin{pmatrix} 
+  f_1(x)       & f_2(x) & \ldots & f_n(x)  \\
+  f'_1(x)      & f'_2(x) & \ldots & f'_n(x)  \\
+  f^{(2)}_1(x) & f^{(2)}_2(x) & \ldots & f^{(2)}_n(x)  \\
+  \vdots       &   \vdots     &  \ldots & \vdots \\
+  f_1^{(n-1)}(x)& f_2^{(n-1)}(x) & \ldots & f_n^{(n-1)}(x)
+\end{pmatrix}
+$$
+
+Si existe un punto $x=x_0$ tal que $W(x_0)$ es invertible entonces $\mathcal{U}$ es linealmente independiente.
+
+### Ejemplo
+
+Sea $V=\mathbb{R}_n[x]$ el espacio de polinomios con grado $f\leq n$ 
+Demuestre que  $\{1,x,x^2,\ldots, x^{n}$ es un conjunto linealmente independiente.
+
+
+
 
 # Dimensión de subespacios vectoriales 
 
@@ -1550,7 +1672,7 @@ Para ver 3) observe que si $\dim(M) = \dim(V) = n$ entonces $\mathcal{B}_M=\{w_1
 
 ## Teorema de expansión
 
-Si $V$ es un espacio vectorial finito dimensional, $\dim(V)=n$ y $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ es una lista de vectores linealmente independientes en $V$ y $m\leq n$ entonces $V$ tiene una base $\mathcal{B}_V$ tal que $\mathcal{B}_V=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{x}_{m+1},\mathbf{x}_{m+2},\ldots,\mathbf{x}_n\}$.
+Si $V$ es un espacio vectorial finito dimensional, $\dim(V)=n$ y $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ es una lista de vectores linealmente independientes en $V$, $m\leq n$ entonces $V$ tiene una base $\mathcal{B}_V$ tal que $\mathcal{B}_V=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{x}_{m+1},\mathbf{x}_{m+2},\ldots,\mathbf{x}_n\}$.
 
 Dicho de otra forma, todo conjunto de vectores linealmente independientes es una base o esta contenido en una base.
 
@@ -1559,8 +1681,35 @@ Suponga que $\dim(V) = n$ y $m=n$, entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\m
 
 Si $m<n$ entonces $\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m$ no puede generar a $V$, sea $\mathbf{y}_{m+1}\notin\mathcal{G}(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\})$ y por el lema $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{y}_{m+1}\}$ es linealmente independiente. Si $m+1<n$ entonces  repetimos el nuevo argumento con los $n+1$ vectores. Tras añadir $m-n$ vectores $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{y}_{m+1}\ldots,\mathbf{y}_{m + n-m}\}$
 
+
+
+<div style="background-color:#FFE9B1">
+<strong>Lema </strong>
+
+Suponga que los vectores $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n\}$ son linealmente independientes y que $\vec{v}$ no es combinación lineal de $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n\}$ entonces $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n, \vec{v}\}$ son linealmente independientes
+
+</div>
+
+### Ejemplos
+
+Para cada uno de los conjuntos, i) probar que son linealmente independientes, ii) extender el conjunto a una base.
+
+* $\mathcal{U}=\{(1,2,3)\}$ en $\mathbb{R}^3$
+
+* $\{(1,2,3), \,(1,2,0)\}$ para $\mathbb{R}^3$
+
+* $\{(1,1,0,0),\,(0,1,1,0)\}$ para $\mathbb{R}^4$
+
+
 # Ejemplos
 
+Determinar si el siguiente conjunto forma una base para $V$
+
+* $V= \mathbb{R}^2$, $U=\{\begin{pmatrix} 1 \\ 4\end{pmatrix}, \begin{pmatrix} 2 \\ 3\end{pmatrix}\}$
+
+* $V=\mathbb{R}^3$, $U=\Big\{(1,2,3), (4,5,6), (7,8,9)\Big\}$
+
+* $V=\mathcal{M}^{2,2}$, $U=\Big\ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix},\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}, \Big\}$
 
 ### Ejemplo
 
@@ -1766,19 +1915,6 @@ Encontrar la dimensión del siguiente subespacio de $M^{2,2}(\mathbb{R})$.
 W=\Bigg\{\begin{pmatrix} a & b \\c & d \end{pmatrix}\in M^{2,2}(\mathbb{R}) |\, a=d ,b=-c \Bigg\}
 \]
 
-# Rango de un subespacio generado
-
-Sea $A$ una matriz, que se compone por vectores columna, definimos al _rango_ de una matriz como el número de vectores columna que son linealmente independientes
-
-Suponga que $v_1,v_2,\ldots,v_m$ son vectores de un e.v. $V$, sea $A=[\mathtt{v}_1|\mathtt{v}_2|\ldots|\mathtt{v}_m]$. Entonces $\dim\{\mathcal{G}(\{\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_m\})\}=\mbox{Rango}(A)$.
-
-<div style="background-color:#FFE9B1">
-<strong>Definición</strong>
-
-El **rango** **de** **un** **conjunto** **de** **vectores** $K=\{v_1,v_2\ldots, v_n\}$ es el **mayor** número de vectores que son **linealmente** **independientes**
-
-</div>
-
 
 
 # Coordenadas de un vector respecto a una base
@@ -1963,3 +2099,16 @@ $B=\{(0,-2,3),(0,1,1),(1,1,0)\}$ y $C=\{(0,-1,1),(0,3,0),(1,-1,1)\}$.
 * Si $[v]_{B}=(-1,4,1)$ encontrar $[v]_{\mathcal{C}}$
 
 
+
+# Rango de un subespacio generado
+
+Sea $A$ una matriz, que se compone por vectores columna, definimos al _rango_ de una matriz como el número de vectores columna que son linealmente independientes
+
+Suponga que $v_1,v_2,\ldots,v_m$ son vectores de un e.v. $V$, sea $A=[\mathtt{v}_1|\mathtt{v}_2|\ldots|\mathtt{v}_m]$. Entonces $\dim\{\mathcal{G}(\{\mathtt{v}_1,\mathtt{v}_2,\ldots, \mathtt{v}_m\})\}=\mbox{Rango}(A)$.
+
+<div style="background-color:#FFE9B1">
+<strong>Definición</strong>
+
+El **rango** **de** **un** **conjunto** **de** **vectores** $K=\{v_1,v_2\ldots, v_n\}$ es el **mayor** número de vectores que son **linealmente** **independientes**
+
+</div>

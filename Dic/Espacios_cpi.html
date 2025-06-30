@@ -425,7 +425,31 @@ V\)</span>.</p>
 si y sólo si <span class="math inline">\(\mathbf{v}=\mathbf{0}\)</span>.</p>
 <div style="background-color:#FFE9B1">
 <p><strong>Definición</strong> Un espacio vectorial <span class="math inline">\(V\)</span> en el que hay definido un producto
-interno se denomina <strong>espacio con producto interno</strong>.</p>
+interno se denomina <strong>espacio (vectorial real) con producto
+interno</strong>.</p>
+</div>
+<p>Si por el contrario, tenemos un espacio vectorial complejo, es decir
+<span class="math inline">\(\mathbb{K}=\mathbb{C}\)</span>, un
+<strong>producto interno</strong> <span class="math inline">\(V\)</span>
+es una función que a cada par de vectores <span class="math inline">\(\mathbf{u}\)</span> y <span class="math inline">\(\mathbf{v}\)</span> en <span class="math inline">\(V\)</span>, le asigna un número
+<strong>complejo</strong> denotado por <span class="math inline">\(\langle \mathbf{u}, \mathbf{v}\rangle\)</span>.
+Esta función satisface las siguientes propiedades: si <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span> y <span class="math inline">\(\mathbf{w}\)</span> son vectores y <span class="math inline">\(c\)</span> es un escalar, entonces</p>
+<p><span class="math inline">\(a)\)</span> <span class="math inline">\(\langle \mathbf{v}, \mathbf{u}\rangle =
+\overline{\langle \mathbf{u}, \mathbf{v}\rangle}\)</span>.</p>
+<p><span class="math inline">\(b)\)</span> <span class="math inline">\(\langle \mathbf{u},
+\mathbf{v}+\mathbf{w}\rangle  = \langle \mathbf{u}, \mathbf{v}\rangle +
+\langle \mathbf{u}, \mathbf{w}\rangle\)</span>.</p>
+<p><span class="math inline">\(c)\)</span> <span class="math inline">\(\langle c\mathbf{u}, \mathbf{v}\rangle = c\langle
+\mathbf{u}, \mathbf{v}\rangle\)</span></p>
+<p><span class="math inline">\(d)\)</span> <span class="math inline">\(\langle \mathbf{v}, \mathbf{v}\rangle \geq
+0\)</span>, <span class="math inline">\(\forall\,\, \mathbf{v}\in
+V\)</span>.</p>
+<p><span class="math inline">\(e)\)</span> <span class="math inline">\(\langle \mathbf{v}, \mathbf{v}\rangle = 0\)</span>
+si y sólo si <span class="math inline">\(\mathbf{v}=\mathbf{0}\)</span>.</p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong> Un espacio vectorial <span class="math inline">\(V\)</span> en el que hay definido un producto
+interno se denomina <strong>espacio (vectorial complejo) con producto
+interno</strong>.</p>
 </div>
 <h2 id="ejemplo-1">1.1 Ejemplo 1</h2>
 <p>Demuestre que en <span class="math inline">\(\mathbb{R}^n\)</span> el
@@ -443,7 +467,7 @@ real <span class="math display">\[
 <p>Mostrar que en <span class="math inline">\(V=\mathbb{R}_3[x]\)</span>, la siguiente función
 <span class="math inline">\(\langle , \rangle:V\times V \rightarrow
 \mathbb{R}\)</span> <span class="math inline">\(\langle p,
-q\rangle=\int_0^1p(s)q(s)ds\)</span> es un producto interno.</p>
+q\rangle=\int_{-1}^1p(s)q(s)ds\)</span> es un producto interno.</p>
 <h2 id="ejemplo-4">1.4 Ejemplo 4</h2>
 <p>Mostrar que en <span class="math inline">\(V=\mathcal{M}^{n,n}(\mathbb{R})\)</span>, <span class="math inline">\(\langle A,B \rangle = tr(AB^{T})\)</span>. <span class="math display">\[
   tr(AB^{T}) = \sum_{i=1}^n\sum_{j=1}^na_{ij}b_{ij}
@@ -467,7 +491,7 @@ se define como <span class="math display">\[\begin{equation}
 <ol style="list-style-type: lower-alpha">
 <li><p>Para todo <span class="math inline">\(\mathtt{x}\in V\)</span>,
 si <span class="math inline">\(\|\mathtt{x}\|= \mathbf{0}
-\Leftrightarrow \mathtt{x}=\mathbf{0}\)</span>.</p></li>
+\Leftrightarrow \mathtt{x}=\mathbf{0}\)</span>. Si <span class="math inline">\(x\ne \mathbf{0}\)</span> entonces <span class="math inline">\(\|\mathtt{x}\| &gt; 0\)</span></p></li>
 <li><p>Para todo <span class="math inline">\(c\in \mathbb{R}\)</span> y
 <span class="math inline">\(\mathtt{x}\in V\)</span> <span class="math display">\[
 \|c\cdot \mathtt{x}\| = |c|\|\mathtt{x}\|
@@ -590,7 +614,31 @@ por <span class="math display">\[
 \alpha_j = \frac{\langle
 \mathbf{v},\mathbf{v}_j  \rangle}{\|\mathbf{v}_j\|^2}
 \]</span></p>
-<h3 id="ejemplo-de-bases-ortogonales-y-ortonormales">1.9.3 Ejemplo de
+<h3 id="complemento-ortogonal">1.9.3 Complemento ortogonal</h3>
+<p>Sea <span class="math inline">\(U\)</span> un conjunto de vectores en
+<span class="math inline">\(V\)</span>, un espacio con producto interno.
+Definimos al complemento ortogonal de <span class="math inline">\(U\)</span> como</p>
+<p><span class="math display">\[\begin{equation}
+U^{\perp} =\big\{ \mathtt{v}\in V\,\, \left\langle \mathtt{v},
+\mathtt{u}\right\rangle=0,\mbox{ para todo }u\in U\big\}
+\end{equation}\]</span></p>
+<ul>
+<li><p>Proposición.</p></li>
+<li><p><span class="math inline">\(U^{\perp}\)</span> es un subespacio
+vectorial.</p></li>
+<li><p>Si <span class="math inline">\(U\)</span> es un subespacio
+vectorial entonces</p></li>
+</ul>
+<p><span class="math display">\[
+V = U \bigoplus U^{\perp}
+\]</span></p>
+<h2 id="desigualdad-de-bessel">1.10 Desigualdad de Bessel</h2>
+<p>Si <span class="math inline">\(U=\{\mathtt{v}_1,\mathtt{v}_2,\ldots,
+\mathtt{v}_k\}\)</span> son ortogonales y <span class="math inline">\(\mathtt{v}\in V\)</span> entonces <span class="math display">\[
+\sum_{i=1}^{k}\frac{|\left\langle \mathtt{v}, \mathtt{v}_i
+\right\rangle|^2}{\|\mathtt{v}_i\|^2} \leq \|\mathtt{v}\|^2
+\]</span></p>
+<h3 id="ejemplo-de-bases-ortogonales-y-ortonormales">1.10.1 Ejemplo de
 bases ortogonales y ortonormales</h3>
 <p>Sea <span class="math inline">\(V=\mathbb{R}^{3}\)</span> y</p>
 <p><span class="math display">\[
@@ -629,7 +677,7 @@ vectores linealmente independientes, por tanto forman una base de <span class="m
 \end{pmatrix}               
 \end{array}
 \]</span></p>
-<h2 id="proyección-ortogonal-sobre-un-vector">1.10 Proyección ortogonal
+<h2 id="proyección-ortogonal-sobre-un-vector">1.11 Proyección ortogonal
 sobre un vector</h2>
 <p>Si <span class="math inline">\(w\)</span> es un vector definimos la
 <em>proyección</em> <em>ortogonal</em> de <span class="math inline">\(\mathbf{v}\)</span> sobre <span class="math inline">\(\mathbf{w}\)</span> como <span class="math display">\[
@@ -640,7 +688,7 @@ P_w\mathbf{v}= \frac{\langle \mathbf{v},
 <img src="data:image/png;base64,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6a233vryl79sJ+0LOHjwoJ2xNPrhD3/oLvnEE0/YmXfeeWfha961a9f8nxteZS+O16d2ux19oWffOH8ECGAcRbkwWEgmY3f9dqaaZPrJT35y66232gZo69atF1544bp1666//vqXX37ZX25u7sSJE+6SLpkc9zWPmExVvjhe/ywpLZ/8IkZ2m/sjQADjKOqrX/2q3VksTiY7tjOrJNN1111nn12dXcZfeiULyfTQQw/9Y97jjz/+n//858033/SXWMRdcnEyua95xGSamJhQ+PXSEvZVGb+IkX3j/BEgINRx3Ldv3969e/M8t48PPPCAO/n666/v2bPn7rvv/tWvfnX48GF3MlBDJNPBgwf/by2ujutlIZmef/55f6o3d8nCk0mTbZhs2+QXMbJvnD8CBIQ6jo8++uh3v/td+++0bt26Bx980J08evToli1bNm7ceMcddxw5csSdDNTyZNq5c6edWSWZRjdiMn3lK1+xM1Emk4m70LNvnD8CBAQ8jrZDcq9Z8Oc//9mfmpu7+uqr43gY1de//nW7apZGfj03d8MNN9gZnWQ644wz7JL/+te//Hpu7pOf/KSdiTWZbK4iLvTsG+ePAAFhj+PPf/5z+x910UUXnTx50pbPPffceeed9/bbb7vPBu2WW26xq3b99de75bPPPvvxj3/cXVl3pgwDJdPnP/95u+Qf/vAHt5ycnDzrrLPszM033+zORGZmZsaunc4jBotlV80fAQLCHke7s3CPVP773/9uy+9///t79uxxnwrd4cOHv/3tb2/YsOFb3/rWN7/5ze9973u//e1v7ZoaC4B33nnHX64g9veff/75GzdutG3oOeecY8cf/ehHn3nmGf/plTz99NMWTnaxLVu2bN68+bbbbrvmmmvcV3jFFVf4C/XHtiNB3OM3Go2pqSm/iIt91/wRICD4cdy2bZv9p7r00ks7nY7dS77xxhv+E1E4duzY9PS0eynVN9988+DBg3YFpe7E7auynw/cnvXIkSOvvfaanTlx4oT7bD/Unr20CkvQLMv8Ii4kE6QEP44vv/zymWeeaf+vvvCFL8T9uN4oaT57qZeICz2SCVJiGMetW7fa/6uzzz479EeKp8bu4m23JPjspVXEWuiRTJASwzi+8MILH/zgB3fs2OHXCITUi+P1qdVqBfc194NkgpRIxjGOx+MlxXYeofx6abFu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" style="width:50.0%" alt />
 <div class="figcaption"></div>
 </div>
-<h2 id="proceso-de-ortogonalización-de-gramm-schmidt">1.11 Proceso de
+<h2 id="proceso-de-ortogonalización-de-gramm-schmidt">1.12 Proceso de
 ortogonalización de Gramm-Schmidt</h2>
 <p>Es fácil ver, como en el ejemplo anterior, que en <span class="math inline">\(\mathbb{R}^n\)</span> existen bases <span class="math inline">\(ortogonales\)</span> y <em>ortonormales</em>. ¿Se
 cumple para un espacio vectorial <span class="math inline">\(V\)</span>
@@ -658,7 +706,7 @@ base ordenada de <span class="math inline">\(V\)</span>.</p>
 w_1=v_1,
 \]</span></p>
 <p><span class="math display">\[
-w_2 = v_2 - P_{w_1}w_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle
+w_2 = v_2 - P_{w_1}v_2 = v_2 - \frac{\langle v_2,w_1 \rangle}{\langle
 w_1,w_1 \rangle}w_1,
 \]</span></p>
 <p><span class="math display">\[
@@ -678,7 +726,7 @@ v_{n},w_{n-1} \rangle}{\langle w_{n-1},w_{n-1} \rangle}w_{n-1},
 \mathbf{y}_n\}\)</span> está dada por <span class="math display">\[
 \mathbf{y}_i = \frac{w_i}{\|w_i\|}
 \]</span></p>
-<h2 id="proposición-2">1.12 Proposición</h2>
+<h2 id="proposición-2">1.13 Proposición</h2>
 <p><em>Los</em> <em>vectores</em> <span class="math inline">\(\mathbf{w}_i\)</span> <em>son ortogonales a los
 vectores</em> <span class="math inline">\(\mathbf{w}_1,\mathbf{w}_2,\ldots,\mathbf{w}_{i-1}\)</span>.</p>
 <p>Por hipótesis de inducción, supondremos que <span class="math inline">\(\mathbf{w}_{i-1}\)</span> es ortogonal a los
@@ -695,7 +743,7 @@ entonces por la linealidad del producto interno si <span class="math inline">\(i
 \frac{\langle \mathbf{v}_{i}, \mathbf{w}_{j}
 \rangle}{\|\mathbf{w}_j\|^2}\langle \mathbf{w}_j, \mathbf{w}_j \rangle=0
 \]</span></p>
-<h2 id="teorema.">1.13 Teorema.</h2>
+<h2 id="teorema.">1.14 Teorema.</h2>
 <div style="background-color:#9DE2D5">
 <p>Sea <span class="math inline">\(V\)</span> un espacio vectorial de
 dimensión finita. Suponga que <span class="math inline">\(v_1,\ldots,v_m\)</span> es una lista de vectores
@@ -721,7 +769,7 @@ Definimos <span class="math display">\[
 <p>En particular, todo espacio vectorial de dimensión finita con
 producto interno tiene una base de vectores <em>ortonormales</em>.</p>
 </div>
-<h3 id="ejemplo">1.13.1 Ejemplo</h3>
+<h3 id="ejemplo">1.14.1 Ejemplo</h3>
 <ol style="list-style-type: lower-alpha">
 <li><p>Usar el proceso de ortogonalización de Gram-Schmidt para
 determinar una base ortonormal de <span class="math inline">\(\mathbb{R}^3\)</span>, a partir de los siguientes
@@ -777,6 +825,102 @@ vectores <span class="math display">\[
 <p>La base ortonormal de <span class="math inline">\(V\)</span> esta
 dada por: <span class="math inline">\(\Big\{\frac{w_1}{\|w_1\|},
 \frac{w_2}{\|w_2\|},\frac{w_3}{\|w_3\|} \Big\}\)</span></p>
+</div>
+<div id="ejemplos" class="slide section level1">
+<h1>2 Ejemplos</h1>
+<ol class="example" style="list-style-type: decimal">
+<li><p>Sea <span class="math inline">\(V=\mathbb{R}^4\)</span> y <span class="math inline">\(\left \langle \mathtt{x}, \mathtt{y}\right \rangle
+= \mathtt{x} \cdot \mathtt{y}\)</span>, el producto punto. Sea <span class="math display">\[
+\mathtt{\vec{x}} =\begin{pmatrix} -4 \\ 2 \\ 1 \\2 \end{pmatrix},
+\quad\quad \mathtt{\vec{y}} =\begin{pmatrix} 1 \\ 0 \\ 2 \\2
+\end{pmatrix}
+\]</span> Calcula el ángulo entre los vectores <span class="math inline">\(\mathtt{\vec{x}}\)</span> y <span class="math inline">\(\mathtt{\vec{y}}\)</span>.</p></li>
+<li><p>Calcula el ángulo entre los vectores</p></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(\mathtt{u}_1=(1,1,1,1),\,\,
+\mathtt{u}_2=(1,1,1,-1)\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathtt{u}_1=(1,1,1,1),\,\,
+\mathtt{u}_2=(1,-1,-1,-1)\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathtt{u}_1=(1,\sqrt{2},1,0),\,\,
+\mathtt{u}_2=(0,1,\sqrt{2},1)\)</span>.</p></li>
+</ul>
+<ol start="3" class="example" style="list-style-type: decimal">
+<li><p>Ejemplo. Sea <span class="math inline">\(V=\mathbb{R}_2[x]\)</span> y <span class="math inline">\(f(x)=x^2 + x + 1\)</span>, <span class="math inline">\(g(x)=3x+2\)</span>. Calcular <span class="math inline">\(\left \langle f,g \right\rangle\)</span>, <span class="math inline">\(\|f\|\)</span>, <span class="math inline">\(\|g\|\)</span> y el ángulo entre los dos
+polinomios.</p></li>
+<li><p>Sea <span class="math inline">\(V=\mathbb{R}^3\)</span> y <span class="math display">\[
+\mathcal{B}=
+\begin{Bmatrix}
+\mathtt{\vec{u}}_1 = \begin{pmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \\
+0  \end{pmatrix},  \mathtt{\vec{u}}_2 =\begin{pmatrix} 1/\sqrt{3} \\
+1/\sqrt{3} \\ 1/\sqrt{3}  \end{pmatrix},\,\,
+\mathtt{u}_3=\begin{pmatrix} -1/\sqrt{6} \\ -1/\sqrt{6} \\
+2/\sqrt{6}  \end{pmatrix}  
+\end{Bmatrix}
+\]</span></p></li>
+</ol>
+<ul>
+<li><p>Demostrar que es una base ortonormal.</p></li>
+<li><p>Escribir a <span class="math inline">\(\vec{x}=\begin{pmatrix} -1
+\\ 2 \\ 1 \end{pmatrix}\)</span> como combinación lineal de <span class="math inline">\(\mathcal{B}\)</span>.</p></li>
+</ul>
+<ol start="5" class="example" style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(\vec{v}=(6,7)\in\mathbb{R}^2\)</span> y <span class="math inline">\(\left \langle \vec{x}, \vec{y} \right \rangle_B =
+2x_1y_1 -3x_1y_2-3x_2y_1 + 2x_2y_2\)</span>, calcular</li>
+</ol>
+<ul>
+<li><p>Si <span class="math inline">\(\mathtt{e}_1 = (1,0)\)</span> y
+<span class="math inline">\(\mathtt{e}_2 = (0,1)\)</span>, calcular
+<span class="math inline">\(\left \langle \mathtt{e}_1, \mathtt{e}_2
+\right \rangle_B\)</span>, <span class="math inline">\(\|\mathtt{e}_1\|_B\)</span>, <span class="math inline">\(\|\mathtt{e}_2\|_B\)</span>.</p></li>
+<li><p>Calcular los cosenos directores de <span class="math inline">\(\vec{v}=(6,7)\)</span> con respecto a ese producto
+interno.</p></li>
+</ul>
+<ol start="6" class="example" style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(\mathtt{u}_1=\begin{pmatrix} 1 \\ 0
+\\ 0 \end{pmatrix},\,\)</span> <span class="math inline">\(\mathtt{u}_2=\begin{pmatrix} 1 \\ 1 \\ 0
+\end{pmatrix},\,\)</span> <span class="math inline">\(\mathtt{u}_3=\begin{pmatrix} 1 \\ 1 \\ 1
+\end{pmatrix}\)</span> .</li>
+</ol>
+<ul>
+<li><p>Obtener un conjunto de vectores ortogonales, aplicando
+Gram-Schmidt.</p></li>
+<li><p>Obtener una base ortonormal.</p></li>
+</ul>
+<ol start="7" class="example" style="list-style-type: decimal">
+<li>Determinar si <span class="math inline">\(\mathcal{B} =
+\{\mathtt{u}=(1,2,1)\)</span>, <span class="math inline">\(\mathtt{v}=(1,-1,1)\)</span> y <span class="math inline">\(\mathtt{w}=(-1,1,2) \}\)</span>.</li>
+</ol>
+<ul>
+<li><p>Calcular las normas de los vectores con respecto a la norma
+inducida por el producto punto.</p></li>
+<li><p>Determinar si los vectores forman una base.</p></li>
+<li><p>Encontrar una base ortonormal de <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+</ul>
+<ol start="8" class="example" style="list-style-type: decimal">
+<li><p>Sea <span class="math display">\[
+\mathcal{H}=\begin{Bmatrix} \mathtt{\vec{v}}_1 = \begin{pmatrix} 1  \\
+-1 \\ 1  \end{pmatrix},\,\, \mathtt{\vec{v}}_2 = \begin{pmatrix} -2  \\
+3 \\ -1  \end{pmatrix},\,\, \mathtt{\vec{v}}_3 = \begin{pmatrix} -3  \\
+5 \\ -1 \end{pmatrix},\,\, \mathtt{\vec{v}}_4 = \begin{pmatrix} 1  \\ 2
+\\ -4  \end{pmatrix} \end{Bmatrix}
+\]</span> A partir de <span class="math inline">\(\mathcal{H}\)</span>
+construir una base ortonormal.</p></li>
+<li><p>Usar el proceso de Gram- Schmidt para obtener una base ortonormal
+de <span class="math inline">\(\mathbb{R}^3\)</span> a partir
+de</p></li>
+</ol>
+<p><span class="math display">\[
+\mathcal{B} = \begin{Bmatrix} \begin{pmatrix} 1 \\ 2 \\3 \end{pmatrix},
+\,\,  \begin{pmatrix} 4 \\ 5 \\0 \end{pmatrix},\,\,  \begin{pmatrix} 2
+\\ 3 \\-1 \end{pmatrix}  \end{Bmatrix}
+\]</span></p>
+<ol start="10" class="example" style="list-style-type: decimal">
+<li><p>Encontrar una base <em>ortonormal</em> al subespacio generado por
+<span class="math inline">\(\{\mathtt{v}_1=(1,1,-1),\mathtt{v}_2=(1,0,1)\}\)</span></p></li>
+<li><p>Encontrar una base <em>ortonormal</em> al subespacio generado por
+<span class="math inline">\(\{\mathtt{v}_1=(1,2,1,0),\mathtt{v}_2=(1,2,3,1)\}\)</span></p></li>
+</ol>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

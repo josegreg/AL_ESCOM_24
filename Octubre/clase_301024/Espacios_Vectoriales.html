@@ -889,36 +889,41 @@ polinomio <span class="math inline">\(c\cdot p :\mathbb{R}\rightarrow
 <p>Considere el siguiente ejemplo</p>
 <h2 id="ejemplo-inicial">3.1 Ejemplo inicial</h2>
 <p>Sea <span class="math inline">\(I\subset \mathbb{R}\)</span> un
-intervalo, <span class="math inline">\([a,b] \subset
-\mathbb{R}\)</span>. Considere a <span class="math inline">\(V=\mathbf{F}(I;\mathbb{R})=\{f:I\rightarrow
-\mathbb{R}\,:\,f\mbox{ es una función}\}\)</span>. Entonces <span class="math inline">\(C(I;\mathbb{R})=\{f:I\rightarrow
+intervalo, <span class="math inline">\([a,b]\)</span> <span class="math inline">\(\subset \mathbb{R}\)</span> un interval. Ya hemos
+comentado que en el caso de funciones, tenemos varios espacios
+vectoriales, con el mismo tipo de suma y multiplicación escalar. Mas
+concretamente: <span class="math display">\[
+V=\mathbf{F}(I;\mathbb{R}) =\{f:I\rightarrow \mathbb{R}\,:\,f\mbox{ es
+una función}\}.  
+\]</span> Entonces <span class="math inline">\(C(I;\mathbb{R})=\{f:I\rightarrow
 \mathbb{R}\,:\,f\mbox{ es una función }\textbf{continua}\mbox{ en todo
 }x\in I\}\)</span> y <span class="math inline">\(\mathbb{R}[x]=\{f:I\rightarrow
-\mathbb{R}\,|\,f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0
-\}\)</span>.</p>
+\mathbb{R}\,|\,f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0 \}\)</span>
+son subconjuntos de <span class="math inline">\(V\)</span>.</p>
 <p>En todos estos casos, son espacios vectoriales reales, con las
 <em>mismas</em> operaciones. <span class="math display">\[
 \mathbb{R}[x] \subset C(I;\mathbb{R}) \subset \mathbf{F}(I;\mathbb{R})
 \]</span></p>
-<p>En este caso decimos que son un <strong>subespacio</strong>
-<strong>vectorial</strong> de <span class="math inline">\(V\)</span>.</p>
+<p>En este caso decimos que son <strong>subespacios</strong>
+<strong>vectoriales</strong> de <span class="math inline">\(V\)</span>.</p>
 <h2 id="definición-3">3.2 Definición</h2>
 <p>Sea <span class="math inline">\((V,\oplus,\cdot)\)</span> un espacio
 vectorial. Y sea <span class="math inline">\(W\)</span> un subconjunto
 de <span class="math inline">\(V\)</span>, <span class="math inline">\(W\subset V\)</span>, decimos que <span class="math inline">\(W\)</span> es un <em>subespacio</em>
-<em>vectorial</em> si <span class="math inline">\(W\)</span> es un
-espacio vectorial con las mismas operaciones <span class="math inline">\(\oplus,\cdot\)</span> restringidas a <span class="math inline">\(W\)</span>.</p>
+<em>vectorial</em> si <span class="math inline">\(W\)</span>
+relativamente a las mismas operaciones definidas en <span class="math inline">\(V\)</span>, también <span class="math inline">\(W\)</span> es un espacio vectorial.</p>
 <p>Para que <span class="math inline">\(W\)</span> sea un subespacio
 vectorial basta con verificar que <span class="math inline">\(W\)</span>
 es cerrado bajo la suma vectorial <span class="math inline">\(\oplus\)</span> y la multiplicación escalar <span class="math inline">\(\cdot\)</span>.</p>
 <h3 id="proposición-1">3.2.1 Proposición</h3>
 <p>Sea <span class="math inline">\(W\)</span> un subconjunto no vacío de
-<span class="math inline">\(V,\)</span> se dice que <span class="math inline">\(W\)</span> es un de <span class="math inline">\(V\)</span>, si y sólo si satisface las siguientes
+<span class="math inline">\(V,\)</span> se dice que <span class="math inline">\(W\)</span> es un de <span class="math inline">\(V\)</span>, si y sólo si cumple con las siguientes
 propiedades:</p>
 <ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\vec{0}\in W\)</span>.</p></li>
 <li><p>Para todos <span class="math inline">\(x\)</span> y <span class="math inline">\(y \in W,\)</span> se tiene que <span class="math inline">\(x+y \in W,\)</span> es decir, <span class="math inline">\(W\)</span> es cerrado bajo la suma.</p></li>
 <li><p>Para todo <span class="math inline">\(x \in W\)</span> y para
-todo <span class="math inline">\(\lambda \in \Bbb{R}\)</span>, <span class="math inline">\(\lambda  x \in W,\)</span> es decir <span class="math inline">\(W\)</span> es cerrado bajo producto por
+todo <span class="math inline">\(\lambda \in \Bbb{R}\)</span>, <span class="math inline">\(\lambda x \in W,\)</span> es decir <span class="math inline">\(W\)</span> es cerrado bajo producto por
 escalar.</p></li>
 </ol>
 <h2 id="ejemplo-1">3.3 Ejemplo 1</h2>
@@ -955,10 +960,10 @@ pues si <span class="math inline">\(x =(x_1,x_2, 0)\)</span>, entonces
 <span class="math inline">\(\lambda \cdot x =\lambda\cdot (x_1,x_2, 0) =
 (\lambda x_1,\lambda x_2, 0) \in W\)</span></p>
 <h2 id="ejemplo-4-1">3.6 Ejemplo 4</h2>
-<p>Sea <span class="math inline">\(\mathtt{v}_0 \in V\)</span>, con
-<span class="math inline">\(\mathtt{v}_0\ne \mathbf{0}\)</span>.
+<p>Sea <span class="math inline">\(\mathtt{u}_0 \in V\)</span>, con
+<span class="math inline">\(\mathtt{u}_0\ne \mathbf{0}\)</span>.
 Considere al conjunto <span class="math inline">\(W_{0}=\{\mathbf{v} =
-t\cdot\mathtt{v}_0 : t \in \mathbb{R}\}\)</span>. Es un subespacio
+t\cdot\mathtt{u}_0 : t \in \mathbb{R}\}\)</span>. Es un subespacio
 vectorial propio de <span class="math inline">\(V\)</span>, es decir
 <span class="math inline">\(W_{0}\subset V\)</span>.</p>
 <h2 id="proposición-2">3.7 Proposición</h2>
@@ -980,10 +985,17 @@ Entonces <span class="math display">\[\begin{equation*}
 <h3 id="demostración">3.7.1 Demostración</h3>
 <p>Por ser subespacios vectoriales, <span class="math inline">\(\mathbf{0} \in W_1\)</span> y <span class="math inline">\(\mathbf{0} \in W_2\)</span> entonces <span class="math inline">\(\mathbf{0} \in W_1\cap W_2\)</span></p>
 <p>Si <span class="math inline">\(\mathbf{x},\mathbf{y}\in W_1\cap
-W_2\)</span> entonces, <span class="math inline">\(\mathbf{x}+\mathbf{y}\in W_1\cap W_2\)</span>.</p>
+W_2\)</span> entonces, es fácil ver que, <span class="math inline">\(\mathbf{x}+\mathbf{y}\in W_1\cap W_2\)</span>.</p>
 <p>Si <span class="math inline">\(\alpha\in \mathbf{R}\)</span> y <span class="math inline">\(\mathbf{x}\in W_1\cap W_2\)</span> entonces <span class="math inline">\(\alpha\cdot \mathbf{x}\in W_1\)</span> y <span class="math inline">\(\alpha\cdot \mathbf{x}\in W_2\)</span> por que son
 subespacios. Entonces <span class="math inline">\(\alpha\cdot
 \mathbf{x}\in W_1\cap W_2\)</span>.</p>
+<h3 id="ejemplo-4.1">3.7.2 Ejemplo 4.1</h3>
+<p>Sea <span class="math inline">\(\Pi=\{(x,y,z)\in\mathbb{R}^3\,|\,\,
+x+y+z=3\}\)</span>, el plano con vector normal <span class="math inline">\(\vec{n}=(1,1,1)\)</span> <strong>no</strong> es un
+subespacio vectorial</p>
+<p>Por ejemplo tome <span class="math inline">\(\vec{u}=(1,1,1)\)</span>
+y <span class="math inline">\(\vec{v}=(3,0,0)\)</span>, cada uno cumple
+con la ecuación del plano, por tanto <span class="math inline">\(\vec{u}\in \Pi\)</span> y <span class="math inline">\(\vec{v}\in \Pi\)</span>. Pero <span class="math inline">\(\vec{u}+\vec{v}\notin \Pi\)</span></p>
 <h2 id="sec:ej4">3.8 Ejemplo 4</h2>
 <p>Sea <span class="math inline">\(V=\mathbb{R}^{3}\)</span>, y sea
 <span class="math inline">\(\alpha_1,\alpha_2,\ldots,\alpha_3 \in
@@ -1030,6 +1042,28 @@ solución del sistema</p>
 \{\mathbf{x}\in\mathbb{R}^{n}:\, A\mathbf{x}=\mathbf{0}\}
 \]</span> es un <strong>subespacio</strong> <strong>vectorial</strong>
 de <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<p>Recuerde que el conjunto</p>
+<p><span class="math display">\[\begin{equation}
+\begin{Bmatrix}
+  \mathbf{x}\in\mathbb{R}^{n}:\,
+\mathbf{A}\vec{\mathbf{x}}=\vec{\mathbf{0}}
+\end{Bmatrix}
+\end{equation}\]</span></p>
+<p>Es equivalente a</p>
+<p><span class="math display">\[\begin{equation}
+\begin{array}{cccccc}
+     a_{11}x_{1}        &amp; +a_{12}x_{2}    &amp; \cdots  &amp;+
+a_{1n}x_{n}    &amp; =       &amp; 0       \\
+     a_{21}x_{1}        &amp; +a_{22}x_{2}    &amp; \cdots  &amp;+
+a_{2n}x_{n}    &amp; =       &amp; 0       \\
+    \vdots              &amp; \vdots          &amp; \vdots  &amp;
+\vdots          &amp; \vdots  &amp;  \vdots      \\
+     a_{m-1,1x_{1}}     &amp; +a_{n-1,2}x_{2} &amp; \cdots  &amp;+
+a_{m-1,n}x_{n} &amp; =       &amp; 0      \\
+     a_{m,1}x_{1}       &amp; +a_{n,2}x_{2}   &amp; \cdots  &amp;+
+a_{m,j}x_n     &amp; =       &amp; 0
+\end{array}
+\end{equation}\]</span></p>
 <h2 id="ejemplo-6">3.11 Ejemplo 6</h2>
 <p>Sea <span class="math inline">\(V=\mathcal{M}^{n,n}(\mathbb{R})\)</span> el
 conjunto de matrices cuadradas de tamano <span class="math inline">\(n\)</span>. Dar una demostración o un
@@ -1044,15 +1078,22 @@ vectorial?</p></li>
 <li><p>¿El conjunto de matrices invertibles es un subespacio
 vectorial?</p></li>
 </ul>
-<h2 id="suma-directa-de-subespacios">3.12 Suma directa de
+<h2 id="ejemplo-7">3.12 Ejemplo</h2>
+<p>Si <span class="math inline">\(V=\mathcal{M}^{n,n}\)</span> es el
+espacio vectorial de matrices <span class="math inline">\(n\times
+n\)</span>. Sea <span class="math inline">\(S\)</span> el conjunto de
+matrices simétricas <span class="math inline">\(n\times n\)</span>,
+entonces <span class="math inline">\(S\)</span> es un subespacio
+vectorial</p>
+<h2 id="suma-directa-de-subespacios">3.13 Suma directa de
 subespacios</h2>
-<h3 id="definición-4">3.12.1 Definición</h3>
+<h3 id="definición-4">3.13.1 Definición</h3>
 <p>Si <span class="math inline">\(W_1\)</span> y <span class="math inline">\(W_2\)</span> son dos subespacios vectoriales no
 vacíos de un espacio vectorial <span class="math inline">\((V,+,\cdot)\)</span> definimos a
 <strong>la</strong> <strong>suma</strong> de subespacios <span class="math inline">\(W_1+W_2\)</span> como <span class="math display">\[
 W_1 + W_2 =\bigg\{v=w_1+w_2\,:\,w_1\in W_1,w_2\in W_2\bigg\}
 \]</span></p>
-<h3 id="definición-5">3.12.2 Definición</h3>
+<h3 id="definición-5">3.13.2 Definición</h3>
 <p>Un espacio vectorial es una <strong>suma</strong>
 <strong>directa</strong> de <span class="math inline">\(W_1\)</span> y
 <span class="math inline">\(W_2\)</span> si</p>
@@ -1063,14 +1104,14 @@ W_2=\big\{\mathbf{0}\big\}\)</span>.</p></li>
 <li><p><span class="math inline">\(V=W_1+W_2\)</span>. Es decir, para
 todo elemento en <span class="math inline">\(x\in V\)</span></p></li>
 </ul>
-<h2 id="ejemplo-7">3.13 Ejemplo</h2>
+<h2 id="ejemplo-8">3.14 Ejemplo</h2>
 <p>Sea <span class="math inline">\(\mathtt{v}_1=(1,0)\)</span> y <span class="math inline">\(\mathtt{v}_2=(0,1)\)</span> considere a los
 subespacios <span class="math inline">\(W_{1}=\{\mathbf{v} =
 \alpha\cdot\mathtt{v}_1 : \alpha \in \mathbb{R}\}\)</span> y <span class="math inline">\(W_{2}=\{\mathbf{v} = \alpha\cdot\mathtt{v}_2 :
 \alpha \in \mathbb{R}\}\)</span></p>
 <p>¿Se cumple que <span class="math inline">\(W_1\bigcup W_2\)</span>
 sea un subespacio vectorial de <span class="math inline">\(\mathbb{R}^2\)</span>?</p>
-<h2 id="combinaciones-lineales">3.14 Combinaciones lineales</h2>
+<h2 id="combinaciones-lineales">3.15 Combinaciones lineales</h2>
 <p>Recordamos una definición ya vista para el caso <span class="math inline">\(V=\mathbb{R}^3\)</span>.</p>
 <p>Sea <span class="math inline">\(V\)</span> un espacio vectorial y
 <span class="math inline">\(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \in
@@ -1089,7 +1130,7 @@ entonces <span class="math inline">\(\alpha_1\cdot\mathbf{v}_1 +
 \alpha_2\cdot\mathbf{v}_2+\ldots+ \alpha_n\mathbf{v}_n\in
 W\)</span>.</p>
 <p>¿Por qué?</p>
-<h2 id="ejemplo-6-1">3.15 Ejemplo 6</h2>
+<h2 id="ejemplo-6-1">3.16 Ejemplo 6</h2>
 <p>Sea <span class="math inline">\(X\)</span> un conjunto del espacio
 vectorial <span class="math inline">\(V\)</span>. El <em>subespacio</em>
 <em>vectorial</em> <em>de</em> <span class="math inline">\(V\)</span>
@@ -1101,14 +1142,14 @@ el conjunto de todas las combinaciones lineales de vectores en <span class="math
 \]</span></p>
 <p>para vectores <span class="math inline">\(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_m \in
 X\)</span>. A dicho subespacio se escribe como <span class="math inline">\(\mathcal{S}(X)\)</span>.</p>
-<h3 id="ejemplo-8">3.15.1 Ejemplo</h3>
+<h3 id="ejemplo-9">3.16.1 Ejemplo</h3>
 <p>Sean <span class="math inline">\(\mathtt{v}_1=(1,2,0,3,0)\)</span>,
 <span class="math inline">\(\mathtt{v}_2=(0,0,1,4,0)\)</span>, <span class="math inline">\(\mathtt{v}_3=(0,0,0,0,1)\)</span>. Sea <span class="math inline">\(W=\mathcal{S}(\mathtt{v}_1,\mathtt{v}_2,\mathtt{v}_3)\)</span>,
 el espacio generado por los 3 vectores en <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
 <p>¿Están <span class="math inline">\(\mathtt{x}=(-3,-6,1,5,2)\in
 W\)</span>, <span class="math inline">\(\mathtt{x}=(2,4,6,7,8)\in
 W\)</span>?</p>
-<h3 id="observación">3.15.2 Observación</h3>
+<h3 id="observación">3.16.2 Observación</h3>
 <p>Sea <span class="math inline">\(V=(\mathbb{R}^m, +, \cdot)\)</span>,
 considere un conjunto de vectores <span class="math inline">\(U=\{\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_k\}\subset
 \mathbb{R}^m\)</span> y <span class="math inline">\(W
@@ -1154,7 +1195,7 @@ a_{m,2} \end{pmatrix}x_2 + \cdots +
               \begin{pmatrix} a_{1k} \\ a_{2k} \\ \vdots \\ a_{m-1,k} \\
 a_{m,k} \end{pmatrix}x_k
 \]</span></p>
-<h3 id="proposición-4">3.15.3 Proposición</h3>
+<h3 id="proposición-4">3.16.3 Proposición</h3>
 <p>Sea <span class="math inline">\(A\)</span> la matriz de los vectores
 <span class="math inline">\(\{\mathtt{v}_1, \mathtt{v}_2, \ldots,
 \mathtt{v}_k\}\)</span>, como columnas. Entonces son equivalentes los
@@ -1162,7 +1203,7 @@ siguientes enunciados son equivalentes <span class="math display">\[
 a) \mbox{El sistema }A\mathbf{x} = \mathbf{b} \mbox{ tiene solución}\\
 b) \mathbf{b} \mbox{ es combinación lineal de los vectores columna de }A
 \]</span></p>
-<h3 id="ejemplo-9">3.15.4 Ejemplo</h3>
+<h3 id="ejemplo-10">3.16.4 Ejemplo</h3>
 <p>Demostrar que <span class="math inline">\(\mathcal{S}\{(1,1),(1,-1)\}
 = \mathbb{R}^2\)</span></p>
 <p>Sea <span class="math inline">\(\mathbf{b}=(x,y)\)</span> un vector
@@ -1176,74 +1217,304 @@ proposición anterior basta con considerar el sistema</p>
      1 &amp; -1  &amp; \bigm| &amp; y      
   \end{bmatrix}
 \end{equation*}\]</span></p>
-<h2 id="combinación-lineal-e-independencia-lineal">3.16 Combinación
+</div>
+<div id="práctica" class="slide section level1">
+<h1>4 Práctica</h1>
+<p>Determinar si los conjuntos siguientes de <span class="math inline">\(\mathbb{R}^3\)</span> son subespacios, aplicando
+las propiedades de cerradura</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, |
+\,\, \vec{x} \mbox{ es de la forma }(a,0,0),
+a\in\mathbb{R}\}\)</span>.</p></li>
+<li><p><span class="math inline">\(U=\{\vec{x}=(x_1,x_2,x_3)\in\mathbb{R}^3 \,\, |
+\,\, \vec{x} \mbox{ es de la forma }(a,1,1),
+a\in\mathbb{R}\}\)</span>.</p></li>
+<li><p>Todos los vectores de la forma <span class="math inline">\((x_1,x_2,x_3)\)</span> con <span class="math inline">\(x_2=x_1 + x_3\)</span></p></li>
+<li><p>Todos los vectores de la forma <span class="math inline">\((x_1,x_2,x_3)\)</span> con <span class="math inline">\(x_2=x_1 + x_3 +1\)</span></p></li>
+<li><p>Todas las matrices de la forma <span class="math inline">\(\begin{pmatrix} 0 &amp; a \\ b &amp; 0
+\end{pmatrix}\)</span></p></li>
+<li><p>Todas las matrices de la forma <span class="math inline">\(\begin{pmatrix} a &amp; b \\ c &amp; d
+\end{pmatrix}\)</span> con <span class="math inline">\(a+d=0\)</span></p></li>
+</ol>
+<p>Si <span class="math inline">\(V=\mathbb{R}_3[x]\)</span> es el
+conjunto de polinomios con grado igual o menor a 3.</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p><span class="math inline">\(\mathcal{U}\)</span> el conjunto de
+polinomios con coeficientes enteros, es decir <span class="math inline">\(p(x)\in \mathcal{U}\)</span> si <span class="math inline">\(p(x)=a_3x^3+a_2x^2+a_1x+a_0\)</span> con <span class="math inline">\(a_3,a_2,a_1,a_0\)</span> enteros</p></li>
+<li><p>Si <span class="math inline">\(V=\mathbb{R}_2[x]\)</span>, sea
+<span class="math inline">\(S\)</span> el conjunto de polinomios de la
+forma <span class="math inline">\(ax^2 + bx\)</span>, ¿es <span class="math inline">\(S\)</span> un subespacio?</p></li>
+<li><p>Sea <span class="math inline">\(S\subset \mathbb{R}^3\)</span> el
+conjunto de vectores de la forma <span class="math inline">\((x,y,x+y)\)</span></p></li>
+<li><p>Sea <span class="math inline">\(S\)</span> el conjunto de
+vectores <span class="math inline">\((x,y,z)\in\mathbb{R}^3\)</span> con
+<span class="math inline">\(x-y+2z=0\)</span></p></li>
+<li><p>El conjunto de matrices de la forma <span class="math inline">\(\begin{pmatrix}a &amp; b \\ a &amp; a+b
+\end{pmatrix}\)</span>, si <span class="math inline">\(V=\mathcal{M}^{2,2}(\mathbb{R})\)</span>.</p></li>
+<li><p>El conjunto de vectores en <span class="math inline">\(\mathbb{R}^3\)</span> perpendiculares a <span class="math inline">\((4,1,3)\)</span>.</p></li>
+</ol>
+<h2 id="combinación-lineal-e-independencia-lineal">4.1 Combinación
 lineal e independencia lineal</h2>
-<p><strong>Definición</strong></p>
-<p>Sean <span class="math inline">\(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \in
-V\)</span>, decimos que el conjunto de vectores es
-<strong>linealmente</strong> <strong>dependiente</strong> si existe un
-conjunto de escalares <span class="math inline">\(\alpha_1,\alpha_2,\ldots,\alpha_n \in
-\mathbb{R}\)</span> tal que - No todos los escalaes <span class="math inline">\(\alpha_i\)</span> son simultaneamente cero - Y
-además</p>
-<p><span class="math display">\[\begin{equation}
-\alpha_1\cdot\mathbf{v}_1+ \alpha_2\cdot\mathbf{v}_2 + \ldots +
-\alpha_n\cdot\mathbf{v}_n = 0
-\end{equation}\]</span></p>
-<h2 id="subespacios-generados-por-conjuntos-de-vectores">3.17
-Subespacios generados por conjuntos de vectores</h2>
-<h3 id="definición-6">3.17.1 Definición</h3>
-<p>Sea <span class="math inline">\(A\)</span> un subconjunto de <span class="math inline">\(V\)</span>, no necesariamente un subespacio, un
-espacio vectorial, definimos al <strong>subespacio</strong>
-<strong>generado</strong> <strong>por</strong> <span class="math inline">\(A\)</span> como el conjunto de vectores que se
-expresan como combinaciones lineales de vectores que pertenecen a <span class="math inline">\(A\)</span>. Para referirnos al subespacio generado
-por <span class="math inline">\(A\)</span>, escribimos <span class="math inline">\(\mathcal{G}(A)\)</span></p>
+<p>Los siguientes conceptos nos permiten describir cuando un vector “no
+depende” de otros. O dicho de otra forma, cuando un conjunto de
+generador de vectores será “mínimo”.</p>
+<p>Sea <span class="math inline">\(V\)</span> un espacio vectorial y
+<span class="math inline">\(U=\{v_1,v2,\ldots,v_n\}\)</span> un conjunto
+de vectores, suponga que <span class="math inline">\(\mathbf{w}\ne 0,
+\,\,\mathbf{w}\in\mathcal{g}(v_1,v2,\ldots,v_n)\)</span> entonces <span class="math display">\[
+\mathbf{w} = \alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot \mathbf{v}_2 +
+\ldots + \alpha_k\cdot \mathbf{v}_k
+\]</span> como <span class="math inline">\(\mathbf{w}\ne
+\mathbf{0}\)</span> entonces existe al menos un escalar <span class="math inline">\(\alpha_i\ne 0\)</span> por lo que la combinación
+lineal se puede escribir como</p>
 <p><span class="math display">\[
-\mathcal{g}(A) = \{\mathbf{v}\in V\,\, |\,\, v=\alpha_1 \mathbf{v}_1 +
+\mathbf{0} = (-1)\cdot \mathbf{w} + \alpha_1\cdot \mathbf{v}_1 +
+\alpha_2\cdot \mathbf{v}_2 + \ldots + \alpha_k\cdot \mathbf{v}_k
+\]</span> Es decir, la última condición expresa de otra manera la
+existencia de un vector (en la combinación lineal) que está en términos
+de los otros.</p>
+<h2 id="dependencia-lineal-de-vectores">4.2 Dependencia lineal de
+vectores</h2>
+<div style="background-color: #FFE9B1">
+<p><strong>Definición</strong>: Sea <span class="math inline">\(V\)</span> un espacio vectorial, <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n \in
+V\)</span> se dice que son <strong>linealmente</strong>
+<strong>dependientes</strong> si existen escalares <span class="math inline">\(c_1,c_2,\ldots,c_n\)</span> no todos igual a cero
+tal que</p>
+<p><span class="math display">\[
+c_1\cdot \mathbf{x}_1 + c_2\cdot \mathbf{x}_2 + \ldots + c_n\cdot
+\mathbf{x}_n = \mathbf{0}
+\]</span></p>
+</div>
+<h2 id="observación-1">4.3 Observación</h2>
+<p>Si <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\)</span>
+son linealmente dependientes entonces al menos un escalar <span class="math inline">\(c_i\)</span> es no nulo, entonces <span class="math inline">\(\mathbf{x}_i\)</span> es combinación lineal de los
+otros vectores pues <span class="math display">\[
+\mathbf{x}_i = \sum_{i\ne j} -\frac{c_j}{c_i}\cdot \mathbf{x}_j  =
+\sum_{i\ne j} \beta_{j}\cdot \mathbf{x}_j
+\]</span></p>
+<h4 id="ejemplo-1.">4.3.0.1 Ejemplo 1.</h4>
+<p>Sea <span class="math inline">\(V=\mathbb{R}^{3}\)</span> verificar
+si el conjunto <span class="math inline">\(U=\Bigg\{ \begin{pmatrix} 1\\
+1 \\ 0 \end{pmatrix}, \begin{pmatrix} 2\\ 5 \\ 3 \end{pmatrix} ,
+\begin{pmatrix} 0\\ 1 \\ 1 \end{pmatrix} \Bigg\}\)</span>. Considerando
+las combinaciones lineales, obtenemos el siguiente sistema</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cccccc}
+&amp;  \begin{bmatrix}
+     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
+     1 &amp; 5 &amp;  1 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp; \rightarrow &amp;
+\begin{bmatrix}
+     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp; \rightarrow &amp;
+\begin{bmatrix}
+     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0      \\
+     0 &amp; 0 &amp;  0 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span> Obteniendo el siguiente sistema</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+\alpha + 2\beta &amp; = 0 \\
+3\beta + \gamma &amp; = 0
+\end{array}
+\]</span> es decir <span class="math inline">\(\gamma =
+-3\beta\)</span>, <span class="math inline">\(\alpha = -2\beta\)</span>,
+entonces <span class="math display">\[
+\begin{pmatrix} \alpha \\ \beta \\  \gamma
+\end{pmatrix}  =  \begin{pmatrix} -3\\ 1 \\ -2 \end{pmatrix} \cdot \beta
+\]</span></p>
+<p>En particular si <span class="math inline">\(\beta = -1\)</span>,
+<span class="math display">\[
+\begin{pmatrix} 2\\ 5 \\ 3 \end{pmatrix} = 2 \cdot \begin{pmatrix} 1\\ 1
+\\ 0 \end{pmatrix} +  3 \cdot \begin{pmatrix} 0\\ 1 \\ 1 \end{pmatrix} ¸
+\]</span></p>
+<h2 id="independencia-lineal">4.4 Independencia lineal</h2>
+<p>Sea <span class="math inline">\(S\)</span> un conjunto no vacío de un
+espacio vectorial <span class="math inline">\(V\)</span> sobre <span class="math inline">\(\mathbb{K}\)</span>. Se dice que el conjunto de
+vectores <span class="math inline">\(S\)</span> es
+<strong>linealmente</strong> <strong>independiente</strong> si ninguna
+combinación lineal de vectores de <span class="math inline">\(S\)</span>
+genera a <span class="math inline">\(\{\mathbf{0}\}\)</span> salvo la
+combinación lineal <em>trivial</em>. Es decir, la única forma de
+expresar al <span class="math inline">\(\mathbf{0}\)</span> con vectores
+de <span class="math inline">\(S\)</span> es cuando <span class="math inline">\(\alpha_i=0\)</span>. También significa que ninguno
+de los vectores de <span class="math inline">\(S\)</span> se puede
+escribir como combinación lineal no nula, de los otros vectores.</p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong>. Decimos que un conjunto de vectores
+<span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\)</span>
+es <strong>linealmente</strong> <strong>independiente</strong> si <span class="math display">\[
+\alpha_1\cdot\mathbf{v}_1+\alpha_2\cdot\mathbf{v}_2+\ldots+\alpha_k\cdot\mathbf{v}_k=
+\mathbf{0}
+\]</span> implica que <span class="math inline">\(\alpha_1=0,\,\alpha_2=0,\,\ldots,\,\alpha_k=0\)</span>.</p>
+</div>
+<p>Dicho de otra forma, ninguno de los vectores es combinación lineal de
+los otros.</p>
+<h3 id="proposición-5">4.4.1 Proposición</h3>
+<p>Si <span class="math inline">\(U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\}\)</span>
+es un conjunto de vectores, los siguientes enunciados son
+equivalentes:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\)</span>
+son linealmente independientes</p></li>
+<li><p>ningún <span class="math inline">\(\mathbf{v}_i\)</span> es una
+combinación lineal de los otros vectores <span class="math inline">\(\{\mathbf{v}_j\}_{j\ne i}\)</span>.</p></li>
+<li><p>ningún <span class="math inline">\(\mathbf{v}_j\)</span> es una
+combinación lineal de los otros vectores <span class="math inline">\(\{\mathbf{v}_i\}_{i\leq j}\)</span>.</p></li>
+</ol>
+<p></p>
+<h4 id="ejemplo-11">4.4.1.1 Ejemplo</h4>
+<p>¿Son linealmente independientes los vectores <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \\ 1
+\end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} -1
+\\ 2 \\ 1 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\ 1 \\ 1
+\end{pmatrix}\)</span>?</p>
+<p>Para probar que los vectores son linealmente independientes partimos
+de suponer que tenemos una combinación lineal que es igual a <span class="math inline">\(\mathbf{0}\)</span>.</p>
+<p><span class="math display">\[
+\alpha_1\cdot \begin{pmatrix} 2 \\ -1 \\ 1 \end{pmatrix} + \alpha_2
+\begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} + \alpha_3 \begin{pmatrix} 1
+\\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}  
+\]</span></p>
+<p>Esto resulta en el siguiente sistema de ecuaciones</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+2\alpha_1 - \alpha_2  + \alpha_3 &amp; = 0 \\
+-\alpha_1 + 2\alpha_2  + \alpha_3 &amp; = 0 \\
+\alpha_1 + \alpha_2  + \alpha_3 &amp; = 0
+\end{array}
+\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{cccccc}
+&amp;  \begin{bmatrix}
+     2 &amp;-1 &amp;  1 &amp; \bigm| &amp; 0      \\
+    -1 &amp; 2 &amp;  1 &amp; \bigm| &amp; 0      \\
+     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp; \rightarrow &amp;
+\begin{bmatrix}
+     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
+    -1 &amp; 2 &amp;  1 &amp; \bigm| &amp; 0      \\
+     2 &amp;-1 &amp;  1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp; \rightarrow &amp;
+\begin{bmatrix}
+     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  2 &amp; \bigm| &amp; 0      \\
+     0 &amp; -3 &amp; -1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{ccc}
+&amp;  \begin{bmatrix}
+     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
+     0 &amp; 3 &amp;  2 &amp; \bigm| &amp; 0      \\
+     0 &amp; 0 &amp;  1 &amp; \bigm| &amp; 0
+  \end{bmatrix}
+&amp;
+\end{array}
+\end{equation*}\]</span> Como la matriz escalonada es triangular
+entonces <span class="math inline">\(\alpha_3=0\)</span>, <span class="math inline">\(3\alpha_2+2\alpha_3=0\)</span>, <span class="math inline">\(\alpha_2=0\)</span> y <span class="math inline">\(\alpha_1 = 0\)</span>. Luego los vectores son
+linealmente independientes.</p>
+<h4 id="proposición-6">4.4.1.2 Proposición</h4>
+<p>Si <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n+1}\)</span>
+es un conjunto de vectores linealmente independientes entonces <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n}\)</span>
+también lo es.</p>
+<h4 id="demostración-1">4.4.1.3 Demostración</h4>
+<p>Suponga no son linealmente independientes, es decir que existe una
+combinación lineal de <span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\}\)</span>,
+<span class="math display">\[
+c_1\mathbf{x}_1+c_2\mathbf{x}_2+\ldots +c_n\mathbf{x}_n = \mathbf{0}
+\]</span> con <span class="math inline">\(c_1,c_2,\ldots,c_n\in\mathbb{R}\)</span> tal que
+no todos son cero. Entonces también existe una combinación lineal de
+<span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n,\mathbf{x}_{n+1}\}\)</span>
+<span class="math display">\[
+c_1\mathbf{x}_1+c_2\mathbf{x}_2+\ldots +c_n\mathbf{x}_n +
+0\mathbf{x}_{n+1} = \mathbf{0}
+\]</span> tal que no todos los escalares en la combinación lineal son
+cero. Es decir <span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n,\mathbf{x}_{n+1}\}\)</span>
+tampoco es un conjunto de vectores linealmente independiente.</p>
+<h3 id="ejemplos-1">4.4.2 Ejemplos</h3>
+<ol style="list-style-type: lower-alpha">
+<li><p>Determinar si los vectores <span class="math inline">\((2,-1,4),(1,0,2)\)</span> y <span class="math inline">\((3,-1,5)\)</span> son linealmente
+independientes.</p></li>
+<li><p>Sea <span class="math inline">\(V=\mathbb{R}_2[x]\)</span> el
+espacio de polinomios con grado <span class="math inline">\(\leq
+2\)</span>. Sean <span class="math inline">\(p_1(x)=x-2x^2\)</span>,
+<span class="math inline">\(p_2(x)=x^2-4x\)</span> y <span class="math inline">\(p_3(x)=-7x+8x^2\)</span>, determinar si los
+polinomios <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span> y <span class="math inline">\(p_3\)</span> son l.i. o linealmente
+independientes</p></li>
+<li><p>Sea <span class="math inline">\(V=\mathcal{M}^{2,2}(\mathbb{R})\)</span> y
+considere el siguiente conjunto <span class="math display">\[
+\begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 6 \end{pmatrix},
+\begin{pmatrix} -1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix},
+\begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix},
+\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}
+\]</span> son linealmente independientes.</p></li>
+<li><p>¿Para qué valores de <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\((2,3,1),\)</span> <span class="math inline">\((1,-1,2)\)</span> y <span class="math inline">\((7,3,c)\)</span> son linealmente
+independientes.</p></li>
+</ol>
+<h2 id="subespacios-generados-por-conjuntos-de-vectores">4.5 Subespacios
+generados por conjuntos de vectores</h2>
+<p>Como comentamos previamente, si <span class="math inline">\(A\)</span> es un subconjunto de vectores <span class="math inline">\(V\)</span>, no necesariamente un subespacio
+vectorial, definimos al <strong>subespacio</strong>
+<strong>generado</strong> <strong>por</strong> <span class="math inline">\(A\)</span> como el conjunto de vectores dados por
+combinaciones lineales de vectores que pertenecen a <span class="math inline">\(A\)</span>. Para referirnos al subespacio generado
+por <span class="math inline">\(A\)</span>, escribimos <span class="math inline">\(\mathcal{S}(A)\)</span></p>
+<p><span class="math display">\[
+\mathcal{S}(A) = \{\mathbf{v}\in V\,\, |\,\, v=\alpha_1 \mathbf{v}_1 +
 \alpha_2 \mathbf{v}_2 + \ldots + \alpha_k \mathbf{v}_k \,:\,
 \mathbf{v}_i \in A, \,\, \alpha_i\in \mathbb{K}   \}
 \]</span></p>
-<p>Claramente <span class="math inline">\(\mathcal{g}(A)\)</span> es un
+<p>Claramente <span class="math inline">\(\mathcal{S}(A)\)</span> es un
 subespacio de <span class="math inline">\(V\)</span>. ¿Por qué?</p>
-<h3 id="propiedades-de-los-subespacios-generados">3.17.2 Propiedades de
+<h3 id="propiedades-de-los-subespacios-generados">4.5.1 Propiedades de
 los subespacios generados</h3>
 <p>Sea <span class="math inline">\(V\)</span> un espacio vectorial y
 <span class="math inline">\(U\subset V\)</span> subconjunto no vacío de
 <span class="math inline">\(V\)</span>, el subespacio generado por <span class="math inline">\(U\)</span>, entonces</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\mathcal{g}(U)\)</span> es un
+<li><p><span class="math inline">\(\mathcal{S}(U)\)</span> es un
 subespacio de <span class="math inline">\(V\)</span>.</p></li>
 <li><p><span class="math inline">\(U\subset
-\mathcal{g}(U)\)</span></p></li>
+\mathcal{S}(U)\)</span></p></li>
 <li><p>Si <span class="math inline">\(W\subset V\)</span> es un
 subespacio vectorial de <span class="math inline">\(V\)</span>, tal que
-<span class="math inline">\(U\subset W\)</span> entonces <span class="math inline">\(\mathcal{g}(U)\subseteq W\)</span>, es decir,
-<span class="math inline">\(\mathcal{g}(U)\)</span> es el subespacio
+<span class="math inline">\(U\subset W\)</span> entonces <span class="math inline">\(\mathcal{S}(U)\subseteq W\)</span>, es decir,
+<span class="math inline">\(\mathcal{S}(U)\)</span> es el subespacio
 <em>mínimo</em> que contiene a <span class="math inline">\(U\)</span>.</p></li>
 </ol>
 <p><strong>Respuesta</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>Ya se vió por que es un subespacio.</p></li>
 <li><p>Si <span class="math inline">\(v\in U\)</span> entonces <span class="math inline">\(1\cdot v\)</span> es ua combinación lineal
-entonces <span class="math inline">\(v\in \mathcal{g}(U)\)</span>, es
+entonces <span class="math inline">\(v\in \mathcal{S}(U)\)</span>, es
 decir <span class="math inline">\(U\subset
-\mathcal{g}(U)\)</span>.</p></li>
+\mathcal{S}(U)\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(U \subseteq W\)</span> las
 combinaciones lineales de vectores de <span class="math inline">\(U\)</span> pertenecen a <span class="math inline">\(W\)</span> es decir <span class="math inline">\(\sum_{i=1}^k \alpha_i\mathbf{u}_i\in W\)</span>
 pues <span class="math inline">\(W\)</span> es un subespacio. Pero
-entonces <span class="math inline">\(\mathcal{g}(U)\subseteq
+entonces <span class="math inline">\(\mathcal{S}(U)\subseteq
 W\)</span></p></li>
 </ol>
-<h3 id="corolario-1">3.17.3 Corolario</h3>
+<h3 id="corolario-1">4.5.2 Corolario</h3>
 <p>Si <span class="math inline">\(A=\{v_1,v_2,\ldots,v_n\}\)</span>
 entonces <span class="math display">\[
-\mathcal{g}(A) = \{\alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot
+\mathcal{S}(A) = \{\alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot
 \mathbf{v}_2 + \ldots + \alpha_n\cdot \mathbf{v}_n,\,\,
 \alpha_i\in\mathbb{K}\}
 \]</span></p>
-<h4 id="ejemplo-1-1">3.17.3.1 Ejemplo 1</h4>
+<h4 id="ejemplo-1-1">4.5.2.1 Ejemplo 1</h4>
 <p>Considere <span class="math inline">\(V=\mathbb{R}^{2}[x]\)</span> el
 espacio de polinomipos de grado <span class="math inline">\(\le
-2\)</span> y <span class="math inline">\(v_1(x)=x^{2}+1\)</span>, <span class="math inline">\(v_2(x)=x^{2}-1\)</span> y <span class="math inline">\(v_3(x)=x^2 + x +1\)</span>. Sea <span class="math inline">\(W=\mathcal{g}(v_1,v_2,v_3)\)</span></p>
+2\)</span> y <span class="math inline">\(v_1(x)=x^{2}+1\)</span>, <span class="math inline">\(v_2(x)=x^{2}-1\)</span> y <span class="math inline">\(v_3(x)=x^2 + x +1\)</span>. Sea <span class="math inline">\(W=\mathcal{S}(v_1,v_2,v_3)\)</span></p>
 <p>¿Cuál de los siguientes polinomios pertenecen a <span class="math inline">\(W\)</span>?</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(p(x)=2x^{2}\)</span></p></li>
@@ -1313,9 +1584,9 @@ b=-1/2\)</span> es decir <span class="math inline">\(1
 =\frac{1}{2}(x^{2}+1)-\frac{1}{2}(x^{2}-1)+ 0\cdot(x^{2}+x+1)\)</span>,
 es decir <span class="math inline">\(1\in
 \mathcal{g}(v_1,v_2,v_3)\)</span>.</p>
-<h4 id="ejemplo-2-2">3.17.3.2 Ejemplo 2</h4>
+<h4 id="ejemplo-2-2">4.5.2.2 Ejemplo 2</h4>
 <p>Determinar si <span class="math inline">\((3,6,9)\in
-\mathcal{g}((1,4,6), (2,5,8))\)</span>.</p>
+\mathcal{S}((1,4,6), (2,5,8))\)</span>.</p>
 <p>Se desea saber si</p>
 <p><span class="math display">\[
 \begin{array}{ccc}
@@ -1345,228 +1616,52 @@ es decir <span class="math inline">\(1\in
   \end{bmatrix}
 \end{array}
 \end{equation*}\]</span></p>
-<p>Como el sistema no es compatible entonces <span class="math inline">\((3,6,9) \notin \mathcal{g}((1,4,6),
+<p>Como el sistema no es compatible entonces <span class="math inline">\((3,6,9) \notin \mathcal{S}((1,4,6),
 (2,5,8))\)</span>.</p>
 <p>Un caso importante de los subespacios generados es cuando el
 subespacio <span class="math inline">\(\mathcal{g}(U)=V\)</span>, es
 decir el subespacio resulta ser <strong>todo</strong> el espacio
 vectorial <span class="math inline">\(V\)</span>.</p>
-<h2 id="dependencia-lineal-de-vectores">3.18 Dependencia lineal de
-vectores</h2>
-<p>Los siguientes conceptos nos permiten describir cuando un vector “no
-depende” de otros. O dicho de otra forma, cuando un conjunto de
-generador de vectores será “mínimo”.</p>
-<p>Sea <span class="math inline">\(V\)</span> un espacio vectorial y
-<span class="math inline">\(U=\{v_1,v2,\ldots,v_n\}\)</span> un conjunto
-de vectores, suponga que <span class="math inline">\(\mathbf{w}\ne 0,
-\,\,\mathbf{w}\in\mathcal{g}(v_1,v2,\ldots,v_n)\)</span> entonces <span class="math display">\[
-\mathbf{w} = \alpha_1\cdot \mathbf{v}_1 + \alpha_2\cdot \mathbf{v}_2 +
-\ldots + \alpha_k\cdot \mathbf{v}_k
-\]</span> como <span class="math inline">\(\mathbf{w}\ne
-\mathbf{0}\)</span> entonces existe al menos un escalar <span class="math inline">\(\alpha_i\ne 0\)</span> por lo que la combinación
-lineal se puede escribir como</p>
-<p><span class="math display">\[
-\mathbf{0} = (-1)\cdot \mathbf{w} + \alpha_1\cdot \mathbf{v}_1 +
-\alpha_2\cdot \mathbf{v}_2 + \ldots + \alpha_k\cdot \mathbf{v}_k
-\]</span> Es decir, la última condición expresa de otra manera la
-existencia de un vector (en la combinación lineal) que está en términos
-de los otros.</p>
-<h2 id="dependencia-lineal-de-vectores-1">3.19 Dependencia lineal de
-vectores</h2>
-<div style="background-color: #FFE9B1">
-<p><strong>Definición</strong>: Sea <span class="math inline">\(V\)</span> un espacio vectorial, <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n \in
-V\)</span> se dice que son <strong>linealmente</strong>
-<strong>dependientes</strong> si existen escalares <span class="math inline">\(c_1,c_2,\ldots,c_n\)</span> no todos igual a cero
-tal que</p>
-<p><span class="math display">\[
-c_1\cdot \mathbf{x}_1 + c_2\cdot \mathbf{x}_2 + \ldots + c_n\cdot
-\mathbf{x}_n = \mathbf{0}
-\]</span></p>
-</div>
-<h2 id="observación-1">3.20 Observación</h2>
-<p>Si <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\)</span>
-son linealmente dependientes entonces al menos un escalar <span class="math inline">\(c_i\)</span> es no nulo, entonces <span class="math inline">\(\mathbf{x}_i\)</span> es combinación lineal de los
-otros vectores pues <span class="math display">\[
-\mathbf{x}_i = \sum_{i\ne j} -\frac{c_j}{c_i}\cdot \mathbf{x}_j  =
-\sum_{i\ne j} \beta_{j}\cdot \mathbf{x}_j
-\]</span></p>
-<h4 id="ejemplo-1.">3.20.0.1 Ejemplo 1.</h4>
-<p>Sea <span class="math inline">\(V=\mathbb{R}^{3}\)</span> verificar
-si el conjunto <span class="math inline">\(U=\Bigg\{ \begin{pmatrix} 1\\
-1 \\ 0 \end{pmatrix}, \begin{pmatrix} 2\\ 5 \\ 3 \end{pmatrix} ,
-\begin{pmatrix} 0\\ 1 \\ 1 \end{pmatrix} \Bigg\}\)</span>. Considerando
-las combinaciones lineales, obtenemos el siguiente sistema</p>
-<p><span class="math display">\[\begin{equation*}
-\begin{array}{cccccc}
-&amp;  \begin{bmatrix}
-     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
-     1 &amp; 5 &amp;  1 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-&amp; \rightarrow &amp;
-\begin{bmatrix}
-     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-&amp; \rightarrow &amp;
-\begin{bmatrix}
-     1 &amp; 2 &amp;  0 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  1 &amp; \bigm| &amp; 0      \\
-     0 &amp; 0 &amp;  0 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-\end{array}
-\end{equation*}\]</span> Obteniendo el siguiente sistema</p>
-<p><span class="math display">\[
-\begin{array}{cc}
-\alpha + 2\beta &amp; = 0 \\
-3\beta + \gamma &amp; = 0
-\end{array}
-\]</span> es decir <span class="math inline">\(\gamma =
--3\beta\)</span>, <span class="math inline">\(\alpha = -2\beta\)</span>,
-entonces <span class="math display">\[
-\begin{pmatrix} \alpha \\ \beta \\  \gamma
-\end{pmatrix}  =  \begin{pmatrix} -3\\ 1 \\ -2 \end{pmatrix} \cdot \beta
-\]</span></p>
-<p>En particular si <span class="math inline">\(\beta = -1\)</span>,
-<span class="math display">\[
-\begin{pmatrix} 2\\ 5 \\ 3 \end{pmatrix} = 2 \cdot \begin{pmatrix} 1\\ 1
-\\ 0 \end{pmatrix} +  3 \cdot \begin{pmatrix} 0\\ 1 \\ 1 \end{pmatrix} ¸
-\]</span></p>
-</div>
-<div id="independencia-lineal" class="slide section level1">
-<h1>4 Independencia lineal</h1>
-<p>Sea <span class="math inline">\(S\)</span> un conjunto no vacío de un
-espacio vectorial <span class="math inline">\(V\)</span> sobre <span class="math inline">\(\mathbb{K}\)</span>. Se dice que el conjunto de
-vectores <span class="math inline">\(S\)</span> es
-<strong>linealmente</strong> <strong>independiente</strong> si ninguna
-combinación lineal de vectores de <span class="math inline">\(S\)</span>
-genera a <span class="math inline">\(\{\mathbf{0}\}\)</span> salvo la
-combinación lineal <em>trivial</em>. Es decir, la única forma de
-expresar al <span class="math inline">\(\mathbf{0}\)</span> con vectores
-de <span class="math inline">\(S\)</span> es cuando <span class="math inline">\(\alpha_i=0\)</span>. También significa que ninguno
-de los vectores de <span class="math inline">\(S\)</span> se puede
-escribir como combinación lineal no nula, de los otros vectores.</p>
-<div style="background-color:#FFE9B1">
-<p><strong>Definición</strong>. Decimos que un conjunto de vectores
-<span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\)</span>
-es <strong>linealmente</strong> <strong>independiente</strong> si <span class="math display">\[
-\alpha_1\cdot\mathbf{v}_1+\alpha_2\cdot\mathbf{v}_2+\ldots+\alpha_k\cdot\mathbf{v}_k=
-\mathbf{0}
-\]</span> implica que <span class="math inline">\(\alpha_1=0,\,\alpha_2=0,\,\ldots,\,\alpha_k=0\)</span>.</p>
-</div>
-<p>Dicho de otra forma, ninguno de los vectores es combinación lineal de
-los otros.</p>
-<h3 id="proposición-5">4.0.1 Proposición</h3>
-<p>Si <span class="math inline">\(U=\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\}\)</span>
-es un conjunto de vectores, los siguientes enunciados son
-equivalentes:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_k\}\)</span>
-son linealmente independientes</p></li>
-<li><p>ningún <span class="math inline">\(\mathbf{v}_i\)</span> es una
-combinación lineal de los otros vectores <span class="math inline">\(\{\mathbf{v}_j\}_{j\ne i}\)</span>.</p></li>
-<li><p>ningún <span class="math inline">\(\mathbf{v}_j\)</span> es una
-combinación lineal de los otros vectores <span class="math inline">\(\{\mathbf{v}_i\}_{i\leq j}\)</span>.</p></li>
-</ol>
-<p></p>
-<h4 id="ejemplo-10">4.0.1.1 Ejemplo</h4>
-<p>¿Son linealmente independientes los vectores <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \\ 1
-\end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} -1
-\\ 2 \\ 1 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\ 1 \\ 1
-\end{pmatrix}\)</span>?</p>
-<p>Para probar que los vectores son linealmente independientes partimos
-de suponer que tenemos una combinación lineal que es igual a <span class="math inline">\(\mathbf{0}\)</span>.</p>
-<p><span class="math display">\[
-\alpha_1\cdot \begin{pmatrix} 2 \\ -1 \\ 1 \end{pmatrix} + \alpha_2
-\begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} + \alpha_3 \begin{pmatrix} 1
-\\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}  
-\]</span></p>
-<p>Esto resulta en el siguiente sistema de ecuaciones</p>
-<p><span class="math display">\[
-\begin{array}{cc}
-2\alpha_1 - \alpha_2  + \alpha_3 &amp; = 0 \\
--\alpha_1 + 2\alpha_2  + \alpha_3 &amp; = 0 \\
-\alpha_1 + \alpha_2  + \alpha_3 &amp; = 0
-\end{array}
-\]</span></p>
-<p><span class="math display">\[\begin{equation*}
-\begin{array}{cccccc}
-&amp;  \begin{bmatrix}
-     2 &amp;-1 &amp;  1 &amp; \bigm| &amp; 0      \\
-    -1 &amp; 2 &amp;  1 &amp; \bigm| &amp; 0      \\
-     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-&amp; \rightarrow &amp;
-\begin{bmatrix}
-     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
-    -1 &amp; 2 &amp;  1 &amp; \bigm| &amp; 0      \\
-     2 &amp;-1 &amp;  1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-&amp; \rightarrow &amp;
-\begin{bmatrix}
-     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  2 &amp; \bigm| &amp; 0      \\
-     0 &amp; -3 &amp; -1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-\end{array}
-\end{equation*}\]</span></p>
-<p><span class="math display">\[\begin{equation*}
-\begin{array}{ccc}
-&amp;  \begin{bmatrix}
-     1 &amp; 1 &amp;  1 &amp; \bigm| &amp; 0      \\
-     0 &amp; 3 &amp;  2 &amp; \bigm| &amp; 0      \\
-     0 &amp; 0 &amp;  1 &amp; \bigm| &amp; 0
-  \end{bmatrix}
-&amp;
-\end{array}
-\end{equation*}\]</span> Como la matriz escalonada es triangular
-entonces <span class="math inline">\(\alpha_3=0\)</span>, <span class="math inline">\(3\alpha_2+2\alpha_3=0\)</span>, <span class="math inline">\(\alpha_2=0\)</span> y <span class="math inline">\(\alpha_1 = 0\)</span>. Luego los vectores son
-linealmente independientes.</p>
-<h4 id="proposición-6">4.0.1.2 Proposición</h4>
-<p>Si <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n+1}\)</span>
-es un conjunto de vectores linealmente independientes entonces <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_{n}\)</span>
-también lo es.</p>
-<h3 id="teorema">4.0.2 Teorema</h3>
+<h3 id="teorema">4.5.3 Teorema</h3>
 <p>Sea <span class="math inline">\(V\)</span> un espacio vectorial y
 <span class="math inline">\(S\)</span> un conjunto de vectores
 linealmente independientes y sea <span class="math inline">\(\mathbf{v}_0 \in V\)</span> un vector que no
 pertenece a <span class="math inline">\(S\)</span>. Entonces <span class="math inline">\(S\cup \{\mathbf{v}_0\}\)</span> es un conjunto
 linealmente dependiente si y sólo si <span class="math inline">\(\mathbf{v}_0\in \mathcal{g}(S)\)</span>. Y <span class="math inline">\(S\cup \{\mathbf{v}_0\}\)</span> es un conjunto
 linealmente independiente si y sólo si <span class="math inline">\(\mathbf{v}_0\notin \mathcal{g}(S)\)</span>.</p>
-<h3 id="proposición-7">4.0.3 Proposición</h3>
+<h3 id="proposición-7">4.5.4 Proposición</h3>
 <p>Suponga que <span class="math inline">\(\{\mathbf{v}_1,\,\mathbf{v}_2,\ldots,\mathbf{v}_m\}\)</span>
 es un conjunto de vectores linealmente independientes.</p>
 <p>Si <span class="math inline">\(v=\alpha_1\cdot
 \mathbf{v}_1+\alpha_2\cdot \mathbf{v}_2+\ldots \alpha_m \mathbf{v}_m =
 \beta_1\cdot \mathbf{v}_1+\beta_2\cdot \mathbf{v}_2+\ldots \beta_m
 \mathbf{v}_m\)</span> entonces <span class="math inline">\(\alpha_1=\beta_1,\,\)</span> <span class="math inline">\(\alpha_2=\beta_2,\,\ldots,\)</span> <span class="math inline">\(\alpha_m = \beta_m\)</span>.</p>
-<h3 id="definición.-conjunto-generador">4.0.4 Definición. Conjunto
+<h3 id="definición.-conjunto-generador">4.5.5 Definición. Conjunto
 generador</h3>
 <p>Decimos que <span class="math inline">\(U\)</span> es un conjunto
 generador de <span class="math inline">\(V\)</span> o bien que <span class="math inline">\(U\)</span> <em>genera</em> a <span class="math inline">\(V\)</span> si</p>
 <p><span class="math display">\[
 \mathcal{g}(U) = V
 \]</span></p>
-<h4 id="ejemplo-3-2">4.0.4.1 Ejemplo 3</h4>
+<h4 id="ejemplo-3-2">4.5.5.1 Ejemplo 3</h4>
 <p>Sea <span class="math inline">\(V=\mathbb{R}^{2}\)</span> y sea <span class="math inline">\(W=\{(0,1),(1,0)\}\)</span>, para todo vector <span class="math inline">\(\mathbf{x}=(x_1,x_2)\)</span> tenemos que <span class="math display">\[
 (x_1,x_2) = x_1\cdot (1,0) + x_2\cdot (0,1)
 \]</span></p>
 <p>es decir todo elemento de <span class="math inline">\(\mathbb{R}^{2}\)</span> es una combinación lineal
 de vectores de <span class="math inline">\(W\)</span>, entonces <span class="math inline">\(\{(1,0), (0,1)\}\)</span> <strong>genera</strong>
 a <span class="math inline">\(W\)</span>. De manera más general</p>
-<h4 id="ejemplo-4-2">4.0.4.2 Ejemplo 4</h4>
+<h4 id="ejemplo-4-2">4.5.5.2 Ejemplo 4</h4>
 <p>Sea <span class="math inline">\(V=\mathbb{R}^{n}\)</span> y sea <span class="math inline">\(W=\{ e_i=(0,\ldots,0,1,0,\ldots,0) \, \mbox{ para
 }i=1,2,\ldots,n \}\)</span>, para todo vector <span class="math inline">\(\mathbf{x}=(x_1,x_2,\ldots,x_n)\)</span> tenemos
 que <span class="math display">\[
 (x_1,x_2,\ldots,x_n) = x_1\cdot e_1 + x_2\cdot e_2 + \ldots x_n\cdot e_n
 \]</span></p>
-<h4 id="ejemplo-5-2">4.0.4.3 Ejemplo 5</h4>
+<h4 id="ejemplo-5-2">4.5.5.3 Ejemplo 5</h4>
 <p>En <span class="math inline">\(\mathbb{R}^{3}\)</span> calcular <span class="math inline">\(\mathcal{g}(W)\)</span> con <span class="math inline">\(W=\{(1,0,0),(0,0,1)\}\)</span>. <span class="math display">\[
 \mathcal{g}(W)=\{\alpha\cdot (1,0,0)+\beta\cdot
 (0,0,1):\,\alpha,\beta\in\mathbb{R} \} = \{(x,0,z):x,z\in\mathbb{R}\}
 \]</span></p>
-<h4 id="ejemplo-6-2">4.0.4.4 Ejemplo 6</h4>
+<h4 id="ejemplo-6-2">4.5.5.4 Ejemplo 6</h4>
 <p>¿Que subespacio generan los vectores <span class="math inline">\(\begin{pmatrix} 1 \\ 1 \\ 1
 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\
 2 \\ 3 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}\)</span>
@@ -1605,13 +1700,13 @@ diagonal, entonces el sistema tiene solución <em>para</em>
 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\
 2 \\ 3 \end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}\)</span>
 generan a <span class="math inline">\(\mathbb{R}^{3}\)</span>.</p>
-<h4 id="ejemplo-7-1">4.0.4.5 Ejemplo 7</h4>
+<h4 id="ejemplo-7-1">4.5.5.5 Ejemplo 7</h4>
 <p>Si <span class="math inline">\(V=\mathbb{R}^{2}[x]\)</span> son los
 polinomios con grado <span class="math inline">\(\leq 2\)</span>. Sean
 <span class="math inline">\(p(x)= 1+ 2x +x^{2}\)</span> y <span class="math inline">\(q(x)=2+x^{2}\)</span>. ¿Es <span class="math inline">\(\{p(x),q(x)\}\)</span> un generador de <span class="math inline">\(\mathbb{R}^{2}[x]\)</span>?</p>
 <p>No. Pues <span class="math inline">\(V\)</span> es un espacio de
 polinomios de grado 2.</p>
-<h4 id="ejemplo-6-3">4.0.4.6 Ejemplo 6</h4>
+<h4 id="ejemplo-6-3">4.5.5.6 Ejemplo 6</h4>
 <p>¿El conjunto de matrices <span class="math inline">\(U\)</span>
 genera a <span class="math inline">\(\mathcal{M}^{2,2}(\mathbb{R})\)</span>?</p>
 <p><span class="math display">\[
@@ -1674,7 +1769,7 @@ una combinación lineal de los vectores en <span class="math inline">\(U\)</span
 \mathbf{v}=\alpha_1\cdot\mathbf{v}_1+\alpha_2\cdot\mathbf{v}_2+\ldots+\alpha_k\cdot\mathbf{v}_k
 \]</span></p>
 </div>
-<h3 id="ejemplo-11">5.1.1 Ejemplo</h3>
+<h3 id="ejemplo-12">5.1.1 Ejemplo</h3>
 <p>En <span class="math inline">\(\mathbb{R}^3\)</span> el conjunto de
 vectores <span class="math inline">\(\mathbf{e}_1 = (1,0,0),\)</span>
 <span class="math inline">\(\mathbf{e}_2 = (0,1,0),\)</span> <span class="math inline">\(\mathbf{e}_3 = (0,0,1)\)</span> genera a <span class="math inline">\(\mathbb{R}^3\)</span>. De igual manera el conjunto
@@ -1689,7 +1784,7 @@ de vectores</p>
   \end{array}
 \end{equation}\]</span> generan a <span class="math inline">\(\mathbb{R}^{n}\)</span>. Los vectores <span class="math inline">\(\{\mathbf{e}_i\,:\,i=1,2\ldots,n\}\)</span> son
 llamados la <em>base</em> <em>canónica</em>.</p>
-<h3 id="ejemplo-12">5.1.2 Ejemplo</h3>
+<h3 id="ejemplo-13">5.1.2 Ejemplo</h3>
 <p>En <span class="math inline">\(\mathbb{R}_n[x]\)</span> el conjunto
 de monomios <span class="math inline">\(p_0(x)=1,\,\)</span> <span class="math inline">\(p_1(x) =x,\,\)</span> <span class="math inline">\(p_2(x)=x^{2},\,\)</span>…<span class="math inline">\(p_n(x)=x^{n}\)</span> genera al <span class="math inline">\(\mathbb{R}_n[x]\)</span>.</p>
 <p>Si <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\)</span>
@@ -1734,7 +1829,7 @@ se puede expresar como una combinación lineal de los vectores en <span class="m
 es linealmente independiente</p></li>
 </ol>
 </div>
-<h3 id="ejemplo-13">6.0.1 Ejemplo</h3>
+<h3 id="ejemplo-14">6.0.1 Ejemplo</h3>
 <p>Determinar si <span class="math inline">\(\{(-1,2,3),(2,-3,-6),(1,-3,-2)\}\)</span> forman
 una base para <span class="math inline">\(\mathbb{R}^{3}\)</span>. Hay
 que ver si</p>
@@ -1805,6 +1900,21 @@ siempre tiene solución y cualquier vector es combinación lineal de los 3
 vectores, es decir, <span class="math inline">\(\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}\)</span> es
 un conjunto generador. Y por tanto <span class="math inline">\(\{(-1,2,3),\,(2,-3,-6),\,(1,-3,-2)\}\)</span>
 forma una base de <span class="math inline">\(\mathbb{R}^{3}\)</span>.</p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong> Sea <span class="math inline">\(V\)</span> un espacio vectorial y <span class="math inline">\(\mathcal{B}=\{b_1,b_2,\ldots,b_n\}\subset
+V\)</span>. Las siguientes condiciones son equivalentes</p>
+<ul>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> es una
+<em>base</em> de <span class="math inline">\(V\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> es un conjunto
+generador <em>mínimo</em> de <span class="math inline">\(V\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> es un conjunto
+de vectores linealmente independiente, <em>maximal</em></p></li>
+</ul>
+</div>
+<p>Un conjunto de vectores <span class="math inline">\(\mathcal{B}\)</span> linealmente independiente es
+<em>maximal</em> en <span class="math inline">\(V\)</span> si para todo
+conjunto linealmente independiente <span class="math inline">\(\mathcal{A}\)</span> entonces <span class="math inline">\(\#A \leq \#B\)</span></p>
 <h2 id="espacio-vectorial-finito-dimensional">6.1 Espacio vectorial
 finito-dimensional</h2>
 <div style="background-color:#FFE9B1">
@@ -1899,7 +2009,7 @@ A=\begin{bmatrix} \mathbf{v}_1 | \mathbf{v}_2 | \ldots | \mathbf{v}_n
 <p>Por el teorema de la <span class="citation">[@sec:teom4]</span> esto
 implica que si <span class="math inline">\(n\)</span> vectores forman
 una matriz con determinante no nulo entonces forman una base de <span class="math inline">\(\mathbb{R}^{n}\)</span>.</p>
-<h3 id="ejemplo-14">6.5.1 Ejemplo</h3>
+<h3 id="ejemplo-15">6.5.1 Ejemplo</h3>
 <p>Encontrar una bases que contenga a <span class="math inline">\((1,2,3)\)</span> y a <span class="math inline">\((2,3,4)\)</span>. Para calcular una base, primer
 hay que encontrar una forma de caracterizar al espacio generado por
 <span class="math inline">\((1,2,3), (2,3,4)\)</span>. Procedemos de
@@ -1997,7 +2107,7 @@ columna</p>
 independientes, sea <span class="math inline">\(A\)</span> la matriz con
 los vectores como <em>columnas</em>, si la matriz escalonada reducida de
 <span class="math inline">\(A\)</span>, <span class="math inline">\(A_{red}=I_n\)</span> entonces <span class="math inline">\(U\)</span> forma una base</p>
-<h3 id="ejemplo-15">6.6.1 Ejemplo</h3>
+<h3 id="ejemplo-16">6.6.1 Ejemplo</h3>
 <p>Considere a <span class="math inline">\(S\)</span> como <span class="math inline">\(U=\Bigg\{\begin{pmatrix} 1 \\ -2\\0
 \end{pmatrix},\begin{pmatrix} 0\\1\\2 \end{pmatrix},\begin{pmatrix}-5
 \\6\\-8 \end{pmatrix} ,\begin{pmatrix}1 \\-2\\1
@@ -2008,6 +2118,28 @@ de <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
 <li><p>Encontrar una base en <span class="math inline">\(S\)</span></p></li>
 <li><p>Encontrar las coordenadas de <span class="math inline">\((1,1,1)\)</span> con respecto a la base</p></li>
 </ul>
+<h3 id="el-wronskiano">6.6.2 El Wronskiano</h3>
+<p>Sea <span class="math inline">\(V\)</span> un espacio vectorial de
+funciones de variable real, suponga que <span class="math inline">\(\mathcal{U}=\{f_1,f_2,\ldots, f_n\}\)</span>
+funciones <span class="math inline">\(n-1\)</span> veces diferenciables,
+definimos al <em>Wronskiano</em> como</p>
+<p><span class="math display">\[
+W(x) =\begin{pmatrix}
+  f_1(x)       &amp; f_2(x) &amp; \ldots &amp; f_n(x)  \\
+  f&#39;_1(x)      &amp; f&#39;_2(x) &amp; \ldots &amp; f&#39;_n(x)  \\
+  f^{(2)}_1(x) &amp; f^{(2)}_2(x) &amp; \ldots &amp; f^{(2)}_n(x)  \\
+  \vdots       &amp;   \vdots     &amp;  \ldots &amp; \vdots \\
+  f_1^{(n-1)}(x)&amp; f_2^{(n-1)}(x) &amp; \ldots &amp; f_n^{(n-1)}(x)
+\end{pmatrix}
+\]</span></p>
+<p>Si existe un punto <span class="math inline">\(x=x_0\)</span> tal que
+<span class="math inline">\(W(x_0)\)</span> es invertible entonces <span class="math inline">\(\mathcal{U}\)</span> es linealmente
+independiente.</p>
+<h3 id="ejemplo-17">6.6.3 Ejemplo</h3>
+<p>Sea <span class="math inline">\(V=\mathbb{R}_n[x]\)</span> el espacio
+de polinomios con grado <span class="math inline">\(f\leq n\)</span>
+Demuestre que <span class="math inline">\(\{1,x,x^2,\ldots,
+x^{n}\)</span> es un conjunto linealmente independiente.</p>
 </div>
 <div id="dimensión-de-subespacios-vectoriales" class="slide section level1">
 <h1>7 Dimensión de subespacios vectoriales</h1>
@@ -2079,7 +2211,7 @@ linealmente independientes y generan a <span class="math inline">\(V\)</span> en
 <p>Si <span class="math inline">\(V\)</span> es un espacio vectorial
 finito dimensional, <span class="math inline">\(\dim(V)=n\)</span> y
 <span class="math inline">\(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\)</span>
-es una lista de vectores linealmente independientes en <span class="math inline">\(V\)</span> y <span class="math inline">\(m\leq
+es una lista de vectores linealmente independientes en <span class="math inline">\(V\)</span>, <span class="math inline">\(m\leq
 n\)</span> entonces <span class="math inline">\(V\)</span> tiene una
 base <span class="math inline">\(\mathcal{B}_V\)</span> tal que <span class="math inline">\(\mathcal{B}_V=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{x}_{m+1},\mathbf{x}_{m+2},\ldots,\mathbf{x}_n\}\)</span>.</p>
 <p>Dicho de otra forma, todo conjunto de vectores linealmente
@@ -2094,10 +2226,42 @@ es linealmente independiente. Si <span class="math inline">\(m+1&lt;n\)</span> e
 argumento con los <span class="math inline">\(n+1\)</span> vectores.
 Tras añadir <span class="math inline">\(m-n\)</span> vectores <span class="math inline">\(\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m,\mathbf{y}_{m+1}\ldots,\mathbf{y}_{m
 + n-m}\}\)</span></p>
+<div style="background-color:#FFE9B1">
+<p><strong>Lema </strong></p>
+<p>Suponga que los vectores <span class="math inline">\(\{\vec{v}_1,
+\vec{v}_2,\ldots, \vec{v}_n\}\)</span> son linealmente independientes y
+que <span class="math inline">\(\vec{v}\)</span> no es combinación
+lineal de <span class="math inline">\(\{\vec{v}_1, \vec{v}_2,\ldots,
+\vec{v}_n\}\)</span> entonces <span class="math inline">\(\{\vec{v}_1,
+\vec{v}_2,\ldots, \vec{v}_n, \vec{v}\}\)</span> son linealmente
+independientes</p>
 </div>
-<div id="ejemplos-1" class="slide section level1">
+<h3 id="ejemplos-2">7.2.1 Ejemplos</h3>
+<p>Para cada uno de los conjuntos, i) probar que son linealmente
+independientes, ii) extender el conjunto a una base.</p>
+<ul>
+<li><p><span class="math inline">\(\mathcal{U}=\{(1,2,3)\}\)</span> en
+<span class="math inline">\(\mathbb{R}^3\)</span></p></li>
+<li><p><span class="math inline">\(\{(1,2,3), \,(1,2,0)\}\)</span> para
+<span class="math inline">\(\mathbb{R}^3\)</span></p></li>
+<li><p><span class="math inline">\(\{(1,1,0,0),\,(0,1,1,0)\}\)</span>
+para <span class="math inline">\(\mathbb{R}^4\)</span></p></li>
+</ul>
+</div>
+<div id="ejemplos-3" class="slide section level1">
 <h1>8 Ejemplos</h1>
-<h3 id="ejemplo-16">8.0.1 Ejemplo</h3>
+<p>Determinar si el siguiente conjunto forma una base para <span class="math inline">\(V\)</span></p>
+<ul>
+<li><p><span class="math inline">\(V= \mathbb{R}^2\)</span>, <span class="math inline">\(U=\{\begin{pmatrix} 1 \\ 4\end{pmatrix},
+\begin{pmatrix} 2 \\ 3\end{pmatrix}\}\)</span></p></li>
+<li><p><span class="math inline">\(V=\mathbb{R}^3\)</span>, <span class="math inline">\(U=\Big\{(1,2,3), (4,5,6),
+(7,8,9)\Big\}\)</span></p></li>
+<li><p><span class="math inline">\(V=\mathcal{M}^{2,2}\)</span>, <span class="math inline">\(U=\Big\ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0
+\end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix},
+\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 1 \end{pmatrix},\begin{pmatrix} 0
+&amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \Big\}\)</span></p></li>
+</ul>
+<h3 id="ejemplo-18">8.0.1 Ejemplo</h3>
 <p>Sea <span class="math inline">\(S=\mathcal{g}
 \{(1,0,1),(1,2,-1),(1,-2,3)\}\)</span>. Hallar una base para <span class="math inline">\(S\)</span> y su dimensión.</p>
 <p>Primero verifiquemos si <span class="math inline">\(S\)</span> es
@@ -2162,7 +2326,7 @@ los dos primeros. Es decir <span class="math display">\[
 &amp; 3 \end{pmatrix}\)</span> se puede ver que los vectores <span class="math inline">\(\begin{pmatrix} 1 &amp; 0 &amp; 1 \end{pmatrix},
 \begin{pmatrix} 1 &amp; 2 &amp; -1 \end{pmatrix}\)</span> son
 linealmente independientes y que por tanto la dimensión de <span class="math inline">\(S\)</span> es igual a 2.</p>
-<h3 id="ejemplo-17">8.0.2 Ejemplo</h3>
+<h3 id="ejemplo-19">8.0.2 Ejemplo</h3>
 <p>Sea <span class="math inline">\(W=\mathcal{G} \begin{Bmatrix}
 \begin{pmatrix} 1 &amp; 1\\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0
 &amp; 1\\ 1 &amp; 0 \end{pmatrix} \end{Bmatrix}\)</span> encontrar una
@@ -2303,32 +2467,13 @@ W=\Bigg\{\begin{pmatrix} a &amp; b \\c &amp; d \end{pmatrix}\in
 M^{2,2}(\mathbb{R}) |\, a=d ,b=-c \Bigg\}
 \]</span></p>
 </div>
-<div id="rango-de-un-subespacio-generado" class="slide section level1">
-<h1>9 Rango de un subespacio generado</h1>
-<p>Sea <span class="math inline">\(A\)</span> una matriz, que se compone
-por vectores columna, definimos al <em>rango</em> de una matriz como el
-número de vectores columna que son linealmente independientes</p>
-<p>Suponga que <span class="math inline">\(v_1,v_2,\ldots,v_m\)</span>
-son vectores de un e.v. <span class="math inline">\(V\)</span>, sea
-<span class="math inline">\(A=[\mathtt{v}_1|\mathtt{v}_2|\ldots|\mathtt{v}_m]\)</span>.
-Entonces <span class="math inline">\(\dim\{\mathcal{G}(\{\mathtt{v}_1,\mathtt{v}_2,\ldots,
-\mathtt{v}_m\})\}=\mbox{Rango}(A)\)</span>.</p>
-<div style="background-color:#FFE9B1">
-<p><strong>Definición</strong></p>
-<p>El <strong>rango</strong> <strong>de</strong> <strong>un</strong>
-<strong>conjunto</strong> <strong>de</strong> <strong>vectores</strong>
-<span class="math inline">\(K=\{v_1,v_2\ldots, v_n\}\)</span> es el
-<strong>mayor</strong> número de vectores que son
-<strong>linealmente</strong> <strong>independientes</strong></p>
-</div>
-</div>
 <div id="coordenadas-de-un-vector-respecto-a-una-base" class="slide section level1">
-<h1>10 Coordenadas de un vector respecto a una base</h1>
+<h1>9 Coordenadas de un vector respecto a una base</h1>
 <p>Una propiedad esencial de usar una base en un espacio vectorial es
 que nos permite expresar cada vector de <strong>manera</strong>
 <strong>única</strong> como combinación lineal de sus vectores
 básicos.</p>
-<h2 id="definiciones">10.1 Definiciones</h2>
+<h2 id="definiciones">9.1 Definiciones</h2>
 <p>Un conjunto <span class="math inline">\(\{\mathtt{v}_1,\mathtt{v}_2,\ldots,\mathtt{v}_n\}\)</span>
 de vectores de un espacio vectorial <span class="math inline">\(V\)</span> es una base <em>ordenada</em> es una
 secuencia fija de los vectores <span class="math inline">\(\mathtt{v}_1,
@@ -2350,7 +2495,7 @@ u= \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n
 <p>Esto significa que, <em>fijando</em> <em>una</em> <em>base</em> <span class="math inline">\(\mathcal{B}\)</span>, en <span class="math inline">\(V\)</span> podemos corresponder a cada vector
 <span class="math inline">\(v \rightarrow (\alpha_1,\alpha_2,\ldots,
 \alpha_n)\)</span></p>
-<h3 id="ejemplo-1-3">10.1.1 Ejemplo 1</h3>
+<h3 id="ejemplo-1-3">9.1.1 Ejemplo 1</h3>
 <p>Consideremos a las bases de <span class="math inline">\(\mathbb{R}^2\)</span></p>
 <p><span class="math display">\[
 \mathcal{B}=\{\mathtt{e}_1=(1,0),\quad \mathtt{e}_2=(0,1)\} \quad\quad
@@ -2370,7 +2515,7 @@ que <span class="math display">\[
 v = (4,-2)_{\mathcal{B}} &amp; \quad v = (1,2)_{\mathcal{B}&#39;}
 \end{matrix}
 \]</span></p>
-<h3 id="ejemplo-2-4">10.1.2 Ejemplo 2</h3>
+<h3 id="ejemplo-2-4">9.1.2 Ejemplo 2</h3>
 <p>Mostrar que los vectores <span class="math display">\[
 \begin{matrix}  
     \alpha_1 = (1,1,0,0), &amp; \alpha_2 = (0,0,1,1), \\
@@ -2379,7 +2524,7 @@ v = (4,-2)_{\mathcal{B}} &amp; \quad v = (1,2)_{\mathcal{B}&#39;}
 \]</span></p>
 <p>Encontrar las coordenadas de cada uno de los vectores en la base
 canónica <span class="math inline">\(\mathtt{e}_1,\mathtt{e}_2,\mathtt{e}_3,\mathtt{e}_4\)</span>.</p>
-<h2 id="cambios-de-base">10.2 Cambios de Base</h2>
+<h2 id="cambios-de-base">9.2 Cambios de Base</h2>
 <p>Sean <span class="math inline">\(\mathcal{B}=\{v_1,v_2,\ldots,v_n\}\)</span> y
 <span class="math inline">\(\mathcal{B}&#39;=\{w_1,w_2,\ldots,w_n\}\)</span>
 dos bases de un espacio vectorial <span class="math inline">\(V\)</span>
@@ -2473,7 +2618,7 @@ con respecto a <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p>
 <p>Además, la matriz es invertible pues en la nueva base <span class="math inline">\(\mathcal{B}&#39;\)</span> las columnas de <span class="math inline">\(\mathcal{Q}\)</span> representan a los vectores
 linealmente independientes <span class="math inline">\(v_1,v_2,\ldots,
 v_n\)</span>, por lo que <span class="math inline">\(\det(\mathcal{Q})\ne 0\)</span>.</p>
-<h3 id="ejemplo-18">10.2.1 Ejemplo</h3>
+<h3 id="ejemplo-20">9.2.1 Ejemplo</h3>
 <p>El cálculo de la matriz cambio de base es sencillo cuando los
 vectores de la nueva base están dados como combinación lineal de los
 vectores de la otra base. Suponga que <span class="math inline">\(\mathcal{B}&#39;=\{v_1&#39;,v_2&#39;,v_3&#39;\}\)</span>
@@ -2490,11 +2635,11 @@ esta dada por [</p>
 <p>]</p>
 <p>Sea <span class="math inline">\(x=2v_1-v_2+v_3\)</span> calcular las
 coordenadas con respecto a <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p>
-<h3 id="ejemplo-19">10.2.2 Ejemplo</h3>
+<h3 id="ejemplo-21">9.2.2 Ejemplo</h3>
 <p>Sean <span class="math inline">\(\mathcal{A}=\{u_1=(2,-1,0),\,u_2=(-1,-1,1),\,u_3=(2,2,-1)\}\)</span>
 y <span class="math inline">\(\mathcal{B}=\{u_1=(1,0,0),\,u_2=(-2,1,0),\,u_3=(1,-2,1)\}\)</span>.
 Hallar la matriz cambio de base.</p>
-<h3 id="ejemplo.">10.2.3 Ejemplo.</h3>
+<h3 id="ejemplo.">9.2.3 Ejemplo.</h3>
 <p>Considere las siguientes bases de <span class="math inline">\(\mathbb{R}^3\)</span>, <span class="math inline">\(B=\{(0,-2,3),(0,1,1),(1,1,0)\}\)</span> y <span class="math inline">\(C=\{(0,-1,1),(0,3,0),(1,-1,1)\}\)</span>.</p>
 <ul>
 <li><p>Determinar la matriz cambio de base de <span class="math inline">\(C\rightarrow B\)</span>.</p></li>
@@ -2504,6 +2649,25 @@ Hallar la matriz cambio de base.</p>
 <li><p>Si <span class="math inline">\([v]_{B}=(-1,4,1)\)</span>
 encontrar <span class="math inline">\([v]_{\mathcal{C}}\)</span></p></li>
 </ul>
+</div>
+<div id="rango-de-un-subespacio-generado" class="slide section level1">
+<h1>10 Rango de un subespacio generado</h1>
+<p>Sea <span class="math inline">\(A\)</span> una matriz, que se compone
+por vectores columna, definimos al <em>rango</em> de una matriz como el
+número de vectores columna que son linealmente independientes</p>
+<p>Suponga que <span class="math inline">\(v_1,v_2,\ldots,v_m\)</span>
+son vectores de un e.v. <span class="math inline">\(V\)</span>, sea
+<span class="math inline">\(A=[\mathtt{v}_1|\mathtt{v}_2|\ldots|\mathtt{v}_m]\)</span>.
+Entonces <span class="math inline">\(\dim\{\mathcal{G}(\{\mathtt{v}_1,\mathtt{v}_2,\ldots,
+\mathtt{v}_m\})\}=\mbox{Rango}(A)\)</span>.</p>
+<div style="background-color:#FFE9B1">
+<p><strong>Definición</strong></p>
+<p>El <strong>rango</strong> <strong>de</strong> <strong>un</strong>
+<strong>conjunto</strong> <strong>de</strong> <strong>vectores</strong>
+<span class="math inline">\(K=\{v_1,v_2\ldots, v_n\}\)</span> es el
+<strong>mayor</strong> número de vectores que son
+<strong>linealmente</strong> <strong>independientes</strong></p>
+</div>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

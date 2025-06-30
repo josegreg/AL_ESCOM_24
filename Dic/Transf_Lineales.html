@@ -440,6 +440,7 @@ V\)</span> y lo manda al cero en <span class="math inline">\(\textbf{0}
 es la transformación identidad, en este caso <span class="math inline">\(V=W\)</span>.</p>
 <p>La transformación <span class="math inline">\(Mv=-v\)</span> también
 es una transformación lineal de <span class="math inline">\(M:V\rightarrow V\)</span>.</p>
+<p>Las rotaciones en <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <h3 id="definición-1">1.1.3 Definición</h3>
 <p>Una transformación lineal <span class="math inline">\(T:V\rightarrow
 V\)</span>, es decir el dominio de <span class="math inline">\(T\)</span> y el codominio de <span class="math inline">\(T\)</span> es <span class="math inline">\(V\)</span> decimos que es un <em>operador</em>
@@ -456,6 +457,20 @@ transformación lineal entonces</p>
 <li><p><span class="math inline">\(T(\texttt{v}-\texttt{w})=T(\texttt{v})-T(\texttt{w})\)</span>.</p></li>
 </ol>
 <h3 id="ejemplo">1.1.5 Ejemplo</h3>
+<p>Considere a la transformación <span class="math inline">\(T:\mathbb{R}^2\rightarrow
+\mathbb{R}^3\)</span></p>
+<p><span class="math display">\[
+T\begin{pmatrix} x\\y \end{pmatrix} = \begin{pmatrix} x \\ 2x-y \\ 3x+4y
+\end{pmatrix}
+\]</span></p>
+<p>Determinar si la transformación es lineal o no.</p>
+<ul>
+<li>Considere a la transformación</li>
+</ul>
+<p><span class="math display">\[
+F\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x \\ 2x-y +1 \\
+3x+4y+2 \end{pmatrix}
+\]</span></p>
 <p>Estudiar si las siguientes aplicaciones de <span class="math inline">\(V=\mathbb{R}^3\)</span> en <span class="math inline">\(\mathbb{R}^4\)</span> son o no son lineales</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(T(x,y,z)=(x+z,2x-3y-z,
@@ -526,17 +541,219 @@ T_A\mathbf{x}
 \]</span></p>
 <p>Entonces <span class="math inline">\(T_A\)</span> es una
 transformación lineal.</p>
-<h3 id="núcleo-espacio-nulo-e-imagen">1.1.7 Núcleo (Espacio Nulo) e
+<h3 id="otras-transformaciones-lineales">1.1.7 Otras transformaciones
+lineales</h3>
+<p>En <span class="math inline">\(\mathbb{R}^2\)</span>, definimos a la
+<em>rotación</em> en <span class="math inline">\(\mathbb{R}^2\)</span>,
+<em>con</em> <em>respecto</em> <em>al</em> <em>origen</em> está dada por
+<span class="math display">\[
+R_{\theta}\begin{pmatrix} x\\ y \end{pmatrix} =
+\begin{pmatrix}
+\cos \theta &amp; -\sin\theta \\
+\sin \theta &amp; \cos \theta
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\]</span></p>
+<p>En <span class="math inline">\(\mathbb{R}^3\)</span>,</p>
+<p><span class="math display">\[
+R_{\theta}\begin{pmatrix} x\\ y \\ z \end{pmatrix} =
+\begin{pmatrix}
+\cos \theta &amp; -\sin\theta &amp; 0 \\
+\sin \theta &amp; \cos \theta &amp; 0 \\
+0          &amp;   0         &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\z
+\end{pmatrix}
+\]</span></p>
+<p>Es una rotación sobre el plano <span class="math inline">\(x,y\)</span>.</p>
+<h3 id="ejemplo-1-1">1.1.8 Ejemplo 1</h3>
+<p>Encontrar la imagen que se obtiene al aplicar una rotación de <span class="math inline">\(60°\)</span> al punto <span class="math inline">\((\sqrt{3},1)\)</span></p>
+<h3 id="ejemplo-2">1.1.9 Ejemplo 2</h3>
+<p>Sean <span class="math inline">\(A=(4,0)\)</span>, <span class="math inline">\(B=(0,2)\)</span> y <span class="math inline">\(C=(0,0)\)</span>. Encontrar la imagen del
+triángulo <span class="math inline">\(\triangle ABC\)</span> al
+aplicarle una rotación de <span class="math inline">\(45°\)</span>
+alrededor del origen.</p>
+<h3 id="ejercicio">1.1.10 <em>ejercicio</em></h3>
+<p>Suponga que <span class="math inline">\(A=(1,2)\)</span>, <span class="math inline">\(B=(3,-1)\)</span>, <span class="math inline">\(C=(5,1)\)</span>, encontrar la imgaen del <span class="math inline">\(\triangle ABC\)</span> bajo la rotación, alrededor
+del origen, de</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\theta=90°\)</span></p></li>
+<li><p><span class="math inline">\(\theta=60°\)</span></p></li>
+<li><p><span class="math inline">\(\theta=45°\)</span></p></li>
+</ol>
+<h3 id="álgebra-de-transformaciones-lineales">1.1.11 Álgebra de
+transformaciones lineales</h3>
+<p>Al igual que en el caso de matrices, podemos definir las
+<em>mismas</em> operaciones entre transformaciones lineales.</p>
+<p>Suponga que <span class="math inline">\(\mathbf{T},\mathbf{S}:V\rightarrow W\)</span>, son
+transformaciones lineales</p>
+<h4 id="suma-de-transformaciones-lineales">1.1.11.1 Suma de
+transformaciones lineales</h4>
+<p>Dados las dos transformaciones lineales en el mismo dominio y
+contradominio. <span class="math display">\[
+(\mathbf{T}+\mathbf{S})(\mathtt{v}) :=\mathbf{T}(\mathtt{v}) +
+\mathbf{S}(\mathtt{v})
+\]</span></p>
+<h4 id="propiedades-de-la-suma-de-transformaciones-lineales">1.1.11.2
+Propiedades de la suma de transformaciones lineales</h4>
+<p>Si <span class="math inline">\(\mathbf{R},\mathbf{S},\mathbf{T}\)</span> si <span class="math inline">\(+\)</span> es la suma de transformaciones
+lineales, entonces</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{T}+\mathbf{S} = \mathbf{S} +
+\mathbf{T}\)</span>.</p></li>
+<li><p><span class="math inline">\((\mathbf{T} + \mathbf{S})+\mathbf{R}
+= \mathbf{T} + (\mathbf{S}+\mathbf{R})\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{T}+\mathbf{0} =
+\mathbf{T}\)</span>.</p></li>
+<li><p>Existe <span class="math inline">\(-T : V \rightarrow W\)</span>,
+transformación lineal tal que <span class="math inline">\(\mathbf{T}+(-\mathbf{T})=\mathbf{0}\)</span>.</p></li>
+</ul>
+<h4 id="multiplicación-escalar-de-transformaciones-lineales">1.1.11.3
+Multiplicación escalar de transformaciones lineales</h4>
+<p>Sea <span class="math inline">\(\mathbf{T}:V\rightarrow W\)</span> y
+<span class="math inline">\(c\in\mathbb{R}\)</span> entonces definimos
+la transformación <span class="math inline">\(\mathbf{M}:=c\mathbf{T}\)</span> como <span class="math display">\[
+\mathbf{M}(\mathtt{v}) = c\cdot \mathbf{T}(\mathtt{v})
+\]</span></p>
+<h4 id="propiedades">1.1.11.4 Propiedades</h4>
+<ul>
+<li><p>Para todo <span class="math inline">\(c_1,c_2\in\mathbb{R}\)</span> entonces <span class="math inline">\(c_1\big(c_2
+\mathbf{T}\big)=(c_1c_2)\mathbf{T}\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(\mathbf{T}\)</span>
+transformación lineal, <span class="math inline">\(1\cdot \mathbf{T} =
+\mathbf{T}\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(c_1,c_2\in\mathbb{R}\)</span>, <span class="math inline">\((c_1+c_2)\cdot \mathbf{T} = c_1\cdot \mathbf{T} +
+c_2\cdot \mathbf{T}\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(\mathbf{T},\mathbf{S}\)</span>, <span class="math inline">\(c\cdot(\mathbf{T}+\mathbf{S}) = c\cdot \mathbf{T}
++ c \cdot \mathbf{S}\)</span>.</p></li>
+</ul>
+<p>Esto implica que <em>el</em> <em>conjunto</em> <em>de</em>
+<em>transformaciones</em> <em>lineales</em> <em>de</em> <span class="math inline">\(V\)</span> <em>a</em> <span class="math inline">\(W\)</span> es un <strong>Espacio</strong>
+<strong>Vectorial</strong>. A dicho espacio vectorial lo denotamos como
+<span class="math inline">\(\mathcal{L}(V;W)\)</span>.</p>
+<h3 id="multiplicación-de-transformaciones-lineales">1.1.12
+Multiplicación de transformaciones lineales</h3>
+<p>Al igual que con matrices, podemos definir la “multiplicación” de
+transformaciones lineales.</p>
+<p>Sea <span class="math inline">\(\mathbf{T}:V\rightarrow W\)</span> y
+<span class="math inline">\(\mathbf{S}:W\rightarrow Z\)</span> entonces
+definimos a la multiplicación como la transformación lineal <span class="math inline">\(\mathbf{ST}:V\rightarrow Z\)</span> <span class="math display">\[\begin{equation}
+(ST)(\mathtt{v}) := S\big(T(\mathtt{v})\big)
+\end{equation}\]</span></p>
+<p>Es decir, la multiplicación de transformaciones corresponde con la
+<em>composición</em> <em>de</em> <em>funciones</em>.</p>
+<h4 id="propiedades-de-la-multiplicación-de-transformaciones-lineales">1.1.12.1
+Propiedades de la multiplicación de transformaciones lineales</h4>
+<ul>
+<li><p>La transformación <span class="math inline">\(\mathbf{P}=\mathbf{S}\mathbf{T}\)</span> es
+líneal.</p>
+<p>** Sea <span class="math inline">\(\mathtt{v},\mathtt{u}\in
+V\)</span>, entonces <span class="math display">\[
+\mathbf{S}\mathbf{T}(\mathtt{v}+\mathtt{u}) =
+\mathbf{S}(\mathbf{T}(\mathtt{v}+\mathtt{u}))
+=\mathbf{S}\big(\mathbf{T}(\mathtt{v})+\mathbf{T}(\mathtt{u})\big) =
+\mathbf{S}(\mathbf{T}(\mathbf{v}))+\mathbf{S}(\mathbf{T}(\mathtt{u}))
+=\mathbf{ST}(\mathtt{v}) + \mathbf{ST}(\mathtt{u})
+\]</span></p></li>
+</ul>
+<p>Entonces se cumple la primera propiedad.</p>
+<p>** Sea <span class="math inline">\(c\)</span> un escalar y <span class="math inline">\(\mathtt{v}\in V\)</span> un vector. Similarmente
+se verifica que <span class="math display">\[
+\mathbf{ST}(c\cdot \mathtt{v}) = \mathbf{S}\big(\mathbf{T}(c\cdot
+\mathtt{v})\big)=
+\mathbf{S}\big(c\mathbf{T}(\mathtt{v})\big)=c\mathbf{S}(\mathbf{T}(\mathtt{v}))
+= c\cdot \mathbf{ST}(\mathtt{v})
+\]</span></p>
+<h4 id="propiedades-1">1.1.12.2 Propiedades</h4>
+<ul>
+<li>Para todo escalar <span class="math inline">\(c\)</span>,</li>
+</ul>
+<p><span class="math display">\[
+c(\mathbf{T}\mathbf{S}) = \big(c\mathbf{T}\big)\mathbf{S}
+\]</span></p>
+<ul>
+<li>Para todas transformaciones lineales</li>
+</ul>
+<p><span class="math display">\[
+(\mathbf{T}+\mathbf{S})\mathbf{R} = \mathbf{T}\mathbf{R} +
+\mathbf{S}\mathbf{R}
+\]</span> <span class="math display">\[
+\mathbf{R}(\mathbf{T}+\mathbf{S}) = \mathbf{R}\mathbf{T} +
+\mathbf{R}\mathbf{S}
+\]</span></p>
+<ul>
+<li>Para todas las transformaciones lineales “pertinentes”</li>
+</ul>
+<p><span class="math display">\[
+(\mathbf{R}\mathbf{S})\mathbf{T} =\mathbf{R}(\mathbf{S}\mathbf{T}) =
+\]</span></p>
+<h3 id="ejemplos">1.1.13 Ejemplos</h3>
+<p>Considere las siguientes transformaciones lineales <span class="math inline">\(T_1,T_2,T_3\)</span>. <span class="math display">\[
+\begin{array}{ccc}
+T_1(x_1,x_2) = (x_1-x_2,x_2) &amp; T_2(x_1,x_2)=(x_1-x_2,x_2,x_1) &amp;
+T_3(x_1,x_2)=(x_2,x_1-x_2,x_1+x_2)
+\end{array}
+\]</span> Calcular</p>
+<ul>
+<li><p><span class="math inline">\((T_2+T_3)(1,0)\)</span></p></li>
+<li><p><span class="math inline">\((T_2+T_3)(1,1)\)</span></p></li>
+<li><p><span class="math inline">\(T_2 T_1(1,-1)\)</span></p></li>
+<li><p><span class="math inline">\(T_2 T_1(x_1,x_2)\)</span></p></li>
+<li><p><span class="math inline">\(T_3 T_1(x_1,x_2)\)</span></p></li>
+<li><p><span class="math inline">\(T_2 + T_3 (x_1,x_2)\)</span></p></li>
+<li><p><span class="math inline">\(\big[(T_2+T_3)T_1\big](x_1,x_2)\)</span></p></li>
+</ul>
+<h3 id="transformaciones-invertibles">1.1.14 Transformaciones
+invertibles</h3>
+<div style="background-color:#9DE2D5">
+<p>Suponga que <span class="math inline">\(T:V\rightarrow V\)</span> es
+una transformación lineal. Decimos que <span class="math inline">\(\mathbf{T}\)</span> es <strong>invertible</strong>
+si existe <span class="math inline">\(T^{-1}:V\rightarrow V\)</span> tal
+que <span class="math display">\[
+TT^{-1} = I_V\quad \mbox{y}\quad T^{-1}T = I_V
+\]</span> con <span class="math inline">\(I_V:V\rightarrow V\)</span> la
+transformación <strong>identidad</strong>.</p>
+<p>De la misma forma, si <span class="math inline">\(\dim(V)=\dim(W)\)</span>, podemos definir que
+<span class="math inline">\(T:V\rightarrow W\)</span> es invertible si
+existe <span class="math inline">\(T^{-1}:W \rightarrow V\)</span> tal
+que <span class="math display">\[
+T T^{-1}=I_W \quad\mbox{ y }\quad T^{-1}T=I_V
+\]</span></p>
+</div>
+<h3 id="observación">1.1.15 Observación</h3>
+<p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es
+transformación lineal pero <span class="math inline">\(\dim(V)\ne
+\dim(W)\)</span> entonces <span class="math inline">\(T\)</span>
+<strong>no</strong> puede ser invertible.</p>
+<h3 id="núcleo-espacio-nulo-e-imagen">1.1.16 Núcleo (Espacio Nulo) e
 Imagen</h3>
-<h3 id="definición-2">1.1.8 Definición</h3>
+<h3 id="definición-2">1.1.17 Definición</h3>
 <p>Se <span class="math inline">\(T:V\rightarrow W\)</span> es una
 transformación lineal, entonces el conjunto de vectores en <span class="math inline">\(V\)</span> que <span class="math inline">\(T\)</span> mandan a <span class="math inline">\(\mathbf{0}\)</span> se conoce como
 <strong>núcleo</strong> <strong>de</strong> <span class="math inline">\(T\)</span> (<strong>kernel</strong>
 <strong>o</strong> <strong>espacio</strong> <strong>nulo</strong>). Se
 denota por <span class="math inline">\(N(T)\)</span> o <span class="math inline">\(Ker(T)\)</span>.</p>
-<p>El conjunto de todos los <strong>vectores</strong>
+<p><span class="math display">\[
+Ker(T) = \Bigg\{v\in V\,:\, Tv =\mathbf{0}_W\Bigg\}
+\]</span></p>
+<p>Si <span class="math inline">\(V=\mathbb{R}^{n}\)</span> <span class="math display">\[
+Ker(T)= \begin{Bmatrix}
+\mathbf{\mathtt{x}}=\begin{pmatrix}x_1 \\ x_2 \\ ...\\ x_n
+\end{pmatrix}\in\mathbb{R}^n:\,\,T(\mathbf{\mathtt{x}})=\mathbf{0}_W
+\end{Bmatrix}
+\]</span> El conjunto de todos los <strong>vectores</strong>
 <strong>en</strong> <strong>W</strong> que son envíados por <span class="math inline">\(T\)</span> desde <span class="math inline">\(V\)</span>, es decir si <span class="math inline">\(w\in W\)</span> es tal que <span class="math inline">\(\texttt{w}=T\texttt{v}\)</span> para algún <span class="math inline">\(\texttt{v}\in V\)</span>. Este subespacio se
-conoce como <span class="math inline">\(Im(T)\)</span> o <span class="math inline">\(R(T)\)</span>.</p>
+conoce como <span class="math inline">\(Im(T)\)</span> o <span class="math inline">\(R(T)\)</span>. <span class="math display">\[\begin{equation}
+  \begin{array}{cccc}
+    \mbox{Im}(T) &amp; = &amp; \Bigg\{ T(\mathtt{v}) : \mathtt{v}\in V
+\Bigg\} &amp;= \\
+    \mbox{Im}(T) &amp; = &amp; \Bigg\{ w\in W : \exists \mathtt{v}\in
+V\,\,\mbox{tal que } T(\mathtt{v})=w \Bigg\} &amp;
+  \end{array}
+\end{equation}\]</span></p>
 <h2 id="teorema">1.2 Teorema</h2>
 <p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es una
 transformación lineal entonces:</p>
@@ -564,9 +781,10 @@ transformación lineal desde un espacio vectorial <span class="math inline">\(V\
 n = \dim(V) = rango(T) + nulidad(T)
 \]</span></p>
 <p>En particular si <span class="math inline">\(A\)</span> es una matriz
-<span class="math inline">\(m\times n\)</span> entonces la dimensión del
-espacio de soluciones de <span class="math inline">\(A\texttt{x}=\texttt{0}\)</span> es <span class="math display">\[
-n-rango(A)
+<span class="math inline">\(n\times m\)</span> entonces la dimensión del
+espacio de soluciones, <span class="math inline">\(\Big\{\mathtt{x}\in
+\mathbb{R}^m: A\texttt{x}=\texttt{0}\Big\}\)</span> es <span class="math display">\[
+m-rango(A)
 \]</span></p>
 <p><em>Demostración</em>: sea <span class="math inline">\(U=N(T)\)</span>, por ser un subespacio de <span class="math inline">\(V\)</span> entonces existe una base de vectores
 <span class="math inline">\(\{\mathtt{u}_1,\mathtt{u}_2,\ldots,\mathtt{u}_k\}\)</span>.
@@ -620,7 +838,7 @@ T\mathtt{u}_n\)</span> generan a la imagen de <span class="math inline">\(T\)</s
 T\mathtt{u}_n\)</span> es una base de la imagen de <span class="math inline">\(T\)</span>.</p>
 <p><span class="math display">\[rango(T)=n-k = n-
 \dim(N(T))\]</span></p>
-<h2 id="ejemplos">1.3 Ejemplos</h2>
+<h2 id="ejemplos-1">1.3 Ejemplos</h2>
 <p>1- Considere a <span class="math inline">\(T(x,y,z,w)=(x+y,y-z,x+w)\)</span>, calcular una
 base para su espacio nulo y su imagen. Calcular la nulidad de <span class="math inline">\(T\)</span> y el rango de <span class="math inline">\(T\)</span>.</p>
 <p>2- Considere a <span class="math inline">\(T(x,y,z)=(x+y,y+z,x+w)\)</span>, calcular una base
@@ -632,9 +850,25 @@ transformación lineal.</p>
 transformación <span class="math inline">\(T_A\)</span>.</p>
 <p>4- Calcular el núcleo de la matriz <span class="math inline">\(\begin{pmatrix} 1 &amp; -1 \\ 1 &amp; -1
 \end{pmatrix}\)</span>-</p>
+<h3 id="ejemplos-2">1.3.1 Ejemplos</h3>
+<ol class="example" style="list-style-type: decimal">
+<li><p>Sea <span class="math inline">\(T:\mathbb{R}^3 \rightarrow
+\mathbb{R}^4\)</span> definida por <span class="math display">\[
+T(x,y,z) = \begin{pmatrix} x +2y +3z \\ x +2z\\ 2x+y+z \\ x +y +z
+\end{pmatrix}
+\]</span> Calcular una base para <span class="math inline">\(Ker(T)\)</span> y para <span class="math inline">\(Im(T)\)</span>, calcular la nulidad(T) y <span class="math inline">\(rango(T)\)</span>.</p></li>
+<li><p>Sea <span class="math inline">\(T(x,y,z)=(2x,4x-y,2x+3y-z)\)</span>.</p></li>
+</ol>
+<ul>
+<li><p>Calcular <span class="math inline">\(Ker(T)\)</span></p></li>
+<li><p>Concluir que <span class="math inline">\(T\)</span> es
+invertible.</p></li>
+<li><p>Encontrar una fórmula para <span class="math inline">\(T^{-1}\)</span>.</p></li>
+<li><p>Encontrar una fórmula para <span class="math inline">\(T^2\)</span>.</p></li>
+</ul>
 <h2 id="otros-ejemplos-de-transformación-lineal">1.4 Otros ejemplos de
 transformación lineal</h2>
-<ol class="example" style="list-style-type: decimal">
+<ol start="3" class="example" style="list-style-type: decimal">
 <li><p>Sea <span class="math inline">\(V=\mathbb{R}_n[x]\)</span> el
 espacio de polinomios de grado <span class="math inline">\(\leq
 n\)</span>. Sea <span class="math inline">\(p(t)=a_nt^n + a_{n-1}t^{n-1}
@@ -683,17 +917,63 @@ T(0,1) =\frac{3}{2}T(1,2) + (-\frac{1}{2})T(3,4) = \frac{3}{2}(3,2,1) +
 (-\frac{1}{2})(6,5,4) = (\frac{3}{2},\frac{1}{2},2) \\
 \end{matrix}
 \]</span></p>
-<h2 id="matriz-asociada-a-una-transformación-lineal">1.5 Matriz asociada
+<h2 id="isomorfismos-entre-espacios-vectoriales.">1.5 Isomorfismos entre
+espacios vectoriales.</h2>
+<p><strong>Definición</strong> Sea <span class="math inline">\(T\)</span> una transformación lineal <span class="math inline">\(T:V\rightarrow W\)</span> decimos que es</p>
+<ul>
+<li><p><em>Inyectiva</em> o 1-1 si para todo <span class="math inline">\(x,y\in V\)</span>, <span class="math inline">\(x\ne y\)</span> implica que <span class="math inline">\(T(x)\ne T(y)\)</span>.</p></li>
+<li><p><em>Sobreyectiva</em> si <strong>para todo</strong> <span class="math inline">\(w\in W\)</span> existe <span class="math inline">\(v\in V\)</span> tal que</p></li>
+</ul>
+<p><span class="math display">\[
+T(v)=w
+\]</span> O dicho de otra forma <span class="math inline">\(T(V)=W\)</span>.</p>
+<ul>
+<li><em>Biyectiva</em> Si <span class="math inline">\(T\)</span> es
+inyectiva y sobreyectiva.</li>
+</ul>
+<div style="background-color:#DDF6D2">
+<p>Sean <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> espacios vectoriales y suponga que
+<span class="math inline">\(T:V\rightarrow W\)</span> es una
+transformación lineal <strong>invertible</strong>. Entonces, decimos que
+los espacios vectoriales <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> son <strong>isomorfos</strong>.</p>
+<p>Escribimos <span class="math inline">\(V\cong W\)</span> para
+expresar que los espacios son isomorfos. A cualquier transformación
+<span class="math inline">\(T:V\rightarrow W\)</span> que sea invertible
+diremos que es un <strong>isomorfismo</strong>.</p>
+</div>
+<h3 id="proposición">1.5.1 Proposición</h3>
+<p>Si <span class="math inline">\(T:V\rightarrow W\)</span> es
+invertible, es decir es un <strong>isomorfismo</strong> entonces</p>
+<ul>
+<li><p>Si <span class="math inline">\(\mathtt{v}_1,\mathtt{v}_2, \ldots,
+\mathtt{v}_n\)</span> son linealmente independientes entonces <span class="math inline">\(\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots,
+T(\mathtt{v}_n)\big\}\)</span> es un conjunto de vectores linealmente
+independiente en <span class="math inline">\(W\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\Big\{\mathtt{v}_1,\mathtt{v}_2,
+\ldots, \mathtt{v}_n\Big\}\)</span> es un conjunto generador de <span class="math inline">\(V\)</span> entonces <span class="math inline">\(\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots,
+T(\mathtt{v}_n)\big\}\)</span> es un conjunto generador de <span class="math inline">\(W\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\Big\{\mathtt{v}_1,\mathtt{v}_2,
+\ldots, \mathtt{v}_n\Big\}\)</span> es una <strong>base</strong> de
+<span class="math inline">\(V\)</span> entonces <span class="math inline">\(\big\{T(\mathtt{v}_1),T(\mathtt{v}_2),\ldots,
+T(\mathtt{v}_n)\big\}\)</span> es una <strong>base</strong> de <span class="math inline">\(W\)</span>.</p></li>
+</ul>
+<h2 id="matriz-asociada-a-una-transformación-lineal">1.6 Matriz asociada
 a una transformación lineal</h2>
-<p>Una transformación lineal <span class="math inline">\(T\)</span> de
-<span class="math inline">\(\mathbb{R}^{n}\)</span> a <span class="math inline">\(\mathbb{R}^m\)</span> es una transformación de la
-forma <span class="math display">\[\begin{equation}
-T \texttt{v} = A \cdot \texttt{v}                    
+<p>Sean <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> espacios vectoriales. Una <em>base</em>
+<em>ordenada</em> es un conjunto de vectores <span class="math inline">\(\{\mathtt{v}_1, \mathtt{v}_2,\ldots,
+\mathtt{v}_n\big\}\)</span> que forman cuyo orden es fijo.</p>
+<p>Suponga que una transformación lineal <span class="math inline">\(T\)</span> de <span class="math inline">\(\mathbb{R}^{n}\)</span> a <span class="math inline">\(\mathbb{R}^m\)</span> entonces afirmamos que si
+<strong>fijamos</strong> una base <span class="math inline">\(\mathcal{B}\)</span> en <span class="math inline">\(\mathbb{R}^{n}\)</span> y una base <span class="math inline">\(\mathcal{D}\)</span> en <span class="math inline">\(\mathbb{R}^{m}\)</span> entonces la transformación
+lineal se puede representar de la forma</p>
+<p><span class="math display">\[\begin{equation}
+\big(T \mathtt{v}\big)_{\mathcal{D}} = A \cdot
+\big(\texttt{v}\big)_{\mathcal{B}}
 \end{equation}\]</span></p>
 <p>Sea <span class="math inline">\(\mathcal{B}=\{\texttt{v}_1,\texttt{v}_2,\ldots,\texttt{v}_n\}\)</span>
 una base de <span class="math inline">\(V\)</span> y <span class="math inline">\(\mathcal{D}=\{w_1,w_2,\ldots, w_m\}\)</span> es
-una base de <span class="math inline">\(\mathbb{R}^{m}\)</span>,
-entonces <span class="math display">\[
+una base de <span class="math inline">\(\mathbb{R}^{m}\)</span>, además
+suponga que <span class="math inline">\(\big( \mathtt{v}
+\big)_{\mathcal{B}} =(\alpha_1,\alpha_2,\ldots,\alpha_n)\)</span> <span class="math display">\[
 \begin{array}{cc}
 \texttt{v} =&amp; \alpha_1\texttt{e}_1 + \alpha_2\texttt{e}_2+ \ldots +
 \alpha_n\texttt{e}_n,\\
@@ -744,7 +1024,8 @@ a_{mn}  \end{pmatrix}_{\mathcal{D}}  &amp;
 \end{array}
 \]</span> y</p>
 <p><span class="math display">\[\begin{equation}
-T(\mathtt{v}) = [T](\mathtt{v})_{\mathcal{B}}
+\big(T(\mathtt{v})\big)_{\mathcal{D}} =
+\big[T\big](\mathtt{v})_{\mathcal{B}}
 \end{equation}\]</span></p>
 <p>y <span class="math display">\[
 [T]=
@@ -773,8 +1054,24 @@ T(\mathtt{e}_1) | T(\mathtt{e}_2) | \ldots | T(\mathtt{e}_n)
 \end{bmatrix}
   \end{equation}\]</span></p>
 </div>
-<h3 id="ejemplos-1">1.5.1 Ejemplos</h3>
-<h4 id="ejemplo-1.">1.5.1.1 Ejemplo 1.</h4>
+<h3 id="ejemplos-3">1.6.1 Ejemplos</h3>
+<h4 id="ejemplo-1-2">1.6.1.1 Ejemplo 1</h4>
+<p>Considere a <span class="math inline">\(T(x,y)=(y,-2x + 3y)\)</span>
+en <span class="math inline">\(\mathbb{R}^2\)</span>, con la base <span class="math inline">\(\mathcal{C}=\{\mathtt{e}_1,
+\mathtt{e}_2\}\)</span> y <span class="math inline">\(\mathcal{B}&#39;=\{(1,1),(1,2)\}\)</span>.
+Calcular la matriz que representa a <span class="math inline">\(T\)</span>, <span class="math inline">\(\big[
+T\big]_{\mathcal{C}}^{\mathcal{C}}\)</span>, <span class="math inline">\(\big[
+T\big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;}\)</span> y <span class="math inline">\(\big[
+T\big]_{\mathcal{B}&#39;}^{\mathcal{C}}\)</span></p>
+<h4 id="ejemplo-2.">1.6.1.2 Ejemplo 2.</h4>
+<p>Sea <span class="math inline">\(A(x,y,z)=(x+2yz,-y,x+7z)\)</span>.</p>
+<ul>
+<li><p>Determinar <span class="math inline">\([A]_{C}\)</span> con <span class="math inline">\(C\)</span> la base caónica.</p></li>
+<li><p>Determinar <span class="math inline">\([A]_{S}\)</span> con <span class="math inline">\(S=\Bigg\{\begin{pmatrix} 1 \\ 0 \\0 \end{pmatrix},
+\begin{pmatrix} 1 \\ 1 \\0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\1
+\end{pmatrix}\Bigg\}\)</span></p></li>
+</ul>
+<h4 id="ejemplo-3.">1.6.1.3 Ejemplo 3.</h4>
 <p>Suponga que <span class="math inline">\(A:\mathbb{R}^3 \rightarrow
 \mathbb{R}^3\)</span> dada por <span class="math inline">\(A(x,y,z) =
 (x+2y+z,-y,x+7z)\)</span>. Sean <span class="math inline">\(\mathcal{C}=\{\mathtt{e}_1, \mathtt{e}_2,
@@ -786,11 +1083,7 @@ con respecto a las bases <span class="math inline">\(\mathcal{C}\)</span> <span 
 <li><p>Obtener la matriz asociada a <span class="math inline">\(A\)</span>, con respecto a las bases <span class="math inline">\(\mathcal{C}\)</span> y <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p></li>
 <li><p>Obtener la matriz asociada a <span class="math inline">\(A\)</span>, con respecto a las bases <span class="math inline">\(\mathcal{B}&#39;\)</span> y <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p></li>
 </ul>
-<h4 id="ejemplo-2">1.5.1.2 Ejemplo 2</h4>
-<p>Considere a <span class="math inline">\(T(x,y)=(y,-2x + 3y)\)</span>
-en <span class="math inline">\(\mathbb{R}^2\)</span>, con la base <span class="math inline">\(\mathcal{C}=\{\mathtt{e}_1,
-\mathtt{e}_2\}\)</span> y <span class="math inline">\(\mathcal{B}&#39;=\{(1,1),(1,2)\}\)</span>.</p>
-<h3 id="transformaciones-lineales-y-cambios-de-base">1.5.2
+<h3 id="transformaciones-lineales-y-cambios-de-base">1.6.2
 Transformaciones lineales y Cambios de base</h3>
 <p>Sea <span class="math inline">\(T\)</span> una transformación lineal,
 <span class="math inline">\(T:V\rightarrow V\)</span> y suponga que en
@@ -856,7 +1149,7 @@ Q_{\mathcal{B}&#39;-&gt;\mathcal{B}}
 Q^{-1}_{\mathcal{B}&#39;-&gt;\mathcal{B}}
 \big[T\big]_{\mathcal{B}}  Q_{\mathcal{B}&#39; \rightarrow \mathcal{B}}
 \]</span></p>
-<h3 id="teorema-2">1.5.3 Teorema</h3>
+<h3 id="teorema-2">1.6.3 Teorema</h3>
 <p>Si <span class="math inline">\(T:V\rightarrow V\)</span>, sea <span class="math inline">\(\big[ T \big]_{\mathcal{B}}= \big[ T
 \big]_{\mathcal{B}}^{\mathcal{B}}\)</span> la matriz asociada a <span class="math inline">\(T\)</span> con respecto a la base <span class="math inline">\(\mathcal{B}\)</span> y <span class="math inline">\(\big[ T \big]_{\mathcal{B}&#39;}= \big[ T
 \big]_{\mathcal{B}&#39;}^{\mathcal{B}&#39;}\)</span> entonces existe
@@ -873,90 +1166,37 @@ Q^{-1}_{\mathcal{B}&#39;-&gt;\mathcal{B}}
 </div>
 <p>Entonces, si dos matrices representan a la misma transformación
 lineal entonces son similares.</p>
-<h4 id="dilatación.">1.5.3.1 Dilatación.</h4>
-<p>Si <span class="math inline">\(V=\mathbb{R}^3\)</span> <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1 \\ x_2 \\ x_3
-\end{pmatrix}\)</span>, la transformación <span class="math inline">\(T(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1 \\ 2x_2
-\\ 3x_3 \end{pmatrix}\)</span> es una transformación lineal. Para ver
-que es una transformación lineal <span class="math display">\[
-T(\vec{\texttt{x}} +\vec{\texttt{w}} ) =
-\begin{pmatrix} 3(x_1+w_1) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}=
-\begin{pmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{pmatrix} +
-\begin{pmatrix} 3w_1 \\ 2w_2 \\ 3w_3 \end{pmatrix} =
-T(\vec{\texttt{x}}) + T(\vec{\texttt{w}} )
-\]</span> La primer propiedad se cumple. Si <span class="math inline">\(\lambda \in \mathbb{R}\)</span></p>
-<p><span class="math display">\[
-T(\lambda\vec{\texttt{x}}) =
-\begin{pmatrix} 3(\lambda x_1) \\ 2(\lambda x_2) \\ 3(\lambda x_3)
-\end{pmatrix}=
-\begin{pmatrix} \lambda 3x_1 \\ \lambda 2x_2 \\ \lambda 3x_3
-\end{pmatrix} =
-\lambda \begin{pmatrix} 3x_1 \\ 2x_2
-\\ 3x_3 \end{pmatrix} =
-\lambda T(\vec{\texttt{x}})
+<h3 id="ejemplo-1-3">1.6.4 Ejemplo 1</h3>
+<p>Sea <span class="math inline">\(T\begin{pmatrix} x\\ y \end{pmatrix}
+=\begin{pmatrix} 3x -y \\ x +3y \end{pmatrix}\)</span> Sean <span class="math inline">\(\mathcal{B}_1=\Bigg\{ \begin{pmatrix}1 \\1
+\end{pmatrix}, \begin{pmatrix}1 \\ -1 \end{pmatrix}\Bigg\}\)</span> y
+<span class="math inline">\(\mathcal{B}&#39;=\Bigg\{\begin{pmatrix}2 \\4
+\end{pmatrix},\begin{pmatrix}3 \\1 \end{pmatrix}\Bigg\}\)</span>.</p>
+<ul>
+<li><p>Calcular la matriz asociada a <span class="math inline">\(T\)</span> en la base <span class="math inline">\(\mathcal{B}\)</span> (en dominio y
+contradominio).</p></li>
+<li><p>Calcular la matriz cambio de base <span class="math inline">\(Q\)</span> de <span class="math inline">\(\mathcal{B}\)</span> a <span class="math inline">\(\mathcal{B}&#39;\)</span></p></li>
+<li><p>Calcular la matriz asociada a <span class="math inline">\(T\)</span> en la base <span class="math inline">\(\mathcal{B}&#39;\)</span>.</p></li>
+</ul>
+<h3 id="ejemplo-2-1">1.6.5 Ejemplo 2</h3>
+<p>Para <span class="math inline">\(A=\begin{pmatrix} 1 &amp; 1 &amp; -1
+\\ 2 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \end{pmatrix}\)</span> y <span class="math inline">\(\beta=\Bigg\{\begin{pmatrix} -1 \\ 0 \\0
+\end{pmatrix}, \begin{pmatrix} 2 \\ 1 \\0 \end{pmatrix}, \begin{pmatrix}
+1 \\ 1 \\1 \end{pmatrix} \Bigg\}\)</span> encontrar una matriz <span class="math inline">\([A]_\beta\)</span> que sea similar a <span class="math inline">\(A\)</span>.</p>
+<p>Como <span class="math inline">\(A\)</span> es la matriz en la base
+canónica <span class="math inline">\(\mathcal{C}=\{e_1=(1,0,0),e_2=(0,1,0),e_3=(0,0,1)\}\)</span>
+entonces <span class="math inline">\([A]_{\mathcal{C}}=A\)</span>. <span class="math display">\[
+Q_{\beta\rightarrow \mathcal{C}}=\begin{bmatrix} -1 &amp; 2 &amp; 1 \\ 0
+&amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1  \end{bmatrix}
+\]</span> Y entonces <span class="math inline">\(Q_{\mathcal{C}\rightarrow
+\beta}=Q^{-1}_{\beta\rightarrow\mathcal{C}}\)</span> Calculando la
+inversa de <span class="math inline">\(Q\)</span> obtenemos <span class="math display">\[
+Q^{-1}=\begin{bmatrix} -1 &amp; 2 &amp; -1 \\ 0 &amp; 1 &amp; -1 \\ 0
+&amp; 0 &amp; 1 \end{bmatrix}
+\]</span> Entonces <span class="math display">\[
+[A]_\beta = Q^{-1}AQ=\begin{bmatrix} 0 &amp;  2 &amp; 8 \\ -1 &amp; 4
+&amp; 6 \\ 0 &amp; -1 &amp; -1 \end{bmatrix}
 \]</span></p>
-<p>Por lo que la transformación es lineal.</p>
-<p>Como se ha comentado, cualquier transformación lineal tiene una
-matriz asociada. En este caso,</p>
-<p><span class="math display">\[
-[T]= \begin{bmatrix} T(\texttt{e}_1)\,\, |\,\, T(\texttt{e}_2) \,\,
-|\,\, T(\texttt{e}_3) \end{bmatrix}
-\]</span></p>
-<p>En este caso <span class="math inline">\(T(\texttt{e}_1)=\begin{pmatrix} 3(1) \\ 2(0) \\
-3(0)\end{pmatrix} = \begin{pmatrix} 3 \\ 0 \\ 0\end{pmatrix}\)</span>.
-<span class="math inline">\(T(\texttt{e}_2)=\begin{pmatrix} 3(0) \\ 2(1)
-\\ 3(0)\end{pmatrix} = \begin{pmatrix} 0 \\ 2 \\
-0\end{pmatrix}\)</span>. <span class="math inline">\(T(\texttt{e}_3)=\begin{pmatrix} 3(0) \\ 2(0) \\
-3(1)\end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\
-3\end{pmatrix}\)</span>.</p>
-<p><span class="math display">\[
-[T]= \begin{bmatrix} 3 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0
-&amp;3   \end{bmatrix}
-\]</span></p>
-<p>En la base canónica, podemos verificar que la matriz asociada a la
-transformación lineal es la anterior, multiplicando la matriz por un
-vector <span class="math inline">\(\vec{\texttt{x}}=\begin{pmatrix} x_1
-\\ x_2\\x_3\end{pmatrix}\)</span></p>
-<p><span class="math display">\[
-[T]\cdot \vec{\texttt{x}} =
-\begin{bmatrix} 3 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0
-&amp;3   \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3\end{bmatrix} =
-\begin{bmatrix} 3x_1 \\ 2x_2 \\ 3x_3 \end{bmatrix} = T(\vec{\texttt{x}})
-\]</span></p>
-<h4 id="ejemplo-2-1">1.5.3.2 Ejemplo 2</h4>
-<p>Si una de las entradas incluye a una función real no lineal, entonces
-la transformación no será lineal por ejemplo <span class="math inline">\(S(\vec{\texttt{x}}) = \begin{pmatrix} 3x_1^{2} \\
-2x_2 \\ 3x_3 \end{pmatrix}\)</span> Si comparamos <span class="math inline">\(S(\vec{\texttt{x}} +\vec{\texttt{w}})\)</span> con
-<span class="math inline">\(S(\vec{\texttt{x}}) +
-S(\vec{\texttt{w}})\)</span> <span class="math display">\[
-S(\vec{\texttt{x}} +\vec{\texttt{w}}) = \begin{pmatrix} 3(x_1+w_1)^2 \\
-2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
-                                      = \begin{pmatrix}
-3(x_1^{2}+2x_1w_1+w_1^2) \\ 2(x_2+w_2) \\ 3(x_3+w_3) \end{pmatrix}
-                                      = \begin{pmatrix}
-3x_1^{2}+6x_1w_1+3w_1^2 \\ 2x_2+2w_2   \\ 3x_3+3w_3 \end{pmatrix}
-\]</span></p>
-<p>Por otro lado <span class="math display">\[
-S(\vec{\texttt{x}}) +S(\vec{\texttt{w}}) = \begin{pmatrix} 3x_1^2 \\
-2x_2 \\ 3x_3 \end{pmatrix} +
-                                           \begin{pmatrix} 3w_1^2 \\
-2w_2 \\ 3w_3 \end{pmatrix}
-                                      = \begin{pmatrix} 3x_1^{2}+3w_1^2
-\\ 2x_2+ 2w_2 \\ 3x_3+3w_3 \end{pmatrix}
-                                      \ne S(\vec{\texttt{x}}
-+\vec{\texttt{w}})
-\]</span> pues <span class="math inline">\(S(\vec{\texttt{x}}
-+\vec{\texttt{w}})\)</span> tiene un término extra <span class="math inline">\(6x_1w_1\)</span>.</p>
-<h4 id="reflexión-respecto-al-eje-x.">1.5.3.3 Reflexión respecto al eje
-<span class="math inline">\(x\)</span>.</h4>
-<p>Sea <span class="math inline">\(V=\mathbb{R}^2\)</span> <span class="math inline">\(R_1(x,y) = (x,-y)\)</span>. <span class="math inline">\(R\)</span> es una transformación lineal. Si <span class="math inline">\(\texttt{v}_1 = \begin{pmatrix} x_1\\ y_1
-\end{pmatrix}\)</span> y <span class="math inline">\(\texttt{v}_2 =
-\begin{pmatrix} x_2\\ y_2 \end{pmatrix}\)</span> <span class="math display">\[
-R_1(\texttt{v}_1 + \texttt{v}_2) = (x_1+x_2, -(y_1+y_2)) =
-(x_1+x_2,-y_1-y_2) = (x_1,-y_1)+(x_2,-y_2) = R_1(\texttt{v}_1) +
-R_1(\texttt{v}_2)
-\]</span></p>
-<p>Similarmente <span class="math inline">\(R(\lambda \vec{\texttt{v}})
-= \lambda R(\vec{\texttt{v}})\)</span></p>
 </div>
 <div id="diagonalización" class="slide section level1">
 <h1>2 Diagonalización</h1>
@@ -971,10 +1211,10 @@ diagonal. Digamos</p>
 \end{bmatrix}
 \end{equation}\]</span></p>
 <p>Esto implica que con respecto a esa base <span class="math inline">\(\mathcal{B}&#39;\)</span>, <span class="math inline">\((T\mathtt{v}_1)_{\mathcal{B}&#39;}=\begin{pmatrix}
-\lambda_1 \\ 0 \vdots \\ 0 \end{pmatrix}_{\mathcal{B}&#39;}\)</span>,
+\lambda_1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}_{\mathcal{B}&#39;}\)</span>,
 <span class="math inline">\((T\mathtt{v}_2)_{\mathcal{B}&#39;} =
 \begin{pmatrix} 0 \\ \lambda_2 \\ \vdots \\ 0
-\end{pmatrix}_{\mathcal{B}&#39;}\)</span> … <span class="math inline">\(T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \vdots \\
+\end{pmatrix}_{\mathcal{B}&#39;}\)</span> … <span class="math inline">\(T(\mathtt{v}_n)=\begin{pmatrix} 0 \\ 0 \\\vdots \\
 \lambda_n \end{pmatrix}_{\mathcal{B}&#39;}\)</span></p>
 <p>Como estamos en las coordenadas con respecto a <span class="math inline">\(\mathcal{B}&#39;\)</span> esto significa que <span class="math display">\[\begin{equation*}
 \begin{array}{cccc}
