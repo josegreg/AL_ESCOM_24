@@ -1,0 +1,39 @@
+---
+title: "Examen 3 ISC"
+author: "Álgebra lineal"
+output: pdf_document
+---
+
+Nombre:__________________________________________
+
+Contesta clara y ordenadamente. No omitas ningún razonamiento ni cálculo. Resolver 3 problemas. Incluir el problema 2 o el problema 4.
+
+\textbf{1.} Considerando a la transformación lineal $S:\mathbb{R}^{4} \rightarrow \mathbb{R}^3$ obtener una base para el espacio nulo para la transformación, así como una base para la imagen. Para $S$, definida por 
+
+$$
+S\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = 
+  \begin{pmatrix} x_1 + x_2 +x_3 + x_4   \\ 
+                 2x_1 + x_2 -x_3 + x_4   \\ 
+                 x_1 - x_2 + x_3 - x_4 
+    \end{pmatrix}
+$$
+
+\textbf{2.} Considere a $A$
+$\begin{pmatrix} -6 & 2 & 3 \\ 2 & -3 & 6 \\ 3 & 6 & 2 \end{pmatrix}$.
+
+ a) Encontrar a $Q$, la matriz que diagonaliza ortogonalmente a $A$.
+ 
+ b) Verificar que $Q^{T}AQ$ es diagonal.
+ 
+ 
+\textbf{3.} Sea $T\begin{pmatrix} x\\ y\end{pmatrix}=\begin{pmatrix} x +y \\ 2x-y \end{pmatrix}$
+
+ a) Demostrar que $T$ es un isomorfismo (_sugerencia_: calcular $\ker(T)$ y $rango(T)$)
+ 
+ b) Si $\mathcal{B}=\Bigg\{\begin{pmatrix}1 \\ 1 \end{pmatrix}, \begin{pmatrix}2 \\ -1 \end{pmatrix}\Bigg\}$ encontrar $\big[T\big]_{\mathcal{B}}$
+ 
+ \textbf{4.} Sea $A=\begin{pmatrix} -1 & 4 & 11 \\ 0 & -10 & -24 \\ 0 & 4 & 10 \end{pmatrix}$
+ 
+ a) Determinar si la matriz es diagonalizable.
+ 
+ b) Si es el caso, encontrar una base (de vectores propios) bajo la cual $A$ se diagonaliza.

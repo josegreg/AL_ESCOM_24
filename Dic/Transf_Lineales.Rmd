@@ -1072,3 +1072,30 @@ Si $A$ es una matriz simétrica y la matriz es diagonalizable, es posible obtene
 D=Q^{t}AQ
 \]
 Con $Q$ una matriz **ortogonal**, dicha descomposición facilita el cálculo de la diagonalización, sin embargo para obtener dicha descomposición, se requiere obtener una base de valores propios **ortonormales**. Aplicando el proceso de ortogonalización de Gram Schmidt a la base de vectores propios de $A$. La matriz cambio de base $Q$ en este caso será una matriz ortogonal, es decir $Q^{-1}=Q^{t}$
+
+### Algoritmo para la diagonalización ortogonal
+
+@. Calcular el polinomio característico de $A$ (o de $T$).
+
+@. Calcular los valores propios de $A$.
+
+@. Para cada valor propio, calcular una base para su espacio propio $N_{\lambda}=Ker(A-\lambda I)$.
+
+@. Si la base de $N_{\lambda}=Ker(A-\lambda I)$ tiene más de un vector, obtener una _base_ _ortogonal_ aplicando el proceso de Gram-Schmidt. 
+
+@. Normalizar los vectores de cada espacio propio $N_{\lambda} = \ker(A-\lambda I)$ para tener una **base** **Ortonormal** de vectores.
+
+@. Construir la matriz $Q$ con los vectores de la base ortonormal como vectores columna.
+
+@. Calcular 
+\[ 
+D = Q^{T}AQ
+\]
+
+Con este proceso, en el caso de que $A$ sea simétrica, ya no es necesario calcular la matriz inversa de la matriz cambio de base $Q$. Pues $Q$ es una matriz **ortogonal**.
+
+### Ejemplo
+
+Calcular la diagonalización ortogonal de $A = \begin{pmatrix} 4 & 2 & 2\\ 2 & 4 & 2 \\ 2 & 2 & 4 \end{pmatrix}$.
+
+Siguiendo los pasos descritos

@@ -1,0 +1,62 @@
+---
+title: "Examen 3B Álgebra lineal"
+output: pdf_document
+geometry: margin=0.3cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{0.2cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 180pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+
+Nombre:__________________________________________
+
+Contesta clara y ordenadamente. No omitas ningún razonamiento ni cálculo. Resolver 3 problemas. Incluir el problema 2 o el problema 4.
+
+\textbf{1.} Considerando a la transformación lineal $\phi:\mathbb{R}^{3} \rightarrow \mathbb{R}^{2}$ obtener una base para el espacio nulo para la transformación, así como una base para la imagen, encontrar el rango de la transformación. Para $\phi$, definida por 
+
+$$
+\phi\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 
+  \begin{pmatrix} 3x_1 - 2x_2 +x_3    \\ 
+                 x_1 - 3x_2 - 2x_3 
+    \end{pmatrix}
+$$
+
+\textbf{2.} Considere a $A$
+$\begin{pmatrix} 3 & -2 & 0 \\ -2 & 3 & 0 \\ 0 & 0 & 5 \end{pmatrix}$.
+ a) Encontrar los valores propios y vectores propios de $A$.
+
+ b) Encontrar a $Q$, la matriz que diagonaliza ortogonalmente a $A$.
+ 
+ c) Verificar que $Q^{T}AQ$ es diagonal.
+ 
+ 
+\textbf{3.} Sea $T\begin{pmatrix} x\\ y\end{pmatrix}=\begin{pmatrix} 2x +y \\ x-3y \end{pmatrix}$
+
+ a) Calcular $\big[ T \big]_{\mathcal{C}}$, con $\mathcal{C}$ la base canónica en $\mathbb{R}^2$.
+ 
+ b) Sea $\mathcal{B}=\Bigg\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix}1 \\ 2 \end{pmatrix}\Bigg\}$ encontrar $Q_{\mathcal{C}\rightarrow \mathcal{B}}$, la matriz cambio de base de $\mathcal{C}$ a $\mathcal{B}$.
+ 
+ c) Calcular $\big[ T \big]_{\mathcal{B}}$
+ 
+ d) Usando c) calcular las coordenadas de $T\mathtt{v}$ en la base $\mathcal{B}$ si $\big(\mathtt{v}\big)_{\mathcal{B}}=\begin{pmatrix}1 \\ -2\end{pmatrix}$.
+ 
+ 
+ 
+ \textbf{4.} Sea $A=\begin{pmatrix} 3 & 1 & 11 \\ 2 & 4 & 2 \\ -1 & -1 & 1 \end{pmatrix}$
+ 
+ a) Calcular los valores propiosy vectores propios de $A$.
+ 
+ b) Determinar si la matriz es diagonalizable. Explicar con detalle.
+ 
+ c) Si es el caso, encontrar una base (de vectores propios) bajo la cual $A$ se diagonaliza y la matriz $Q$ que diagonaliza a $A$ (es decir, tal que $Q^{-1}AQ$ es diagonal)

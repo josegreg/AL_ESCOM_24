@@ -1,0 +1,74 @@
+---
+title: "Examen 3A Álgebra lineal"
+output: pdf_document
+geometry: margin=0.3cm
+header-includes:
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{float}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{hyperref}
+  \usepackage{helvet}
+---
+
+\addtolength{\headheight}{0.2cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead[R]{\includegraphics[width = 180pt]{escom.png}}
+\renewcommand{\headrulewidth}{1pt} 
+
+
+Nombre:__________________________________________
+
+Contesta clara y ordenadamente. No omitas ningún razonamiento ni cálculo. Resolver 3 problemas. Incluir el problema 1 o el problema 4.
+
+\textbf{1.} Considere a la matriz $A$
+$$
+A = \begin{pmatrix} 
+      3 & -2 & -4 \\ 
+      -2 & 6 & -2 \\
+      -4 & -2 & 3
+    \end{pmatrix}
+$$
+a) Calcular los valores y vectores propios de $A$.
+
+b) Obtener una diagonalización ortogonal, encontrando una base **ortogonal** que diagonaliza a $A$.
+
+c) Encontrar $Q$ y verificar que $Q^TAQ$ es diagonal.
+
+\textbf{2.} Sea $T:\mathbb{R}^2\rightarrow \mathbb{R}^3$ definida por
+\[
+T\begin{pmatrix} x \\ y \\ z\end{pmatrix} = \begin{pmatrix} x +y + z \\ 2x -y -z \\ x + 2y -z \end{pmatrix}
+\]
+
+a) Calcular $\big[ T \big]_{C}^{C}$ con $C$ la base canónica.
+
+b) Encontrar una base para $\ker (T)$ y $Im(T)$.
+ 
+c) Calcular el rango de $T$ y $nulidad(T)$. Determinar si $T$ es una transformación invertible, explicar.
+ 
+\textbf{3.} Sea $T\begin{pmatrix} x\\ y \\ z\end{pmatrix}=\begin{pmatrix} x -y \\ x +y -z \end{pmatrix}$
+
+ a) Obtener $\big[ T \big]_{\mathcal{C}_3}^{\mathcal{C}_2}$, con $\mathcal{C}_3$ y $\mathcal{C}_2$ las bases canónicas en $\mathbb{R}^3$ y $\mathbb{R}^2$ respectivamente.
+ 
+ b) Si $\mathcal{B}_3=\begin{Bmatrix} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \end{Bmatrix}$ y $\mathcal{B}_2=\begin{Bmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ -1 \end{pmatrix} \end{Bmatrix}$, calcular $\Big[T\Big]_{\mathcal{B}_3}^{\mathcal{B}_2}$.
+ 
+ c) Calcular $\big(T\mathtt{v}\big)_{\mathcal{B}_2}$ si $\big(\mathtt{v}\big)_{\mathcal{B}_3}=\begin{pmatrix} 1 \\ -1 \\ 1\end{pmatrix}$
+ 
+ b) Sea $\mathcal{B}=\Bigg\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix}1 \\ 2 \end{pmatrix}\Bigg\}$ encontrar $Q_{\mathcal{C}\rightarrow \mathcal{B}}$, la matriz cambio de base de $\mathcal{C}$ a $\mathcal{B}$.
+ 
+ c) Calcular $\big[ T \big]_{\mathcal{B}}$
+ 
+ d) Usando c) calcular las coordenadas de $T\mathtt{v}$ en la base $\mathcal{B}$ si $\big(\mathtt{v}\big)_{\mathcal{B}}=\begin{pmatrix}1 \\ -2\end{pmatrix}$.
+ 
+ 
+ 
+ \textbf{4.} Sea $A=\begin{pmatrix} -2 & 2  \\ 2 & 1  \end{pmatrix}$
+ 
+ a) Calcular los valores propiosy vectores propios de $A$ y determinar si es diagonalizable, explicar.
+ 
+ b) Si es el caso, encontrar una base (de vectores propios) bajo la cual $A$ se diagonaliza y la matriz $Q$ que diagonaliza a $A$ (es decir, tal que $Q^{-1}AQ$ es diagonal)
+ 
+ c) Encontrar $A^{6}$ usando la diagonalización, también encontrar $B$ tal que $B^3 = A$.
+ 
